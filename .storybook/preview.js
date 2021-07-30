@@ -1,9 +1,62 @@
-export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
+import ThemeProvider from "../src/components/ThemeProvider/ThemeProvider";
+import talentLMSplus from "../src/theme/talentLMSplus";
+
+/* Parameters */
+const customViewports = {
+  xs: {
+    name: "iPhone 5/SE (xs)",
+    styles: {
+      width: "320px",
+      height: "568px",
     },
   },
-}
+  sm: {
+    name: "Kindle Fire HD (sm)",
+    styles: {
+      width: "600px",
+      height: "963px",
+    },
+  },
+  md: {
+    name: "iPad (md)",
+    styles: {
+      width: "768px",
+      height: "1024px",
+    },
+  },
+  lg: {
+    name: "iPad Pro (lg)",
+    styles: {
+      width: "1024px",
+      height: "1366px",
+    },
+  },
+  xl: {
+    name: "Laptop with MDPI screen (xl)",
+    styles: {
+      width: "1280px",
+      height: "800px",
+    },
+  },
+  xxl: {
+    name: "Desktop screen (xxl)",
+    styles: {
+      width: "1905px",
+      height: "945px",
+    },
+  },
+};
+
+export const parameters = {
+  viewport: {
+    viewports: customViewports,
+  },
+};
+
+const themeDecorator = (Story, { globals }) => (
+  <ThemeProvider theme={talentLMSplus}>
+    <Story />
+  </ThemeProvider>
+);
+
+export const decorators = [themeDecorator];

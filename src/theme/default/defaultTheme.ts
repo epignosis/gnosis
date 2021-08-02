@@ -1,28 +1,6 @@
-import { palletGenerator } from "./utils/utils";
+import { colors } from "./colors";
 
-export const THEME_COLOURS = {
-  blue: "#1B68B3",
-  turquoise: "#2CD1F8",
-  orange: "#FF8000",
-  red: "#E53935",
-  green: "#41BD54",
-  gray: "#999999",
-  black: "#232323",
-  white: "#FFFFFF",
-};
-
-const colors = {
-  blue: palletGenerator(THEME_COLOURS.blue),
-  turquoise: palletGenerator(THEME_COLOURS.turquoise),
-  orange: palletGenerator(THEME_COLOURS.orange),
-  red: palletGenerator(THEME_COLOURS.red),
-  green: palletGenerator(THEME_COLOURS.green),
-  gray: palletGenerator(THEME_COLOURS.gray),
-  black: THEME_COLOURS.black,
-  white: THEME_COLOURS.white,
-};
-
-const talentLMSplus = {
+const defaultTheme = {
   body: {
     background: colors.white,
   },
@@ -140,6 +118,6 @@ const talentLMSplus = {
   },
 };
 
-export type CustomTheme = typeof talentLMSplus;
+export type GnosisTheme = typeof defaultTheme;
 
-export default talentLMSplus;
+export default defaultTheme;

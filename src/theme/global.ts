@@ -1,26 +1,9 @@
-import { css, SerializedStyles } from "@emotion/react";
-import { mq } from "./utils/breakpoints";
-import { CustomTheme } from "./talentLMSplus";
+import { css } from "@emotion/react";
+import { GnosisTheme } from "./default/defaultTheme";
 
-export default (theme: CustomTheme): SerializedStyles => css`
+export default (theme: GnosisTheme) => css`
   html,
   body {
     background: ${theme.body.background};
-  }
-
-  /* Small devices (landscape phones, 576px and up) */
-  ${mq["sm"]} {
-  }
-
-  /* Medium devices (tablets, 768px and up) */
-  ${mq["md"]} {
-  }
-
-  /* Large devices (desktops, 992px and up) */
-  ${mq["lg"]} {
-  }
-
-  /* Extra large devices (large desktops, 1200px and up) */
-  ${mq["xl"]} {
   }
 `;

@@ -4,7 +4,8 @@ import {
   Global,
   css,
 } from "@emotion/react";
-import talentLMSplus from "../../theme/talentLMSplus";
+import defaultTheme from "../../theme/default/defaultTheme";
+import defaultGlobals from "../../theme/global";
 
 type ThemeProviderProps = {
   theme?: any;
@@ -12,24 +13,15 @@ type ThemeProviderProps = {
   children: any;
 };
 
-export const defaultGlobalStyles = () => css`
-  body,
-  html {
-    font-size: 16px;
-    font-weight: normal;
-    background: red;
-  }
-`;
-
 const ThemeProvider: FC<ThemeProviderProps> = ({
-  theme = talentLMSplus,
-  globalStyles = defaultGlobalStyles,
+  theme = defaultTheme,
+  globalStyles = defaultGlobals,
   children,
 }) => {
   console.log(theme);
 
   return (
-    <EmotionThemeProvider theme={talentLMSplus}>
+    <EmotionThemeProvider theme={defaultTheme}>
       <Global styles={globalStyles} />
       {children}
     </EmotionThemeProvider>

@@ -1,9 +1,5 @@
 import React, { FC } from "react";
-import {
-  ThemeProvider as EmotionThemeProvider,
-  Global,
-  css,
-} from "@emotion/react";
+import { ThemeProvider as EmotionThemeProvider, Global } from "@emotion/react";
 import merge from "deepmerge";
 import { defaultTheme, defaultGlobals } from "../../";
 import {
@@ -22,7 +18,7 @@ type ThemeProviderProps = {
 const ThemeProvider: FC<ThemeProviderProps> = ({
   typeScaleConfig = {},
   theme = {},
-  globalStyles = () => css``,
+  globalStyles = {},
   children,
 }) => {
   const mergedTypeScaleConfig = merge(
@@ -44,7 +40,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
   return (
     <EmotionThemeProvider theme={mergedTheme}>
       <Global styles={defaultGlobals} />
-      <Global styles={globalStyles} />
+      {globalStyles && <Global styles={globalStyles} />}
       {children}
     </EmotionThemeProvider>
   );

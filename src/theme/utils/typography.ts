@@ -49,7 +49,7 @@ export const generateTypeScaleSizes = (typography: Typography) => {
     Object.assign(levels, { [level]: levelSize.toFixed(3) });
   });
 
-  for (var key in levels) {
+  for (const key in levels) {
     if (levels.hasOwnProperty(key)) {
       levels[key] = `${levels[key]}rem`;
     }

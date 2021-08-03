@@ -4,11 +4,7 @@ import { btnContainer } from "./styles";
 
 const Button: FC = () => {
   return (
-    <button
-      css={(theme): SerializedStyles =>
-        btnContainer(theme, { color: "red", size: "lg" })
-      }
-    >
+    <button css={(theme): SerializedStyles => btnContainer(theme, { color: "red", size: "lg" })}>
       Button
     </button>
   );

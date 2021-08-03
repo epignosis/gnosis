@@ -1,5 +1,5 @@
 import ThemeProvider from "../src/components/ThemeProvider/ThemeProvider";
-import talentLMSplus from "../src/theme/talentLMSplus";
+import defaultTheme from "../src/theme/default/defaultTheme";
 
 /* Parameters */
 const customViewports = {
@@ -54,7 +54,7 @@ export const parameters = {
 };
 
 const themeDecorator = (Story, { globals }) => (
-  <ThemeProvider theme={talentLMSplus}>
+  <ThemeProvider theme={defaultTheme}>
     <Story />
   </ThemeProvider>
 );

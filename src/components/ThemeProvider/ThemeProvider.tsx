@@ -1,36 +1,46 @@
 import React, { FC } from "react";
+import { ThemeProvider as EmotionThemeProvider, Global } from "@emotion/react";
+import merge from "deepmerge";
+import { defaultTheme, defaultGlobals } from "../../";
 import {
-  ThemeProvider as EmotionThemeProvider,
-  Global,
-  css,
-} from "@emotion/react";
-import talentLMSplus from "../../theme/talentLMSplus";
+  DEFAULT_TYPESCALE_CONFIG,
+  generateTypeScaleSizes,
+} from "../../theme/utils/typography";
+import "modern-normalize/modern-normalize.css";
 
 type ThemeProviderProps = {
-  theme?: any;
+  typeScaleConfig: object;
+  theme?: object;
   globalStyles?: any;
   children: any;
 };
 
-export const defaultGlobalStyles = () => css`
-  body,
-  html {
-    font-size: 16px;
-    font-weight: normal;
-    background: red;
-  }
-`;
-
 const ThemeProvider: FC<ThemeProviderProps> = ({
-  theme = talentLMSplus,
-  globalStyles = defaultGlobalStyles,
+  typeScaleConfig = {},
+  theme = {},
+  globalStyles = {},
   children,
 }) => {
-  console.log(theme);
+  const mergedTypeScaleConfig = merge(
+    typeScaleConfig,
+    DEFAULT_TYPESCALE_CONFIG
+  );
+  const typeScaleSizes = generateTypeScaleSizes(mergedTypeScaleConfig);
+  const mergedTheme = merge.all([
+    defaultTheme,
+    theme,
+    { typeScaleSizes },
+    {
+      body: {
+        lineHeight: mergedTypeScaleConfig.lineHeight,
+      },
+    },
+  ]);
 
   return (
-    <EmotionThemeProvider theme={talentLMSplus}>
-      <Global styles={globalStyles} />
+    <EmotionThemeProvider theme={mergedTheme}>
+      <Global styles={defaultGlobals} />
+      {globalStyles && <Global styles={globalStyles} />}
       {children}
     </EmotionThemeProvider>
   );

@@ -12,7 +12,7 @@
     "lint:eslint": "eslint . --ext .ts,.tsx",
     "lint:eslint:fix": "npm run lint:eslint -- --fix",
     "prettier": "prettier -c .",
-    "prettier:format": "prettier --write .",
+    "prettier:format": "prettier --write \"./src/**/**\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "John Tsevdos <tsevdosjohn@gmail.com> (http://tsevdos.me/)",

@@ -9,10 +9,10 @@
     "build:design-system": "build-storybook -c .storybook -o design-system",
     "lint": "npm run lint:types && npm run lint:eslint && npm run prettier",
     "lint:types": "tsc",
-    "lint:eslint": "eslint src --ext .js,.jsx,.ts,.tsx",
+    "lint:eslint": "eslint . --ext .ts,.tsx",
     "lint:eslint:fix": "npm run lint:eslint -- --fix",
-    "prettier": "prettier --ignore-path .gitignore -c ./src/**",
-    "prettier:format": "prettier --write \"./src/**/**\"",
+    "prettier": "prettier -c .",
+    "prettier:format": "prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "John Tsevdos <tsevdosjohn@gmail.com> (http://tsevdos.me/)",

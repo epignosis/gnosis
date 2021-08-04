@@ -9,6 +9,8 @@ export const DEFAULT_TYPESCALE_CONFIG = {
   },
 };
 
+export type TypeScaleConfig = typeof DEFAULT_TYPESCALE_CONFIG;
+
 export type TypeScaleSizes = {
   "2xs": number;
   xs: number;

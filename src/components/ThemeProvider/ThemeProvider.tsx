@@ -1,18 +1,24 @@
-import React, { FC } from "react";
-import { ThemeProvider as EmotionThemeProvider, Global } from "@emotion/react";
+import React, { FC, ReactNode } from "react";
+import {
+  ThemeProvider as EmotionThemeProvider,
+  Global,
+  Theme,
+  SerializedStyles,
+} from "@emotion/react";
 import merge from "deepmerge";
 import { defaultTheme, defaultGlobals } from "../../";
 import {
   DEFAULT_TYPESCALE_CONFIG,
   generateTypeScaleSizes,
+  TypeScaleConfig,
 } from "../../theme/utils/typography";
 import "modern-normalize/modern-normalize.css";
 
 type ThemeProviderProps = {
-  typeScaleConfig: object;
-  theme?: object;
-  globalStyles?: any;
-  children: any;
+  typeScaleConfig?: TypeScaleConfig;
+  theme?: Theme;
+  globalStyles?: SerializedStyles;
+  children: ReactNode;
 };
 
 const ThemeProvider: FC<ThemeProviderProps> = ({
@@ -21,10 +27,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({
   globalStyles = {},
   children,
 }) => {
-  const mergedTypeScaleConfig = merge(
-    typeScaleConfig,
-    DEFAULT_TYPESCALE_CONFIG
-  );
+  const mergedTypeScaleConfig: TypeScaleConfig = merge(DEFAULT_TYPESCALE_CONFIG, typeScaleConfig);
   const typeScaleSizes = generateTypeScaleSizes(mergedTypeScaleConfig);
   const mergedTheme = merge.all([
     defaultTheme,

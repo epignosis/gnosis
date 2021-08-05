@@ -14,7 +14,7 @@ export const mq: Record<string, string> = Object.keys(breakpoints).reduce(
     ...acc,
     [breakpointName]: `@media screen and (min-width: ${breakpoints[breakpointName]}px)`,
   }),
-  {}
+  {},
 );
 
 // Configures useResponsive hook

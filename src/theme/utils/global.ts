@@ -1,7 +1,6 @@
-import { css } from "@emotion/react";
-import { GnosisTheme } from "../default/defaultTheme";
+import { css, Theme, SerializedStyles } from "@emotion/react";
 
-export default ({ body, link }: GnosisTheme) => css`
+export default ({ body, link }: Theme): SerializedStyles => css`
   html,
   body {
     font-size: 100%;

@@ -10,7 +10,7 @@ const EXTENSIONS = [".ts", ".tsx"];
 const EXTERNAL = Object.keys(pkg.devDependencies);
 
 export default {
-  input: ["src/index.tsx"],
+  input: ["src/index.ts"],
   output: {
     dir: "dist",
     sourcemap: true,

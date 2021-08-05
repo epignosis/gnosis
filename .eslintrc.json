@@ -24,7 +24,7 @@
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
     "prettier/prettier": "error",
-    "no-console": 2,
+    "no-console": "error",
     "react/prop-types": 0,
     "import/order": [
       "error",

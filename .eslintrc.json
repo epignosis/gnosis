@@ -22,9 +22,14 @@
     "sourceType": "module"
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
+  "settings": {
+    "react": {
+      "version": "latest"
+    }
+  },
   "rules": {
     "prettier/prettier": "error",
-    "no-console": 2,
+    "no-console": "error",
     "react/prop-types": 0,
     "import/order": [
       "error",

@@ -1,6 +1,5 @@
 {
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules", "dist"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js"],
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
@@ -30,5 +29,6 @@
     "importHelpers": true,
     "isolatedModules": true,
     "noEmit": true
-  }
+  },
+  "exclude": ["node_modules", "dist"]
 }

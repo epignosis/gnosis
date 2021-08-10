@@ -23,6 +23,12 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "settings": {
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    },
     "react": {
       "version": "latest"
     }

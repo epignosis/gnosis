@@ -1,6 +1,6 @@
 import React from "react";
-import { render, screen } from "../../test-utils/render";
-import Button from "./Button";
+import { render, screen } from "@test-utils/render";
+import { Button } from "@atoms";
 
 describe("<Button />", () => {
   it("renders correclty", () => {

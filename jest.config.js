@@ -4,16 +4,15 @@ module.exports = {
   verbose: true,
   roots: ["<rootDir>/src"],
   testEnvironment: "jest-environment-jsdom",
-  globals: {
-    ENV: "staging",
-  },
-  testMatch: [
-    "**/__tests__/**/?(*.)+(spec|test).+(ts|tsx|js)",
-    "**/?(*.)+(spec|test).+(ts|tsx|js)",
-  ],
+  testMatch: ["**/__tests__/**/?(*.)+(spec|test).+(ts|tsx)", "**/?(*.)+(spec|test).+(ts|tsx)"],
   testPathIgnorePatterns: ["<rootDir>/node_modules/"],
   moduleDirectories: [path.resolve("./src"), "node_modules"],
-  collectCoverageFrom: ["src/**/*.{ts,tsx}", "!src/**/*.stories.tsx"],
+  collectCoverageFrom: [
+    "src/**/*.{ts,tsx}",
+    "!src/**/*.stories.tsx",
+    "!<rootDir>/src/*.tsx",
+    "!<rootDir>/src/test-utils/**/*",
+  ],
   transform: {
     "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
   },

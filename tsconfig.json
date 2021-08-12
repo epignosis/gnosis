@@ -1,11 +1,10 @@
 {
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js"],
   "compilerOptions": {
     "baseUrl": "./",
     "target": "es5",
     "module": "esnext",
     "lib": ["es6", "dom", "esnext"],
-    "types": [],
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "allowJs": false,
     "jsx": "react",
     "declaration": true,
@@ -39,5 +38,6 @@
       "types/*": ["./src/types/*"]
     }
   },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }

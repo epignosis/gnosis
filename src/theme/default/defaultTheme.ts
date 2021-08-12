@@ -27,6 +27,9 @@ const defaultTheme = {
     hoverColor: colors.blue.lighter,
   },
   button,
+  loader: {
+    color: colors.blue.lightest,
+  },
 };
 
 export type GnosisTheme = typeof defaultTheme;

@@ -5,7 +5,7 @@ import { container } from "./styles";
 
 export type LoaderSize = "md" | "lg";
 
-type LoaderProps = {
+export type LoaderProps = {
   fullScreen?: boolean;
   size?: "md" | "lg";
 };

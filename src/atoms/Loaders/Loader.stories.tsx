@@ -1,5 +1,6 @@
 import React from "react";
-import Loader from "./Loader";
+import { Story } from "@storybook/react";
+import Loader, { LoaderProps } from "./Loader";
 
 export default {
   component: Loader,
@@ -18,4 +19,4 @@ export default {
   },
 };
 
-export const Load = ({ ...args }): JSX.Element => <Loader {...args} />;
+export const Load: Story<LoaderProps> = ({ ...args }): JSX.Element => <Loader {...args} />;

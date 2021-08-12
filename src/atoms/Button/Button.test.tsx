@@ -1,32 +1,23 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
+import faker from "faker";
 import Button from "./Button";
 import { render, screen } from "@test-utils/render";
 
-const props = {
-  color: "danger",
-  size: "md",
-  className: "text-right",
-  type: "submit",
-};
-
 describe("<Button />", () => {
   it("renders correctly", () => {
-    render(<Button {...props}>Button</Button>);
+    const btnText = faker.lorem.word();
+    render(<Button type="submit">{btnText}</Button>);
     const button = screen.getByRole("button");
 
-    expect(button).toHaveTextContent("Button");
+    expect(button).toHaveTextContent(btnText);
     expect(button).toHaveAttribute("type");
     expect(button).not.toBeDisabled();
   });
 
   it("calls a function onClick", () => {
     const mockFn = jest.fn();
-    render(
-      <Button onClick={mockFn} {...props}>
-        Button
-      </Button>,
-    );
+    render(<Button onClick={mockFn}>{faker.lorem.word()}</Button>);
     const button = screen.getByRole("button");
 
     expect(button).not.toBeDisabled();
@@ -39,8 +30,8 @@ describe("<Button />", () => {
   it("should be disabled", () => {
     const mockFn = jest.fn();
     render(
-      <Button disabled onClick={mockFn} {...props}>
-        Button
+      <Button disabled onClick={mockFn}>
+        {faker.lorem.word()}
       </Button>,
     );
     const button = screen.getByRole("button");
@@ -55,8 +46,8 @@ describe("<Button />", () => {
   it("is loading", () => {
     const mockFn = jest.fn();
     render(
-      <Button isLoading onClick={mockFn} {...props}>
-        Button
+      <Button isLoading onClick={mockFn}>
+        {faker.lorem.word()}
       </Button>,
     );
     const button = screen.getByRole("button");
@@ -71,26 +62,28 @@ describe("<Button />", () => {
   });
 
   it("act as Link button", () => {
+    const linkText = faker.random.words();
     render(
       <Button as={"a"} href="/">
-        Course Details
+        {linkText}
       </Button>,
     );
     const link = screen.getByRole("link");
 
-    expect(link).toHaveTextContent("Course Details");
+    expect(link).toHaveTextContent(linkText);
     expect(link).toHaveAttribute("href");
   });
 
   it("is an anchor tag", () => {
+    const linkText = faker.random.words();
     render(
       <Button as="a" href="/">
-        Go to knowledge base
+        {linkText}
       </Button>,
     );
     const link = screen.getByRole("link");
 
-    expect(link).toHaveTextContent("Go to knowledge base");
+    expect(link).toHaveTextContent(linkText);
     expect(link).toHaveAttribute("href");
   });
 });

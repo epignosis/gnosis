@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode, ElementType } from "react";
 import { SerializedStyles } from "@emotion/react";
-import { m, AnimatePresence, Variants } from "framer-motion";
+import { LazyMotion, domAnimation, m, AnimatePresence, Variants } from "framer-motion";
 import classNames from "classnames";
 import { btnContainer } from "./styles";
 import Loader from "@atoms/Loaders/Loader";
@@ -77,32 +77,34 @@ const Button = <C extends ElementType = "button">(props: ButtonProps<C>): ReactE
   });
 
   return (
-    <Component
-      css={(theme): SerializedStyles => btnContainer(theme, { color, block, size, noGutters })}
-      className={containerClassNames}
-      {...((as === "button" || as === undefined) && { disabled: disabled || isLoading })}
-      {...rest}
-    >
-      <AnimatePresence>
-        {isLoading && (
-          <m.div
-            key={props.id ?? "spinner"}
-            style={{ display: "inline-flex", x: -12 }}
-            className="loading"
-            aria-label="loading"
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={spinnerWrapperVariants}
-          >
-            <Loader size="md" />
-          </m.div>
-        )}
-      </AnimatePresence>
-      {PrefixIcon && <PrefixIcon height={iconSizes[size]} className="icon-before" />}
-      <span className="btn-text">{children}</span>
-      {SuffixIcon && <SuffixIcon height={iconSizes[size]} className="icon-after" />}
-    </Component>
+    <LazyMotion features={domAnimation}>
+      <Component
+        css={(theme): SerializedStyles => btnContainer(theme, { color, block, size, noGutters })}
+        className={containerClassNames}
+        {...((as === "button" || as === undefined) && { disabled: disabled || isLoading })}
+        {...rest}
+      >
+        <AnimatePresence>
+          {isLoading && (
+            <m.div
+              key={props.id ?? "spinner"}
+              style={{ display: "inline-flex", x: -12 }}
+              className="loading"
+              aria-label="loading"
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={spinnerWrapperVariants}
+            >
+              <Loader size="md" />
+            </m.div>
+          )}
+        </AnimatePresence>
+        {PrefixIcon && <PrefixIcon height={iconSizes[size]} className="icon-before" />}
+        <span className="btn-text">{children}</span>
+        {SuffixIcon && <SuffixIcon height={iconSizes[size]} className="icon-after" />}
+      </Component>
+    </LazyMotion>
   );
 };
 

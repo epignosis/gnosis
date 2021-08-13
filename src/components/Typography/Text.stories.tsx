@@ -4,7 +4,7 @@ import Text, { TextProps } from "./Text";
 
 export default {
   component: Text,
-  title: "atoms/Text",
+  title: "Components/Text",
   argTypes: {
     weight: {
       control: {

@@ -3,7 +3,7 @@ import React from "react";
 import Heading, { HeadingProps, SIZES } from "./Heading";
 
 export default {
-  title: "base/Typography/Heading",
+  title: "Components/Heading",
   component: Heading,
   argTypes: {
     size: {

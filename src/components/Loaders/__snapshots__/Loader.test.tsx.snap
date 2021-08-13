@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loader> snapshot 1`] = `
+<div>
+  <div
+    class="loading-container css-1hn9l2b-container-container"
+    data-testid="loader"
+  >
+    <span
+      class="css-1xdhyk6"
+    >
+      <span
+        class="css-1wl1zro"
+      />
+      <span
+        class="css-nfvbbo"
+      />
+      <span
+        class="css-1xsdpkx"
+      />
+    </span>
+  </div>
+</div>
+`;

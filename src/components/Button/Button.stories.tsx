@@ -4,7 +4,7 @@ import Button, { Props } from "./Button";
 // import { CalendarSVG } from "@icons/core";
 
 export default {
-  title: "atoms/Button",
+  title: "Components/Button",
   argTypes: {
     onClick: { action: "clicked" },
     color: {

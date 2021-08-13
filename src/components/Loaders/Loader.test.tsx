@@ -1,5 +1,5 @@
 import React from "react";
-import Loader from "../Loader";
+import Loader from "./Loader";
 import { render } from "@test-utils/render";
 
 describe("<Loader>", () => {
@@ -9,5 +9,11 @@ describe("<Loader>", () => {
 
     expect(loader).toBeInTheDocument();
     expect(loader).toBeVisible();
+  });
+
+  it("snapshot", () => {
+    const { container } = render(<Loader />);
+
+    expect(container).toMatchSnapshot();
   });
 });

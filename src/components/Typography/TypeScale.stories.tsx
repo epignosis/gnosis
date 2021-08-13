@@ -3,7 +3,7 @@ import { Story } from "@storybook/react/types-6-0";
 import Heading, { HeadingTag, SIZES, HeadingProps } from "./Heading";
 
 export default {
-  title: "base/Typography/Type Scale",
+  title: "Components/Typography/Type Scale",
   decorators: [
     (Story: Story): JSX.Element => (
       <div style={{ width: "100%", maxWidth: 680 }}>

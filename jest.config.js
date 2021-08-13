@@ -10,7 +10,6 @@ module.exports = {
   collectCoverageFrom: [
     "src/**/*.{ts,tsx}",
     "!src/**/*.stories.tsx",
-    "!<rootDir>/src/*.tsx",
     "!<rootDir>/src/test-utils/**/*",
   ],
   transform: {

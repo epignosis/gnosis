@@ -19,4 +19,4 @@ export default {
   },
 };
 
-export const Load: Story<LoaderProps> = ({ ...args }): JSX.Element => <Loader {...args} />;
+export const Deafult: Story<LoaderProps> = ({ ...args }): JSX.Element => <Loader {...args} />;

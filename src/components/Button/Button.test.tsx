@@ -86,4 +86,10 @@ describe("<Button />", () => {
     expect(link).toHaveTextContent(linkText);
     expect(link).toHaveAttribute("href");
   });
+
+  it("matches snapshot", () => {
+    const { container } = render(<Button>Test button</Button>);
+
+    expect(container).toMatchSnapshot();
+  });
 });

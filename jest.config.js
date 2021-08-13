@@ -22,7 +22,6 @@ module.exports = {
     "@components(.*)$": "<rootDir>/src/components$1",
     "^types(.*)$": "<rootDir>/src/types$1",
     "@test-utils(.*)$": "<rootDir>/src/test-utils$1",
-    "@atoms(.*)$": "<rootDir>/src/atoms$1",
     "@theme(.*)$": "<rootDir>/src/theme$1",
     "\\.(css)$": "<rootDir>/src/test-utils/cssStub.ts", // Stub CSS files
   },

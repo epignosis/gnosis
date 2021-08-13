@@ -3,7 +3,7 @@ import { SerializedStyles } from "@emotion/react";
 import { LazyMotion, domAnimation, m, AnimatePresence, Variants } from "framer-motion";
 import classNames from "classnames";
 import { btnContainer } from "./styles";
-import Loader from "@atoms/Loaders/Loader";
+import { Loader } from "@components";
 import { IconType, PolymorphicComponentProps } from "types/common";
 
 export type Color = "primary" | "secondary" | "tertiary" | "danger" | "success";

@@ -8,7 +8,7 @@ import {
 } from "@theme/utils/typography";
 
 export default {
-  title: "Components/Typography/Typography Documentation",
+  title: "Typography/Typography Documentation",
   argTypes: {
     sizeRatio: {
       control: {

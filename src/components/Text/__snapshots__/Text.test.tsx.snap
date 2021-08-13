@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Text> snapshot 1`] = `
+<div>
+  <span
+    class="css-1jr9658-textContainer-textContainer"
+    data-testid="text-component"
+  >
+    My content.
+  </span>
+</div>
+`;

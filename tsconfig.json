@@ -1,11 +1,10 @@
 {
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js"],
   "compilerOptions": {
     "baseUrl": "./",
     "target": "es5",
     "module": "esnext",
     "lib": ["es6", "dom", "esnext"],
-    "types": [],
+    "types": ["node", "jest", "@testing-library/jest-dom"],
     "allowJs": false,
     "jsx": "react",
     "declaration": true,
@@ -31,13 +30,13 @@
     "isolatedModules": true,
     "noEmit": true,
     "paths": {
-      "@atoms": ["./src/atoms"],
-      "@atoms/*": ["./src/atoms/*"],
+      "@components": ["./src/components"],
       "@components/*": ["./src/components/*"],
       "@test-utils/*": ["./src/test-utils/*"],
       "@theme/*": ["./src/theme/*"],
       "types/*": ["./src/types/*"]
     }
   },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "exclude": ["node_modules", "dist"]
 }

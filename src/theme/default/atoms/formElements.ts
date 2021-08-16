@@ -19,4 +19,11 @@ export default {
   multiSelect: {
     hover: colors.gray.lighter,
   },
+  checkbox: {
+    input: {
+      background: colors.blue.base,
+      borderColor: "#cccccc",
+      shadowColor: "#0e59bb1a",
+    },
+  },
 };

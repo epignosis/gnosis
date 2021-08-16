@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkbox /> matches snapshot with \`inline\` = true 1`] = `
+<div>
+  <div
+    class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+  >
+    <input
+      id="testId"
+      name="testName"
+      type="checkbox"
+      value="testValue"
+    />
+    <label
+      for="testId"
+    >
+      <span
+        aria-hidden="true"
+        class="shadow-element"
+        tabindex="-1"
+      />
+      Test label
+    </label>
+  </div>
+</div>
+`;
+
+exports[`<Checkbox /> matches snapshot with \`lg\` size 1`] = `
+<div>
+  <div
+    class="checkbox-container css-1p9f0hm-checkboxContainer-checkboxContainer"
+  >
+    <input
+      id="testId"
+      name="testName"
+      type="checkbox"
+      value="testValue"
+    />
+    <label
+      for="testId"
+    >
+      <span
+        aria-hidden="true"
+        class="shadow-element"
+        tabindex="-1"
+      />
+      Test label
+    </label>
+  </div>
+</div>
+`;
+
+exports[`<Checkbox /> matches snapshot with \`md\` size 1`] = `
+<div>
+  <div
+    class="checkbox-container css-1j4ss74-checkboxContainer-checkboxContainer"
+  >
+    <input
+      id="testId"
+      name="testName"
+      type="checkbox"
+      value="testValue"
+    />
+    <label
+      for="testId"
+    >
+      <span
+        aria-hidden="true"
+        class="shadow-element"
+        tabindex="-1"
+      />
+      Test label
+    </label>
+  </div>
+</div>
+`;

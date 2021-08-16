@@ -51,7 +51,7 @@ const defaultTheme = {
     },
   },
   badge: {
-    background: "#ff0000",
+    background: colors.red.base,
   },
 };
 

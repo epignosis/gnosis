@@ -5,3 +5,6 @@ export { default as Loader } from "./Loaders/Loader";
 // Typography
 export { default as Heading } from "./Heading/Heading";
 export { default as Text } from "./Text/Text";
+
+// Form elements
+export { default as Label } from "./FormElements/Label/Label";

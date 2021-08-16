@@ -1,5 +1,5 @@
 import { colors } from "./colors";
-import { button } from "./atoms/";
+import { button, formElements } from "./atoms";
 
 // ATOMS
 // Button
@@ -27,6 +27,7 @@ const defaultTheme = {
     hoverColor: colors.blue.lighter,
   },
   button,
+  formElements,
   loader: {
     color: colors.blue.lightest,
   },

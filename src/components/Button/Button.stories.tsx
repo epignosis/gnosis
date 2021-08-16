@@ -1,7 +1,7 @@
 import React from "react";
 import { Story } from "@storybook/react/types-6-0";
 import Button, { Props } from "./Button";
-// import { CalendarSVG } from "@icons/core";
+import { CalendarSVG } from "@icons/core";
 
 export default {
   title: "Components/Button",
@@ -77,18 +77,18 @@ Success.args = {
   children: "Success",
 };
 
-// export const WithIconBefore = Template.bind({});
+export const WithIconBefore = Template.bind({});
 
-// WithIconBefore.args = {
-//   color: "primary",
-//   iconBefore: CalendarSVG,
-//   children: "Icon prefix",
-// };
+WithIconBefore.args = {
+  color: "primary",
+  iconBefore: CalendarSVG,
+  children: "Icon prefix",
+};
 
-// export const WithIconAfter = Template.bind({});
+export const WithIconAfter = Template.bind({});
 
-// WithIconAfter.args = {
-//   color: "primary",
-//   iconAfter: CalendarSVG,
-//   children: "Icon prefix",
-// };
+WithIconAfter.args = {
+  color: "primary",
+  iconAfter: CalendarSVG,
+  children: "Icon prefix",
+};

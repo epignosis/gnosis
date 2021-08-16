@@ -1,6 +1,7 @@
 import { babel } from "@rollup/plugin-babel";
 import resolve from "@rollup/plugin-node-resolve";
 import alias from "@rollup/plugin-alias";
+import svgr from "@svgr/rollup";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import pkg from "./package.json";
 
@@ -23,10 +24,10 @@ export default {
     resolve(), // Resolves node modules
     alias({
       entries: [
-        { find: "@atoms", replacement: "./src/atoms" },
         { find: "@components", replacement: "./src/components" },
         { find: "@test-utils", replacement: "./src/test-utils" },
         { find: "@theme", replacement: "./src/theme" },
+        { find: "@icons", replacement: "./src/icons" },
         { find: "type", replacement: "./src/type" },
       ],
     }),
@@ -35,6 +36,7 @@ export default {
       babelHelpers: "inline", // Place babel helper functions in the same file they were used
       include: EXTENSIONS.map((ext) => `src/**/*${ext}`),
     }),
+    svgr(),
   ],
   external: EXTERNAL, // https://rollupjs.org/guide/en/#peer-dependencies
 };

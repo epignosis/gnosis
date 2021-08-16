@@ -50,6 +50,9 @@ const defaultTheme = {
       new: colors.white,
     },
   },
+  badge: {
+    background: "#ff0000",
+  },
 };
 
 export type GnosisTheme = typeof defaultTheme;

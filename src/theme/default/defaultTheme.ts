@@ -30,6 +30,14 @@ const defaultTheme = {
   loader: {
     color: colors.blue.lightest,
   },
+  chip: {
+    background: {
+      filter: colors.gray.darker,
+    },
+    color: {
+      filter: colors.white,
+    },
+  },
 };
 
 export type GnosisTheme = typeof defaultTheme;

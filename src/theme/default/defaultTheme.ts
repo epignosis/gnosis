@@ -38,6 +38,18 @@ const defaultTheme = {
       filter: colors.white,
     },
   },
+  tag: {
+    background: {
+      course: "#A3DFE3",
+      card: "#B200A6",
+      new: colors.blue.light,
+    },
+    color: {
+      course: colors.gray.darker,
+      card: colors.white,
+      new: colors.white,
+    },
+  },
 };
 
 export type GnosisTheme = typeof defaultTheme;

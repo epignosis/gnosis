@@ -32,6 +32,7 @@ const defaultTheme = {
   chip,
   tag,
   badge,
+  formElements,
 };
 
 export type GnosisTheme = typeof defaultTheme;

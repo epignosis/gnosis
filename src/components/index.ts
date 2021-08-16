@@ -13,5 +13,8 @@ export { default as Text } from "./Text/Text";
 
 // Form elements
 export { default as Label } from "./FormElements/Label/Label";
+<<<<<<< HEAD
 export { default as Input } from "./FormElements/Input/Input";
 export { default as Error } from "./FormElements/Error/Error";
+=======
+>>>>>>> 01e07b6 (feat: add Input & FileInput & Label components)

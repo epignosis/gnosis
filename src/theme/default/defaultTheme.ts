@@ -1,9 +1,6 @@
 import { colors } from "./colors";
 import { button, tag, chip, badge, loader, formElements } from "./atoms/";
 
-// ATOMS
-// Button
-
 const defaultTheme = {
   body: {
     color: colors.black,
@@ -32,7 +29,6 @@ const defaultTheme = {
   chip,
   tag,
   badge,
-  formElements,
 };
 
 export type GnosisTheme = typeof defaultTheme;

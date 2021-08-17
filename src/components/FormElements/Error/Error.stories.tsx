@@ -4,7 +4,7 @@ import ErrorComponent from "./Error";
 import { Input } from "@components";
 
 export default {
-  title: "atoms/Form Elements/Error",
+  title: "components/Form Elements/Error",
   component: ErrorComponent,
   parameters: {
     controls: { hideNoControlsWarning: true },

@@ -3,7 +3,7 @@ import { Story } from "@storybook/react/types-6-0";
 import CheckboxGroup, { CheckboxGroupProps } from "./CheckboxGroup";
 
 export default {
-  title: "atoms/Form Elements/Checkbox/Group",
+  title: "components/Form Elements/Checkbox/Group",
   component: CheckboxGroup,
   args: {
     size: "md",

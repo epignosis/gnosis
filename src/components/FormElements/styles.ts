@@ -31,7 +31,7 @@ export const inputContainerBaseStyles = ({
 
 export const inputBaseStyles = (
   formElements: Theme["formElements"],
-  { block, size }: { block: boolean; size: InputSize },
+  { block, size }: { block?: boolean; size?: InputSize },
 ): SerializedStyles => css`
   ${size && `height: ${inputHeight[size]}`};
   ${block && "width: 100%"};

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AspectRatio /> matches snapshot 1`] = `
+<div>
+  <div
+    class="css-14dee1b-aspectRatioContainer-aspectRatioContainer"
+  >
+    <div
+      class="aspect-ratio-wrapper"
+    >
+      <img
+        alt="An image"
+        height="100%"
+        src="https://d3j0t7vrtr92dk.cloudfront.net/test/1616506869_Def_Course.png?"
+        width="100%"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -23,7 +23,7 @@ module.exports = {
     "@test-utils(.*)$": "<rootDir>/src/test-utils$1",
     "@theme(.*)$": "<rootDir>/src/theme$1",
     "@icons(.*)$": "<rootDir>/src/icons$1",
-    "\\.(css)$": "<rootDir>/src/test-utils/cssStub.ts", // Stub CSS files
-    "\\.(svg)$": "<rootDir>/src/test-utils/svgStub.ts", // Stub CSS files
+    "\\.(css)$": "<rootDir>/src/test-utils/mocks/cssStub.ts", // Stub CSS files
+    "\\.(svg)$": "<rootDir>/src/test-utils/mocks/svgStub.ts", // Stub CSS files
   },
 };

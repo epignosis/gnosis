@@ -26,4 +26,8 @@ export default {
       shadowColor: "#0e59bb1a",
     },
   },
+  error: {
+    borderColor: colors.red.base,
+    background: colors.red.lightest,
+  },
 };

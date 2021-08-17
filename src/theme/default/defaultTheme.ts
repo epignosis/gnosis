@@ -1,5 +1,5 @@
 import { colors } from "./colors";
-import { button, formElements } from "./atoms";
+import { button, tag, chip, badge, loader, formElements } from "./atoms/";
 
 // ATOMS
 // Button
@@ -28,9 +28,10 @@ const defaultTheme = {
   },
   button,
   formElements,
-  loader: {
-    color: colors.blue.lightest,
-  },
+  loader,
+  chip,
+  tag,
+  badge,
 };
 
 export type GnosisTheme = typeof defaultTheme;

@@ -1,5 +1,5 @@
 import { colors } from "./colors";
-import { button } from "./atoms/";
+import { button, tag, chip, badge, loader } from "./atoms/";
 
 // ATOMS
 // Button
@@ -27,32 +27,10 @@ const defaultTheme = {
     hoverColor: colors.blue.lighter,
   },
   button,
-  loader: {
-    color: colors.blue.lightest,
-  },
-  chip: {
-    background: {
-      filter: colors.gray.darker,
-    },
-    color: {
-      filter: colors.white,
-    },
-  },
-  tag: {
-    background: {
-      course: "#A3DFE3",
-      card: "#B200A6",
-      new: colors.blue.light,
-    },
-    color: {
-      course: colors.gray.darker,
-      card: colors.white,
-      new: colors.white,
-    },
-  },
-  badge: {
-    background: colors.red.base,
-  },
+  loader,
+  chip,
+  tag,
+  badge,
 };
 
 export type GnosisTheme = typeof defaultTheme;

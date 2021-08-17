@@ -1,5 +1,5 @@
 import { colors } from "./colors";
-import { button } from "./atoms/";
+import { button, tag, chip, badge, loader } from "./atoms/";
 
 // ATOMS
 // Button
@@ -27,9 +27,10 @@ const defaultTheme = {
     hoverColor: colors.blue.lighter,
   },
   button,
-  loader: {
-    color: colors.blue.lightest,
-  },
+  loader,
+  chip,
+  tag,
+  badge,
 };
 
 export type GnosisTheme = typeof defaultTheme;

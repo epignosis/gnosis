@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Chip /> matches snapshot 1`] = `
+<div>
+  <div
+    class="css-lo603d-chip-chip"
+  >
+    This is a chip
+  </div>
+</div>
+`;

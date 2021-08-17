@@ -1,26 +1,22 @@
 import React from "react";
+import faker from "faker";
 import AspectRatio from "./AspectRatio";
 import { render, screen } from "@test-utils/render";
 
 describe("<AspectRatio />", () => {
+  const alt = faker.lorem.word();
+  const src = faker.image.imageUrl();
+
   it("renders correctly", () => {
     render(
       <AspectRatio ratio={[4, 3]}>
-        <img
-          src="https://d3j0t7vrtr92dk.cloudfront.net/test/1616506869_Def_Course.png?"
-          alt="An image"
-          height="100%"
-          width="100%"
-        />
+        <img src={src} alt={alt} height="100%" width="100%" />
       </AspectRatio>,
     );
 
-    const img = screen.getByAltText("An image");
+    const img = screen.getByAltText(alt);
 
-    expect(img).toHaveAttribute(
-      "src",
-      "https://d3j0t7vrtr92dk.cloudfront.net/test/1616506869_Def_Course.png?",
-    );
+    expect(img).toHaveAttribute("src", src);
   });
 
   it("matches snapshot", () => {

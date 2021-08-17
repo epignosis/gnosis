@@ -5,10 +5,13 @@ import { render, screen } from "@test-utils/render";
 import { CertificateSVG } from "@icons/core";
 
 describe("<Avatar />", () => {
+  const alt = faker.lorem.word();
+  const src = faker.image.imageUrl();
+
   it("renders with image", () => {
     const avatarData = {
-      src: "https://pbs.twimg.com/profile_images/1170277252858372097/zj_tU1kT_400x400.jpg",
-      alt: "John Tsevdos",
+      src: src,
+      alt: alt,
     };
     render(<Avatar {...avatarData} />);
 

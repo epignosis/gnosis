@@ -7,7 +7,7 @@ export type Size = "md" | "lg";
 
 export type ChipProps = Omit<React.HTMLAttributes<HTMLDivElement>, "css"> & {
   onClose?: (e: MouseEvent) => void;
-  size?: "md" | "lg";
+  size?: Size;
   bgColor?: "filter";
   children: string;
 };

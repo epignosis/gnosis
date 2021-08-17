@@ -5,7 +5,7 @@ import { avatar } from "./styles";
 export type Size = "xs" | "sm" | "md" | "lg" | "xl";
 
 export type AvatarBaseProps = {
-  size?: "xs" | "sm" | "md" | "lg" | "xl";
+  size?: Size;
   className?: string;
 };
 

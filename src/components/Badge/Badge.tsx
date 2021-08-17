@@ -6,11 +6,8 @@ export type Size = "md";
 export type Offset = { top: string; right: string };
 
 export type BadgeProps = {
-  size?: "md";
-  offset?: {
-    top: string;
-    right: string;
-  };
+  size?: Size;
+  offset?: Offset;
 };
 
 const Badge: FC<BadgeProps> = ({ size = "md", offset = { top: "0", right: "-8px" }, children }) => {

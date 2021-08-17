@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Alert> matches snapshot 1`] = `
+<div>
+  <div
+    class="css-k5zh3p-container-container"
+  >
+    <div
+      class="icon"
+    >
+      <test-file-stub
+        height="56"
+      />
+    </div>
+    <article>
+      <h3
+        class="css-1iyd91n-headingContainer-headingContainer"
+      >
+        Welcome
+      </h3>
+      <p>
+        My content!
+      </p>
+    </article>
+    <button
+      aria-label="Close alert"
+      class="close-btn"
+    >
+      <test-file-stub
+        height="32"
+      />
+    </button>
+  </div>
+</div>
+`;

@@ -19,7 +19,6 @@ export default {
   multiSelect: {
     hover: colors.gray.lighter,
   },
-<<<<<<< HEAD
   checkbox: {
     input: {
       background: colors.blue.base,
@@ -31,6 +30,4 @@ export default {
     borderColor: colors.red.base,
     background: colors.red.lightest,
   },
-=======
->>>>>>> 01e07b6 (feat: add Input & FileInput & Label components)
 };

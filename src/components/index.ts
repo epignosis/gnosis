@@ -6,6 +6,13 @@ export { default as Avatar } from "./Avatar/Avatar";
 export { default as Tag } from "./Tag/Tag";
 export { default as AspectRatio } from "./AspectRatio/AspectRatio";
 export { default as Badge } from "./Badge/Badge";
+export { default as Alert } from "./Alert/Alert";
+export { default as ProgressBar } from "./ProgressBar/ProgressBar";
+export { default as Tooltip } from "./Tooltip/Tooltip";
+export { default as Toaster } from "./Toaster/Toaster";
+export { default as Modal } from "./Modal/Modal";
+export { default as MediaPlayer } from "./MediaPlayer/MediaPlayer";
+export { default as Pagination } from "./Pagination/Pagination";
 
 // Typography
 export { default as Heading } from "./Heading/Heading";

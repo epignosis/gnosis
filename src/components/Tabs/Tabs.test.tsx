@@ -47,4 +47,16 @@ describe("<Tabs/>", () => {
 
     expect(tab2Content).toHaveTextContent(tab2Txt);
   });
+
+  it("matches snapshot", () => {
+    const { container } = render(
+      <Tabs>
+        <Tabs.TabPane title="Tab 1">Test tab 1</Tabs.TabPane>
+        <Tabs.TabPane title="Tab 2">Test tab 2</Tabs.TabPane>
+        <Tabs.TabPane title="Tab 3">Test tab 3</Tabs.TabPane>
+      </Tabs>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
 });

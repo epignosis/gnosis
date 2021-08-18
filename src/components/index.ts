@@ -12,6 +12,7 @@ export { default as Tooltip } from "./Tooltip/Tooltip";
 export { default as Toaster } from "./Toaster/Toaster";
 export { default as Modal } from "./Modal/Modal";
 export { default as MediaPlayer } from "./MediaPlayer/MediaPlayer";
+export { default as Pagination } from "./Pagination/Pagination";
 
 // Typography
 export { default as Heading } from "./Heading/Heading";

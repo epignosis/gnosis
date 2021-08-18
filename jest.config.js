@@ -24,6 +24,6 @@ module.exports = {
     "@theme(.*)$": "<rootDir>/src/theme$1",
     "@icons(.*)$": "<rootDir>/src/icons$1",
     "\\.(css)$": "<rootDir>/src/test-utils/mocks/cssStub.ts", // Stub CSS files
-    "\\.(svg)$": "<rootDir>/src/test-utils/mocks/svgStub.ts", // Stub CSS files
+    "\\.(svg)$": "<rootDir>/src/test-utils/mocks/svgStub.ts", // Stub SVG files
   },
 };

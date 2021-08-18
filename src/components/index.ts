@@ -15,3 +15,8 @@ export { default as Text } from "./Text/Text";
 export { default as Label } from "./FormElements/Label/Label";
 export { default as Input } from "./FormElements/Input/Input";
 export { default as Error } from "./FormElements/Error/Error";
+export { default as CheckboxGroup } from "./FormElements/CheckboxGroup/CheckboxGroup";
+export { default as MultiSelect } from "./FormElements/MultiSelect/MultiSelect";
+export { default as RadioButtonGroup } from "./FormElements/RadioButtonGroup/RadioButtonGroup";
+export { default as RadioGroup } from "./FormElements/RadioGroup/RadioGroup";
+export { default as Select } from "./FormElements/Select/Select";

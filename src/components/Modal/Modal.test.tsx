@@ -1,55 +1,60 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
+import faker from "faker";
 import Modal from "./Modal";
 import { render, screen } from "@test-utils/render";
 
 const mockedOnClose = jest.fn();
 
 describe("<Modal>", () => {
+  const headerTxt = faker.lorem.word();
+  const bodyTxt = faker.lorem.word();
+  const footerTxt = faker.lorem.word();
+
   it("renders correctly with Header, Body and Footer", () => {
     render(
       <Modal isOpen onClose={mockedOnClose}>
-        <Modal.Header>Test header</Modal.Header>
-        <Modal.Body>Test body</Modal.Body>
-        <Modal.Footer>Test footer</Modal.Footer>
+        <Modal.Header>{headerTxt}</Modal.Header>
+        <Modal.Body>{bodyTxt}</Modal.Body>
+        <Modal.Footer>{footerTxt}</Modal.Footer>
       </Modal>,
     );
-    const header = screen.getByText("Test header");
-    const body = screen.getByText("Test body");
-    const footer = screen.getByText("Test footer");
+    const header = screen.getByText(headerTxt);
+    const body = screen.getByText(bodyTxt);
+    const footer = screen.getByText(footerTxt);
 
-    expect(header).toHaveTextContent("Test header");
-    expect(body).toHaveTextContent("Test body");
-    expect(footer).toHaveTextContent("Test footer");
+    expect(header).toHaveTextContent(headerTxt);
+    expect(body).toHaveTextContent(bodyTxt);
+    expect(footer).toHaveTextContent(footerTxt);
   });
 
   it("renders correctly without Footer", () => {
     render(
       <Modal isOpen onClose={mockedOnClose}>
-        <Modal.Header>Test header</Modal.Header>
-        <Modal.Body>Test body</Modal.Body>
+        <Modal.Header>{headerTxt}</Modal.Header>
+        <Modal.Body>{bodyTxt}</Modal.Body>
       </Modal>,
     );
-    const header = screen.getByText("Test header");
-    const body = screen.getByText("Test body");
+    const header = screen.getByText(headerTxt);
+    const body = screen.getByText(bodyTxt);
     const footer = screen.queryByTestId("modal-footer");
 
-    expect(header).toHaveTextContent("Test header");
-    expect(body).toHaveTextContent("Test body");
+    expect(header).toHaveTextContent(headerTxt);
+    expect(body).toHaveTextContent(bodyTxt);
     expect(footer).not.toBeInTheDocument();
   });
 
   it("renders correctly without Header and Footer", () => {
     render(
       <Modal isOpen onClose={mockedOnClose}>
-        <Modal.Body>Test body</Modal.Body>
+        <Modal.Body>{bodyTxt}</Modal.Body>
       </Modal>,
     );
-    const body = screen.getByText("Test body");
+    const body = screen.getByText(bodyTxt);
     const header = screen.queryByTestId("modal-header");
     const footer = screen.queryByTestId("modal-footer");
 
-    expect(body).toHaveTextContent("Test body");
+    expect(body).toHaveTextContent(bodyTxt);
     expect(header).not.toBeInTheDocument();
     expect(footer).not.toBeInTheDocument();
   });
@@ -57,7 +62,7 @@ describe("<Modal>", () => {
   it("Header renders correctly with close btn", () => {
     render(
       <Modal isOpen onClose={mockedOnClose}>
-        <Modal.Header>Test header</Modal.Header>
+        <Modal.Header>{headerTxt}</Modal.Header>
       </Modal>,
     );
     const closeBtn = screen.getByRole("button");

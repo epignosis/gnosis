@@ -48,4 +48,39 @@ describe("<Pagination />", () => {
     expect(nextBtn).not.toBeNull();
     expect(previousBtn).not.toBeNull();
   });
+
+  it("matches snapshot with on page", () => {
+    const mockFn = jest.fn();
+    const { container } = render(<Pagination current={1} totalPages={1} onChange={mockFn} />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it("matches snapshot with 2 pages", () => {
+    const mockFn = jest.fn();
+    const { container } = render(<Pagination current={1} totalPages={2} onChange={mockFn} />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it("matches snapshot with no previous page", () => {
+    const mockFn = jest.fn();
+    const { container } = render(<Pagination current={1} totalPages={2} onChange={mockFn} />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it("matches snapshot with no next page", () => {
+    const mockFn = jest.fn();
+    const { container } = render(<Pagination current={2} totalPages={2} onChange={mockFn} />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it("matches snapshot with previous and next pages", () => {
+    const mockFn = jest.fn();
+    const { container } = render(<Pagination current={2} totalPages={4} onChange={mockFn} />);
+
+    expect(container).toMatchSnapshot();
+  });
 });

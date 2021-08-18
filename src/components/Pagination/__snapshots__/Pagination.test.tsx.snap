@@ -1,0 +1,316 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination /> matches snapshot with 2 pages 1`] = `
+<div>
+  <div
+    class="css-1vskcel-container-container"
+  >
+    <div>
+      Page
+    </div>
+    <div
+      class="current-page"
+    >
+      <div
+        class=" css-mqijmr-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+      >
+        <div
+          class="select-input-wrapper"
+        >
+          <select
+            id="pagination-page"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+          </select>
+          <span
+            class="carret-wrapper"
+          >
+            <svg-file-stub
+              height="24"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="total-pages"
+    >
+      of 
+      2
+    </div>
+    <button
+      class=" css-ac4rr9-btnContainer-btnContainer"
+      data-testid="next-page-btn"
+      name="Next page"
+    >
+      <span
+        class="btn-text"
+      >
+        Next
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<Pagination /> matches snapshot with no next page 1`] = `
+<div>
+  <div
+    class="css-1vskcel-container-container"
+  >
+    <button
+      class="previous-page-btn css-ac4rr9-btnContainer-btnContainer"
+      data-testid="previous-page-btn"
+      name="Previous page"
+    >
+      <span
+        class="btn-text"
+      >
+        Previous
+      </span>
+    </button>
+    <div>
+      Page
+    </div>
+    <div
+      class="current-page"
+    >
+      <div
+        class=" css-mqijmr-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+      >
+        <div
+          class="select-input-wrapper"
+        >
+          <select
+            id="pagination-page"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+          </select>
+          <span
+            class="carret-wrapper"
+          >
+            <svg-file-stub
+              height="24"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="total-pages"
+    >
+      of 
+      2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Pagination /> matches snapshot with no previous page 1`] = `
+<div>
+  <div
+    class="css-1vskcel-container-container"
+  >
+    <div>
+      Page
+    </div>
+    <div
+      class="current-page"
+    >
+      <div
+        class=" css-mqijmr-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+      >
+        <div
+          class="select-input-wrapper"
+        >
+          <select
+            id="pagination-page"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+          </select>
+          <span
+            class="carret-wrapper"
+          >
+            <svg-file-stub
+              height="24"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="total-pages"
+    >
+      of 
+      2
+    </div>
+    <button
+      class=" css-ac4rr9-btnContainer-btnContainer"
+      data-testid="next-page-btn"
+      name="Next page"
+    >
+      <span
+        class="btn-text"
+      >
+        Next
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<Pagination /> matches snapshot with on page 1`] = `
+<div>
+  <div
+    class="css-1vskcel-container-container"
+  >
+    <div>
+      Page
+    </div>
+    <div
+      class="current-page"
+    >
+      <div
+        class=" css-mqijmr-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+      >
+        <div
+          class="select-input-wrapper"
+        >
+          <select
+            id="pagination-page"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+          </select>
+          <span
+            class="carret-wrapper"
+          >
+            <svg-file-stub
+              height="24"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="total-pages"
+    >
+      of 
+      1
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Pagination /> matches snapshot with previous and next pages 1`] = `
+<div>
+  <div
+    class="css-1vskcel-container-container"
+  >
+    <button
+      class="previous-page-btn css-ac4rr9-btnContainer-btnContainer"
+      data-testid="previous-page-btn"
+      name="Previous page"
+    >
+      <span
+        class="btn-text"
+      >
+        Previous
+      </span>
+    </button>
+    <div>
+      Page
+    </div>
+    <div
+      class="current-page"
+    >
+      <div
+        class=" css-mqijmr-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+      >
+        <div
+          class="select-input-wrapper"
+        >
+          <select
+            id="pagination-page"
+          >
+            <option
+              value="1"
+            >
+              1
+            </option>
+            <option
+              value="2"
+            >
+              2
+            </option>
+            <option
+              value="3"
+            >
+              3
+            </option>
+            <option
+              value="4"
+            >
+              4
+            </option>
+          </select>
+          <span
+            class="carret-wrapper"
+          >
+            <svg-file-stub
+              height="24"
+            />
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="total-pages"
+    >
+      of 
+      4
+    </div>
+    <button
+      class=" css-ac4rr9-btnContainer-btnContainer"
+      data-testid="next-page-btn"
+      name="Next page"
+    >
+      <span
+        class="btn-text"
+      >
+        Next
+      </span>
+    </button>
+  </div>
+</div>
+`;

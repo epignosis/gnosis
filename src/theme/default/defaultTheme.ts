@@ -1,5 +1,5 @@
 import { colors } from "./colors";
-import { button, tag, chip, badge, alert } from "./atoms/";
+import { button, tag, chip, badge, alert, formElements } from "./atoms/";
 import { courseProgress, loader, tooltip, modal } from "./components/";
 
 // ATOMS
@@ -28,6 +28,7 @@ const defaultTheme = {
     hoverColor: colors.blue.lighter,
   },
   button,
+  formElements,
   loader,
   chip,
   tag,

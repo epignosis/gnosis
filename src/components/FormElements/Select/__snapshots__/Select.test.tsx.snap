@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Select /> matches snapshot 1`] = `
+<div>
+  <div
+    class=" css-mqijmr-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+  >
+    <label
+      class="css-xs6o3g-label-label"
+      for="test-select"
+    >
+      Test select input
+    </label>
+    <div
+      class="select-input-wrapper"
+    >
+      <select
+        id="test-select"
+      >
+        <option
+          value="rs"
+        >
+          Rust
+        </option>
+        <option
+          value="js"
+        >
+          JavaScript
+        </option>
+        <option
+          value="ts"
+        >
+          TypeScript
+        </option>
+      </select>
+      <span
+        class="carret-wrapper"
+      >
+        <svg-file-stub
+          height="24"
+        />
+      </span>
+    </div>
+  </div>
+</div>
+`;

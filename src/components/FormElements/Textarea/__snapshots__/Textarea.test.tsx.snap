@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Textarea /> matches snapshot 1`] = `
+<div>
+  <div
+    class="valid css-1f6dkts-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-textareaContainer-textareaContainer"
+  >
+    <label
+      class="css-xs6o3g-label-label"
+      for="test-textarea"
+    >
+      Test textarea
+    </label>
+    <textarea
+      id="test-textarea"
+      name="test"
+    />
+  </div>
+</div>
+`;

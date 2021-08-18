@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Radio /> matches snapshot 1`] = `
+<div>
+  <div
+    class="css-12utew3-radioButtonContainer-radioButtonContainer"
+  >
+    <input
+      id="testId"
+      type="radio"
+      value="testValue"
+    />
+    <label
+      for="testId"
+    >
+      Test label
+    </label>
+  </div>
+</div>
+`;
+
+exports[`<Radio /> matches snapshot with \`inline = true\` 1`] = `
+<div>
+  <div
+    class="css-ud70d6-radioButtonContainer-radioButtonContainer"
+  >
+    <input
+      id="testId"
+      type="radio"
+      value="testValue"
+    />
+    <label
+      for="testId"
+    >
+      Test label
+    </label>
+  </div>
+</div>
+`;

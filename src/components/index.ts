@@ -20,3 +20,4 @@ export { default as MultiSelect } from "./FormElements/MultiSelect/MultiSelect";
 export { default as RadioButtonGroup } from "./FormElements/RadioButtonGroup/RadioButtonGroup";
 export { default as RadioGroup } from "./FormElements/RadioGroup/RadioGroup";
 export { default as Select } from "./FormElements/Select/Select";
+export { default as Textarea } from "./FormElements/Textarea/Textarea";

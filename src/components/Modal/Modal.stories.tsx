@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Story } from "@storybook/react/types-6-0";
 import Modal from "./Modal";
-import { Button } from "@components";
+import { Button, Input } from "@components";
 
 export default {
   component: Modal,
@@ -82,7 +82,7 @@ const ModalContent = (): JSX.Element => {
       <Modal isOpen={isOpen} onClose={closeModal}>
         <Modal.Header>This is the modal title</Modal.Header>
         <Modal.Body>
-          {/* <Input
+          <Input
             id="password"
             type="password"
             label="Enter current password "
@@ -94,7 +94,7 @@ const ModalContent = (): JSX.Element => {
             label="Type new password"
             style={{ marginBottom: 16 }}
           />
-          <Input id="retype-psw" type="password" label="Retype password" /> */}
+          <Input id="retype-psw" type="password" label="Retype password" />
         </Modal.Body>
         <Modal.Footer style={{ textAlign: "right" }}>
           <Button color="secondary" onClick={closeModal} style={{ marginRight: "1rem" }}>

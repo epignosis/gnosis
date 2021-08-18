@@ -14,6 +14,7 @@ export { default as Modal } from "./Modal/Modal";
 export { default as MediaPlayer } from "./MediaPlayer/MediaPlayer";
 export { default as Pagination } from "./Pagination/Pagination";
 export { default as Tabs } from "./Tabs/Tabs";
+export { default as Result } from "./Result/Result";
 
 // Typography
 export { default as Heading } from "./Heading/Heading";

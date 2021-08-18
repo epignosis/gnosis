@@ -9,7 +9,7 @@ export type InputSize = "md" | "lg";
 
 export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size"> & {
   status?: "valid" | "error";
-  size?: "md" | "lg";
+  size?: InputSize;
   iconBefore?: IconType;
   iconAfter?: IconType;
   ref?: Ref<HTMLInputElement>;

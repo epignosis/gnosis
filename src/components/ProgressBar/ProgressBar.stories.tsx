@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Story } from "@storybook/react/types-6-0";
+import { Story } from "@storybook/react";
 import ProgressBar, { ProgressBarProps } from "./ProgressBar";
 
 export default {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react/types-6-0";
+import { Story } from "@storybook/react";
 import { toast } from "react-toastify";
 import Toaster from "./Toaster";
 import { Heading, Button } from "@components";

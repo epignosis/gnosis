@@ -1,0 +1,160 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MultiSelect /> matches snapshot 1`] = `
+<div>
+  <div
+    class=" css-kh89cj-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
+  >
+    <label
+      class="css-xs6o3g-label-label"
+      for="downshift-3-toggle-button"
+    >
+      Test Multi-select
+    </label>
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-labelledby="downshift-3-label downshift-3-toggle-button"
+      class="select-btn"
+      id="downshift-3-toggle-button"
+      type="button"
+    >
+      Test placeholder
+      <svg-file-stub
+        height="24"
+      />
+    </button>
+    <ul
+      aria-labelledby="downshift-3-label"
+      data-testid="list-container"
+      id="downshift-3-menu"
+      role="listbox"
+      tabindex="-1"
+    >
+      <div
+        class="content"
+      >
+        <span
+          class="css-26eo9i-textContainer-textContainer"
+          data-testid="text-component"
+        >
+           Select one or more items
+        </span>
+        <button
+          class="close-btn"
+        >
+          <svg-file-stub
+            height="20"
+          />
+        </button>
+      </div>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`<MultiSelect /> matches snapshot with \`altLabel = true\` 1`] = `
+<div>
+  <div
+    class="alt-label css-kh89cj-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
+  >
+    <label
+      class="css-xs6o3g-label-label"
+      for="downshift-5-toggle-button"
+    >
+      Test Multi-select
+    </label>
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-labelledby="downshift-5-label downshift-5-toggle-button"
+      class="select-btn"
+      id="downshift-5-toggle-button"
+      type="button"
+    >
+      Test placeholder
+      <svg-file-stub
+        height="24"
+      />
+    </button>
+    <ul
+      aria-labelledby="downshift-5-label"
+      data-testid="list-container"
+      id="downshift-5-menu"
+      role="listbox"
+      tabindex="-1"
+    >
+      <div
+        class="content"
+      >
+        <span
+          class="css-26eo9i-textContainer-textContainer"
+          data-testid="text-component"
+        >
+           Select one or more items
+        </span>
+        <button
+          class="close-btn"
+        >
+          <svg-file-stub
+            height="20"
+          />
+        </button>
+      </div>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`<MultiSelect /> matches snapshot with \`block = false\` 1`] = `
+<div>
+  <div
+    class=" css-g1aj0v-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
+  >
+    <label
+      class="css-xs6o3g-label-label"
+      for="downshift-4-toggle-button"
+    >
+      Test Multi-select
+    </label>
+    <button
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      aria-labelledby="downshift-4-label downshift-4-toggle-button"
+      class="select-btn"
+      id="downshift-4-toggle-button"
+      type="button"
+    >
+      Test placeholder
+      <svg-file-stub
+        height="24"
+      />
+    </button>
+    <ul
+      aria-labelledby="downshift-4-label"
+      data-testid="list-container"
+      id="downshift-4-menu"
+      role="listbox"
+      tabindex="-1"
+    >
+      <div
+        class="content"
+      >
+        <span
+          class="css-26eo9i-textContainer-textContainer"
+          data-testid="text-component"
+        >
+           Select one or more items
+        </span>
+        <button
+          class="close-btn"
+        >
+          <svg-file-stub
+            height="20"
+          />
+        </button>
+      </div>
+    </ul>
+  </div>
+</div>
+`;

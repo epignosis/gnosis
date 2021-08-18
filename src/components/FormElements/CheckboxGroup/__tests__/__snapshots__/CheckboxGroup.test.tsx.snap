@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CheckBoxGroup /> matches snapshot 1`] = `
+<div>
+  <fieldset
+    class="css-1uf8pav-checkboxGroupContainer-checkboxGroupContainer"
+  >
+    <legend>
+      <div
+        class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+      >
+        <input
+          aria-checked="false"
+          id="Test groupname-container"
+          name="Test groupname"
+          type="checkbox"
+          value=""
+        />
+        <label
+          for="Test groupname-container"
+        >
+          <span
+            aria-hidden="true"
+            class="shadow-element"
+            tabindex="-1"
+          />
+          Test groupname
+        </label>
+      </div>
+    </legend>
+    <ul>
+      <li>
+        <div
+          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+        >
+          <input
+            id="Test groupname-testValue"
+            name="testName"
+            type="checkbox"
+            value="testValue"
+          />
+          <label
+            for="Test groupname-testValue"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            Test label
+          </label>
+        </div>
+      </li>
+    </ul>
+  </fieldset>
+</div>
+`;
+
+exports[`<CheckBoxGroup /> matches snapshot with \`inline = true\` 1`] = `
+<div>
+  <fieldset
+    class="css-1ovt4sw-checkboxGroupContainer-checkboxGroupContainer"
+  >
+    <legend>
+      <div
+        class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+      >
+        <input
+          aria-checked="false"
+          id="Test groupname-container"
+          name="Test groupname"
+          type="checkbox"
+          value=""
+        />
+        <label
+          for="Test groupname-container"
+        >
+          <span
+            aria-hidden="true"
+            class="shadow-element"
+            tabindex="-1"
+          />
+          Test groupname
+        </label>
+      </div>
+    </legend>
+    <ul>
+      <li>
+        <div
+          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+        >
+          <input
+            id="Test groupname-testValue"
+            name="testName"
+            type="checkbox"
+            value="testValue"
+          />
+          <label
+            for="Test groupname-testValue"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            Test label
+          </label>
+        </div>
+      </li>
+    </ul>
+  </fieldset>
+</div>
+`;

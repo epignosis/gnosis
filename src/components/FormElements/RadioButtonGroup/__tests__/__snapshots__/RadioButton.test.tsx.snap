@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RadioButton /> matches snapshot with \`size = lg\` 1`] = `
+<div>
+  <button
+    aria-selected="false"
+    class=" css-wjxnxc-radioButton-radioButton"
+    id="radio-0"
+  >
+    Test label
+  </button>
+</div>
+`;
+
+exports[`<RadioButton /> matches snapshot with \`size = md\` 1`] = `
+<div>
+  <button
+    aria-selected="false"
+    class=" css-1giuk56-radioButton-radioButton"
+    id="radio-0"
+  >
+    Test label
+  </button>
+</div>
+`;

@@ -1,8 +1,5 @@
 import { colors } from "./colors";
-import { button, tag, chip, badge, loader } from "./atoms/";
-
-// ATOMS
-// Button
+import { button, tag, chip, badge, loader, formElements } from "./atoms/";
 
 const defaultTheme = {
   body: {
@@ -27,6 +24,7 @@ const defaultTheme = {
     hoverColor: colors.blue.lighter,
   },
   button,
+  formElements,
   loader,
   chip,
   tag,

@@ -11,6 +11,7 @@ export { default as ProgressBar } from "./ProgressBar/ProgressBar";
 export { default as Tooltip } from "./Tooltip/Tooltip";
 export { default as Toaster } from "./Toaster/Toaster";
 export { default as Modal } from "./Modal/Modal";
+export { default as MediaPlayer } from "./MediaPlayer/MediaPlayer";
 
 // Typography
 export { default as Heading } from "./Heading/Heading";

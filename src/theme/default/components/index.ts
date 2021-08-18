@@ -6,3 +6,4 @@ export { default as tabs } from "./tabs";
 export { default as result } from "./result";
 export { default as breadcrumb } from "./breadcrumb";
 export { default as drawer } from "./drawer";
+export { default as sidebar } from "./sidebar";

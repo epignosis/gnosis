@@ -8,8 +8,8 @@ const mockedOnClose = jest.fn();
 
 describe("<Modal>", () => {
   const headerTxt = faker.lorem.word();
-  const bodyTxt = faker.lorem.word();
-  const footerTxt = faker.lorem.word();
+  const bodyTxt = faker.lorem.sentence();
+  const footerTxt = faker.lorem.words();
 
   it("renders correctly with Header, Body and Footer", () => {
     render(

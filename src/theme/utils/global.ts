@@ -14,6 +14,7 @@ export default ({ body, link }: Theme): SerializedStyles => css`
 
   a {
     color: ${link.color};
+    text-decoration: none;
 
     &:hover {
       color: ${link.hoverColor};

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Toaster/> matches snapshot 1`] = `
+<div>
+  <div
+    class="Toastify"
+  />
+  <button>
+    test click
+  </button>
+</div>
+`;

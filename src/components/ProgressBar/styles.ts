@@ -7,14 +7,14 @@ const progressBarSize = {
 };
 
 export const container = (
-  { courseProgress }: Theme,
+  { progress }: Theme,
   { percent, size, rounded }: { percent: number; size: Size; rounded: boolean },
 ): SerializedStyles => {
   return css`
     position: relative;
     height: ${progressBarSize[size]};
     width: 100%;
-    background-color: ${courseProgress.background};
+    background-color: ${progress.background};
     ${rounded && "border-radius: 5px"};
     overflow: hidden;
 
@@ -26,7 +26,7 @@ export const container = (
       height: 100%;
       min-width: ${percent ? "20%" : "0%"};
       width: ${percent}%;
-      background-color: ${courseProgress.progressBackground};
+      background-color: ${progress.progressBackground};
     }
 
     div {
@@ -40,7 +40,7 @@ export const container = (
       padding-left: 1rem;
       justify-content: flex-end;
       align-items: center;
-      color: ${courseProgress.percentColor};
+      color: ${progress.percentColor};
     }
   `;
 };

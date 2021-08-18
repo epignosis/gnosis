@@ -1,6 +1,6 @@
 import { colors } from "./colors";
 import { button, tag, chip, badge, alert, formElements } from "./atoms/";
-import { courseProgress, loader, tooltip, modal } from "./components/";
+import { progress, loader, tooltip, modal } from "./components/";
 
 // ATOMS
 // Button
@@ -34,7 +34,7 @@ const defaultTheme = {
   tag,
   badge,
   alert,
-  courseProgress,
+  progress,
   tooltip,
   modal,
 };

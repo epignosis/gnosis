@@ -5,3 +5,4 @@ export { default as modal } from "./modal";
 export { default as tabs } from "./tabs";
 export { default as result } from "./result";
 export { default as breadcrumb } from "./breadcrumb";
+export { default as drawer } from "./drawer";

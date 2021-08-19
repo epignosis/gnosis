@@ -1,6 +1,6 @@
 import React, { Children, cloneElement, FC, ReactElement, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { AnimatePresence, m, Variants, MotionStyle } from "framer-motion";
+import { AnimatePresence, m, Variants, MotionStyle, domAnimation, LazyMotion } from "framer-motion";
 import classNames from "classnames";
 import { drawerContainer } from "./styles";
 import Header, { HeaderProps } from "./components/Header";
@@ -77,29 +77,31 @@ const Drawer: FC<DrawerProps> & DrawerCompoundProps = (props) => {
     "placement-right": placement === "right",
   });
   const drawer = (
-    <AnimatePresence>
-      {isOpen && (
-        <div css={drawerContainer(width)}>
-          {showMask && <Mask onClose={onClose} />}
-          <m.div
-            id="drawer-dialog"
-            style={dialogStyles}
-            className={dialogClassNames}
-            // ref={dialogElement}
-            aria-expanded={isOpen}
-            aria-hidden={!isOpen}
-            aria-modal="true"
-            initial="initial"
-            animate="expanded"
-            exit="initial"
-            variants={dialogVariants}
-            custom={{ placement, width }}
-          >
-            {clonedChildren}
-          </m.div>
-        </div>
-      )}
-    </AnimatePresence>
+    <LazyMotion features={domAnimation}>
+      <AnimatePresence>
+        {isOpen && (
+          <div css={drawerContainer(width)}>
+            {showMask && <Mask onClose={onClose} />}
+            <m.div
+              id="drawer-dialog"
+              style={dialogStyles}
+              className={dialogClassNames}
+              // ref={dialogElement}
+              aria-expanded={isOpen}
+              aria-hidden={!isOpen}
+              aria-modal="true"
+              initial="initial"
+              animate="expanded"
+              exit="initial"
+              variants={dialogVariants}
+              custom={{ placement, width }}
+            >
+              {clonedChildren}
+            </m.div>
+          </div>
+        )}
+      </AnimatePresence>
+    </LazyMotion>
   );
 
   useEffect(() => {

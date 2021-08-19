@@ -1,6 +1,6 @@
 import { colors } from "./colors";
 import { button, tag, chip, badge, alert, formElements } from "./atoms/";
-import { progress, loader, tooltip, modal, tabs, result } from "./components/";
+import { progress, loader, tooltip, modal, tabs, result, breadcrumb } from "./components/";
 
 // ATOMS
 // Button
@@ -39,6 +39,7 @@ const defaultTheme = {
   modal,
   tabs,
   result,
+  breadcrumb,
 };
 
 export type GnosisTheme = typeof defaultTheme;

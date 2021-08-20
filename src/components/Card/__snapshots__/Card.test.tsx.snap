@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card/> matches snapshot 1`] = `
+<div>
+  <article
+    class="css-u1k06h-cardContainer-cardContainer"
+  >
+    <div
+      class="css-14dee1b-aspectRatioContainer-aspectRatioContainer"
+    >
+      <div
+        class="aspect-ratio-wrapper"
+      >
+        <section
+          class="css-pcvco1-courseHeaderContainer"
+        >
+          <img
+            alt="An image"
+            class="css-13ekei5-thumbnailContainer"
+            src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
+          />
+        </section>
+      </div>
+    </div>
+    <section
+      class="css-1m2q5o0-cardBody"
+    >
+      <a>
+        Something
+      </a>
+      <span>
+        Details
+      </span>
+    </section>
+  </article>
+</div>
+`;
+
+exports[`<Card/> matches snapshot with drawer 1`] = `
+<div>
+  <article
+    class="css-u1k06h-cardContainer-cardContainer"
+  >
+    <section
+      class="css-1siuu8c-drawerContainer-drawerContainer"
+      style="width: 0%; overflow-y: hidden;"
+    >
+      <div
+        class="content-wrapper"
+        style="opacity: 0;"
+      >
+        <div>
+          <header>
+            <div>
+              Drawer title
+            </div>
+            <button>
+              <svg-file-stub
+                height="16"
+              />
+            </button>
+          </header>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam labore ratione error adipisci dolorem corporis voluptatibus quia nihil quaerat ipsa tempora, in neque facere doloremque aut tempore ullam molestias necessitatibus!
+          </p>
+        </div>
+        <footer>
+          Drawer footer
+        </footer>
+      </div>
+    </section>
+  </article>
+</div>
+`;
+
+exports[`<Card/> matches snapshot with hover 1`] = `
+<div>
+  <article
+    class="css-u1k06h-cardContainer-cardContainer"
+  >
+    <div
+      class="css-14dee1b-aspectRatioContainer-aspectRatioContainer"
+    >
+      <div
+        class="aspect-ratio-wrapper"
+      >
+        <section
+          class="css-pcvco1-courseHeaderContainer"
+        >
+          <img
+            alt="An image"
+            class="css-13ekei5-thumbnailContainer"
+            src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
+          />
+          <div
+            class="css-eo7ul9-hoverContainer-hoverContainer"
+            style="opacity: 0;"
+          >
+            <div
+              class="hover-wrapper"
+              style="display: none;"
+            >
+              Hover text
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </article>
+</div>
+`;
+
+exports[`<Card/> matches snapshot with overlay 1`] = `
+<div>
+  <article
+    class="css-u1k06h-cardContainer-cardContainer"
+  >
+    <div
+      class="css-12e19c2-overlayContainer-overlayContainer"
+    >
+      Hello Overlay
+    </div>
+    <div
+      class="css-14dee1b-aspectRatioContainer-aspectRatioContainer"
+    >
+      <div
+        class="aspect-ratio-wrapper"
+      >
+        <section
+          class="css-pcvco1-courseHeaderContainer"
+        >
+          <img
+            alt="An image"
+            class="css-13ekei5-thumbnailContainer"
+            src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
+          />
+        </section>
+      </div>
+    </div>
+  </article>
+</div>
+`;

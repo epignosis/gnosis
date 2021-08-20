@@ -18,6 +18,7 @@ export { default as Result } from "./Result/Result";
 export { default as Breadcrumb } from "./Breadcrumb/Breadcrumb";
 export { default as Drawer } from "./Drawer/Drawer";
 export { default as Table } from "./Table/Table";
+export { default as Sidebar } from "./Sidebar/Sidebar";
 
 // Typography
 export { default as Heading } from "./Heading/Heading";

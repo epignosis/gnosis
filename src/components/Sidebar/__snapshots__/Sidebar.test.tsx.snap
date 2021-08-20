@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Sidebar/> matches snapshot 1`] = `
+<div>
+  <nav
+    class="css-1mig03n-mainNavContainer-mainNavContainer"
+    id="sidebar"
+    style="min-width: 15rem;"
+  >
+    <div
+      class="nav-items-wrapper"
+    >
+      <button
+        class="css-hnt32k-navHandleContainer-navHandleContainer"
+      >
+        <div
+          class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+        >
+          <svg-file-stub
+            height="32"
+          />
+          <div
+            class="title"
+            style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+          >
+            Menu
+          </div>
+        </div>
+      </button>
+      <div
+        style="display: flex; flex-direction: column; justify-content: space-between; flex: 1;"
+      >
+        <ul
+          style="list-style: none; padding: 0px; margin: 0px;"
+        >
+          <li>
+            <a
+              href="www.google.com"
+              style="display: block;"
+            >
+              <div
+                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+              >
+                <svg-file-stub
+                  height="32"
+                />
+                <div
+                  class="title"
+                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                >
+                  Home
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="www.google.com"
+              style="display: block;"
+            >
+              <div
+                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+              >
+                <svg-file-stub
+                  height="32"
+                />
+                <div
+                  class="title"
+                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                >
+                  My courses
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="www.google.com"
+              style="display: block;"
+            >
+              <div
+                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+              >
+                <svg-file-stub
+                  height="32"
+                />
+                <div
+                  class="title"
+                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                >
+                  Catalog
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="www.google.com"
+              style="display: block;"
+            >
+              <div
+                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+              >
+                <svg-file-stub
+                  height="32"
+                />
+                <div
+                  class="title"
+                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                >
+                  Calendar
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <ul
+          style="list-style: none; padding: 0px; margin: 0px;"
+        >
+          <li>
+            <a
+              href="www.google.com"
+              style="display: block;"
+            >
+              <div
+                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+              >
+                <svg-file-stub
+                  height="32"
+                />
+                <div
+                  class="title"
+                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                >
+                  Messages
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="www.google.com"
+              style="display: block;"
+            >
+              <div
+                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+              >
+                <svg-file-stub
+                  height="32"
+                />
+                <div
+                  class="title"
+                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                >
+                  Discussions
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="www.google.com"
+              style="display: block;"
+            >
+              <div
+                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+              >
+                <svg-file-stub
+                  height="32"
+                />
+                <div
+                  class="title"
+                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                >
+                  Notifications
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="www.google.com"
+              style="display: block;"
+            >
+              <div
+                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+              >
+                <svg-file-stub
+                  height="32"
+                />
+                <div
+                  class="title"
+                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                >
+                  Help
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="www.google.com"
+              style="display: block;"
+            >
+              <div
+                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+              >
+                <figure
+                  class="css-1al2x53-avatar-avatar"
+                >
+                  <span
+                    data-testid="avatar-children-container"
+                  >
+                    DS
+                  </span>
+                </figure>
+                <div
+                  class="title"
+                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                >
+                  My profile
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+`;

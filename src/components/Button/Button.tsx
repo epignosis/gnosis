@@ -6,7 +6,7 @@ import { btnContainer } from "./styles";
 import { Loader } from "@components";
 import { IconType, PolymorphicComponentProps } from "types/common";
 
-export type Color = "primary" | "secondary" | "tertiary" | "danger" | "success";
+export type Color = "primary" | "secondary" | "danger" | "success";
 export type Size = "md" | "lg";
 
 export type Props = {
@@ -21,7 +21,7 @@ export type Props = {
   disabled?: boolean;
   rounded?: boolean;
   children: ReactNode;
-  variant?: "solid" | "ghost";
+  variant?: "solid" | "outline" | "ghost" | "link";
 };
 
 export type ButtonProps<C extends ElementType> = PolymorphicComponentProps<C, Props>;
@@ -73,7 +73,10 @@ const Button = <C extends ElementType = "button">(props: ButtonProps<C>): ReactE
     [className]: Boolean(className),
     disabled: disabled || isLoading,
     rounded,
+    solid: variant === "solid",
+    outline: variant === "outline",
     ghost: variant === "ghost",
+    link: variant === "link",
   });
 
   return (

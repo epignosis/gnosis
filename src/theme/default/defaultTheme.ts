@@ -10,6 +10,7 @@ import {
   breadcrumb,
   drawer,
   sidebar,
+  card,
 } from "./components/";
 
 // ATOMS
@@ -47,6 +48,7 @@ const defaultTheme = {
   progress,
   tooltip,
   modal,
+  card,
   tabs,
   result,
   breadcrumb,

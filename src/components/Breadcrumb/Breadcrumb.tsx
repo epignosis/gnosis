@@ -1,0 +1,42 @@
+import React, { FC, ReactNode } from "react";
+import { createPortal } from "react-dom";
+import { SerializedStyles } from "@emotion/react";
+import { container } from "./styles";
+
+export type BreadcrumbItemProps = {
+  current?: boolean;
+};
+
+const Item: FC<BreadcrumbItemProps> = ({ children, current = false }) => {
+  return <li className={current ? "current" : ""}>{children}</li>;
+};
+
+export type BreadcrumbProps = {
+  breadcrumbEl: Element;
+  children: ReactNode;
+  separator: string;
+};
+
+export type BreadcrumbCompoundProps = {
+  Item: FC<BreadcrumbItemProps>;
+};
+
+const Breadcrumb: FC<BreadcrumbProps> & BreadcrumbCompoundProps = ({
+  breadcrumbEl,
+  children,
+  separator,
+}) => {
+  const breadcrumb = (
+    <nav
+      css={(theme): SerializedStyles => container(theme, { separator })}
+      aria-label="breadcrumbs"
+    >
+      <ol>{children}</ol>
+    </nav>
+  );
+  return createPortal(breadcrumb, breadcrumbEl);
+};
+
+Breadcrumb.Item = Item;
+
+export default Breadcrumb;

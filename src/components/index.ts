@@ -13,6 +13,11 @@ export { default as Toaster } from "./Toaster/Toaster";
 export { default as Modal } from "./Modal/Modal";
 export { default as MediaPlayer } from "./MediaPlayer/MediaPlayer";
 export { default as Pagination } from "./Pagination/Pagination";
+export { default as Tabs } from "./Tabs/Tabs";
+export { default as Result } from "./Result/Result";
+export { default as Breadcrumb } from "./Breadcrumb/Breadcrumb";
+export { default as Drawer } from "./Drawer/Drawer";
+export { default as Table } from "./Table/Table";
 
 // Typography
 export { default as Heading } from "./Heading/Heading";

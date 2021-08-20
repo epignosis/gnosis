@@ -43,7 +43,7 @@ const Template: Story<{ isOverlayShow: boolean; isDrawerOpen: boolean }> = ({
         doloremque aut tempore ullam molestias necessitatibus!
       </Card.Drawer>
 
-      <Card.Header to="/">
+      <Card.Header>
         <Card.Thumbnail
           src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
           alt="An image"

@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Table> matches snapshot with footer 1`] = `
+<div>
+  <div
+    class="css-1ap5vgl-tableContainer"
+  >
+    <div
+      class="table-container"
+    >
+      <table
+        role="table"
+      >
+        <thead>
+          <tr
+            role="row"
+          >
+            <th
+              colspan="1"
+              role="columnheader"
+            >
+              Love level
+            </th>
+            <th
+              colspan="1"
+              role="columnheader"
+            >
+              Awesomeness
+            </th>
+            <th
+              colspan="1"
+              role="columnheader"
+            >
+              Favorite framework
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          role="rowgroup"
+        >
+          <tr
+            data-testid="body-row"
+            role="row"
+          >
+            <td
+              role="cell"
+            >
+              You'll find no such thing here
+            </td>
+            <td
+              role="cell"
+            >
+              Dino awesome
+            </td>
+            <td
+              role="cell"
+            >
+              None
+            </td>
+          </tr>
+          <tr
+            data-testid="body-row"
+            role="row"
+          >
+            <td
+              role="cell"
+            >
+              To infinity and beyond!
+            </td>
+            <td
+              role="cell"
+            >
+              Super awesome
+            </td>
+            <td
+              role="cell"
+            >
+              <a
+                href="https://github.com/tokio-rs/tokio"
+                rel="noreferrer"
+                target="_blank"
+              >
+                tokio-rs/tokio
+              </a>
+            </td>
+          </tr>
+          <tr
+            data-testid="body-row"
+            role="row"
+          >
+            <td
+              role="cell"
+            >
+              Much love
+            </td>
+            <td
+              role="cell"
+            >
+              Such maze
+            </td>
+            <td
+              role="cell"
+            >
+              <a
+                href="https://reactjs.org/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                React
+              </a>
+            </td>
+          </tr>
+          <tr
+            data-testid="body-row"
+            role="row"
+          >
+            <td
+              role="cell"
+            >
+              You'll find no such thing here
+            </td>
+            <td
+              role="cell"
+            >
+              Dino awesome
+            </td>
+            <td
+              role="cell"
+            >
+              None
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <footer>
+      <div>
+        Test footer
+      </div>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`<Table> matches snapshot without footer 1`] = `
+<div>
+  <div
+    class="css-1ap5vgl-tableContainer"
+  >
+    <div
+      class="table-container"
+    >
+      <table
+        role="table"
+      >
+        <thead>
+          <tr
+            role="row"
+          >
+            <th
+              colspan="1"
+              role="columnheader"
+            >
+              Love level
+            </th>
+            <th
+              colspan="1"
+              role="columnheader"
+            >
+              Awesomeness
+            </th>
+            <th
+              colspan="1"
+              role="columnheader"
+            >
+              Favorite framework
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          role="rowgroup"
+        >
+          <tr
+            data-testid="body-row"
+            role="row"
+          >
+            <td
+              role="cell"
+            >
+              You'll find no such thing here
+            </td>
+            <td
+              role="cell"
+            >
+              Dino awesome
+            </td>
+            <td
+              role="cell"
+            >
+              None
+            </td>
+          </tr>
+          <tr
+            data-testid="body-row"
+            role="row"
+          >
+            <td
+              role="cell"
+            >
+              To infinity and beyond!
+            </td>
+            <td
+              role="cell"
+            >
+              Super awesome
+            </td>
+            <td
+              role="cell"
+            >
+              <a
+                href="https://github.com/tokio-rs/tokio"
+                rel="noreferrer"
+                target="_blank"
+              >
+                tokio-rs/tokio
+              </a>
+            </td>
+          </tr>
+          <tr
+            data-testid="body-row"
+            role="row"
+          >
+            <td
+              role="cell"
+            >
+              Much love
+            </td>
+            <td
+              role="cell"
+            >
+              Such maze
+            </td>
+            <td
+              role="cell"
+            >
+              <a
+                href="https://reactjs.org/"
+                rel="noreferrer"
+                target="_blank"
+              >
+                React
+              </a>
+            </td>
+          </tr>
+          <tr
+            data-testid="body-row"
+            role="row"
+          >
+            <td
+              role="cell"
+            >
+              You'll find no such thing here
+            </td>
+            <td
+              role="cell"
+            >
+              Dino awesome
+            </td>
+            <td
+              role="cell"
+            >
+              None
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;

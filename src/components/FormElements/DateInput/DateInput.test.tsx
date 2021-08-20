@@ -28,8 +28,9 @@ describe("<DateInput />", () => {
   });
 
   it("matches snapshot", () => {
+    const date = new Date("Thu Aug 19 2021 13:29:16 GMT+0300 (Eastern European Summer Time)");
     const { container } = render(
-      <DateInput id="test-date-input" label="Some date" value={new Date()} onChange={jest.fn()} />,
+      <DateInput id="test-date-input" label="Some date" value={date} onChange={jest.fn()} />,
     );
 
     expect(container).toMatchSnapshot();

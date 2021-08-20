@@ -25,7 +25,7 @@ exports[`<DateInput /> matches snapshot 1`] = `
           >
             <input
               id="test-date-input"
-              value="08/18/2021"
+              value="08/19/2021"
             />
             <span
               class="suffix-icon"

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Grid /> matches snapshot 1`] = `
+<div>
+  <div
+    class="css-yqr4i5-gridContainer-gridContainer"
+  >
+    <div
+      class="css-1is4t0f-gridItem-gridItem"
+    >
+      Test element
+    </div>
+    <div
+      class="css-1is4t0f-gridItem-gridItem"
+    >
+      Test element
+    </div>
+    <div
+      class="css-1is4t0f-gridItem-gridItem"
+    >
+      Test element
+    </div>
+    <div
+      class="css-1is4t0f-gridItem-gridItem"
+    >
+      Test element
+    </div>
+    <div
+      class="css-1is4t0f-gridItem-gridItem"
+    >
+      Test element
+    </div>
+  </div>
+</div>
+`;

@@ -5,6 +5,9 @@ import Breadcrumb, { BreadcrumbProps } from "./Breadcrumb";
 export default {
   component: Breadcrumb,
   title: "Components/Breadcrumb",
+  parameters: {
+    controls: { hideNoControlsWarning: true },
+  },
 };
 
 const breadcrumbPortal = document.createElement("div");

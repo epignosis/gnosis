@@ -20,4 +20,8 @@ export default ({ body, link }: Theme): SerializedStyles => css`
       color: ${link.hoverColor};
     }
   }
+
+  button {
+    color: ${body.color};
+  }
 `;

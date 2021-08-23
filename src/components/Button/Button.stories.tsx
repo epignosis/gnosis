@@ -10,13 +10,7 @@ export default {
     color: {
       control: {
         type: "select",
-        options: ["primary", "secondary", "tertiary", "danger", "success"],
-      },
-    },
-    variant: {
-      control: {
-        type: "select",
-        options: ["solid", "ghost"],
+        options: ["primary", "secondary", "danger", "success"],
       },
     },
   },
@@ -27,7 +21,6 @@ export default {
     noGutters: false,
     rounded: false,
     as: "button",
-    variant: "solid",
   },
 };
 
@@ -35,9 +28,21 @@ const Template: Story<Props> = (args) => (
   <>
     <div style={{ marginBottom: 16 }}>
       <Button {...args} />
+      <span style={{ marginRight: 16 }} />
+      <Button {...args} variant="outline" />
+      <span style={{ marginRight: 16 }} />
+      <Button {...args} variant="ghost" />
+      <span style={{ marginRight: 16 }} />
+      <Button {...args} variant="link" />
     </div>
     <div style={{ marginBottom: 16 }}>
       <Button size="lg" {...args} />
+      <span style={{ marginRight: 16 }} />
+      <Button size="lg" {...args} variant="outline" />
+      <span style={{ marginRight: 16 }} />
+      <Button size="lg" {...args} variant="ghost" />
+      <span style={{ marginRight: 16 }} />
+      <Button size="lg" {...args} variant="link" />
     </div>
   </>
 );
@@ -54,13 +59,6 @@ export const Secondary = Template.bind({});
 Secondary.args = {
   color: "secondary",
   children: "Secondary",
-};
-
-export const Tertiary = Template.bind({});
-
-Tertiary.args = {
-  color: "tertiary",
-  children: "Tertiary",
 };
 
 export const Danger = Template.bind({});

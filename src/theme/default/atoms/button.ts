@@ -26,6 +26,14 @@ export default {
       color: colors.blue.base,
       background: colors.blue.lightest,
     },
+    outline: {
+      color: colors.blue.base,
+      borderColor: colors.blue.base,
+    },
+    link: {
+      color: colors.blue.base,
+      hoverColor: colors.blue.lightest,
+    },
   },
   secondary: {
     default: {
@@ -47,26 +55,13 @@ export default {
       color: colors.gray.dark,
       background: colors.gray.light,
     },
-  },
-  tertiary: {
-    default: {
-      background: colors.white,
-      borderColor: "#9AB6D9",
-      color: colors.blue.light,
+    outline: {
+      color: colors.gray.darker,
+      borderColor: "#EDEFF3",
     },
-    hover: {
-      background: colors.blue.lightest,
-      borderColor: colors.blue.lightest,
-      color: colors.white,
-    },
-    active: {
-      background: colors.blue.lighter,
-      borderColor: colors.blue.lighter,
-      color: colors.white,
-    },
-    ghost: {
-      color: colors.blue.base,
-      background: colors.blue.lightest,
+    link: {
+      color: "#232323",
+      hoverColor: colors.blue.lightest,
     },
   },
   danger: {
@@ -89,6 +84,14 @@ export default {
       color: colors.red.base,
       background: colors.red.lightest,
     },
+    outline: {
+      color: "#F20000",
+      borderColor: "#F20000",
+    },
+    link: {
+      color: "#F20000",
+      hoverColor: "#F20000",
+    },
   },
   success: {
     default: {
@@ -109,6 +112,14 @@ export default {
     ghost: {
       color: colors.green.base,
       background: colors.green.lightest,
+    },
+    outline: {
+      color: colors.green.base,
+      borderColor: colors.green.base,
+    },
+    link: {
+      color: colors.green.base,
+      hoverColor: colors.green.base,
     },
   },
 };

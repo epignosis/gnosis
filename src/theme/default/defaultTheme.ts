@@ -18,7 +18,7 @@ import {
 
 const defaultTheme = {
   body: {
-    color: colors.black,
+    color: "#232323",
     background: colors.white,
     fontSize: "100%",
     lineHeight: 1.5715,

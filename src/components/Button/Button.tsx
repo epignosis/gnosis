@@ -77,6 +77,8 @@ const Button = <C extends ElementType = "button">(props: ButtonProps<C>): ReactE
     outline: variant === "outline",
     ghost: variant === "ghost",
     link: variant === "link",
+    "icon-after": SuffixIcon,
+    "icon-before": PrefixIcon,
   });
 
   return (
@@ -103,9 +105,9 @@ const Button = <C extends ElementType = "button">(props: ButtonProps<C>): ReactE
             </m.div>
           )}
         </AnimatePresence>
-        {PrefixIcon && <PrefixIcon height={iconSizes[size]} className="icon-before" />}
+        {PrefixIcon && <PrefixIcon height={iconSizes[size]} className="icon" />}
         <span className="btn-text">{children}</span>
-        {SuffixIcon && <SuffixIcon height={iconSizes[size]} className="icon-after" />}
+        {SuffixIcon && <SuffixIcon height={iconSizes[size]} className="icon" />}
       </Component>
     </LazyMotion>
   );

@@ -2,7 +2,12 @@ import { css, Theme, SerializedStyles } from "@emotion/react";
 import { Color, Size } from "./Button";
 import { hexToRGBA } from "@theme/default/colors";
 
-type ButtonAttrs = { color: Color; block: boolean; size: Size; noGutters: boolean };
+type ButtonAttrs = {
+  color: Color;
+  block: boolean;
+  size: Size;
+  noGutters: boolean;
+};
 
 const roundDimensions = {
   md: "3.5rem",
@@ -148,6 +153,22 @@ const linkButton = (button: Theme["button"], color: Color): SerializedStyles => 
   }
 `;
 
+const iconBeforeButton = (size: Size) => css`
+  padding: ${size === "md" ? "0 1.75rem 0 1.25rem" : "0 3rem 0 1.875rem"};
+
+  .icon {
+    margin-right: 0.5rem;
+  }
+`;
+
+const iconAfterButton = (size: Size) => css`
+  padding: ${size === "md" ? "0 1.25rem 0 1.75rem" : "0 1.875rem 0 3rem"};
+
+  .icon {
+    margin-left: 0.5rem;
+  }
+`;
+
 export const btnContainer = (
   { typeScaleSizes, button }: Theme,
   { color, size, ...attrs }: ButtonAttrs,
@@ -169,6 +190,14 @@ export const btnContainer = (
 
     &.link {
       ${linkButton(button, color)};
+    }
+
+    &.icon-before {
+      ${iconBeforeButton(size)};
+    }
+
+    &.icon-after {
+      ${iconAfterButton(size)}
     }
 
     &:disabled,
@@ -202,14 +231,6 @@ export const btnContainer = (
         align-items: center;
         justify-content: center;
       }
-    }
-
-    .icon-before {
-      margin-right: 0.5rem;
-    }
-
-    .icon-after {
-      margin-left: 0.5rem;
     }
 
     .loading-container {

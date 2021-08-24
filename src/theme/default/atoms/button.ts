@@ -24,7 +24,7 @@ export default {
     },
     ghost: {
       color: colors.blue.base,
-      background: colors.blue.lightest,
+      background: "#74B0EA29",
     },
     outline: {
       color: colors.blue.base,
@@ -32,7 +32,7 @@ export default {
     },
     link: {
       color: colors.blue.base,
-      hoverColor: colors.blue.lightest,
+      hoverColor: "#3F8DF2",
     },
   },
   secondary: {
@@ -61,7 +61,7 @@ export default {
     },
     link: {
       color: "#232323",
-      hoverColor: colors.blue.lightest,
+      hoverColor: "#3F8DF2",
     },
   },
   danger: {

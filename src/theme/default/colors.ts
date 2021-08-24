@@ -1,9 +1,9 @@
 import Color from "color";
 
-const THEME_COLOURS = {
+export const THEME_COLOURS = {
   blue: "#1B68B3",
   turquoise: "#2CD1F8",
-  orange: "#FF8000",
+  orange: "#FF9C28",
   red: "#E53935",
   green: "#41BD54",
   gray: "#999999",
@@ -11,7 +11,17 @@ const THEME_COLOURS = {
   white: "#FFFFFF",
 };
 
-const palletGenerator = (base: string) => ({
+export type ThemeColors = {
+  base: string;
+  lighter: string;
+  lightest: string;
+  light: string;
+  dark: string;
+  darker: string;
+  darkest: string;
+};
+
+export const palletGenerator = (base: string): ThemeColors => ({
   base,
   lightest: Color(base).lighten(0.7).hex(),
   lighter: Color(base).lighten(0.5).hex(),

@@ -1,19 +1,17 @@
 import React from "react";
-import faker from "faker";
-import Error from "./Error";
+import { Error, InputError } from "./Error.stories";
 import { render, screen } from "@test-utils/render";
 
 describe("Forms: <Error />", () => {
   it("render correctly", () => {
-    const txt = faker.lorem.sentence();
-    render(<Error>{txt}</Error>);
-    const errorContainer = screen.getByText(txt);
+    render(<Error />);
+    const errorContainer = screen.getByText("Something went wrong!");
 
-    expect(errorContainer).toHaveTextContent(txt);
+    expect(errorContainer).toHaveTextContent("Something went wrong!");
   });
 
   it("matches snapshot", () => {
-    const { container } = render(<Error>Something went wrong</Error>);
+    const { container } = render(<Error />);
 
     expect(container).toMatchSnapshot();
   });
@@ -21,15 +19,14 @@ describe("Forms: <Error />", () => {
 
 describe("Forms: <Error.InputError />", () => {
   it("renders correctly", () => {
-    const txt = faker.lorem.sentence();
-    render(<Error.InputError>{txt}</Error.InputError>);
-    const errorSpan = screen.getByText(txt);
+    render(<InputError />);
+    const errorSpan = screen.getByText("Some error");
 
-    expect(errorSpan).toHaveTextContent(txt);
+    expect(errorSpan).toHaveTextContent("Some error");
   });
 
   it("matches snapshot", () => {
-    const { container } = render(<Error.InputError>Something went wrong</Error.InputError>);
+    const { container } = render(<InputError />);
 
     expect(container).toMatchSnapshot();
   });

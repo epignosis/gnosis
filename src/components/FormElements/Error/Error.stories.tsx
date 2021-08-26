@@ -13,13 +13,7 @@ export default {
 
 export const Error: Story = () => (
   <ErrorComponent>
-    <p>
-      You entered an incorrect email,
-      <br /> password, or both!
-      <br />
-      <br />
-      Try again or contact your administrator
-    </p>
+    <p>Something went wrong!</p>
   </ErrorComponent>
 );
 

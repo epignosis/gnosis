@@ -5,17 +5,41 @@ exports[`Forms: <Error /> matches snapshot 1`] = `
   <article
     class="css-gbf80r-errorContainer-errorContainer"
   >
-    Something went wrong
+    <p>
+      Something went wrong!
+    </p>
   </article>
 </div>
 `;
 
 exports[`Forms: <Error.InputError /> matches snapshot 1`] = `
 <div>
-  <span
-    class="css-1b2rqxw-inputError-inputError"
+  <div
+    style="max-width: 500px;"
   >
-    Something went wrong
-  </span>
+    <div
+      class="error css-38lqwp-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-inputContainer-inputContainer"
+    >
+      <label
+        class="css-xs6o3g-label-label"
+        for="inline-error-example"
+      >
+        Attention
+      </label>
+      <div
+        class="input-wrapper"
+      >
+        <input
+          id="inline-error-example"
+          placeholder="Pay attention to the error below"
+        />
+      </div>
+    </div>
+    <span
+      class="css-1b2rqxw-inputError-inputError"
+    >
+      Some error
+    </span>
+  </div>
 </div>
 `;

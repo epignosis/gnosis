@@ -7,13 +7,13 @@ exports[`<Textarea /> matches snapshot 1`] = `
   >
     <label
       class="css-xs6o3g-label-label"
-      for="test-textarea"
+      for="description"
     >
-      Test textarea
+      Description
     </label>
     <textarea
-      id="test-textarea"
-      name="test"
+      id="description"
+      placeholder="Type some description"
     />
   </div>
 </div>

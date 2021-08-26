@@ -1,38 +1,31 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
-import faker from "faker";
-import Radio from "../Radio";
+import { Radio } from "../Radio.stories";
 import { screen, render } from "@test-utils/render";
 
 describe("<Radio />", () => {
   it("renders properly", () => {
-    const labelTxt = faker.random.words();
-    const value = faker.random.alphaNumeric();
-    render(<Radio id={value} label={labelTxt} value={value} />);
+    render(<Radio {...Radio.args} />);
 
-    const radio = screen.getByLabelText(labelTxt);
-    const label = screen.getByText(labelTxt);
+    const radio = screen.getByLabelText("All");
+    const label = screen.getByText("All");
 
     expect(radio).toBeInTheDocument();
-    expect(label).toHaveTextContent(labelTxt);
+    expect(label).toHaveTextContent("All");
   });
 
   it("renders disabled", () => {
-    const labelTxt = faker.random.words();
-    const value = faker.random.alphaNumeric();
-    render(<Radio id={value} label={labelTxt} value={value} disabled />);
+    render(<Radio disabled {...Radio.args} />);
 
-    const radio = screen.getByLabelText(labelTxt);
+    const radio = screen.getByLabelText("All");
 
     expect(radio).toBeDisabled();
   });
 
   it("gets checked", () => {
-    const labelTxt = faker.random.words();
-    const value = faker.random.alphaNumeric();
-    render(<Radio id={value} label={labelTxt} value={value} />);
+    render(<Radio {...Radio.args} />);
 
-    const radio = screen.getByLabelText(labelTxt);
+    const radio = screen.getByLabelText("All");
 
     expect(radio).not.toBeChecked();
 
@@ -42,13 +35,13 @@ describe("<Radio />", () => {
   });
 
   it("matches snapshot", () => {
-    const { container } = render(<Radio id="testId" label="Test label" value="testValue" />);
+    const { container } = render(<Radio {...Radio.args} />);
 
     expect(container).toMatchSnapshot();
   });
 
   it("matches snapshot with `inline = true`", () => {
-    const { container } = render(<Radio id="testId" label="Test label" value="testValue" inline />);
+    const { container } = render(<Radio {...Radio.args} inline />);
 
     expect(container).toMatchSnapshot();
   });

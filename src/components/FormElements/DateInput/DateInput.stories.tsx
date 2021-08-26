@@ -5,12 +5,6 @@ import DateInputComponent, { DateInputProps } from "./DateInput";
 export default {
   title: "components/Form Elements/Date Input",
   component: DateInputComponent,
-  args: {
-    label: "Date of birth",
-    size: "md",
-    altLabel: false,
-    inline: false,
-  },
   argTypes: {
     size: {
       control: {
@@ -32,4 +26,11 @@ export const DateInput: Story<DateInputProps> = (args) => {
   const [date, setDate] = useState(new Date());
 
   return <DateInputComponent id="date-input" {...args} value={date} onChange={setDate} />;
+};
+
+DateInput.args = {
+  label: "Date of birth",
+  size: "md",
+  altLabel: false,
+  inline: false,
 };

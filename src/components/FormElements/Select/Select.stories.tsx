@@ -5,12 +5,6 @@ import SelectComponent, { SelectProps } from "./Select";
 export default {
   title: "components/Form Elements/Select",
   component: SelectComponent,
-  args: {
-    size: "md",
-    label: "Choose a programming language",
-    altLabel: false,
-    inline: false,
-  },
   argTypes: {
     size: {
       control: {
@@ -40,3 +34,10 @@ export const Select: Story<SelectProps> = (args) => (
     </option>
   </SelectComponent>
 );
+
+Select.args = {
+  size: "md",
+  label: "Choose a programming language",
+  altLabel: false,
+  inline: false,
+};

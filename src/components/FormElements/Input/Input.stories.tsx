@@ -40,6 +40,13 @@ const Template: Story<InputProps> = (args) => <InputComponent id="story-input" {
 
 export const Default = Template.bind({});
 
+Default.args = {
+  placeholder: "Your LMS username",
+  label: "Username",
+  altLabel: false,
+  status: "valid",
+};
+
 export const WithIconBefore = Template.bind({});
 
 WithIconBefore.args = {

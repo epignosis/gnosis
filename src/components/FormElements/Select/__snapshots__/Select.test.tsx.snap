@@ -7,15 +7,15 @@ exports[`<Select /> matches snapshot 1`] = `
   >
     <label
       class="css-xs6o3g-label-label"
-      for="test-select"
+      for="programming-language"
     >
-      Test select input
+      Choose a programming language
     </label>
     <div
       class="select-input-wrapper"
     >
       <select
-        id="test-select"
+        id="programming-language"
       >
         <option
           value="rs"
@@ -31,6 +31,22 @@ exports[`<Select /> matches snapshot 1`] = `
           value="ts"
         >
           TypeScript
+        </option>
+        <option
+          value="go"
+        >
+          GoLang
+        </option>
+        <option
+          value="python"
+        >
+          Python
+        </option>
+        <option
+          disabled=""
+          value="php"
+        >
+          PHP
         </option>
       </select>
       <span

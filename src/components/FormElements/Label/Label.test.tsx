@@ -1,20 +1,18 @@
 import React from "react";
-import faker from "faker";
-import Label from "./Label";
+import { Label } from "./Label.stories";
 import { render, screen } from "@test-utils/render";
 
 describe("<Label />", () => {
   it("renders correctly", () => {
-    const labelTxt = faker.random.alpha();
-    render(<Label>{labelTxt}</Label>);
+    render(<Label />);
 
-    const label = screen.getByText(labelTxt);
+    const label = screen.getByText("This is an input label");
 
-    expect(label).toHaveTextContent(labelTxt);
+    expect(label).toHaveTextContent("This is an input label");
   });
 
   it("matches snapshot", () => {
-    const { container } = render(<Label>Test label</Label>);
+    const { container } = render(<Label />);
 
     expect(container).toMatchSnapshot();
   });

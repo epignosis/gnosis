@@ -3,7 +3,7 @@ import { Story } from "@storybook/react";
 import RadioGroupComponent, { RadioGroupProps } from "./RadioGroup";
 
 export default {
-  title: "components/Form Elements/Radio Group",
+  title: "components/Form Elements/Radio/Radio Group",
   component: RadioGroupComponent,
   args: {
     size: "md",

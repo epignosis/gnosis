@@ -1,47 +1,32 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
-import faker from "faker";
-import Textarea from "./Textarea";
+import { Textarea } from "./Textarea.stories";
 import { screen, render } from "@test-utils/render";
 
 describe("<Textarea />", () => {
   it("renders correctly", () => {
-    const labelTxt = faker.random.words();
-    render(
-      <Textarea
-        id={faker.random.alphaNumeric()}
-        label={labelTxt}
-        name={faker.random.alphaNumeric()}
-      />,
-    );
+    render(<Textarea {...Textarea.args} />);
 
-    const textarea = screen.getByLabelText(labelTxt);
+    const textarea = screen.getByLabelText("Description");
 
     expect(textarea).toBeInTheDocument();
+    expect(textarea).toHaveAttribute("placeholder", "Type some description");
   });
 
   it("changes value", () => {
-    const labelTxt = faker.random.words();
-    render(
-      <Textarea
-        id={faker.random.alphaNumeric()}
-        label={labelTxt}
-        name={faker.random.alphaNumeric()}
-      />,
-    );
+    render(<Textarea {...Textarea.args} />);
 
-    const textarea = screen.getByLabelText(labelTxt);
+    const textarea = screen.getByLabelText("Description");
 
     expect(textarea).toHaveValue("");
 
-    const newValue = faker.lorem.paragraph();
-    userEvent.type(textarea, newValue);
+    userEvent.type(textarea, "Test value");
 
-    expect(textarea).toHaveValue(newValue);
+    expect(textarea).toHaveValue("Test value");
   });
 
   it("matches snapshot", () => {
-    const { container } = render(<Textarea id="test-textarea" label="Test textarea" name="test" />);
+    const { container } = render(<Textarea {...Textarea.args} />);
 
     expect(container).toMatchSnapshot();
   });

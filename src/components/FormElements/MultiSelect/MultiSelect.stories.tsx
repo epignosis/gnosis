@@ -5,31 +5,6 @@ import MultiSelectComponent, { MultiSelectOption, MultiSelectProps } from "./Mul
 export default {
   title: "components/Form Elements/Multi Select",
   component: MultiSelectComponent,
-  args: {
-    placeholder: "Multi select",
-    size: "md",
-    label: "Choose multiple values",
-    altLabel: false,
-    block: true,
-    options: [
-      {
-        label: "All",
-        value: "all",
-      },
-      {
-        label: "In progress",
-        value: "progress",
-      },
-      {
-        label: "Completed",
-        value: "completed",
-      },
-      {
-        label: "Failed",
-        value: "failed",
-      },
-    ],
-  },
   argTypes: {
     size: {
       control: {
@@ -58,4 +33,29 @@ export const MultiSelect: Story<MultiSelectProps> = (args) => {
       onChange={(selections): void => setState(selections as MultiSelectOption[])}
     />
   );
+};
+
+MultiSelect.args = {
+  placeholder: "Multi select",
+  label: "Choose multiple values",
+  altLabel: false,
+  block: true,
+  options: [
+    {
+      label: "All",
+      value: "all",
+    },
+    {
+      label: "In progress",
+      value: "progress",
+    },
+    {
+      label: "Completed",
+      value: "completed",
+    },
+    {
+      label: "Failed",
+      value: "failed",
+    },
+  ],
 };

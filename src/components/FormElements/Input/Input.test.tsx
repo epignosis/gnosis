@@ -1,38 +1,22 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
-import faker from "faker";
-import Input from "./Input";
+import { Default as Input, WithIconBefore, WithIconAfter } from "./Input.stories";
 import { screen, render } from "@test-utils/render";
-import { CalendarSVG } from "@icons/core";
 
 describe("<Input />", () => {
   it("renders correctly", () => {
-    const mockFn = jest.fn();
-    const placeholder = faker.internet.exampleEmail();
-    const labelTxt = faker.lorem.word();
-    render(
-      <Input
-        id="test-input"
-        name="test-input"
-        label={labelTxt}
-        placeholder={placeholder}
-        value="test"
-        onChange={mockFn}
-      />,
-    );
-    const label = screen.getByText(labelTxt);
-    const input = screen.getByLabelText(labelTxt);
+    render(<Input {...Input.args} />);
 
-    expect(label).toHaveTextContent(labelTxt);
-    expect(input).toHaveAttribute("name", "test-input");
-    expect(input).toHaveAttribute("placeholder", placeholder);
-    expect(input).toHaveValue("test");
+    const label = screen.getByText("Username");
+    const input = screen.getByLabelText("Username");
+
+    expect(label).toHaveTextContent("Username");
+    expect(input).toHaveAttribute("placeholder", "Your LMS username");
   });
 
   it("changes the input's value", () => {
-    const labelTxt = faker.lorem.word();
-    render(<Input id="test-input" name="test-input" label={labelTxt} />);
-    const input = screen.getByLabelText(labelTxt);
+    render(<Input {...Input.args} />);
+    const input = screen.getByLabelText("Username");
 
     userEvent.type(input, "new value");
 
@@ -43,18 +27,16 @@ describe("<Input />", () => {
     expect(input).toHaveValue("");
   });
 
-  it("renders icon before", () => {
-    const labelTxt = faker.lorem.word();
-    render(<Input id="test-input" name="test-input" label={labelTxt} iconBefore={CalendarSVG} />);
+  it("renders with icon before", () => {
+    render(<WithIconBefore {...WithIconBefore.args} />);
 
     const iconBefore = screen.getByTestId(/input-icon-before/i);
 
     expect(iconBefore).toBeInTheDocument();
   });
 
-  it("renders icon after", () => {
-    const labelTxt = faker.lorem.word();
-    render(<Input id="test-input" name="test-input" label={labelTxt} iconAfter={CalendarSVG} />);
+  it("renders with icon after", () => {
+    render(<WithIconAfter {...WithIconAfter.args} />);
 
     const iconAfter = screen.getByTestId(/input-icon-after/i);
 
@@ -62,9 +44,7 @@ describe("<Input />", () => {
   });
 
   it("matches snapshot", () => {
-    const { container } = render(
-      <Input id="test-input" name="test-input" label="Test label" iconAfter={CalendarSVG} />,
-    );
+    const { container } = render(<Input />);
 
     expect(container).toMatchSnapshot();
   });

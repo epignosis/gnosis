@@ -5,7 +5,7 @@ exports[`<Label /> matches snapshot 1`] = `
   <label
     class="css-xs6o3g-label-label"
   >
-    Test label
+    This is an input label
   </label>
 </div>
 `;

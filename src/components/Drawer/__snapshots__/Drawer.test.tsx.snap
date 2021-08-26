@@ -2,6 +2,18 @@
 
 exports[`<Drawer/> matches snapshot with close button 1`] = `<div />`;
 
-exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `<div />`;
+exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
+<div>
+  <button
+    class="solid css-18yafla-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-btnContainer-btnContainer"
+  >
+    <span
+      class="btn-text"
+    >
+      Open Drawer
+    </span>
+  </button>
+</div>
+`;
 
 exports[`<Drawer/> matches snapshot without header and footer 1`] = `<div />`;

@@ -3,29 +3,14 @@
 exports[`<Input /> matches snapshot 1`] = `
 <div>
   <div
-    class="valid with-suffix-icon css-38lqwp-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-inputContainer-inputContainer"
+    class="valid css-38lqwp-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-inputContainer-inputContainer"
   >
-    <label
-      class="css-xs6o3g-label-label"
-      for="test-input"
-    >
-      Test label
-    </label>
     <div
       class="input-wrapper"
     >
       <input
-        id="test-input"
-        name="test-input"
+        id="story-input"
       />
-      <span
-        class="suffix-icon"
-        data-testid="input-icon-after"
-      >
-        <svg-file-stub
-          height="32"
-        />
-      </span>
     </div>
   </div>
 </div>

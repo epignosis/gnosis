@@ -6,14 +6,14 @@ exports[`<Radio /> matches snapshot 1`] = `
     class="css-12utew3-radioButtonContainer-radioButtonContainer"
   >
     <input
-      id="testId"
+      id="all"
       type="radio"
-      value="testValue"
+      value="all"
     />
     <label
-      for="testId"
+      for="all"
     >
-      Test label
+      All
     </label>
   </div>
 </div>
@@ -25,14 +25,14 @@ exports[`<Radio /> matches snapshot with \`inline = true\` 1`] = `
     class="css-ud70d6-radioButtonContainer-radioButtonContainer"
   >
     <input
-      id="testId"
+      id="all"
       type="radio"
-      value="testValue"
+      value="all"
     />
     <label
-      for="testId"
+      for="all"
     >
-      Test label
+      All
     </label>
   </div>
 </div>

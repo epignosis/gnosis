@@ -5,12 +5,6 @@ import TextareaComponent, { TextareaProps } from "./Textarea";
 export default {
   title: "components/Form Elements/Textarea",
   component: TextareaComponent,
-  args: {
-    label: "Description",
-    altLabel: false,
-    placeholder: "Type some description",
-    resize: "none",
-  },
   argTypes: {
     resize: {
       control: {
@@ -31,3 +25,10 @@ export default {
 export const Textarea: Story<TextareaProps> = (args) => (
   <TextareaComponent id="description" {...args} />
 );
+
+Textarea.args = {
+  label: "Description",
+  altLabel: false,
+  placeholder: "Type some description",
+  resize: "none",
+};

@@ -22,7 +22,13 @@ const ICONS = {
 const Alert: FC<AlertProps> = ({ type, children, onClose, icon: Icon }) => {
   return (
     <div css={(theme): SerializedStyles => container(theme, { type })}>
-      {Icon ? <Icon height={56} className="icon" /> : <div className="icon">{ICONS[type]}</div>}
+      {Icon ? (
+        <Icon height={56} className="icon" data-testid="icon" />
+      ) : (
+        <div className="icon" data-testid="icon">
+          {ICONS[type]}
+        </div>
+      )}
 
       <article>{children}</article>
       {Boolean(onClose) && (

@@ -18,6 +18,7 @@ exports[`<Pagination /> matches snapshot with 2 pages 1`] = `
           class="select-input-wrapper"
         >
           <select
+            data-testid="pagination-page"
             id="pagination-page"
           >
             <option
@@ -91,6 +92,7 @@ exports[`<Pagination /> matches snapshot with no next page 1`] = `
           class="select-input-wrapper"
         >
           <select
+            data-testid="pagination-page"
             id="pagination-page"
           >
             <option
@@ -142,6 +144,7 @@ exports[`<Pagination /> matches snapshot with no previous page 1`] = `
           class="select-input-wrapper"
         >
           <select
+            data-testid="pagination-page"
             id="pagination-page"
           >
             <option
@@ -204,6 +207,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
           class="select-input-wrapper"
         >
           <select
+            data-testid="pagination-page"
             id="pagination-page"
           >
             <option
@@ -261,6 +265,7 @@ exports[`<Pagination /> matches snapshot with previous and next pages 1`] = `
           class="select-input-wrapper"
         >
           <select
+            data-testid="pagination-page"
             id="pagination-page"
           >
             <option

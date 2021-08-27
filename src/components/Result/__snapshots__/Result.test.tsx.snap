@@ -106,6 +106,25 @@ exports[`<Result/> matches snapshot with info 1`] = `
 </div>
 `;
 
+exports[`<Result/> matches snapshot with size=\`md\` 1`] = `
+<div>
+  <article
+    class="css-198tph0-container-container"
+    data-testid="empty-state-container"
+  >
+    <div
+      class="body"
+    >
+      <h3
+        class="css-6t4vgf-headingContainer-headingContainer"
+      >
+        Test title
+      </h3>
+    </div>
+  </article>
+</div>
+`;
+
 exports[`<Result/> matches snapshot with title 1`] = `
 <div>
   <article

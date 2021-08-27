@@ -13,7 +13,7 @@ const commonProps = {
 
 const Template: Story = (args) => (
   <Tabs {...args}>
-    <Tabs.TabPane title="Completed courses">
+    <Tabs.TabPane title="Completed courses" fallbackTitle="aa">
       <div style={{ padding: "2rem" }}>
         <Heading>Completed courses</Heading>
         <p>Completed courses content!</p>

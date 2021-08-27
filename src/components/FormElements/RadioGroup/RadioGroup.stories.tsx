@@ -12,6 +12,7 @@ export default {
     groupname: "radio-group",
   },
   argTypes: {
+    onChange: { action: "changed" },
     size: {
       control: {
         type: "select",

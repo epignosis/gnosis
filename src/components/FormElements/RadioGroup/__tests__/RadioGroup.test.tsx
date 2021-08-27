@@ -47,7 +47,9 @@ describe("<RadioGroup />", () => {
   });
 
   it("changes selected value", () => {
-    render(<RadioGroup groupname={faker.random.words()} options={OPTIONS} />);
+    const mockFn = jest.fn();
+
+    render(<RadioGroup groupname={faker.random.words()} options={OPTIONS} onChange={mockFn} />);
 
     const radios = screen.getAllByRole("radio");
 
@@ -59,6 +61,7 @@ describe("<RadioGroup />", () => {
 
     expect(radios[0]).not.toBeChecked();
     expect(radios[2]).toBeChecked();
+    expect(mockFn).toHaveBeenCalledTimes(3);
   });
 
   it("doesn't select a disabled option", () => {

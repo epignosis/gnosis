@@ -2,6 +2,7 @@ import React from "react";
 import { Story } from "@storybook/react";
 import Alert, { AlertProps } from "./Alert";
 import { Heading } from "@components";
+import { ScrollRegularSVG } from "@icons/core";
 
 export default {
   component: Alert,
@@ -27,6 +28,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   type: "info",
+  icon: ScrollRegularSVG,
 };
 
 export const WithCloseBtn = Template.bind({});

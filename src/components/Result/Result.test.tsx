@@ -62,6 +62,12 @@ describe("<Result/>", () => {
     expect(footerBtn).toHaveTextContent(footerTxt);
   });
 
+  it("matches snapshot with size=`md`", () => {
+    const { container } = render(<Result title="Test title" size="md" />);
+
+    expect(container).toMatchSnapshot();
+  });
+
   it("matches snapshot with title", () => {
     const { container } = render(<Result title="Test title" />);
 

@@ -42,7 +42,7 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages }) => {
               name="Previous page"
               onClick={(): void => onChange(current - 1)}
             >
-              <ArrowLeftSVG height={24} />
+              <ArrowLeftSVG height={24} data-testid="arrow-left" />
             </Button>
           )}
         </>
@@ -51,6 +51,7 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages }) => {
       <div className="current-page">
         <Select
           id="pagination-page"
+          data-testid="pagination-page"
           value={current}
           onChange={(value): void => onChange(parseInt(value))}
         >
@@ -75,7 +76,7 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages }) => {
               name="Next page"
               onClick={(): void => onChange(current + 1)}
             >
-              <ArrowRightSVG height={24} />
+              <ArrowRightSVG height={24} data-testid="arrow-right" />
             </Button>
           )}
         </>

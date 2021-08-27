@@ -97,4 +97,16 @@ describe("<Modal>", () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it("matches snapshot with size=`fullscreen`", () => {
+    const { container } = render(
+      <Modal isOpen onClose={mockedOnClose} size="fullscreen">
+        <Modal.Header>Test header</Modal.Header>
+        <Modal.Body>Test body</Modal.Body>
+        <Modal.Footer>Test footer</Modal.Footer>
+      </Modal>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
 });

@@ -67,3 +67,71 @@ exports[`<Tabs/> matches snapshot 1`] = `
   </section>
 </div>
 `;
+
+exports[`<Tabs/> matches snapshot with stickyHeader=\`true\` 1`] = `
+<div>
+  <section
+    class="css-a5ycro-container"
+  >
+    <nav
+      class="css-1b46b0m-tabsHeader-tabsHeader"
+      role="tablist"
+    >
+      <a
+        aria-controls="content-0"
+        class="css-1v2oram-tabNavItem-tabNavItem"
+        href="#tab-0"
+        id="tab-0"
+        role="tab"
+      >
+        Tab 1
+      </a>
+      <a
+        aria-controls="content-1"
+        class="css-1n1jyfz-tabNavItem-tabNavItem"
+        href="#tab-1"
+        id="tab-1"
+        role="tab"
+      >
+        Tab 2
+      </a>
+      <a
+        aria-controls="content-2"
+        class="css-1n1jyfz-tabNavItem-tabNavItem"
+        href="#tab-2"
+        id="tab-2"
+        role="tab"
+      >
+        Tab 3
+      </a>
+    </nav>
+    <section
+      aria-live="polite"
+      id="content"
+      role="region"
+    >
+      <article
+        class="css-16ie0sg-tabsContent-tabsContent"
+        id="content-0"
+        role="tabpanel"
+      >
+        Test tab 1
+      </article>
+      <article
+        class="css-1c08a5r-tabsContent-tabsContent"
+        id="content-1"
+        role="tabpanel"
+      >
+        Test tab 2
+      </article>
+      <article
+        class="css-1c08a5r-tabsContent-tabsContent"
+        id="content-2"
+        role="tabpanel"
+      >
+        Test tab 3
+      </article>
+    </section>
+  </section>
+</div>
+`;

@@ -63,6 +63,18 @@ describe("<Tabs/>", () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it("matches snapshot with stickyHeader=`true`", () => {
+    const { container } = render(
+      <Tabs stickyHeader>
+        <Tabs.TabPane title="Tab 1">Test tab 1</Tabs.TabPane>
+        <Tabs.TabPane title="Tab 2">Test tab 2</Tabs.TabPane>
+        <Tabs.TabPane title="Tab 3">Test tab 3</Tabs.TabPane>
+      </Tabs>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
 });
 
 describe("<Tabs/> on mobile", () => {

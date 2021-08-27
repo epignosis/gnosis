@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Modal> matches snapshot 1`] = `<div />`;
+
+exports[`<Modal> matches snapshot with size=\`fullscreen\` 1`] = `<div />`;

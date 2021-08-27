@@ -128,4 +128,16 @@ describe("<Drawer/>", () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it("matches snapshot with noGutters Header", () => {
+    const mockFn = jest.fn();
+
+    const { container } = render(
+      <Drawer isOpen onClose={mockFn}>
+        <Drawer.Header noGutters>{headerTxt}</Drawer.Header>
+      </Drawer>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
 });

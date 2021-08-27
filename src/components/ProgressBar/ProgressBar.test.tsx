@@ -18,4 +18,10 @@ describe("<ProgressBar />", () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it("matches snapshot with zero percent", () => {
+    const { container } = render(<ProgressBar percent={0} />);
+
+    expect(container).toMatchSnapshot();
+  });
 });

@@ -1,7 +1,7 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
 import faker from "faker";
-import Input from "./Input";
+import Input from "../Input";
 import { screen, render } from "@test-utils/render";
 import { CalendarSVG } from "@icons/core";
 

@@ -103,7 +103,7 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
       <ul data-testid="list-container" {...getMenuProps()}>
         <div className="content">
           <Text fontSize="sm"> Select one or more items</Text>
-          <button className="close-btn" onClick={(): void => closeMenu()}>
+          <button className="close-btn" data-testid="close-btn" onClick={(): void => closeMenu()}>
             <DropUpArrowSVG height={20} />
           </button>
         </div>

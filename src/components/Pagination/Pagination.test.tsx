@@ -2,12 +2,7 @@ import React from "react";
 import userEvent from "@testing-library/user-event";
 import Pagination from "./Pagination";
 import { act, render, screen } from "@test-utils/render";
-
-const resizeWindow = (x: number, y: number) => {
-  Object.assign(window, { innerWidth: x });
-  Object.assign(window, { innerHeight: y });
-  window.dispatchEvent(new Event("resize"));
-};
+import { resizeWindow } from "@test-utils/helpers/windowResize";
 
 describe("<Pagination />", () => {
   it("renders", () => {

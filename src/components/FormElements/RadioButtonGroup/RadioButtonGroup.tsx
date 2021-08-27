@@ -12,8 +12,15 @@ export type RadioGroupProps = {
   onChange: (selectedValue: string) => void;
 };
 
-const RadioButtonGroup: FC<RadioGroupProps> = (props) => {
-  const { options, value = "", size = "md", id, className, onChange } = props;
+const RadioButtonGroup: FC<RadioGroupProps> = ({
+  options,
+  value = "",
+  size = "md",
+  id,
+  className,
+  onChange,
+}) => {
+  // const { options, value = "", size = "md", id, className, onChange } = props;
 
   return (
     <div id={id} className={className}>

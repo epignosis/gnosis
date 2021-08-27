@@ -4,12 +4,7 @@ import userEvent from "@testing-library/user-event";
 import faker from "faker";
 import Tabs from "./Tabs";
 import { screen, render } from "@test-utils/render";
-
-const resizeWindow = (x: number, y: number) => {
-  Object.assign(window, { innerWidth: x });
-  Object.assign(window, { innerHeight: y });
-  window.dispatchEvent(new Event("resize"));
-};
+import { resizeWindow } from "@test-utils/helpers/windowResize";
 
 const tab1Txt = faker.lorem.paragraph();
 const tab2Txt = faker.lorem.paragraph();

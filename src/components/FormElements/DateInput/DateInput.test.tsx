@@ -1,15 +1,18 @@
 import React from "react";
 import { format } from "date-fns";
+import userEvent from "@testing-library/user-event";
 import faker from "faker";
 import DateInput from "./DateInput";
-import { render, screen } from "@test-utils/render";
+import { act, render, screen, waitFor } from "@test-utils/render";
+import { resizeWindow } from "@test-utils/helpers/windowResize";
+
+const mockFn = jest.fn();
+const labelTxt = faker.random.words();
+const date = faker.date.future();
+const today = faker.date.recent();
 
 describe("<DateInput />", () => {
   it("renders correctly", () => {
-    const mockFn = jest.fn();
-    const labelTxt = faker.random.words();
-    const date = faker.date.future();
-
     render(
       <DateInput
         id={faker.random.alphaNumeric()}
@@ -27,6 +30,26 @@ describe("<DateInput />", () => {
     expect(mockFn).not.toHaveBeenCalled();
   });
 
+  it("changes date", async () => {
+    render(
+      <DateInput
+        id={faker.random.alphaNumeric()}
+        label={labelTxt}
+        value={date}
+        onChange={mockFn}
+      />,
+    );
+    const input = screen.getByLabelText(labelTxt);
+
+    userEvent.clear(input);
+
+    expect(input).toHaveValue("");
+
+    userEvent.type(input, format(today, "MM/dd/yyyy"));
+
+    await waitFor(() => expect(input).toHaveValue(format(today, "MM/dd/yyyy")));
+  });
+
   it("matches snapshot", () => {
     const date = new Date("Thu Aug 19 2021 13:29:16 GMT+0300 (Eastern European Summer Time)");
     const { container } = render(
@@ -34,5 +57,33 @@ describe("<DateInput />", () => {
     );
 
     expect(container).toMatchSnapshot();
+  });
+});
+
+describe("<DateInput/> on mobile", () => {
+  it("renders correctly and changes date", async () => {
+    render(
+      <DateInput
+        id={faker.random.alphaNumeric()}
+        label={labelTxt}
+        value={date}
+        onChange={mockFn}
+      />,
+    );
+
+    act(() => {
+      resizeWindow(320, 500);
+    });
+
+    const input = screen.getByLabelText(labelTxt);
+
+    expect(input).toHaveValue(format(date, "yyyy-MM-dd"));
+
+    // userEvent.click(input);
+    userEvent.type(input, format(today, "yyyy-MM-dd"));
+
+    // await waitFor(() => expect(input).toHaveValue(format(today, "yyyy-MM-dd")));
+
+    // expect(mockFn).toHaveBeenCalledTimes(1);
   });
 });

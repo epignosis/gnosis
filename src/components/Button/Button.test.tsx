@@ -109,4 +109,10 @@ describe("<Button />", () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it("matches snapshot witn block=`true`", () => {
+    const { container } = render(<Button block>Test button</Button>);
+
+    expect(container).toMatchSnapshot();
+  });
 });

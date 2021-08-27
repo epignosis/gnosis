@@ -86,6 +86,10 @@ describe("<Card/>", () => {
     userEvent.click(closeBtn);
 
     expect(mockFn).toHaveBeenCalledTimes(1);
+
+    userEvent.click(document.body);
+
+    expect(mockFn).toHaveBeenCalledTimes(2);
   });
 
   it("matches snapshot", () => {
@@ -116,6 +120,22 @@ describe("<Card/>", () => {
             alt="An image"
           />
           <Card.Hover>Hover text</Card.Hover>
+        </Card.Header>
+      </Card>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it("matches snapshot with transparent hover", () => {
+    const { container } = render(
+      <Card>
+        <Card.Header>
+          <Card.Thumbnail
+            src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
+            alt="An image"
+          />
+          <Card.Hover transparent>Hover text</Card.Hover>
         </Card.Header>
       </Card>,
     );

@@ -58,4 +58,17 @@ describe("<RadioButtonGroup />", () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it("matches snapshot with selected value", () => {
+    const mockOnChange = jest.fn();
+    const { container } = render(
+      <RadioButtonGroup
+        options={[{ label: "Test label", value: "testValue" }]}
+        value="testValue"
+        onChange={mockOnChange}
+      />,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
 });

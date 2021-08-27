@@ -13,3 +13,17 @@ exports[`<Button /> matches snapshot 1`] = `
   </button>
 </div>
 `;
+
+exports[`<Button /> matches snapshot witn block=\`true\` 1`] = `
+<div>
+  <button
+    class="solid css-123m1sm-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-btnContainer-btnContainer"
+  >
+    <span
+      class="btn-text"
+    >
+      Test button
+    </span>
+  </button>
+</div>
+`;

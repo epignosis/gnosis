@@ -74,6 +74,23 @@ describe("<Drawer/>", () => {
     expect(mockFn).toHaveBeenCalledTimes(1);
   });
 
+  it("Header renders with JSX content", () => {
+    const mockFn = jest.fn();
+
+    render(
+      <Drawer isOpen onClose={mockFn}>
+        <Drawer.Header closable>
+          <button>{headerTxt}</button>
+        </Drawer.Header>
+      </Drawer>,
+    );
+
+    const header = screen.getByText(headerTxt);
+
+    expect(header).toBeInTheDocument();
+    expect(header).toHaveTextContent(headerTxt);
+  });
+
   it("matches snapshot with header, body and footer", () => {
     const mockFn = jest.fn();
 

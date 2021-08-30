@@ -3,7 +3,7 @@ import * as SvgIcons from ".";
 import { Text } from "@components";
 
 export default {
-  title: "Assets/Icons",
+  title: "Theme/Icons",
   parameters: {
     controls: { hideNoControlsWarning: true },
   },

@@ -13,13 +13,13 @@ export default {
       color: colors.white,
     },
     hover: {
-      background: colors.blue.lightest,
-      borderColor: colors.blue.lightest,
+      background: "#3F8DF2",
+      borderColor: "#3F8DF2",
       color: colors.white,
     },
     active: {
-      background: colors.blue.lighter,
-      borderColor: colors.blue.lighter,
+      background: "#1978F3",
+      borderColor: "#1978F3",
       color: colors.white,
     },
     ghost: {
@@ -32,24 +32,24 @@ export default {
     },
     link: {
       color: colors.blue.base,
-      hoverColor: colors.blue.lightest,
+      hoverColor: "#3F8DF2",
     },
   },
   secondary: {
     default: {
       background: "#EDEFF3",
       borderColor: "#EDEFF3",
-      color: colors.gray.darker,
+      color: "#57606B",
     },
     hover: {
-      background: "#F2F2F2",
-      borderColor: "#F2F2F2",
-      color: colors.gray.darker,
+      background: "#E3E4E8",
+      borderColor: "#E3E4E8",
+      color: "#57606B",
     },
     active: {
-      background: colors.gray.lighter,
-      borderColor: colors.gray.lighter,
-      color: colors.gray.darker,
+      background: "#DEDFE2",
+      borderColor: "#DEDFE2",
+      color: "#57606B",
     },
     ghost: {
       color: colors.gray.dark,
@@ -61,7 +61,7 @@ export default {
     },
     link: {
       color: "#232323",
-      hoverColor: colors.blue.lightest,
+      hoverColor: "#3F8DF2",
     },
   },
   danger: {

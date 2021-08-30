@@ -3,7 +3,7 @@
 exports[`<Button /> matches snapshot 1`] = `
 <div>
   <button
-    class="solid css-18yafla-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-btnContainer-btnContainer"
+    class="solid css-15pgdlr-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
   >
     <span
       class="btn-text"

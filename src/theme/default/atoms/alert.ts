@@ -8,8 +8,8 @@ export default {
     color: colors.black,
   },
   danger: {
-    background: colors.red.dark,
-    borderColor: colors.red.dark,
+    background: colors.red.base,
+    borderColor: colors.red.base,
     color: colors.white,
   },
   success: {

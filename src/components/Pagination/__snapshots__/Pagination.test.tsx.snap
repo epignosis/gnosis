@@ -48,7 +48,7 @@ exports[`<Pagination /> matches snapshot with 2 pages 1`] = `
       2
     </div>
     <button
-      class="solid css-18yafla-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-btnContainer-btnContainer"
+      class="solid css-15pgdlr-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="next-page-btn"
       name="Next page"
     >
@@ -68,7 +68,7 @@ exports[`<Pagination /> matches snapshot with no next page 1`] = `
     class="css-1vskcel-container-container"
   >
     <button
-      class="previous-page-btn solid css-18yafla-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-btnContainer-btnContainer"
+      class="previous-page-btn solid css-15pgdlr-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="previous-page-btn"
       name="Previous page"
     >
@@ -172,7 +172,7 @@ exports[`<Pagination /> matches snapshot with no previous page 1`] = `
       2
     </div>
     <button
-      class="solid css-18yafla-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-btnContainer-btnContainer"
+      class="solid css-15pgdlr-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="next-page-btn"
       name="Next page"
     >
@@ -238,7 +238,7 @@ exports[`<Pagination /> matches snapshot with previous and next pages 1`] = `
     class="css-1vskcel-container-container"
   >
     <button
-      class="previous-page-btn solid css-18yafla-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-btnContainer-btnContainer"
+      class="previous-page-btn solid css-15pgdlr-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="previous-page-btn"
       name="Previous page"
     >
@@ -301,7 +301,7 @@ exports[`<Pagination /> matches snapshot with previous and next pages 1`] = `
       4
     </div>
     <button
-      class="solid css-18yafla-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-btnContainer-btnContainer"
+      class="solid css-15pgdlr-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="next-page-btn"
       name="Next page"
     >

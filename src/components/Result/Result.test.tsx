@@ -1,8 +1,9 @@
 import React from "react";
 import faker from "faker";
 import Result from "./Result";
-import { screen, render } from "@test-utils/render";
+import { screen, render, act } from "@test-utils/render";
 import { InfoSVG } from "@icons/core";
+import { resizeWindow } from "@test-utils/helpers/windowResize";
 
 describe("<Result/>", () => {
   const titleTxt = faker.lorem.sentence();
@@ -103,6 +104,23 @@ describe("<Result/>", () => {
         footer={<button>Test footer</button>}
       />,
     );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it("matches snapshot on small screens", () => {
+    const { container } = render(
+      <Result
+        icon={InfoSVG}
+        title="Test title"
+        info="Test info"
+        footer={<button>Test footer</button>}
+      />,
+    );
+
+    act(() => {
+      resizeWindow(300, 500);
+    });
 
     expect(container).toMatchSnapshot();
   });

@@ -140,4 +140,29 @@ describe("<Drawer/>", () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it("matches snapshot with placement=`right`", () => {
+    const mockFn = jest.fn();
+
+    const { container } = render(
+      <Drawer isOpen onClose={mockFn} placement="right">
+        <Drawer.Header>{headerTxt}</Drawer.Header>
+      </Drawer>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  //this test is for line 111 on Drawer.tsx
+  it("matches snapshot closed", () => {
+    const mockFn = jest.fn();
+
+    const { container } = render(
+      <Drawer isOpen={false} onClose={mockFn}>
+        <Drawer.Header>{headerTxt}</Drawer.Header>
+      </Drawer>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
 });

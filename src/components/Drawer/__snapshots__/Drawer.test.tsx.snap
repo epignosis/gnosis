@@ -1,9 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Drawer/> matches snapshot closed 1`] = `<div />`;
+
 exports[`<Drawer/> matches snapshot with close button 1`] = `<div />`;
 
 exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `<div />`;
 
 exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `<div />`;
+
+exports[`<Drawer/> matches snapshot with placement=\`right\` 1`] = `<div />`;
 
 exports[`<Drawer/> matches snapshot without header and footer 1`] = `<div />`;

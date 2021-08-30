@@ -4,7 +4,7 @@ export const THEME_COLOURS = {
   blue: "#1B68B3",
   turquoise: "#2CD1F8",
   orange: "#FF9C28",
-  red: "#E53935",
+  red: "#F20000",
   green: "#41BD54",
   gray: "#999999",
   black: "#232323",

@@ -24,7 +24,7 @@ export default {
     },
     ghost: {
       color: colors.blue.base,
-      background: "#74B0EA29",
+      background: colors.blue.lightest,
     },
     outline: {
       color: colors.blue.base,

@@ -18,7 +18,7 @@ exports[`<DateInput /> matches snapshot 1`] = `
         class="react-datepicker__input-container"
       >
         <div
-          class="valid with-suffix-icon css-38lqwp-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-inputContainer-inputContainer"
+          class="valid with-suffix-icon css-574qg7-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-inputContainer-inputContainer"
         >
           <div
             class="input-wrapper"

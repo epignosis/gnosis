@@ -3,7 +3,7 @@
 exports[`Forms: <Error /> matches snapshot 1`] = `
 <div>
   <article
-    class="css-gbf80r-errorContainer-errorContainer"
+    class="css-1g7t4ds-errorContainer-errorContainer"
   >
     Something went wrong
   </article>
@@ -13,7 +13,7 @@ exports[`Forms: <Error /> matches snapshot 1`] = `
 exports[`Forms: <Error.InputError /> matches snapshot 1`] = `
 <div>
   <span
-    class="css-1b2rqxw-inputError-inputError"
+    class="css-1wc9q6w-inputError-inputError"
   >
     Something went wrong
   </span>

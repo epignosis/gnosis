@@ -153,21 +153,34 @@ const linkButton = (button: Theme["button"], color: Color): SerializedStyles => 
   }
 `;
 
-const iconBeforeButton = (size: Size) => css`
-  padding: ${size === "md" ? "0 1.75rem 0 1.25rem" : "0 3rem 0 1.875rem"};
+const iconBeforeButton = (size: Size): SerializedStyles => {
+  const btnPadding = {
+    md: "0 1.75rem 0 1.25rem",
+    lg: "0 3rem 0 1.875rem",
+  };
 
-  .icon {
-    margin-right: 0.5rem;
-  }
-`;
+  return css`
+    padding: ${btnPadding[size]};
 
-const iconAfterButton = (size: Size) => css`
-  padding: ${size === "md" ? "0 1.25rem 0 1.75rem" : "0 1.875rem 0 3rem"};
+    .icon {
+      margin-right: 0.5rem;
+    }
+  `;
+};
+const iconAfterButton = (size: Size): SerializedStyles => {
+  const btnPadding = {
+    md: "0 1.25rem 0 1.75rem",
+    lg: "0 1.875rem 0 3rem",
+  };
 
-  .icon {
-    margin-left: 0.5rem;
-  }
-`;
+  return css`
+    padding: ${btnPadding[size]};
+
+    .icon {
+      margin-left: 0.5rem;
+    }
+  `;
+};
 
 export const btnContainer = (
   { typeScaleSizes, button }: Theme,

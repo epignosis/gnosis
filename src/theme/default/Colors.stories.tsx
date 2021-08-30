@@ -4,7 +4,7 @@ import { palletGenerator, THEME_COLOURS as defaultTheme } from "./colors";
 import { Label } from "@components";
 
 export default {
-  title: "Base/Color",
+  title: "Theme/Colors",
 };
 
 type ColorItemProps = {

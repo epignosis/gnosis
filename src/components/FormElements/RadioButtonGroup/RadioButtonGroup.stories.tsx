@@ -7,6 +7,8 @@ export default {
   component: RadioButtonGroupComponent,
   args: {
     size: "md",
+    id: "radioButtonGroupStory",
+    className: "radioButtonGroupStory",
     options: [
       {
         label: "All",

@@ -10,6 +10,27 @@ export default {
     inline: false,
     initialValue: "",
     groupname: "radio-group",
+    id: "radioGroupStory",
+    className: "radioGroupStory",
+    options: [
+      {
+        label: "All",
+        value: "all",
+      },
+      {
+        label: "In progress",
+        value: "progress",
+        disabled: true,
+      },
+      {
+        label: "Completed",
+        value: "completed",
+      },
+      {
+        label: "Failed",
+        value: "failed",
+      },
+    ],
   },
   argTypes: {
     size: {
@@ -24,29 +45,8 @@ export default {
         options: ["all", "progress", "completed", "failed"],
       },
     },
+    onChange: { action: "value changed" },
   },
 };
 
 export const RadioGroup: Story<RadioGroupProps> = (args) => <RadioGroupComponent {...args} />;
-
-RadioGroup.args = {
-  options: [
-    {
-      label: "All",
-      value: "all",
-    },
-    {
-      label: "In progress",
-      value: "progress",
-      disabled: true,
-    },
-    {
-      label: "Completed",
-      value: "completed",
-    },
-    {
-      label: "Failed",
-      value: "failed",
-    },
-  ],
-};

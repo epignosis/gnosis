@@ -11,6 +11,7 @@ export default {
     placeholder: "Type some description",
     resize: "none",
     status: "valid",
+    id: "textareaStory",
   },
   argTypes: {
     resize: {

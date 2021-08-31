@@ -6,18 +6,14 @@ export type ErrorProps = {
 };
 
 type ErrorCompoundProps = {
-  InputError: FC<InputErrorProps>;
+  InputError: FC;
 };
 
-const Error: FC<ErrorProps> & ErrorCompoundProps = ({ children }) => {
+const Error: FC & ErrorCompoundProps = ({ children }) => {
   return <article css={errorContainer}>{children}</article>;
 };
 
-export type InputErrorProps = {
-  children?: string;
-};
-
-const InputError: FC<InputErrorProps> = ({ children }) => <span css={inputError}>{children}</span>;
+const InputError: FC = ({ children }) => <span css={inputError}>{children}</span>;
 
 Error.InputError = InputError;
 

@@ -10,6 +10,8 @@ export default {
     size: "md",
     altLabel: false,
     inline: false,
+    id: "dateInputStory",
+    className: "dateInputStory",
   },
   argTypes: {
     size: {

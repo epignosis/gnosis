@@ -10,6 +10,8 @@ export default {
     label: "Choose a programming language",
     altLabel: false,
     inline: false,
+    id: "selectStory",
+    className: "selectStory",
   },
   argTypes: {
     size: {

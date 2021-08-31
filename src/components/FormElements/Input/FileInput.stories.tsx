@@ -5,6 +5,11 @@ import FileInputComponent, { FileInputProps } from "./FileInput";
 export default {
   title: "components/Form Elements/File Input",
   component: FileInputComponent,
+  argTypes: {
+    type: {
+      control: false,
+    },
+  },
 };
 
 const Template: Story<FileInputProps> = (args) => <FileInputComponent {...args} />;

@@ -11,6 +11,8 @@ export default {
     label: "Choose multiple values",
     altLabel: false,
     block: true,
+    id: "multiSelectStory",
+    className: "multiSelectStory",
     options: [
       {
         label: "All",

@@ -31,4 +31,5 @@ export const Default: Story<ProgressBarProps> = (args) => <ProgressBar {...args}
 Default.args = {
   size: "md",
   percent: 75,
+  rounded: false,
 };

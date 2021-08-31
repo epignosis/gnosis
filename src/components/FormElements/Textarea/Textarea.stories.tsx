@@ -10,12 +10,19 @@ export default {
     altLabel: false,
     placeholder: "Type some description",
     resize: "none",
+    status: "valid",
   },
   argTypes: {
     resize: {
       control: {
         type: "select",
         options: ["none", "vertical", "horizontal", "both"],
+      },
+    },
+    status: {
+      control: {
+        type: "select",
+        options: ["valid", "error"],
       },
     },
   },

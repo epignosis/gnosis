@@ -18,6 +18,7 @@ export default {
         options: ["md", "lg"],
       },
     },
+    onChange: { action: "value changed" },
   },
   decorators: [
     (Story: Story): JSX.Element => (

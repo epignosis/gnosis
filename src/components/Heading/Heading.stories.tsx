@@ -19,11 +19,12 @@ export default {
       },
     },
   },
+  args: {
+    children: "The quick brown fox jumps over the lazy dog",
+  },
 };
 
-const Template: Story<HeadingProps> = (args) => (
-  <Heading {...args}>The quick brown fox jumps over the lazy dog</Heading>
-);
+const Template: Story<HeadingProps> = (args) => <Heading {...args} />;
 
 export const H1 = Template.bind({});
 

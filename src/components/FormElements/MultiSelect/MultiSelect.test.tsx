@@ -71,10 +71,6 @@ describe("<MultiSelect />", () => {
 
     expect(options).toHaveLength(OPTIONS.length);
     expect(firstOption).toHaveAttribute("aria-selected", "false");
-
-    // userEvent.click(firstOption);
-
-    // expect(firstOption).toBeChecked();
   });
 
   it("closes when close button is pressed", () => {
@@ -104,61 +100,47 @@ describe("<MultiSelect />", () => {
     expect(list).not.toBeVisible();
   });
 
-  it("selects multiple items", () => {
+  it("matches snapshot", () => {
     const mockOnChange = jest.fn();
-    const labelTxt = faker.company.catchPhrase();
-    const placeholderTxt = faker.company.catchPhraseDescriptor();
-    render(
+    const { container } = render(
       <MultiSelect
-        label={labelTxt}
-        placeholder={placeholderTxt}
+        label="Test Multi-select"
+        placeholder="Test placeholder"
         options={OPTIONS}
         onChange={mockOnChange}
       />,
     );
+
+    expect(container).toMatchSnapshot();
   });
 
-  // it("matches snapshot", () => {
-  //   const mockOnChange = jest.fn();
-  //   const { container } = render(
-  //     <MultiSelect
-  //       label="Test Multi-select"
-  //       placeholder="Test placeholder"
-  //       options={OPTIONS}
-  //       onChange={mockOnChange}
-  //     />,
-  //   );
+  it("matches snapshot with `block = true`", () => {
+    const mockOnChange = jest.fn();
+    const { container } = render(
+      <MultiSelect
+        label="Test Multi-select"
+        placeholder="Test placeholder"
+        options={OPTIONS}
+        onChange={mockOnChange}
+        block
+      />,
+    );
 
-  //   expect(container).toMatchSnapshot();
-  // });
+    expect(container).toMatchSnapshot();
+  });
 
-  // it("matches snapshot with `block = false`", () => {
-  //   const mockOnChange = jest.fn();
-  //   const { container } = render(
-  //     <MultiSelect
-  //       label="Test Multi-select"
-  //       placeholder="Test placeholder"
-  //       options={OPTIONS}
-  //       onChange={mockOnChange}
-  //       block
-  //     />,
-  //   );
+  it("matches snapshot with `altLabel = true`", () => {
+    const mockOnChange = jest.fn();
+    const { container } = render(
+      <MultiSelect
+        label="Test Multi-select"
+        placeholder="Test placeholder"
+        options={OPTIONS}
+        onChange={mockOnChange}
+        altLabel
+      />,
+    );
 
-  //   expect(container).toMatchSnapshot();
-  // });
-
-  // it("matches snapshot with `altLabel = true`", () => {
-  //   const mockOnChange = jest.fn();
-  //   const { container } = render(
-  //     <MultiSelect
-  //       label="Test Multi-select"
-  //       placeholder="Test placeholder"
-  //       options={OPTIONS}
-  //       onChange={mockOnChange}
-  //       altLabel
-  //     />,
-  //   );
-
-  //   expect(container).toMatchSnapshot();
-  // });
+    expect(container).toMatchSnapshot();
+  });
 });

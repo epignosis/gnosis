@@ -12,3 +12,16 @@ exports[`<ProgressBar /> matches snapshot 1`] = `
   </div>
 </div>
 `;
+
+exports[`<ProgressBar /> matches snapshot with zero percent 1`] = `
+<div>
+  <div
+    class="css-1n88rpj-container-container"
+  >
+    <div>
+      0
+      %
+    </div>
+  </div>
+</div>
+`;

@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import faker from "faker";
 import Button from "./Button";
 import { render, screen } from "@test-utils/render";
+import { CalendarSVG } from "@icons/core";
 
 describe("<Button />", () => {
   it("renders correctly", () => {
@@ -87,8 +88,30 @@ describe("<Button />", () => {
     expect(link).toHaveAttribute("href");
   });
 
+  it("has prefix icon", () => {
+    render(<Button iconBefore={CalendarSVG}>{faker.lorem.word()}</Button>);
+
+    const icon = screen.getByTestId(/prefix-icon/i);
+
+    expect(icon).toBeInTheDocument();
+  });
+
+  it("has suffix icon", () => {
+    render(<Button iconAfter={CalendarSVG}>{faker.lorem.word()}</Button>);
+
+    const icon = screen.getByTestId(/suffix-icon/i);
+
+    expect(icon).toBeInTheDocument();
+  });
+
   it("matches snapshot", () => {
     const { container } = render(<Button>Test button</Button>);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it("matches snapshot witn block=`true`", () => {
+    const { container } = render(<Button block>Test button</Button>);
 
     expect(container).toMatchSnapshot();
   });

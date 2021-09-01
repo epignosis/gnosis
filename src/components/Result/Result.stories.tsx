@@ -4,7 +4,7 @@ import Result, { ResultProps } from "./Result";
 import { InfoSVG } from "@icons/core";
 
 export default {
-  title: "Components/Empty State",
+  title: "Components/Result",
   component: Result,
   argTypes: {
     size: {

@@ -72,9 +72,35 @@ describe("<Modal>", () => {
     expect(mockedOnClose).toHaveBeenCalledTimes(1);
   });
 
+  it("Header renders correctly with JSX content", () => {
+    render(
+      <Modal isOpen onClose={mockedOnClose}>
+        <Modal.Header>
+          <button>{headerTxt}</button>
+        </Modal.Header>
+      </Modal>,
+    );
+    const header = screen.getByText(headerTxt);
+
+    expect(header).toBeInTheDocument();
+    expect(header).toHaveTextContent(headerTxt);
+  });
+
   it("matches snapshot", () => {
     const { container } = render(
       <Modal isOpen onClose={mockedOnClose}>
+        <Modal.Header>Test header</Modal.Header>
+        <Modal.Body>Test body</Modal.Body>
+        <Modal.Footer>Test footer</Modal.Footer>
+      </Modal>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it("matches snapshot with size=`fullscreen`", () => {
+    const { container } = render(
+      <Modal isOpen onClose={mockedOnClose} size="fullscreen">
         <Modal.Header>Test header</Modal.Header>
         <Modal.Body>Test body</Modal.Body>
         <Modal.Footer>Test footer</Modal.Footer>

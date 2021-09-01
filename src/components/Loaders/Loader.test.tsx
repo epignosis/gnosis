@@ -11,8 +11,14 @@ describe("<Loader>", () => {
     expect(loader).toBeVisible();
   });
 
-  it("snapshot", () => {
+  it("matches snapshot", () => {
     const { container } = render(<Loader />);
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it("matches snapshot with fullscreen=`true`", () => {
+    const { container } = render(<Loader fullScreen />);
 
     expect(container).toMatchSnapshot();
   });

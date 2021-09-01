@@ -13,3 +13,17 @@ exports[`<RadioButtonGroup /> matches snapshot 1`] = `
   </div>
 </div>
 `;
+
+exports[`<RadioButtonGroup /> matches snapshot with selected value 1`] = `
+<div>
+  <div>
+    <button
+      aria-selected="true"
+      class="is-selected css-1giuk56-radioButton-radioButton"
+      id="radio-0"
+    >
+      Test label
+    </button>
+  </div>
+</div>
+`;

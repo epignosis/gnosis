@@ -73,6 +73,33 @@ describe("<MultiSelect />", () => {
     expect(firstOption).toHaveAttribute("aria-selected", "false");
   });
 
+  it("closes when close button is pressed", () => {
+    const mockOnChange = jest.fn();
+    const labelTxt = faker.company.catchPhrase();
+    const placeholderTxt = faker.company.catchPhraseDescriptor();
+    render(
+      <MultiSelect
+        label={labelTxt}
+        placeholder={placeholderTxt}
+        options={OPTIONS}
+        onChange={mockOnChange}
+      />,
+    );
+
+    const input = screen.getByText(placeholderTxt);
+    const list = screen.queryByTestId(/list-container/i);
+
+    userEvent.click(input);
+
+    expect(list).toBeVisible();
+
+    const closeBtn = screen.getByTestId("close-btn");
+
+    userEvent.click(closeBtn);
+
+    expect(list).not.toBeVisible();
+  });
+
   it("matches snapshot", () => {
     const mockOnChange = jest.fn();
     const { container } = render(
@@ -87,7 +114,7 @@ describe("<MultiSelect />", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("matches snapshot with `block = false`", () => {
+  it("matches snapshot with `block = true`", () => {
     const mockOnChange = jest.fn();
     const { container } = render(
       <MultiSelect

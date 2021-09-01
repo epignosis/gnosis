@@ -140,3 +140,40 @@ exports[`<Card/> matches snapshot with overlay 1`] = `
   </article>
 </div>
 `;
+
+exports[`<Card/> matches snapshot with transparent hover 1`] = `
+<div>
+  <article
+    class="css-u1k06h-cardContainer-cardContainer"
+  >
+    <div
+      class="css-14dee1b-aspectRatioContainer-aspectRatioContainer"
+    >
+      <div
+        class="aspect-ratio-wrapper"
+      >
+        <section
+          class="css-pcvco1-courseHeaderContainer"
+        >
+          <img
+            alt="An image"
+            class="css-13ekei5-thumbnailContainer"
+            src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
+          />
+          <div
+            class="css-qtcg2f-hoverContainer-hoverContainer"
+            style="opacity: 0;"
+          >
+            <div
+              class="hover-wrapper"
+              style="display: none;"
+            >
+              Hover text
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </article>
+</div>
+`;

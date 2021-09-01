@@ -1,6 +1,8 @@
 import React from "react";
+import userEvent from "@testing-library/user-event";
 import Pagination from "./Pagination";
-import { render, screen } from "@test-utils/render";
+import { act, render, screen } from "@test-utils/render";
+import { resizeWindow } from "@test-utils/helpers/windowResize";
 
 describe("<Pagination />", () => {
   it("renders", () => {
@@ -49,6 +51,19 @@ describe("<Pagination />", () => {
     expect(previousBtn).not.toBeNull();
   });
 
+  it("changes page", () => {
+    const mockFn = jest.fn();
+    render(<Pagination current={2} totalPages={4} onChange={mockFn} />);
+
+    const nextBtn = screen.getByText(/Next/);
+    const previousBtn = screen.getByText(/Previous/);
+
+    userEvent.click(nextBtn);
+    userEvent.click(previousBtn);
+
+    expect(mockFn).toHaveBeenCalledTimes(2);
+  });
+
   it("matches snapshot with on page", () => {
     const mockFn = jest.fn();
     const { container } = render(<Pagination current={1} totalPages={1} onChange={mockFn} />);
@@ -82,5 +97,31 @@ describe("<Pagination />", () => {
     const { container } = render(<Pagination current={2} totalPages={4} onChange={mockFn} />);
 
     expect(container).toMatchSnapshot();
+  });
+});
+
+describe("<Pagination/> on mobile", () => {
+  it("renders correctly", () => {
+    const mockFn = jest.fn();
+
+    render(<Pagination current={2} totalPages={4} onChange={mockFn} />);
+
+    act(() => {
+      resizeWindow(320, 500);
+    });
+
+    const nextBtn = screen.getByTestId("arrow-right");
+    const previousBtn = screen.getByTestId("arrow-right");
+    const options = screen.getAllByRole("option");
+    const select = screen.getByTestId("pagination-page");
+
+    userEvent.click(nextBtn);
+    userEvent.click(previousBtn);
+
+    expect(previousBtn).toBeInTheDocument();
+    expect(nextBtn).toBeInTheDocument();
+    expect(select).toBeInTheDocument();
+    expect(options).toHaveLength(4);
+    expect(mockFn).toHaveBeenCalledTimes(2);
   });
 });

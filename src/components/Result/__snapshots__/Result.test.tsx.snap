@@ -1,5 +1,39 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Result/> matches snapshot on small screens 1`] = `
+<div>
+  <article
+    class="css-zb7fnf-container-container"
+    data-testid="empty-state-container"
+  >
+    <svg-file-stub
+      data-testid="result-icon"
+      height="135"
+    />
+    <div
+      class="body"
+    >
+      <h3
+        class="css-6t4vgf-headingContainer-headingContainer"
+      >
+        Test title
+      </h3>
+      <p
+        class="css-1gg3twx-textContainer-textContainer"
+        data-testid="text-component"
+      >
+        Test info
+      </p>
+    </div>
+    <footer>
+      <button>
+        Test footer
+      </button>
+    </footer>
+  </article>
+</div>
+`;
+
 exports[`<Result/> matches snapshot with all props provided 1`] = `
 <div>
   <article
@@ -101,6 +135,25 @@ exports[`<Result/> matches snapshot with info 1`] = `
       >
         Test info
       </p>
+    </div>
+  </article>
+</div>
+`;
+
+exports[`<Result/> matches snapshot with size=\`md\` 1`] = `
+<div>
+  <article
+    class="css-198tph0-container-container"
+    data-testid="empty-state-container"
+  >
+    <div
+      class="body"
+    >
+      <h3
+        class="css-6t4vgf-headingContainer-headingContainer"
+      >
+        Test title
+      </h3>
     </div>
   </article>
 </div>

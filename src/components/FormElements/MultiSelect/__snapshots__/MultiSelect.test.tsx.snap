@@ -7,16 +7,16 @@ exports[`<MultiSelect /> matches snapshot 1`] = `
   >
     <label
       class="css-xs6o3g-label-label"
-      for="downshift-3-toggle-button"
+      for="downshift-6-toggle-button"
     >
       Test Multi-select
     </label>
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-labelledby="downshift-3-label downshift-3-toggle-button"
+      aria-labelledby="downshift-6-label downshift-6-toggle-button"
       class="select-btn"
-      id="downshift-3-toggle-button"
+      id="downshift-6-toggle-button"
       type="button"
     >
       Test placeholder
@@ -25,9 +25,9 @@ exports[`<MultiSelect /> matches snapshot 1`] = `
       />
     </button>
     <ul
-      aria-labelledby="downshift-3-label"
+      aria-labelledby="downshift-6-label"
       data-testid="list-container"
-      id="downshift-3-menu"
+      id="downshift-6-menu"
       role="listbox"
       tabindex="-1"
     >
@@ -42,6 +42,7 @@ exports[`<MultiSelect /> matches snapshot 1`] = `
         </span>
         <button
           class="close-btn"
+          data-testid="close-btn"
         >
           <svg-file-stub
             height="20"
@@ -60,16 +61,16 @@ exports[`<MultiSelect /> matches snapshot with \`altLabel = true\` 1`] = `
   >
     <label
       class="css-xs6o3g-label-label"
-      for="downshift-5-toggle-button"
+      for="downshift-8-toggle-button"
     >
       Test Multi-select
     </label>
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-labelledby="downshift-5-label downshift-5-toggle-button"
+      aria-labelledby="downshift-8-label downshift-8-toggle-button"
       class="select-btn"
-      id="downshift-5-toggle-button"
+      id="downshift-8-toggle-button"
       type="button"
     >
       Test placeholder
@@ -78,9 +79,9 @@ exports[`<MultiSelect /> matches snapshot with \`altLabel = true\` 1`] = `
       />
     </button>
     <ul
-      aria-labelledby="downshift-5-label"
+      aria-labelledby="downshift-8-label"
       data-testid="list-container"
-      id="downshift-5-menu"
+      id="downshift-8-menu"
       role="listbox"
       tabindex="-1"
     >
@@ -95,6 +96,7 @@ exports[`<MultiSelect /> matches snapshot with \`altLabel = true\` 1`] = `
         </span>
         <button
           class="close-btn"
+          data-testid="close-btn"
         >
           <svg-file-stub
             height="20"
@@ -106,23 +108,23 @@ exports[`<MultiSelect /> matches snapshot with \`altLabel = true\` 1`] = `
 </div>
 `;
 
-exports[`<MultiSelect /> matches snapshot with \`block = false\` 1`] = `
+exports[`<MultiSelect /> matches snapshot with \`block = true\` 1`] = `
 <div>
   <div
     class=" css-g1aj0v-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
   >
     <label
       class="css-xs6o3g-label-label"
-      for="downshift-4-toggle-button"
+      for="downshift-7-toggle-button"
     >
       Test Multi-select
     </label>
     <button
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-labelledby="downshift-4-label downshift-4-toggle-button"
+      aria-labelledby="downshift-7-label downshift-7-toggle-button"
       class="select-btn"
-      id="downshift-4-toggle-button"
+      id="downshift-7-toggle-button"
       type="button"
     >
       Test placeholder
@@ -131,9 +133,9 @@ exports[`<MultiSelect /> matches snapshot with \`block = false\` 1`] = `
       />
     </button>
     <ul
-      aria-labelledby="downshift-4-label"
+      aria-labelledby="downshift-7-label"
       data-testid="list-container"
-      id="downshift-4-menu"
+      id="downshift-7-menu"
       role="listbox"
       tabindex="-1"
     >
@@ -148,6 +150,7 @@ exports[`<MultiSelect /> matches snapshot with \`block = false\` 1`] = `
         </span>
         <button
           class="close-btn"
+          data-testid="close-btn"
         >
           <svg-file-stub
             height="20"

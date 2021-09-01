@@ -41,8 +41,10 @@ describe("<Select />", () => {
 
   it("selects a value", () => {
     const labelTxt = faker.commerce.department();
+    const mockFn = jest.fn();
+
     render(
-      <Select id={faker.random.alpha()} label={labelTxt}>
+      <Select id={faker.random.alpha()} label={labelTxt} onChange={mockFn}>
         {OPTIONS.map(({ label, value }) => (
           <option key={value} value={value}>
             {label}
@@ -58,6 +60,7 @@ describe("<Select />", () => {
     userEvent.selectOptions(select, OPTIONS[1].value);
 
     expect(select).toHaveValue(OPTIONS[1].value);
+    expect(mockFn).toHaveBeenCalledTimes(1);
   });
 
   it("matches snapshot", () => {

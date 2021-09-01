@@ -1,5 +1,5 @@
-export const resizeWindow = (x: number, y: number): void => {
-  Object.assign(window, { innerWidth: x });
-  Object.assign(window, { innerHeight: y });
+export const resizeWindow = (width: number, height: number): void => {
+  Object.assign(window, { innerWidth: width });
+  Object.assign(window, { innerHeight: height });
   window.dispatchEvent(new Event("resize"));
 };

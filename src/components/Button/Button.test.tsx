@@ -91,7 +91,7 @@ describe("<Button />", () => {
   it("has prefix icon", () => {
     render(<Button iconBefore={CalendarSVG}>{faker.lorem.word()}</Button>);
 
-    const icon = screen.getByTestId(/icon/i);
+    const icon = screen.getByTestId(/prefix-icon/i);
 
     expect(icon).toBeInTheDocument();
   });
@@ -99,7 +99,7 @@ describe("<Button />", () => {
   it("has suffix icon", () => {
     render(<Button iconAfter={CalendarSVG}>{faker.lorem.word()}</Button>);
 
-    const icon = screen.getByTestId(/icon/i);
+    const icon = screen.getByTestId(/suffix-icon/i);
 
     expect(icon).toBeInTheDocument();
   });

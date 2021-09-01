@@ -61,7 +61,7 @@ describe("<DateInput />", () => {
 });
 
 describe("<DateInput/> on mobile", () => {
-  it("renders correctly", async () => {
+  it("renders correctly", () => {
     render(
       <DateInput
         id={faker.random.alphaNumeric()}

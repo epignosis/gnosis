@@ -61,7 +61,7 @@ describe("<DateInput />", () => {
 });
 
 describe("<DateInput/> on mobile", () => {
-  it("renders correctly and changes date", async () => {
+  it("renders correctly", async () => {
     render(
       <DateInput
         id={faker.random.alphaNumeric()}
@@ -78,12 +78,5 @@ describe("<DateInput/> on mobile", () => {
     const input = screen.getByLabelText(labelTxt);
 
     expect(input).toHaveValue(format(date, "yyyy-MM-dd"));
-
-    // userEvent.click(input);
-    userEvent.type(input, format(today, "yyyy-MM-dd"));
-
-    // await waitFor(() => expect(input).toHaveValue(format(today, "yyyy-MM-dd")));
-
-    // expect(mockFn).toHaveBeenCalledTimes(1);
   });
 });

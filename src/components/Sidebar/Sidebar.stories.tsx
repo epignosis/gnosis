@@ -24,6 +24,9 @@ export default {
       action: "Toggle action fired",
     },
   },
+  args: {
+    isCollapsed: false,
+  },
 };
 
 export const Sidebar: Story<SidebarProps> = (args) => (

@@ -58,7 +58,7 @@ describe("<Drawer/>", () => {
   it("Header renders correctly with close button", () => {
     const mockFn = jest.fn();
 
-    render(
+    const { rerender } = render(
       <Drawer isOpen onClose={mockFn}>
         <Drawer.Header closable>{headerTxt}</Drawer.Header>
       </Drawer>,
@@ -72,6 +72,14 @@ describe("<Drawer/>", () => {
     expect(header).toHaveTextContent(headerTxt);
     expect(closeBtn).toBeInTheDocument();
     expect(mockFn).toHaveBeenCalledTimes(1);
+
+    rerender(
+      <Drawer isOpen={false} onClose={mockFn}>
+        <Drawer.Header closable>{headerTxt}</Drawer.Header>
+      </Drawer>,
+    );
+
+    expect(header).not.toBeVisible();
   });
 
   it("Header renders with JSX content", () => {

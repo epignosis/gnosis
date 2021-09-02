@@ -36,6 +36,4 @@ export default {
   ],
 };
 
-export const Textarea: Story<TextareaProps> = (args) => (
-  <TextareaComponent id="description" {...args} />
-);
+export const Textarea: Story<TextareaProps> = (args) => <TextareaComponent {...args} />;

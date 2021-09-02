@@ -1,7 +1,6 @@
 import React from "react";
 import { Story } from "@storybook/react";
 import Alert, { AlertProps } from "./Alert";
-import { Heading } from "@components";
 
 export default {
   component: Alert,
@@ -13,27 +12,21 @@ export default {
         options: ["info", "danger", "success", "warning"],
       },
     },
+    icon: {
+      control: false,
+    },
+  },
+  args: {
+    type: "info",
+    children: "Hi I am an Alert component!",
   },
 };
 
-const Template: Story<AlertProps> = (args) => (
-  <Alert {...args}>
-    <Heading as="h3">Hi I am an Alert component.</Heading>
-    <p>Use the story&apos;s controls to check my various states</p>
-  </Alert>
-);
+const Template: Story<AlertProps> = (args) => <Alert {...args} />;
 
 export const Default = Template.bind({});
 
-Default.args = {
-  type: "info",
-};
-
 export const WithCloseBtn = Template.bind({});
-
-WithCloseBtn.args = {
-  type: "info",
-};
 
 WithCloseBtn.argTypes = {
   onClose: { action: "onClose" },

@@ -5,8 +5,10 @@ import Breadcrumb, { BreadcrumbProps } from "./Breadcrumb";
 export default {
   component: Breadcrumb,
   title: "Components/Breadcrumb",
-  parameters: {
-    controls: { hideNoControlsWarning: true },
+  argTypes: {
+    breadcrumbEl: {
+      control: false,
+    },
   },
 };
 
@@ -42,6 +44,5 @@ export const MultipleBreadcrumbs: Story<BreadcrumbProps> = (args) => {
 };
 
 MultipleBreadcrumbs.args = {
-  breadcrumbEl: breadcrumbPortal,
-  separator: "/",
+  ...OneBreadcrumb.args,
 };

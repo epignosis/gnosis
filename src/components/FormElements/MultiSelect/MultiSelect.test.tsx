@@ -30,6 +30,7 @@ describe("<MultiSelect />", () => {
     const placeholderTxt = faker.company.catchPhraseDescriptor();
     render(
       <MultiSelect
+        id={faker.hacker.abbreviation()}
         label={labelTxt}
         placeholder={placeholderTxt}
         options={OPTIONS}
@@ -52,6 +53,7 @@ describe("<MultiSelect />", () => {
     const placeholderTxt = faker.company.catchPhraseDescriptor();
     render(
       <MultiSelect
+        id={faker.hacker.abbreviation()}
         label={labelTxt}
         placeholder={placeholderTxt}
         options={OPTIONS}
@@ -79,6 +81,7 @@ describe("<MultiSelect />", () => {
     const placeholderTxt = faker.company.catchPhraseDescriptor();
     render(
       <MultiSelect
+        id={faker.hacker.abbreviation()}
         label={labelTxt}
         placeholder={placeholderTxt}
         options={OPTIONS}
@@ -104,6 +107,7 @@ describe("<MultiSelect />", () => {
     const mockOnChange = jest.fn();
     const { container } = render(
       <MultiSelect
+        id="testMultiSelect"
         label="Test Multi-select"
         placeholder="Test placeholder"
         options={OPTIONS}
@@ -118,6 +122,7 @@ describe("<MultiSelect />", () => {
     const mockOnChange = jest.fn();
     const { container } = render(
       <MultiSelect
+        id="testMultiSelect"
         label="Test Multi-select"
         placeholder="Test placeholder"
         options={OPTIONS}
@@ -129,15 +134,16 @@ describe("<MultiSelect />", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("matches snapshot with `altLabel = true`", () => {
+  it("matches snapshot with `inline = true`", () => {
     const mockOnChange = jest.fn();
     const { container } = render(
       <MultiSelect
+        id="testMultiSelect"
         label="Test Multi-select"
         placeholder="Test placeholder"
         options={OPTIONS}
         onChange={mockOnChange}
-        altLabel
+        inline
       />,
     );
 

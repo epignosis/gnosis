@@ -12,7 +12,7 @@ exports[`<Pagination /> matches snapshot with 2 pages 1`] = `
       class="current-page"
     >
       <div
-        class=" css-mqijmr-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+        class=" css-2s9jax-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
       >
         <div
           class="select-input-wrapper"
@@ -86,7 +86,7 @@ exports[`<Pagination /> matches snapshot with no next page 1`] = `
       class="current-page"
     >
       <div
-        class=" css-mqijmr-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+        class=" css-2s9jax-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
       >
         <div
           class="select-input-wrapper"
@@ -138,7 +138,7 @@ exports[`<Pagination /> matches snapshot with no previous page 1`] = `
       class="current-page"
     >
       <div
-        class=" css-mqijmr-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+        class=" css-2s9jax-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
       >
         <div
           class="select-input-wrapper"
@@ -201,7 +201,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       class="current-page"
     >
       <div
-        class=" css-mqijmr-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+        class=" css-2s9jax-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
       >
         <div
           class="select-input-wrapper"
@@ -259,7 +259,7 @@ exports[`<Pagination /> matches snapshot with previous and next pages 1`] = `
       class="current-page"
     >
       <div
-        class=" css-mqijmr-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+        class=" css-2s9jax-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
       >
         <div
           class="select-input-wrapper"

@@ -8,7 +8,6 @@ export default {
   args: {
     size: "md",
     label: "Choose a programming language",
-    altLabel: false,
     inline: false,
     id: "selectStory",
     className: "selectStory",

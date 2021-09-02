@@ -6,6 +6,7 @@ export default {
   title: "components/Form Elements/Radio Button Group",
   component: RadioButtonGroupComponent,
   args: {
+    id: "radioButtonGroup",
     size: "md",
     id: "radioButtonGroupStory",
     className: "radioButtonGroupStory",
@@ -41,5 +42,5 @@ export default {
 export const RadioButtonGroup: Story<RadioGroupProps> = (args) => {
   const [value, setValue] = useState("");
 
-  return <RadioButtonGroupComponent id="radio-group" {...args} value={value} onChange={setValue} />;
+  return <RadioButtonGroupComponent {...args} value={value} onChange={setValue} />;
 };

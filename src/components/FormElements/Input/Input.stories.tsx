@@ -21,10 +21,11 @@ export default {
     },
   },
   args: {
+    id: "input",
     size: "md",
     placeholder: "Your LMS username",
     label: "Username",
-    altLabel: false,
+    inline: false,
     status: "valid",
     id: "inputStory",
     className: "inputStory",
@@ -38,7 +39,7 @@ export default {
   ],
 };
 
-const Template: Story<InputProps> = (args) => <InputComponent id="story-input" {...args} />;
+const Template: Story<InputProps> = (args) => <InputComponent {...args} />;
 
 export const Default = Template.bind({});
 

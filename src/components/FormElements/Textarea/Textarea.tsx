@@ -3,23 +3,28 @@ import { SerializedStyles } from "@emotion/react";
 import classNames from "classnames";
 import { textareaContainer } from "./styles";
 import { Label } from "@components";
+import { ExtendableProps } from "types/common";
 
 export type TextareaResize = "none" | "horizontal" | "vertical" | "both";
 
-export type TextareaProps = InputHTMLAttributes<HTMLTextAreaElement> & {
-  label?: string;
-  altLabel?: boolean;
-  resize?: TextareaResize;
-  status?: "valid" | "error";
-};
+export type TextareaProps = ExtendableProps<
+  InputHTMLAttributes<HTMLTextAreaElement>,
+  {
+    id: string;
+    label?: string;
+    inline?: boolean;
+    resize?: TextareaResize;
+    status?: "valid" | "error";
+  }
+>;
 const Textarea: ForwardRefRenderFunction<HTMLTextAreaElement, TextareaProps> = (
   props,
   forwardedRef,
 ) => {
-  const { label, altLabel = false, id, resize = "none", status = "valid", ...rest } = props;
+  const { label, inline = false, id, resize = "none", status = "valid", ...rest } = props;
   const hasLabel = Boolean(label);
   const containerClassNames = classNames({
-    "alt-label": hasLabel && altLabel,
+    inline: hasLabel && inline,
     valid: status === "valid",
     error: status === "error",
   });

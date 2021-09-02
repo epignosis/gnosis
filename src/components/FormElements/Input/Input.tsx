@@ -3,19 +3,23 @@ import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import { inputContainer } from "./styles";
 import { Label } from "@components";
-import { IconType } from "types/common";
+import { ExtendableProps, IconType } from "types/common";
 
 export type InputSize = "md" | "lg";
 
-export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size"> & {
-  status?: "valid" | "error";
-  size?: InputSize;
-  iconBefore?: IconType;
-  iconAfter?: IconType;
-  ref?: Ref<HTMLInputElement>;
-  label?: string;
-  altLabel?: boolean;
-};
+export type InputProps = ExtendableProps<
+  InputHTMLAttributes<HTMLInputElement>,
+  {
+    id: string;
+    status?: "valid" | "error";
+    size?: InputSize;
+    iconBefore?: IconType;
+    iconAfter?: IconType;
+    ref?: Ref<HTMLInputElement>;
+    label?: string;
+    inline?: boolean;
+  }
+>;
 
 const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (props, forwardedRef) => {
   const {
@@ -24,7 +28,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (props, fo
     iconBefore,
     iconAfter,
     label,
-    altLabel = false,
+    inline = false,
     id,
     className,
     ...rest
@@ -37,7 +41,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (props, fo
     error: status === "error",
     "with-prefix-icon": Boolean(iconBefore),
     "with-suffix-icon": Boolean(iconAfter),
-    "alt-label": hasLabel && altLabel,
+    inline: hasLabel && inline,
     [className ?? ""]: className,
   });
 

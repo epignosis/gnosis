@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Story } from "@storybook/react";
-import Modal from "./Modal";
+import Modal, { ReactModalProps } from "./Modal";
 import { Button, Input } from "@components";
 
 export default {
@@ -9,23 +9,26 @@ export default {
   parameters: {
     controls: { hideNoControlsWarning: true },
   },
+  argTypes: {
+    size: {
+      control: {
+        type: "select",
+        options: ["md", "lg", "fullscreen"],
+      },
+    },
+  },
+  args: {
+    size: "md",
+  },
 };
 
-const ModalStory = (): JSX.Element => {
-  const openModal = (): void => {
-    setIsOpen(true);
-  };
-
-  const closeModal = (): void => {
-    setIsOpen(false);
-  };
-
+export const Default: Story<ReactModalProps> = (args) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
-      <Button onClick={openModal}>Simple Modal</Button>
-      <Modal isOpen={isOpen} onClose={closeModal}>
+      <Button onClick={(): void => setIsOpen(true)}>Simple Modal</Button>
+      <Modal {...args} isOpen={isOpen} onClose={(): void => setIsOpen(false)}>
         <Modal.Header>This is the modal title</Modal.Header>
         <Modal.Body>This is the modal body</Modal.Body>
         <Modal.Footer>This is the modal footer</Modal.Footer>
@@ -34,30 +37,24 @@ const ModalStory = (): JSX.Element => {
   );
 };
 
-const ModalNoHeader = (): JSX.Element => {
-  const openModal = (): void => {
-    setIsOpen(true);
-  };
-
-  const closeModal = (): void => {
-    setIsOpen(false);
-  };
-
+export const ModalWithNoHeader: Story<ReactModalProps> = (args) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
-      <Button onClick={openModal}>Modal with no Header</Button>
-      <Modal isOpen={isOpen} onClose={closeModal}>
-        <Modal.Body style={{ padding: 0, maxWidth: "32rem" }}>
-          <img
-            src="https://res.cloudinary.com/tsevdos/image/upload/v1607431472/Card01_Sales_rtxuhj.jpg"
-            style={{ width: "100%", height: 300 }}
-          />
+      <Button onClick={(): void => setIsOpen(true)}>Modal with no Header</Button>
+      <Modal {...args} isOpen={isOpen} onClose={(): void => setIsOpen(false)}>
+        <Modal.Body style={{ padding: 0 }}>
+          <div style={{ overflow: "auto", maxHeight: "32rem" }}>
+            <img
+              src="https://res.cloudinary.com/tsevdos/image/upload/v1607431472/Card01_Sales_rtxuhj.jpg"
+              style={{ width: "100%" }}
+            />
+          </div>
         </Modal.Body>
         <Modal.Footer>
           <div style={{ display: "flex", justifyContent: "center" }}>
-            <Button onClick={closeModal}>Close Modal</Button>
+            <Button onClick={(): void => setIsOpen(false)}>Close Modal</Button>
           </div>
         </Modal.Footer>
       </Modal>
@@ -65,21 +62,13 @@ const ModalNoHeader = (): JSX.Element => {
   );
 };
 
-const ModalContent = (): JSX.Element => {
-  const openModal = (): void => {
-    setIsOpen(true);
-  };
-
-  const closeModal = (): void => {
-    setIsOpen(false);
-  };
-
+export const ModalWithCotent: Story<ReactModalProps> = (args) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
-      <Button onClick={openModal}>Modal with Content</Button>
-      <Modal isOpen={isOpen} onClose={closeModal}>
+      <Button onClick={(): void => setIsOpen(true)}>Modal with Content</Button>
+      <Modal {...args} isOpen={isOpen} onClose={(): void => setIsOpen(false)}>
         <Modal.Header>This is the modal title</Modal.Header>
         <Modal.Body>
           <Input
@@ -97,30 +86,16 @@ const ModalContent = (): JSX.Element => {
           <Input id="retype-psw" type="password" label="Retype password" />
         </Modal.Body>
         <Modal.Footer style={{ textAlign: "right" }}>
-          <Button color="secondary" onClick={closeModal} style={{ marginRight: "1rem" }}>
+          <Button
+            color="secondary"
+            onClick={(): void => setIsOpen(false)}
+            style={{ marginRight: "1rem" }}
+          >
             Cancel
           </Button>
-          <Button onClick={closeModal}>Change password</Button>
+          <Button onClick={(): void => setIsOpen(false)}>Change password</Button>
         </Modal.Footer>
       </Modal>
     </div>
   );
 };
-
-export const SimpleModal: Story = () => (
-  <div style={{ marginBottom: 16 }}>
-    <ModalStory />
-  </div>
-);
-
-export const ModalWithNoHeader: Story = () => (
-  <div style={{ marginBottom: 16 }}>
-    <ModalNoHeader />
-  </div>
-);
-
-export const ModalWithContent: Story = () => (
-  <div style={{ marginBottom: 16 }}>
-    <ModalContent />
-  </div>
-);

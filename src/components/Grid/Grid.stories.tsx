@@ -1,14 +1,30 @@
 import { Story } from "@storybook/react";
 import React from "react";
-import Grid from "./Grid";
+import Grid, { GridProps } from "./Grid";
 
 export default {
   component: Grid,
   title: "Components/Grid",
+  argTypes: {
+    as: {
+      control: {
+        type: "select",
+        options: ["div", "article", "section"],
+      },
+    },
+  },
+  args: {
+    templateColumns: [1, 2, 3, 4, 5],
+    gap: 2,
+    as: "div",
+    rowGap: 1,
+    columnGap: 0,
+    className: "gridStory",
+  },
 };
 
-export const Simple: Story = () => (
-  <Grid templateColumns={[1, 2, 3, 4, 5]} gap={2}>
+export const Simple: Story<GridProps> = (args) => (
+  <Grid {...args}>
     <div style={{ backgroundColor: "whitesmoke", height: "100%" }}>Item 1</div>
     <div style={{ backgroundColor: "whitesmoke", height: "100%" }}>Item 2</div>
     <div style={{ backgroundColor: "whitesmoke", height: "100%" }}>Item 3</div>
@@ -20,12 +36,8 @@ export const Simple: Story = () => (
   </Grid>
 );
 
-Simple.parameters = {
-  controls: { hideNoControlsWarning: true },
-};
-
-export const WithCustomGridItems: Story = () => (
-  <Grid templateColumns={[1, 2, 3, 4, 5]} gap={2}>
+export const WithCustomGridItems: Story<GridProps> = (args) => (
+  <Grid {...args}>
     <Grid.Item colSpan={[1, 2, 1]}>
       <div style={{ backgroundColor: "whitesmoke", height: "100%" }}>Item 1</div>
     </Grid.Item>
@@ -58,7 +70,3 @@ export const WithCustomGridItems: Story = () => (
     </Grid.Item>
   </Grid>
 );
-
-WithCustomGridItems.parameters = {
-  controls: { hideNoControlsWarning: true },
-};

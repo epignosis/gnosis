@@ -1,6 +1,6 @@
-import { colors, breadcrumbBackground } from "../colors";
+import { colors } from "../colors";
 
 export default {
   color: colors.black,
-  background: breadcrumbBackground,
+  background: "#F5F5F5",
 };

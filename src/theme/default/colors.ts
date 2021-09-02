@@ -49,5 +49,3 @@ export const hexToRGBA = (hex: string, alpha: number): string => {
 
   return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
 };
-
-export const breadcrumbBackground = Color(colors.gray.base).lighten(0.6).hex();

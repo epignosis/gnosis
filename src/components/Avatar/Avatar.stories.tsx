@@ -20,9 +20,9 @@ export default {
   },
 };
 
-type Props = AvatarBaseProps & AvatarProps;
+const Template: Story<AvatarBaseProps & AvatarProps> = (args) => <Avatar {...args} />;
 
-export const AvatarImage: Story<Props> = (args) => <Avatar {...args} />;
+export const AvatarImage = Template.bind({});
 
 AvatarImage.args = {
   alt: "John Tsevdos",
@@ -38,10 +38,11 @@ AvatarImage.argTypes = {
   },
 };
 
-export const IconAvatar: Story<Props> = (args) => <Avatar {...args}>{args.children}</Avatar>;
+export const IconAvatar = Template.bind({});
 
 IconAvatar.args = {
   children: <CertificateSVG />,
+  bgColor: "#1B68B3",
 };
 
 IconAvatar.argTypes = {
@@ -53,7 +54,7 @@ IconAvatar.argTypes = {
   },
 };
 
-export const StringAvatar: Story<Props> = (args) => <Avatar {...args}>{args.children}</Avatar>;
+export const StringAvatar = Template.bind({});
 
 StringAvatar.args = {
   children: "JT",

@@ -10,7 +10,6 @@ export default {
     label: "Date of birth",
     size: "md",
     inline: false,
-    id: "dateInputStory",
     className: "dateInputStory",
   },
   argTypes: {

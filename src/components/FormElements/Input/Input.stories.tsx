@@ -27,7 +27,6 @@ export default {
     label: "Username",
     inline: false,
     status: "valid",
-    id: "inputStory",
     className: "inputStory",
   },
   decorators: [

@@ -8,7 +8,6 @@ export default {
   args: {
     id: "radioButtonGroup",
     size: "md",
-    id: "radioButtonGroupStory",
     className: "radioButtonGroupStory",
     options: [
       {

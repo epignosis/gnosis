@@ -12,6 +12,12 @@ export const textareaContainer = (
     align-items: baseline;
   }
 
+  &.error {
+    textarea {
+      border-color: ${formElements.input.errorColor};
+    }
+  }
+
   textarea {
     ${inputBaseStyles(formElements, { block: true })};
     min-height: 10rem;

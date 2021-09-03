@@ -46,7 +46,6 @@ export default {
         options: ["all", "progress", "completed", "failed"],
       },
     },
-    onChange: { action: "value changed" },
   },
 };
 

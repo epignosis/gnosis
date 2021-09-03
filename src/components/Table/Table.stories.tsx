@@ -100,6 +100,12 @@ Default.args = {
   ],
 };
 
+Default.argTypes = {
+  footer: {
+    control: false,
+  },
+};
+
 export const WithFooter = Template.bind({});
 
 WithFooter.args = {

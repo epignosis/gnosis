@@ -2,6 +2,7 @@ import React from "react";
 import { Story } from "@storybook/react";
 import Result, { ResultProps } from "./Result";
 import { InfoSVG } from "@icons/core";
+import Button from "@components/Button/Button";
 
 export default {
   title: "Components/Result",
@@ -23,4 +24,11 @@ Default.args = {
   size: "md",
   title: "This course has no content",
   info: "This course is still under construction and will be ready soon",
+};
+
+export const WithFooter: Story<ResultProps> = (args) => <Result {...args} />;
+
+WithFooter.args = {
+  ...Default.args,
+  footer: <Button>Go back to dashboard</Button>,
 };

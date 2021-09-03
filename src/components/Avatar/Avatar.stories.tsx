@@ -1,6 +1,6 @@
 import React from "react";
 import { Story } from "@storybook/react";
-import Avatar from "./Avatar";
+import Avatar, { AvatarBaseProps, AvatarProps } from "./Avatar";
 import { CertificateSVG } from "@icons/core";
 
 export default {
@@ -16,17 +16,51 @@ export default {
   },
   args: {
     size: "sm",
+    className: "avatarStory",
   },
 };
 
-export const AvatarImage: Story = (args) => (
-  <Avatar src="https://plus.talentlms.com/assets/users/user2.png" alt="John Tsevdos" {...args} />
-);
+const Template: Story<AvatarBaseProps & AvatarProps> = (args) => <Avatar {...args} />;
 
-export const IconAvatar: Story = (args) => (
-  <Avatar {...args}>
-    <CertificateSVG />
-  </Avatar>
-);
+export const AvatarImage = Template.bind({});
 
-export const StringAvatar: Story = (args) => <Avatar {...args}>JT</Avatar>;
+AvatarImage.args = {
+  alt: "John Tsevdos",
+  src: "https://plus.talentlms.com/assets/users/user2.png",
+};
+
+AvatarImage.argTypes = {
+  children: {
+    control: false,
+  },
+  bgColor: {
+    control: false,
+  },
+};
+
+export const IconAvatar = Template.bind({});
+
+IconAvatar.args = {
+  children: <CertificateSVG />,
+  bgColor: "#1B68B3",
+};
+
+IconAvatar.argTypes = {
+  src: {
+    control: false,
+  },
+  alt: {
+    control: false,
+  },
+};
+
+export const StringAvatar = Template.bind({});
+
+StringAvatar.args = {
+  children: "JT",
+  bgColor: "#FF9C28",
+};
+
+StringAvatar.argTypes = {
+  ...IconAvatar.argTypes,
+};

@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import { Story } from "@storybook/react";
-import Tooltip from "./Tooltip";
+import Tooltip, { TooltipProps } from "./Tooltip";
 import { Button } from "@components";
 
 export default {
@@ -13,6 +13,12 @@ export default {
         options: ["top", "right", "left", "bottom"],
       },
     },
+    as: {
+      control: {
+        type: "select",
+        options: ["div", "span"],
+      },
+    },
   },
   decorators: [
     (story: () => ReactNode): JSX.Element => (
@@ -21,9 +27,9 @@ export default {
   ],
 };
 
-export const Default: Story = (args) => (
+export const Default: Story<TooltipProps> = (args) => (
   <div>
-    <Tooltip content={<div>This is a tooltip</div>} {...args}>
+    <Tooltip {...args}>
       <Button>Hover me</Button>
     </Tooltip>
   </div>
@@ -31,4 +37,6 @@ export const Default: Story = (args) => (
 
 Default.args = {
   placement: "top",
+  content: "This is a tooltip",
+  as: "div",
 };

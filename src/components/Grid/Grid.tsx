@@ -8,7 +8,7 @@ export type ResponsiveValues =
   | [NumberOrNull, NumberOrNull, NumberOrNull?, NumberOrNull?, NumberOrNull?, NumberOrNull?]
   | number;
 
-type GridProps = {
+export type GridProps = {
   templateColumns: ResponsiveValues;
   gap?: number;
   columnGap?: number;

@@ -15,8 +15,7 @@ export default {
     fontSize: {
       control: {
         type: "select",
-        // TODO: add the remaining sizes when typography docs are merged in master
-        options: ["xs", "sm", "md", "lg", "xl", "2xl"],
+        options: ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl"],
       },
     },
     as: {
@@ -28,7 +27,7 @@ export default {
   },
 };
 
-const Template: Story<TextProps> = (args) => <Text {...args}>This is some text!</Text>;
+const Template: Story<TextProps> = (args) => <Text {...args} />;
 
 export const Default = Template.bind({});
 
@@ -36,4 +35,5 @@ Default.args = {
   weight: "400",
   fontSize: "md",
   as: "span",
+  children: "This is some text",
 };

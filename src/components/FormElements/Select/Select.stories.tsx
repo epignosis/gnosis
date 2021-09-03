@@ -10,6 +10,8 @@ export default {
     label: "Choose a programming language",
     altLabel: false,
     inline: false,
+    id: "selectStory",
+    className: "selectStory",
   },
   argTypes: {
     size: {
@@ -18,6 +20,7 @@ export default {
         options: ["md", "lg"],
       },
     },
+    onChange: { action: "value changed" },
   },
   decorators: [
     (Story: Story): JSX.Element => (

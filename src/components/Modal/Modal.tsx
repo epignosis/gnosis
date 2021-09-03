@@ -55,7 +55,7 @@ type ModalCompoundProps = {
 
 export type Size = "md" | "lg" | "fullscreen";
 
-type ReactModalProps = Pick<Props, "isOpen"> & {
+export type ReactModalProps = Pick<Props, "isOpen"> & {
   onClose: () => void;
   size?: Size;
 };

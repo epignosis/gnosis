@@ -26,6 +26,8 @@ export default {
     label: "Username",
     altLabel: false,
     status: "valid",
+    id: "inputStory",
+    className: "inputStory",
   },
   decorators: [
     (Story: Story): JSX.Element => (

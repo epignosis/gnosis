@@ -13,6 +13,11 @@ export default {
       },
     },
   },
+  args: {
+    size: "md",
+    inline: false,
+    disabled: false,
+  },
 };
 
 const options = [
@@ -53,10 +58,4 @@ export const Checkbox: Story<Omit<CheckboxProps, "label" | "value" | "name" | "i
       ))}
     </>
   );
-};
-
-Checkbox.args = {
-  size: "md",
-  inline: false,
-  disabled: false,
 };

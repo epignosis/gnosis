@@ -10,12 +10,20 @@ export default {
     altLabel: false,
     placeholder: "Type some description",
     resize: "none",
+    status: "valid",
+    id: "textareaStory",
   },
   argTypes: {
     resize: {
       control: {
         type: "select",
         options: ["none", "vertical", "horizontal", "both"],
+      },
+    },
+    status: {
+      control: {
+        type: "select",
+        options: ["valid", "error"],
       },
     },
   },
@@ -28,6 +36,4 @@ export default {
   ],
 };
 
-export const Textarea: Story<TextareaProps> = (args) => (
-  <TextareaComponent id="description" {...args} />
-);
+export const Textarea: Story<TextareaProps> = (args) => <TextareaComponent {...args} />;

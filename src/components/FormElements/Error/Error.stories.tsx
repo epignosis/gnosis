@@ -6,24 +6,15 @@ import { Input } from "@components";
 export default {
   title: "components/Form Elements/Error",
   component: ErrorComponent,
-  parameters: {
-    controls: { hideNoControlsWarning: true },
-  },
 };
 
-export const Error: Story = () => (
-  <ErrorComponent>
-    <p>
-      You entered an incorrect email,
-      <br /> password, or both!
-      <br />
-      <br />
-      Try again or contact your administrator
-    </p>
-  </ErrorComponent>
-);
+export const Error: Story = (args) => <ErrorComponent {...args} />;
 
-export const InputError: Story = () => (
+Error.args = {
+  children: "You entered an incorrect email! Try again or contact your administrator",
+};
+
+export const InputError: Story = (args) => (
   <div style={{ maxWidth: 500 }}>
     <Input
       id="inline-error-example"
@@ -31,6 +22,10 @@ export const InputError: Story = () => (
       status="error"
       placeholder="Pay attention to the error below"
     />
-    <ErrorComponent.InputError>Some error</ErrorComponent.InputError>
+    <ErrorComponent.InputError {...args} />
   </div>
 );
+
+InputError.args = {
+  children: "Some error",
+};

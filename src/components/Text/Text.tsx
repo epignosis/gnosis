@@ -4,7 +4,7 @@ import { TypographyLevels } from "@theme/utils/typography";
 
 export type TextWeight = "400" | "700";
 
-export type TextProps = {
+export type TextProps = Omit<React.HTMLAttributes<HTMLDivElement>, "css"> & {
   fontSize: TypographyLevels;
   weight?: TextWeight;
   as?: "span" | "div" | "p";

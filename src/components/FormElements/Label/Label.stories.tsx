@@ -15,10 +15,9 @@ export default {
   },
 };
 
-export const Label: Story<LabelProps> = (args) => (
-  <LabelComponent {...args}>This is an input label</LabelComponent>
-);
+export const Label: Story<LabelProps> = (args) => <LabelComponent {...args} />;
 
 Label.args = {
   size: "md",
+  children: "This is an input label",
 };

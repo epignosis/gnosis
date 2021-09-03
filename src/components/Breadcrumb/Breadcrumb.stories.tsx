@@ -5,8 +5,10 @@ import Breadcrumb, { BreadcrumbProps } from "./Breadcrumb";
 export default {
   component: Breadcrumb,
   title: "Components/Breadcrumb",
-  parameters: {
-    controls: { hideNoControlsWarning: true },
+  argTypes: {
+    breadcrumbEl: {
+      control: false,
+    },
   },
 };
 
@@ -14,17 +16,22 @@ const breadcrumbPortal = document.createElement("div");
 breadcrumbPortal.setAttribute("id", "breadcrumb");
 document.body.appendChild(breadcrumbPortal);
 
-export const OneBreadcrumb: Story<BreadcrumbProps> = () => {
+export const OneBreadcrumb: Story<BreadcrumbProps> = (args) => {
   return (
-    <Breadcrumb breadcrumbEl={breadcrumbPortal} separator="/">
+    <Breadcrumb {...args}>
       <Breadcrumb.Item>Home</Breadcrumb.Item>
     </Breadcrumb>
   );
 };
 
-export const MultipleBreadcrumbs: Story<BreadcrumbProps> = () => {
+OneBreadcrumb.args = {
+  breadcrumbEl: breadcrumbPortal,
+  separator: "/",
+};
+
+export const MultipleBreadcrumbs: Story<BreadcrumbProps> = (args) => {
   return (
-    <Breadcrumb breadcrumbEl={breadcrumbPortal} separator="/">
+    <Breadcrumb {...args}>
       <Breadcrumb.Item>
         <a href="#">Home</a>
       </Breadcrumb.Item>
@@ -34,4 +41,8 @@ export const MultipleBreadcrumbs: Story<BreadcrumbProps> = () => {
       <Breadcrumb.Item current> My courses</Breadcrumb.Item>
     </Breadcrumb>
   );
+};
+
+MultipleBreadcrumbs.args = {
+  ...OneBreadcrumb.args,
 };

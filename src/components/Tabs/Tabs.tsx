@@ -1,6 +1,5 @@
 import React, { FC, useState, ReactElement, Children } from "react";
 import { SerializedStyles } from "@emotion/react";
-import { useResponsive } from "@umijs/hooks";
 import TabsNavItem from "./TabsNavItem";
 import TabsContent from "./TabsContent";
 import { container, tabsHeader } from "./styles";
@@ -8,6 +7,7 @@ import { Select } from "@components";
 
 type TabsProps = {
   stickyHeader?: boolean;
+  showMobileView?: boolean;
 };
 
 type TabPaneProps = {
@@ -21,9 +21,12 @@ type TabsCompoundProps = {
   TabPane: FC<TabPaneProps>;
 };
 
-const Tabs: FC<TabsProps> & TabsCompoundProps = ({ children, stickyHeader }) => {
+const Tabs: FC<TabsProps> & TabsCompoundProps = ({
+  children,
+  stickyHeader = false,
+  showMobileView = false,
+}) => {
   const [activeTab, setActiveTab] = useState(0);
-  const { sm } = useResponsive();
   const tabTitles = Children.map(children, (child, i) => ({
     index: i,
     title: (child as ReactElement).props.title,
@@ -39,13 +42,13 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({ children, stickyHeader }) => 
   const onSelectTab = (index: number): void => {
     setActiveTab(index);
   };
-  const isMobile = tabTitles?.length && sm;
-  const isAboveMobile = tabTitles?.length && !sm;
+  const displayMobileView = tabTitles?.length && showMobileView;
+  const displayNormalView = tabTitles?.length && !showMobileView;
 
   return (
     <section css={container}>
       <nav css={(theme): SerializedStyles => tabsHeader(theme, { stickyHeader })} role="tablist">
-        {isMobile &&
+        {displayNormalView &&
           tabTitles?.map(({ index, title }) => (
             <TabsNavItem
               key={index}
@@ -56,7 +59,7 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({ children, stickyHeader }) => 
             />
           ))}
 
-        {isAboveMobile && (
+        {displayMobileView && (
           <Select aria-label="select tab" onChange={(index): void => onSelectTab(parseInt(index))}>
             {tabTitles?.map(({ index, fallbackTitle }) => (
               <option key={index} value={index}>

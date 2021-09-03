@@ -3,7 +3,7 @@ import { Story } from "@storybook/react";
 import Heading, { HeadingProps, SIZES } from "./Heading";
 
 export default {
-  title: "Components/Heading",
+  title: "Components/Headings",
   component: Heading,
   argTypes: {
     size: {

@@ -28,6 +28,7 @@ export default {
     inline: false,
     status: "valid",
     className: "inputStory",
+    error: "",
   },
   decorators: [
     (Story: Story): JSX.Element => (
@@ -52,4 +53,11 @@ export const WithIconAfter = Template.bind({});
 
 WithIconAfter.args = {
   iconAfter: CalendarSVG,
+};
+
+export const WithError = Template.bind({});
+
+WithError.args = {
+  status: "error",
+  error: "This is an inline error",
 };

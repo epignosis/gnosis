@@ -18,19 +18,3 @@ describe("Forms: <Error />", () => {
     expect(container).toMatchSnapshot();
   });
 });
-
-describe("Forms: <Error.InputError />", () => {
-  it("renders correctly", () => {
-    const txt = faker.lorem.sentence();
-    render(<Error.InputError>{txt}</Error.InputError>);
-    const errorSpan = screen.getByText(txt);
-
-    expect(errorSpan).toHaveTextContent(txt);
-  });
-
-  it("matches snapshot", () => {
-    const { container } = render(<Error.InputError>Something went wrong</Error.InputError>);
-
-    expect(container).toMatchSnapshot();
-  });
-});

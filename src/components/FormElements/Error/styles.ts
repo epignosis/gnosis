@@ -10,8 +10,3 @@ export const errorContainer = ({ typeScaleSizes, formElements }: Theme): Seriali
   border-radius: 2px;
   padding: 1.25rem 2rem 1.5rem;
 `;
-
-export const inputError = ({ formElements }: Theme): SerializedStyles => css`
-  color: ${formElements.input.errorColor};
-  margin-left: 0.25rem;
-`;

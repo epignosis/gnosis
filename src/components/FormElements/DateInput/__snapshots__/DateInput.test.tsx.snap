@@ -24,6 +24,7 @@ exports[`<DateInput /> matches snapshot 1`] = `
             class="input-wrapper"
           >
             <input
+              aria-describedby=""
               id="test-date-input"
               value="08/19/2021"
             />

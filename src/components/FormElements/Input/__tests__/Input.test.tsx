@@ -61,6 +61,18 @@ describe("<Input />", () => {
     expect(iconAfter).toBeInTheDocument();
   });
 
+  it("has error message", () => {
+    const labelTxt = faker.lorem.word();
+    const errorMsg = faker.git.commitMessage();
+
+    render(<Input id="test-input" name="test-input" label={labelTxt} error={errorMsg} />);
+
+    const error = screen.getByText(errorMsg);
+
+    expect(error).toBeVisible();
+    expect(error).toHaveTextContent(errorMsg);
+  });
+
   it("matches snapshot", () => {
     const { container } = render(
       <Input id="test-input" name="test-input" label="Test label" iconAfter={CalendarSVG} />,

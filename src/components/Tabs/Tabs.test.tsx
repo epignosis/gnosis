@@ -1,23 +1,18 @@
 import React from "react";
-import { act } from "react-dom/test-utils";
 import userEvent from "@testing-library/user-event";
 import faker from "faker";
 import Tabs from "./Tabs";
 import { screen, render } from "@test-utils/render";
-import { resizeWindow } from "@test-utils/helpers/windowResize";
-
-const tab1Txt = faker.lorem.paragraph();
-const tab2Txt = faker.lorem.paragraph();
-const tab3Txt = faker.lorem.paragraph();
-
-const tab1TitleTxt = faker.lorem.word();
-const tab2TitleTxt = faker.lorem.word();
-const tab3TitleTxt = faker.lorem.word();
-
-const tab1FallbackTitle = faker.lorem.word();
 
 describe("<Tabs/>", () => {
   it("renders correctly", () => {
+    const tab1Txt = faker.lorem.paragraph();
+    const tab2Txt = faker.lorem.paragraph();
+    const tab3Txt = faker.lorem.paragraph();
+    const tab1TitleTxt = faker.lorem.word();
+    const tab2TitleTxt = faker.lorem.word();
+    const tab3TitleTxt = faker.lorem.word();
+
     render(
       <Tabs>
         <Tabs.TabPane title={tab1TitleTxt}>{tab1Txt}</Tabs.TabPane>
@@ -36,6 +31,11 @@ describe("<Tabs/>", () => {
   });
 
   it("changes tabs correctly", () => {
+    const tab1Txt = faker.lorem.paragraph();
+    const tab2Txt = faker.lorem.paragraph();
+    const tab1TitleTxt = faker.lorem.word();
+    const tab2TitleTxt = faker.lorem.word();
+
     render(
       <Tabs>
         <Tabs.TabPane title={tab1TitleTxt}>{tab1Txt}</Tabs.TabPane>
@@ -75,12 +75,18 @@ describe("<Tabs/>", () => {
 
     expect(container).toMatchSnapshot();
   });
-});
 
-describe("<Tabs/> on mobile", () => {
-  it("renders correctly", () => {
+  it("renders correctly mobile view", () => {
+    const tab1Txt = faker.lorem.paragraph();
+    const tab2Txt = faker.lorem.paragraph();
+    const tab3Txt = faker.lorem.paragraph();
+    const tab1TitleTxt = faker.lorem.word();
+    const tab2TitleTxt = faker.lorem.word();
+    const tab3TitleTxt = faker.lorem.word();
+    const tab1FallbackTitle = faker.lorem.word();
+
     render(
-      <Tabs>
+      <Tabs responsiveHeader>
         <Tabs.TabPane title={<button>{tab1TitleTxt}</button>} fallbackTitle={tab1FallbackTitle}>
           {tab1Txt}
         </Tabs.TabPane>
@@ -88,10 +94,6 @@ describe("<Tabs/> on mobile", () => {
         <Tabs.TabPane title={tab3TitleTxt}>{tab3Txt}</Tabs.TabPane>
       </Tabs>,
     );
-
-    act(() => {
-      resizeWindow(320, 500);
-    });
 
     const select = screen.getByLabelText("select tab");
     const options = screen.getAllByRole("option");

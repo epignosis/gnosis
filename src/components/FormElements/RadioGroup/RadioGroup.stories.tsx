@@ -33,7 +33,6 @@ export default {
     ],
   },
   argTypes: {
-    onChange: { action: "changed" },
     size: {
       control: {
         type: "select",

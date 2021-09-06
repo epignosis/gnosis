@@ -9,7 +9,7 @@ export default {
 
 const commonProps = {
   stickyHeader: false,
-  showMobileView: false,
+  responsiveHeader: false,
 };
 
 const Template: Story = (args) => (
@@ -47,8 +47,8 @@ Basic.args = {
   ...commonProps,
 };
 
-export const Mobile = Template.bind({});
+export const ResponsiveHeader = Template.bind({});
 
-Mobile.args = {
-  showMobileView: true,
+ResponsiveHeader.args = {
+  responsiveHeader: true,
 };

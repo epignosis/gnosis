@@ -7,7 +7,7 @@ import { Select } from "@components";
 
 type TabsProps = {
   stickyHeader?: boolean;
-  showMobileView?: boolean;
+  responsiveHeader?: boolean;
 };
 
 type TabPaneProps = {
@@ -24,7 +24,7 @@ type TabsCompoundProps = {
 const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   children,
   stickyHeader = false,
-  showMobileView = false,
+  responsiveHeader = false,
 }) => {
   const [activeTab, setActiveTab] = useState(0);
   const tabTitles = Children.map(children, (child, i) => ({
@@ -42,13 +42,12 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   const onSelectTab = (index: number): void => {
     setActiveTab(index);
   };
-  const displayMobileView = tabTitles?.length && showMobileView;
-  const displayNormalView = tabTitles?.length && !showMobileView;
+  const displayResponsiveHeader = tabTitles?.length && responsiveHeader;
 
   return (
     <section css={container}>
       <nav css={(theme): SerializedStyles => tabsHeader(theme, { stickyHeader })} role="tablist">
-        {displayNormalView &&
+        {!displayResponsiveHeader &&
           tabTitles?.map(({ index, title }) => (
             <TabsNavItem
               key={index}
@@ -59,7 +58,7 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
             />
           ))}
 
-        {displayMobileView && (
+        {displayResponsiveHeader && (
           <Select aria-label="select tab" onChange={(index): void => onSelectTab(parseInt(index))}>
             {tabTitles?.map(({ index, fallbackTitle }) => (
               <option key={index} value={index}>

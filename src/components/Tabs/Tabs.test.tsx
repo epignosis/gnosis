@@ -86,7 +86,7 @@ describe("<Tabs/>", () => {
     const tab1FallbackTitle = faker.lorem.word();
 
     render(
-      <Tabs showMobileView>
+      <Tabs responsiveHeader>
         <Tabs.TabPane title={<button>{tab1TitleTxt}</button>} fallbackTitle={tab1FallbackTitle}>
           {tab1Txt}
         </Tabs.TabPane>

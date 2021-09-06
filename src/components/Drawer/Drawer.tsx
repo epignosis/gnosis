@@ -80,7 +80,7 @@ const Drawer: FC<DrawerProps> & DrawerCompoundProps = (props) => {
     <LazyMotion features={domAnimation}>
       <AnimatePresence>
         {isOpen && (
-          <div css={drawerContainer(width)}>
+          <div css={drawerContainer(width)} data-testid="drawer">
             {showMask && <Mask onClose={onClose} />}
             <m.div
               id="drawer-dialog"

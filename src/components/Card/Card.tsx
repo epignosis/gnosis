@@ -22,7 +22,7 @@ type CardCompoundProps = {
 const Card: CardProps & CardCompoundProps = ({ children }) => (
   <LazyMotion features={domAnimation}>
     <AnimatePresence>
-      <m.article initial="rest" whileHover="hover" css={cardContainer}>
+      <m.article initial="rest" whileHover="hover" css={cardContainer} data-testid="card">
         {children}
       </m.article>
     </AnimatePresence>

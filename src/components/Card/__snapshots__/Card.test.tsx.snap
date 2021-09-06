@@ -4,6 +4,7 @@ exports[`<Card/> matches snapshot 1`] = `
 <div>
   <article
     class="css-u1k06h-cardContainer-cardContainer"
+    data-testid="card"
   >
     <div
       class="css-14dee1b-aspectRatioContainer-aspectRatioContainer"
@@ -40,6 +41,7 @@ exports[`<Card/> matches snapshot with drawer 1`] = `
 <div>
   <article
     class="css-u1k06h-cardContainer-cardContainer"
+    data-testid="card"
   >
     <section
       class="css-1siuu8c-drawerContainer-drawerContainer"
@@ -77,6 +79,7 @@ exports[`<Card/> matches snapshot with hover 1`] = `
 <div>
   <article
     class="css-u1k06h-cardContainer-cardContainer"
+    data-testid="card"
   >
     <div
       class="css-14dee1b-aspectRatioContainer-aspectRatioContainer"
@@ -94,6 +97,7 @@ exports[`<Card/> matches snapshot with hover 1`] = `
           />
           <div
             class="css-eo7ul9-hoverContainer-hoverContainer"
+            data-testid="card-hover"
             style="opacity: 0;"
           >
             <div
@@ -114,6 +118,7 @@ exports[`<Card/> matches snapshot with overlay 1`] = `
 <div>
   <article
     class="css-u1k06h-cardContainer-cardContainer"
+    data-testid="card"
   >
     <div
       class="css-12e19c2-overlayContainer-overlayContainer"
@@ -145,6 +150,7 @@ exports[`<Card/> matches snapshot with transparent hover 1`] = `
 <div>
   <article
     class="css-u1k06h-cardContainer-cardContainer"
+    data-testid="card"
   >
     <div
       class="css-14dee1b-aspectRatioContainer-aspectRatioContainer"
@@ -162,6 +168,7 @@ exports[`<Card/> matches snapshot with transparent hover 1`] = `
           />
           <div
             class="css-qtcg2f-hoverContainer-hoverContainer"
+            data-testid="card-hover"
             style="opacity: 0;"
           >
             <div

@@ -7,11 +7,10 @@ import { Heading } from "@components";
 import { ScrollRegularSVG } from "@icons/core";
 
 describe("<Alert>", () => {
-  const mockedOnClose = jest.fn();
-
   it("renders correctly", () => {
     const heading = faker.lorem.word();
     const paragraphTxt = faker.lorem.paragraph();
+    const mockedOnClose = jest.fn();
 
     render(
       <Alert type="info" onClose={mockedOnClose}>
@@ -34,11 +33,9 @@ describe("<Alert>", () => {
   });
 
   it("renders correctly with custom icon", () => {
-    const paragraphTxt = faker.lorem.paragraph();
-
     render(
-      <Alert type="info" onClose={mockedOnClose} icon={ScrollRegularSVG}>
-        {paragraphTxt}
+      <Alert type="info" onClose={jest.fn()} icon={ScrollRegularSVG}>
+        {faker.lorem.paragraph()}
       </Alert>,
     );
 
@@ -49,7 +46,7 @@ describe("<Alert>", () => {
 
   it("matches snapshot", () => {
     const { container } = render(
-      <Alert type="info" onClose={mockedOnClose}>
+      <Alert type="info" onClose={jest.fn()}>
         <Heading as="h3" size="md">
           Welcome
         </Heading>
@@ -62,7 +59,7 @@ describe("<Alert>", () => {
 
   it("matches snapshot with custom icon", () => {
     const { container } = render(
-      <Alert type="info" onClose={mockedOnClose} icon={ScrollRegularSVG}>
+      <Alert type="info" onClose={jest.fn()} icon={ScrollRegularSVG}>
         <p>My content!</p>
       </Alert>,
     );

@@ -4,19 +4,27 @@ import Breadcrumb from "./Breadcrumb";
 import { render, screen } from "@test-utils/render";
 
 describe("<Breadcrumb> and <Breadcrumb.Item>", () => {
-  const breadcrumbPortal = document.createElement("div");
-  breadcrumbPortal.setAttribute("id", "breadcrumb");
-  document.body.appendChild(breadcrumbPortal);
+  beforeEach(() => {
+    const breadcrumbContainer = document.createElement("div");
+    breadcrumbContainer.setAttribute("id", "breadcrumb");
+    document.body.appendChild(breadcrumbContainer);
+  });
 
-  const item1 = faker.lorem.word();
-  const item2 = faker.lorem.word();
-  const item3 = faker.lorem.word();
-  const item1Url = faker.internet.url();
-  const item2Url = faker.internet.url();
+  afterEach(() => {
+    const breadcrumbContainer = document.querySelector("#breadcrumb") as HTMLElement;
+    breadcrumbContainer.remove();
+  });
 
   it("renders correctly", () => {
+    const item1 = faker.unique(faker.lorem.word);
+    const item2 = faker.unique(faker.lorem.word);
+    const item3 = faker.unique(faker.lorem.word);
+    const item1Url = faker.unique(faker.internet.url);
+    const item2Url = faker.unique(faker.internet.url);
+    const breadcrumbContainer = document.body.querySelector("#breadcrumb");
+
     render(
-      <Breadcrumb breadcrumbEl={breadcrumbPortal} separator="/">
+      <Breadcrumb breadcrumbEl={breadcrumbContainer as HTMLElement} separator="/">
         <Breadcrumb.Item>
           <a href={item1Url}>{item1}</a>
         </Breadcrumb.Item>
@@ -39,8 +47,9 @@ describe("<Breadcrumb> and <Breadcrumb.Item>", () => {
   });
 
   it("matches snapshot", () => {
-    const { container } = render(
-      <Breadcrumb breadcrumbEl={breadcrumbPortal} separator="/">
+    const breadcrumbContainer = document.body.querySelector("#breadcrumb");
+    render(
+      <Breadcrumb breadcrumbEl={breadcrumbContainer as HTMLElement} separator="/">
         <Breadcrumb.Item>
           <a href="#/home">Home</a>
         </Breadcrumb.Item>
@@ -50,7 +59,8 @@ describe("<Breadcrumb> and <Breadcrumb.Item>", () => {
         <Breadcrumb.Item current> My super course</Breadcrumb.Item>
       </Breadcrumb>,
     );
+    const breadcrumbs = screen.getByLabelText("breadcrumbs");
 
-    expect(container).toMatchSnapshot();
+    expect(breadcrumbs).toMatchSnapshot();
   });
 });

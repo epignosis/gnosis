@@ -12,11 +12,11 @@ describe("<Button />", () => {
     const button = screen.getByRole("button");
 
     expect(button).toHaveTextContent(btnText);
-    expect(button).toHaveAttribute("type");
+    expect(button).toHaveAttribute("type", "submit");
     expect(button).not.toBeDisabled();
   });
 
-  it("calls a function onClick", () => {
+  it("calls the onClick callback", () => {
     const mockFn = jest.fn();
     render(<Button onClick={mockFn}>{faker.lorem.word()}</Button>);
     const button = screen.getByRole("button");
@@ -28,11 +28,11 @@ describe("<Button />", () => {
     expect(mockFn).toHaveBeenCalledTimes(1);
   });
 
-  it("should be disabled", () => {
+  it("disabled button", () => {
     const mockFn = jest.fn();
     render(
       <Button disabled onClick={mockFn}>
-        {faker.lorem.word()}
+        Disabled button
       </Button>,
     );
     const button = screen.getByRole("button");
@@ -44,11 +44,11 @@ describe("<Button />", () => {
     expect(mockFn).not.toHaveBeenCalled();
   });
 
-  it("is loading", () => {
+  it("is loading button", () => {
     const mockFn = jest.fn();
     render(
       <Button isLoading onClick={mockFn}>
-        {faker.lorem.word()}
+        Loading button
       </Button>,
     );
     const button = screen.getByRole("button");
@@ -64,43 +64,30 @@ describe("<Button />", () => {
 
   it("act as Link button", () => {
     const linkText = faker.random.words();
+    const href = faker.internet.url();
+
     render(
-      <Button as={"a"} href="/">
+      <Button as="a" href={href}>
         {linkText}
       </Button>,
     );
     const link = screen.getByRole("link");
 
     expect(link).toHaveTextContent(linkText);
-    expect(link).toHaveAttribute("href");
+    expect(link).toHaveAttribute("href", href);
   });
 
-  it("is an anchor tag", () => {
-    const linkText = faker.random.words();
-    render(
-      <Button as="a" href="/">
-        {linkText}
-      </Button>,
-    );
-    const link = screen.getByRole("link");
-
-    expect(link).toHaveTextContent(linkText);
-    expect(link).toHaveAttribute("href");
-  });
-
-  it("has prefix icon", () => {
-    render(<Button iconBefore={CalendarSVG}>{faker.lorem.word()}</Button>);
-
+  it("with prefix icon", () => {
+    render(<Button iconBefore={CalendarSVG}>With prefix icon</Button>);
     const icon = screen.getByTestId(/prefix-icon/i);
 
     expect(icon).toBeInTheDocument();
   });
 
-  it("has suffix icon", () => {
-    render(<Button iconAfter={CalendarSVG}>{faker.lorem.word()}</Button>);
+  it("with suffix icon", () => {
+    render(<Button iconAfter={CalendarSVG}>With suffix icon</Button>);
 
     const icon = screen.getByTestId(/suffix-icon/i);
-
     expect(icon).toBeInTheDocument();
   });
 

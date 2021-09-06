@@ -5,9 +5,9 @@ import Chip from "./Chip";
 import { render, screen } from "@test-utils/render";
 
 describe("<Chip />", () => {
-  const chipTxt = faker.lorem.word();
-
   it("renders without close button", () => {
+    const chipTxt = faker.lorem.word();
+
     render(<Chip>{chipTxt}</Chip>);
     const tag = screen.getByText(chipTxt);
 
@@ -15,7 +15,9 @@ describe("<Chip />", () => {
   });
 
   it("renders with close button", () => {
+    const chipTxt = faker.lorem.word();
     const mockFn = jest.fn();
+
     render(<Chip onClose={mockFn}>{chipTxt}</Chip>);
 
     const tag = screen.getByText(chipTxt);

@@ -4,21 +4,23 @@ import classNames from "classnames";
 import { selectContainer } from "./styles";
 import { Label } from "@components";
 import { CaretDownSVG } from "@icons/core";
+import { ExtendableProps } from "types/common";
 
-export type SelectProps = Omit<SelectHTMLAttributes<HTMLSelectElement>, "size" | "onChange"> & {
-  size?: "md" | "lg";
-  label?: string;
-  altLabel?: boolean;
-  inline?: boolean;
-  onChange?: (selectedValue: string) => void;
-};
+export type SelectProps = ExtendableProps<
+  SelectHTMLAttributes<HTMLSelectElement>,
+  {
+    size?: "md" | "lg";
+    label?: string;
+    inline?: boolean;
+    onChange?: (selectedValue: string) => void;
+  }
+>;
 
 const Select: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (props, forwardedRef) => {
   const {
     id,
     size = "md",
     label,
-    altLabel = false,
     inline = false,
     onChange,
     className = "",
@@ -27,9 +29,8 @@ const Select: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (props,
   } = props;
   const hasLabel = Boolean(label);
   const containerClassNames = classNames({
-    "alt-label": hasLabel && altLabel,
+    inline: hasLabel && inline,
     [className]: className,
-    inline,
   });
 
   return (

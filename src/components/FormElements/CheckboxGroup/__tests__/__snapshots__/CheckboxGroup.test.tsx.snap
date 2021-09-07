@@ -4,6 +4,7 @@ exports[`<CheckBoxGroup /> matches snapshot 1`] = `
 <div>
   <fieldset
     class="css-1uf8pav-checkboxGroupContainer-checkboxGroupContainer"
+    id="testCheckboxGroup"
   >
     <legend>
       <div
@@ -60,6 +61,7 @@ exports[`<CheckBoxGroup /> matches snapshot with \`inline = true\` 1`] = `
 <div>
   <fieldset
     class="css-1ovt4sw-checkboxGroupContainer-checkboxGroupContainer"
+    id="testCheckboxGroup"
   >
     <legend>
       <div

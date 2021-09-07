@@ -4,13 +4,13 @@ import { container } from "./styles";
 import { InputSize } from "@components/FormElements/Input/Input";
 
 export type RadioGroupProps = {
+  id: string;
   groupname: string;
   options: RadioOption[];
   onChange?: (selectedValue: string) => void;
   initialValue?: string;
   inline?: boolean;
   size?: InputSize;
-  id?: string;
   className?: string;
 };
 

@@ -1,21 +1,26 @@
-import React, { forwardRef, Ref, ForwardRefRenderFunction, InputHTMLAttributes } from "react";
+import React, { forwardRef, Ref, ForwardRefRenderFunction, InputHTMLAttributes, FC } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
-import { inputContainer } from "./styles";
+import { inputContainer, inputError } from "./styles";
 import { Label } from "@components";
-import { IconType } from "types/common";
+import { ExtendableProps, IconType } from "types/common";
 
 export type InputSize = "md" | "lg";
 
-export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size"> & {
-  status?: "valid" | "error";
-  size?: InputSize;
-  iconBefore?: IconType;
-  iconAfter?: IconType;
-  ref?: Ref<HTMLInputElement>;
-  label?: string;
-  altLabel?: boolean;
-};
+export type InputProps = ExtendableProps<
+  InputHTMLAttributes<HTMLInputElement>,
+  {
+    id: string;
+    status?: "valid" | "error";
+    size?: InputSize;
+    iconBefore?: IconType;
+    iconAfter?: IconType;
+    ref?: Ref<HTMLInputElement>;
+    label?: string;
+    inline?: boolean;
+    error?: string;
+  }
+>;
 
 const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (props, forwardedRef) => {
   const {
@@ -24,9 +29,10 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (props, fo
     iconBefore,
     iconAfter,
     label,
-    altLabel = false,
+    inline = false,
     id,
     className,
+    error,
     ...rest
   } = props;
   const IconBefore = iconBefore;
@@ -37,7 +43,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (props, fo
     error: status === "error",
     "with-prefix-icon": Boolean(iconBefore),
     "with-suffix-icon": Boolean(iconAfter),
-    "alt-label": hasLabel && altLabel,
+    inline: hasLabel && inline,
     [className ?? ""]: className,
   });
 
@@ -53,15 +59,31 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (props, fo
             <IconBefore height={32} />
           </span>
         )}
-        <input ref={forwardedRef} id={id} {...rest} />
+        <input
+          ref={forwardedRef}
+          id={id}
+          {...rest}
+          aria-describedby={error ? `${id}-inline-error` : ""}
+        />
         {IconAfter && (
           <span className="suffix-icon" data-testid="input-icon-after">
             <IconAfter height={32} />
           </span>
         )}
       </div>
+      {error && <Error id={`${id}-inline-error`}>{error}</Error>}
     </div>
   );
 };
+
+type ErrorProps = {
+  id: string;
+};
+
+const Error: FC<ErrorProps> = ({ id, children }) => (
+  <span css={inputError} id={id}>
+    {children}
+  </span>
+);
 
 export default forwardRef(Input);

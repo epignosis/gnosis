@@ -8,8 +8,14 @@ export const textareaContainer = (
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })};
 
-  &.alt-label {
+  &.inline {
     align-items: baseline;
+  }
+
+  &.error {
+    textarea {
+      border-color: ${formElements.input.errorColor};
+    }
   }
 
   textarea {

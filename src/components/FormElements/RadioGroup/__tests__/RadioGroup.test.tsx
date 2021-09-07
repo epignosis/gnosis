@@ -25,7 +25,13 @@ const OPTIONS = [
 
 describe("<RadioGroup />", () => {
   it("renders properly", () => {
-    render(<RadioGroup groupname={faker.random.words()} options={OPTIONS} />);
+    render(
+      <RadioGroup
+        id={faker.hacker.abbreviation()}
+        groupname={faker.random.words()}
+        options={OPTIONS}
+      />,
+    );
 
     const radios = screen.getAllByRole("radio");
 
@@ -35,6 +41,7 @@ describe("<RadioGroup />", () => {
   it("renders with initial value selected", () => {
     render(
       <RadioGroup
+        id={faker.hacker.abbreviation()}
         groupname={faker.random.words()}
         options={OPTIONS}
         initialValue={OPTIONS[2].value}
@@ -49,7 +56,14 @@ describe("<RadioGroup />", () => {
   it("changes selected value", () => {
     const mockFn = jest.fn();
 
-    render(<RadioGroup groupname={faker.random.words()} options={OPTIONS} onChange={mockFn} />);
+    render(
+      <RadioGroup
+        id={faker.hacker.abbreviation()}
+        groupname={faker.random.words()}
+        options={OPTIONS}
+        onChange={mockFn}
+      />,
+    );
 
     const radios = screen.getAllByRole("radio");
 
@@ -65,7 +79,13 @@ describe("<RadioGroup />", () => {
   });
 
   it("doesn't select a disabled option", () => {
-    render(<RadioGroup groupname={faker.random.words()} options={OPTIONS} />);
+    render(
+      <RadioGroup
+        id={faker.hacker.abbreviation()}
+        groupname={faker.random.words()}
+        options={OPTIONS}
+      />,
+    );
 
     const firstOption = screen.getByText(OPTIONS[1].label);
     const firstOptionLabel = screen.getByLabelText(OPTIONS[1].label);
@@ -80,6 +100,7 @@ describe("<RadioGroup />", () => {
   it("matches snapshot", () => {
     const { container } = render(
       <RadioGroup
+        id="testRadioGroup"
         groupname="Test groupname"
         options={[{ label: "Test option label", value: "testOptionValue" }]}
       />,
@@ -91,6 +112,7 @@ describe("<RadioGroup />", () => {
   it("matches snapshot with `inline = true`", () => {
     const { container } = render(
       <RadioGroup
+        id="testRadioGroup"
         groupname="Test groupname"
         options={[{ label: "Test option label", value: "testOptionValue" }]}
         inline

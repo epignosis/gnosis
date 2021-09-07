@@ -7,11 +7,11 @@ export default {
   component: TextareaComponent,
   args: {
     label: "Description",
-    altLabel: false,
+    id: "textareaInput",
+    inline: false,
     placeholder: "Type some description",
     resize: "none",
     status: "valid",
-    id: "textareaStory",
   },
   argTypes: {
     resize: {

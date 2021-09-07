@@ -72,3 +72,8 @@ export const fileInputContainer = ({ formElements }: Theme): SerializedStyles =>
     }
   }
 `;
+
+export const inputError = ({ formElements }: Theme): SerializedStyles => css`
+  color: ${formElements.input.errorColor};
+  margin-left: 0.25rem;
+`;

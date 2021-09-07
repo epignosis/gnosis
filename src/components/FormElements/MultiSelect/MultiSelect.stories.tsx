@@ -9,7 +9,7 @@ export default {
     placeholder: "Multi select",
     size: "md",
     label: "Choose multiple values",
-    altLabel: false,
+    inline: false,
     block: true,
     id: "multiSelectStory",
     className: "multiSelectStory",

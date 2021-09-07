@@ -10,7 +10,7 @@ export type CheckboxGroupProps = {
   initialValues?: string[];
   inline?: boolean;
   size?: InputSize;
-  id?: string;
+  id: string;
   className?: string;
 };
 

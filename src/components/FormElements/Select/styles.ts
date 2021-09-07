@@ -8,10 +8,6 @@ export const selectContainer = (
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })}
 
-  &.inline {
-    width: auto;
-  }
-
   label {
     margin: 0 0 0.5rem 0.5rem;
   }

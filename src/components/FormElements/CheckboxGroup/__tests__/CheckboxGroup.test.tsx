@@ -25,7 +25,9 @@ const OPTIONS = [
 describe("<CheckBoxGroup />", () => {
   it("renders correctly", () => {
     const groupname = faker.lorem.slug();
-    render(<CheckBoxGroup groupname={groupname} options={OPTIONS} />);
+    render(
+      <CheckBoxGroup id={faker.hacker.abbreviation()} groupname={groupname} options={OPTIONS} />,
+    );
 
     const inputs = screen.getAllByRole("checkbox");
     const legendCheck = inputs[0];
@@ -44,6 +46,7 @@ describe("<CheckBoxGroup />", () => {
   it("renders with checked initial values", () => {
     render(
       <CheckBoxGroup
+        id={faker.hacker.abbreviation()}
         groupname={faker.lorem.slug()}
         options={OPTIONS}
         initialValues={[OPTIONS[0].value, OPTIONS[1].value]}
@@ -67,6 +70,7 @@ describe("<CheckBoxGroup />", () => {
     };
     render(
       <CheckBoxGroup
+        id={faker.hacker.abbreviation()}
         groupname={faker.lorem.slug()}
         options={[
           ...OPTIONS,
@@ -91,7 +95,12 @@ describe("<CheckBoxGroup />", () => {
   it("renders with mixed checked", () => {
     const groupname = faker.lorem.slug();
     render(
-      <CheckBoxGroup groupname={groupname} options={OPTIONS} initialValues={[OPTIONS[0].value]} />,
+      <CheckBoxGroup
+        id={faker.hacker.abbreviation()}
+        groupname={groupname}
+        options={OPTIONS}
+        initialValues={[OPTIONS[0].value]}
+      />,
     );
 
     const legendCheck = screen.getByLabelText(groupname);
@@ -108,7 +117,9 @@ describe("<CheckBoxGroup />", () => {
 
   it("checks one input and then un-checks it", () => {
     const groupname = faker.lorem.slug();
-    render(<CheckBoxGroup groupname={groupname} options={OPTIONS} />);
+    render(
+      <CheckBoxGroup id={faker.hacker.abbreviation()} groupname={groupname} options={OPTIONS} />,
+    );
 
     const legendCheck = screen.getByLabelText(groupname);
     const firstInput = screen.getByLabelText(OPTIONS[0].label);
@@ -126,7 +137,9 @@ describe("<CheckBoxGroup />", () => {
 
   it("checks all inputs at once and then un-checks them", () => {
     const groupname = faker.lorem.slug();
-    render(<CheckBoxGroup groupname={groupname} options={OPTIONS} />);
+    render(
+      <CheckBoxGroup id={faker.hacker.abbreviation()} groupname={groupname} options={OPTIONS} />,
+    );
 
     const legendCheck = screen.getByLabelText(groupname);
     const inputs = screen.getAllByRole("checkbox");
@@ -153,6 +166,7 @@ describe("<CheckBoxGroup />", () => {
   it("matches snapshot", () => {
     const { container } = render(
       <CheckBoxGroup
+        id="testCheckboxGroup"
         groupname="Test groupname"
         options={[
           {
@@ -170,6 +184,7 @@ describe("<CheckBoxGroup />", () => {
   it("matches snapshot with `inline = true`", () => {
     const { container } = render(
       <CheckBoxGroup
+        id="testCheckboxGroup"
         groupname="Test groupname"
         options={[
           {

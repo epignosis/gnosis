@@ -4,10 +4,10 @@ import RadioButton, { RadioButtonProps } from "./RadioButton";
 export type RadioGroupOption = Pick<RadioButtonProps, "label" | "value">;
 
 export type RadioGroupProps = {
+  id: string;
   options: RadioGroupOption[];
   value: string;
   size?: "md" | "lg";
-  id?: string;
   className?: string;
   onChange: (selectedValue: string) => void;
 };

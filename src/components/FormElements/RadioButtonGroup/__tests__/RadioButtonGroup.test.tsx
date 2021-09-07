@@ -25,7 +25,14 @@ const OPTIONS = [
 describe("<RadioButtonGroup />", () => {
   it("should render correctly", () => {
     const mockOnChange = jest.fn();
-    render(<RadioButtonGroup options={OPTIONS} value="" onChange={mockOnChange} />);
+    render(
+      <RadioButtonGroup
+        id={faker.hacker.abbreviation()}
+        options={OPTIONS}
+        value=""
+        onChange={mockOnChange}
+      />,
+    );
 
     const options = screen.getAllByRole("button");
 
@@ -38,7 +45,14 @@ describe("<RadioButtonGroup />", () => {
 
   it("should render with a selected value", () => {
     const mockOnChange = jest.fn();
-    render(<RadioButtonGroup options={OPTIONS} value={OPTIONS[0].value} onChange={mockOnChange} />);
+    render(
+      <RadioButtonGroup
+        id={faker.hacker.abbreviation()}
+        options={OPTIONS}
+        value={OPTIONS[0].value}
+        onChange={mockOnChange}
+      />,
+    );
 
     const options = screen.getAllByRole("button");
 
@@ -50,6 +64,7 @@ describe("<RadioButtonGroup />", () => {
     const mockOnChange = jest.fn();
     const { container } = render(
       <RadioButtonGroup
+        id="testRadioButtonGroup"
         options={[{ label: "Test label", value: "testValue" }]}
         value=""
         onChange={mockOnChange}
@@ -63,6 +78,7 @@ describe("<RadioButtonGroup />", () => {
     const mockOnChange = jest.fn();
     const { container } = render(
       <RadioButtonGroup
+        id="testRadioButtonGroup"
         options={[{ label: "Test label", value: "testValue" }]}
         value="testValue"
         onChange={mockOnChange}

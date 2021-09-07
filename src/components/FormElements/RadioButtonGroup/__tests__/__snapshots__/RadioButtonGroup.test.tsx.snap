@@ -2,7 +2,9 @@
 
 exports[`<RadioButtonGroup /> matches snapshot 1`] = `
 <div>
-  <div>
+  <div
+    id="testRadioButtonGroup"
+  >
     <button
       aria-selected="false"
       class=" css-1giuk56-radioButton-radioButton"
@@ -16,7 +18,9 @@ exports[`<RadioButtonGroup /> matches snapshot 1`] = `
 
 exports[`<RadioButtonGroup /> matches snapshot with selected value 1`] = `
 <div>
-  <div>
+  <div
+    id="testRadioButtonGroup"
+  >
     <button
       aria-selected="true"
       class="is-selected css-1giuk56-radioButton-radioButton"

@@ -9,13 +9,3 @@ exports[`Forms: <Error /> matches snapshot 1`] = `
   </article>
 </div>
 `;
-
-exports[`Forms: <Error.InputError /> matches snapshot 1`] = `
-<div>
-  <span
-    class="css-1wc9q6w-inputError-inputError"
-  >
-    Something went wrong
-  </span>
-</div>
-`;

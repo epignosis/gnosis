@@ -12,32 +12,21 @@ import { InputSize } from "@components/FormElements/Input/Input";
 
 export type DateInputProps = {
   value: Date;
-  id?: string;
+  id: string;
   size?: InputSize;
   label?: string;
-  altLabel?: boolean;
-  className?: string;
   inline?: boolean;
+  className?: string;
   onChange: (selectedDate: Date) => void;
 };
 
 const DateInput: FC<DateInputProps> = (props) => {
-  const {
-    value = new Date(),
-    id,
-    size = "md",
-    className,
-    label,
-    altLabel = false,
-    inline = false,
-    onChange,
-  } = props;
+  const { value = new Date(), id, size = "md", className, label, inline = false, onChange } = props;
   const { sm } = useResponsive();
   const hasLabel = Boolean(label);
   const containerClassNames = classNames({
-    "alt-label": hasLabel && altLabel,
+    inline: hasLabel && inline,
     [className ?? ""]: true,
-    inline,
   });
   const onChangeDate = (date: Date): void => {
     onChange(date as Date);
@@ -67,7 +56,7 @@ const DateInput: FC<DateInputProps> = (props) => {
           className={className}
           selected={value}
           onChange={onChangeDate}
-          customInput={<Input size={size} iconAfter={CalendarSVG} />}
+          customInput={<Input id={id} size={size} iconAfter={CalendarSVG} />}
         />
       )}
     </div>

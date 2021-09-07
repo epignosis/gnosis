@@ -21,13 +21,14 @@ export default {
     },
   },
   args: {
+    id: "input",
     size: "md",
     placeholder: "Your LMS username",
     label: "Username",
-    altLabel: false,
+    inline: false,
     status: "valid",
-    id: "inputStory",
     className: "inputStory",
+    error: "",
   },
   decorators: [
     (Story: Story): JSX.Element => (
@@ -38,7 +39,7 @@ export default {
   ],
 };
 
-const Template: Story<InputProps> = (args) => <InputComponent id="story-input" {...args} />;
+const Template: Story<InputProps> = (args) => <InputComponent {...args} />;
 
 export const Default = Template.bind({});
 
@@ -52,4 +53,11 @@ export const WithIconAfter = Template.bind({});
 
 WithIconAfter.args = {
   iconAfter: CalendarSVG,
+};
+
+export const WithError = Template.bind({});
+
+WithError.args = {
+  status: "error",
+  error: "This is an inline error",
 };

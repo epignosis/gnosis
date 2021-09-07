@@ -15,10 +15,10 @@ export type MultiSelectOption = {
 
 export type MultiSelectProps = {
   placeholder: string;
-  id?: string;
+  id: string;
   size?: InputSize;
   label?: string;
-  altLabel?: boolean;
+  inline?: boolean;
   options: MultiSelectOption[];
   onChange: (selections: unknown[]) => void;
   value?: MultiSelectOption[] | undefined;
@@ -38,11 +38,11 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
     className,
     block = false,
     label,
-    altLabel = false,
+    inline = false,
   } = props;
   const hasLabel = Boolean(label);
   const containerClassNames = classNames({
-    "alt-label": hasLabel && altLabel,
+    inline: hasLabel && inline,
     [className ?? ""]: className,
   });
   const { getDropdownProps, addSelectedItem, removeSelectedItem, selectedItems } =

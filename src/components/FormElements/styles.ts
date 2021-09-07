@@ -15,7 +15,7 @@ export const inputContainerBaseStyles = ({
   display: inline-flex;
   flex-direction: column;
 
-  &.alt-label {
+  &.inline {
     flex-direction: row;
     align-items: center;
 

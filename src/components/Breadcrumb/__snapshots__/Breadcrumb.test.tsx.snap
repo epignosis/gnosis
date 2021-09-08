@@ -1,13 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Breadcrumb> and <Breadcrumb.Item> matches snapshot 1`] = `
+<div>
+  <nav
+    aria-label="breadcrumbs"
+    class="css-n4ez4j-container-container"
+  >
+    <ol>
+      <li
+        class="breadcrumb-item"
+      >
+        <a
+          href="#/home"
+        >
+          Home
+        </a>
+      </li>
+      <li
+        class="breadcrumb-item"
+      >
+        <a
+          href="#/my-courses"
+        >
+          My courses
+        </a>
+      </li>
+      <li
+        class="breadcrumb-item current"
+      >
+         My super course
+      </li>
+    </ol>
+  </nav>
+</div>
+`;
+
+exports[`<Breadcrumb> and <Breadcrumb.Item> renders correctly in portal 1`] = `
 <nav
   aria-label="breadcrumbs"
   class="css-n4ez4j-container-container"
 >
   <ol>
     <li
-      class=""
+      class="breadcrumb-item"
     >
       <a
         href="#/home"
@@ -16,7 +51,7 @@ exports[`<Breadcrumb> and <Breadcrumb.Item> matches snapshot 1`] = `
       </a>
     </li>
     <li
-      class=""
+      class="breadcrumb-item"
     >
       <a
         href="#/my-courses"
@@ -25,7 +60,7 @@ exports[`<Breadcrumb> and <Breadcrumb.Item> matches snapshot 1`] = `
       </a>
     </li>
     <li
-      class="current"
+      class="breadcrumb-item current"
     >
        My super course
     </li>

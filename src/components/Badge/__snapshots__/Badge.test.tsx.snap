@@ -3,7 +3,7 @@
 exports[`<Badge /> matches snapshot 1`] = `
 <div>
   <span
-    class="css-wwgfje-container-container"
+    class="css-1lrywgw-container-container"
   >
     Messages
   </span>

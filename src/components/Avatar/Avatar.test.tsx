@@ -12,7 +12,7 @@ describe("<Avatar />", () => {
     render(<Avatar {...avatarData} />);
 
     const avatar = screen.getByRole("img");
-    const avatarChildren = screen.queryByTestId(/avatar-children-container/i);
+    const avatarChildren = screen.queryByTestId("avatar-children-container");
 
     expect(avatar).toHaveAttribute("src", avatarData.src);
     expect(avatarChildren).not.toBeInTheDocument();
@@ -44,8 +44,20 @@ describe("<Avatar />", () => {
     expect(img).not.toBeInTheDocument();
   });
 
-  it("matches snapshot", () => {
-    const { container } = render(<Avatar>SP</Avatar>);
+  it("matches image avatar snapshot", () => {
+    const { container } = render(
+      <Avatar size="md" className="my-image-avatar" src="path/to/image.png" alt="My avatar" />,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it("matches children avatar snapshot", () => {
+    const { container } = render(
+      <Avatar size="lg" className="my-text-avatar" bgColor="#ffffff">
+        AB
+      </Avatar>,
+    );
 
     expect(container).toMatchSnapshot();
   });

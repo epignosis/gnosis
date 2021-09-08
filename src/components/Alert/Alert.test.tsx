@@ -23,30 +23,29 @@ describe("<Alert>", () => {
     const title = screen.getByText(heading);
     const paragraph = screen.getByText(paragraphTxt);
     const closeLink = screen.getByRole("button");
-    const icon = screen.getByTestId(/icon/i);
+    const icon = screen.getByTestId("icon");
 
     expect(title).toHaveTextContent(heading);
     expect(paragraph).toHaveTextContent(paragraphTxt);
+    expect(icon).toBeInTheDocument();
     userEvent.click(closeLink);
     expect(mockedOnClose).toHaveBeenCalledTimes(1);
-    expect(icon).toBeInTheDocument();
   });
 
   it("renders correctly with custom icon", () => {
     render(
-      <Alert type="info" onClose={jest.fn()} icon={ScrollRegularSVG}>
+      <Alert type="info" icon={ScrollRegularSVG}>
         {faker.lorem.paragraph()}
       </Alert>,
     );
-
-    const icon = screen.getByTestId(/icon/i);
+    const icon = screen.getByTestId("icon");
 
     expect(icon).toBeInTheDocument();
   });
 
   it("matches snapshot", () => {
     const { container } = render(
-      <Alert type="info" onClose={jest.fn()}>
+      <Alert type="info">
         <Heading as="h3" size="md">
           Welcome
         </Heading>
@@ -59,7 +58,7 @@ describe("<Alert>", () => {
 
   it("matches snapshot with custom icon", () => {
     const { container } = render(
-      <Alert type="info" onClose={jest.fn()} icon={ScrollRegularSVG}>
+      <Alert type="info" icon={ScrollRegularSVG}>
         <p>My content!</p>
       </Alert>,
     );

@@ -12,10 +12,6 @@ export default {
   },
 };
 
-const breadcrumbPortal = document.createElement("div");
-breadcrumbPortal.setAttribute("id", "breadcrumb");
-document.body.appendChild(breadcrumbPortal);
-
 export const OneBreadcrumb: Story<BreadcrumbProps> = (args) => {
   return (
     <Breadcrumb {...args}>
@@ -24,10 +20,7 @@ export const OneBreadcrumb: Story<BreadcrumbProps> = (args) => {
   );
 };
 
-OneBreadcrumb.args = {
-  breadcrumbEl: breadcrumbPortal,
-  separator: "/",
-};
+OneBreadcrumb.args = {};
 
 export const MultipleBreadcrumbs: Story<BreadcrumbProps> = (args) => {
   return (
@@ -43,6 +36,4 @@ export const MultipleBreadcrumbs: Story<BreadcrumbProps> = (args) => {
   );
 };
 
-MultipleBreadcrumbs.args = {
-  ...OneBreadcrumb.args,
-};
+MultipleBreadcrumbs.args = {};

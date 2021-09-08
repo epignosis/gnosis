@@ -8,13 +8,13 @@ export type BreadcrumbItemProps = {
 };
 
 const Item: FC<BreadcrumbItemProps> = ({ children, current = false }) => {
-  return <li className={current ? "current" : ""}>{children}</li>;
+  return <li className={current ? "breadcrumb-item current" : "breadcrumb-item"}>{children}</li>;
 };
 
 export type BreadcrumbProps = {
-  breadcrumbEl: Element;
   children: ReactNode;
-  separator: string;
+  breadcrumbEl?: Element | null;
+  separator?: string;
 };
 
 export type BreadcrumbCompoundProps = {
@@ -22,9 +22,9 @@ export type BreadcrumbCompoundProps = {
 };
 
 const Breadcrumb: FC<BreadcrumbProps> & BreadcrumbCompoundProps = ({
-  breadcrumbEl,
   children,
-  separator,
+  breadcrumbEl = null,
+  separator = "/",
 }) => {
   const breadcrumb = (
     <nav
@@ -34,7 +34,8 @@ const Breadcrumb: FC<BreadcrumbProps> & BreadcrumbCompoundProps = ({
       <ol>{children}</ol>
     </nav>
   );
-  return createPortal(breadcrumb, breadcrumbEl);
+
+  return breadcrumbEl ? createPortal(breadcrumb, breadcrumbEl) : breadcrumb;
 };
 
 Breadcrumb.Item = Item;

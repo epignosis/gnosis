@@ -1,15 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Avatar /> matches snapshot 1`] = `
+exports[`<Avatar /> matches children avatar snapshot 1`] = `
 <div>
   <figure
-    class="css-1e4dpzt-avatar-avatar"
+    class="my-text-avatar css-tnnqsv-avatar-avatar"
   >
     <span
       data-testid="avatar-children-container"
     >
-      SP
+      AB
     </span>
+  </figure>
+</div>
+`;
+
+exports[`<Avatar /> matches image avatar snapshot 1`] = `
+<div>
+  <figure
+    class="my-image-avatar css-1t659wc-avatar-avatar"
+  >
+    <img
+      alt="My avatar"
+      src="path/to/image.png"
+    />
   </figure>
 </div>
 `;

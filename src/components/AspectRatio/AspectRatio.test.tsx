@@ -13,7 +13,6 @@ describe("<AspectRatio />", () => {
         <img src={src} alt={alt} height="100%" width="100%" />
       </AspectRatio>,
     );
-
     const img = screen.getByAltText(alt);
 
     expect(img).toHaveAttribute("src", src);

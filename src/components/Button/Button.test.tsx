@@ -97,8 +97,20 @@ describe("<Button />", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("matches snapshot witn block=`true`", () => {
-    const { container } = render(<Button block>Test button</Button>);
+  it("matches snapshot with all props", () => {
+    const { container } = render(
+      <Button
+        color="primary"
+        variant="solid"
+        size="lg"
+        className="my-class"
+        noGutters
+        block
+        rounded
+      >
+        Test button
+      </Button>,
+    );
 
     expect(container).toMatchSnapshot();
   });

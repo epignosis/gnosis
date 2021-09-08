@@ -1,5 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+<<<<<<< HEAD
 exports[`<Pagination /> matches snapshot with 2 pages 1`] = `
 <div>
   <div
@@ -64,19 +65,25 @@ exports[`<Pagination /> matches snapshot with 2 pages 1`] = `
 `;
 
 exports[`<Pagination /> matches snapshot with no next page 1`] = `
+=======
+exports[`<Pagination /> matches snapshot in responsive view 1`] = `
+>>>>>>> add/fix tests
 <div>
   <div
     class="css-1vskcel-container-container"
   >
     <button
-      class="previous-page-btn solid css-15pgdlr-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-      data-testid="previous-page-btn"
+      class="solid css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      id="mobile-pagination"
       name="Previous page"
     >
       <span
         class="btn-text"
       >
-        Previous
+        <svg-file-stub
+          data-testid="arrow-left"
+          height="24"
+        />
       </span>
     </button>
     <div>
@@ -105,6 +112,7 @@ exports[`<Pagination /> matches snapshot with no next page 1`] = `
             >
               2
             </option>
+<<<<<<< HEAD
           </select>
           <span
             class="carret-wrapper"
@@ -147,15 +155,17 @@ exports[`<Pagination /> matches snapshot with no previous page 1`] = `
             data-testid="pagination-page"
             id="pagination-page"
           >
+=======
+>>>>>>> add/fix tests
             <option
-              value="1"
+              value="3"
             >
-              1
+              3
             </option>
             <option
-              value="2"
+              value="4"
             >
-              2
+              4
             </option>
           </select>
           <span
@@ -172,17 +182,20 @@ exports[`<Pagination /> matches snapshot with no previous page 1`] = `
       class="total-pages"
     >
       of 
-      2
+      4
     </div>
     <button
-      class="solid css-15pgdlr-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-      data-testid="next-page-btn"
+      class="solid css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      id="mobile-pagination"
       name="Next page"
     >
       <span
         class="btn-text"
       >
-        Next
+        <svg-file-stub
+          data-testid="arrow-right"
+          height="24"
+        />
       </span>
     </button>
   </div>
@@ -194,6 +207,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
   <div
     class="css-1vskcel-container-container"
   >
+<<<<<<< HEAD
     <div>
       Page
     </div>
@@ -241,6 +255,8 @@ exports[`<Pagination /> matches snapshot with previous and next pages 1`] = `
   <div
     class="css-1vskcel-container-container"
   >
+=======
+>>>>>>> add/fix tests
     <button
       class="previous-page-btn solid css-15pgdlr-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="previous-page-btn"

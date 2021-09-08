@@ -4,16 +4,17 @@ import faker from "faker";
 import Modal from "./Modal";
 import { render, screen } from "@test-utils/render";
 
-const mockedOnClose = jest.fn();
+const getModalProps = () => ({
+  headerTxt: faker.lorem.word(),
+  bodyTxt: faker.lorem.sentence(),
+  footerTxt: faker.lorem.words(),
+});
 
 describe("<Modal>", () => {
-  const headerTxt = faker.lorem.word();
-  const bodyTxt = faker.lorem.sentence();
-  const footerTxt = faker.lorem.words();
-
   it("renders correctly with Header, Body and Footer", () => {
+    const { headerTxt, bodyTxt, footerTxt } = getModalProps();
     render(
-      <Modal isOpen onClose={mockedOnClose}>
+      <Modal isOpen>
         <Modal.Header>{headerTxt}</Modal.Header>
         <Modal.Body>{bodyTxt}</Modal.Body>
         <Modal.Footer>{footerTxt}</Modal.Footer>
@@ -29,8 +30,9 @@ describe("<Modal>", () => {
   });
 
   it("renders correctly without Footer", () => {
+    const { headerTxt, bodyTxt } = getModalProps();
     render(
-      <Modal isOpen onClose={mockedOnClose}>
+      <Modal isOpen>
         <Modal.Header>{headerTxt}</Modal.Header>
         <Modal.Body>{bodyTxt}</Modal.Body>
       </Modal>,
@@ -45,8 +47,9 @@ describe("<Modal>", () => {
   });
 
   it("renders correctly without Header and Footer", () => {
+    const { bodyTxt } = getModalProps();
     render(
-      <Modal isOpen onClose={mockedOnClose}>
+      <Modal isOpen>
         <Modal.Body>{bodyTxt}</Modal.Body>
       </Modal>,
     );
@@ -60,6 +63,9 @@ describe("<Modal>", () => {
   });
 
   it("Header renders correctly with close btn", () => {
+    const { headerTxt } = getModalProps();
+    const mockedOnClose = jest.fn();
+
     render(
       <Modal isOpen onClose={mockedOnClose}>
         <Modal.Header>{headerTxt}</Modal.Header>
@@ -73,8 +79,9 @@ describe("<Modal>", () => {
   });
 
   it("Header renders correctly with JSX content", () => {
+    const { headerTxt } = getModalProps();
     render(
-      <Modal isOpen onClose={mockedOnClose}>
+      <Modal isOpen>
         <Modal.Header>
           <button>{headerTxt}</button>
         </Modal.Header>
@@ -87,26 +94,34 @@ describe("<Modal>", () => {
   });
 
   it("matches snapshot", () => {
-    const { container } = render(
-      <Modal isOpen onClose={mockedOnClose}>
+    const modalContainer = document.createElement("div");
+    modalContainer.setAttribute("id", "app");
+    document.body.appendChild(modalContainer);
+    render(
+      <Modal isOpen>
         <Modal.Header>Test header</Modal.Header>
         <Modal.Body>Test body</Modal.Body>
         <Modal.Footer>Test footer</Modal.Footer>
       </Modal>,
     );
+    const modal = screen.getByLabelText("modal");
 
-    expect(container).toMatchSnapshot();
+    expect(modal).toMatchSnapshot();
   });
 
-  it("matches snapshot with size=`fullscreen`", () => {
-    const { container } = render(
-      <Modal isOpen onClose={mockedOnClose} size="fullscreen">
+  it("matches snapshot with cutom HTML classes", () => {
+    const modalContainer = document.createElement("div");
+    modalContainer.setAttribute("id", "app");
+    document.body.appendChild(modalContainer);
+    render(
+      <Modal isOpen size="fullscreen">
         <Modal.Header>Test header</Modal.Header>
         <Modal.Body>Test body</Modal.Body>
         <Modal.Footer>Test footer</Modal.Footer>
       </Modal>,
     );
+    const modal = screen.getByLabelText("modal");
 
-    expect(container).toMatchSnapshot();
+    expect(modal).toMatchSnapshot();
   });
 });

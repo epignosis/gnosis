@@ -30,7 +30,11 @@ describe("<Chip />", () => {
   });
 
   it("matches snapshot", () => {
-    const { container } = render(<Chip>This is a chip</Chip>);
+    const { container } = render(
+      <Chip size="md" className="my-class">
+        This is a chip
+      </Chip>,
+    );
 
     expect(container).toMatchSnapshot();
   });

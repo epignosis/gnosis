@@ -10,16 +10,14 @@ export type LoaderProps = {
   size?: "md" | "lg";
 };
 
-const Loader: FC<LoaderProps> = ({ fullScreen = false, size = "lg" }) => {
-  return (
-    <div
-      css={(theme): SerializedStyles => container(theme, { fullScreen, size })}
-      data-testid="loader"
-      className="loading-container"
-    >
-      <PulseLoader />
-    </div>
-  );
-};
+const Loader: FC<LoaderProps> = ({ fullScreen = false, size = "lg" }) => (
+  <div
+    css={(theme): SerializedStyles => container(theme, { fullScreen, size })}
+    data-testid="loader"
+    className="loading-container"
+  >
+    <PulseLoader />
+  </div>
+);
 
 export default Loader;

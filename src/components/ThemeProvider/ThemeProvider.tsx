@@ -6,7 +6,8 @@ import {
   SerializedStyles,
 } from "@emotion/react";
 import merge from "deepmerge";
-import { defaultTheme, defaultGlobals } from "../../";
+import defaultTheme from "@theme/default/defaultTheme";
+import defaultGlobals from "@theme/utils/global";
 import {
   DEFAULT_TYPESCALE_CONFIG,
   generateTypeScaleSizes,

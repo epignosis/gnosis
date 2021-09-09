@@ -68,7 +68,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
 </div>
 `;
 
-exports[`<Tabs/> matches snapshot with stickyHeader=\`true\` 1`] = `
+exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
 <div>
   <section
     class="css-a5ycro-container"

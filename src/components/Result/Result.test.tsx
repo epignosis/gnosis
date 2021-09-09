@@ -21,7 +21,7 @@ describe("<Result/>", () => {
     );
 
     const title = screen.getByText(titleTxt);
-    const icon = screen.getByTestId(/result-icon/i);
+    const icon = screen.getByTestId("result-icon");
     const info = screen.getByText(infoTxt);
     const footerBtn = screen.getByText(footerTxt);
 

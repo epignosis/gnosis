@@ -64,8 +64,7 @@ export type ReactModalProps = Pick<Props, "isOpen"> & {
 const Modal: FC<ReactModalProps> & ModalCompoundProps = ({
   children,
   isOpen,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  onClose = () => {},
+  onClose = () => void 0,
   size = "md",
   rootElementSelector = "#app",
 }) => {

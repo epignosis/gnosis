@@ -79,7 +79,7 @@ describe("<Button />", () => {
 
   it("with prefix icon", () => {
     render(<Button iconBefore={CalendarSVG}>With prefix icon</Button>);
-    const icon = screen.getByTestId(/prefix-icon/i);
+    const icon = screen.getByTestId("prefix-icon");
 
     expect(icon).toBeInTheDocument();
   });
@@ -87,7 +87,7 @@ describe("<Button />", () => {
   it("with suffix icon", () => {
     render(<Button iconAfter={CalendarSVG}>With suffix icon</Button>);
 
-    const icon = screen.getByTestId(/suffix-icon/i);
+    const icon = screen.getByTestId("suffix-icon");
     expect(icon).toBeInTheDocument();
   });
 

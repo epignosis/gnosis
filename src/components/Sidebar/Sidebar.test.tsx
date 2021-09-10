@@ -5,8 +5,7 @@ import { render, screen } from "@test-utils/render";
 
 describe("<Sidebar/>", () => {
   it("renders expanded correctly", () => {
-    const mockFn = jest.fn();
-    render(<Sidebar onToggle={mockFn} />);
+    render(<Sidebar />);
 
     const handle = screen.getByRole("button");
     const items = screen.getAllByRole("link");
@@ -25,8 +24,7 @@ describe("<Sidebar/>", () => {
   });
 
   it("renders collapsed correctly", () => {
-    const mockFn = jest.fn();
-    render(<Sidebar isCollapsed onToggle={mockFn} />);
+    render(<Sidebar isCollapsed />);
 
     const handle = screen.getByRole("button");
     const items = screen.getAllByRole("link");
@@ -51,8 +49,10 @@ describe("<Sidebar/>", () => {
     const handle = screen.getByRole("button");
 
     userEvent.click(handle);
+    userEvent.click(handle);
+    userEvent.click(handle);
 
-    expect(mockToggle).toHaveBeenCalledTimes(1);
+    expect(mockToggle).toHaveBeenCalledTimes(3);
   });
 
   it("matches snapshot", () => {

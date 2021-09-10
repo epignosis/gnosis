@@ -2,18 +2,23 @@ import React from "react";
 import userEvent from "@testing-library/user-event";
 import faker from "faker";
 import Drawer from "./Drawer";
-import { screen, render } from "@test-utils/render";
+import { screen, render, cleanup } from "@test-utils/render";
 
 describe("<Drawer/>", () => {
-  const drawerEl = document.createElement("div");
-  drawerEl.setAttribute("id", "drawerRoot");
-  document.body.appendChild(drawerEl);
+  beforeEach(() => {
+    const drawerEl = document.createElement("div");
+    drawerEl.setAttribute("id", "drawerRoot");
+    document.body.appendChild(drawerEl);
+  });
 
-  const headerTxt = faker.lorem.word();
-  const bodyTxt = faker.lorem.word();
-  const footerTxt = faker.lorem.word();
+  afterEach(() => {
+    cleanup();
+  });
 
   it("renders correctly", () => {
+    const headerTxt = faker.lorem.word();
+    const bodyTxt = faker.lorem.word();
+    const footerTxt = faker.lorem.word();
     const mockFn = jest.fn();
 
     render(
@@ -38,6 +43,7 @@ describe("<Drawer/>", () => {
   });
 
   it("renders correctly without Header and Footer", () => {
+    const bodyTxt = faker.lorem.word();
     const mockFn = jest.fn();
 
     render(
@@ -55,7 +61,8 @@ describe("<Drawer/>", () => {
     expect(footer).not.toBeInTheDocument();
   });
 
-  it("Header renders correctly with close button", () => {
+  it("renders correctly with close button", () => {
+    const headerTxt = faker.lorem.word();
     const mockFn = jest.fn();
 
     const { rerender } = render(
@@ -83,6 +90,7 @@ describe("<Drawer/>", () => {
   });
 
   it("Header renders with JSX content", () => {
+    const headerTxt = faker.lorem.word();
     const mockFn = jest.fn();
 
     render(
@@ -100,77 +108,59 @@ describe("<Drawer/>", () => {
   });
 
   it("matches snapshot with header, body and footer", () => {
-    const mockFn = jest.fn();
-
-    const { container } = render(
-      <Drawer isOpen onClose={mockFn}>
+    render(
+      <Drawer isOpen onClose={jest.fn()}>
         <Drawer.Header>Test header</Drawer.Header>
         <Drawer.Body>Test body</Drawer.Body>
         <Drawer.Footer>Test footer</Drawer.Footer>
       </Drawer>,
     );
+    const drawer = screen.getByTestId("drawer");
 
-    expect(container).toMatchSnapshot();
+    expect(drawer).toMatchSnapshot();
   });
 
   it("matches snapshot without header and footer", () => {
-    const mockFn = jest.fn();
-
-    const { container } = render(
-      <Drawer isOpen onClose={mockFn}>
+    render(
+      <Drawer isOpen onClose={jest.fn()}>
         <Drawer.Body>Test body</Drawer.Body>
       </Drawer>,
     );
+    const drawer = screen.getByTestId("drawer");
 
-    expect(container).toMatchSnapshot();
+    expect(drawer).toMatchSnapshot();
   });
 
   it("matches snapshot with close button", () => {
-    const mockFn = jest.fn();
-
-    const { container } = render(
-      <Drawer isOpen onClose={mockFn}>
-        <Drawer.Header closable>{headerTxt}</Drawer.Header>
+    render(
+      <Drawer isOpen onClose={jest.fn()}>
+        <Drawer.Header closable>Title</Drawer.Header>
       </Drawer>,
     );
+    const drawer = screen.getByTestId("drawer");
 
-    expect(container).toMatchSnapshot();
+    expect(drawer).toMatchSnapshot();
   });
 
   it("matches snapshot with noGutters Header", () => {
-    const mockFn = jest.fn();
-
-    const { container } = render(
-      <Drawer isOpen onClose={mockFn}>
-        <Drawer.Header noGutters>{headerTxt}</Drawer.Header>
+    render(
+      <Drawer isOpen onClose={jest.fn()}>
+        <Drawer.Header noGutters>Title</Drawer.Header>
       </Drawer>,
     );
+    const drawer = screen.getByTestId("drawer");
 
-    expect(container).toMatchSnapshot();
+    expect(drawer).toMatchSnapshot();
   });
 
-  it("matches snapshot with placement=`right`", () => {
-    const mockFn = jest.fn();
-
-    const { container } = render(
-      <Drawer isOpen onClose={mockFn} placement="right">
-        <Drawer.Header>{headerTxt}</Drawer.Header>
+  it("matches snapshot with right placement", () => {
+    render(
+      <Drawer isOpen onClose={jest.fn()} placement="right">
+        <Drawer.Header>Title</Drawer.Header>
       </Drawer>,
     );
+    const drawer = screen.getByTestId("drawer");
 
-    expect(container).toMatchSnapshot();
-  });
-
-  //this test is for line 111 on Drawer.tsx
-  it("matches snapshot closed", () => {
-    const mockFn = jest.fn();
-
-    const { container } = render(
-      <Drawer isOpen={false} onClose={mockFn}>
-        <Drawer.Header>{headerTxt}</Drawer.Header>
-      </Drawer>,
-    );
-
-    expect(container).toMatchSnapshot();
+    expect(drawer).toMatchSnapshot();
   });
 });

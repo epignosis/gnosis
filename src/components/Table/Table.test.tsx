@@ -52,15 +52,15 @@ describe("<Table>", () => {
   it("renders correctly without Footer", () => {
     render(<Table columns={columns} data={data} />);
 
-    const footer = screen.queryByRole("footer");
     const headerTitles = screen.getAllByRole("columnheader");
     const bodyRows = screen.getAllByTestId("body-row");
     const cells = screen.getAllByRole("cell");
+    const footer = screen.queryByRole("footer");
 
-    expect(footer).not.toBeInTheDocument();
     expect(headerTitles).toHaveLength(3);
     expect(bodyRows).toHaveLength(4);
     expect(cells).toHaveLength(headerTitles.length * bodyRows.length);
+    expect(footer).not.toBeInTheDocument();
   });
 
   it("renders correctly with Footer", () => {

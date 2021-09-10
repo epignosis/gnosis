@@ -33,6 +33,7 @@ const Hover: HoverProps = ({ transparent = false, children }) => (
     }}
     variants={hoverContainerVariants}
     css={(theme): SerializedStyles => hoverContainer(theme, { transparent })}
+    data-testid="card-hover"
   >
     <m.div className="hover-wrapper" variants={hoverContent}>
       {children}

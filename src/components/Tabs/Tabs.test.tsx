@@ -4,15 +4,18 @@ import faker from "faker";
 import Tabs from "./Tabs";
 import { screen, render } from "@test-utils/render";
 
+const getTabsProps = () => ({
+  tab1Txt: faker.lorem.paragraph(),
+  tab2Txt: faker.lorem.paragraph(),
+  tab3Txt: faker.lorem.paragraph(),
+  tab1TitleTxt: faker.lorem.word(),
+  tab2TitleTxt: faker.lorem.word(),
+  tab3TitleTxt: faker.lorem.word(),
+});
+
 describe("<Tabs/>", () => {
   it("renders correctly", () => {
-    const tab1Txt = faker.lorem.paragraph();
-    const tab2Txt = faker.lorem.paragraph();
-    const tab3Txt = faker.lorem.paragraph();
-    const tab1TitleTxt = faker.lorem.word();
-    const tab2TitleTxt = faker.lorem.word();
-    const tab3TitleTxt = faker.lorem.word();
-
+    const { tab1Txt, tab2Txt, tab3Txt, tab1TitleTxt, tab2TitleTxt, tab3TitleTxt } = getTabsProps();
     render(
       <Tabs>
         <Tabs.TabPane title={tab1TitleTxt}>{tab1Txt}</Tabs.TabPane>
@@ -31,10 +34,7 @@ describe("<Tabs/>", () => {
   });
 
   it("changes tabs correctly", () => {
-    const tab1Txt = faker.lorem.paragraph();
-    const tab2Txt = faker.lorem.paragraph();
-    const tab1TitleTxt = faker.lorem.word();
-    const tab2TitleTxt = faker.lorem.word();
+    const { tab1Txt, tab2Txt, tab1TitleTxt, tab2TitleTxt } = getTabsProps();
 
     render(
       <Tabs>
@@ -64,7 +64,7 @@ describe("<Tabs/>", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("matches snapshot with stickyHeader=`true`", () => {
+  it("matches snapshot with stickyHeader", () => {
     const { container } = render(
       <Tabs stickyHeader>
         <Tabs.TabPane title="Tab 1">Test tab 1</Tabs.TabPane>
@@ -77,12 +77,7 @@ describe("<Tabs/>", () => {
   });
 
   it("renders correctly mobile view", () => {
-    const tab1Txt = faker.lorem.paragraph();
-    const tab2Txt = faker.lorem.paragraph();
-    const tab3Txt = faker.lorem.paragraph();
-    const tab1TitleTxt = faker.lorem.word();
-    const tab2TitleTxt = faker.lorem.word();
-    const tab3TitleTxt = faker.lorem.word();
+    const { tab1Txt, tab2Txt, tab3Txt, tab1TitleTxt, tab2TitleTxt, tab3TitleTxt } = getTabsProps();
     const tab1FallbackTitle = faker.lorem.word();
 
     render(

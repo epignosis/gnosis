@@ -3,20 +3,20 @@ import faker from "faker";
 import Breadcrumb from "./Breadcrumb";
 import { render, screen } from "@test-utils/render";
 
-describe("<Breadcrumb> and <Breadcrumb.Item>", () => {
-  const breadcrumbPortal = document.createElement("div");
-  breadcrumbPortal.setAttribute("id", "breadcrumb");
-  document.body.appendChild(breadcrumbPortal);
+const getBreadcrumbProps = () => ({
+  item1: faker.unique(faker.lorem.word),
+  item2: faker.unique(faker.lorem.word),
+  item3: faker.unique(faker.lorem.word),
+  item1Url: faker.unique(faker.internet.url),
+  item2Url: faker.unique(faker.internet.url),
+});
 
-  const item1 = faker.lorem.word();
-  const item2 = faker.lorem.word();
-  const item3 = faker.lorem.word();
-  const item1Url = faker.internet.url();
-  const item2Url = faker.internet.url();
+describe("<Breadcrumb> and <Breadcrumb.Item>", () => {
+  const { item1, item2, item3, item1Url, item2Url } = getBreadcrumbProps();
 
   it("renders correctly", () => {
     render(
-      <Breadcrumb breadcrumbEl={breadcrumbPortal} separator="/">
+      <Breadcrumb separator="/">
         <Breadcrumb.Item>
           <a href={item1Url}>{item1}</a>
         </Breadcrumb.Item>
@@ -27,20 +27,20 @@ describe("<Breadcrumb> and <Breadcrumb.Item>", () => {
       </Breadcrumb>,
     );
 
-    const breadcrumb = screen.getByLabelText(/breadcrumbs/i);
+    const firstBreadcrumbLink = screen.getByText(item1);
+    const secondBreadcrumbLink = screen.getByText(item2);
+    const currentBreadcrumb = screen.getByText(item3);
 
-    expect(breadcrumb).toBeInTheDocument();
-    expect(breadcrumb).toBeVisible();
-    expect(breadcrumb).toHaveTextContent(item1);
-    expect(breadcrumb).toHaveTextContent(item2);
-    expect(breadcrumb).toHaveTextContent(item3);
-    expect(screen.getByText(item1)).toHaveAttribute("href", item1Url);
-    expect(screen.getByText(item2)).toHaveAttribute("href", item2Url);
+    expect(firstBreadcrumbLink).toHaveTextContent(item1);
+    expect(secondBreadcrumbLink).toHaveTextContent(item2);
+    expect(currentBreadcrumb).toHaveTextContent(item3);
+    expect(firstBreadcrumbLink).toHaveAttribute("href", item1Url);
+    expect(secondBreadcrumbLink).toHaveAttribute("href", item2Url);
   });
 
   it("matches snapshot", () => {
     const { container } = render(
-      <Breadcrumb breadcrumbEl={breadcrumbPortal} separator="/">
+      <Breadcrumb separator="/">
         <Breadcrumb.Item>
           <a href="#/home">Home</a>
         </Breadcrumb.Item>
@@ -52,5 +52,26 @@ describe("<Breadcrumb> and <Breadcrumb.Item>", () => {
     );
 
     expect(container).toMatchSnapshot();
+  });
+
+  it("renders correctly in portal", () => {
+    const breadcrumbContainer = document.createElement("div");
+    breadcrumbContainer.setAttribute("id", "breadcrumb");
+    document.body.appendChild(breadcrumbContainer);
+
+    render(
+      <Breadcrumb breadcrumbEl={breadcrumbContainer} separator="/">
+        <Breadcrumb.Item>
+          <a href="#/home">Home</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <a href="#/my-courses">My courses</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item current> My super course</Breadcrumb.Item>
+      </Breadcrumb>,
+    );
+    const breadcrumbs = screen.getByLabelText("breadcrumbs");
+
+    expect(breadcrumbs).toMatchSnapshot();
   });
 });

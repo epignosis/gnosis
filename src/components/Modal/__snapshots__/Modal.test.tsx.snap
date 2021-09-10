@@ -1,5 +1,87 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Modal> matches snapshot 1`] = `<div />`;
+exports[`<Modal> matches snapshot 1`] = `
+<div
+  aria-label="modal"
+  aria-modal="true"
+  class="content-base"
+  role="dialog"
+  tabindex="-1"
+>
+  <header
+    class="css-fvsr8l-modalHeader-modalHeader"
+    data-testid="modal-header"
+  >
+    <div>
+      <h2
+        class="css-1iyd91n-headingContainer-headingContainer"
+      >
+        Test header
+      </h2>
+    </div>
+    <a
+      aria-label="Close button"
+      class="close-btn"
+      role="button"
+    >
+      <svg-file-stub
+        height="28"
+      />
+    </a>
+  </header>
+  <article
+    class="css-18mo2pj-modalContent"
+  >
+    Test body
+  </article>
+  <footer
+    class="css-j18ln3-modalFooter-modalFooter"
+    data-testid="modal-footer"
+  >
+    Test footer
+  </footer>
+</div>
+`;
 
-exports[`<Modal> matches snapshot with size=\`fullscreen\` 1`] = `<div />`;
+exports[`<Modal> matches snapshot with cutom HTML classes 1`] = `
+<div
+  aria-label="modal"
+  aria-modal="true"
+  class="content-base"
+  role="dialog"
+  tabindex="-1"
+>
+  <header
+    class="css-fvsr8l-modalHeader-modalHeader"
+    data-testid="modal-header"
+  >
+    <div>
+      <h2
+        class="css-1iyd91n-headingContainer-headingContainer"
+      >
+        Test header
+      </h2>
+    </div>
+    <a
+      aria-label="Close button"
+      class="close-btn"
+      role="button"
+    >
+      <svg-file-stub
+        height="28"
+      />
+    </a>
+  </header>
+  <article
+    class="css-18mo2pj-modalContent"
+  >
+    Test body
+  </article>
+  <footer
+    class="css-j18ln3-modalFooter-modalFooter"
+    data-testid="modal-footer"
+  >
+    Test footer
+  </footer>
+</div>
+`;

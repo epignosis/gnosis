@@ -5,33 +5,28 @@ import { render, screen } from "@test-utils/render";
 import { CertificateSVG } from "@icons/core";
 
 describe("<Avatar />", () => {
-  const alt = faker.lorem.word();
-  const src = faker.image.imageUrl();
-
   it("renders with image", () => {
-    const avatarData = {
-      src: src,
-      alt: alt,
-    };
+    const alt = faker.lorem.word();
+    const src = faker.image.imageUrl();
+    const avatarData = { src, alt };
     render(<Avatar {...avatarData} />);
 
     const avatar = screen.getByRole("img");
-    const avatarChildren = screen.queryByTestId(/avatar-children-container/i);
+    const avatarChildren = screen.queryByTestId("avatar-children-container");
 
     expect(avatar).toHaveAttribute("src", avatarData.src);
-    expect(avatarChildren).toBe(null);
+    expect(avatarChildren).not.toBeInTheDocument();
   });
 
   it("renders a string", () => {
-    const useInitials = faker.name.firstName()[0];
+    const initials = faker.name.firstName()[0];
+    render(<Avatar>{initials}</Avatar>);
 
-    render(<Avatar>{useInitials}</Avatar>);
-
-    const avatarChildren = screen.getByText(useInitials);
+    const avatarChildren = screen.getByText(initials);
     const img = screen.queryByRole("img");
 
-    expect(avatarChildren).toHaveTextContent(useInitials);
-    expect(img).toBe(null);
+    expect(avatarChildren).toHaveTextContent(initials);
+    expect(img).not.toBeInTheDocument();
   });
 
   it("renders an icon", () => {
@@ -41,16 +36,28 @@ describe("<Avatar />", () => {
       </Avatar>,
     );
 
-    const avatarChildren = screen.getByTestId(/avatar-children-container/i);
-    const icon = screen.getByTestId(/icon/i);
+    const avatarChildren = screen.getByTestId("avatar-children-container");
+    const icon = screen.getByTestId("icon");
     const img = screen.queryByRole("img");
 
     expect(avatarChildren).toContainElement(icon);
-    expect(img).toBe(null);
+    expect(img).not.toBeInTheDocument();
   });
 
-  it("matches snapshot", () => {
-    const { container } = render(<Avatar>SP</Avatar>);
+  it("matches image avatar snapshot", () => {
+    const { container } = render(
+      <Avatar size="md" className="my-image-avatar" src="path/to/image.png" alt="My avatar" />,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it("matches children avatar snapshot", () => {
+    const { container } = render(
+      <Avatar size="lg" className="my-text-avatar" bgColor="#ffffff">
+        AB
+      </Avatar>,
+    );
 
     expect(container).toMatchSnapshot();
   });

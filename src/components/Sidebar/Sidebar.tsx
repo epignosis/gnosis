@@ -6,7 +6,7 @@ import NavHandle from "./NavHandle";
 
 export type SidebarProps = {
   isCollapsed?: boolean;
-  onToggle: () => void;
+  onToggle?: () => void;
 };
 
 type SidebarCompoundProps = {
@@ -45,7 +45,7 @@ const navVariants: Variants = {
 
 const Sidebar: FC<SidebarProps> & SidebarCompoundProps = ({
   isCollapsed = false,
-  onToggle,
+  onToggle = () => void 0,
   children,
 }) => {
   const isReducedMotion = useReducedMotion();

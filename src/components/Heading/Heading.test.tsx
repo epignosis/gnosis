@@ -13,7 +13,11 @@ describe("<Heading>", () => {
   });
 
   it("snapshot", () => {
-    const { container } = render(<Heading as="h1">My title</Heading>);
+    const { container } = render(
+      <Heading as="h2" size="md">
+        My title
+      </Heading>,
+    );
 
     expect(container).toMatchSnapshot();
   });

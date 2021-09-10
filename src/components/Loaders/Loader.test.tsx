@@ -12,12 +12,12 @@ describe("<Loader>", () => {
   });
 
   it("matches snapshot", () => {
-    const { container } = render(<Loader />);
+    const { container } = render(<Loader size="lg" />);
 
     expect(container).toMatchSnapshot();
   });
 
-  it("matches snapshot with fullscreen=`true`", () => {
+  it("matches snapshot with fullscreen", () => {
     const { container } = render(<Loader fullScreen />);
 
     expect(container).toMatchSnapshot();

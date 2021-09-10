@@ -8,7 +8,6 @@ import { screen, render, waitFor } from "@test-utils/render";
 describe("<Toaster/>", () => {
   it("renders correctly", () => {
     const toastTxt = faker.lorem.sentence();
-    const btnTxt = faker.lorem.word();
     const publishToast = () => {
       toast(toastTxt);
     };
@@ -16,27 +15,14 @@ describe("<Toaster/>", () => {
     render(
       <>
         <Toaster />
-        <button onClick={publishToast}>{btnTxt}</button>
+        <button onClick={publishToast}>Click me</button>
       </>,
     );
 
     userEvent.click(screen.getByRole("button"));
 
-    waitFor(() => expect(screen.getByText(toastTxt)).toHaveTextContent(toastTxt));
-  });
-
-  it("matches snapshot", () => {
-    const publishToast = () => {
-      toast("test toast");
-    };
-
-    const { container } = render(
-      <>
-        <Toaster />
-        <button onClick={publishToast}>test click</button>
-      </>,
-    );
-
-    expect(container).toMatchSnapshot();
+    waitFor(() => {
+      expect(screen.getByText(toastTxt)).toHaveTextContent(toastTxt);
+    });
   });
 });

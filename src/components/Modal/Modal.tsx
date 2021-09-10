@@ -56,16 +56,19 @@ type ModalCompoundProps = {
 export type Size = "md" | "lg" | "fullscreen";
 
 export type ReactModalProps = Pick<Props, "isOpen"> & {
-  onClose: () => void;
+  onClose?: () => void;
   size?: Size;
+  rootElementSelector?: string;
 };
 
 const Modal: FC<ReactModalProps> & ModalCompoundProps = ({
   children,
   isOpen,
-  onClose,
+  onClose = () => void 0,
   size = "md",
+  rootElementSelector = "#app",
 }) => {
+  const rootElement = document.querySelector(rootElementSelector) as HTMLElement;
   const clonedChildren = Children.map(children, (child) =>
     cloneElement(child as ReactElement, {
       onClose,
@@ -77,7 +80,7 @@ const Modal: FC<ReactModalProps> & ModalCompoundProps = ({
       {({ css }): JSX.Element => (
         <ReactModal
           isOpen={isOpen}
-          appElement={document.getElementById("app") as HTMLElement}
+          appElement={rootElement}
           onRequestClose={onClose}
           contentLabel="modal"
           overlayClassName={{

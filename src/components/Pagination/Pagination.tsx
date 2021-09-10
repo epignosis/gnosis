@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { useResponsive } from "@umijs/hooks";
 import { container } from "./styles";
 import { Button, Select } from "@components";
 import { ArrowLeftSVG, ArrowRightSVG } from "@icons/core";
@@ -8,25 +7,20 @@ export type PaginationProps = {
   current: number;
   totalPages: number;
   onChange: (page: number) => void;
+  responsiveView?: boolean;
 };
 
-const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages }) => {
-  const { sm } = useResponsive();
-  const createOptions = (): JSX.Element[] => {
-    return [...Array(totalPages)]
-      .map((_, i) => i + 1)
-      .map((page: number, key) => (
-        <option key={key} value={page}>
-          {page}
-        </option>
-      ));
-  };
-
+const Pagination: FC<PaginationProps> = ({
+  current,
+  onChange,
+  totalPages,
+  responsiveView = false,
+}) => {
   return (
     <div css={container}>
       {current > 1 && (
         <>
-          {sm ? (
+          {!responsiveView ? (
             <Button
               data-testid="previous-page-btn"
               className="previous-page-btn"
@@ -55,13 +49,17 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages }) => {
           value={current}
           onChange={(value): void => onChange(parseInt(value))}
         >
-          {createOptions()}
+          {[...Array(totalPages)].map((_, index) => (
+            <option key={index + 1} value={index + 1}>
+              {index + 1}
+            </option>
+          ))}
         </Select>
       </div>
       <div className="total-pages">of {totalPages}</div>
       {current < totalPages && (
         <>
-          {sm ? (
+          {!responsiveView ? (
             <Button
               data-testid="next-page-btn"
               name="Next page"

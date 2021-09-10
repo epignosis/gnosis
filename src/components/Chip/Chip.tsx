@@ -12,9 +12,7 @@ export type ChipProps = Omit<React.HTMLAttributes<HTMLDivElement>, "css"> & {
   children: string;
 };
 
-const Chip: FC<ChipProps> = (props) => {
-  const { size = "md", bgColor = "filter", onClose, children, ...rest } = props;
-
+const Chip: FC<ChipProps> = ({ size = "md", bgColor = "filter", onClose, children, ...rest }) => {
   return (
     <div css={(theme): SerializedStyles => chip(theme, { size, bgColor })} {...rest}>
       {onClose && (

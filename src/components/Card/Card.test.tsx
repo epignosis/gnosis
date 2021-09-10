@@ -2,19 +2,14 @@ import React from "react";
 import faker from "faker";
 import userEvent from "@testing-library/user-event";
 import Card from "./Card";
-import { screen, render } from "@test-utils/render";
+import { screen, render, waitFor } from "@test-utils/render";
 
 describe("<Card/>", () => {
-  const alt = faker.lorem.word();
-  const src = faker.image.imageUrl();
-  const bodyTxt = faker.lorem.paragraph();
-  const hoverTxt = faker.lorem.word();
-  const overlayTxt = faker.lorem.word();
-  const titleTxt = faker.lorem.word();
-  const footerTxt = faker.lorem.words();
-  const mockFn = jest.fn();
-
   it("renders correctly", () => {
+    const alt = faker.lorem.word();
+    const src = faker.image.imageUrl();
+    const bodyTxt = faker.lorem.paragraph();
+
     render(
       <Card>
         <Card.Header>
@@ -31,7 +26,11 @@ describe("<Card/>", () => {
     expect(body).toHaveTextContent(bodyTxt);
   });
 
-  it("has hover action", () => {
+  xit("displays hover div", async () => {
+    const alt = faker.lorem.word();
+    const src = faker.image.imageUrl();
+    const hoverTxt = faker.lorem.word();
+
     render(
       <Card>
         <Card.Header>
@@ -41,16 +40,27 @@ describe("<Card/>", () => {
       </Card>,
     );
 
+    const card = screen.getByTestId("card");
     const hover = screen.getByText(hoverTxt);
 
     expect(hover).not.toBeVisible();
 
-    // userEvent.hover(hover);
+    screen.debug(card);
 
-    // expect(screen.getByText(hoverTxt)).toBeVisible();
+    userEvent.hover(card);
+
+    screen.debug(card);
+
+    await waitFor(() => screen.getByTestId("card-hover"));
+
+    expect(screen.getByText("card-hover")).toBeVisible();
   });
 
   it("has overlay", () => {
+    const alt = faker.lorem.word();
+    const src = faker.image.imageUrl();
+    const overlayTxt = faker.lorem.word();
+
     render(
       <Card>
         <Card.Overlay>{overlayTxt}</Card.Overlay>
@@ -66,6 +76,11 @@ describe("<Card/>", () => {
   });
 
   it("has drawer", () => {
+    const bodyTxt = faker.lorem.paragraph();
+    const titleTxt = faker.lorem.word();
+    const footerTxt = faker.lorem.words();
+    const mockFn = jest.fn();
+
     render(
       <Card>
         <Card.Drawer isOpen title={titleTxt} onClose={mockFn} footer={footerTxt}>
@@ -161,6 +176,8 @@ describe("<Card/>", () => {
   });
 
   it("matches snapshot with drawer", () => {
+    const mockFn = jest.fn();
+
     const { container } = render(
       <Card>
         <Card.Drawer isOpen title="Drawer title" onClose={mockFn} footer="Drawer footer">

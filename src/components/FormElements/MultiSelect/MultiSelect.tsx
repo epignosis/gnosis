@@ -22,7 +22,6 @@ export type MultiSelectProps = {
   inline?: boolean;
   options: MultiSelectOption[];
   onChange: (selections: unknown[]) => void;
-  initialValues?: string[];
   value?: MultiSelectOption[];
   className?: string;
   block?: boolean;

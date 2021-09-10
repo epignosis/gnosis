@@ -16,7 +16,7 @@ export const multiSelectContainer = (
   position: relative;
 
   ul {
-    font-size: ${typeScaleSizes.md};
+    // font-size: ${typeScaleSizes.md};
     position: absolute;
     top: 0;
     left: 0;
@@ -32,13 +32,13 @@ export const multiSelectContainer = (
     z-index: 1;
 
     li {
-      align-items: baseline;
-      padding: 0.25rem 1rem;
-      margin: 0;
+      // align-items: baseline;
+      // padding: 0.25rem 1rem;
+      // margin: 0;
 
-      &:hover {
-        background: ${formElements.multiSelect.hover};
-      }
+      // &:hover {
+      //   background: ${formElements.multiSelect.hover};
+      // }
     }
   }
 

@@ -3,7 +3,7 @@
 exports[`<MultiSelect /> matches snapshot 1`] = `
 <div>
   <div
-    class=" css-v1zr9c-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
+    class=" css-1k3ogbi-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
   >
     <label
       class="css-xs6o3g-label-label"
@@ -50,6 +50,106 @@ exports[`<MultiSelect /> matches snapshot 1`] = `
           />
         </button>
       </div>
+      <li>
+        <div
+          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+          style="padding: 0px 0px 0px 0.5rem;"
+        >
+          <input
+            aria-selected="false"
+            id="downshift-6-item-0"
+            name="sapiente"
+            role="option"
+            type="checkbox"
+            value="Inc"
+          />
+          <label
+            for="downshift-6-item-0"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            Rosenbaum and Sons
+          </label>
+        </div>
+      </li>
+      <li>
+        <div
+          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+          style="padding: 0px 0px 0px 0.5rem;"
+        >
+          <input
+            aria-selected="false"
+            id="downshift-6-item-1"
+            name="nobis"
+            role="option"
+            type="checkbox"
+            value="Sleek"
+          />
+          <label
+            for="downshift-6-item-1"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            Clothing
+          </label>
+        </div>
+      </li>
+      <li>
+        <div
+          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+          style="padding: 0px 0px 0px 0.5rem;"
+        >
+          <input
+            aria-selected="false"
+            id="downshift-6-item-2"
+            name="ratione"
+            role="option"
+            type="checkbox"
+            value="1e610c4bac5597f4ac9da55fa35f08f416a60258"
+          />
+          <label
+            for="downshift-6-item-2"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            index solid state feed
+          </label>
+        </div>
+      </li>
+      <li>
+        <div
+          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+          style="padding: 0px 0px 0px 0.5rem;"
+        >
+          <input
+            aria-selected="false"
+            id="downshift-6-item-3"
+            name="non"
+            role="option"
+            type="checkbox"
+            value="AGP"
+          />
+          <label
+            for="downshift-6-item-3"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            We need to index the auxiliary FTP hard drive!
+          </label>
+        </div>
+      </li>
     </ul>
   </div>
 </div>
@@ -58,7 +158,7 @@ exports[`<MultiSelect /> matches snapshot 1`] = `
 exports[`<MultiSelect /> matches snapshot with \`block = true\` 1`] = `
 <div>
   <div
-    class=" css-1u4b81w-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
+    class=" css-hxre5e-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
   >
     <label
       class="css-xs6o3g-label-label"
@@ -105,6 +205,106 @@ exports[`<MultiSelect /> matches snapshot with \`block = true\` 1`] = `
           />
         </button>
       </div>
+      <li>
+        <div
+          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+          style="padding: 0px 0px 0px 0.5rem;"
+        >
+          <input
+            aria-selected="false"
+            id="downshift-7-item-0"
+            name="sapiente"
+            role="option"
+            type="checkbox"
+            value="Inc"
+          />
+          <label
+            for="downshift-7-item-0"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            Rosenbaum and Sons
+          </label>
+        </div>
+      </li>
+      <li>
+        <div
+          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+          style="padding: 0px 0px 0px 0.5rem;"
+        >
+          <input
+            aria-selected="false"
+            id="downshift-7-item-1"
+            name="nobis"
+            role="option"
+            type="checkbox"
+            value="Sleek"
+          />
+          <label
+            for="downshift-7-item-1"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            Clothing
+          </label>
+        </div>
+      </li>
+      <li>
+        <div
+          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+          style="padding: 0px 0px 0px 0.5rem;"
+        >
+          <input
+            aria-selected="false"
+            id="downshift-7-item-2"
+            name="ratione"
+            role="option"
+            type="checkbox"
+            value="1e610c4bac5597f4ac9da55fa35f08f416a60258"
+          />
+          <label
+            for="downshift-7-item-2"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            index solid state feed
+          </label>
+        </div>
+      </li>
+      <li>
+        <div
+          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+          style="padding: 0px 0px 0px 0.5rem;"
+        >
+          <input
+            aria-selected="false"
+            id="downshift-7-item-3"
+            name="non"
+            role="option"
+            type="checkbox"
+            value="AGP"
+          />
+          <label
+            for="downshift-7-item-3"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            We need to index the auxiliary FTP hard drive!
+          </label>
+        </div>
+      </li>
     </ul>
   </div>
 </div>
@@ -113,7 +313,7 @@ exports[`<MultiSelect /> matches snapshot with \`block = true\` 1`] = `
 exports[`<MultiSelect /> matches snapshot with \`inline = true\` 1`] = `
 <div>
   <div
-    class="inline css-v1zr9c-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
+    class="inline css-1k3ogbi-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
   >
     <label
       class="css-xs6o3g-label-label"
@@ -160,6 +360,106 @@ exports[`<MultiSelect /> matches snapshot with \`inline = true\` 1`] = `
           />
         </button>
       </div>
+      <li>
+        <div
+          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+          style="padding: 0px 0px 0px 0.5rem;"
+        >
+          <input
+            aria-selected="false"
+            id="downshift-8-item-0"
+            name="sapiente"
+            role="option"
+            type="checkbox"
+            value="Inc"
+          />
+          <label
+            for="downshift-8-item-0"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            Rosenbaum and Sons
+          </label>
+        </div>
+      </li>
+      <li>
+        <div
+          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+          style="padding: 0px 0px 0px 0.5rem;"
+        >
+          <input
+            aria-selected="false"
+            id="downshift-8-item-1"
+            name="nobis"
+            role="option"
+            type="checkbox"
+            value="Sleek"
+          />
+          <label
+            for="downshift-8-item-1"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            Clothing
+          </label>
+        </div>
+      </li>
+      <li>
+        <div
+          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+          style="padding: 0px 0px 0px 0.5rem;"
+        >
+          <input
+            aria-selected="false"
+            id="downshift-8-item-2"
+            name="ratione"
+            role="option"
+            type="checkbox"
+            value="1e610c4bac5597f4ac9da55fa35f08f416a60258"
+          />
+          <label
+            for="downshift-8-item-2"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            index solid state feed
+          </label>
+        </div>
+      </li>
+      <li>
+        <div
+          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
+          style="padding: 0px 0px 0px 0.5rem;"
+        >
+          <input
+            aria-selected="false"
+            id="downshift-8-item-3"
+            name="non"
+            role="option"
+            type="checkbox"
+            value="AGP"
+          />
+          <label
+            for="downshift-8-item-3"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            We need to index the auxiliary FTP hard drive!
+          </label>
+        </div>
+      </li>
     </ul>
   </div>
 </div>

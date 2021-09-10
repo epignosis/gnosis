@@ -17,18 +17,22 @@ export default {
       {
         label: "All",
         value: "all",
+        name: "all",
       },
       {
         label: "In progress",
         value: "progress",
+        name: "progress",
       },
       {
         label: "Completed",
         value: "completed",
+        name: "completed",
       },
       {
         label: "Failed",
         value: "failed",
+        name: "failed",
       },
     ],
   },

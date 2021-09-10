@@ -8,18 +8,22 @@ const OPTIONS = [
   {
     label: faker.company.companyName(),
     value: faker.company.companySuffix(),
+    name: faker.lorem.word(),
   },
   {
     label: faker.commerce.department(),
     value: faker.commerce.productAdjective(),
+    name: faker.lorem.word(),
   },
   {
     label: faker.git.commitMessage(),
     value: faker.git.commitSha(),
+    name: faker.lorem.word(),
   },
   {
     label: faker.hacker.phrase(),
     value: faker.hacker.abbreviation(),
+    name: faker.lorem.word(),
   },
 ];
 

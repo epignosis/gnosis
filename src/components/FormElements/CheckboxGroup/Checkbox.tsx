@@ -1,4 +1,9 @@
-import React, { InputHTMLAttributes, forwardRef, ForwardRefRenderFunction } from "react";
+import React, {
+  InputHTMLAttributes,
+  forwardRef,
+  ForwardRefRenderFunction,
+  CSSProperties,
+} from "react";
 import { SerializedStyles } from "@emotion/react";
 import { checkboxContainer } from "./styles";
 import { ExtendableProps } from "types/common";
@@ -18,17 +23,19 @@ export type CheckboxProps = ExtendableProps<
     id: string;
     size?: CheckboxSize;
     inline?: boolean;
+    style?: CSSProperties;
   }
 >;
 
 const Checkbox: ForwardRefRenderFunction<HTMLDivElement, CheckboxProps> = (props, ref) => {
-  const { id, label, size = "md", inline = false, ...rest } = props;
+  const { id, label, size = "md", inline = false, style, ...rest } = props;
 
   return (
     <div
       ref={ref}
       css={(theme): SerializedStyles => checkboxContainer(theme, { size, inline })}
       className="checkbox-container"
+      style={style}
     >
       <input id={id} type="checkbox" {...rest} />
       <label htmlFor={id}>

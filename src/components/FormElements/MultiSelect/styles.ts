@@ -9,10 +9,9 @@ const heightDimensions = {
 
 export const multiSelectContainer = (
   { formElements }: Theme,
-  { isOpen, block, size }: { isOpen: boolean; block: boolean; size: InputSize },
+  { isOpen, size }: { isOpen: boolean; size: InputSize },
 ): SerializedStyles => css`
-  ${inputContainerBaseStyles({ block })}
-  ${block && "width: 100%"};
+  ${inputContainerBaseStyles({ block: true })}
   position: relative;
 
   ul {
@@ -42,8 +41,7 @@ export const multiSelectContainer = (
   }
 
   .select-btn {
-    ${inputBaseStyles(formElements, { block })};
-    ${block && "width: 100%"};
+    ${inputBaseStyles(formElements, { block: true })};
     height: ${heightDimensions[size]};
     display: inline-flex;
     justify-content: space-between;

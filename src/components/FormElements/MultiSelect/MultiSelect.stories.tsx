@@ -10,7 +10,6 @@ export default {
     size: "md",
     label: "Choose multiple values",
     inline: false,
-    block: true,
     id: "multiSelectStory",
     className: "multiSelectStory",
     options: [

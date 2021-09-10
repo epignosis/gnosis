@@ -133,33 +133,6 @@ describe("<MultiSelect />", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("matches snapshot with `block = true`", () => {
-    const mockOnChange = jest.fn();
-    const { container } = render(
-      <MultiSelect
-        id="testMultiSelect"
-        label="Test Multi-select"
-        placeholder="Test placeholder"
-        options={[
-          {
-            label: "All",
-            value: "all",
-            name: "all",
-          },
-          {
-            label: "In progress",
-            value: "progress",
-            name: "progress",
-          },
-        ]}
-        onChange={mockOnChange}
-        block
-      />,
-    );
-
-    expect(container).toMatchSnapshot();
-  });
-
   it("matches snapshot with `inline = true`", () => {
     const mockOnChange = jest.fn();
     const { container } = render(

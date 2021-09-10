@@ -24,7 +24,6 @@ export type MultiSelectProps = {
   onChange: (selections: unknown[]) => void;
   value?: MultiSelectOption[];
   className?: string;
-  block?: boolean;
   children?: never;
 };
 
@@ -37,7 +36,6 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
     onChange,
     value,
     className,
-    block = false,
     label,
     inline = false,
   } = props;
@@ -86,7 +84,7 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
 
   return (
     <div
-      css={(theme): SerializedStyles => multiSelectContainer(theme, { isOpen, block, size })}
+      css={(theme): SerializedStyles => multiSelectContainer(theme, { isOpen, size })}
       className={containerClassNames}
     >
       {hasLabel && <Label {...getLabelProps({ id })}>{label}</Label>}

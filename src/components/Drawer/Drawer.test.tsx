@@ -2,7 +2,7 @@ import React from "react";
 import userEvent from "@testing-library/user-event";
 import faker from "faker";
 import Drawer from "./Drawer";
-import { screen, render } from "@test-utils/render";
+import { screen, render, cleanup } from "@test-utils/render";
 
 describe("<Drawer/>", () => {
   beforeEach(() => {
@@ -12,8 +12,7 @@ describe("<Drawer/>", () => {
   });
 
   afterEach(() => {
-    const drawerEl = document.querySelector("#drawerRoot") as HTMLElement;
-    drawerEl.remove();
+    cleanup();
   });
 
   it("renders correctly", () => {

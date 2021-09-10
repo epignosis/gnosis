@@ -8,7 +8,7 @@ const heightDimensions = {
 };
 
 export const multiSelectContainer = (
-  { typeScaleSizes, formElements }: Theme,
+  { formElements }: Theme,
   { isOpen, block, size }: { isOpen: boolean; block: boolean; size: InputSize },
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block })}
@@ -16,7 +16,6 @@ export const multiSelectContainer = (
   position: relative;
 
   ul {
-    // font-size: ${typeScaleSizes.md};
     position: absolute;
     top: 0;
     left: 0;
@@ -78,41 +77,6 @@ export const multiSelectContainer = (
       padding: 0;
       border: 0;
       background: transparent;
-    }
-  }
-`;
-
-export const option = ({ formElements }: Theme): SerializedStyles => css`
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-  cursor: default;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-
-  &.selected {
-    span::after {
-      background-color: #004ea8;
-    }
-  }
-
-  span {
-    height: 16px;
-    width: 16px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid ${formElements.input.inputBorderColor};
-    margin-right: 0.875rem;
-
-    &::after {
-      content: " ";
-      height: 10px;
-      width: 10px;
-      display: inline-block;
-      background-color: transparent;
     }
   }
 `;

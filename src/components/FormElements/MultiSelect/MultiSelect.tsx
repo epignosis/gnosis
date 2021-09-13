@@ -104,7 +104,7 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
                 size={size}
                 checked={Boolean(isSelected)}
                 inline
-                className="checkbox"
+                containerClassName="checkbox"
                 {...option}
                 {...getItemProps({ item: option, index, "aria-selected": Boolean(isSelected) })}
               />

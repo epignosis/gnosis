@@ -9,14 +9,14 @@ const heightDimensions = {
 
 export const multiSelectContainer = (
   { formElements }: Theme,
-  { isOpen, size }: { isOpen: boolean; size: InputSize },
+  { isOpen, size, inline }: { isOpen: boolean; size: InputSize; inline: boolean },
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })}
   position: relative;
 
   ul {
     position: absolute;
-    top: 0;
+    top: ${inline ? "0" : "1.75rem"};
     left: 0;
     width: 100%;
     list-style: none;
@@ -29,14 +29,8 @@ export const multiSelectContainer = (
     margin: 0;
     z-index: 1;
 
-    li {
-      // align-items: baseline;
-      // padding: 0.25rem 1rem;
-      // margin: 0;
-
-      // &:hover {
-      //   background: ${formElements.multiSelect.hover};
-      // }
+    .checkbox {
+      padding: 0 0 0 ${inline ? "1rem" : "0.5rem"};
     }
   }
 

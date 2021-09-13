@@ -2,17 +2,11 @@ import React, { FC } from "react";
 import { useSelect, useMultipleSelection } from "downshift";
 import { SerializedStyles } from "@emotion/react";
 import classNames from "classnames";
+import { CheckboxOption } from "../CheckboxGroup/Checkbox";
 import { multiSelectContainer } from "./styles";
 import { Label, Text, Checkbox } from "@components";
 import { InputSize } from "@components/FormElements/Input/Input";
 import { CaretDownSVG, DropUpArrowSVG } from "@icons/core";
-
-export type MultiSelectOption = {
-  value: string;
-  label: string;
-  name: string;
-  disabled?: boolean;
-};
 
 export type MultiSelectProps = {
   placeholder: string;
@@ -20,9 +14,9 @@ export type MultiSelectProps = {
   size?: InputSize;
   label?: string;
   inline?: boolean;
-  options: MultiSelectOption[];
+  options: CheckboxOption[];
   onChange: (selections: unknown[]) => void;
-  value?: MultiSelectOption[];
+  value?: CheckboxOption[];
   className?: string;
   children?: never;
 };
@@ -59,7 +53,7 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
       items: options,
       circularNavigation: true,
       stateReducer: (_, { changes, type }) => {
-        const itemInItems = (selectedItems as MultiSelectOption[]).find(
+        const itemInItems = (selectedItems as CheckboxOption[]).find(
           ({ value }) => value === changes.selectedItem?.value,
         );
 
@@ -84,12 +78,12 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
 
   return (
     <div
-      css={(theme): SerializedStyles => multiSelectContainer(theme, { isOpen, size })}
+      css={(theme): SerializedStyles => multiSelectContainer(theme, { isOpen, size, inline })}
       className={containerClassNames}
     >
       {hasLabel && <Label {...getLabelProps({ id })}>{label}</Label>}
       <button type="button" className="select-btn" {...getToggleButtonProps(getDropdownProps())}>
-        {(selectedItems.length && (selectedItems[0] as MultiSelectOption).label) || placeholder}
+        {(selectedItems.length && (selectedItems[0] as CheckboxOption).label) || placeholder}
         <CaretDownSVG height="24" />
       </button>
       <ul data-testid="list-container" {...getMenuProps()}>
@@ -110,7 +104,7 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
                 size={size}
                 checked={Boolean(isSelected)}
                 inline
-                style={{ padding: "0 0 0 0.5rem" }}
+                className="checkbox"
                 {...option}
                 {...getItemProps({ item: option, index, "aria-selected": Boolean(isSelected) })}
               />

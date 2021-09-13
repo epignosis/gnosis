@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Story } from "@storybook/react";
-import MultiSelectComponent, { MultiSelectOption, MultiSelectProps } from "./MultiSelect";
+import { CheckboxOption } from "../CheckboxGroup/Checkbox";
+import MultiSelectComponent, { MultiSelectProps } from "./MultiSelect";
 
 export default {
   title: "components/Form Elements/Multi Select",
@@ -53,14 +54,14 @@ export default {
 };
 
 export const MultiSelect: Story<MultiSelectProps> = (args) => {
-  const [state, setState] = useState<MultiSelectOption[]>();
+  const [state, setState] = useState<CheckboxOption[]>();
 
   return (
     <MultiSelectComponent
       {...args}
       id="multiSelect"
       value={state}
-      onChange={(selections): void => setState(selections as MultiSelectOption[])}
+      onChange={(selections): void => setState(selections as CheckboxOption[])}
     />
   );
 };

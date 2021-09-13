@@ -3,7 +3,7 @@
 exports[`<MultiSelect /> matches snapshot 1`] = `
 <div>
   <div
-    class=" css-1s0j1mq-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
+    class=" css-tb7kyl-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
   >
     <label
       class="css-xs6o3g-label-label"
@@ -52,8 +52,7 @@ exports[`<MultiSelect /> matches snapshot 1`] = `
       </div>
       <li>
         <div
-          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
-          style="padding: 0px 0px 0px 0.5rem;"
+          class="checkbox css-6emo4e-checkboxContainer-checkboxContainer"
         >
           <input
             aria-selected="false"
@@ -77,8 +76,7 @@ exports[`<MultiSelect /> matches snapshot 1`] = `
       </li>
       <li>
         <div
-          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
-          style="padding: 0px 0px 0px 0.5rem;"
+          class="checkbox css-6emo4e-checkboxContainer-checkboxContainer"
         >
           <input
             aria-selected="false"
@@ -108,7 +106,7 @@ exports[`<MultiSelect /> matches snapshot 1`] = `
 exports[`<MultiSelect /> matches snapshot with \`inline = true\` 1`] = `
 <div>
   <div
-    class="inline css-1s0j1mq-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
+    class="inline css-hw55hn-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
   >
     <label
       class="css-xs6o3g-label-label"
@@ -157,8 +155,7 @@ exports[`<MultiSelect /> matches snapshot with \`inline = true\` 1`] = `
       </div>
       <li>
         <div
-          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
-          style="padding: 0px 0px 0px 0.5rem;"
+          class="checkbox css-6emo4e-checkboxContainer-checkboxContainer"
         >
           <input
             aria-selected="false"
@@ -182,8 +179,7 @@ exports[`<MultiSelect /> matches snapshot with \`inline = true\` 1`] = `
       </li>
       <li>
         <div
-          class="checkbox-container css-6emo4e-checkboxContainer-checkboxContainer"
-          style="padding: 0px 0px 0px 0.5rem;"
+          class="checkbox css-6emo4e-checkboxContainer-checkboxContainer"
         >
           <input
             aria-selected="false"

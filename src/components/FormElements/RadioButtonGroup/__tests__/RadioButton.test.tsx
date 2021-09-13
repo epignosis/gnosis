@@ -6,7 +6,6 @@ import { screen, render } from "@test-utils/render";
 
 describe("<RadioButton />", () => {
   it("renders correctly", () => {
-    const mockOnClick = jest.fn();
     const labelTxt = faker.lorem.words();
     render(
       <RadioButton
@@ -15,7 +14,7 @@ describe("<RadioButton />", () => {
         size="md"
         value={faker.random.alphaNumeric()}
         selectedValue=""
-        onClick={mockOnClick}
+        onClick={jest.fn()}
       />,
     );
 
@@ -48,7 +47,6 @@ describe("<RadioButton />", () => {
   });
 
   it("matches snapshot with `size = md`", () => {
-    const mockOnClick = jest.fn();
     const { container } = render(
       <RadioButton
         label="Test label"
@@ -56,7 +54,7 @@ describe("<RadioButton />", () => {
         size="md"
         value="testValue"
         selectedValue=""
-        onClick={mockOnClick}
+        onClick={jest.fn()}
       />,
     );
 
@@ -64,7 +62,6 @@ describe("<RadioButton />", () => {
   });
 
   it("matches snapshot with `size = lg`", () => {
-    const mockOnClick = jest.fn();
     const { container } = render(
       <RadioButton
         label="Test label"
@@ -72,7 +69,7 @@ describe("<RadioButton />", () => {
         size="lg"
         value="testValue"
         selectedValue=""
-        onClick={mockOnClick}
+        onClick={jest.fn()}
       />,
     );
 

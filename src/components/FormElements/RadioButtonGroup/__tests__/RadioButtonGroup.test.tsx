@@ -24,13 +24,12 @@ const OPTIONS = [
 
 describe("<RadioButtonGroup />", () => {
   it("should render correctly", () => {
-    const mockOnChange = jest.fn();
     render(
       <RadioButtonGroup
         id={faker.hacker.abbreviation()}
         options={OPTIONS}
         value=""
-        onChange={mockOnChange}
+        onChange={jest.fn()}
       />,
     );
 
@@ -44,13 +43,12 @@ describe("<RadioButtonGroup />", () => {
   });
 
   it("should render with a selected value", () => {
-    const mockOnChange = jest.fn();
     render(
       <RadioButtonGroup
         id={faker.hacker.abbreviation()}
         options={OPTIONS}
         value={OPTIONS[0].value}
-        onChange={mockOnChange}
+        onChange={jest.fn()}
       />,
     );
 
@@ -61,13 +59,12 @@ describe("<RadioButtonGroup />", () => {
   });
 
   it("matches snapshot", () => {
-    const mockOnChange = jest.fn();
     const { container } = render(
       <RadioButtonGroup
         id="testRadioButtonGroup"
         options={[{ label: "Test label", value: "testValue" }]}
         value=""
-        onChange={mockOnChange}
+        onChange={jest.fn()}
       />,
     );
 
@@ -75,13 +72,12 @@ describe("<RadioButtonGroup />", () => {
   });
 
   it("matches snapshot with selected value", () => {
-    const mockOnChange = jest.fn();
     const { container } = render(
       <RadioButtonGroup
         id="testRadioButtonGroup"
         options={[{ label: "Test label", value: "testValue" }]}
         value="testValue"
-        onChange={mockOnChange}
+        onChange={jest.fn()}
       />,
     );
 

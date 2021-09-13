@@ -22,8 +22,8 @@ export type InputProps = ExtendableProps<
   }
 >;
 
-const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (props, forwardedRef) => {
-  const {
+const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
+  {
     size = "md",
     status = "valid",
     iconBefore,
@@ -34,7 +34,9 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (props, fo
     className,
     error,
     ...rest
-  } = props;
+  },
+  forwardedRef,
+) => {
   const IconBefore = iconBefore;
   const IconAfter = iconAfter;
   const hasLabel = Boolean(label);

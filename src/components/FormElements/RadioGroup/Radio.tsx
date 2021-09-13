@@ -19,15 +19,11 @@ export type RadioProps = ExtendableProps<
   }
 >;
 
-const Radio: FC<RadioProps> = (props) => {
-  const { id, label, size = "md", inline = false, ...rest } = props;
-
-  return (
-    <div css={(theme): SerializedStyles => radioButtonContainer(theme, { size, inline })}>
-      <input id={id} type="radio" {...rest} />
-      <label htmlFor={id}>{label}</label>
-    </div>
-  );
-};
+const Radio: FC<RadioProps> = ({ id, label, size = "md", inline = false, ...rest }) => (
+  <div css={(theme): SerializedStyles => radioButtonContainer(theme, { size, inline })}>
+    <input id={id} type="radio" {...rest} />
+    <label htmlFor={id}>{label}</label>
+  </div>
+);
 
 export default Radio;

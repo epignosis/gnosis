@@ -47,7 +47,7 @@ describe("<Input />", () => {
     const labelTxt = faker.lorem.word();
     render(<Input id="test-input" name="test-input" label={labelTxt} iconBefore={CalendarSVG} />);
 
-    const iconBefore = screen.getByTestId(/input-icon-before/i);
+    const iconBefore = screen.getByTestId("input-icon-before");
 
     expect(iconBefore).toBeInTheDocument();
   });
@@ -56,7 +56,7 @@ describe("<Input />", () => {
     const labelTxt = faker.lorem.word();
     render(<Input id="test-input" name="test-input" label={labelTxt} iconAfter={CalendarSVG} />);
 
-    const iconAfter = screen.getByTestId(/input-icon-after/i);
+    const iconAfter = screen.getByTestId("input-icon-after");
 
     expect(iconAfter).toBeInTheDocument();
   });

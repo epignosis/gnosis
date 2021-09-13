@@ -23,7 +23,7 @@
     "test:coverage": "jest --coverage",
     "prepare": "husky install"
   },
-  "author": "John Tsevdos <tsevdosjohn@gmail.com> (http://tsevdos.me/)",
+  "author": "John Tsevdos <jtsevdos@epignosishq.com>",
   "license": "MIT",
   "peerDependencies": {
     "react": ">=16.8.0",

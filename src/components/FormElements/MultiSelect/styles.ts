@@ -8,17 +8,15 @@ const heightDimensions = {
 };
 
 export const multiSelectContainer = (
-  { typeScaleSizes, formElements }: Theme,
-  { isOpen, block, size }: { isOpen: boolean; block: boolean; size: InputSize },
+  { formElements }: Theme,
+  { isOpen, size, inline }: { isOpen: boolean; size: InputSize; inline: boolean },
 ): SerializedStyles => css`
-  ${inputContainerBaseStyles({ block })}
-  ${block && "width: 100%"};
+  ${inputContainerBaseStyles({ block: true })}
   position: relative;
 
   ul {
-    font-size: ${typeScaleSizes.md};
     position: absolute;
-    top: 0;
+    top: ${inline ? "0" : "1.75rem"};
     left: 0;
     width: 100%;
     list-style: none;
@@ -31,20 +29,13 @@ export const multiSelectContainer = (
     margin: 0;
     z-index: 1;
 
-    li {
-      align-items: baseline;
-      padding: 0.25rem 1rem;
-      margin: 0;
-
-      &:hover {
-        background: ${formElements.multiSelect.hover};
-      }
+    .checkbox {
+      padding: 0 0 0 ${inline ? "1rem" : "0.5rem"};
     }
   }
 
   .select-btn {
-    ${inputBaseStyles(formElements, { block })};
-    ${block && "width: 100%"};
+    ${inputBaseStyles(formElements, { block: true })};
     height: ${heightDimensions[size]};
     display: inline-flex;
     justify-content: space-between;
@@ -78,41 +69,6 @@ export const multiSelectContainer = (
       padding: 0;
       border: 0;
       background: transparent;
-    }
-  }
-`;
-
-export const option = ({ formElements }: Theme): SerializedStyles => css`
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 0.5rem;
-  cursor: default;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-
-  &.selected {
-    span::after {
-      background-color: #004ea8;
-    }
-  }
-
-  span {
-    height: 16px;
-    width: 16px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid ${formElements.input.inputBorderColor};
-    margin-right: 0.875rem;
-
-    &::after {
-      content: " ";
-      height: 10px;
-      width: 10px;
-      display: inline-block;
-      background-color: transparent;
     }
   }
 `;

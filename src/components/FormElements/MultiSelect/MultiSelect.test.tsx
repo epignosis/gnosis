@@ -8,18 +8,22 @@ const OPTIONS = [
   {
     label: faker.company.companyName(),
     value: faker.company.companySuffix(),
+    name: faker.company.bsNoun(),
   },
   {
     label: faker.commerce.department(),
     value: faker.commerce.productAdjective(),
+    name: faker.commerce.product(),
   },
   {
     label: faker.git.commitMessage(),
     value: faker.git.commitSha(),
+    name: faker.git.branch(),
   },
   {
     label: faker.hacker.phrase(),
     value: faker.hacker.abbreviation(),
+    name: faker.hacker.verb(),
   },
 ];
 
@@ -110,24 +114,19 @@ describe("<MultiSelect />", () => {
         id="testMultiSelect"
         label="Test Multi-select"
         placeholder="Test placeholder"
-        options={OPTIONS}
+        options={[
+          {
+            label: "All",
+            value: "all",
+            name: "all",
+          },
+          {
+            label: "In progress",
+            value: "progress",
+            name: "progress",
+          },
+        ]}
         onChange={mockOnChange}
-      />,
-    );
-
-    expect(container).toMatchSnapshot();
-  });
-
-  it("matches snapshot with `block = true`", () => {
-    const mockOnChange = jest.fn();
-    const { container } = render(
-      <MultiSelect
-        id="testMultiSelect"
-        label="Test Multi-select"
-        placeholder="Test placeholder"
-        options={OPTIONS}
-        onChange={mockOnChange}
-        block
       />,
     );
 
@@ -141,7 +140,18 @@ describe("<MultiSelect />", () => {
         id="testMultiSelect"
         label="Test Multi-select"
         placeholder="Test placeholder"
-        options={OPTIONS}
+        options={[
+          {
+            label: "All",
+            value: "all",
+            name: "all",
+          },
+          {
+            label: "In progress",
+            value: "progress",
+            name: "progress",
+          },
+        ]}
         onChange={mockOnChange}
         inline
       />,

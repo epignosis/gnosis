@@ -18,17 +18,18 @@ export type CheckboxProps = ExtendableProps<
     id: string;
     size?: CheckboxSize;
     inline?: boolean;
+    containerClassName?: string;
   }
 >;
 
 const Checkbox: ForwardRefRenderFunction<HTMLDivElement, CheckboxProps> = (props, ref) => {
-  const { id, label, size = "md", inline = false, ...rest } = props;
+  const { id, label, size = "md", inline = false, containerClassName, ...rest } = props;
 
   return (
     <div
       ref={ref}
       css={(theme): SerializedStyles => checkboxContainer(theme, { size, inline })}
-      className="checkbox-container"
+      className={containerClassName}
     >
       <input id={id} type="checkbox" {...rest} />
       <label htmlFor={id}>

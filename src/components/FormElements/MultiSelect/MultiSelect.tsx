@@ -2,16 +2,11 @@ import React, { FC } from "react";
 import { useSelect, useMultipleSelection } from "downshift";
 import { SerializedStyles } from "@emotion/react";
 import classNames from "classnames";
+import { CheckboxOption } from "../CheckboxGroup/Checkbox";
 import { multiSelectContainer } from "./styles";
-import Option from "./Option";
-import { Label, Text } from "@components";
+import { Label, Text, Checkbox } from "@components";
 import { InputSize } from "@components/FormElements/Input/Input";
 import { CaretDownSVG, DropUpArrowSVG } from "@icons/core";
-
-export type MultiSelectOption = {
-  value: string;
-  label: string;
-};
 
 export type MultiSelectProps = {
   placeholder: string;
@@ -19,11 +14,10 @@ export type MultiSelectProps = {
   size?: InputSize;
   label?: string;
   inline?: boolean;
-  options: MultiSelectOption[];
+  options: CheckboxOption[];
   onChange: (selections: unknown[]) => void;
-  value?: MultiSelectOption[] | undefined;
+  value?: CheckboxOption[];
   className?: string;
-  block?: boolean;
   children?: never;
 };
 
@@ -36,7 +30,6 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
     onChange,
     value,
     className,
-    block = false,
     label,
     inline = false,
   } = props;
@@ -55,49 +48,42 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
         }
       },
     });
-  const {
-    isOpen,
-    getToggleButtonProps,
-    getMenuProps,
-    highlightedIndex,
-    getItemProps,
-    getLabelProps,
-    closeMenu,
-  } = useSelect({
-    items: options,
-    circularNavigation: true,
-    stateReducer: (_, { changes, type }) => {
-      const itemInItems = (selectedItems as MultiSelectOption[]).find(
-        ({ value }) => value === changes.selectedItem?.value,
-      );
+  const { isOpen, getToggleButtonProps, getMenuProps, getItemProps, getLabelProps, closeMenu } =
+    useSelect({
+      items: options,
+      circularNavigation: true,
+      stateReducer: (_, { changes, type }) => {
+        const itemInItems = (selectedItems as CheckboxOption[]).find(
+          ({ value }) => value === changes.selectedItem?.value,
+        );
 
-      switch (type) {
-        case useSelect.stateChangeTypes.MenuKeyDownEnter:
-        case useSelect.stateChangeTypes.MenuKeyDownSpaceButton:
-        case useSelect.stateChangeTypes.ItemClick:
-          if (itemInItems && changes.selectedItem) {
-            removeSelectedItem(changes.selectedItem);
-          } else if (changes.selectedItem) {
-            addSelectedItem(changes.selectedItem);
-          }
+        switch (type) {
+          case useSelect.stateChangeTypes.MenuKeyDownEnter:
+          case useSelect.stateChangeTypes.MenuKeyDownSpaceButton:
+          case useSelect.stateChangeTypes.ItemClick:
+            if (itemInItems && changes.selectedItem) {
+              removeSelectedItem(changes.selectedItem);
+            } else if (changes.selectedItem) {
+              addSelectedItem(changes.selectedItem);
+            }
 
-          return {
-            ...changes,
-            isOpen: true, // keep the menu open after selection.
-          };
-      }
-      return changes;
-    },
-  });
+            return {
+              ...changes,
+              isOpen: true, // keep the menu open after selection.
+            };
+        }
+        return changes;
+      },
+    });
 
   return (
     <div
-      css={(theme): SerializedStyles => multiSelectContainer(theme, { isOpen, block, size })}
+      css={(theme): SerializedStyles => multiSelectContainer(theme, { isOpen, size, inline })}
       className={containerClassNames}
     >
       {hasLabel && <Label {...getLabelProps({ id })}>{label}</Label>}
       <button type="button" className="select-btn" {...getToggleButtonProps(getDropdownProps())}>
-        {(selectedItems.length && (selectedItems[0] as MultiSelectOption).label) || placeholder}
+        {(selectedItems.length && (selectedItems[0] as CheckboxOption).label) || placeholder}
         <CaretDownSVG height="24" />
       </button>
       <ul data-testid="list-container" {...getMenuProps()}>
@@ -107,21 +93,24 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
             <DropUpArrowSVG height={20} />
           </button>
         </div>
-        {isOpen &&
-          options.map((option, index) => {
-            const isSelected = selectedItems.find((item) => item.value === option.value);
 
-            return (
-              <Option
-                key={option.value}
-                isHighlighted={highlightedIndex === index}
-                isSelected={Boolean(isSelected)}
+        {options.map((option, index) => {
+          const isSelected = selectedItems.find((item) => item.value === option.value);
+
+          return (
+            <li key={option.name}>
+              <Checkbox
+                id={`${option.value}`}
+                size={size}
+                checked={Boolean(isSelected)}
+                inline
+                containerClassName="checkbox"
+                {...option}
                 {...getItemProps({ item: option, index, "aria-selected": Boolean(isSelected) })}
-              >
-                {option.label}
-              </Option>
-            );
-          })}
+              />
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

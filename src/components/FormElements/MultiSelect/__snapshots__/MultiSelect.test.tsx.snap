@@ -3,7 +3,7 @@
 exports[`<MultiSelect /> matches snapshot 1`] = `
 <div>
   <div
-    class=" css-v1zr9c-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
+    class=" css-tb7kyl-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
   >
     <label
       class="css-xs6o3g-label-label"
@@ -50,15 +50,63 @@ exports[`<MultiSelect /> matches snapshot 1`] = `
           />
         </button>
       </div>
+      <li>
+        <div
+          class="checkbox css-6emo4e-checkboxContainer-checkboxContainer"
+        >
+          <input
+            aria-selected="false"
+            id="downshift-6-item-0"
+            name="all"
+            role="option"
+            type="checkbox"
+            value="all"
+          />
+          <label
+            for="downshift-6-item-0"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            All
+          </label>
+        </div>
+      </li>
+      <li>
+        <div
+          class="checkbox css-6emo4e-checkboxContainer-checkboxContainer"
+        >
+          <input
+            aria-selected="false"
+            id="downshift-6-item-1"
+            name="progress"
+            role="option"
+            type="checkbox"
+            value="progress"
+          />
+          <label
+            for="downshift-6-item-1"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            In progress
+          </label>
+        </div>
+      </li>
     </ul>
   </div>
 </div>
 `;
 
-exports[`<MultiSelect /> matches snapshot with \`block = true\` 1`] = `
+exports[`<MultiSelect /> matches snapshot with \`inline = true\` 1`] = `
 <div>
   <div
-    class=" css-1u4b81w-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
+    class="inline css-hw55hn-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
   >
     <label
       class="css-xs6o3g-label-label"
@@ -105,61 +153,54 @@ exports[`<MultiSelect /> matches snapshot with \`block = true\` 1`] = `
           />
         </button>
       </div>
-    </ul>
-  </div>
-</div>
-`;
-
-exports[`<MultiSelect /> matches snapshot with \`inline = true\` 1`] = `
-<div>
-  <div
-    class="inline css-v1zr9c-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-multiSelectContainer-multiSelectContainer"
-  >
-    <label
-      class="css-xs6o3g-label-label"
-      for="downshift-8-toggle-button"
-      id="testMultiSelect"
-    >
-      Test Multi-select
-    </label>
-    <button
-      aria-expanded="false"
-      aria-haspopup="listbox"
-      aria-labelledby="downshift-8-label downshift-8-toggle-button"
-      class="select-btn"
-      id="downshift-8-toggle-button"
-      type="button"
-    >
-      Test placeholder
-      <svg-file-stub
-        height="24"
-      />
-    </button>
-    <ul
-      aria-labelledby="downshift-8-label"
-      data-testid="list-container"
-      id="downshift-8-menu"
-      role="listbox"
-      tabindex="-1"
-    >
-      <div
-        class="content"
-      >
-        <span
-          class="css-26eo9i-textContainer-textContainer"
-          data-testid="text-component"
+      <li>
+        <div
+          class="checkbox css-6emo4e-checkboxContainer-checkboxContainer"
         >
-           Select one or more items
-        </span>
-        <button
-          class="close-btn"
-          data-testid="close-btn"
-        >
-          <svg-file-stub
-            height="20"
+          <input
+            aria-selected="false"
+            id="downshift-7-item-0"
+            name="all"
+            role="option"
+            type="checkbox"
+            value="all"
           />
-        </button>
-      </div>
+          <label
+            for="downshift-7-item-0"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            All
+          </label>
+        </div>
+      </li>
+      <li>
+        <div
+          class="checkbox css-6emo4e-checkboxContainer-checkboxContainer"
+        >
+          <input
+            aria-selected="false"
+            id="downshift-7-item-1"
+            name="progress"
+            role="option"
+            type="checkbox"
+            value="progress"
+          />
+          <label
+            for="downshift-7-item-1"
+          >
+            <span
+              aria-hidden="true"
+              class="shadow-element"
+              tabindex="-1"
+            />
+            In progress
+          </label>
+        </div>
+      </li>
     </ul>
   </div>
 </div>

@@ -28,7 +28,7 @@
     "suppressImplicitAnyIndexErrors": true,
     "importHelpers": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "declarationDir": "dist/types",
     "paths": {
       "@components": ["./src/components"],
       "@components/*": ["./src/components/*"],

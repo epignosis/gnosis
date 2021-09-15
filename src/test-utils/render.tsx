@@ -1,7 +1,7 @@
 /* eslint-disable import/export */
 import React, { FC, ReactElement, ComponentType } from "react";
 import { render, RenderResult, RenderOptions } from "@testing-library/react";
-import ThemeProvider from "@components/ThemeProvider/ThemeProvider";
+import ThemeProvider from "../components/ThemeProvider/ThemeProvider";
 
 const AllTheProviders: FC = ({ children }) => <ThemeProvider>{children}</ThemeProvider>;
 

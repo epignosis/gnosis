@@ -1,7 +1,7 @@
 import React, { FC, ChangeEvent, useState, useEffect } from "react";
+import { InputSize } from "../Input/Input";
 import Checkbox, { CheckboxOption } from "./Checkbox";
 import { checkboxGroupContainer } from "./styles";
-import { InputSize } from "@components/FormElements/Input/Input";
 
 export type CheckboxGroupProps = {
   groupname: string;

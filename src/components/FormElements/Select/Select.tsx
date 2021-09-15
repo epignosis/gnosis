@@ -1,8 +1,8 @@
 import React, { SelectHTMLAttributes, forwardRef, ForwardRefRenderFunction } from "react";
 import { SerializedStyles } from "@emotion/react";
 import classNames from "classnames";
+import { Label } from "../../../";
 import { selectContainer } from "./styles";
-import { Label } from "@components";
 import { CaretDownSVG } from "@icons/core";
 import { ExtendableProps } from "types/common";
 

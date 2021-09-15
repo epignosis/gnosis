@@ -1,8 +1,8 @@
 import React, { forwardRef, ForwardRefRenderFunction, InputHTMLAttributes } from "react";
 import { SerializedStyles } from "@emotion/react";
 import classNames from "classnames";
+import { Label } from "../../../";
 import { textareaContainer } from "./styles";
-import { Label } from "@components";
 import { ExtendableProps } from "types/common";
 
 export type TextareaResize = "none" | "horizontal" | "vertical" | "both";

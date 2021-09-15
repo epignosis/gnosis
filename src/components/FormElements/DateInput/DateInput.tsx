@@ -4,11 +4,11 @@ import DatePicker from "react-datepicker";
 import { SerializedStyles } from "@emotion/react";
 import { format, parseISO } from "date-fns";
 import classNames from "classnames";
+import { Input, Label } from "../../../";
+import { InputSize } from "../Input/Input";
 import { dateInput } from "./styles";
 import "react-datepicker/dist/react-datepicker.css";
-import { Input, Label } from "@components";
 import { CalendarSVG } from "@icons/core";
-import { InputSize } from "@components/FormElements/Input/Input";
 
 export type DateInputProps = {
   value: Date;

@@ -1,6 +1,6 @@
 import React, { FC, InputHTMLAttributes } from "react";
+import { Label } from "../../../";
 import { fileInputContainer } from "./styles";
-import { Label } from "@components";
 import { ExtendableProps } from "types/utils";
 
 export type FileInputProps = ExtendableProps<

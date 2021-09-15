@@ -1,6 +1,6 @@
 import React, { FC } from "react";
+import { Button, Select } from "../../";
 import { container } from "./styles";
-import { Button, Select } from "@components";
 import { ArrowLeftSVG, ArrowRightSVG } from "@icons/core";
 
 export type PaginationProps = {

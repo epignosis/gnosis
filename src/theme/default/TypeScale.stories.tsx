@@ -1,6 +1,6 @@
 import React from "react";
 import { Story } from "@storybook/react/types-6-0";
-import Heading, { HeadingTag, SIZES, HeadingProps } from "@components/Heading/Heading";
+import Heading, { HeadingTag, SIZES, HeadingProps } from "../../components/Heading/Heading";
 
 export default {
   title: "Theme/Type Scale",

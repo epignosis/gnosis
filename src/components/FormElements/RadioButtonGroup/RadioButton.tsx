@@ -1,8 +1,8 @@
 import React, { FC, ReactNode, MouseEvent } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
+import { InputSize } from "../Input/Input";
 import { radioButton } from "./styles";
-import { InputSize } from "@components/FormElements/Input/Input";
 
 export type RadioButtonProps = {
   index: number;

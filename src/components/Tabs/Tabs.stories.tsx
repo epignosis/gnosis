@@ -1,7 +1,7 @@
 import React from "react";
 import { Story } from "@storybook/react";
+import { Heading } from "../../";
 import Tabs from "./Tabs";
-import { Heading } from "@components";
 
 export default {
   title: "Components/Tabs",

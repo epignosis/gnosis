@@ -2,8 +2,8 @@ import React, { ReactElement, ReactNode, ElementType } from "react";
 import { SerializedStyles } from "@emotion/react";
 import { LazyMotion, domAnimation, m, AnimatePresence, Variants } from "framer-motion";
 import classNames from "classnames";
+import { Loader } from "../../";
 import { btnContainer } from "./styles";
-import { Loader } from "@components";
 import { IconType, PolymorphicComponentProps } from "types/common";
 
 export type Color = "primary" | "secondary" | "danger" | "success";

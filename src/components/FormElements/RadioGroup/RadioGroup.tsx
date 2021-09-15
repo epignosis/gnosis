@@ -1,7 +1,7 @@
 import React, { FC, ChangeEvent, useState, useEffect } from "react";
+import { InputSize } from "../Input/Input";
 import Radio, { RadioOption } from "./Radio";
 import { container } from "./styles";
-import { InputSize } from "@components/FormElements/Input/Input";
 
 export type RadioGroupProps = {
   id: string;

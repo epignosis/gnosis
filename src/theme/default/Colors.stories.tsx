@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import { Story } from "@storybook/react";
+import { Label } from "../../";
 import { palletGenerator, THEME_COLOURS as defaultTheme } from "./colors";
-import { Label } from "@components";
 
 export default {
   title: "Theme/Colors",

@@ -1,8 +1,8 @@
 import React, { useReducer } from "react";
 import { Story } from "@storybook/react";
+import { Button, Heading, Text, ProgressBar } from "../../";
 import Card from "./Card";
 import { PlayUnitSVG } from "@icons/core";
-import { Button, Heading, Text, ProgressBar } from "@components";
 
 export default {
   title: "components/Card",

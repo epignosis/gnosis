@@ -1,6 +1,6 @@
 import { css, SerializedStyles, Theme } from "@emotion/react";
+import { InputSize } from "../Input/Input";
 import { inputBaseStyles, inputContainerBaseStyles } from "../styles";
-import { InputSize } from "@components/FormElements/Input/Input";
 
 export const dateInput = (
   { formElements }: Theme,

@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "start": "start-storybook -p 6006",
-    "build": "rimraf dist && rollup --config && tsc --emitDeclarationOnly",
+    "build": "rimraf dist && rollup -c && tsc --emitDeclarationOnly",
     "build:design-system": "build-storybook -c .storybook -o design-system",
     "validate": "npm run check-types && npm run eslint && npm run prettier && jest --changedSince=main",
     "check-types": "tsc",
@@ -39,6 +39,7 @@
     "@rollup/plugin-alias": "^3.1.5",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
     "@storybook/addon-actions": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",

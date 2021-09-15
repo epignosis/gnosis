@@ -17,7 +17,6 @@ module.exports = {
     // Path alliases
     config.resolve.alias = {
       ...config.resolve.alias,
-      "@components": path.resolve(__dirname, "../src/components"),
       "@theme": path.resolve(__dirname, "../src/theme"),
       "@test-utils": path.resolve(__dirname, "../src/test-utils"),
       "@icons": path.resolve(__dirname, "../src/icons"),

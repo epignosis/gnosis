@@ -1,7 +1,7 @@
 import React, { forwardRef, ForwardRefRenderFunction, InputHTMLAttributes } from "react";
 import { SerializedStyles } from "@emotion/react";
 import classNames from "classnames";
-import { Label } from "../../../";
+import Label from "../Label/Label";
 import { textareaContainer } from "./styles";
 import { ExtendableProps } from "types/common";
 

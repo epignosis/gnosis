@@ -1,7 +1,8 @@
 import React, { FC, ReactNode } from "react";
 import { useResponsive } from "@umijs/hooks";
 import { SerializedStyles } from "@emotion/react";
-import { Heading, Text } from "../../";
+import Heading from "../Heading/Heading";
+import Text from "../Text/Text";
 import { container } from "./styles";
 import { IconType } from "types/common";
 import { TypographyLevels } from "@theme/utils/typography";

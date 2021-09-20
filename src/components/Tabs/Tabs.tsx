@@ -1,6 +1,6 @@
 import React, { FC, useState, ReactElement, Children } from "react";
 import { SerializedStyles } from "@emotion/react";
-import { Select } from "../../";
+import Select from "../FormElements/Select/Select";
 import TabsNavItem from "./TabsNavItem";
 import TabsContent from "./TabsContent";
 import { container, tabsHeader } from "./styles";

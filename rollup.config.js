@@ -1,7 +1,7 @@
 import path from "path";
 import { babel } from "@rollup/plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
-import resolve from "@rollup/plugin-node-resolve";
+import resolve, { nodeResolve } from "@rollup/plugin-node-resolve";
 import alias from "@rollup/plugin-alias";
 import svgr from "@svgr/rollup";
 import json from "@rollup/plugin-json";
@@ -41,6 +41,7 @@ export default {
         { find: "@icons", replacement: path.resolve(__dirname, "./src/icons") },
       ],
     }),
+    nodeResolve(),
     resolve({
       mainFields: ["module", "main"],
       // browser: true,

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
+import AspectRatio from "../AspectRatio/AspectRatio";
 import { courseHeaderContainer } from "./styles";
-import { AspectRatio } from "@components";
 
 export type CardHeaderProps = FC<{
   ratio?: [number, number];

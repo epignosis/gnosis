@@ -1,6 +1,7 @@
 import React, { FC } from "react";
+import Button from "../Button/Button";
+import Select from "../FormElements/Select/Select";
 import { container } from "./styles";
-import { Button, Select } from "@components";
 import { ArrowLeftSVG, ArrowRightSVG } from "@icons/core";
 
 export type PaginationProps = {

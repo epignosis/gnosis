@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Story } from "@storybook/react";
+import { Button } from "../../";
 import DrawerComponent, { DrawerProps } from "./Drawer";
-import { Button } from "@components";
 
 export default {
   title: "components/Drawer",

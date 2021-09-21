@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 import { Story } from "@storybook/react";
+import { Button } from "../../";
 import Tooltip, { TooltipProps } from "./Tooltip";
-import { Button } from "@components";
 
 export default {
   component: Tooltip,

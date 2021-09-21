@@ -1,9 +1,10 @@
 import React, { FC, ReactNode } from "react";
 import { useResponsive } from "@umijs/hooks";
 import { SerializedStyles } from "@emotion/react";
+import Heading from "../Heading/Heading";
+import Text from "../Text/Text";
 import { container } from "./styles";
 import { IconType } from "types/common";
-import { Heading, Text } from "@components";
 import { TypographyLevels } from "@theme/utils/typography";
 
 export type Size = "md" | "lg";

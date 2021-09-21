@@ -1,3 +1,3 @@
-# gnosis
+# gnosis design system
 
-Epignosis design system. Maintainer: Tsevdos
+> [Epignosis](https://www.epignosishq.com/) official react design system.

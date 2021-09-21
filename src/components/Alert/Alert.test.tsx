@@ -1,9 +1,9 @@
 import React from "react";
 import faker from "faker";
 import userEvent from "@testing-library/user-event";
+import { Heading } from "../../";
 import Alert from "./Alert";
 import { render, screen } from "@test-utils/render";
-import { Heading } from "@components";
 import { ScrollRegularSVG } from "@icons/core";
 
 describe("<Alert>", () => {

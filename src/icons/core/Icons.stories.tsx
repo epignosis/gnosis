@@ -1,6 +1,6 @@
 import React from "react";
+import { Text } from "../../";
 import * as SvgIcons from ".";
-import { Text } from "@components";
 
 export default {
   title: "Theme/Icons",

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Story } from "@storybook/react";
+import { Button, Input } from "../../";
 import Modal, { ReactModalProps } from "./Modal";
-import { Button, Input } from "@components";
 
 export default {
   component: Modal,

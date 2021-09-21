@@ -1,5 +1,5 @@
 import { css, Theme, SerializedStyles } from "@emotion/react";
-import { InputSize } from "@components/FormElements/Input/Input";
+import { InputSize } from "../Input/Input";
 
 const height = {
   md: "2.5rem",

@@ -1,6 +1,6 @@
 import React from "react";
 import { Story } from "@storybook/react/types-6-0";
-import { Heading } from "@components";
+import { Heading } from "../../";
 import {
   generateTypeScaleSizes,
   TypeScaleConfig,

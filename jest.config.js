@@ -18,7 +18,6 @@ module.exports = {
   setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   moduleNameMapper: {
-    "@components(.*)$": "<rootDir>/src/components$1",
     "^types(.*)$": "<rootDir>/src/types$1",
     "@test-utils(.*)$": "<rootDir>/src/test-utils$1",
     "@theme(.*)$": "<rootDir>/src/theme$1",

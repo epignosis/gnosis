@@ -1,8 +1,8 @@
 import React, { FC, InputHTMLAttributes } from "react";
 import { SerializedStyles } from "@emotion/react";
+import { InputSize } from "../Input/Input";
 import { radioButtonContainer } from "./styles";
 import { ExtendableProps } from "types/common";
-import { InputSize } from "@components/FormElements/Input/Input";
 
 export type RadioOption = {
   value: string;

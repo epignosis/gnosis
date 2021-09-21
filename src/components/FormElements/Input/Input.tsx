@@ -1,8 +1,8 @@
 import React, { forwardRef, Ref, ForwardRefRenderFunction, InputHTMLAttributes, FC } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
+import Label from "../Label/Label";
 import { inputContainer, inputError } from "./styles";
-import { Label } from "@components";
 import { ExtendableProps, IconType } from "types/common";
 
 export type InputSize = "md" | "lg";

@@ -2,10 +2,11 @@ import React, { FC } from "react";
 import { useSelect, useMultipleSelection } from "downshift";
 import { SerializedStyles } from "@emotion/react";
 import classNames from "classnames";
-import { CheckboxOption } from "../CheckboxGroup/Checkbox";
+import Label from "../Label/Label";
+import Text from "../../Text/Text";
+import Checkbox, { CheckboxOption } from "../CheckboxGroup/Checkbox";
+import { InputSize } from "../Input/Input";
 import { multiSelectContainer } from "./styles";
-import { Label, Text, Checkbox } from "@components";
-import { InputSize } from "@components/FormElements/Input/Input";
 import { CaretDownSVG, DropUpArrowSVG } from "@icons/core";
 
 export type MultiSelectProps = {

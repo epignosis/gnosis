@@ -1,9 +1,9 @@
 import React, { CSSProperties, FC, ReactElement, cloneElement, Children } from "react";
 import { ClassNames } from "@emotion/react";
 import ReactModal, { Props } from "react-modal";
+import Heading from "../Heading/Heading";
 import { modalContent, modalFooter, modalHeader, portalStyles } from "./styles";
 import { CloseCircledSVG } from "@icons/core";
-import { Heading } from "@components";
 
 export type HeaderProps = {
   onClose?: () => void;

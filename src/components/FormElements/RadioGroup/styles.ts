@@ -1,5 +1,5 @@
 import { css, SerializedStyles, Theme } from "@emotion/react";
-import { InputSize } from "@components/FormElements/Input/Input";
+import { InputSize } from "../Input/Input";
 
 export const container = (inline: boolean): SerializedStyles => css`
   display: flex;

@@ -1,8 +1,8 @@
 import React from "react";
 import { Story } from "@storybook/react";
 import { WithBothBtns } from "../Pagination/Pagination.stories";
+import { PaginationProps } from "../Pagination/Pagination";
 import Table, { TableProps } from "./Table";
-import { PaginationProps } from "@components/Pagination/Pagination";
 
 export default {
   title: "components/Table",

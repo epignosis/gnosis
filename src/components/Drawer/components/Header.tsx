@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { SerializedStyles } from "@emotion/react";
+import Heading from "../../Heading/Heading";
 import { drawerHeader } from "./styles";
-import { Heading } from "@components";
 import { CloseSVG } from "@icons/core";
 
 export type HeaderProps = {

@@ -51,7 +51,6 @@ export const parameters = {
   viewport: {
     viewports: customViewports,
   },
-  viewMode: "docs",
 };
 
 const themeDecorator = (Story, { globals }) => (

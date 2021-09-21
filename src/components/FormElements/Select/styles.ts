@@ -1,6 +1,6 @@
 import { css, SerializedStyles, Theme } from "@emotion/react";
 import { inputBaseStyles, inputContainerBaseStyles } from "../styles";
-import { InputSize } from "@components/FormElements/Input/Input";
+import { InputSize } from "../Input/Input";
 
 export const selectContainer = (
   { formElements }: Theme,

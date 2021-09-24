@@ -1,6 +1,6 @@
-import { SerializedStyles } from "@emotion/react";
 import React, { FC, ReactNode } from "react";
-import { avatar } from "./styles";
+// import { SerializedStyles } from "@emotion/react";
+// import { avatar } from "./styles";
 
 export type Size = "xs" | "sm" | "md" | "lg" | "xl";
 
@@ -25,15 +25,15 @@ export type AvatarProps =
 
 const Avatar: FC<AvatarBaseProps & AvatarProps> = ({
   src,
-  size = "sm",
-  bgColor = "#0E59BB",
+  // size = "sm",
+  // bgColor = "#0E59BB",
   alt,
   children,
   className,
 }) => {
   return (
     <figure
-      css={(theme): SerializedStyles => avatar(theme, { size, bgColor })}
+      // css={(theme): SerializedStyles => avatar(theme, { size, bgColor })}
       className={className}
     >
       {Boolean(src) && <img src={src} alt={alt} />}

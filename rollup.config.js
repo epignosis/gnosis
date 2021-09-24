@@ -10,7 +10,7 @@ import postcss from "rollup-plugin-postcss";
 import pkg from "./package.json";
 
 // Array of extensions to be handled by babel
-const extensions = [".ts", ".tsx"];
+const extensions = [".ts", ".tsx", ".js"];
 const packageName = pkg.name;
 const banner = `
   /**
@@ -41,7 +41,7 @@ export default {
         { find: "@icons", replacement: path.resolve(__dirname, "./src/icons") },
       ],
     }),
-    nodeResolve(),
+    nodeResolve({ browser: true }),
     resolve({
       mainFields: ["module", "main"],
       // browser: true,

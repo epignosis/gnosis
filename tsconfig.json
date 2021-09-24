@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
-    "target": "es5",
+    "target": "es6",
     "module": "esnext",
     "lib": ["es6", "dom", "esnext"],
     "types": ["node", "jest", "@testing-library/jest-dom"],
     "allowJs": false,
-    "jsx": "react",
+    "jsx": "preserve",
     "declaration": true,
     "sourceMap": true,
     "outDir": "dist",

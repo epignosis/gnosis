@@ -1,4 +1,4 @@
-// export { default as ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
+export { default as ThemeProvider } from "./components/ThemeProvider/ThemeProvider";
 export { default as Button } from "./components/Button/Button";
 // export { default as Loader } from "./components/Loaders/Loader";
 // export { default as Chip } from "./components/Chip/Chip";

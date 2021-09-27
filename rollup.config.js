@@ -6,7 +6,7 @@ import alias from "@rollup/plugin-alias";
 import svgr from "@svgr/rollup";
 import json from "@rollup/plugin-json";
 import postcss from "rollup-plugin-postcss";
-import replace from "rollup-plugin-replace";
+// import replace from "rollup-plugin-replace";
 import pkg from "./package.json";
 
 // Array of extensions to be handled by babel
@@ -22,7 +22,7 @@ const banner = `
 `;
 
 export default {
-  input: ["src/index.ts"], // What files we build?
+  input: "src/index.ts", // What files we build?
 
   // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
   // https://rollupjs.org/guide/en/#peer-dependencies
@@ -37,9 +37,9 @@ export default {
       include: "**/node_modules/**",
     }),
 
-    replace({
-      "process.env.NODE_ENV": JSON.stringify("production"),
-    }),
+    // replace({
+    //   "process.env.NODE_ENV": JSON.stringify("production"),
+    // }),
 
     // Compile TypeScript/JavaScript files
     babel({

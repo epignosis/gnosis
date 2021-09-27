@@ -1,9 +1,9 @@
 {
   "presets": [
-    ["@babel/preset-env", { "useBuiltIns": "usage", "corejs": 3, "debug": false }],
+    "@babel/preset-env",
     "@babel/preset-typescript",
     "@babel/preset-react",
     "@emotion/babel-preset-css-prop"
   ],
-  "plugins": ["@emotion"]
+  "plugins": ["@emotion", "@babel/proposal-class-properties", "@babel/proposal-object-rest-spread"]
 }

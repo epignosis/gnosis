@@ -2,7 +2,7 @@ import React, { ReactElement, ReactNode, ElementType } from "react";
 import { SerializedStyles } from "@emotion/react";
 import { LazyMotion, domAnimation, m, AnimatePresence, Variants } from "framer-motion";
 import classNames from "classnames";
-// import Loader from "../Loaders/Loader";
+import Loader from "../Loaders/Loader";
 import { btnContainer } from "./styles";
 import { IconType, PolymorphicComponentProps } from "types/common";
 
@@ -101,7 +101,7 @@ const Button = <C extends ElementType = "button">(props: ButtonProps<C>): ReactE
               exit="hidden"
               variants={spinnerWrapperVariants}
             >
-              {/* <Loader size="md" /> */}
+              <Loader size="md" />
             </m.div>
           )}
         </AnimatePresence>

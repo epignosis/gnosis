@@ -24,7 +24,9 @@ describe("<Checkbox />", () => {
     const labelTxt = faker.lorem.word();
     const id = faker.random.alphaNumeric();
     const name = faker.random.alphaNumeric();
-    render(<Checkbox id={id} label={labelTxt} name={name} value="testValue" />);
+    render(
+      <Checkbox id={id} label={labelTxt} name={name} value="testValue" onChange={jest.fn()} />,
+    );
 
     const label = screen.getByText(labelTxt);
     const input = screen.getByLabelText(labelTxt);

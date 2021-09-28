@@ -6,13 +6,16 @@ import DateInput from "./DateInput";
 import { act, render, screen, waitFor } from "@test-utils/render";
 import { resizeWindow } from "@test-utils/helpers/windowResize";
 
-const mockFn = jest.fn();
-const labelTxt = faker.random.words();
-const date = faker.date.future();
-const today = faker.date.recent();
+const dateInputProps = () => ({
+  labelTxt: faker.random.words(),
+  date: faker.date.future(),
+  today: faker.date.recent(),
+});
 
 describe("<DateInput />", () => {
   it("renders correctly", () => {
+    const mockFn = jest.fn();
+    const { labelTxt, date } = dateInputProps();
     render(
       <DateInput
         id={faker.random.alphaNumeric()}
@@ -31,6 +34,8 @@ describe("<DateInput />", () => {
   });
 
   it("changes date", async () => {
+    const mockFn = jest.fn();
+    const { labelTxt, date, today } = dateInputProps();
     render(
       <DateInput
         id={faker.random.alphaNumeric()}
@@ -62,6 +67,8 @@ describe("<DateInput />", () => {
 
 describe("<DateInput/> on mobile", () => {
   it("renders correctly", () => {
+    const mockFn = jest.fn();
+    const { labelTxt, date } = dateInputProps();
     render(
       <DateInput
         id={faker.random.alphaNumeric()}

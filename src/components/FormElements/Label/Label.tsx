@@ -7,12 +7,10 @@ export type LabelProps = React.LabelHTMLAttributes<HTMLLabelElement> & {
   size?: LabelSize;
 };
 
-const Label: FC<LabelProps> = ({ size = "md", children, ...rest }) => {
-  return (
-    <label css={(theme) => label(theme, { size })} {...rest}>
-      {children}
-    </label>
-  );
-};
+const Label: FC<LabelProps> = ({ size = "md", children, ...rest }) => (
+  <label css={(theme) => label(theme, { size })} {...rest}>
+    {children}
+  </label>
+);
 
 export default Label;

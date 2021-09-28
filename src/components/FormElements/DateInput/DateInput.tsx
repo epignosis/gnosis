@@ -7,7 +7,7 @@ import classNames from "classnames";
 import { Input, Label } from "../../../";
 import { InputSize } from "../Input/Input";
 import { dateInput } from "./styles";
-import "react-datepicker/dist/react-datepicker.css";
+// import "react-datepicker/dist/react-datepicker.css";
 import { CalendarSVG } from "@icons/core";
 
 export type DateInputProps = {

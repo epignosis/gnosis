@@ -3,15 +3,16 @@
   "version": "0.1.0-alpha.0",
   "description": "> [Epignosis](https://www.epignosishq.com/) official react design system.",
   "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "start": "start-storybook -p 6006",
-    "build": "rimraf dist && tsc --emitDeclarationOnly && rollup --config",
+    "prebuild": "rimraf dist",
     "build:design-system": "build-storybook -c .storybook -o design-system",
+    "build:babel:js": "rimraf dist && babel src --config-file ./babelrc.build.json --extensions '.ts,.tsx' --out-dir ./dist",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build": "npm run prebuild && npm run build:babel:style && npm run build:babel:js",
     "validate": "npm run check-types && npm run eslint && npm run prettier && jest --changedSince=main",
     "check-types": "tsc",
     "eslint": "eslint src --ext .ts,.tsx,.js,.jsx",
@@ -30,6 +31,7 @@
     "react-dom": ">=16.8.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.5",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/preset-env": "^7.15.6",
@@ -46,6 +48,8 @@
     "@storybook/addon-essentials": "^6.3.8",
     "@storybook/addon-links": "^6.3.8",
     "@storybook/react": "^6.3.8",
+    "@svgr/babel-plugin-transform-svg-component": "^5.5.0",
+    "@svgr/babel-preset": "^5.5.0",
     "@svgr/rollup": "^5.5.0",
     "@svgr/webpack": "^5.5.0",
     "@testing-library/jest-dom": "^5.14.1",
@@ -63,6 +67,8 @@
     "@typescript-eslint/parser": "^4.31.1",
     "babel-jest": "^27.2.0",
     "babel-loader": "^8.2.2",
+    "babel-plugin-inline-react-svg": "^2.0.1",
+    "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
@@ -99,6 +105,7 @@
     "react-table": "^7.7.0",
     "react-toastify": "^7.0.4"
   },
+  "homepage": "https://github.com/epignosis/gnosis#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/epignosis/gnosis.git"
@@ -106,5 +113,9 @@
   "bugs": {
     "url": "https://github.com/epignosis/gnosis/issues"
   },
-  "homepage": "https://github.com/epignosis/gnosis#readme"
+  "keywords": [
+    "epignosis",
+    "react",
+    "design system"
+  ]
 }

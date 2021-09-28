@@ -1,0 +1,28 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-typescript",
+    "@emotion/babel-preset-css-prop"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "extensions": [".ts", ".tsx", ".js", ".jsx"],
+        "alias": {
+          "@theme": "./src/theme/",
+          "@icons": "./src/icons/"
+        }
+      }
+    ]
+  ],
+  "ignore": [
+    "**/storyUtils",
+    "**/__snapshots__",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.stories.tsx",
+    "**/*.mdx"
+  ]
+}

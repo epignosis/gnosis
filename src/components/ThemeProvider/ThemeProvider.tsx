@@ -13,7 +13,7 @@ import {
   generateTypeScaleSizes,
   TypeScaleConfig,
 } from "@theme/utils/typography";
-import "modern-normalize/modern-normalize.css";
+// import "modern-normalize/modern-normalize.css";
 
 type ThemeProviderProps = {
   typeScaleConfig?: TypeScaleConfig;

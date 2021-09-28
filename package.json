@@ -1,15 +1,16 @@
 {
-  "name": "gnosis",
-  "version": "0.0.0",
-  "description": "",
+  "name": "@epignosis_llc/gnosis",
+  "version": "0.1.0-alpha.0",
+  "description": "> [Epignosis](https://www.epignosishq.com/) official react design system.",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
     "start": "start-storybook -p 6006",
-    "build": "rimraf dist && rollup -c && tsc --emitDeclarationOnly",
+    "build": "rimraf dist && tsc --emitDeclarationOnly && rollup --config",
     "build:design-system": "build-storybook -c .storybook -o design-system",
     "validate": "npm run check-types && npm run eslint && npm run prettier && jest --changedSince=main",
     "check-types": "tsc",
@@ -40,7 +41,7 @@
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-node-resolve": "^13.0.5",
     "@storybook/addon-actions": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
     "@storybook/addon-links": "^6.3.8",
@@ -62,7 +63,6 @@
     "@typescript-eslint/parser": "^4.31.1",
     "babel-jest": "^27.2.0",
     "babel-loader": "^8.2.2",
-    "beachball": "^2.12.1",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
@@ -77,8 +77,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rimraf": "^3.0.2",
-    "rollup": "^2.56.3",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup": "^2.57.0",
     "rollup-plugin-postcss": "^4.0.1",
     "tslib": "^2.3.1",
     "typescript": "^4.4.3"
@@ -99,5 +98,13 @@
     "react-spinners": "^0.11.0",
     "react-table": "^7.7.0",
     "react-toastify": "^7.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/epignosis/gnosis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/epignosis/gnosis/issues"
+  },
+  "homepage": "https://github.com/epignosis/gnosis#readme"
 }

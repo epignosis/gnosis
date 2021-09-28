@@ -21,11 +21,11 @@ export { default as Table } from "./components/Table/Table";
 export { default as Sidebar } from "./components/Sidebar/Sidebar";
 export { default as Card } from "./components/Card/Card";
 
-// Typography
+//  Typography
 export { default as Heading } from "./components/Heading/Heading";
 export { default as Text } from "./components/Text/Text";
 
-// Form elements
+//  Form elements
 export { default as Label } from "./components/FormElements/Label/Label";
 export { default as Input } from "./components/FormElements/Input/Input";
 export { default as Error } from "./components/FormElements/Error/Error";

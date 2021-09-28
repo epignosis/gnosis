@@ -1,5 +1,5 @@
-import { SerializedStyles } from "@emotion/react";
 import React, { FC, ReactNode } from "react";
+import { SerializedStyles } from "@emotion/react";
 import { avatar } from "./styles";
 
 export type Size = "xs" | "sm" | "md" | "lg" | "xl";

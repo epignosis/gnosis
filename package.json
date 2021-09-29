@@ -1,6 +1,6 @@
 {
   "name": "@epignosis_llc/gnosis",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.12",
   "description": "> [Epignosis](https://www.epignosishq.com/) official react design system.",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -25,6 +25,11 @@
   },
   "author": "John Tsevdos <jtsevdos@epignosishq.com>",
   "license": "MIT",
+  "keywords": [
+    "epignosis",
+    "react",
+    "design system"
+  ],
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
@@ -79,10 +84,10 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.57.0",
     "rollup-plugin-postcss": "^4.0.1",
-    "tslib": "^2.3.1",
     "typescript": "^4.4.3"
   },
   "dependencies": {
+    "tslib": "^2.3.1",
     "@emotion/react": "^11.4.1",
     "@tippyjs/react": "^4.2.5",
     "@umijs/hooks": "^1.9.3",

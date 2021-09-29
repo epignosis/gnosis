@@ -5,7 +5,7 @@ module.exports = {
   roots: ["<rootDir>/src"],
   testEnvironment: "jest-environment-jsdom",
   testMatch: ["**/__tests__/**/?(*.)+(spec|test).+(ts|tsx)", "**/?(*.)+(spec|test).+(ts|tsx)"],
-  testPathIgnorePatterns: ["<rootDir>/node_modules/"],
+  testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/dist/"],
   moduleDirectories: [path.resolve("./src"), "node_modules"],
   collectCoverageFrom: [
     "src/**/*.{ts,tsx}",

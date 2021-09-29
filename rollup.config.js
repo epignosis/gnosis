@@ -23,15 +23,17 @@ const banner = `
 export default {
   input: "src/index.ts", // What files we build?
 
-  output: {
-    dir: "dist", // Directory where rollup.js will put the built files
-    format: "esm", // Built files will follow ES Module format
-    preserveModules: true, // This one is important for treeshaking features of our library
-    preserveModulesRoot: "src",
-    sourcemap: false, // We want a source map to trace the original code
-    banner,
-    globals: { react: "React", "react-dom": "ReactDOM" },
-  },
+  output: [
+    {
+      dir: "dist", // Directory where rollup.js will put the built files
+      format: "esm", // Built files will follow ES Module format
+      // preserveModules: true, // This one is important for treeshaking features of our library
+      preserveModulesRoot: "src",
+      sourcemap: "inline", // We want a source map to trace the original code
+      banner,
+      globals: { react: "React", "react-dom": "ReactDOM" },
+    },
+  ],
 
   // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
   // https://rollupjs.org/guide/en/#peer-dependencies
@@ -39,19 +41,20 @@ export default {
 
   plugins: [
     // Allows node_modules resolution
-    resolve({ jsnext: true, extensions }),
-
-    // Allow bundling cjs modules. Rollup doesn't understand cjs
-    commonjs({
-      include: "**/node_modules/**",
-    }),
+    resolve({ extensions, browser: true }),
 
     // Compile TypeScript/JavaScript files
     babel({
       extensions, // Compile our TypeScript files
       babelHelpers: "bundled",
-      exclude: ["node_modules/**"],
+      exclude: ["node_modules/**", "**.test.**"],
       configFile: path.resolve(__dirname, "babel.config.json"),
+    }),
+
+    // Allow bundling cjs modules. Rollup doesn't understand cjs
+    commonjs({
+      include: "**/node_modules/**",
+      extensions,
     }),
 
     postcss(),

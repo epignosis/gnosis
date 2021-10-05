@@ -17,7 +17,6 @@ export { default as Tabs } from "./components/Tabs/Tabs";
 export { default as Result } from "./components/Result/Result";
 export { default as Breadcrumb } from "./components/Breadcrumb/Breadcrumb";
 export { default as Drawer } from "./components/Drawer/Drawer";
-export { default as Table } from "./components/Table/Table";
 export { default as Sidebar } from "./components/Sidebar/Sidebar";
 export { default as Card } from "./components/Card/Card";
 

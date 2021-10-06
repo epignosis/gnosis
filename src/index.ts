@@ -30,7 +30,6 @@ export { default as Input } from "./components/FormElements/Input/Input";
 export { default as Error } from "./components/FormElements/Error/Error";
 export { default as CheckboxGroup } from "./components/FormElements/CheckboxGroup/CheckboxGroup";
 export { default as Checkbox } from "./components/FormElements/CheckboxGroup/Checkbox";
-export { default as MultiSelect } from "./components/FormElements/MultiSelect/MultiSelect";
 export { default as RadioButtonGroup } from "./components/FormElements/RadioButtonGroup/RadioButtonGroup";
 export { default as RadioGroup } from "./components/FormElements/RadioGroup/RadioGroup";
 export { default as Select } from "./components/FormElements/Select/Select";

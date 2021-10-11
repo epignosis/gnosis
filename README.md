@@ -32,11 +32,13 @@ function App() {
 }
 ```
 
+To view all the available props of each component clone the current repo and run `npm install` to install all the dependencies and then `npm start` to view all the components in Storybook with all their available props.
+
 ## ✨ Theme
 
 You can either use gnosis theme default theme (colors, fonts, etc.) or customize it to fit your project needs. This section describes the various options you can use to modify it.
 
-## 🌍 Globals
+### 🌍 Globals
 
 You can add global styles by providing serialized styles like the example below:
 
@@ -60,7 +62,7 @@ const globalStyles = {
 <ThemeProvider globalStyles={globalStyles}></ThemeProvider>;
 ```
 
-## 🛠 Theme config
+### 🛠 Theme config
 
 You can also apply your own brand and colors simply by providing a new color theme. Just locate the component's theme configuration you need to change - the example below is for changing the success button colors - and create an object with your new values. The new theme configuration will be merged with the default theme, and the final merged theme will apply all the new values to the success button (or any other component). The default theme's configuration files are located in `./src/theme/default/config/` directory - for example the Button component's default theme is the `./src/theme/default/config/button.ts`. Have a look at the default theme's configuration and create / configure your new custom theme.
 

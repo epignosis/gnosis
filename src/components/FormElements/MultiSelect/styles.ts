@@ -12,6 +12,14 @@ export const multiSelectContainer = (
   { isOpen, size, inline }: { isOpen: boolean; size: InputSize; inline: boolean },
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })}
+
+  //openit
+  &.error {
+    .select-btn {
+      border-color: ${formElements.input.errorColor};
+    }
+  }
+
   position: relative;
 
   ul {
@@ -27,7 +35,7 @@ export const multiSelectContainer = (
     border: 1px solid ${formElements.input.inputBorderColor};
     border-radius: 5px;
     margin: 0;
-    z-index: 1;
+    z-index: 4; //openit: was 1 -> 4 because Checkbox has 3
 
     .checkbox {
       padding: 0 0 0 ${inline ? "1rem" : "0.5rem"};

@@ -7,7 +7,7 @@ export const drawerContainer = (width: string): SerializedStyles => {
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: 1000;
+    z-index: 1002; //openit: was 1000
 
     .dialog {
       position: absolute;

@@ -9,6 +9,7 @@ import { ExtendableProps } from "types/common";
 export type SelectProps = ExtendableProps<
   SelectHTMLAttributes<HTMLSelectElement>,
   {
+    status?: "valid" | "error"; //openit
     size?: "md" | "lg";
     label?: string;
     inline?: boolean;
@@ -19,6 +20,7 @@ export type SelectProps = ExtendableProps<
 const Select: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (props, forwardedRef) => {
   const {
     id,
+    status = "valid", //openit
     size = "md",
     label,
     inline = false,
@@ -29,6 +31,8 @@ const Select: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (props,
   } = props;
   const hasLabel = Boolean(label);
   const containerClassNames = classNames({
+    valid: status === "valid", //openit
+    error: status === "error", //openit
     inline: hasLabel && inline,
     [className]: className,
   });

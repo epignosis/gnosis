@@ -1,6 +1,8 @@
 import { css, SerializedStyles, Theme } from "@emotion/react";
 
 export const mainNavContainer = ({ sidebar }: Theme): SerializedStyles => css`
+  overflow: auto; //openit: scroll if many items
+
   position: sticky;
   top: 0;
   display: flex;

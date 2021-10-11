@@ -19,4 +19,9 @@ export const dateInput = (
   .react-datepicker-wrapper {
     width: 100%;
   }
+  
+  //openit
+  .react-datepicker-popper {
+    z-index: 2;
+  }
 `;

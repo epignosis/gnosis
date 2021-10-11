@@ -12,6 +12,7 @@ import { CaretDownSVG, DropUpArrowSVG } from "@icons/core";
 export type MultiSelectProps = {
   placeholder: string;
   id: string;
+  status?: "valid" | "error"; //openit
   size?: InputSize;
   label?: string;
   inline?: boolean;
@@ -25,6 +26,7 @@ export type MultiSelectProps = {
 const MultiSelect: FC<MultiSelectProps> = (props) => {
   const {
     placeholder,
+    status = "valid", //openit
     size = "md",
     id,
     options,
@@ -36,6 +38,8 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
   } = props;
   const hasLabel = Boolean(label);
   const containerClassNames = classNames({
+    valid: status === "valid", //openit
+    error: status === "error", //openit
     inline: hasLabel && inline,
     [className ?? ""]: className,
   });
@@ -63,7 +67,8 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
           case useSelect.stateChangeTypes.MenuKeyDownSpaceButton:
           case useSelect.stateChangeTypes.ItemClick:
             if (itemInItems && changes.selectedItem) {
-              removeSelectedItem(changes.selectedItem);
+              //removeSelectedItem(changes.selectedItem); //old buggy way
+              removeSelectedItem(itemInItems); //openit: use itemInItems instead of changes.selectedItem (else initial vals cannot be unchecked)
             } else if (changes.selectedItem) {
               addSelectedItem(changes.selectedItem);
             }
@@ -77,6 +82,14 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
       },
     });
 
+  //openit: show all 'selected' items when collapsed
+  const _items =
+    <div>
+      {selectedItems.map((item, index) => {
+        return <span key={index} style={{ border: "1px solid #aaa", background: "#eee", marginRight: "5px" }}>{(item as CheckboxOption).label}</span>
+      })}
+    </div>;
+
   return (
     <div
       css={(theme): SerializedStyles => multiSelectContainer(theme, { isOpen, size, inline })}
@@ -84,13 +97,15 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
     >
       {hasLabel && <Label {...getLabelProps({ id })}>{label}</Label>}
       <button type="button" className="select-btn" {...getToggleButtonProps(getDropdownProps())}>
-        {(selectedItems.length && (selectedItems[0] as CheckboxOption).label) || placeholder}
+        {/* {(selectedItems.length && (selectedItems[0] as CheckboxOption).label) || placeholder} */}
+        {(selectedItems.length && _items) || placeholder}
         <CaretDownSVG height="24" />
       </button>
       <ul data-testid="list-container" {...getMenuProps()}>
         <div className="content">
           <Text fontSize="sm"> Select one or more items</Text>
-          <button className="close-btn" data-testid="close-btn" onClick={(): void => closeMenu()}>
+          {/* openit: added type="button", otherwise would act as 'form submit' */}
+          <button type="button" className="close-btn" data-testid="close-btn" onClick={(): void => closeMenu()}>
             <DropUpArrowSVG height={20} />
           </button>
         </div>
@@ -104,6 +119,7 @@ const MultiSelect: FC<MultiSelectProps> = (props) => {
                 id={`${option.value}`}
                 size={size}
                 checked={Boolean(isSelected)}
+                onChange={() => { }} //openit: for warning about 'checked' without onChange
                 inline
                 containerClassName="checkbox"
                 {...option}

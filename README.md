@@ -95,3 +95,6 @@ const myCustomTheme = {
 ## Upcoming components
 
 - [ ] MultiSelect
+- [ ] Table
+- [ ] DateInput
+- [ ] FileInput

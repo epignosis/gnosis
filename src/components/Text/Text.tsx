@@ -4,10 +4,14 @@ import { TypographyLevels } from "@theme/utils/typography";
 
 export type TextWeight = "400" | "700";
 
-export type TextProps = Omit<React.HTMLAttributes<HTMLDivElement>, "css"> & {
+type BaseProps =
+  | ({ as?: "div" } & React.HTMLAttributes<HTMLDivElement>)
+  | ({ as?: "span" } & React.HTMLAttributes<HTMLSpanElement>)
+  | ({ as?: "p" } & React.HTMLAttributes<HTMLParagraphElement>);
+
+export type TextProps = BaseProps & {
   fontSize: TypographyLevels;
   weight?: TextWeight;
-  as?: "span" | "div" | "p";
   className?: string;
 };
 

@@ -1,4 +1,4 @@
-import React, { forwardRef, Ref, ForwardRefRenderFunction, InputHTMLAttributes } from "react";
+import React, { forwardRef, Ref, ForwardRefRenderFunction } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import Label from "../Label/Label";
@@ -8,7 +8,7 @@ import { ExtendableProps, IconType } from "types/common";
 export type InputSize = "md" | "lg";
 
 export type InputProps = ExtendableProps<
-  InputHTMLAttributes<HTMLInputElement>,
+  React.InputHTMLAttributes<HTMLInputElement>,
   {
     id: string;
     status?: "valid" | "error";

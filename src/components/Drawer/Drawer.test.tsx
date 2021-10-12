@@ -22,7 +22,7 @@ describe("<Drawer/>", () => {
     const mockFn = jest.fn();
 
     render(
-      <Drawer isOpen onClose={mockFn}>
+      <Drawer key={faker.lorem.slug()} isOpen onClose={mockFn}>
         <Drawer.Header>{headerTxt}</Drawer.Header>
         <Drawer.Body>{bodyTxt}</Drawer.Body>
         <Drawer.Footer>{footerTxt}</Drawer.Footer>
@@ -47,7 +47,7 @@ describe("<Drawer/>", () => {
     const mockFn = jest.fn();
 
     render(
-      <Drawer isOpen onClose={mockFn}>
+      <Drawer key={faker.lorem.slug()} isOpen onClose={mockFn}>
         <Drawer.Body>{bodyTxt}</Drawer.Body>
       </Drawer>,
     );
@@ -66,7 +66,7 @@ describe("<Drawer/>", () => {
     const mockFn = jest.fn();
 
     const { rerender } = render(
-      <Drawer isOpen onClose={mockFn}>
+      <Drawer key={faker.lorem.slug()} isOpen onClose={mockFn}>
         <Drawer.Header closable>{headerTxt}</Drawer.Header>
       </Drawer>,
     );
@@ -81,7 +81,7 @@ describe("<Drawer/>", () => {
     expect(mockFn).toHaveBeenCalledTimes(1);
 
     rerender(
-      <Drawer isOpen={false} onClose={mockFn}>
+      <Drawer key={faker.lorem.slug()} isOpen={false} onClose={mockFn}>
         <Drawer.Header closable>{headerTxt}</Drawer.Header>
       </Drawer>,
     );
@@ -94,7 +94,7 @@ describe("<Drawer/>", () => {
     const mockFn = jest.fn();
 
     render(
-      <Drawer isOpen onClose={mockFn}>
+      <Drawer key={faker.lorem.slug()} isOpen onClose={mockFn}>
         <Drawer.Header closable>
           <button>{headerTxt}</button>
         </Drawer.Header>
@@ -109,7 +109,7 @@ describe("<Drawer/>", () => {
 
   it("matches snapshot with header, body and footer", () => {
     render(
-      <Drawer isOpen onClose={jest.fn()}>
+      <Drawer key="test-drawer-key" isOpen onClose={jest.fn()}>
         <Drawer.Header>Test header</Drawer.Header>
         <Drawer.Body>Test body</Drawer.Body>
         <Drawer.Footer>Test footer</Drawer.Footer>
@@ -122,7 +122,7 @@ describe("<Drawer/>", () => {
 
   it("matches snapshot without header and footer", () => {
     render(
-      <Drawer isOpen onClose={jest.fn()}>
+      <Drawer key="test-drawer-key" isOpen onClose={jest.fn()}>
         <Drawer.Body>Test body</Drawer.Body>
       </Drawer>,
     );
@@ -133,7 +133,7 @@ describe("<Drawer/>", () => {
 
   it("matches snapshot with close button", () => {
     render(
-      <Drawer isOpen onClose={jest.fn()}>
+      <Drawer key="test-drawer-key" isOpen onClose={jest.fn()}>
         <Drawer.Header closable>Title</Drawer.Header>
       </Drawer>,
     );
@@ -144,7 +144,7 @@ describe("<Drawer/>", () => {
 
   it("matches snapshot with noGutters Header", () => {
     render(
-      <Drawer isOpen onClose={jest.fn()}>
+      <Drawer key="test-drawer-key" isOpen onClose={jest.fn()}>
         <Drawer.Header noGutters>Title</Drawer.Header>
       </Drawer>,
     );
@@ -155,7 +155,7 @@ describe("<Drawer/>", () => {
 
   it("matches snapshot with right placement", () => {
     render(
-      <Drawer isOpen onClose={jest.fn()} placement="right">
+      <Drawer key="test-drawer-key" isOpen onClose={jest.fn()} placement="right">
         <Drawer.Header>Title</Drawer.Header>
       </Drawer>,
     );

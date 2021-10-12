@@ -15,7 +15,6 @@ exports[`<Input /> matches snapshot 1`] = `
       class="input-wrapper"
     >
       <input
-        aria-describedby=""
         id="test-input"
         name="test-input"
       />

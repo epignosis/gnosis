@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Forms: <Error /> matches snapshot 1`] = `
+exports[`Forms: <FormError /> matches snapshot 1`] = `
 <div>
   <article
     class="css-1g7t4ds-errorContainer-errorContainer"

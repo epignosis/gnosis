@@ -11,27 +11,22 @@ export type ChipProps = React.HTMLAttributes<HTMLDivElement> & {
   children: string;
 };
 
-const Chip: FC<ChipProps> = ({ size = "md", onClose, children, ...rest }) => {
-  const restDivPropsWithDefaults = {
-    style: { backgroundColor: "#5c5c5c", color: "#fff" },
-    ...rest,
-  };
+const Chip: FC<ChipProps> = ({
+  size = "md",
+  onClose,
+  children,
+  style = { backgroundColor: "#5c5c5c", color: "#fff" },
+  ...rest
+}) => (
+  <div css={(theme): SerializedStyles => chip(theme, { size })} {...rest}>
+    {onClose && (
+      <button onClick={onClose} aria-label={`Remove ${children}`} style={{ color: style.color }}>
+        <CloseSVG height={16} />
+      </button>
+    )}
 
-  return (
-    <div css={(theme): SerializedStyles => chip(theme, { size })} {...restDivPropsWithDefaults}>
-      {onClose && (
-        <button
-          onClick={onClose}
-          aria-label={`Remove ${children}`}
-          style={{ color: restDivPropsWithDefaults.style.color }}
-        >
-          <CloseSVG height={16} />
-        </button>
-      )}
-
-      {children}
-    </div>
-  );
-};
+    {children}
+  </div>
+);
 
 export default Chip;

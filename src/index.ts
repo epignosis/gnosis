@@ -27,7 +27,8 @@ export { default as Text } from "./components/Text/Text";
 //  Form elements
 export { default as Label } from "./components/FormElements/Label/Label";
 export { default as Input } from "./components/FormElements/Input/Input";
-export { default as Error } from "./components/FormElements/Error/Error";
+export { default as FormError } from "./components/FormElements/FormError/FormError";
+export { default as InputError } from "./components/FormElements/InputError/InputError";
 export { default as CheckboxGroup } from "./components/FormElements/CheckboxGroup/CheckboxGroup";
 export { default as Checkbox } from "./components/FormElements/CheckboxGroup/Checkbox";
 export { default as RadioButtonGroup } from "./components/FormElements/RadioButtonGroup/RadioButtonGroup";

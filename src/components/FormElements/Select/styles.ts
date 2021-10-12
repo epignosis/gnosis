@@ -12,6 +12,12 @@ export const selectContainer = (
     margin: 0 0 0.5rem 0.5rem;
   }
 
+  &.error {
+    .select-input-wrapper select {
+      border-color: ${formElements.errors.errorBorderColor};
+    }
+  }
+
   select {
     ${inputBaseStyles(formElements, { block: true, size })};
     background-color: transparent;

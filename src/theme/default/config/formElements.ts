@@ -1,10 +1,12 @@
 import { colors } from "../colors";
 
 export default {
+  errors: {
+    errorBorderColor: colors.red.base,
+  },
   input: {
     placeholderColor: "#737373",
     borderHoverColor: colors.blue.base,
-    errorColor: colors.red.base,
     inputBorderColor: colors.gray.light,
     background: colors.white,
     iconColor: colors.gray.darker,
@@ -26,7 +28,7 @@ export default {
       shadowColor: "#0e59bb1a",
     },
   },
-  error: {
+  generalError: {
     borderColor: colors.red.base,
     background: colors.red.lightest,
   },

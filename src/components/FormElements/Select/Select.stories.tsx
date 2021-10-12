@@ -9,7 +9,7 @@ export default {
     size: "md",
     label: "Choose a programming language",
     inline: false,
-    id: "selectStory",
+    id: "programming-language",
     className: "selectStory",
   },
   argTypes: {
@@ -17,6 +17,12 @@ export default {
       control: {
         type: "select",
         options: ["md", "lg"],
+      },
+    },
+    status: {
+      control: {
+        type: "select",
+        options: ["valid", "error"],
       },
     },
     onChange: { action: "value changed" },
@@ -31,7 +37,7 @@ export default {
 };
 
 export const Select: Story<SelectProps> = (args) => (
-  <SelectComponent id="programming-language" {...args}>
+  <SelectComponent {...args}>
     <option value="rs">Rust</option>
     <option value="js">JavaScript</option>
     <option value="ts">TypeScript</option>

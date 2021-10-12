@@ -13,12 +13,6 @@ export default {
         options: ["md", "lg"],
       },
     },
-    bgColor: {
-      control: {
-        type: "select",
-        options: ["filter"],
-      },
-    },
   },
 };
 
@@ -26,6 +20,6 @@ export const Default: Story<ChipProps> = (args) => <Chip {...args} />;
 
 Default.args = {
   size: "md",
-  bgColor: "filter",
+  style: { backgroundColor: "#5c5c5c", color: "#fff" },
   children: "This is a chip",
 };

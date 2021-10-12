@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { tag } from "./styles";
 
-export type TagProps = React.HTMLProps<HTMLSpanElement>;
+export type TagProps = React.HTMLAttributes<HTMLSpanElement>;
 
 const Tag: FC<TagProps> = ({ children, ...rest }) => {
   const restSpanPropsWithDefaults = {

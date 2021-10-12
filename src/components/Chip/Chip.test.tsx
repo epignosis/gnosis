@@ -31,7 +31,12 @@ describe("<Chip />", () => {
 
   it("matches snapshot", () => {
     const { container } = render(
-      <Chip size="md" className="my-class">
+      <Chip
+        size="md"
+        className="my-class"
+        style={{ backgroundColor: "purple", color: "white" }}
+        onClose={jest.fn()}
+      >
         This is a chip
       </Chip>,
     );

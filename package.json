@@ -14,7 +14,7 @@
     "build": "rimraf dist && tsc --emitDeclarationOnly && rollup --config",
     "build:design-system": "build-storybook -c .storybook -o design-system",
     "validate": "npm run check-types && npm run eslint && npm run prettier && jest --changedSince=main",
-    "prepublish": "npm run check-types && npm run eslint && npm run prettier && npm run test && npm run build",
+    "prepublish": "npm run check-types && npm run eslint && npm run prettier && npm run build",
     "release": "np",
     "check-types": "tsc",
     "eslint": "eslint src --ext .ts,.tsx,.js,.jsx",

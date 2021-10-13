@@ -11,6 +11,7 @@ export default {
     inline: false,
     id: "programming-language",
     className: "selectStory",
+    status: "valid",
   },
   argTypes: {
     size: {

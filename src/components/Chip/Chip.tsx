@@ -18,7 +18,7 @@ const Chip: FC<ChipProps> = ({
   style = { backgroundColor: "#5c5c5c", color: "#fff" },
   ...rest
 }) => (
-  <div css={(theme): SerializedStyles => chip(theme, { size })} {...rest}>
+  <div css={(theme): SerializedStyles => chip(theme, { size })} style={style} {...rest}>
     {onClose && (
       <button onClick={onClose} aria-label={`Remove ${children}`} style={{ color: style.color }}>
         <CloseSVG height={16} />

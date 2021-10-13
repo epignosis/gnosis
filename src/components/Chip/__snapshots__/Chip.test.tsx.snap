@@ -4,6 +4,7 @@ exports[`<Chip /> matches snapshot 1`] = `
 <div>
   <div
     class="my-class css-144yrw7-chip-chip"
+    style="background-color: purple; color: white;"
   >
     <button
       aria-label="Remove This is a chip"

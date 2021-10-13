@@ -14,7 +14,7 @@ export const textareaContainer = (
 
   &.error {
     textarea {
-      border-color: ${formElements.input.errorColor};
+      border-color: ${formElements.errors.errorBorderColor};
     }
   }
 

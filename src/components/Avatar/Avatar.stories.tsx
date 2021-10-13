@@ -25,8 +25,8 @@ const Template: Story<AvatarBaseProps & AvatarProps> = (args) => <Avatar {...arg
 export const AvatarImage = Template.bind({});
 
 AvatarImage.args = {
-  alt: "John Tsevdos",
-  src: "https://plus.talentlms.com/assets/users/user2.png",
+  alt: "John Doe",
+  src: "https://talentlms-prod-frontend-static.s3.amazonaws.com/images/default_user_avatar.png",
 };
 
 AvatarImage.argTypes = {

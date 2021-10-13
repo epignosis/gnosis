@@ -5,7 +5,7 @@ import { container } from "./styles";
 export type Size = "md";
 export type Offset = { top: string; right: string };
 
-export type BadgeProps = Omit<React.HTMLAttributes<HTMLDivElement>, "css"> & {
+export type BadgeProps = React.HTMLAttributes<HTMLDivElement> & {
   size?: Size;
   offset?: Offset;
 };

@@ -1,20 +1,25 @@
+import { generateTypeScaleSizes, DEFAULT_TYPESCALE_CONFIG } from "../utils/typography";
 import { colors } from "./colors";
-import { button, tag, chip, badge, alert, formElements } from "./atoms/";
 import {
-  progress,
-  loader,
-  tooltip,
-  modal,
-  tabs,
-  result,
+  alert,
+  badge,
   breadcrumb,
-  drawer,
-  sidebar,
+  button,
   card,
-} from "./components/";
+  chip,
+  drawer,
+  formElements,
+  loader,
+  modal,
+  progressBar,
+  result,
+  sidebar,
+  tabs,
+  tag,
+  tooltip,
+} from "./config";
 
-// ATOMS
-// Button
+const typeScaleSizes = generateTypeScaleSizes(DEFAULT_TYPESCALE_CONFIG);
 
 const defaultTheme = {
   body: {
@@ -23,37 +28,27 @@ const defaultTheme = {
     fontSize: "100%",
     lineHeight: 1.5715,
   },
-  typeScaleSizes: {
-    md: "1rem",
-    lg: "1.125rem",
-    xl: "1.266rem",
-    "2xl": "1.424rem",
-    "3xl": "1.602rem",
-    "4xl": "1.802rem",
-    sm: "0.889rem",
-    xs: "0.790rem",
-    "2xs": "0.702rem",
-  },
   link: {
     color: colors.blue.base,
     hoverColor: colors.blue.lighter,
   },
+  typeScaleSizes,
+  alert,
+  badge,
+  breadcrumb,
   button,
+  card,
+  chip,
+  drawer,
   formElements,
   loader,
-  chip,
-  tag,
-  badge,
-  alert,
-  progress,
-  tooltip,
   modal,
-  card,
-  tabs,
+  progressBar,
   result,
-  breadcrumb,
-  drawer,
   sidebar,
+  tabs,
+  tag,
+  tooltip,
 };
 
 export type GnosisTheme = typeof defaultTheme;

@@ -26,6 +26,7 @@ export default {
   },
   args: {
     isCollapsed: false,
+    style: { zIndex: 10, overflow: "auto" },
   },
 };
 

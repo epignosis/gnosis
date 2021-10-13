@@ -28,7 +28,6 @@ export default {
     inline: false,
     status: "valid",
     className: "inputStory",
-    error: "",
   },
   decorators: [
     (Story: Story): JSX.Element => (
@@ -59,5 +58,4 @@ export const WithError = Template.bind({});
 
 WithError.args = {
   status: "error",
-  error: "This is an inline error",
 };

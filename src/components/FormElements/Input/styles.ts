@@ -10,7 +10,7 @@ export const inputContainer = (
 
   &.error {
     .input-wrapper input {
-      border-color: ${formElements.input.errorColor};
+      border-color: ${formElements.errors.errorBorderColor};
     }
   }
 
@@ -71,9 +71,4 @@ export const fileInputContainer = ({ formElements }: Theme): SerializedStyles =>
       display: none;
     }
   }
-`;
-
-export const inputError = ({ formElements }: Theme): SerializedStyles => css`
-  color: ${formElements.input.errorColor};
-  margin-left: 0.25rem;
 `;

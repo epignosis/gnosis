@@ -1,10 +1,10 @@
-import React, { FC, HTMLAttributes } from "react";
+import React, { FC } from "react";
 import { headingContainer } from "./styles";
 import { TypographyLevels } from "@theme/utils/typography";
 
 export type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-export type HeadingProps = Omit<HTMLAttributes<HTMLHeadingElement>, "css"> & {
+export type HeadingProps = React.HTMLAttributes<HTMLHeadingElement> & {
   size?: TypographyLevels;
   as?: HeadingTag;
 };

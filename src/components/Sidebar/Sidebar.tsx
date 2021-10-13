@@ -1,10 +1,17 @@
 import React, { FC } from "react";
-import { LazyMotion, m, useReducedMotion, Variants, domAnimation } from "framer-motion";
+import {
+  LazyMotion,
+  m,
+  useReducedMotion,
+  Variants,
+  domAnimation,
+  HTMLMotionProps,
+} from "framer-motion";
 import { mainNavContainer } from "./styles";
 import NavItem, { NavItemProps } from "./NavItem";
 import NavHandle from "./NavHandle";
 
-export type SidebarProps = {
+export type SidebarProps = HTMLMotionProps<"nav"> & {
   isCollapsed?: boolean;
   onToggle?: () => void;
 };
@@ -47,6 +54,7 @@ const Sidebar: FC<SidebarProps> & SidebarCompoundProps = ({
   isCollapsed = false,
   onToggle = () => void 0,
   children,
+  ...rest
 }) => {
   const isReducedMotion = useReducedMotion();
   let animate: string;
@@ -65,6 +73,7 @@ const Sidebar: FC<SidebarProps> & SidebarCompoundProps = ({
         initial={false}
         animate={animate}
         variants={navVariants}
+        {...rest}
       >
         <div className="nav-items-wrapper">
           <NavHandle isExpanded={!isCollapsed} toggleMainNav={onToggle} />

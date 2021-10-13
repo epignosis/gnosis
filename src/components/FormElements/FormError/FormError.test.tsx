@@ -1,9 +1,9 @@
 import React from "react";
 import faker from "faker";
-import Error from "./Error";
+import Error from "./FormError";
 import { render, screen } from "@test-utils/render";
 
-describe("Forms: <Error />", () => {
+describe("Forms: <FormError />", () => {
   it("render correctly", () => {
     const txt = faker.lorem.sentence();
     render(<Error>{txt}</Error>);

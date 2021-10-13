@@ -1,17 +1,16 @@
-import { SerializedStyles } from "@emotion/react";
 import React, { FC } from "react";
 import { tag } from "./styles";
 
-export type TagProps = Omit<React.HTMLAttributes<HTMLSpanElement>, "css"> & {
-  bgColor?: "course" | "card" | "new";
-};
+export type TagProps = React.HTMLAttributes<HTMLSpanElement>;
 
-const Tag: FC<TagProps> = ({ bgColor = "course", children, ...rest }) => {
-  return (
-    <span css={(theme): SerializedStyles => tag(theme, { bgColor })} {...rest}>
-      {children}
-    </span>
-  );
-};
+const Tag: FC<TagProps> = ({
+  children,
+  style = { backgroundColor: "#a3dfe3", color: "#5c5c5c" },
+  ...rest
+}) => (
+  <span css={tag} style={style} {...rest}>
+    {children}
+  </span>
+);
 
 export default Tag;

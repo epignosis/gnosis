@@ -1,4 +1,4 @@
-import React, { SelectHTMLAttributes, forwardRef, ForwardRefRenderFunction } from "react";
+import React, { forwardRef, ForwardRefRenderFunction } from "react";
 import { SerializedStyles } from "@emotion/react";
 import classNames from "classnames";
 import Label from "../Label/Label";
@@ -7,8 +7,9 @@ import { CaretDownSVG } from "@icons/core";
 import { ExtendableProps } from "types/common";
 
 export type SelectProps = ExtendableProps<
-  SelectHTMLAttributes<HTMLSelectElement>,
+  React.SelectHTMLAttributes<HTMLSelectElement>,
   {
+    status?: "valid" | "error";
     size?: "md" | "lg";
     label?: string;
     inline?: boolean;
@@ -19,6 +20,7 @@ export type SelectProps = ExtendableProps<
 const Select: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (props, forwardedRef) => {
   const {
     id,
+    status = "valid",
     size = "md",
     label,
     inline = false,
@@ -29,6 +31,8 @@ const Select: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (props,
   } = props;
   const hasLabel = Boolean(label);
   const containerClassNames = classNames({
+    valid: status === "valid",
+    error: status === "error",
     inline: hasLabel && inline,
     [className]: className,
   });

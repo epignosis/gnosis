@@ -5,25 +5,28 @@ import { CloseSVG } from "@icons/core";
 
 export type Size = "md" | "lg";
 
-export type ChipProps = Omit<React.HTMLAttributes<HTMLDivElement>, "css"> & {
+export type ChipProps = React.HTMLAttributes<HTMLDivElement> & {
   onClose?: (e: MouseEvent) => void;
   size?: Size;
-  bgColor?: "filter";
   children: string;
 };
 
-const Chip: FC<ChipProps> = ({ size = "md", bgColor = "filter", onClose, children, ...rest }) => {
-  return (
-    <div css={(theme): SerializedStyles => chip(theme, { size, bgColor })} {...rest}>
-      {onClose && (
-        <button onClick={onClose} aria-label={`Remove ${children}`}>
-          <CloseSVG height={16} />
-        </button>
-      )}
+const Chip: FC<ChipProps> = ({
+  size = "md",
+  onClose,
+  children,
+  style = { backgroundColor: "#5c5c5c", color: "#fff" },
+  ...rest
+}) => (
+  <div css={(theme): SerializedStyles => chip(theme, { size })} style={style} {...rest}>
+    {onClose && (
+      <button onClick={onClose} aria-label={`Remove ${children}`} style={{ color: style.color }}>
+        <CloseSVG height={16} />
+      </button>
+    )}
 
-      {children}
-    </div>
-  );
-};
+    {children}
+  </div>
+);
 
 export default Chip;

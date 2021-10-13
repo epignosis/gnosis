@@ -17,7 +17,6 @@ export { default as Tabs } from "./components/Tabs/Tabs";
 export { default as Result } from "./components/Result/Result";
 export { default as Breadcrumb } from "./components/Breadcrumb/Breadcrumb";
 export { default as Drawer } from "./components/Drawer/Drawer";
-export { default as Table } from "./components/Table/Table";
 export { default as Sidebar } from "./components/Sidebar/Sidebar";
 export { default as Card } from "./components/Card/Card";
 
@@ -28,10 +27,10 @@ export { default as Text } from "./components/Text/Text";
 //  Form elements
 export { default as Label } from "./components/FormElements/Label/Label";
 export { default as Input } from "./components/FormElements/Input/Input";
-export { default as Error } from "./components/FormElements/Error/Error";
+export { default as FormError } from "./components/FormElements/FormError/FormError";
+export { default as InputError } from "./components/FormElements/InputError/InputError";
 export { default as CheckboxGroup } from "./components/FormElements/CheckboxGroup/CheckboxGroup";
 export { default as Checkbox } from "./components/FormElements/CheckboxGroup/Checkbox";
-export { default as MultiSelect } from "./components/FormElements/MultiSelect/MultiSelect";
 export { default as RadioButtonGroup } from "./components/FormElements/RadioButtonGroup/RadioButtonGroup";
 export { default as RadioGroup } from "./components/FormElements/RadioGroup/RadioGroup";
 export { default as Select } from "./components/FormElements/Select/Select";

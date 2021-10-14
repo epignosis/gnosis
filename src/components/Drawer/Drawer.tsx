@@ -42,6 +42,7 @@ export type DrawerProps = {
   placement?: "left" | "right";
   width?: string;
   dialogStyles?: MotionStyle;
+  dialogClassName?: string;
 };
 
 type DrawerCompoundProps = {
@@ -59,6 +60,7 @@ const Drawer: FC<DrawerProps> & DrawerCompoundProps = (props) => {
     showMask = true,
     width = "31.5rem",
     dialogStyles,
+    dialogClassName,
     children,
   } = props;
   // const dialogElement = useTrap<HTMLDivElement>(isOpen);
@@ -75,6 +77,7 @@ const Drawer: FC<DrawerProps> & DrawerCompoundProps = (props) => {
     dialog: true,
     "placement-left": placement === "left",
     "placement-right": placement === "right",
+    [dialogClassName ?? ""]: dialogClassName,
   });
   const drawer = (
     <LazyMotion features={domAnimation}>

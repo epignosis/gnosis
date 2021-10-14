@@ -1,0 +1,32 @@
+name: PR
+on:
+  pull_request:
+    branches:
+      - "master"
+      - "next"
+
+jobs:
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check Types
+        run: npm run check-types
+
+      - name: Linting
+        run: npm run eslint
+
+      - name: Code styling (prettier)
+        run: npm run prettier
+
+      - name: Tests
+        run: npm test

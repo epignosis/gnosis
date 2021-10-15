@@ -1,3 +1,10 @@
+# [1.0.0-next.2](https://github.com/epignosis/gnosis/compare/v1.0.0-next.1...v1.0.0-next.2) (2021-10-15)
+
+
+### Bug Fixes
+
+* **ci:** delete dist directory after release ([c446a33](https://github.com/epignosis/gnosis/commit/c446a332d6e8c5a91f6221fed64729b56523e07a))
+
 # 1.0.0-next.1 (2021-10-15)
 
 

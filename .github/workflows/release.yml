@@ -39,6 +39,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: npm run semantic-release
-
-      - name: 'Delete "dist" directory'
-        run: rm -rf dist

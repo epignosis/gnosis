@@ -1,3 +1,10 @@
+# [1.0.0-next.4](https://github.com/epignosis/gnosis/compare/v1.0.0-next.3...v1.0.0-next.4) (2021-10-18)
+
+
+### Bug Fixes
+
+* **semantice release:** config file ([86f1afc](https://github.com/epignosis/gnosis/commit/86f1afc1f93acf2fe8f8d6fe8b3f2f5161833108))
+
 # [1.0.0-next.3](https://github.com/epignosis/gnosis/compare/v1.0.0-next.2...v1.0.0-next.3) (2021-10-18)
 
 

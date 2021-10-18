@@ -16,9 +16,9 @@ describe("<Drawer/>", () => {
   });
 
   it("renders correctly", () => {
-    const headerTxt = faker.lorem.word();
-    const bodyTxt = faker.lorem.word();
-    const footerTxt = faker.lorem.word();
+    const headerTxt = faker.unique(faker.lorem.sentence);
+    const bodyTxt = faker.unique(faker.lorem.sentence);
+    const footerTxt = faker.unique(faker.lorem.sentence);
     const mockFn = jest.fn();
 
     render(

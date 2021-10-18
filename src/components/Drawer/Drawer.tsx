@@ -7,7 +7,6 @@ import Header, { HeaderProps } from "./components/Header";
 import Body from "./components/Body";
 import Mask from "./components/Mask";
 import Footer from "./components/Footer";
-// import { useTrap } from "@hooks";
 
 type DialogVariants = {
   placement: "left" | "right";
@@ -63,7 +62,6 @@ const Drawer: FC<DrawerProps> & DrawerCompoundProps = (props) => {
     dialogClassName,
     children,
   } = props;
-  // const dialogElement = useTrap<HTMLDivElement>(isOpen);
   const clonedChildren = Children.map(children, (child) => {
     return (
       child &&
@@ -89,7 +87,6 @@ const Drawer: FC<DrawerProps> & DrawerCompoundProps = (props) => {
               id="drawer-dialog"
               style={dialogStyles}
               className={dialogClassNames}
-              // ref={dialogElement}
               aria-expanded={isOpen}
               aria-hidden={!isOpen}
               aria-modal="true"

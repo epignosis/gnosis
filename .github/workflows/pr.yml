@@ -2,8 +2,8 @@ name: PR
 on:
   pull_request:
     branches:
-      - "main"
-      - "next"
+      - main
+      - next
 
 jobs:
   tests:

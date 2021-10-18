@@ -1,3 +1,10 @@
+# [1.0.0-next.3](https://github.com/epignosis/gnosis/compare/v1.0.0-next.2...v1.0.0-next.3) (2021-10-18)
+
+
+### Bug Fixes
+
+* **drawer:** minor fixes ([97c62f2](https://github.com/epignosis/gnosis/commit/97c62f2e242d5bf2f255bac97ac89f37610542c7))
+
 # [1.0.0-next.2](https://github.com/epignosis/gnosis/compare/v1.0.0-next.1...v1.0.0-next.2) (2021-10-15)
 
 

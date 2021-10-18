@@ -1,0 +1,21 @@
+import React, { ReactElement, ReactNode, ElementType } from "react";
+import { IconType, PolymorphicComponentProps } from "types/common";
+export declare type Color = "primary" | "secondary" | "danger" | "success";
+export declare type Size = "md" | "lg";
+export declare type Props = {
+    color?: Color;
+    size?: Size;
+    noGutters?: boolean;
+    block?: boolean;
+    isLoading?: boolean;
+    iconBefore?: IconType;
+    iconAfter?: IconType;
+    className?: string;
+    disabled?: boolean;
+    rounded?: boolean;
+    children: ReactNode;
+    variant?: "solid" | "outline" | "ghost" | "link";
+};
+export declare type ButtonProps<C extends ElementType> = PolymorphicComponentProps<C, Props>;
+declare const Button: <C extends React.ElementType<any> = "button">(props: ButtonProps<C>) => ReactElement;
+export default Button;

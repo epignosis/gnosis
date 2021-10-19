@@ -53,7 +53,7 @@ export const parameters = {
   },
 };
 
-const themeDecorator = (Story, { globals }) => (
+const themeDecorator = (Story) => (
   <ThemeProvider theme={defaultTheme}>
     <Story />
   </ThemeProvider>

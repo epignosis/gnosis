@@ -27,6 +27,7 @@ const defaultTheme = {
     background: colors.white,
     fontSize: "100%",
     lineHeight: 1.5715,
+    fontFamily: `"Mulish", Arial, sans-serif`,
   },
   link: {
     color: colors.blue.base,

@@ -1,6 +1,28 @@
 import { css, Theme, SerializedStyles } from "@emotion/react";
 
 export default ({ body, link }: Theme): SerializedStyles => css`
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: ${body.fontFamily};
+    color: ${body.color};
+    background: ${body.background};
+  }
+
+  p {
+    margin: 0;
+  }
+
+  img {
+    display: block;
+  }
+
+  a,
+  button {
+    cursor: pointer;
+  }
+
   html {
     font-size: 100%;
   }
@@ -8,8 +30,6 @@ export default ({ body, link }: Theme): SerializedStyles => css`
   body {
     font-size: 0.875rem;
     line-height: ${body.lineHeight};
-    background: ${body.background};
-    color: ${body.color};
   }
 
   a {
@@ -19,9 +39,5 @@ export default ({ body, link }: Theme): SerializedStyles => css`
     &:hover {
       color: ${link.hoverColor};
     }
-  }
-
-  button {
-    color: ${body.color};
   }
 `;

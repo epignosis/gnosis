@@ -21,6 +21,7 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage",
+    "validate": "npm run check-types && npm run eslint && npm run prettier && npm test",
     "prepare": "husky install",
     "commit": "git-cz",
     "semantic-release": "semantic-release"

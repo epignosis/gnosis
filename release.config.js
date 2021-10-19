@@ -7,22 +7,25 @@ module.exports = {
     },
   ],
   plugins: [
-    "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator",
     [
-      "@semantic-release/changelog",
+      "@semantic-release/commit-analyzer",
       {
-        changelogFile: "CHANGELOG.md",
+        releaseRules: [
+          { type: "docs", scope: "DOCUMENTATION", release: "patch" },
+          { type: "refactor", release: "patch" },
+          { type: "style", release: "patch" },
+        ],
       },
     ],
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
     "@semantic-release/npm",
     "@semantic-release/github",
     [
       "@semantic-release/git",
       {
-        assets: ["CHANGELOG.md"],
-        message:
-          "chore(release): set `package.json` to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
+        assets: ["CHANGELOG.md", "package.json", "package-lock.json"],
+        message: "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
       },
     ],
   ],

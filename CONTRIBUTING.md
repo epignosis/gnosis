@@ -22,13 +22,13 @@ Make a pull request as soon as you can, and mark the title with a "[WIP]" if its
 
 Creating a PR with necessary information.
 
-- Describe your change in detail. Too much detail is better than too little. Keep in mind that you must describe your changes as the person who will read it to fully understand it without any further communication (if possible).
+- Describe your change in detail.
 - Describe how you tested your change.
 - Provide usefull screenshots of the change.
 
 # PR title and commit msg
 
-Your commit messages must meet the [conventional commit format](https://conventionalcommits.org/) as it will help both the reviewers and the entire CI/CD pipeline. However, the Pull Requests are get squashed and merged to main branch so commits will not show, only PR titles.
+Your commit messages must meet the [conventional commit format](https://conventionalcommits.org/) as it will help both the reviewers and the entire CI/CD pipeline. However, the Pull Requests get squashed and merged to main branch so commits will not show, only PR titles.
 
 To make things easier, after staging your commits, **don't** use the normal git command `git commit -m "my commit message"` but run this npm script `npm run commit` instead. This script will guide you to follow the conventional commit format by answering some simple questions regarding your commit. It is not nessessary though, if you are really into conventional commit format, feel free to skip it.
 

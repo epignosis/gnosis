@@ -8,7 +8,6 @@ import json from "@rollup/plugin-json";
 import postcss from "rollup-plugin-postcss";
 import pkg from "./package.json";
 
-// Array of extensions to be handled by babel
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
 const packageName = pkg.name;
 const banner = `
@@ -21,42 +20,30 @@ const banner = `
 `;
 
 export default {
-  input: "src/index.ts", // What files we build?
-
+  input: ["src/index.ts", "src/icons/core/index.ts"],
   output: [
     {
-      dir: "dist", // Directory where rollup.js will put the built files
-      format: "esm", // Built files will follow ES Module format
-      // preserveModules: true, // This one is important for treeshaking features of our library
-      preserveModulesRoot: "src",
-      sourcemap: "inline", // We want a source map to trace the original code
+      dir: "dist",
+      format: "esm",
+      sourcemap: true,
       banner,
       globals: { react: "React", "react-dom": "ReactDOM" },
     },
   ],
-
-  // Specify here external modules which you don't want to include in your bundle (for instance: 'lodash', 'moment' etc.)
-  // https://rollupjs.org/guide/en/#peer-dependencies
   external: Object.keys(pkg.devDependencies),
-
   plugins: [
-    // Allows node_modules resolution
-    resolve({ extensions, browser: true }),
-
-    // Compile TypeScript/JavaScript files
+    resolve({ extensions, browser: true }), // Allows node_modules resolution
     babel({
-      extensions, // Compile our TypeScript files
+      extensions,
       babelHelpers: "bundled",
       exclude: ["node_modules/**", "**.test.**"],
       configFile: path.resolve(__dirname, "babel.config.json"),
     }),
-
     // Allow bundling cjs modules. Rollup doesn't understand cjs
     commonjs({
       include: "**/node_modules/**",
       extensions,
     }),
-
     postcss(),
     svgr(),
     json(),

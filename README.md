@@ -14,7 +14,9 @@ $ npm i @epignosis_llc/gnosis
 $ yarn add @epignosis_llc/gnosis
 ```
 
-Please note that react >= 16.0.0 and react-dom >= 16.0.0 are peer dependencies. Also that emotion 11 is being used and that will not work in older emotion projects.
+The recomended font family is the `"Mulish", Arial, sans-serif` so please don't forget to include it (of course you can change the default font family by customizing the theme - more information below).
+
+Please note that `react >= 16.0.0` and `react-dom >= 16.0.0` are peer dependencies. Also that emotion 11 is being used and that will not work in older emotion projects.
 
 ## 🔨 Usage
 

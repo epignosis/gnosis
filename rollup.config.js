@@ -19,39 +19,69 @@ const banner = `
    */
 `;
 
-export default {
-  input: ["src/index.ts", "src/icons/core/index.ts"],
-  output: [
-    {
-      dir: "dist",
-      format: "esm",
-      sourcemap: true,
-      banner,
-      globals: { react: "React", "react-dom": "ReactDOM" },
-    },
-  ],
-  external: Object.keys(pkg.devDependencies),
-  plugins: [
-    resolve({ extensions, browser: true }), // Allows node_modules resolution
-    babel({
-      extensions,
-      babelHelpers: "bundled",
-      exclude: ["node_modules/**", "**.test.**"],
-      configFile: path.resolve(__dirname, "babel.config.json"),
-    }),
-    // Allow bundling cjs modules. Rollup doesn't understand cjs
-    commonjs({
-      include: "**/node_modules/**",
-      extensions,
-    }),
-    postcss(),
-    svgr(),
-    json(),
-    alias({
-      entries: [
-        { find: "@theme", replacement: path.resolve(__dirname, "./src/theme") },
-        { find: "@icons", replacement: path.resolve(__dirname, "./src/icons") },
-      ],
-    }),
-  ],
-};
+const plugins = [
+  resolve({ extensions, browser: true }), // Allows node_modules resolution
+  babel({
+    extensions,
+    babelHelpers: "bundled",
+    exclude: ["node_modules/**", "**.test.**"],
+    configFile: path.resolve(__dirname, "babel.config.json"),
+  }),
+  // Allow bundling cjs modules. Rollup doesn't understand cjs
+  commonjs({
+    include: "**/node_modules/**",
+    extensions,
+  }),
+  postcss(),
+  svgr(),
+  json(),
+  alias({
+    entries: [
+      { find: "@theme", replacement: path.resolve(__dirname, "./src/theme") },
+      { find: "@icons", replacement: path.resolve(__dirname, "./src/icons") },
+    ],
+  }),
+];
+
+export default [
+  {
+    input: "src/index.ts",
+    output: [
+      {
+        dir: "dist/esm",
+        format: "es",
+        preserveModules: true,
+        sourcemap: true,
+        banner,
+        globals: { react: "React", "react-dom": "ReactDOM" },
+      },
+      {
+        dir: "dist/cjs",
+        format: "cjs",
+        sourcemap: true,
+        banner,
+        globals: { react: "React", "react-dom": "ReactDOM" },
+      },
+    ],
+    external: Object.keys(pkg.devDependencies),
+    plugins,
+  },
+  {
+    input: "src/icons/core/index.ts",
+    output: [
+      {
+        dir: "dist/esm/icons",
+        format: "es",
+        preserveModules: true,
+        banner,
+      },
+      {
+        dir: "dist/cjs/icons",
+        format: "es",
+        banner,
+      },
+    ],
+    external: Object.keys(pkg.devDependencies),
+    plugins,
+  },
+];

@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/epignosis/gnosis/compare/v1.0.1...v1.0.2) (2021-10-27)
+
+
+### Bug Fixes
+
+* update dependencies ([5a8c18c](https://github.com/epignosis/gnosis/commit/5a8c18c3a6a067a25ce5c2b53b693f57d31f6ac2))
+
 ## [1.0.1](https://github.com/epignosis/gnosis/compare/v1.0.0...v1.0.1) (2021-10-19)
 
 # 1.0.0 (2021-10-18)

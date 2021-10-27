@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { gridContainer, gridItem } from "./styles";
-import { HTMLWrapperElement } from "types/common";
 
 type NumberOrNull = number | null;
+type HTMLWrapperElement = "div" | "article" | "section";
 
 export type ResponsiveValues =
   | [NumberOrNull, NumberOrNull, NumberOrNull?, NumberOrNull?, NumberOrNull?, NumberOrNull?]

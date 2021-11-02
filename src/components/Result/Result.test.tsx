@@ -2,7 +2,7 @@ import React from "react";
 import faker from "faker";
 import Result from "./Result";
 import { screen, render } from "@test-utils/render";
-import { InfoSVG } from "@icons/core";
+import { InfoSVG } from "@icons/index";
 
 describe("<Result/>", () => {
   it("renders correctly", () => {

@@ -3,7 +3,7 @@ import { Story } from "@storybook/react";
 import { toast } from "react-toastify";
 import { Heading, Button } from "../../";
 import Toaster from "./Toaster";
-import { InfoSVG, DangerSVG, SuccessSVG, WarningSVG } from "@icons/core";
+import { InfoSVG, DangerSVG, SuccessSVG, WarningSVG } from "@icons/index";
 
 export default {
   component: Toaster,

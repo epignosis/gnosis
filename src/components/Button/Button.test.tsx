@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import faker from "faker";
 import Button from "./Button";
 import { render, screen } from "@test-utils/render";
-import { CalendarSVG } from "@icons/core";
+import { CalendarSVG } from "@icons/index";
 
 describe("<Button />", () => {
   it("renders correctly", () => {

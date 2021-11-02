@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import Button from "../Button/Button";
 import Select from "../FormElements/Select/Select";
 import { container } from "./styles";
-import { ArrowLeftSVG, ArrowRightSVG } from "@icons/core";
+import { ArrowLeftSVG, ArrowRightSVG } from "@icons/index";
 
 export type PaginationProps = {
   current: number;

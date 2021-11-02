@@ -67,17 +67,11 @@ export default [
     plugins,
   },
   {
-    input: "src/icons/core/index.ts",
+    input: "src/icons/index.ts",
     output: [
       {
-        dir: "dist/esm/icons",
-        format: "es",
-        preserveModules: true,
-        banner,
-      },
-      {
-        dir: "dist/cjs/icons",
-        format: "es",
+        dir: "dist/icons",
+        format: "cjs",
         banner,
       },
     ],

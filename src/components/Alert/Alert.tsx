@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { SerializedStyles } from "@emotion/react";
 import { container } from "./styles";
 import { IconType } from "types/common";
-import { WarningSVG, DangerSVG, InfoSVG, SuccessSVG, CloseCircledSVG } from "@icons/core";
+import { WarningSVG, DangerSVG, InfoSVG, SuccessSVG, CloseCircledSVG } from "@icons/index";
 
 export type AlertType = "info" | "danger" | "success" | "warning";
 

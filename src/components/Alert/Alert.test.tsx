@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import { Heading } from "../../";
 import Alert from "./Alert";
 import { render, screen } from "@test-utils/render";
-import { ScrollRegularSVG } from "@icons/core";
+import { ScrollRegularSVG } from "@icons/index";
 
 describe("<Alert>", () => {
   it("renders correctly", () => {

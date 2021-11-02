@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { SerializedStyles } from "@emotion/react";
 import Heading from "../../Heading/Heading";
 import { drawerHeader } from "./styles";
-import { CloseSVG } from "@icons/core";
+import { CloseSVG } from "@icons/index";
 
 export type HeaderProps = {
   onClose?: () => void;

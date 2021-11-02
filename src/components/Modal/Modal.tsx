@@ -3,7 +3,7 @@ import { ClassNames } from "@emotion/react";
 import ReactModal, { Props } from "react-modal";
 import Heading from "../Heading/Heading";
 import { modalContent, modalFooter, modalHeader, portalStyles } from "./styles";
-import { CloseCircledSVG } from "@icons/core";
+import { CloseCircledSVG } from "@icons/index";
 
 export type HeaderProps = {
   onClose?: () => void;

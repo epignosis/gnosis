@@ -11,7 +11,7 @@ import {
   HomeSVG,
   MyCoursesSVG,
   OpenedMessageSVG,
-} from "@icons/core";
+} from "@icons/index";
 
 export default {
   component: SidebarComponent,

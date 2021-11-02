@@ -2,7 +2,7 @@ import React, { FC, ReactNode } from "react";
 import { m, AnimatePresence, Variants, Transition } from "framer-motion";
 import { useClickAway } from "@umijs/hooks";
 import { drawerContainer } from "./styles";
-import { CloseSVG } from "@icons/core";
+import { CloseSVG } from "@icons/index";
 
 export type DrawerProps = FC<{
   isOpen: boolean;

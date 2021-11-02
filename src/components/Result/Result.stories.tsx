@@ -2,7 +2,7 @@ import React from "react";
 import { Story } from "@storybook/react";
 import { Button } from "../../";
 import Result, { ResultProps } from "./Result";
-import { InfoSVG } from "@icons/core";
+import { InfoSVG } from "@icons/index";
 
 export default {
   title: "Components/Result",

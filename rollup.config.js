@@ -36,10 +36,7 @@ const plugins = [
   svgr(),
   json(),
   alias({
-    entries: [
-      { find: "@theme", replacement: path.resolve(__dirname, "./src/theme") },
-      { find: "@icons", replacement: path.resolve(__dirname, "./src/icons") },
-    ],
+    entries: [{ find: "@theme", replacement: path.resolve(__dirname, "./src/theme") }],
   }),
 ];
 

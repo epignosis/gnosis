@@ -2,9 +2,9 @@ import React from "react";
 import faker from "faker";
 import userEvent from "@testing-library/user-event";
 import { Heading } from "../../";
+import { ScrollRegularSVG } from "../../icons/";
 import Alert from "./Alert";
 import { render, screen } from "@test-utils/render";
-import { ScrollRegularSVG } from "@icons/index";
 
 describe("<Alert>", () => {
   it("renders correctly", () => {
@@ -39,6 +39,8 @@ describe("<Alert>", () => {
       </Alert>,
     );
     const icon = screen.getByTestId("icon");
+
+    screen.debug();
 
     expect(icon).toBeInTheDocument();
   });

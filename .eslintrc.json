@@ -44,5 +44,11 @@
         "newlines-between": "never"
       }
     ]
+    // "import/no-unresolved": [
+    //   "error",
+    //   {
+    //     "ignore": ["@icons"]
+    //   }
+    // ]
   }
 }

@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 import { Story } from "@storybook/react";
 import { Avatar } from "../../";
-import SidebarComponent, { SidebarProps } from "./Sidebar";
 import {
   CalendarSVG,
   CatalogSVG,
@@ -11,7 +10,8 @@ import {
   HomeSVG,
   MyCoursesSVG,
   OpenedMessageSVG,
-} from "@icons/index";
+} from "../../icons/";
+import SidebarComponent, { SidebarProps } from "./Sidebar";
 
 export default {
   component: SidebarComponent,

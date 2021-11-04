@@ -1,8 +1,8 @@
 import React from "react";
 import { Story } from "@storybook/react";
 import { Button } from "../../";
+import { InfoSVG } from "../../icons/";
 import Result, { ResultProps } from "./Result";
-import { InfoSVG } from "@icons/index";
 
 export default {
   title: "Components/Result",

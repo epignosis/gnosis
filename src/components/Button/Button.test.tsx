@@ -1,9 +1,9 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
 import faker from "faker";
+import { CalendarSVG } from "../../icons/";
 import Button from "./Button";
 import { render, screen } from "@test-utils/render";
-import { CalendarSVG } from "@icons/index";
 
 describe("<Button />", () => {
   it("renders correctly", () => {

@@ -1,8 +1,8 @@
 import React from "react";
 import faker from "faker";
+import { CertificateSVG } from "../../icons/";
 import Avatar from "./Avatar";
 import { render, screen } from "@test-utils/render";
-import { CertificateSVG } from "@icons/index";
 
 describe("<Avatar />", () => {
   it("renders with image", () => {

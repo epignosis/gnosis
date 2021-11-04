@@ -2,8 +2,8 @@ import React, { forwardRef, ForwardRefRenderFunction } from "react";
 import { SerializedStyles } from "@emotion/react";
 import classNames from "classnames";
 import Label from "../Label/Label";
+import { CaretDownSVG } from "../../../icons/";
 import { selectContainer } from "./styles";
-import { CaretDownSVG } from "@icons/index";
 import { ExtendableProps } from "types/common";
 
 export type SelectProps = ExtendableProps<

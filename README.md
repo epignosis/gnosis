@@ -94,6 +94,17 @@ const myCustomTheme = {
 <ThemeProvider theme={myCustomTheme}></ThemeProvider>;
 ```
 
+## ✨ Icons
+
+You can use epignosis custom Svg icons like this:
+
+```js
+// commonjs export
+import { HomeSVG, CalendarSVG, HelpSVG } from "@epignosis_llc/gnosis/icons/";
+```
+
+You can view all the available icon names at `gnosis/src/icons/core/index.ts`.
+
 ## Upcoming components
 
 - [ ] MultiSelect

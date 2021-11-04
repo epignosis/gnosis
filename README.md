@@ -103,7 +103,7 @@ You can use epignosis custom Svg icons like this:
 import { HomeSVG, CalendarSVG, HelpSVG } from "@epignosis_llc/gnosis/icons/";
 ```
 
-You can view all the available icon names at `gnosis/src/icons/core/index.ts`.
+You can view all the available icon names at `gnosis/src/icons/index.ts` or by checking the appropriate storybook page.
 
 ## Upcoming components
 

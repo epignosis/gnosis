@@ -40,8 +40,6 @@ describe("<Alert>", () => {
     );
     const icon = screen.getByTestId("icon");
 
-    screen.debug();
-
     expect(icon).toBeInTheDocument();
   });
 

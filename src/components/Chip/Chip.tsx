@@ -1,7 +1,7 @@
 import React, { FC, MouseEvent } from "react";
 import { SerializedStyles } from "@emotion/react";
+import { CloseSVG } from "../../icons/";
 import { chip } from "./styles";
-import { CloseSVG } from "@icons/core";
 
 export type Size = "md" | "lg";
 

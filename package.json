@@ -1,13 +1,14 @@
 {
   "name": "@epignosis_llc/gnosis",
   "version": "1.0.2",
-  "description": "> [Epignosis](https://www.epignosishq.com/) official react design system.",
+  "description": "Epignosis official react design system.",
   "homepage": "https://github.com/epignosis/gnosis",
   "main": "dist/cjs/index.js",
   "module": "dist/esm",
   "types": "dist/types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "icons"
   ],
   "scripts": {
     "start": "start-storybook -p 6006",

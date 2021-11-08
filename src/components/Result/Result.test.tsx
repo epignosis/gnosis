@@ -1,8 +1,8 @@
 import React from "react";
 import faker from "faker";
+import { InfoSVG } from "../../icons/";
 import Result from "./Result";
 import { screen, render } from "@test-utils/render";
-import { InfoSVG } from "@icons/core";
 
 describe("<Result/>", () => {
   it("renders correctly", () => {

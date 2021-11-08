@@ -36,10 +36,7 @@ const plugins = [
   svgr(),
   json(),
   alias({
-    entries: [
-      { find: "@theme", replacement: path.resolve(__dirname, "./src/theme") },
-      { find: "@icons", replacement: path.resolve(__dirname, "./src/icons") },
-    ],
+    entries: [{ find: "@theme", replacement: path.resolve(__dirname, "./src/theme") }],
   }),
 ];
 
@@ -67,17 +64,11 @@ export default [
     plugins,
   },
   {
-    input: "src/icons/core/index.ts",
+    input: "src/icons/index.ts",
     output: [
       {
-        dir: "dist/esm/icons",
-        format: "es",
-        preserveModules: true,
-        banner,
-      },
-      {
-        dir: "dist/cjs/icons",
-        format: "es",
+        dir: "icons",
+        format: "cjs",
         banner,
       },
     ],

@@ -19,7 +19,6 @@ module.exports = {
       ...config.resolve.alias,
       "@theme": path.resolve(__dirname, "../src/theme"),
       "@test-utils": path.resolve(__dirname, "../src/test-utils"),
-      "@icons": path.resolve(__dirname, "../src/icons"),
       type: path.resolve(__dirname, "../src/type"),
     };
 

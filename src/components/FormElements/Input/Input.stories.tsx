@@ -1,7 +1,7 @@
 import React from "react";
 import { Story } from "@storybook/react";
+import { CalendarSVG } from "../../../icons/";
 import InputComponent, { InputProps } from "./Input";
-import { CalendarSVG } from "@icons/core";
 
 export default {
   title: "components/Form Elements/Input",

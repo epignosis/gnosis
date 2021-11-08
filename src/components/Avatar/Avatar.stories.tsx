@@ -1,7 +1,7 @@
 import React from "react";
 import { Story } from "@storybook/react";
+import { CertificateSVG } from "../../icons/";
 import Avatar, { AvatarBaseProps, AvatarProps } from "./Avatar";
-import { CertificateSVG } from "@icons/core";
 
 export default {
   component: Avatar,

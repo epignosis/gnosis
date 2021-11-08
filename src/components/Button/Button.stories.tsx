@@ -1,7 +1,7 @@
 import React from "react";
 import { Story } from "@storybook/react";
+import { CalendarSVG } from "../../icons/";
 import Button, { Props } from "./Button";
-import { CalendarSVG } from "@icons/core";
 
 export default {
   title: "Components/Button",

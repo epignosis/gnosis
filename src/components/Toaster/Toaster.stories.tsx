@@ -2,8 +2,8 @@ import React from "react";
 import { Story } from "@storybook/react";
 import { toast } from "react-toastify";
 import { Heading, Button } from "../../";
+import { InfoSVG, DangerSVG, SuccessSVG, WarningSVG } from "../../icons/";
 import Toaster from "./Toaster";
-import { InfoSVG, DangerSVG, SuccessSVG, WarningSVG } from "@icons/core";
 
 export default {
   component: Toaster,

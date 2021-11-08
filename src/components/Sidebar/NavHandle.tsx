@@ -1,7 +1,7 @@
 import React, { FC } from "react";
+import { HamburgerSVG } from "../../icons/";
 import NavItem from "./NavItem";
 import { navHandleContainer } from "./styles";
-import { HamburgerSVG } from "@icons/core";
 
 export type NavHandleProps = {
   isExpanded: boolean;

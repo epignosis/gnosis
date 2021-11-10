@@ -19,6 +19,7 @@ export { default as Breadcrumb } from "./components/Breadcrumb/Breadcrumb";
 export { default as Drawer } from "./components/Drawer/Drawer";
 export { default as Sidebar } from "./components/Sidebar/Sidebar";
 export { default as Card } from "./components/Card/Card";
+export { default as Grid } from "./components/Grid/Grid";
 
 //  Typography
 export { default as Heading } from "./components/Heading/Heading";

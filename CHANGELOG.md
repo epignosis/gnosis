@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/epignosis/gnosis/compare/v1.1.0...v1.2.0) (2021-11-10)
+
+
+### Features
+
+* **grid:** export Grid component ([a725ba5](https://github.com/epignosis/gnosis/commit/a725ba5f7db66df162d22b03e8c9ba30c3a2fcbf))
+
 # [1.1.0](https://github.com/epignosis/gnosis/compare/v1.0.2...v1.1.0) (2021-11-08)
 
 

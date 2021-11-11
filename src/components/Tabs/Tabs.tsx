@@ -1,4 +1,4 @@
-import React, { FC, useState, ReactElement, Children } from "react";
+import React, { FC, useState, ReactElement, Children, CSSProperties } from "react";
 import { SerializedStyles } from "@emotion/react";
 import Select from "../FormElements/Select/Select";
 import TabsNavItem from "./TabsNavItem";
@@ -8,6 +8,8 @@ import { container, tabsHeader } from "./styles";
 type TabsProps = {
   stickyHeader?: boolean;
   responsiveHeader?: boolean;
+  style?: CSSProperties; //fix: apply extra style
+  className?: string; //fix: apply extra style
 };
 
 type TabPaneProps = {
@@ -25,6 +27,7 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   children,
   stickyHeader = false,
   responsiveHeader = false,
+  ...rest //fix: use of '...rest' to apply extra style
 }) => {
   const [activeTab, setActiveTab] = useState(0);
   const tabTitles = Children.map(children, (child, i) => ({
@@ -45,7 +48,7 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   const displayResponsiveHeader = tabTitles?.length && responsiveHeader;
 
   return (
-    <section css={container}>
+    <section css={container} {...rest}>
       <nav css={(theme): SerializedStyles => tabsHeader(theme, { stickyHeader })} role="tablist">
         {!displayResponsiveHeader &&
           tabTitles?.map(({ index, title }) => (

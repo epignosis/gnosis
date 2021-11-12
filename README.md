@@ -99,8 +99,11 @@ const myCustomTheme = {
 You can use epignosis custom Svg icons like this:
 
 ```js
-// commonjs export
-import { HomeSVG, CalendarSVG, HelpSVG } from "@epignosis_llc/gnosis/icons/";
+import { HomeSVG, CalendarSVG, HelpSVG } from "@epignosis_llc/gnosis/icons";
+
+<HomeSVG height={32} />
+<CalendarSVG height={32} />
+<HelpSVG height={32} />
 ```
 
 You can view all the available icon names at `gnosis/src/icons/index.ts` or by checking the appropriate storybook page.

@@ -56,13 +56,14 @@ exports[`<Checkbox /> matches snapshot with \`md\` size 1`] = `
     class="css-1j4ss74-checkboxContainer-checkboxContainer"
   >
     <input
-      id="testId"
+      class="checkbox"
+      id="my-id"
       name="testName"
       type="checkbox"
       value="testValue"
     />
     <label
-      for="testId"
+      for="my-id"
     >
       <span
         aria-hidden="true"

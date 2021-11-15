@@ -3,7 +3,8 @@
 exports[`<AspectRatio /> matches snapshot 1`] = `
 <div>
   <div
-    class="css-14dee1b-aspectRatioContainer-aspectRatioContainer"
+    class="my-class css-14dee1b-aspectRatioContainer-aspectRatioContainer"
+    id="my-id"
   >
     <div
       class="aspect-ratio-wrapper"

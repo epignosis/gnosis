@@ -40,7 +40,7 @@ describe("<Breadcrumb> and <Breadcrumb.Item>", () => {
 
   it("matches snapshot", () => {
     const { container } = render(
-      <Breadcrumb separator="/">
+      <Breadcrumb id="main-nav" className="navigation" separator="/">
         <Breadcrumb.Item>
           <a href="#/home">Home</a>
         </Breadcrumb.Item>

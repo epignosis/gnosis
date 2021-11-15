@@ -18,6 +18,7 @@ exports[`<Button /> matches snapshot with all props 1`] = `
 <div>
   <button
     class="my-class rounded solid css-13sw2q6-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+    id="my-button"
   >
     <span
       class="btn-text"

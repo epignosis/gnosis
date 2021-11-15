@@ -6,7 +6,7 @@ import { IconType } from "types/common";
 
 export type AlertType = "info" | "danger" | "success" | "warning";
 
-export type AlertProps = {
+export type AlertProps = React.HTMLAttributes<HTMLDivElement> & {
   type: AlertType;
   onClose?: () => void;
   icon?: IconType;
@@ -19,9 +19,9 @@ const ICONS = {
   warning: <WarningSVG height={56} />,
 };
 
-const Alert: FC<AlertProps> = ({ type, children, onClose, icon: Icon }) => {
+const Alert: FC<AlertProps> = ({ type, children, onClose, icon: Icon, ...rest }) => {
   return (
-    <div css={(theme): SerializedStyles => container(theme, { type })}>
+    <div css={(theme): SerializedStyles => container(theme, { type })} {...rest}>
       {Icon ? (
         <Icon height={56} className="icon" data-testid="icon" />
       ) : (
@@ -29,7 +29,6 @@ const Alert: FC<AlertProps> = ({ type, children, onClose, icon: Icon }) => {
           {ICONS[type]}
         </div>
       )}
-
       <article>{children}</article>
       {Boolean(onClose) && (
         <button aria-label="Close alert" onClick={onClose} className="close-btn">

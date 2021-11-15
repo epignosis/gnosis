@@ -41,7 +41,15 @@ describe("<Textarea />", () => {
   });
 
   it("matches snapshot", () => {
-    const { container } = render(<Textarea id="test-textarea" label="Test textarea" name="test" />);
+    const { container } = render(
+      <Textarea
+        id="my-textarea-id"
+        className="textarea-class"
+        label="Test textarea"
+        name="test"
+        containerAttrs={{ id: "textarea-container-id", className: "textarea-container-class" }}
+      />,
+    );
 
     expect(container).toMatchSnapshot();
   });

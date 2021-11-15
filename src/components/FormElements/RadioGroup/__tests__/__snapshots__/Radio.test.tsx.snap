@@ -3,15 +3,17 @@
 exports[`<Radio /> matches snapshot 1`] = `
 <div>
   <div
-    class="css-12utew3-radioButtonContainer-radioButtonContainer"
+    class="container-class css-12utew3-radioButtonContainer-radioButtonContainer"
+    id="container-id"
   >
     <input
-      id="testId"
+      class="radio-class"
+      id="radio-id"
       type="radio"
       value="testValue"
     />
     <label
-      for="testId"
+      for="radio-id"
     >
       Test label
     </label>

@@ -43,8 +43,9 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
 
 exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
 <div
-  class="css-1jowdg0-drawerContainer-drawerContainer"
+  class="drawer css-1jowdg0-drawerContainer-drawerContainer"
   data-testid="drawer"
+  id="main-drawer"
 >
   <div
     class="css-tigpv4-maskContainer"

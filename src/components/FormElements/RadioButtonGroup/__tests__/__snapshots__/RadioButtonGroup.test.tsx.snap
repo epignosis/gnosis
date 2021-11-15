@@ -3,7 +3,8 @@
 exports[`<RadioButtonGroup /> matches snapshot 1`] = `
 <div>
   <div
-    id="testRadioButtonGroup"
+    class="radio-group"
+    id="radio-group-1"
   >
     <button
       aria-selected="false"

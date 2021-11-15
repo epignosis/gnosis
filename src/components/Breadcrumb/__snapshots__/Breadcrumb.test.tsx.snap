@@ -4,7 +4,8 @@ exports[`<Breadcrumb> and <Breadcrumb.Item> matches snapshot 1`] = `
 <div>
   <nav
     aria-label="breadcrumbs"
-    class="css-n4ez4j-container-container"
+    class="navigation css-n4ez4j-container-container"
+    id="main-nav"
   >
     <ol>
       <li

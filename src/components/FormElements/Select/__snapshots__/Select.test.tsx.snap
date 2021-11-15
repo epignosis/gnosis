@@ -3,11 +3,13 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="valid css-1y8897s-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+    class="valid container-class css-1y8897s-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+    id="container-id"
   >
     <label
+      aria-labelledby="select-id"
       class="css-xs6o3g-label-label"
-      for="test-select"
+      for="select-id"
     >
       Test select input
     </label>
@@ -15,7 +17,8 @@ exports[`<Select /> matches snapshot 1`] = `
       class="select-input-wrapper"
     >
       <select
-        id="test-select"
+        class="normal-select"
+        id="select-id"
       >
         <option
           value="rs"

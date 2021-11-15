@@ -3,15 +3,13 @@ import { InputSize } from "../Input/Input";
 import Checkbox, { CheckboxOption } from "./Checkbox";
 import { checkboxGroupContainer } from "./styles";
 
-export type CheckboxGroupProps = {
+export type CheckboxGroupProps = React.HTMLAttributes<HTMLFieldSetElement> & {
   groupname: string;
   options: CheckboxOption[];
   onChange?: (selectedValues: string[]) => void;
   initialValues?: string[];
   inline?: boolean;
   size?: InputSize;
-  id: string;
-  className?: string;
 };
 
 const CheckboxGroup: FC<CheckboxGroupProps> = ({
@@ -21,8 +19,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
   initialValues = [],
   inline = false,
   size = "md",
-  id,
-  className,
+  ...rest
 }) => {
   const [selectedValues, setSelectedValues] = useState(initialValues);
   const isPartiallySelected = selectedValues.length > 0 && selectedValues.length < options.length;
@@ -48,7 +45,7 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
   }, [selectedValues, onChange]);
 
   return (
-    <fieldset css={checkboxGroupContainer(inline)} id={id} className={className}>
+    <fieldset css={checkboxGroupContainer(inline)} {...rest}>
       <legend>
         {isPartiallySelected && <span className="dash" />}
         <Checkbox

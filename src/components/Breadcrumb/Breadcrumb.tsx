@@ -11,7 +11,7 @@ const Item: FC<BreadcrumbItemProps> = ({ children, current = false }) => {
   return <li className={current ? "breadcrumb-item current" : "breadcrumb-item"}>{children}</li>;
 };
 
-export type BreadcrumbProps = {
+export type BreadcrumbProps = React.HTMLAttributes<HTMLElement> & {
   children: ReactNode;
   breadcrumbEl?: Element | null;
   separator?: string;
@@ -25,11 +25,13 @@ const Breadcrumb: FC<BreadcrumbProps> & BreadcrumbCompoundProps = ({
   children,
   breadcrumbEl = null,
   separator = "/",
+  ...rest
 }) => {
   const breadcrumb = (
     <nav
       css={(theme): SerializedStyles => container(theme, { separator })}
       aria-label="breadcrumbs"
+      {...rest}
     >
       <ol>{children}</ol>
     </nav>

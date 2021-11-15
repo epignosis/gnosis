@@ -3,8 +3,9 @@
 exports[`<Card/> matches snapshot 1`] = `
 <div>
   <article
-    class="css-u1k06h-cardContainer-cardContainer"
+    class="main-card css-u1k06h-cardContainer-cardContainer"
     data-testid="card"
+    id="my-card"
   >
     <div
       class="css-14dee1b-aspectRatioContainer-aspectRatioContainer"

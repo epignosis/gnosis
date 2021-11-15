@@ -109,7 +109,7 @@ describe("<Card/>", () => {
 
   it("matches snapshot", () => {
     const { container } = render(
-      <Card>
+      <Card id="my-card" className="main-card">
         <Card.Header>
           <Card.Thumbnail
             src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"

@@ -3,8 +3,9 @@
 exports[`<Loader> matches snapshot 1`] = `
 <div>
   <div
-    class="loading-container css-1hn9l2b-container-container"
+    class="loading-container loader css-1hn9l2b-container-container"
     data-testid="loader"
+    id="main-loader"
   >
     <span
       class="css-1xdhyk6"

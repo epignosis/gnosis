@@ -15,7 +15,9 @@ describe("<Tag />", () => {
 
   it("matches snapshot", () => {
     const { container } = render(
-      <Tag style={{ backgroundColor: "purple", color: "white" }}>This is a tag</Tag>,
+      <Tag id="tag-1" className="tag" style={{ backgroundColor: "purple", color: "white" }}>
+        This is a tag
+      </Tag>,
     );
 
     expect(container).toMatchSnapshot();

@@ -3,7 +3,8 @@
 exports[`<Tag /> matches snapshot 1`] = `
 <div>
   <span
-    class="css-3yrqyb-tag-tag"
+    class="tag css-3yrqyb-tag-tag"
+    id="tag-1"
     style="background-color: purple; color: white;"
   >
     This is a tag

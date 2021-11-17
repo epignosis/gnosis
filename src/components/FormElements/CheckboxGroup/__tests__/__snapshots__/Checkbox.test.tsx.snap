@@ -53,7 +53,8 @@ exports[`<Checkbox /> matches snapshot with \`lg\` size 1`] = `
 exports[`<Checkbox /> matches snapshot with \`md\` size 1`] = `
 <div>
   <div
-    class="css-1j4ss74-checkboxContainer-checkboxContainer"
+    class="container-class css-1j4ss74-checkboxContainer-checkboxContainer"
+    id="my-container-id"
   >
     <input
       class="checkbox"

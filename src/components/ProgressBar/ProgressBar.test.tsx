@@ -14,7 +14,9 @@ describe("<ProgressBar />", () => {
   });
 
   it("matches snapshot", () => {
-    const { container } = render(<ProgressBar percent={75} />);
+    const { container } = render(
+      <ProgressBar id="my-progress-1" className="progress" percent={75} />,
+    );
 
     expect(container).toMatchSnapshot();
   });

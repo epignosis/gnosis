@@ -66,6 +66,10 @@ describe("<Checkbox />", () => {
         label="Test label"
         name="testName"
         value="testValue"
+        containerAttrs={{
+          id: "my-container-id",
+          className: "container-class",
+        }}
       />,
     );
 

@@ -5,9 +5,9 @@ import { videoPlayerContainer } from "./styles";
 
 export type VideoPlayerProps = PlayerProps;
 
-const VideoPlayer: FC<VideoPlayerProps> = ({ src, controls = true, ...rest }) => {
+const VideoPlayer: FC<VideoPlayerProps> = ({ src, controls = true, containerAttrs, ...rest }) => {
   return (
-    <div css={videoPlayerContainer}>
+    <div css={videoPlayerContainer} {...containerAttrs}>
       <ReactPlayer
         className="react-player"
         url={src}

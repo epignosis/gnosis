@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, MouseEvent } from "react";
+import React, { FC, ReactNode } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import { InputSize } from "../Input/Input";
@@ -27,7 +27,7 @@ const RadioButton: FC<UiRadioButtonProps> = ({
   size,
   ...rest
 }) => {
-  const handleClick = (e: MouseEvent): void => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault();
     onClick(value);
   };

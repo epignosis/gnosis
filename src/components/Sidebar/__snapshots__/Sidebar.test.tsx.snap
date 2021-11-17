@@ -3,15 +3,15 @@
 exports[`<Sidebar/> matches snapshot 1`] = `
 <div>
   <nav
-    class="css-1mig03n-mainNavContainer-mainNavContainer"
-    id="sidebar"
+    class="my-class css-1mig03n-mainNavContainer-mainNavContainer"
+    id="my-id"
     style="min-width: 15rem;"
   >
     <div
       class="nav-items-wrapper"
     >
       <button
-        class="css-hnt32k-navHandleContainer-navHandleContainer"
+        class="nav-handle css-hnt32k-navHandleContainer-navHandleContainer"
       >
         <div
           class="nav-item css-5bqah4-navItemContainer-navItemContainer"

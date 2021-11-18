@@ -3,28 +3,26 @@ import RadioButton, { RadioButtonProps } from "./RadioButton";
 
 export type RadioGroupOption = Pick<RadioButtonProps, "label" | "value">;
 
-export type RadioGroupProps = {
-  id: string;
+export type RadioGroupProps = Omit<React.HTMLAttributes<HTMLDivElement>, "onChange"> & {
   options: RadioGroupOption[];
   value: string;
   size?: "md" | "lg";
-  className?: string;
-  onChange: (selectedValue: string) => void;
+  onChange: (value: string) => void;
 };
 
 const RadioButtonGroup: FC<RadioGroupProps> = (props) => {
-  const { options, value = "", size = "md", id, className, onChange } = props;
+  const { options, value = "", size = "md", onChange, ...rest } = props;
 
   return (
-    <div id={id} className={className}>
+    <div {...rest}>
       {options.map((option, index) => (
         <RadioButton
           key={option.value}
           index={index}
           size={size}
           selectedValue={value}
-          {...option}
           onClick={onChange}
+          {...option}
         />
       ))}
     </div>

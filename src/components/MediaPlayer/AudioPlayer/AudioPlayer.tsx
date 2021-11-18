@@ -4,16 +4,18 @@ import { PlayerProps } from "../MediaPlayer";
 
 export type AudioPlayerProps = PlayerProps;
 
-const AudioPlayer: FC<AudioPlayerProps> = ({ src, controls = true, ...rest }) => {
+const AudioPlayer: FC<AudioPlayerProps> = ({ src, controls = true, containerAttrs, ...rest }) => {
   return (
-    <ReactPlayer
-      url={src}
-      controls={controls}
-      className="react-player"
-      height="3.5rem"
-      width="100%"
-      {...rest}
-    />
+    <div {...containerAttrs}>
+      <ReactPlayer
+        url={src}
+        controls={controls}
+        className="react-player"
+        height="3.5rem"
+        width="100%"
+        {...rest}
+      />
+    </div>
   );
 };
 

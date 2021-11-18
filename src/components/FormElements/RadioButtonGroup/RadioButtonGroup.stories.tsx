@@ -40,6 +40,9 @@ export default {
 
 export const RadioButtonGroup: Story<RadioGroupProps> = (args) => {
   const [value, setValue] = useState("");
+  const updateValue = (val: string) => {
+    setValue(val);
+  };
 
-  return <RadioButtonGroupComponent {...args} value={value} onChange={setValue} />;
+  return <RadioButtonGroupComponent {...args} value={value} onChange={updateValue} />;
 };

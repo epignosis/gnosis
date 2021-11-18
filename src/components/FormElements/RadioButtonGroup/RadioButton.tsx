@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, MouseEvent } from "react";
+import React, { FC, ReactNode } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import { InputSize } from "../Input/Input";
@@ -10,11 +10,13 @@ export type RadioButtonProps = {
   value: string;
 };
 
-export type UiRadioButtonProps = RadioButtonProps & {
-  selectedValue: string;
-  onClick: (value: string) => void;
-  size: InputSize;
-};
+type UiRadioButtonProps = Omit<React.HTMLAttributes<HTMLButtonElement>, "onClick"> &
+  RadioButtonProps & {
+    selectedValue: string;
+    size: InputSize;
+    className?: string;
+    onClick: (value: string) => void;
+  };
 
 const RadioButton: FC<UiRadioButtonProps> = ({
   index,
@@ -23,22 +25,25 @@ const RadioButton: FC<UiRadioButtonProps> = ({
   selectedValue,
   onClick,
   size,
+  ...rest
 }) => {
-  const handleClick = (e: MouseEvent): void => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault();
     onClick(value);
   };
   const cssClasses = classNames({
     "is-selected": value === selectedValue,
   });
+  const propHTMLClass = rest?.className ? rest?.className : "";
 
   return (
     <button
       id={`radio-${index}`}
-      className={cssClasses}
+      className={`${cssClasses}${propHTMLClass}`}
       onClick={handleClick}
       css={(theme): SerializedStyles => radioButton(theme, { size })}
       aria-selected={value === selectedValue}
+      {...rest}
     >
       {label}
     </button>

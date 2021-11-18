@@ -57,7 +57,7 @@ describe("<Sidebar/>", () => {
 
   it("matches snapshot", () => {
     const mockFn = jest.fn();
-    const { container } = render(<Sidebar onToggle={mockFn} />);
+    const { container } = render(<Sidebar id="my-id" className="my-class" onToggle={mockFn} />);
 
     expect(container).toMatchSnapshot();
   });

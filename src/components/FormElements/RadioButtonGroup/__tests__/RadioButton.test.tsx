@@ -49,6 +49,8 @@ describe("<RadioButton />", () => {
   it("matches snapshot with `size = md`", () => {
     const { container } = render(
       <RadioButton
+        id="my-radio-id"
+        className="my-radio-class"
         label="Test label"
         index={0}
         size="md"

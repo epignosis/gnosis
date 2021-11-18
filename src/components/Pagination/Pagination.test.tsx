@@ -54,7 +54,14 @@ describe("<Pagination />", () => {
   });
 
   it("matches snapshot with on page", () => {
-    const { container } = render(<Pagination current={2} totalPages={4} onChange={jest.fn()} />);
+    const { container } = render(
+      <Pagination
+        containerAttrs={{ id: "my-id", className: "html-class" }}
+        current={2}
+        totalPages={4}
+        onChange={jest.fn()}
+      />,
+    );
 
     expect(container).toMatchSnapshot();
   });

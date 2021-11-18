@@ -14,19 +14,20 @@ export type SelectProps = ExtendableProps<
     label?: string;
     inline?: boolean;
     onChange?: (selectedValue: string) => void;
+    containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
   }
 >;
 
 const Select: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (props, forwardedRef) => {
   const {
-    id,
+    id = "",
     status = "valid",
     size = "md",
     label,
     inline = false,
     onChange,
-    className = "",
     children,
+    containerAttrs,
     ...rest
   } = props;
   const hasLabel = Boolean(label);
@@ -34,20 +35,25 @@ const Select: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (props,
     valid: status === "valid",
     error: status === "error",
     inline: hasLabel && inline,
-    [className]: className,
+    [containerAttrs?.className ?? ""]: Boolean(containerAttrs?.className),
   });
 
   return (
     <div
       css={(theme): SerializedStyles => selectContainer(theme, { size })}
+      {...containerAttrs}
       className={containerClassNames}
     >
-      {hasLabel && <Label htmlFor={id}>{label}</Label>}
+      {hasLabel && (
+        <Label htmlFor={id} aria-labelledby={id}>
+          {label}
+        </Label>
+      )}
       <div className="select-input-wrapper">
         <select
           ref={forwardedRef}
-          id={id}
           onChange={onChange && ((e): void => onChange(e.target.value))}
+          id={id}
           {...rest}
         >
           {children}

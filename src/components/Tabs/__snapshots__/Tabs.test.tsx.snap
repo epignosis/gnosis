@@ -3,7 +3,8 @@
 exports[`<Tabs/> matches snapshot 1`] = `
 <div>
   <section
-    class="css-a5ycro-container"
+    class="tabs css-a5ycro-container"
+    id="tab-1"
   >
     <nav
       class="css-1nnrh13-tabsHeader-tabsHeader"

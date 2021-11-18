@@ -25,12 +25,22 @@ describe("<Grid />", () => {
 
   it("matches snapshot", () => {
     const { container } = render(
-      <Grid templateColumns={5}>
-        <Grid.Item>Test element</Grid.Item>
-        <Grid.Item>Test element</Grid.Item>
-        <Grid.Item>Test element</Grid.Item>
-        <Grid.Item>Test element</Grid.Item>
-        <Grid.Item>Test element</Grid.Item>
+      <Grid id="grid-container-1" className="container" templateColumns={5}>
+        <Grid.Item id="grid-item-1" className="grid-item">
+          Test element
+        </Grid.Item>
+        <Grid.Item id="grid-item-2" className="grid-item">
+          Test element
+        </Grid.Item>
+        <Grid.Item id="grid-item-3" className="grid-item">
+          Test element
+        </Grid.Item>
+        <Grid.Item id="grid-item-4" className="grid-item">
+          Test element
+        </Grid.Item>
+        <Grid.Item id="grid-item-5" className="grid-item">
+          Test element
+        </Grid.Item>
       </Grid>,
     );
 

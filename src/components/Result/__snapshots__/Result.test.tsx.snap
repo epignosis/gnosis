@@ -3,8 +3,9 @@
 exports[`<Result/> matches snapshot 1`] = `
 <div>
   <article
-    class="css-198tph0-container-container"
+    class="my result css-198tph0-container-container"
     data-testid="empty-state-container"
+    id="my-id"
   >
     <svg-file-stub
       data-testid="result-icon"

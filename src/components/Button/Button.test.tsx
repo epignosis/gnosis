@@ -100,10 +100,11 @@ describe("<Button />", () => {
   it("matches snapshot with all props", () => {
     const { container } = render(
       <Button
+        id="my-button"
+        className="my-class"
         color="primary"
         variant="solid"
         size="lg"
-        className="my-class"
         noGutters
         block
         rounded

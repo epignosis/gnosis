@@ -3,7 +3,8 @@
 exports[`Forms: <FormError /> matches snapshot 1`] = `
 <div>
   <article
-    class="css-1g7t4ds-errorContainer-errorContainer"
+    class="error-wrapper css-1g7t4ds-errorContainer-errorContainer"
+    id="main-error"
   >
     Something went wrong
   </article>

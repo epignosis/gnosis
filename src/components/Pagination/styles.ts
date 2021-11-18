@@ -10,7 +10,7 @@ export const container = css`
     display: inline-block;
   }
 
-  #mobile-pagination {
+  .mobile-pagination {
     margin: 0 1rem;
   }
 

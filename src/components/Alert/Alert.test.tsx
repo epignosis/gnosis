@@ -11,7 +11,6 @@ describe("<Alert>", () => {
     const heading = faker.lorem.word();
     const paragraphTxt = faker.lorem.paragraph();
     const mockedOnClose = jest.fn();
-
     render(
       <Alert type="info" onClose={mockedOnClose}>
         <Heading as="h3" size="md">
@@ -45,7 +44,7 @@ describe("<Alert>", () => {
 
   it("matches snapshot", () => {
     const { container } = render(
-      <Alert type="info">
+      <Alert id="alert" className="my-class" type="info">
         <Heading as="h3" size="md">
           Welcome
         </Heading>

@@ -3,11 +3,10 @@
 exports[`<Pagination /> matches snapshot in responsive view 1`] = `
 <div>
   <div
-    class="css-1vskcel-container-container"
+    class="css-1isrtjp-container-container"
   >
     <button
-      class="solid css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-      id="mobile-pagination"
+      class="mobile-pagination mobile-previous-page-btn solid css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       name="Previous page"
     >
       <span
@@ -33,7 +32,7 @@ exports[`<Pagination /> matches snapshot in responsive view 1`] = `
         >
           <select
             data-testid="pagination-page"
-            id="pagination-page"
+            id="page-selection"
           >
             <option
               value="1"
@@ -73,8 +72,7 @@ exports[`<Pagination /> matches snapshot in responsive view 1`] = `
       4
     </div>
     <button
-      class="solid css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-      id="mobile-pagination"
+      class="mobile-pagination mobile-next-page-btn solid css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       name="Next page"
     >
       <span
@@ -93,7 +91,8 @@ exports[`<Pagination /> matches snapshot in responsive view 1`] = `
 exports[`<Pagination /> matches snapshot with on page 1`] = `
 <div>
   <div
-    class="css-1vskcel-container-container"
+    class="html-class css-1isrtjp-container-container"
+    id="my-id"
   >
     <button
       class="previous-page-btn solid css-15pgdlr-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
@@ -120,7 +119,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         >
           <select
             data-testid="pagination-page"
-            id="pagination-page"
+            id="page-selection"
           >
             <option
               value="1"
@@ -160,7 +159,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       4
     </div>
     <button
-      class="solid css-15pgdlr-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      class="next-page-btn solid css-15pgdlr-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="next-page-btn"
       name="Next page"
     >

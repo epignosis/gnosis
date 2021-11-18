@@ -8,6 +8,7 @@ export type RadioOption = {
   value: string;
   label: string;
   disabled?: boolean;
+  containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
 };
 
 export type RadioProps = ExtendableProps<
@@ -19,8 +20,18 @@ export type RadioProps = ExtendableProps<
   }
 >;
 
-const Radio: FC<RadioProps> = ({ id, label, size = "md", inline = false, ...rest }) => (
-  <div css={(theme): SerializedStyles => radioButtonContainer(theme, { size, inline })}>
+const Radio: FC<RadioProps> = ({
+  id,
+  label,
+  size = "md",
+  inline = false,
+  containerAttrs,
+  ...rest
+}) => (
+  <div
+    css={(theme): SerializedStyles => radioButtonContainer(theme, { size, inline })}
+    {...containerAttrs}
+  >
     <input id={id} type="radio" {...rest} />
     <label htmlFor={id}>{label}</label>
   </div>

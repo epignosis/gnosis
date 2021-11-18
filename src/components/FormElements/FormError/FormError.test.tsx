@@ -13,7 +13,11 @@ describe("Forms: <FormError />", () => {
   });
 
   it("matches snapshot", () => {
-    const { container } = render(<Error>Something went wrong</Error>);
+    const { container } = render(
+      <Error id="main-error" className="error-wrapper">
+        Something went wrong
+      </Error>,
+    );
 
     expect(container).toMatchSnapshot();
   });

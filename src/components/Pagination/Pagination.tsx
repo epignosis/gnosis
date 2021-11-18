@@ -9,6 +9,7 @@ export type PaginationProps = {
   totalPages: number;
   onChange: (page: number) => void;
   responsiveView?: boolean;
+  containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
 };
 
 const Pagination: FC<PaginationProps> = ({
@@ -16,15 +17,16 @@ const Pagination: FC<PaginationProps> = ({
   onChange,
   totalPages,
   responsiveView = false,
+  containerAttrs,
 }) => {
   return (
-    <div css={container}>
+    <div css={container} {...containerAttrs}>
       {current > 1 && (
         <>
           {!responsiveView ? (
             <Button
-              data-testid="previous-page-btn"
               className="previous-page-btn"
+              data-testid="previous-page-btn"
               name="Previous page"
               onClick={(): void => onChange(current - 1)}
             >
@@ -32,7 +34,7 @@ const Pagination: FC<PaginationProps> = ({
             </Button>
           ) : (
             <Button
-              id="mobile-pagination"
+              className="mobile-pagination mobile-previous-page-btn"
               noGutters
               name="Previous page"
               onClick={(): void => onChange(current - 1)}
@@ -45,7 +47,7 @@ const Pagination: FC<PaginationProps> = ({
       <div>Page</div>
       <div className="current-page">
         <Select
-          id="pagination-page"
+          id="page-selection"
           data-testid="pagination-page"
           value={current}
           onChange={(value): void => onChange(parseInt(value))}
@@ -62,6 +64,7 @@ const Pagination: FC<PaginationProps> = ({
         <>
           {!responsiveView ? (
             <Button
+              className="next-page-btn"
               data-testid="next-page-btn"
               name="Next page"
               onClick={(): void => onChange(current + 1)}
@@ -70,7 +73,7 @@ const Pagination: FC<PaginationProps> = ({
             </Button>
           ) : (
             <Button
-              id="mobile-pagination"
+              className="mobile-pagination mobile-next-page-btn"
               noGutters
               name="Next page"
               onClick={(): void => onChange(current + 1)}

@@ -3,8 +3,8 @@
 exports[`<CheckBoxGroup /> matches snapshot 1`] = `
 <div>
   <fieldset
-    class="css-1uf8pav-checkboxGroupContainer-checkboxGroupContainer"
-    id="testCheckboxGroup"
+    class="checkboxes css-1uf8pav-checkboxGroupContainer-checkboxGroupContainer"
+    id="checkbox-group-1"
   >
     <legend>
       <div

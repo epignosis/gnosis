@@ -4,7 +4,7 @@ import { avatar } from "./styles";
 
 export type Size = "xs" | "sm" | "md" | "lg" | "xl";
 
-export type AvatarBaseProps = {
+export type AvatarBaseProps = React.HTMLAttributes<HTMLElement> & {
   size?: Size;
   className?: string;
 };
@@ -29,13 +29,10 @@ const Avatar: FC<AvatarBaseProps & AvatarProps> = ({
   bgColor = "#0E59BB",
   alt,
   children,
-  className,
+  ...rest
 }) => {
   return (
-    <figure
-      css={(theme): SerializedStyles => avatar(theme, { size, bgColor })}
-      className={className}
-    >
+    <figure css={(theme): SerializedStyles => avatar(theme, { size, bgColor })} {...rest}>
       {Boolean(src) && <img src={src} alt={alt} />}
       {children !== undefined && <span data-testid="avatar-children-container">{children}</span>}
     </figure>

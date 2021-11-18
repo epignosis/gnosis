@@ -5,7 +5,7 @@ import TabsNavItem from "./TabsNavItem";
 import TabsContent from "./TabsContent";
 import { container, tabsHeader } from "./styles";
 
-type TabsProps = {
+type TabsProps = React.HTMLAttributes<HTMLElement> & {
   stickyHeader?: boolean;
   responsiveHeader?: boolean;
 };
@@ -25,6 +25,7 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   children,
   stickyHeader = false,
   responsiveHeader = false,
+  ...rest
 }) => {
   const [activeTab, setActiveTab] = useState(0);
   const tabTitles = Children.map(children, (child, i) => ({
@@ -45,7 +46,7 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   const displayResponsiveHeader = tabTitles?.length && responsiveHeader;
 
   return (
-    <section css={container}>
+    <section css={container} {...rest}>
       <nav css={(theme): SerializedStyles => tabsHeader(theme, { stickyHeader })} role="tablist">
         {!displayResponsiveHeader &&
           tabTitles?.map(({ index, title }) => (

@@ -68,11 +68,11 @@ const Sidebar: FC<SidebarProps> & SidebarCompoundProps = ({
   return (
     <LazyMotion features={domAnimation}>
       <m.nav
-        id="sidebar"
         css={mainNavContainer}
         initial={false}
         animate={animate}
         variants={navVariants}
+        id="sidebar"
         {...rest}
       >
         <div className="nav-items-wrapper">

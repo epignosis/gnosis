@@ -9,7 +9,7 @@ import { TypographyLevels } from "@theme/utils/typography";
 
 export type Size = "md" | "lg";
 
-export type ResultProps = {
+export type ResultProps = React.HTMLAttributes<HTMLElement> & {
   icon?: IconType;
   title: string;
   info?: string;
@@ -27,7 +27,7 @@ const getIconSize = (isMd: boolean): IconSize => ({
   lg: isMd ? 180 : 135,
 });
 
-const Result: FC<ResultProps> = ({ icon, title, info, footer, size = "lg" }) => {
+const Result: FC<ResultProps> = ({ icon, title, info, footer, size = "lg", ...rest }) => {
   const { md } = useResponsive();
   const Icon = icon;
   const iconSize = getIconSize(md);
@@ -36,6 +36,7 @@ const Result: FC<ResultProps> = ({ icon, title, info, footer, size = "lg" }) => 
     <article
       data-testid="empty-state-container"
       css={(theme): SerializedStyles => container(theme, { size })}
+      {...rest}
     >
       {Icon && <Icon height={iconSize[size]} data-testid="result-icon" />}
       <div className="body">

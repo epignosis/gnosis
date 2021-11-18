@@ -14,7 +14,11 @@ describe("<Label />", () => {
   });
 
   it("matches snapshot", () => {
-    const { container } = render(<Label>Test label</Label>);
+    const { container } = render(
+      <Label id="my-label" className="horizontal-label">
+        Test label
+      </Label>,
+    );
 
     expect(container).toMatchSnapshot();
   });

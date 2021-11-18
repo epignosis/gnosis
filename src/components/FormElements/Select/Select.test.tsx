@@ -23,7 +23,7 @@ describe("<Select />", () => {
   it("renders correctly", () => {
     const labelTxt = faker.commerce.department();
     render(
-      <Select id={faker.random.alpha()} label={labelTxt}>
+      <Select id="my-select" label={labelTxt}>
         {OPTIONS.map(({ label, value }) => (
           <option key={value} value={value}>
             {label}
@@ -44,7 +44,7 @@ describe("<Select />", () => {
     const mockFn = jest.fn();
 
     render(
-      <Select id={faker.random.alpha()} label={labelTxt} onChange={mockFn}>
+      <Select id="my-select" label={labelTxt} onChange={mockFn}>
         {OPTIONS.map(({ label, value }) => (
           <option key={value} value={value}>
             {label}
@@ -65,7 +65,15 @@ describe("<Select />", () => {
 
   it("matches snapshot", () => {
     const { container } = render(
-      <Select id="test-select" label="Test select input">
+      <Select
+        id="select-id"
+        className="normal-select"
+        label="Test select input"
+        containerAttrs={{
+          id: "container-id",
+          className: "container-class",
+        }}
+      >
         <option value="rs">Rust</option>
         <option value="js">JavaScript</option>
         <option value="ts">TypeScript</option>

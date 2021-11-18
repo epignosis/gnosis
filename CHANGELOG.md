@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/epignosis/gnosis/compare/v1.2.0...v1.3.0) (2021-11-18)
+
+
+### Features
+
+* add container attributes (ids, classNames, etc.) to ALL components ([85882b2](https://github.com/epignosis/gnosis/commit/85882b201318dc1f2a38a59ce965d4a8ad039a1e))
+
 # [1.2.0](https://github.com/epignosis/gnosis/compare/v1.1.0...v1.2.0) (2021-11-10)
 
 

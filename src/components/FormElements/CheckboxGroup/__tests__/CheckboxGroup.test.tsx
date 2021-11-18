@@ -166,7 +166,8 @@ describe("<CheckBoxGroup />", () => {
   it("matches snapshot", () => {
     const { container } = render(
       <CheckBoxGroup
-        id="testCheckboxGroup"
+        id="checkbox-group-1"
+        className="checkboxes"
         groupname="Test groupname"
         options={[
           {

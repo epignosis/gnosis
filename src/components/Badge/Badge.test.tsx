@@ -14,7 +14,7 @@ describe("<Badge />", () => {
 
   it("matches snapshot", () => {
     const { container } = render(
-      <Badge size="md" offset={{ top: "10px", right: "10px" }}>
+      <Badge id="my-id" className="my-class" size="md" offset={{ top: "10px", right: "10px" }}>
         Messages
       </Badge>,
     );

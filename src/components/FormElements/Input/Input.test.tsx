@@ -1,8 +1,8 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
 import faker from "faker";
-import { CalendarSVG } from "../../../../icons/";
-import Input from "../Input";
+import { CalendarSVG } from "../../../icons";
+import Input from "./Input";
 import { screen, render } from "@test-utils/render";
 
 describe("<Input />", () => {
@@ -63,7 +63,17 @@ describe("<Input />", () => {
 
   it("matches snapshot", () => {
     const { container } = render(
-      <Input id="test-input" name="test-input" label="Test label" iconAfter={CalendarSVG} />,
+      <Input
+        id="my-input-id"
+        className="input"
+        containerAttrs={{
+          id: "container-id",
+          className: "container-classname",
+        }}
+        name="test-input"
+        label="Test label"
+        iconAfter={CalendarSVG}
+      />,
     );
 
     expect(container).toMatchSnapshot();

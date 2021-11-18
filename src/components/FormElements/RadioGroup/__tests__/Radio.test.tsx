@@ -42,7 +42,15 @@ describe("<Radio />", () => {
   });
 
   it("matches snapshot", () => {
-    const { container } = render(<Radio id="testId" label="Test label" value="testValue" />);
+    const { container } = render(
+      <Radio
+        id="radio-id"
+        className="radio-class"
+        label="Test label"
+        value="testValue"
+        containerAttrs={{ id: "container-id", className: "container-class" }}
+      />,
+    );
 
     expect(container).toMatchSnapshot();
   });

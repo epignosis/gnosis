@@ -109,7 +109,7 @@ describe("<Drawer/>", () => {
 
   it("matches snapshot with header, body and footer", () => {
     render(
-      <Drawer isOpen onClose={jest.fn()}>
+      <Drawer id="main-drawer" className="drawer" isOpen onClose={jest.fn()}>
         <Drawer.Header>Test header</Drawer.Header>
         <Drawer.Body>Test body</Drawer.Body>
         <Drawer.Footer>Test footer</Drawer.Footer>

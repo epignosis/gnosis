@@ -61,7 +61,8 @@ describe("<RadioButtonGroup />", () => {
   it("matches snapshot", () => {
     const { container } = render(
       <RadioButtonGroup
-        id="testRadioButtonGroup"
+        id="radio-group-1"
+        className="radio-group"
         options={[{ label: "Test label", value: "testValue" }]}
         value=""
         onChange={jest.fn()}

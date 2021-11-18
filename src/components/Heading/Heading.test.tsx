@@ -14,7 +14,7 @@ describe("<Heading>", () => {
 
   it("snapshot", () => {
     const { container } = render(
-      <Heading as="h2" size="md">
+      <Heading id="my-heading" className="heading" as="h2" size="md">
         My title
       </Heading>,
     );

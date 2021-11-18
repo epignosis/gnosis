@@ -60,7 +60,17 @@ describe("<Checkbox />", () => {
 
   it("matches snapshot with `md` size", () => {
     const { container } = render(
-      <Checkbox id="testId" label="Test label" name="testName" value="testValue" />,
+      <Checkbox
+        id="my-id"
+        className="checkbox"
+        label="Test label"
+        name="testName"
+        value="testValue"
+        containerAttrs={{
+          id: "my-container-id",
+          className: "container-class",
+        }}
+      />,
     );
 
     expect(container).toMatchSnapshot();

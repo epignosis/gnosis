@@ -3,7 +3,8 @@
 exports[`<Alert> matches snapshot 1`] = `
 <div>
   <div
-    class="css-k5zh3p-container-container"
+    class="my-class css-k5zh3p-container-container"
+    id="alert"
   >
     <div
       class="icon"

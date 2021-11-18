@@ -112,7 +112,8 @@ describe("<RadioGroup />", () => {
   it("matches snapshot with `inline = true`", () => {
     const { container } = render(
       <RadioGroup
-        id="testRadioGroup"
+        id="my-id"
+        className="my-radio-group"
         groupname="Test groupname"
         options={[{ label: "Test option label", value: "testOptionValue" }]}
         inline

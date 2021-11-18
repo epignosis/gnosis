@@ -12,7 +12,7 @@ describe("<Loader>", () => {
   });
 
   it("matches snapshot", () => {
-    const { container } = render(<Loader size="lg" />);
+    const { container } = render(<Loader id="main-loader" className="loader" size="lg" />);
 
     expect(container).toMatchSnapshot();
   });

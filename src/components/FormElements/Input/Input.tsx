@@ -18,6 +18,7 @@ export type InputProps = ExtendableProps<
     ref?: Ref<HTMLInputElement>;
     label?: string;
     inline?: boolean;
+    containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
   }
 >;
 
@@ -30,7 +31,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     label,
     inline = false,
     id,
-    className,
+    containerAttrs,
     ...rest
   },
   forwardedRef,
@@ -44,13 +45,13 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     "with-prefix-icon": Boolean(iconBefore),
     "with-suffix-icon": Boolean(iconAfter),
     inline: hasLabel && inline,
-    [className ?? ""]: className,
   });
 
   return (
     <div
       css={(theme): SerializedStyles => inputContainer(theme, { size })}
       className={containerClasses}
+      {...containerAttrs}
     >
       {hasLabel && <Label htmlFor={id}>{label}</Label>}
       <div className="input-wrapper">

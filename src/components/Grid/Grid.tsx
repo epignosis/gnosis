@@ -8,13 +8,12 @@ export type ResponsiveValues =
   | [NumberOrNull, NumberOrNull, NumberOrNull?, NumberOrNull?, NumberOrNull?, NumberOrNull?]
   | number;
 
-export type GridProps = {
+export type GridProps = React.HTMLAttributes<HTMLElement> & {
   templateColumns: ResponsiveValues;
   gap?: number;
   columnGap?: number;
   rowGap?: number;
   as?: HTMLWrapperElement;
-  className?: string;
 };
 
 type GridCompoundProps = {
@@ -37,21 +36,21 @@ const generateGridValues = (
 };
 
 const Grid: FC<GridProps> & GridCompoundProps = (props) => {
-  const { gap = 2, columnGap, rowGap, templateColumns, as = "div", className, children } = props;
+  const { gap = 2, columnGap, rowGap, templateColumns, as = "div", children, ...rest } = props;
   const templateColumnAttrs = generateGridValues(templateColumns);
   const Component = as;
 
   return (
     <Component
       css={gridContainer({ templateColumns: templateColumnAttrs, gap, columnGap, rowGap })}
-      className={className}
+      {...rest}
     >
       {children}
     </Component>
   );
 };
 
-type GridItemProps = {
+type GridItemProps = React.HTMLAttributes<HTMLElement> & {
   colSpan?: ResponsiveValues | "auto";
   colStart?: ResponsiveValues | "auto";
   colEnd?: ResponsiveValues | "auto";
@@ -59,7 +58,6 @@ type GridItemProps = {
   rowStart?: ResponsiveValues | "auto";
   rowEnd?: ResponsiveValues | "auto";
   as?: HTMLWrapperElement;
-  className?: string;
 };
 
 const Item: FC<GridItemProps> = (props) => {

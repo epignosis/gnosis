@@ -3,16 +3,18 @@
 exports[`<Textarea /> matches snapshot 1`] = `
 <div>
   <div
-    class="valid css-aen24f-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-textareaContainer-textareaContainer"
+    class="valid textarea-container-class css-aen24f-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-textareaContainer-textareaContainer"
+    id="textarea-container-id"
   >
     <label
       class="css-xs6o3g-label-label"
-      for="test-textarea"
+      for="my-textarea-id"
     >
       Test textarea
     </label>
     <textarea
-      id="test-textarea"
+      class="textarea-class"
+      id="my-textarea-id"
       name="test"
     />
   </div>

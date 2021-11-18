@@ -34,6 +34,8 @@ describe("<Result/>", () => {
   it("matches snapshot", () => {
     const { container } = render(
       <Result
+        id="my-id"
+        className="my result"
         title="My title"
         icon={InfoSVG}
         info="My info."

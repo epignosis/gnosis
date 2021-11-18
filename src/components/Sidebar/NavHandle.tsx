@@ -10,7 +10,7 @@ export type NavHandleProps = {
 
 const NavHandle: FC<NavHandleProps> = ({ isExpanded, toggleMainNav }) => {
   return (
-    <button css={navHandleContainer} onClick={toggleMainNav}>
+    <button className="nav-handle" css={navHandleContainer} onClick={toggleMainNav}>
       <NavItem label="Menu" isExpanded={isExpanded} icon={<HamburgerSVG height={32} />} />
     </button>
   );

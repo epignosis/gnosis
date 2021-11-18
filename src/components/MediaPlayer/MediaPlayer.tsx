@@ -5,6 +5,7 @@ import AudioPlayer from "./AudioPlayer/AudioPlayer";
 
 export type PlayerProps = Omit<ReactPlayerProps, "url"> & {
   src: ReactPlayerProps["url"];
+  containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
 };
 
 export type MediaPlayerProps = PlayerProps & {

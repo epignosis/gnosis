@@ -34,7 +34,7 @@ const DRAWER_ROOT = "drawerRoot";
 
 const DrawerRoot: FC = () => <div id={DRAWER_ROOT} />;
 
-export type DrawerProps = {
+export type DrawerProps = React.HTMLAttributes<HTMLDivElement> & {
   isOpen: boolean;
   onClose: () => void;
   showMask?: boolean;
@@ -61,6 +61,7 @@ const Drawer: FC<DrawerProps> & DrawerCompoundProps = (props) => {
     dialogStyles,
     dialogClassName,
     children,
+    ...rest
   } = props;
   const clonedChildren = Children.map(children, (child) => {
     return (
@@ -81,7 +82,7 @@ const Drawer: FC<DrawerProps> & DrawerCompoundProps = (props) => {
     <LazyMotion features={domAnimation}>
       <AnimatePresence>
         {isOpen && (
-          <div css={drawerContainer(width)} data-testid="drawer">
+          <div css={drawerContainer(width)} data-testid="drawer" {...rest}>
             {showMask && <Mask onClose={onClose} />}
             <m.div
               id="drawer-dialog"

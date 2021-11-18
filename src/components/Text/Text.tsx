@@ -12,17 +12,16 @@ type BaseProps =
 export type TextProps = BaseProps & {
   fontSize: TypographyLevels;
   weight?: TextWeight;
-  className?: string;
 };
 
-const Text: FC<TextProps> = ({ children, weight = "400", fontSize, as = "span", className }) => {
+const Text: FC<TextProps> = ({ children, weight = "400", fontSize, as = "span", ...rest }) => {
   const Tag = as;
 
   return (
     <Tag
       data-testid="text-component"
       css={(theme) => textContainer(theme, weight, fontSize)}
-      className={className}
+      {...rest}
     >
       {children}
     </Tag>

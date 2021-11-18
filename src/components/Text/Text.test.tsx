@@ -13,7 +13,11 @@ describe("<Text>", () => {
   });
 
   it("snapshot", () => {
-    const { container } = render(<Text fontSize="md">My content.</Text>);
+    const { container } = render(
+      <Text id="my-id" className="my-class" fontSize="md">
+        My content.
+      </Text>,
+    );
 
     expect(container).toMatchSnapshot();
   });

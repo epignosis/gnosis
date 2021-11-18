@@ -54,7 +54,7 @@ describe("<Avatar />", () => {
 
   it("matches children avatar snapshot", () => {
     const { container } = render(
-      <Avatar size="lg" className="my-text-avatar" bgColor="#ffffff">
+      <Avatar id="my-id" className="my-avatar" size="lg" bgColor="#ffffff">
         AB
       </Avatar>,
     );

@@ -14,10 +14,6 @@ export const container = css`
     margin: 0 1rem;
   }
 
-  .previous-page-btn {
-    margin-right: 2rem;
-  }
-
   .current-page {
     margin: 0 1rem;
   }

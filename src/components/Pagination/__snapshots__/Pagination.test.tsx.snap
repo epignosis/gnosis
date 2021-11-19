@@ -1,12 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Pagination /> matches snapshot in responsive view 1`] = `
+exports[`<Pagination /> matches snapshot with on page 1`] = `
 <div>
   <div
-    class="css-1isrtjp-container-container"
+    class="html-class css-b6x9xe-container-container"
+    id="my-id"
   >
     <button
-      class="mobile-pagination mobile-previous-page-btn solid css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      class="previous-page-btn solid css-hhqmb3-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      data-testid="previous-page-btn"
       name="Previous page"
     >
       <span
@@ -14,65 +16,61 @@ exports[`<Pagination /> matches snapshot in responsive view 1`] = `
       >
         <svg-file-stub
           data-testid="arrow-left"
-          height="24"
+          height="22"
         />
       </span>
     </button>
-    <div>
-      Page
-    </div>
     <div
-      class="current-page"
+      class="pagination-options"
     >
-      <div
-        class="valid css-1y8897s-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+      <button
+        class="ghost css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        data-testid="pagination-page"
+        id="page-selection"
       >
-        <div
-          class="select-input-wrapper"
+        <span
+          class="btn-text"
         >
-          <select
-            data-testid="pagination-page"
-            id="page-selection"
-          >
-            <option
-              value="1"
-            >
-              1
-            </option>
-            <option
-              value="2"
-            >
-              2
-            </option>
-            <option
-              value="3"
-            >
-              3
-            </option>
-            <option
-              value="4"
-            >
-              4
-            </option>
-          </select>
-          <span
-            class="carret-wrapper"
-          >
-            <svg-file-stub
-              height="24"
-            />
-          </span>
-        </div>
-      </div>
-    </div>
-    <div
-      class="total-pages"
-    >
-      of 
-      4
+          1
+        </span>
+      </button>
+      <button
+        class="active ghost css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        data-testid="pagination-page"
+        id="page-selection"
+      >
+        <span
+          class="btn-text"
+        >
+          2
+        </span>
+      </button>
+      <button
+        class="ghost css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        data-testid="pagination-page"
+        id="page-selection"
+      >
+        <span
+          class="btn-text"
+        >
+          3
+        </span>
+      </button>
+      <button
+        class="ghost css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        data-testid="pagination-page"
+        id="page-selection"
+      >
+        <span
+          class="btn-text"
+        >
+          4
+        </span>
+      </button>
     </div>
     <button
-      class="mobile-pagination mobile-next-page-btn solid css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      class="next-page-btn solid css-hhqmb3-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      data-testid="next-page-btn"
       name="Next page"
     >
       <span
@@ -80,93 +78,8 @@ exports[`<Pagination /> matches snapshot in responsive view 1`] = `
       >
         <svg-file-stub
           data-testid="arrow-right"
-          height="24"
+          height="22"
         />
-      </span>
-    </button>
-  </div>
-</div>
-`;
-
-exports[`<Pagination /> matches snapshot with on page 1`] = `
-<div>
-  <div
-    class="html-class css-1isrtjp-container-container"
-    id="my-id"
-  >
-    <button
-      class="previous-page-btn solid css-15pgdlr-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-      data-testid="previous-page-btn"
-      name="Previous page"
-    >
-      <span
-        class="btn-text"
-      >
-        Previous
-      </span>
-    </button>
-    <div>
-      Page
-    </div>
-    <div
-      class="current-page"
-    >
-      <div
-        class="valid css-1y8897s-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
-      >
-        <div
-          class="select-input-wrapper"
-        >
-          <select
-            data-testid="pagination-page"
-            id="page-selection"
-          >
-            <option
-              value="1"
-            >
-              1
-            </option>
-            <option
-              value="2"
-            >
-              2
-            </option>
-            <option
-              value="3"
-            >
-              3
-            </option>
-            <option
-              value="4"
-            >
-              4
-            </option>
-          </select>
-          <span
-            class="carret-wrapper"
-          >
-            <svg-file-stub
-              height="24"
-            />
-          </span>
-        </div>
-      </div>
-    </div>
-    <div
-      class="total-pages"
-    >
-      of 
-      4
-    </div>
-    <button
-      class="next-page-btn solid css-15pgdlr-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-      data-testid="next-page-btn"
-      name="Next page"
-    >
-      <span
-        class="btn-text"
-      >
-        Next
       </span>
     </button>
   </div>

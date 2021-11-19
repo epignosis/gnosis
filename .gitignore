@@ -2,8 +2,8 @@
 node_modules
 dist
 dist/*
-icons
-icons/*
+# icons
+# icons/*
 design-system
 coverage
 todo.md

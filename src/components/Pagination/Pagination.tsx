@@ -22,19 +22,20 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, contai
           color="secondary"
           noGutters
         >
-          <ArrowLeftSVG height={22} />
+          <ArrowLeftSVG height={22} data-testid="arrow-left" />
         </Button>
       )}
 
-      <div className="current-page">
+      <div className="pagination-options">
         {[...Array(totalPages)].map((_, index) => (
           <Button
+            key={index + 1}
             id="page-selection"
             data-testid="pagination-page"
             onClick={(): void => onChange(index + 1)}
-            key={index + 1}
             variant="ghost"
             noGutters
+            className={current === index + 1 ? "active" : ""}
           >
             {index + 1}
           </Button>
@@ -50,7 +51,7 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, contai
           color="secondary"
           noGutters
         >
-          <ArrowRightSVG height={22} />
+          <ArrowRightSVG height={22} data-testid="arrow-right" />
         </Button>
       )}
     </div>

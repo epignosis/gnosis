@@ -88,6 +88,3 @@ export { default as HomeSVG } from "./home.svg";
 export { default as GridSVG } from "./grid.svg";
 export { default as ListSVG } from "./list.svg";
 export { default as ArrowRightClose } from "./arrow_right_close.svg";
-export { default as AudioSVG } from "./audio.svg";
-export { default as VideoSVG } from "./video.svg";
-export { default as UploadSVG } from "./upload.svg";

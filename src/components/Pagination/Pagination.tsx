@@ -13,18 +13,17 @@ export type PaginationProps = {
 const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, containerAttrs }) => {
   return (
     <div css={container} {...containerAttrs}>
-      {current > 1 && (
-        <Button
-          className="previous-page-btn"
-          data-testid="previous-page-btn"
-          name="Previous page"
-          onClick={(): void => onChange(current - 1)}
-          color="secondary"
-          noGutters
-        >
-          <ArrowLeftSVG height={22} data-testid="arrow-left" />
-        </Button>
-      )}
+      <Button
+        className="previous-page-btn"
+        data-testid="previous-page-btn"
+        name="Previous page"
+        onClick={(): void => onChange(current - 1)}
+        color="secondary"
+        noGutters
+        disabled={current === 1}
+      >
+        <ArrowLeftSVG height={22} data-testid="arrow-left" />
+      </Button>
 
       <div className="pagination-options">
         {[...Array(totalPages)].map((_, index) => (
@@ -42,18 +41,17 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, contai
         ))}
       </div>
 
-      {current < totalPages && (
-        <Button
-          className="next-page-btn"
-          data-testid="next-page-btn"
-          name="Next page"
-          onClick={(): void => onChange(current + 1)}
-          color="secondary"
-          noGutters
-        >
-          <ArrowRightSVG height={22} data-testid="arrow-right" />
-        </Button>
-      )}
+      <Button
+        className="next-page-btn"
+        data-testid="next-page-btn"
+        name="Next page"
+        onClick={(): void => onChange(current + 1)}
+        color="secondary"
+        noGutters
+        disabled={current === totalPages}
+      >
+        <ArrowRightSVG height={22} data-testid="arrow-right" />
+      </Button>
     </div>
   );
 };

@@ -16,29 +16,23 @@ describe("<Pagination />", () => {
     expect(pageNum).toHaveLength(4);
   });
 
-  // it("doesn't have a previous page button if it is the first page", () => {
-  //   render(<Pagination current={1} totalPages={4} onChange={jest.fn()} />);
+  it("previous page button is disabled if it is the first page", () => {
+    render(<Pagination current={1} totalPages={4} onChange={jest.fn()} />);
 
-  //   const prevBtn = screen.queryByTestId("previous-page-btn");
-  //   const nextBtn = screen.queryByTestId("next-page-btn");
-  //   const pageOptions = screen.getAllByRole("option");
+    const prevBtn = screen.getByTestId("previous-page-btn");
 
-  //   expect(prevBtn).not.toBeInTheDocument();
-  //   expect(nextBtn).toBeInTheDocument();
-  //   expect(pageOptions).toHaveLength(4);
-  // });
+    expect(prevBtn).toBeInTheDocument();
+    expect(prevBtn).toBeDisabled();
+  });
 
-  // it("doesn't have a next page button if it is on the last page", () => {
-  //   render(<Pagination current={4} totalPages={4} onChange={jest.fn()} />);
+  it("next page button is disabled if it is on the last page", () => {
+    render(<Pagination current={4} totalPages={4} onChange={jest.fn()} />);
 
-  //   const prevBtn = screen.queryByTestId("previous-page-btn");
-  //   const nextBtn = screen.queryByTestId("next-page-btn");
-  //   const pageOptions = screen.getAllByRole("option");
+    const nextBtn = screen.queryByTestId("next-page-btn");
 
-  //   expect(prevBtn).toBeInTheDocument();
-  //   expect(nextBtn).not.toBeInTheDocument();
-  //   expect(pageOptions).toHaveLength(4);
-  // });
+    expect(nextBtn).toBeInTheDocument();
+    expect(nextBtn).toBeDisabled();
+  });
 
   it("onChange get correct page number", () => {
     const mockFn = jest.fn();

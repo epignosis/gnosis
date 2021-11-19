@@ -14,23 +14,4 @@ export default {
   },
 };
 
-const Template: Story<PaginationProps> = (args) => <Pagination {...args} />;
-
-export const WithNextBtn = Template.bind({});
-
-WithNextBtn.args = {
-  current: 1,
-};
-
-export const WithBothBtns = Template.bind({});
-
-WithBothBtns.args = {
-  current: 2,
-  totalPages: 4,
-};
-
-export const WithPreviousBtn = Template.bind({});
-
-WithPreviousBtn.args = {
-  current: 4,
-};
+export const Default: Story<PaginationProps> = (args) => <Pagination {...args} />;

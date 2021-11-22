@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Story } from "@storybook/react";
 import Pagination, { PaginationProps } from "./Pagination";
 
@@ -9,9 +9,16 @@ export default {
     onChange: { action: "Changed page!" },
   },
   args: {
-    current: 1,
-    totalPages: 4,
+    current: 3,
+    totalPages: 10,
   },
 };
 
-export const Default: Story<PaginationProps> = (args) => <Pagination {...args} />;
+export const Default: Story<PaginationProps> = (args) => {
+  const [value, setValue] = useState(1);
+  const updateValue = (val: number) => {
+    setValue(val);
+  };
+
+  return <Pagination {...args} current={value} onChange={updateValue} />;
+};

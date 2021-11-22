@@ -23,6 +23,14 @@ export const container = ({ pagination }: Theme): SerializedStyles => {
         background: ${hexToRGBA(pagination.background, 0.16)};
         color: ${pagination.color};
       }
+
+      #page-selection {
+        margin-right: 0.5rem;
+
+        &:last-of-type {
+          margin: 0;
+        }
+      }
     }
 
     .total-pages {

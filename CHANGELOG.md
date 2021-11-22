@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/epignosis/gnosis/compare/v1.3.0...v1.3.1) (2021-11-22)
+
+
+### Bug Fixes
+
+* **icons:** add more icons ([dbe9860](https://github.com/epignosis/gnosis/commit/dbe98605c057c285d09918f1003f11f80754d2b8))
+
 # [1.3.0](https://github.com/epignosis/gnosis/compare/v1.2.0...v1.3.0) (2021-11-18)
 
 

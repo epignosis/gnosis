@@ -34,6 +34,7 @@ export const selectContainer = (
     position: relative;
     width: 100%;
     background-color: ${formElements.input.background};
+    border-radius: 5px;
     z-index: 1;
 
     .carret-wrapper {

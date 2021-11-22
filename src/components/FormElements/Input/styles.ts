@@ -31,6 +31,7 @@ export const inputContainer = (
     position: relative;
     background-color: ${formElements.input.background};
     z-index: 1;
+    border-radius: 5px;
 
     input {
       ${inputBaseStyles(formElements, { block: true, size })};

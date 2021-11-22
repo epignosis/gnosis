@@ -46,6 +46,10 @@ export const inputBaseStyles = (
     border: 1px solid ${formElements.input.borderHoverColor};
   }
 
+  &:focus {
+    background: ${formElements.input.backgroundFocus};
+  }
+
   &::placeholder {
     font-style: italic;
     color: ${formElements.input.placeholderColor};

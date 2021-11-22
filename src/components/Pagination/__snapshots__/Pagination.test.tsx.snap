@@ -25,7 +25,7 @@ exports[`<Pagination /> matches snapshot in responsive view 1`] = `
       class="current-page"
     >
       <div
-        class="valid css-1y8897s-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+        class="valid css-g8etu8-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
       >
         <div
           class="select-input-wrapper"
@@ -112,7 +112,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       class="current-page"
     >
       <div
-        class="valid css-1y8897s-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+        class="valid css-g8etu8-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
       >
         <div
           class="select-input-wrapper"

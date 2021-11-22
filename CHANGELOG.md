@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/epignosis/gnosis/compare/v1.3.1...v1.3.2) (2021-11-22)
+
+
+### Bug Fixes
+
+* **toaster:** export toaster's notification function ([34b6dba](https://github.com/epignosis/gnosis/commit/34b6dba03232b208e701bce29e02b56c10b39c0c))
+
 ## [1.3.1](https://github.com/epignosis/gnosis/compare/v1.3.0...v1.3.1) (2021-11-22)
 
 

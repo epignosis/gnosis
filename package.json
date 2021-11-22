@@ -4,7 +4,7 @@
   "description": "Epignosis official react design system.",
   "homepage": "https://github.com/epignosis/gnosis",
   "main": "dist/cjs/index.js",
-  "module": "dist/esm",
+  "module": "dist/esm/src/index.js",
   "types": "dist/types/index.d.ts",
   "files": [
     "dist",

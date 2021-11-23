@@ -18,6 +18,14 @@ export const selectContainer = (
     }
   }
 
+  &:focus-within {
+    .select-input-wrapper {
+      .carret-wrapper {
+        z-index: 1;
+      }
+    }
+  }
+
   select {
     ${inputBaseStyles(formElements, { block: true, size })};
     background-color: transparent;

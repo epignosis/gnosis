@@ -47,7 +47,7 @@ export const inputBaseStyles = (
   }
 
   &:focus {
-    background: ${formElements.input.backgroundFocus};
+    background-color: ${formElements.input.backgroundFocus};
   }
 
   &::placeholder {

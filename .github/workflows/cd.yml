@@ -62,11 +62,11 @@ jobs:
         run: npm ci
 
       - name: Build package
-        run: npm run build
+        run: npm run build:design-system
 
       - name: Deploy to S3 bucket
         run: |
-          aws s3 sync dist/ s3://${{ secrets.CDN_BUCKET_NAME }}/
+          aws s3 sync design-system/ s3://${{ secrets.CDN_BUCKET_NAME }}/
 
       # - name: Invalidate CloudFront cache and wait until complete
       #   run: |

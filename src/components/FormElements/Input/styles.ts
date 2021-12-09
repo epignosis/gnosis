@@ -31,6 +31,14 @@ export const inputContainer = (
     position: relative;
     background-color: ${formElements.input.background};
     z-index: 1;
+    border-radius: 5px;
+
+    &:focus-within {
+      .prefix-icon,
+      .suffix-icon {
+        z-index: 1;
+      }
+    }
 
     input {
       ${inputBaseStyles(formElements, { block: true, size })};
@@ -56,19 +64,6 @@ export const inputContainer = (
       right: 0;
       padding-right: 0.5rem;
       color: ${formElements.input.iconColor};
-    }
-  }
-`;
-
-export const fileInputContainer = ({ formElements }: Theme): SerializedStyles => css`
-  .drop-area {
-    position: relative;
-    min-height: 5rem;
-    border: 2px dashed ${formElements.input.inputBorderColor};
-    border-radius: 5px;
-
-    input {
-      display: none;
     }
   }
 `;

@@ -1,9 +1,7 @@
 import React from "react";
 import { Story } from "@storybook/react";
-import { toast } from "react-toastify";
-import { Heading, Button } from "../../";
+import { Toaster, Heading, Button, toast } from "../../index";
 import { InfoSVG, DangerSVG, SuccessSVG, WarningSVG } from "../../icons/";
-import Toaster from "./Toaster";
 
 export default {
   component: Toaster,
@@ -26,7 +24,6 @@ const publishToast = (type: string): void => {
         <span>Feature not available</span>
       </div>
     </>,
-    { hideProgressBar: true },
   );
 };
 

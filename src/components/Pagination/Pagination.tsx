@@ -3,21 +3,31 @@ import Button from "../Button/Button";
 import { ArrowLeftSVG, ArrowRightSVG } from "../../icons/";
 import { container } from "./styles";
 import { DOTS, usePagination } from "./usePagination";
+import classNames from "classnames";
 
 export type PaginationProps = {
   current: number;
   totalPages: number;
   onChange: (page: number) => void;
   containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
+  page_size: number;
+  total_results: number;
 };
 
-const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, containerAttrs }) => {
-  const paginationRange = usePagination({
-    current: current,
-    totalCount: 50,
-    siblingCount: 1,
-    pageSize: 10,
-  });
+const Pagination: FC<PaginationProps> = ({
+  current,
+  onChange,
+  totalPages,
+  containerAttrs,
+  total_results,
+  page_size,
+}) => {
+  const paginationRange = usePagination(current, total_results, page_size);
+
+  const classNamesContainer = (pageNumber: number) =>
+    classNames({
+      active: current === pageNumber,
+    });
 
   return (
     <div css={container} {...containerAttrs}>
@@ -34,41 +44,25 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, contai
       </Button>
 
       <div className="pagination-options">
-        {paginationRange &&
-          paginationRange.map((pageNumber) => {
-            // If the pageItem is a DOT, render the DOTS unicode character
-            if (pageNumber === DOTS) {
-              return <>&#8230;</>;
-            }
+        {paginationRange?.map((pageNumber) => {
+          if (pageNumber === DOTS) {
+            return DOTS;
+          }
 
-            // Render our Page Pills
-            return (
-              <Button
-                key={pageNumber}
-                id="page-selection"
-                data-testid="pagination-page"
-                onClick={(): void => onChange(pageNumber as number)}
-                variant="ghost"
-                noGutters
-                className={current === pageNumber ? "active" : ""}
-              >
-                {pageNumber}
-              </Button>
-            );
-          })}
-        {/* {[...Array(totalPages)].map((_, index) => (
-          <Button
-            key={index + 1}
-            id="page-selection"
-            data-testid="pagination-page"
-            onClick={(): void => onChange(index + 1)}
-            variant="ghost"
-            noGutters
-            className={current === index + 1 ? "active" : ""}
-          >
-            {index + 1}
-          </Button>
-        ))} */}
+          return (
+            <Button
+              key={pageNumber}
+              id="page-selection"
+              data-testid="pagination-page"
+              onClick={(): void => onChange(pageNumber as number)}
+              variant="ghost"
+              noGutters
+              className={classNamesContainer(pageNumber as number)}
+            >
+              {pageNumber}
+            </Button>
+          );
+        })}
       </div>
 
       <Button

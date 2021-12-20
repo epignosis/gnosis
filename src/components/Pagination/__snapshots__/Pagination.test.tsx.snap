@@ -3,7 +3,7 @@
 exports[`<Pagination /> matches snapshot with on page 1`] = `
 <div>
   <div
-    class="html-class css-b6x9xe-container-container"
+    class="html-class css-a0o1oz-container-container"
     id="my-id"
   >
     <button
@@ -15,7 +15,6 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         class="btn-text"
       >
         <svg-file-stub
-          data-testid="arrow-left"
           height="22"
         />
       </span>
@@ -67,6 +66,18 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
           4
         </span>
       </button>
+      ...
+      <button
+        class="ghost css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        data-testid="pagination-page"
+        id="page-selection"
+      >
+        <span
+          class="btn-text"
+        >
+          10
+        </span>
+      </button>
     </div>
     <button
       class="next-page-btn solid css-hhqmb3-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
@@ -77,7 +88,6 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         class="btn-text"
       >
         <svg-file-stub
-          data-testid="arrow-right"
           height="22"
         />
       </span>

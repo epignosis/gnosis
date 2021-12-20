@@ -8,10 +8,6 @@ export const container = ({ pagination }: Theme): SerializedStyles => {
     justify-content: center;
     align-items: center;
 
-    > div {
-      display: inline-block;
-    }
-
     .mobile-pagination {
       margin: 0 1rem;
     }

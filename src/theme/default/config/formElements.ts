@@ -11,6 +11,7 @@ export default {
     background: "#F1F1F1",
     backgroundFocus: colors.white,
     iconColor: colors.black,
+    hoverColor: "#F8F8F8",
   },
   radioButtonGroup: {
     normalBackground: colors.gray.lighter,

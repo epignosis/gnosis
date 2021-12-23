@@ -41,6 +41,10 @@ export const inputBaseStyles = (
   border: 1px solid ${formElements.input.inputBorderColor};
   border-radius: 5px;
 
+  &:hover {
+    background: ${formElements.input.hoverColor};
+  }
+
   &:hover,
   &:focus {
     border: 1px solid ${formElements.input.borderHoverColor};

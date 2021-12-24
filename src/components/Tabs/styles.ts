@@ -30,6 +30,7 @@ export const tabsHeader = (
     ${mq["sm"]} {
       padding: 0 2rem;
       flex-wrap: nowrap;
+      border-bottom: 1px solid ${tabs.headerBorder};
     }
   `;
 };

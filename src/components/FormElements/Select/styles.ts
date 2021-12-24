@@ -18,7 +18,8 @@ export const selectContainer = (
     }
   }
 
-  &:focus-within {
+  &:focus-within,
+  &:hover {
     .select-input-wrapper {
       .carret-wrapper {
         z-index: 1;

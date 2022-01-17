@@ -3,17 +3,9 @@ import userEvent from "@testing-library/user-event";
 import Pagination from "./Pagination";
 import { render, screen } from "@test-utils/render";
 
-xdescribe("<Pagination />", () => {
+describe("<Pagination />", () => {
   it("renders correctly", () => {
-    render(
-      <Pagination
-        current={2}
-        totalPages={4}
-        total_results={100}
-        page_size={10}
-        onChange={jest.fn()}
-      />,
-    );
+    render(<Pagination current={2} totalPages={4} onChange={jest.fn()} />);
 
     const prevBtn = screen.queryByTestId("previous-page-btn");
     const nextBtn = screen.queryByTestId("next-page-btn");
@@ -25,15 +17,7 @@ xdescribe("<Pagination />", () => {
   });
 
   it("previous page button is disabled if it is the first page", () => {
-    render(
-      <Pagination
-        current={1}
-        totalPages={4}
-        total_results={100}
-        page_size={10}
-        onChange={jest.fn()}
-      />,
-    );
+    render(<Pagination current={1} totalPages={4} onChange={jest.fn()} />);
 
     const prevBtn = screen.getByTestId("previous-page-btn");
 
@@ -42,15 +26,7 @@ xdescribe("<Pagination />", () => {
   });
 
   it("next page button is disabled if it is on the last page", () => {
-    render(
-      <Pagination
-        current={4}
-        totalPages={4}
-        total_results={100}
-        page_size={10}
-        onChange={jest.fn()}
-      />,
-    );
+    render(<Pagination current={4} totalPages={4} onChange={jest.fn()} />);
 
     const nextBtn = screen.queryByTestId("next-page-btn");
 
@@ -60,15 +36,7 @@ xdescribe("<Pagination />", () => {
 
   it("onChange get correct page number", () => {
     const mockFn = jest.fn();
-    render(
-      <Pagination
-        current={2}
-        totalPages={4}
-        total_results={100}
-        page_size={10}
-        onChange={mockFn}
-      />,
-    );
+    render(<Pagination current={2} totalPages={4} onChange={mockFn} />);
     const nextBtn = screen.getByTestId("next-page-btn");
     const previousBtn = screen.getByTestId("previous-page-btn");
 
@@ -85,8 +53,6 @@ xdescribe("<Pagination />", () => {
         containerAttrs={{ id: "my-id", className: "html-class" }}
         current={2}
         totalPages={4}
-        total_results={100}
-        page_size={10}
         onChange={jest.fn()}
       />,
     );

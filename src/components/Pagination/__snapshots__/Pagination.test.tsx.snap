@@ -3,7 +3,7 @@
 exports[`<Pagination /> matches snapshot with on page 1`] = `
 <div>
   <div
-    class="html-class css-a0o1oz-container-container"
+    class="html-class css-q971uk-container-container"
     id="my-id"
   >
     <button

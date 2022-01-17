@@ -1,28 +1,19 @@
 import React, { FC } from "react";
+import classNames from "classnames";
 import Button from "../Button/Button";
 import { ArrowLeftSVG, ArrowRightSVG } from "../../icons/";
 import { container } from "./styles";
 import { DOTS, usePagination } from "./usePagination";
-import classNames from "classnames";
 
 export type PaginationProps = {
   current: number;
   totalPages: number;
   onChange: (page: number) => void;
   containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
-  page_size: number;
-  total_results: number;
 };
 
-const Pagination: FC<PaginationProps> = ({
-  current,
-  onChange,
-  totalPages,
-  containerAttrs,
-  total_results,
-  page_size,
-}) => {
-  const paginationRange = usePagination(current, total_results, page_size);
+const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, containerAttrs }) => {
+  const paginationRange = usePagination(current, totalPages);
 
   const classNamesContainer = (pageNumber: number) =>
     classNames({

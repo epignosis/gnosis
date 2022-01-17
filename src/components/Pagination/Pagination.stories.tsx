@@ -10,9 +10,7 @@ export default {
   },
   args: {
     current: 3,
-    totalPages: 10,
-    total_results: 100,
-    page_size: 10,
+    totalPages: 6,
   },
 };
 

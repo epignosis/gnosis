@@ -33,7 +33,8 @@ export const inputContainer = (
     z-index: 1;
     border-radius: 5px;
 
-    &:focus-within {
+    &:focus-within,
+    &:hover {
       .prefix-icon,
       .suffix-icon {
         z-index: 1;

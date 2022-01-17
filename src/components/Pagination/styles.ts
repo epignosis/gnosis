@@ -10,17 +10,17 @@ export const container = ({ pagination }: Theme): SerializedStyles => {
     .pagination-options {
       margin: 0 1rem;
 
-      .active {
-        background: ${hexToRGBA(pagination.background, 0.16)};
-        color: ${pagination.color};
-      }
-
-      #page-selection {
+      button {
         margin-right: 0.5rem;
 
         &:last-of-type {
           margin: 0;
         }
+      }
+
+      .isActive {
+        background: ${hexToRGBA(pagination.background, 0.16)};
+        color: ${pagination.color};
       }
     }
   `;

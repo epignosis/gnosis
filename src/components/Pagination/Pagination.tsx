@@ -15,9 +15,11 @@ export type PaginationProps = {
 const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, containerAttrs }) => {
   const paginationRange = usePagination(current, totalPages);
 
+  // console.log(current);
+
   const classNamesContainer = (pageNumber: number) =>
     classNames({
-      active: current === pageNumber,
+      isActive: pageNumber === current,
     });
 
   return (
@@ -42,8 +44,9 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, contai
 
           return (
             <Button
+              type="button"
               key={pageNumber}
-              id="page-selection"
+              id={pageNumber.toString()}
               data-testid="pagination-page"
               onClick={(): void => onChange(pageNumber as number)}
               variant="ghost"

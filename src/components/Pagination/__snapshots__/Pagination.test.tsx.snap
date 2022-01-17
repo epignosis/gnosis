@@ -3,7 +3,7 @@
 exports[`<Pagination /> matches snapshot with on page 1`] = `
 <div>
   <div
-    class="html-class css-q971uk-container-container"
+    class="html-class css-1de41tm-container-container"
     id="my-id"
   >
     <button
@@ -25,7 +25,8 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       <button
         class="ghost css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="pagination-page"
-        id="page-selection"
+        id="1"
+        type="button"
       >
         <span
           class="btn-text"
@@ -34,9 +35,10 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         </span>
       </button>
       <button
-        class="active ghost css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        class="isActive ghost css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="pagination-page"
-        id="page-selection"
+        id="2"
+        type="button"
       >
         <span
           class="btn-text"
@@ -47,7 +49,8 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       <button
         class="ghost css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="pagination-page"
-        id="page-selection"
+        id="3"
+        type="button"
       >
         <span
           class="btn-text"
@@ -58,7 +61,8 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       <button
         class="ghost css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="pagination-page"
-        id="page-selection"
+        id="4"
+        type="button"
       >
         <span
           class="btn-text"

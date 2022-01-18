@@ -15,8 +15,6 @@ export type PaginationProps = {
 const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, containerAttrs }) => {
   const paginationRange = usePagination(current, totalPages);
 
-  // console.log(current);
-
   const classNamesContainer = (pageNumber: number) =>
     classNames({
       isActive: pageNumber === current,

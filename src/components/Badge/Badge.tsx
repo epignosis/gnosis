@@ -8,18 +8,21 @@ export type Offset = { top: string; right: string };
 export type BadgeProps = React.HTMLAttributes<HTMLSpanElement> & {
   size?: Size;
   offset?: Offset;
+  badgeContent?: number;
 };
 
 const Badge: FC<BadgeProps> = ({
   size = "md",
-  offset = { top: "0", right: "-8px" },
+  offset = { top: "-7px", right: "-15px" },
   children,
+  badgeContent,
   ...rest
 }) => {
   return (
-    <span css={(theme): SerializedStyles => container(theme, { size, offset })} {...rest}>
+    <div css={(theme): SerializedStyles => container(theme, { size, offset })} {...rest}>
+      <span className="contentContainer"> {badgeContent} </span>
       {children}
-    </span>
+    </div>
   );
 };
 

@@ -18,9 +18,10 @@ export const Default: Story<BadgeProps> = (args) => <Badge {...args} />;
 
 Default.args = {
   offset: {
-    right: "-8px",
-    top: "0",
+    right: "-15px",
+    top: "-7px",
   },
   children: "Notifications",
   size: "md",
+  badgeContent: 5,
 };

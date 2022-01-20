@@ -67,7 +67,7 @@ export default [
     input: "src/icons/index.ts",
     output: [
       {
-        dir: "icons",
+        dir: "dist/icons",
         format: "cjs",
         banner,
       },

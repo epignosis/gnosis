@@ -2,7 +2,7 @@ module.exports = {
   branches: [
     "main",
     {
-      name: "next",
+      name: "beta",
       prerelease: true,
     },
   ],

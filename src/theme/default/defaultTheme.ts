@@ -17,6 +17,7 @@ import {
   tabs,
   tag,
   tooltip,
+  pagination,
 } from "./config";
 
 const typeScaleSizes = generateTypeScaleSizes(DEFAULT_TYPESCALE_CONFIG);
@@ -50,6 +51,7 @@ const defaultTheme = {
   tabs,
   tag,
   tooltip,
+  pagination,
 };
 
 export type GnosisTheme = typeof defaultTheme;

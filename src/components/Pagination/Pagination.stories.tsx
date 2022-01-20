@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Story } from "@storybook/react";
 import Pagination, { PaginationProps } from "./Pagination";
 
@@ -9,28 +9,29 @@ export default {
     onChange: { action: "Changed page!" },
   },
   args: {
-    current: 1,
-    totalPages: 4,
+    current: 3,
+    totalPages: 6,
   },
 };
 
-const Template: Story<PaginationProps> = (args) => <Pagination {...args} />;
+export const Default: Story<PaginationProps> = (args) => {
+  const [value, setValue] = useState(1);
+  const updateValue = (val: number) => {
+    setValue(val);
+  };
 
-export const WithNextBtn = Template.bind({});
-
-WithNextBtn.args = {
-  current: 1,
+  return <Pagination {...args} current={value} onChange={updateValue} />;
 };
 
-export const WithBothBtns = Template.bind({});
+export const WithTooManyPages: Story<PaginationProps> = (args) => {
+  const [value, setValue] = useState(1);
+  const updateValue = (val: number) => {
+    setValue(val);
+  };
 
-WithBothBtns.args = {
-  current: 2,
-  totalPages: 4,
+  return <Pagination {...args} current={value} onChange={updateValue} />;
 };
 
-export const WithPreviousBtn = Template.bind({});
-
-WithPreviousBtn.args = {
-  current: 4,
+WithTooManyPages.args = {
+  totalPages: 1000,
 };

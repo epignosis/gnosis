@@ -1,88 +1,73 @@
 import React, { FC } from "react";
+import classNames from "classnames";
 import Button from "../Button/Button";
-import Select from "../FormElements/Select/Select";
 import { ArrowLeftSVG, ArrowRightSVG } from "../../icons/";
 import { container } from "./styles";
+import { usePagination, ellipsis } from "./usePagination";
 
 export type PaginationProps = {
   current: number;
   totalPages: number;
   onChange: (page: number) => void;
-  responsiveView?: boolean;
   containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
 };
 
-const Pagination: FC<PaginationProps> = ({
-  current,
-  onChange,
-  totalPages,
-  responsiveView = false,
-  containerAttrs,
-}) => {
+const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, containerAttrs }) => {
+  const paginationRange = usePagination(current, totalPages);
+
+  const classNamesContainer = (pageNumber: number) =>
+    classNames({
+      isActive: pageNumber === current,
+    });
+
   return (
     <div css={container} {...containerAttrs}>
-      {current > 1 && (
-        <>
-          {!responsiveView ? (
+      <Button
+        className="previous-page-btn"
+        data-testid="previous-page-btn"
+        name="Previous page"
+        onClick={(): void => onChange(current - 1)}
+        color="secondary"
+        noGutters
+        disabled={current === 1}
+      >
+        <ArrowLeftSVG height={22} />
+      </Button>
+
+      <div className="pagination-options">
+        {paginationRange.map((pageNumber) => {
+          if (pageNumber === ellipsis) {
+            return ellipsis;
+          }
+
+          return (
             <Button
-              className="previous-page-btn"
-              data-testid="previous-page-btn"
-              name="Previous page"
-              onClick={(): void => onChange(current - 1)}
-            >
-              Previous
-            </Button>
-          ) : (
-            <Button
-              className="mobile-pagination mobile-previous-page-btn"
+              type="button"
+              key={pageNumber}
+              id={pageNumber.toString()}
+              data-testid="pagination-page"
+              onClick={(): void => onChange(pageNumber as number)}
+              variant="ghost"
               noGutters
-              name="Previous page"
-              onClick={(): void => onChange(current - 1)}
+              className={classNamesContainer(pageNumber as number)}
             >
-              <ArrowLeftSVG height={24} data-testid="arrow-left" />
+              {pageNumber}
             </Button>
-          )}
-        </>
-      )}
-      <div>Page</div>
-      <div className="current-page">
-        <Select
-          id="page-selection"
-          data-testid="pagination-page"
-          value={current}
-          onChange={(value): void => onChange(parseInt(value))}
-        >
-          {[...Array(totalPages)].map((_, index) => (
-            <option key={index + 1} value={index + 1}>
-              {index + 1}
-            </option>
-          ))}
-        </Select>
+          );
+        })}
       </div>
-      <div className="total-pages">of {totalPages}</div>
-      {current < totalPages && (
-        <>
-          {!responsiveView ? (
-            <Button
-              className="next-page-btn"
-              data-testid="next-page-btn"
-              name="Next page"
-              onClick={(): void => onChange(current + 1)}
-            >
-              Next
-            </Button>
-          ) : (
-            <Button
-              className="mobile-pagination mobile-next-page-btn"
-              noGutters
-              name="Next page"
-              onClick={(): void => onChange(current + 1)}
-            >
-              <ArrowRightSVG height={24} data-testid="arrow-right" />
-            </Button>
-          )}
-        </>
-      )}
+
+      <Button
+        className="next-page-btn"
+        data-testid="next-page-btn"
+        name="Next page"
+        onClick={(): void => onChange(current + 1)}
+        color="secondary"
+        noGutters
+        disabled={current === totalPages}
+      >
+        <ArrowRightSVG height={22} />
+      </Button>
     </div>
   );
 };

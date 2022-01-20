@@ -11,9 +11,12 @@ module.exports = {
       "@semantic-release/commit-analyzer",
       {
         releaseRules: [
+          { breaking: true, release: "major" },
           { type: "docs", scope: "DOCUMENTATION", release: "patch" },
           { type: "refactor", release: "patch" },
           { type: "style", release: "patch" },
+          { type: "breaking", release: "major" },
+          { scope: "no-release", release: false },
         ],
       },
     ],

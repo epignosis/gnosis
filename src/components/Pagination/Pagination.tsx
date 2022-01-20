@@ -3,7 +3,7 @@ import classNames from "classnames";
 import Button from "../Button/Button";
 import { ArrowLeftSVG, ArrowRightSVG } from "../../icons/";
 import { container } from "./styles";
-import { DOTS, usePagination } from "./usePagination";
+import { usePagination, ellipsis } from "./usePagination";
 
 export type PaginationProps = {
   current: number;
@@ -35,9 +35,9 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, contai
       </Button>
 
       <div className="pagination-options">
-        {paginationRange?.map((pageNumber) => {
-          if (pageNumber === DOTS) {
-            return DOTS;
+        {paginationRange.map((pageNumber) => {
+          if (pageNumber === ellipsis) {
+            return ellipsis;
           }
 
           return (

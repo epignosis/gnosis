@@ -70,6 +70,30 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
           4
         </span>
       </button>
+      <button
+        class="ghost css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        data-testid="pagination-page"
+        id="5"
+        type="button"
+      >
+        <span
+          class="btn-text"
+        >
+          5
+        </span>
+      </button>
+      <button
+        class="ghost css-1030g3v-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        data-testid="pagination-page"
+        id="6"
+        type="button"
+      >
+        <span
+          class="btn-text"
+        >
+          6
+        </span>
+      </button>
     </div>
     <button
       class="next-page-btn solid css-hhqmb3-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"

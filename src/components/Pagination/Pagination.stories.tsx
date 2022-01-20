@@ -22,3 +22,16 @@ export const Default: Story<PaginationProps> = (args) => {
 
   return <Pagination {...args} current={value} onChange={updateValue} />;
 };
+
+export const WithTooManyPages: Story<PaginationProps> = (args) => {
+  const [value, setValue] = useState(1);
+  const updateValue = (val: number) => {
+    setValue(val);
+  };
+
+  return <Pagination {...args} current={value} onChange={updateValue} />;
+};
+
+WithTooManyPages.args = {
+  totalPages: 1000,
+};

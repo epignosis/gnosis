@@ -2,7 +2,7 @@ module.exports = {
   branches: [
     "main",
     {
-      name: "next",
+      name: "beta",
       prerelease: true,
     },
   ],
@@ -10,6 +10,7 @@ module.exports = {
     [
       "@semantic-release/commit-analyzer",
       {
+        preset: "conventionalcommits",
         releaseRules: [
           { type: "docs", scope: "DOCUMENTATION", release: "patch" },
           { type: "refactor", release: "patch" },

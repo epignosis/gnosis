@@ -1,3 +1,10 @@
+# [2.0.0](https://github.com/epignosis/gnosis/compare/v1.3.4...v2.0.0) (2022-01-21)
+
+
+### Bug Fixes
+
+* **semantic-release:** added conventional commits changelog ([79d63cb](https://github.com/epignosis/gnosis/commit/79d63cb82dc2a35b5215e62296a925fe7080d6cf))
+
 ## [1.3.4](https://github.com/epignosis/gnosis/compare/v1.3.3...v1.3.4) (2021-12-24)
 
 ## [1.3.3](https://github.com/epignosis/gnosis/compare/v1.3.2...v1.3.3) (2021-12-09)

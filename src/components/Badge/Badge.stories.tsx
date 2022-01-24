@@ -14,9 +14,11 @@ export default {
   },
 };
 
-export const Default: Story<BadgeProps> = (args) => <Badge {...args} />;
+const Template: Story<BadgeProps> = (args) => <Badge {...args} />;
 
-Default.args = {
+export const WithBadgeContent = Template.bind({});
+
+WithBadgeContent.args = {
   offset: {
     right: "-15px",
     top: "-7px",
@@ -24,4 +26,15 @@ Default.args = {
   children: "Notifications",
   size: "md",
   badgeContent: 5,
+};
+
+export const WithoutBadgeContent = Template.bind({});
+
+WithoutBadgeContent.args = {
+  offset: {
+    right: "-8px",
+    top: "0px",
+  },
+  children: "Notifications",
+  size: "md",
 };

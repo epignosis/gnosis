@@ -15,6 +15,7 @@ module.exports = {
           { type: "docs", scope: "DOCUMENTATION", release: "patch" },
           { type: "refactor", release: "patch" },
           { type: "style", release: "patch" },
+          { type: "chore", release: "patch" },
         ],
       },
     ],

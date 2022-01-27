@@ -14,25 +14,34 @@ export const container = (
     position: relative;
 
     &.has-content {
-      .contentContainer {
-        width: 1rem;
-        height: 1rem;
+      .content-container {
+        min-width: 1.25rem;
+        height: 1.25rem;
+        border: 2px solid white;
       }
     }
 
-    .contentContainer {
+    &.big-content {
+      .content-container {
+        min-width: 2.5rem;
+        border-radius: 20px;
+      }
+    }
+
+    .content-container {
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      font-size: 12px;
+      font-size: 10px;
       position: absolute;
-      width: ${sizes[size]};
+      min-width: ${sizes[size]};
       height: ${sizes[size]};
       background: ${badge.background};
       color: ${badge.color};
       border-radius: 50%;
       top: ${offset.top};
       right: ${offset.right};
+      z-index: 1;
     }
   `;
 };

@@ -3,11 +3,11 @@
 exports[`<Badge /> matches snapshot with badge content 1`] = `
 <div>
   <div
-    class="my-class css-1kmjbw4-container-container"
+    class="my-class css-182rk42-container-container"
     id="my-id"
   >
     <span
-      class="contentContainer"
+      class="content-container"
     >
       5
     </span>
@@ -19,11 +19,11 @@ exports[`<Badge /> matches snapshot with badge content 1`] = `
 exports[`<Badge /> matches snapshot without badge content 1`] = `
 <div>
   <div
-    class="my-class css-1kmjbw4-container-container"
+    class="my-class css-182rk42-container-container"
     id="my-id"
   >
     <span
-      class="contentContainer"
+      class="content-container"
     />
     Messages
   </div>

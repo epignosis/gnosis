@@ -7,7 +7,7 @@ describe("<Badge />", () => {
   it("renders correctly with badge content", () => {
     const badgeTxt = faker.lorem.word();
 
-    render(<Badge badgeContent={5}>{badgeTxt}</Badge>);
+    render(<Badge badgeContent="5">{badgeTxt}</Badge>);
     const content = screen.getByText(badgeTxt);
     const badgeContent = screen.getByText("5");
 
@@ -31,7 +31,7 @@ describe("<Badge />", () => {
         className="my-class"
         size="md"
         offset={{ top: "10px", right: "10px" }}
-        badgeContent={5}
+        badgeContent="5"
       >
         Messages
       </Badge>,

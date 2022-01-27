@@ -9,7 +9,7 @@ export type Offset = { top: string; right: string };
 export type BadgeProps = React.HTMLAttributes<HTMLSpanElement> & {
   size?: Size;
   offset?: Offset;
-  badgeContent?: number;
+  badgeContent?: string;
 };
 
 const Badge: FC<BadgeProps> = ({
@@ -21,6 +21,7 @@ const Badge: FC<BadgeProps> = ({
 }) => {
   const containerClassNames = classNames({
     "has-content": badgeContent,
+    "big-content": badgeContent && badgeContent.length >= 3,
   });
 
   return (
@@ -29,7 +30,7 @@ const Badge: FC<BadgeProps> = ({
       className={containerClassNames}
       {...rest}
     >
-      <span className="contentContainer">{badgeContent}</span>
+      <span className="content-container">{badgeContent}</span>
       {children}
     </div>
   );

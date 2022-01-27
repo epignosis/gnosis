@@ -13,15 +13,35 @@ export const container = (
     display: inline-block;
     position: relative;
 
-    &:after {
+    &.has-content {
+      .content-container {
+        min-width: 1.25rem;
+        height: 1.25rem;
+        border: 2px solid white;
+      }
+    }
+
+    &.big-content {
+      .content-container {
+        min-width: 2rem;
+        border-radius: 20px;
+      }
+    }
+
+    .content-container {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
       position: absolute;
-      width: ${sizes[size]};
+      min-width: ${sizes[size]};
       height: ${sizes[size]};
-      content: "";
       background: ${badge.background};
+      color: ${badge.color};
       border-radius: 50%;
       top: ${offset.top};
       right: ${offset.right};
+      z-index: 1;
     }
   `;
 };

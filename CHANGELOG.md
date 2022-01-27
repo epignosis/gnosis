@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/epignosis/gnosis/compare/v2.0.0...v2.1.0) (2022-01-27)
+
+
+### Features
+
+* new API of Badge component ([9da145c](https://github.com/epignosis/gnosis/commit/9da145c4a4efd9ea74d62fc0ba773b3d9262076c))
+
 # [2.0.0](https://github.com/epignosis/gnosis/compare/v1.3.4...v2.0.0) (2022-01-21)
 
 

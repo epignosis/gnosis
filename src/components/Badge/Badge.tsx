@@ -10,6 +10,7 @@ export type BadgeProps = React.HTMLAttributes<HTMLSpanElement> & {
   size?: Size;
   offset?: Offset;
   badgeContent?: string;
+  containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
 };
 
 const Badge: FC<BadgeProps> = ({
@@ -17,6 +18,7 @@ const Badge: FC<BadgeProps> = ({
   offset = { top: "-8px", right: "-15px" },
   children,
   badgeContent,
+  containerAttrs,
   ...rest
 }) => {
   const containerClassNames = classNames({
@@ -28,9 +30,11 @@ const Badge: FC<BadgeProps> = ({
     <div
       css={(theme): SerializedStyles => container(theme, { size, offset })}
       className={containerClassNames}
-      {...rest}
+      {...containerAttrs}
     >
-      <span className="content-container">{badgeContent}</span>
+      <span className="content-container" {...rest}>
+        {badgeContent}
+      </span>
       {children}
     </div>
   );

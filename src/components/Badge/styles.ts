@@ -23,7 +23,7 @@ export const container = (
 
     &.big-content {
       .content-container {
-        min-width: 2.5rem;
+        min-width: 2rem;
         border-radius: 20px;
       }
     }

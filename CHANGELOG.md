@@ -1,3 +1,19 @@
+## [2.1.1](https://github.com/epignosis/gnosis/compare/v2.1.0...v2.1.1) (2022-01-27)
+
+# [2.1.0](https://github.com/epignosis/gnosis/compare/v2.0.0...v2.1.0) (2022-01-27)
+
+
+### Features
+
+* new API of Badge component ([9da145c](https://github.com/epignosis/gnosis/commit/9da145c4a4efd9ea74d62fc0ba773b3d9262076c))
+
+# [2.0.0](https://github.com/epignosis/gnosis/compare/v1.3.4...v2.0.0) (2022-01-21)
+
+
+### Bug Fixes
+
+* **semantic-release:** added conventional commits changelog ([79d63cb](https://github.com/epignosis/gnosis/commit/79d63cb82dc2a35b5215e62296a925fe7080d6cf))
+
 ## [1.3.4](https://github.com/epignosis/gnosis/compare/v1.3.3...v1.3.4) (2021-12-24)
 
 ## [1.3.3](https://github.com/epignosis/gnosis/compare/v1.3.2...v1.3.3) (2021-12-09)

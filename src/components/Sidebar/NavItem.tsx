@@ -6,7 +6,7 @@ import { navItemContainer } from "./styles";
 export type NavItemProps = FC<{
   isExpanded: boolean;
   icon: ReactNode;
-  label: string;
+  label: string | JSX.Element;
   isActive?: boolean;
 }>;
 
@@ -50,7 +50,6 @@ const NavItem: NavItemProps = ({ isExpanded, label, icon, isActive = false }) =>
       <AnimatePresence>
         {isExpanded && (
           <m.div
-            key={label}
             className="title"
             initial="hidden"
             animate="visible"

@@ -1,30 +1,27 @@
-import { css } from "@emotion/react";
-import { mq } from "@theme/utils/breakpoints";
+import { css, SerializedStyles, Theme } from "@emotion/react";
+import { hexToRGBA } from "@theme/default/colors";
 
-export const container = css`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+export const container = ({ pagination }: Theme): SerializedStyles => {
+  return css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  > div {
-    display: inline-block;
-  }
+    .pagination-options {
+      margin: 0 1rem;
 
-  .mobile-pagination {
-    margin: 0 1rem;
-  }
+      button {
+        margin-right: 0.5rem;
 
-  .previous-page-btn {
-    margin-right: 2rem;
-  }
+        &:last-of-type {
+          margin: 0;
+        }
+      }
 
-  .current-page {
-    margin: 0 1rem;
-  }
-
-  .total-pages {
-    ${mq["md"]} {
-      margin-right: 2rem;
+      .isActive {
+        background: ${hexToRGBA(pagination.background, 0.16)};
+        color: ${pagination.color};
+      }
     }
-  }
-`;
+  `;
+};

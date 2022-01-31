@@ -1,12 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Badge /> matches snapshot 1`] = `
+exports[`<Badge /> matches snapshot with badge content 1`] = `
 <div>
-  <span
-    class="my-class css-1lrywgw-container-container"
-    id="my-id"
+  <div
+    class="has-content css-mtutzc-container-container"
   >
+    <span
+      class="my-class"
+      id="my-id"
+    >
+      5
+    </span>
     Messages
-  </span>
+  </div>
+</div>
+`;
+
+exports[`<Badge /> matches snapshot without badge content 1`] = `
+<div>
+  <div
+    class=" css-mtutzc-container-container"
+  >
+    <span
+      class="my-class"
+      id="my-id"
+    />
+    Messages
+  </div>
 </div>
 `;

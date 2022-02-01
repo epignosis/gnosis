@@ -71,18 +71,12 @@ export const ModalWithCotent: Story<ReactModalProps> = (args) => {
       <Modal {...args} isOpen={isOpen} onClose={(): void => setIsOpen(false)}>
         <Modal.Header>This is the modal title</Modal.Header>
         <Modal.Body>
-          <Input
-            id="password"
-            type="password"
-            label="Enter current password "
-            style={{ marginBottom: 16 }}
-          />
-          <Input
-            id="new-password"
-            type="password"
-            label="Type new password"
-            style={{ marginBottom: 16 }}
-          />
+          <div style={{ marginBottom: 16 }}>
+            <Input id="password" type="password" label="Enter current password " />
+          </div>
+          <div style={{ marginBottom: 16 }}>
+            <Input id="new-password" type="password" label="Type new password" />
+          </div>
           <Input id="retype-psw" type="password" label="Retype password" />
         </Modal.Body>
         <Modal.Footer style={{ textAlign: "right" }}>

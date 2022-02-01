@@ -52,11 +52,11 @@ export default {
       color: "#57606B",
     },
     ghost: {
-      color: colors.gray.dark,
-      background: colors.gray.light,
+      color: "#7A7A7A",
+      background: "#B8B8B8",
     },
     outline: {
-      color: colors.gray.darker,
+      color: "#5C5C5C",
       borderColor: "#EDEFF3",
     },
     link: {

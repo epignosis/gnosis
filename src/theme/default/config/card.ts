@@ -2,7 +2,7 @@ import { colors } from "../colors";
 
 export default {
   background: colors.white,
-  shadow: colors.gray.light,
+  shadow: colors.gray.lightest,
   hover: {
     background: "#02003699",
   },

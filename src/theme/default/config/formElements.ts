@@ -14,11 +14,11 @@ export default {
     hoverColor: "#F8F8F8",
   },
   radioButtonGroup: {
-    normalBackground: colors.gray.lighter,
+    normalBackground: "#F1F1F1",
     normalFontColor: colors.black,
     selectedBackground: colors.blue.base,
     selectedFontColor: colors.white,
-    borderColor: colors.gray.light,
+    borderColor: "#E8E8E8",
   },
   multiSelect: {
     hover: colors.gray.lighter,

@@ -24,7 +24,6 @@ export const drawerHeader = (
       color: ${drawer.closeBtnColor.base};
       padding: 0 1rem;
       border: 0;
-      margin: 0 0.5rem 0 auto;
       cursor: pointer;
 
       &:hover,

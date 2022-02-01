@@ -31,14 +31,16 @@ const ColorItem: FC<ColorItemProps> = ({ color, text = "black" }) => (
 
 const noPalletteColors: ReadonlyArray<string> = [defaultTheme.black, defaultTheme.white];
 
-const Pallette: FC<{ color: string }> = ({ color }) => {
+const Pallette: FC<{ color: string; name: string }> = ({ color, name }) => {
   const [baseColor, setBaseColor] = useState(color);
   const colors = palletGenerator(baseColor);
 
   return (
     <div style={{ width: 250 }}>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <Label htmlFor="baseColor">{baseColor}</Label>
+        <Label htmlFor="baseColor">
+          {name.toUpperCase()} ({baseColor})
+        </Label>
         <input
           type="color"
           id="baseColor"
@@ -74,6 +76,8 @@ type StoryColors = {
 };
 
 const Template: Story<StoryColors> = ({ colors }) => {
+  const names = Object.keys(colors);
+
   return (
     <div
       style={{
@@ -81,9 +85,9 @@ const Template: Story<StoryColors> = ({ colors }) => {
         flexWrap: "wrap",
       }}
     >
-      {Object.values(colors).map((color) => (
+      {Object.values(colors).map((color, index) => (
         <div key={color} style={{ margin: "0 32px 72px" }}>
-          <Pallette color={color} />
+          <Pallette color={color} name={names[index]} />
         </div>
       ))}
     </div>

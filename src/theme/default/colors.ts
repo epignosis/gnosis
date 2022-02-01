@@ -6,7 +6,8 @@ export const THEME_COLOURS = {
   orange: "#FF9C28",
   red: "#F20000",
   green: "#41BD54",
-  gray: "#999999",
+  gray: "#6E6E6E",
+  grayBlue: "#9EA5A9",
   black: "#232323",
   white: "#FFFFFF",
 };
@@ -38,6 +39,7 @@ export const colors = {
   red: palletGenerator(THEME_COLOURS.red),
   green: palletGenerator(THEME_COLOURS.green),
   gray: palletGenerator(THEME_COLOURS.gray),
+  grayBlue: palletGenerator(THEME_COLOURS.grayBlue),
   black: THEME_COLOURS.black,
   white: THEME_COLOURS.white,
 };

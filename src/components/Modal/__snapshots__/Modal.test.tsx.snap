@@ -9,7 +9,7 @@ exports[`<Modal> matches snapshot 1`] = `
   tabindex="-1"
 >
   <header
-    class="css-fvsr8l-modalHeader-modalHeader"
+    class="css-1s9dxkb-modalHeader-modalHeader"
     data-testid="modal-header"
   >
     <div>
@@ -35,7 +35,7 @@ exports[`<Modal> matches snapshot 1`] = `
     Test body
   </article>
   <footer
-    class="css-j18ln3-modalFooter-modalFooter"
+    class="css-hqu96b-modalFooter-modalFooter"
     data-testid="modal-footer"
   >
     Test footer
@@ -52,7 +52,7 @@ exports[`<Modal> matches snapshot with cutom HTML classes 1`] = `
   tabindex="-1"
 >
   <header
-    class="css-fvsr8l-modalHeader-modalHeader"
+    class="css-1s9dxkb-modalHeader-modalHeader"
     data-testid="modal-header"
   >
     <div>
@@ -78,7 +78,7 @@ exports[`<Modal> matches snapshot with cutom HTML classes 1`] = `
     Test body
   </article>
   <footer
-    class="css-j18ln3-modalFooter-modalFooter"
+    class="css-hqu96b-modalFooter-modalFooter"
     data-testid="modal-footer"
   >
     Test footer

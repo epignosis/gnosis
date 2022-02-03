@@ -58,6 +58,26 @@ describe("<Checkbox />", () => {
     expect(input).not.toBeChecked();
   });
 
+  it("is partially selected", () => {
+    const labelTxt = faker.lorem.word();
+    const id = faker.random.alphaNumeric();
+    const name = faker.random.alphaNumeric();
+
+    render(
+      <Checkbox
+        id={id}
+        label={labelTxt}
+        name={name}
+        value="testValue"
+        isPartiallySelected={true}
+      />,
+    );
+
+    const span = screen.getByTestId("is-partially-selected");
+
+    expect(span).toBeInTheDocument();
+  });
+
   it("matches snapshot with `md` size", () => {
     const { container } = render(
       <Checkbox

@@ -40,7 +40,7 @@ const Checkbox: ForwardRefRenderFunction<HTMLDivElement, CheckboxProps> = (props
       css={(theme): SerializedStyles => checkboxContainer(theme, { size, inline })}
       {...containerAttrs}
     >
-      {isPartiallySelected && <span className="dash" />}
+      {isPartiallySelected && <span data-testid="is-partially-selected" className="dash" />}
       <input id={id} type="checkbox" {...rest} />
       <label htmlFor={id}>
         <span className="shadow-element" tabIndex={-1} aria-hidden="true" />

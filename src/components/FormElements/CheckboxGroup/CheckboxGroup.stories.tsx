@@ -9,7 +9,7 @@ export default {
     size: "md",
     inline: false,
     initialValues: [],
-    groupname: "Hobbies",
+    groupname: "",
     options: [
       {
         label: "Writing",

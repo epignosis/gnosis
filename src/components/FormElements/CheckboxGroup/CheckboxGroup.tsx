@@ -4,11 +4,10 @@ import Checkbox, { CheckboxOption } from "./Checkbox";
 import { checkboxGroupContainer } from "./styles";
 
 export type CheckboxGroupProps = React.HTMLAttributes<HTMLFieldSetElement> & {
-  groupname?: string;
+  groupname: string;
   options: CheckboxOption[];
   onChange?: (selectedValues: string[]) => void;
   initialValues?: string[];
-  selected?: string;
   inline?: boolean;
   size?: InputSize;
 };
@@ -51,8 +50,8 @@ const CheckboxGroup: FC<CheckboxGroupProps> = ({
         {isPartiallySelected && <span className="dash" />}
         <Checkbox
           id={`${groupname}-container`}
-          label={groupname ?? ""}
-          name={groupname ?? ""}
+          label={groupname}
+          name={groupname}
           value=""
           onChange={handleGroupChange}
           size={size}

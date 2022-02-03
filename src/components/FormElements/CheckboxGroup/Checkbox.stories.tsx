@@ -42,6 +42,16 @@ const options = [
     value: "failed",
     name: "failed",
   },
+  {
+    label: "Partially selected",
+    value: "",
+    name: "partiallySelected",
+    isPartiallySelected: true,
+  },
+  {
+    value: "noLabel",
+    name: "noLabel",
+  },
 ];
 
 export const Checkbox: Story<Omit<CheckboxProps, "label" | "value" | "name" | "id">> = (args) => {

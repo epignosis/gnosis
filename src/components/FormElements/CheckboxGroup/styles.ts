@@ -49,6 +49,17 @@ export const checkboxContainer = (
   return css`
     display: ${inline ? "inline-flex" : "flex"};
     padding: 0.75rem ${inline ? "1.5rem" : "0"} 0.75rem 0;
+    position: relative;
+
+    .dash {
+      position: absolute;
+      top: 21px;
+      left: 7px;
+      width: 8px;
+      height: 2px;
+      background-color: white;
+      z-index: 3;
+    }
 
     input[type="checkbox"] {
       opacity: 0;

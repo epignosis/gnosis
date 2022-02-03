@@ -5,9 +5,10 @@ import { ExtendableProps } from "types/common";
 
 export type CheckboxOption = {
   value: string;
-  label: string;
+  label?: string;
   name: string;
   disabled?: boolean;
+  isPartiallySelected?: boolean;
 };
 
 export type CheckboxSize = "md" | "lg";
@@ -23,7 +24,15 @@ export type CheckboxProps = ExtendableProps<
 >;
 
 const Checkbox: ForwardRefRenderFunction<HTMLDivElement, CheckboxProps> = (props, ref) => {
-  const { id, label, size = "md", inline = false, containerAttrs, ...rest } = props;
+  const {
+    id,
+    label,
+    size = "md",
+    inline = false,
+    containerAttrs,
+    isPartiallySelected,
+    ...rest
+  } = props;
 
   return (
     <div
@@ -31,6 +40,7 @@ const Checkbox: ForwardRefRenderFunction<HTMLDivElement, CheckboxProps> = (props
       css={(theme): SerializedStyles => checkboxContainer(theme, { size, inline })}
       {...containerAttrs}
     >
+      {isPartiallySelected && <span className="dash" />}
       <input id={id} type="checkbox" {...rest} />
       <label htmlFor={id}>
         <span className="shadow-element" tabIndex={-1} aria-hidden="true" />

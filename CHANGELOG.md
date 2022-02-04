@@ -1,3 +1,10 @@
+## [2.1.5](https://github.com/epignosis/gnosis/compare/v2.1.4...v2.1.5) (2022-02-04)
+
+
+### Bug Fixes
+
+* **checkbox:** add partially selected and omitted label props to checkbox ([4500970](https://github.com/epignosis/gnosis/commit/4500970142fbc69e0106451aa9b419bb7859911d))
+
 ## [2.1.4](https://github.com/epignosis/gnosis/compare/v2.1.3...v2.1.4) (2022-02-01)
 
 ## [2.1.3](https://github.com/epignosis/gnosis/compare/v2.1.2...v2.1.3) (2022-02-01)

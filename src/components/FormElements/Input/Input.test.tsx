@@ -65,7 +65,7 @@ describe("<Input />", () => {
     const mockFn = jest.fn();
     const labelTxt = faker.lorem.word();
 
-    render(<Input id="test-input" label={labelTxt} disabled />);
+    render(<Input id="test-input" label={labelTxt} disabled onClick={mockFn} />);
 
     const input = screen.getByLabelText(labelTxt);
 

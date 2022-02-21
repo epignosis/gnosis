@@ -8,12 +8,6 @@ export const inputContainer = (
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })};
 
-  &.disabled {
-    .input-wrapper input {
-      background-color: red;
-    }
-  }
-
   &:disabled,
   &.disabled {
     &,

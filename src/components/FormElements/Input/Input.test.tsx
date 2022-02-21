@@ -61,6 +61,21 @@ describe("<Input />", () => {
     expect(iconAfter).toBeInTheDocument();
   });
 
+  it("renders disabled", () => {
+    const mockFn = jest.fn();
+    const labelTxt = faker.lorem.word();
+
+    render(<Input id="test-input" label={labelTxt} disabled />);
+
+    const input = screen.getByLabelText(labelTxt);
+
+    expect(input).toBeDisabled();
+
+    userEvent.click(input);
+
+    expect(mockFn).not.toHaveBeenCalled();
+  });
+
   it("matches snapshot", () => {
     const { container } = render(
       <Input

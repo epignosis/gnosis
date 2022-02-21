@@ -19,6 +19,7 @@ export type InputProps = ExtendableProps<
     label?: string;
     inline?: boolean;
     containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
+    disabled?: boolean;
   }
 >;
 
@@ -32,6 +33,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     inline = false,
     id,
     containerAttrs,
+    disabled = false,
     ...rest
   },
   forwardedRef,
@@ -45,6 +47,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     "with-prefix-icon": Boolean(iconBefore),
     "with-suffix-icon": Boolean(iconAfter),
     inline: hasLabel && inline,
+    disabled: disabled,
   });
 
   return (
@@ -60,7 +63,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
             <IconBefore height={32} />
           </span>
         )}
-        <input ref={forwardedRef} id={id} {...rest} />
+        <input ref={forwardedRef} id={id} disabled={disabled} {...rest} />
         {IconAfter && (
           <span className="suffix-icon" data-testid="input-icon-after">
             <IconAfter height={32} />

@@ -25,6 +25,7 @@ export const inputContainer = (
         .suffix-icon {
           z-index: 1;
           color: ${formElements.input.disabledIcon};
+          cursor: not-allowed;
         }
       }
     }

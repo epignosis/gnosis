@@ -19,7 +19,6 @@ export const selectContainer = (
   }
 
   &.disabled {
-    &,
     &:hover {
       .select-input-wrapper {
         .carret-wrapper {

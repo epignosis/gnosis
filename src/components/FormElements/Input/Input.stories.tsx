@@ -28,7 +28,6 @@ export default {
     inline: false,
     status: "valid",
     className: "inputStory",
-    disabled: false,
   },
   decorators: [
     (Story: Story): JSX.Element => (

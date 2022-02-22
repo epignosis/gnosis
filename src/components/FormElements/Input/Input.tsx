@@ -19,7 +19,6 @@ export type InputProps = ExtendableProps<
     label?: string;
     inline?: boolean;
     containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
-    disabled?: boolean;
   }
 >;
 

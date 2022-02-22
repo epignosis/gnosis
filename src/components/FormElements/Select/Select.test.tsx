@@ -39,6 +39,28 @@ describe("<Select />", () => {
     expect(options).toHaveLength(3);
   });
 
+  it("renders disabled", () => {
+    const mockFn = jest.fn();
+    const labelTxt = faker.commerce.department();
+    render(
+      <Select id="my-select" label={labelTxt} disabled>
+        {OPTIONS.map(({ label, value }) => (
+          <option key={value} value={value}>
+            {label}
+          </option>
+        ))}
+      </Select>,
+    );
+
+    const select = screen.getByLabelText(labelTxt);
+
+    expect(select).toBeDisabled();
+
+    userEvent.click(select);
+
+    expect(mockFn).not.toHaveBeenCalled();
+  });
+
   it("selects a value", () => {
     const labelTxt = faker.commerce.department();
     const mockFn = jest.fn();

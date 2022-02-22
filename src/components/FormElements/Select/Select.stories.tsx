@@ -37,7 +37,7 @@ export default {
   ],
 };
 
-export const Select: Story<SelectProps> = (args) => (
+const Template: Story<SelectProps> = (args) => (
   <SelectComponent {...args}>
     <option value="rs">Rust</option>
     <option value="js">JavaScript</option>
@@ -49,3 +49,11 @@ export const Select: Story<SelectProps> = (args) => (
     </option>
   </SelectComponent>
 );
+
+export const Default = Template.bind({});
+
+export const Disabled = Template.bind({});
+
+Disabled.args = {
+  disabled: true,
+};

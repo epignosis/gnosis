@@ -8,25 +8,13 @@ export const inputContainer = (
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })};
 
-  &:disabled,
   &.disabled {
-    &,
-    &:hover,
-    &:focus,
-    &:active {
-      .input-wrapper {
-        input {
-          cursor: not-allowed;
-          background-color: ${formElements.input.disabledBackground};
-          border-color: ${formElements.input.disabledBorder};
-        }
-
-        .prefix-icon,
-        .suffix-icon {
-          z-index: 1;
-          color: ${formElements.input.disabledIcon};
-          cursor: not-allowed;
-        }
+    .input-wrapper {
+      .prefix-icon,
+      .suffix-icon {
+        z-index: 1;
+        color: ${formElements.input.disabledIcon};
+        cursor: not-allowed;
       }
     }
   }

@@ -54,6 +54,15 @@ export const inputBaseStyles = (
     background-color: ${formElements.input.backgroundFocus};
   }
 
+  &:disabled {
+    &,
+    &:hover {
+      cursor: not-allowed;
+      background-color: ${formElements.input.disabledBackground};
+      border-color: ${formElements.input.disabledBorder};
+    }
+  }
+
   &::placeholder {
     font-style: italic;
     color: ${formElements.input.placeholderColor};

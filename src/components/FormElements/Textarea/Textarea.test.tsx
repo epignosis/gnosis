@@ -20,6 +20,27 @@ describe("<Textarea />", () => {
     expect(textarea).toBeInTheDocument();
   });
 
+  it("renders disabled", () => {
+    const mockFn = jest.fn();
+    const labelTxt = faker.random.words();
+    render(
+      <Textarea
+        id={faker.random.alphaNumeric()}
+        label={labelTxt}
+        name={faker.random.alphaNumeric()}
+        disabled
+      />,
+    );
+
+    const textarea = screen.getByLabelText(labelTxt);
+
+    expect(textarea).toBeDisabled();
+
+    userEvent.click(textarea);
+
+    expect(mockFn).not.toHaveBeenCalled();
+  });
+
   it("changes value", () => {
     const labelTxt = faker.random.words();
     render(

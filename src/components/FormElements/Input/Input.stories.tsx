@@ -42,6 +42,19 @@ const Template: Story<InputProps> = (args) => <InputComponent {...args} />;
 
 export const Default = Template.bind({});
 
+export const Disabled = Template.bind({});
+
+Disabled.args = {
+  disabled: true,
+};
+
+export const DisabledWithIcon = Template.bind({});
+
+DisabledWithIcon.args = {
+  disabled: true,
+  iconAfter: CalendarSVG,
+};
+
 export const WithIconBefore = Template.bind({});
 
 WithIconBefore.args = {

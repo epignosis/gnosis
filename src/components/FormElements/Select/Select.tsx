@@ -35,6 +35,7 @@ const Select: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (props,
     valid: status === "valid",
     error: status === "error",
     inline: hasLabel && inline,
+    disabled: Boolean(rest?.disabled),
     [containerAttrs?.className ?? ""]: Boolean(containerAttrs?.className),
   });
 

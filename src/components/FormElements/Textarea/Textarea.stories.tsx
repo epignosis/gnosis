@@ -36,4 +36,12 @@ export default {
   ],
 };
 
-export const Textarea: Story<TextareaProps> = (args) => <TextareaComponent {...args} />;
+const Template: Story<TextareaProps> = (args) => <TextareaComponent {...args} />;
+
+export const Default = Template.bind({});
+
+export const Disabled = Template.bind({});
+
+Disabled.args = {
+  disabled: true,
+};

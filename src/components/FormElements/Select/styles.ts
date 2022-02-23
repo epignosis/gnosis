@@ -18,6 +18,17 @@ export const selectContainer = (
     }
   }
 
+  &.disabled {
+    &:hover {
+      .select-input-wrapper {
+        .carret-wrapper {
+          cursor: not-allowed;
+          z-index: -1;
+        }
+      }
+    }
+  }
+
   &:focus-within,
   &:hover {
     .select-input-wrapper {

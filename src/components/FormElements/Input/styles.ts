@@ -8,6 +8,17 @@ export const inputContainer = (
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })};
 
+  &.disabled {
+    .input-wrapper {
+      .prefix-icon,
+      .suffix-icon {
+        z-index: 1;
+        color: ${formElements.input.disabledIcon};
+        cursor: not-allowed;
+      }
+    }
+  }
+
   &.error {
     .input-wrapper input {
       border-color: ${formElements.errors.errorBorderColor};

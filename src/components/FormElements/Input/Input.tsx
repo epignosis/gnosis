@@ -45,6 +45,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     "with-prefix-icon": Boolean(iconBefore),
     "with-suffix-icon": Boolean(iconAfter),
     inline: hasLabel && inline,
+    disabled: Boolean(rest?.disabled),
   });
 
   return (

@@ -12,6 +12,9 @@ export default {
     backgroundFocus: colors.white,
     iconColor: colors.black,
     hoverColor: "#F8F8F8",
+    disabledBackground: "#eeeeee",
+    disabledBorder: "#cccccc",
+    disabledIcon: "#C9C9C9",
   },
   radioButtonGroup: {
     normalBackground: "#F1F1F1",

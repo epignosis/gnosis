@@ -70,7 +70,7 @@ const Modal: FC<ReactModalProps> & ModalCompoundProps = ({
   size = "md",
   rootElementSelector = "#app",
   closeOnOutsideClick = true, //fix
-  style = {} //fix
+  style = {}, //fix
 }) => {
   const rootElement = document.querySelector(rootElementSelector) as HTMLElement;
   const clonedChildren = Children.map(children, (child) =>

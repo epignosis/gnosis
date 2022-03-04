@@ -1,4 +1,4 @@
-import React, { FC, useState, ReactElement, Children } from "react";
+import React, { FC, useState, useEffect, ReactElement, Children } from "react";
 import { SerializedStyles } from "@emotion/react";
 import Select from "../FormElements/Select/Select";
 import TabsNavItem from "./TabsNavItem";
@@ -9,7 +9,7 @@ type TabsProps = React.HTMLAttributes<HTMLElement> & {
   stickyHeader?: boolean;
   responsiveHeader?: boolean;
   initialTab?: number; //fix
-  onTabSelected?: (index: number) => void //fix
+  onTabSelected?: (index: number) => void; //fix
 };
 
 type TabPaneProps = {
@@ -48,16 +48,14 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
     setActiveTab(index);
 
     //fix
-    if (onTabSelected)
-      onTabSelected(index);
+    if (onTabSelected) onTabSelected(index);
   };
   const displayResponsiveHeader = tabTitles?.length && responsiveHeader;
 
   //fix
-  React.useEffect(() => {
-    if (initialTab == activeTab || initialTab < 0)
-      return;
-    
+  useEffect(() => {
+    if (initialTab == activeTab || initialTab < 0) return;
+
     setActiveTab(initialTab);
   }, [initialTab]);
 

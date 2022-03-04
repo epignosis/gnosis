@@ -8,6 +8,8 @@ import { container, tabsHeader } from "./styles";
 type TabsProps = React.HTMLAttributes<HTMLElement> & {
   stickyHeader?: boolean;
   responsiveHeader?: boolean;
+  initialTab?: number; //fix
+  onTabSelected?: (index: number) => void //fix
 };
 
 type TabPaneProps = {
@@ -25,6 +27,8 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   children,
   stickyHeader = false,
   responsiveHeader = false,
+  initialTab = 0, //fix
+  onTabSelected, //fix
   ...rest
 }) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -42,8 +46,20 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   }));
   const onSelectTab = (index: number): void => {
     setActiveTab(index);
+
+    //fix
+    if (onTabSelected)
+      onTabSelected(index);
   };
   const displayResponsiveHeader = tabTitles?.length && responsiveHeader;
+
+  //fix
+  React.useEffect(() => {
+    if (initialTab == activeTab || initialTab < 0)
+      return;
+    
+    setActiveTab(initialTab);
+  }, [initialTab]);
 
   return (
     <section css={container} {...rest}>

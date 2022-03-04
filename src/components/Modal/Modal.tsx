@@ -59,6 +59,8 @@ export type ReactModalProps = Pick<Props, "isOpen"> & {
   onClose?: () => void;
   size?: Size;
   rootElementSelector?: string;
+  closeOnOutsideClick?: boolean; //fix
+  style?: ReactModal.Styles; //fix
 };
 
 const Modal: FC<ReactModalProps> & ModalCompoundProps = ({
@@ -67,6 +69,8 @@ const Modal: FC<ReactModalProps> & ModalCompoundProps = ({
   onClose = () => void 0,
   size = "md",
   rootElementSelector = "#app",
+  closeOnOutsideClick = true, //fix
+  style = {} //fix
 }) => {
   const rootElement = document.querySelector(rootElementSelector) as HTMLElement;
   const clonedChildren = Children.map(children, (child) =>
@@ -96,6 +100,8 @@ const Modal: FC<ReactModalProps> & ModalCompoundProps = ({
           closeTimeoutMS={200}
           portalClassName={css(portalStyles(size))}
           ariaHideApp={false}
+          shouldCloseOnOverlayClick={closeOnOutsideClick} //fix
+          style={style} //fix
         >
           {clonedChildren}
         </ReactModal>

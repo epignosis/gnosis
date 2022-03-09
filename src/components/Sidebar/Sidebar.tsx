@@ -13,6 +13,7 @@ import NavHandle from "./NavHandle";
 
 export type SidebarProps = HTMLMotionProps<"nav"> & {
   isCollapsed?: boolean;
+  navHandleLabel?: string;
   onToggle?: () => void;
 };
 
@@ -52,6 +53,7 @@ const navVariants: Variants = {
 
 const Sidebar: FC<SidebarProps> & SidebarCompoundProps = ({
   isCollapsed = false,
+  navHandleLabel = "Menu",
   onToggle = () => void 0,
   children,
   ...rest
@@ -76,7 +78,11 @@ const Sidebar: FC<SidebarProps> & SidebarCompoundProps = ({
         {...rest}
       >
         <div className="nav-items-wrapper">
-          <NavHandle isExpanded={!isCollapsed} toggleMainNav={onToggle} />
+          <NavHandle
+            isExpanded={!isCollapsed}
+            navItemLabel={navHandleLabel}
+            toggleMainNav={onToggle}
+          />
           {children}
         </div>
       </m.nav>

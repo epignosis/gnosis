@@ -1,5 +1,5 @@
 import React from "react";
-import faker from "faker";
+import { faker } from "@faker-js/faker";
 import { InfoSVG } from "../../icons/";
 import Result from "./Result";
 import { screen, render } from "@test-utils/render";

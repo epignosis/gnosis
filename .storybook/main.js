@@ -3,6 +3,10 @@ const path = require("path");
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
+  framework: "@storybook/react",
+  features: {
+    postcss: false,
+  },
   webpackFinal: (config) => {
     // Rules
     const fileLoaderRule = config.module.rules.find((rule) => rule.test && rule.test.test(".svg"));

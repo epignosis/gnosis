@@ -1,6 +1,6 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
-import faker from "faker";
+import { faker } from "@faker-js/faker";
 import { CalendarSVG } from "../../icons/";
 import Button from "./Button";
 import { render, screen } from "@test-utils/render";

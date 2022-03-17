@@ -1,5 +1,5 @@
 import React from "react";
-import faker from "faker";
+import { faker } from "@faker-js/faker";
 import userEvent from "@testing-library/user-event";
 import Card from "./Card";
 import { screen, render, waitFor } from "@test-utils/render";

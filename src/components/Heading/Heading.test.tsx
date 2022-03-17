@@ -1,5 +1,5 @@
 import React from "react";
-import faker from "faker";
+import { faker } from "@faker-js/faker";
 import Heading from "./Heading";
 import { render, screen } from "@test-utils/render";
 

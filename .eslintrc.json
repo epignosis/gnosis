@@ -31,7 +31,7 @@
       }
     },
     "react": {
-      "version": "latest"
+      "version": "detect"
     }
   },
   "rules": {

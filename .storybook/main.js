@@ -14,6 +14,12 @@ module.exports = {
       loader: require.resolve("@svgr/webpack"),
     });
 
+    config.module.rules.push({
+      test: /\.mjs$/,
+      include: /node_modules/,
+      type: "javascript/auto",
+    });
+
     // Path alliases
     config.resolve.alias = {
       ...config.resolve.alias,

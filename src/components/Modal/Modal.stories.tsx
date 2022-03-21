@@ -94,13 +94,18 @@ export const ModalWithCotent: Story<ReactModalProps> = (args) => {
   );
 };
 
-export const ModalCloseOnOutside: Story<ReactModalProps> = (args) => {
+export const ModalNotCloseOnOutsideClick: Story<ReactModalProps> = (args) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
       <Button onClick={(): void => setIsOpen(true)}>Modal with Content</Button>
-      <Modal {...args} isOpen={isOpen} onClose={(): void => setIsOpen(false)} closeOnOutsideClick>
+      <Modal
+        {...args}
+        isOpen={isOpen}
+        onClose={(): void => setIsOpen(false)}
+        closeOnOutsideClick={false}
+      >
         <Modal.Header>This is the modal title</Modal.Header>
         <Modal.Body>
           <div style={{ marginBottom: 16 }}>

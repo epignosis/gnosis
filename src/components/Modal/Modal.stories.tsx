@@ -93,3 +93,80 @@ export const ModalWithCotent: Story<ReactModalProps> = (args) => {
     </div>
   );
 };
+
+export const ModalNotCloseOnOutsideClick: Story<ReactModalProps> = (args) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div>
+      <Button onClick={(): void => setIsOpen(true)}>Modal with Content</Button>
+      <Modal
+        {...args}
+        isOpen={isOpen}
+        onClose={(): void => setIsOpen(false)}
+        closeOnOutsideClick={false}
+      >
+        <Modal.Header>This is the modal title</Modal.Header>
+        <Modal.Body>
+          <div style={{ marginBottom: 16 }}>
+            <Input id="password" type="password" label="Enter current password " />
+          </div>
+          <div style={{ marginBottom: 16 }}>
+            <Input id="new-password" type="password" label="Type new password" />
+          </div>
+          <Input id="retype-psw" type="password" label="Retype password" />
+        </Modal.Body>
+        <Modal.Footer style={{ textAlign: "right" }}>
+          <Button
+            color="secondary"
+            onClick={(): void => setIsOpen(false)}
+            style={{ marginRight: "1rem" }}
+          >
+            Cancel
+          </Button>
+          <Button onClick={(): void => setIsOpen(false)}>Change password</Button>
+        </Modal.Footer>
+      </Modal>
+    </div>
+  );
+};
+
+export const ModalWithCustomStyles: Story<ReactModalProps> = (args) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div>
+      <Button onClick={(): void => setIsOpen(true)}>Modal with Content</Button>
+      <Modal
+        {...args}
+        isOpen={isOpen}
+        onClose={(): void => setIsOpen(false)}
+        style={{
+          content: { border: "3px solid red" },
+          overlay: { backgroundColor: "blue" },
+        }}
+      >
+        <Modal.Header>This is the modal title</Modal.Header>
+        <Modal.Body style={{ border: "2px solid green" }}>
+          <div style={{ marginBottom: 16 }}>
+            <Input id="password" type="password" label="Enter current password " />
+          </div>
+          <div style={{ marginBottom: 16 }}>
+            <Input id="new-password" type="password" label="Type new password" />
+          </div>
+          <Input id="retype-psw" type="password" label="Retype password" />
+        </Modal.Body>
+        <Modal.Footer style={{ border: "2px solid purple", textAlign: "right" }}>
+          <Button
+            color="secondary"
+            onClick={(): void => setIsOpen(false)}
+            style={{ marginRight: "1rem" }}
+          >
+            Cancel
+          </Button>
+          <Button onClick={(): void => setIsOpen(false)}>Change password</Button>
+        </Modal.Footer>
+      </Modal>
+    </div>
+  );
+};

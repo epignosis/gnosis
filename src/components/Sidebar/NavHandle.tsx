@@ -5,13 +5,14 @@ import { navHandleContainer } from "./styles";
 
 export type NavHandleProps = {
   isExpanded: boolean;
+  navItemLabel?: string;
   toggleMainNav: () => void;
 };
 
-const NavHandle: FC<NavHandleProps> = ({ isExpanded, toggleMainNav }) => {
+const NavHandle: FC<NavHandleProps> = ({ isExpanded, toggleMainNav, navItemLabel = "" }) => {
   return (
     <button className="nav-handle" css={navHandleContainer} onClick={toggleMainNav}>
-      <NavItem label="Menu" isExpanded={isExpanded} icon={<HamburgerSVG height={32} />} />
+      <NavItem label={navItemLabel} isExpanded={isExpanded} icon={<HamburgerSVG height={32} />} />
     </button>
   );
 };

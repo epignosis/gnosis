@@ -1,5 +1,4 @@
 import React, { FC, ReactNode, CSSProperties } from "react";
-import { tabsContent } from "./styles";
 
 type TabsContentProps = {
   index: number;
@@ -9,11 +8,11 @@ type TabsContentProps = {
 };
 
 const TabsContent: FC<TabsContentProps> = ({ index, content, isVisible, style }) => {
-  return (
-    <article id={`content-${index}`} css={tabsContent(isVisible)} role="tabpanel" style={style}>
+  return isVisible ? (
+    <article id={`content-${index}`} role="tabpanel" style={style}>
       {content}
     </article>
-  );
+  ) : null;
 };
 
 export default TabsContent;

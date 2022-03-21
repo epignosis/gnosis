@@ -47,9 +47,3 @@ export const tabNavItem = (
     border-bottom: 4px solid ${isActive ? tabs.linkBorder : "transparent"};
   `;
 };
-
-export const tabsContent = (isActive: boolean): SerializedStyles => css`
-  height: 100%;
-  display: ${isActive ? "block" : "none"};
-  overflow-y: auto;
-`;

@@ -43,6 +43,78 @@ exports[`<Modal> matches snapshot 1`] = `
 </div>
 `;
 
+exports[`<Modal> matches snapshot with all props 1`] = `
+<div
+  aria-label="modal"
+  aria-modal="true"
+  class="content-base"
+  role="dialog"
+  style="border: 3px solid red;"
+  tabindex="-1"
+>
+  <header
+    class="css-1s9dxkb-modalHeader-modalHeader"
+    data-testid="modal-header"
+  >
+    <div>
+      <h2
+        class="css-1iyd91n-headingContainer-headingContainer"
+      >
+        Test header
+      </h2>
+    </div>
+    <a
+      aria-label="Close button"
+      class="close-btn"
+      role="button"
+    >
+      <svg-file-stub
+        height="28"
+      />
+    </a>
+  </header>
+  <article
+    class="css-18mo2pj-modalContent"
+    style="border: 2px solid green;"
+  >
+    <div
+      style="margin-bottom: 16px;"
+    >
+      <input
+        id="password"
+        type="password"
+      />
+    </div>
+    <div
+      style="margin-bottom: 16px;"
+    >
+      <input
+        id="new-password"
+        type="password"
+      />
+    </div>
+    <input
+      id="retype-psw"
+      type="password"
+    />
+  </article>
+  <footer
+    class="css-hqu96b-modalFooter-modalFooter"
+    data-testid="modal-footer"
+    style="border: 2px solid purple; text-align: right;"
+  >
+    <button
+      style="margin-right: 1rem;"
+    >
+      Cancel
+    </button>
+    <button>
+      Change password
+    </button>
+  </footer>
+</div>
+`;
+
 exports[`<Modal> matches snapshot with cutom HTML classes 1`] = `
 <div
   aria-label="modal"

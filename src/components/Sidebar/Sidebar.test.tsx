@@ -23,6 +23,25 @@ describe("<Sidebar/>", () => {
     expect(items[8]).toHaveTextContent("My profile");
   });
 
+  it("renders expanded correctly with changed nav item label", () => {
+    render(<Sidebar navHandleLabel="Changed menu" />);
+
+    const handle = screen.getByRole("button");
+    const items = screen.getAllByRole("link");
+
+    expect(items).toHaveLength(9);
+    expect(handle).toHaveTextContent("Changed menu");
+    expect(items[0]).toHaveTextContent("Home");
+    expect(items[1]).toHaveTextContent("My courses");
+    expect(items[2]).toHaveTextContent("Catalog");
+    expect(items[3]).toHaveTextContent("Calendar");
+    expect(items[4]).toHaveTextContent("Messages");
+    expect(items[5]).toHaveTextContent("Discussions");
+    expect(items[6]).toHaveTextContent("Notifications");
+    expect(items[7]).toHaveTextContent("Help");
+    expect(items[8]).toHaveTextContent("My profile");
+  });
+
   it("renders collapsed correctly", () => {
     render(<Sidebar isCollapsed />);
 

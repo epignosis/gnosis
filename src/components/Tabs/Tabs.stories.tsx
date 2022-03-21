@@ -52,3 +52,18 @@ export const ResponsiveHeader = Template.bind({});
 ResponsiveHeader.args = {
   responsiveHeader: true,
 };
+
+export const InitialTab = Template.bind({});
+
+InitialTab.args = {
+  initialSelectedTab: 1,
+};
+
+export const OnChangeTab = Template.bind({});
+
+OnChangeTab.args = {
+  initialSelectedTab: 1,
+  onChangeTab: (index: number): void => {
+    alert(index);
+  },
+};

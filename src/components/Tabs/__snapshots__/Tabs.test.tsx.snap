@@ -12,7 +12,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
     >
       <a
         aria-controls="content-0"
-        class="css-1v2oram-tabNavItem-tabNavItem"
+        class="tab-link selected css-1v2oram-tabNavItem-tabNavItem"
         href="#tab-0"
         id="tab-0"
         role="tab"
@@ -21,7 +21,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
       </a>
       <a
         aria-controls="content-1"
-        class="css-1n1jyfz-tabNavItem-tabNavItem"
+        class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
         href="#tab-1"
         id="tab-1"
         role="tab"
@@ -30,7 +30,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
       </a>
       <a
         aria-controls="content-2"
-        class="css-1n1jyfz-tabNavItem-tabNavItem"
+        class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
         href="#tab-2"
         id="tab-2"
         role="tab"
@@ -44,25 +44,10 @@ exports[`<Tabs/> matches snapshot 1`] = `
       role="region"
     >
       <article
-        class="css-16ie0sg-tabsContent-tabsContent"
         id="content-0"
         role="tabpanel"
       >
         Test tab 1
-      </article>
-      <article
-        class="css-1c08a5r-tabsContent-tabsContent"
-        id="content-1"
-        role="tabpanel"
-      >
-        Test tab 2
-      </article>
-      <article
-        class="css-1c08a5r-tabsContent-tabsContent"
-        id="content-2"
-        role="tabpanel"
-      >
-        Test tab 3
       </article>
     </section>
   </section>
@@ -80,7 +65,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
     >
       <a
         aria-controls="content-0"
-        class="css-1v2oram-tabNavItem-tabNavItem"
+        class="tab-link selected css-1v2oram-tabNavItem-tabNavItem"
         href="#tab-0"
         id="tab-0"
         role="tab"
@@ -89,7 +74,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
       </a>
       <a
         aria-controls="content-1"
-        class="css-1n1jyfz-tabNavItem-tabNavItem"
+        class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
         href="#tab-1"
         id="tab-1"
         role="tab"
@@ -98,7 +83,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
       </a>
       <a
         aria-controls="content-2"
-        class="css-1n1jyfz-tabNavItem-tabNavItem"
+        class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
         href="#tab-2"
         id="tab-2"
         role="tab"
@@ -112,25 +97,10 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
       role="region"
     >
       <article
-        class="css-16ie0sg-tabsContent-tabsContent"
         id="content-0"
         role="tabpanel"
       >
         Test tab 1
-      </article>
-      <article
-        class="css-1c08a5r-tabsContent-tabsContent"
-        id="content-1"
-        role="tabpanel"
-      >
-        Test tab 2
-      </article>
-      <article
-        class="css-1c08a5r-tabsContent-tabsContent"
-        id="content-2"
-        role="tabpanel"
-      >
-        Test tab 3
       </article>
     </section>
   </section>

@@ -1,5 +1,6 @@
 import React, { FC, MouseEvent } from "react";
 import { SerializedStyles } from "@emotion/react";
+import classNames from "classnames";
 import { tabNavItem } from "./styles";
 
 type TabsNavItemProps = {
@@ -10,6 +11,10 @@ type TabsNavItemProps = {
 };
 
 const TabsNavItem: FC<TabsNavItemProps> = ({ index, title, isActive, onSelectTab }) => {
+  const HtmlClasses = classNames({
+    "tab-link": true,
+    selected: isActive,
+  });
   const onClick = (e: MouseEvent): void => {
     e.preventDefault();
     onSelectTab(index);
@@ -22,6 +27,7 @@ const TabsNavItem: FC<TabsNavItemProps> = ({ index, title, isActive, onSelectTab
       id={`tab-${index}`}
       aria-controls={`content-${index}`}
       role="tab"
+      className={HtmlClasses}
       onClick={onClick}
     >
       {title}

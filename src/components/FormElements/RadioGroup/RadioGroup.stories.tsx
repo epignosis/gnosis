@@ -20,7 +20,6 @@ export default {
       {
         label: "In progress",
         value: "progress",
-        disabled: true,
       },
       {
         label: "Completed",
@@ -48,4 +47,37 @@ export default {
   },
 };
 
-export const RadioGroup: Story<RadioGroupProps> = (args) => <RadioGroupComponent {...args} />;
+const Template: Story<RadioGroupProps> = (args) => <RadioGroupComponent {...args} />;
+
+export const Default = Template.bind({});
+
+export const WithDisabledOptions = Template.bind({});
+
+WithDisabledOptions.args = {
+  options: [
+    {
+      label: "All",
+      value: "all",
+      disabled: true,
+    },
+    {
+      label: "In progress",
+      value: "progress",
+      disabled: true,
+    },
+    {
+      label: "Completed",
+      value: "completed",
+    },
+    {
+      label: "Failed",
+      value: "failed",
+    },
+  ],
+};
+
+export const WithInitialValue = Template.bind({});
+
+WithInitialValue.args = {
+  initialValue: "completed",
+};

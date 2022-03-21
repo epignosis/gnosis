@@ -124,4 +124,39 @@ describe("<Modal>", () => {
 
     expect(modal).toMatchSnapshot();
   });
+
+  it("matches snapshot with all props", () => {
+    const modalContainer = document.createElement("div");
+    modalContainer.setAttribute("id", "app");
+    document.body.appendChild(modalContainer);
+    render(
+      <Modal
+        isOpen
+        size="md"
+        closeOnOutsideClick
+        style={{
+          content: { border: "3px solid red" },
+          overlay: { backgroundColor: "blue" },
+        }}
+      >
+        <Modal.Header>Test header</Modal.Header>
+        <Modal.Body style={{ border: "2px solid green" }}>
+          <div style={{ marginBottom: 16 }}>
+            <input id="password" type="password" />
+          </div>
+          <div style={{ marginBottom: 16 }}>
+            <input id="new-password" type="password" />
+          </div>
+          <input id="retype-psw" type="password" />
+        </Modal.Body>
+        <Modal.Footer style={{ border: "2px solid purple", textAlign: "right" }}>
+          <button style={{ marginRight: "1rem" }}>Cancel</button>
+          <button>Change password</button>
+        </Modal.Footer>
+      </Modal>,
+    );
+    const modal = screen.getByLabelText("modal");
+
+    expect(modal).toMatchSnapshot();
+  });
 });

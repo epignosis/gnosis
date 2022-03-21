@@ -52,6 +52,46 @@ describe("<Tabs/>", () => {
     expect(tab2Content).toHaveTextContent(tab2Txt);
   });
 
+  it("render with initial tab value", () => {
+    const { tab1Txt, tab2Txt, tab3Txt, tab1TitleTxt, tab2TitleTxt, tab3TitleTxt } = getTabsProps();
+    render(
+      <Tabs initialSelectedTab={1}>
+        <Tabs.TabPane title={tab1TitleTxt}>{tab1Txt}</Tabs.TabPane>
+        <Tabs.TabPane title={tab2TitleTxt}>{tab2Txt}</Tabs.TabPane>
+        <Tabs.TabPane title={tab3TitleTxt}>{tab3Txt}</Tabs.TabPane>
+      </Tabs>,
+    );
+    const tab2 = screen.getByText(tab2TitleTxt);
+    const tab2Content = screen.getByText(tab2Txt);
+
+    expect(tab2).toHaveClass("selected");
+    expect(tab2Content).toHaveTextContent(tab2Txt);
+  });
+
+  it("to get tab index with `onChangeTab` callback", () => {
+    const mockFn = jest.fn();
+    const { tab1Txt, tab2Txt, tab3Txt, tab1TitleTxt, tab2TitleTxt, tab3TitleTxt } = getTabsProps();
+    render(
+      <Tabs onChangeTab={mockFn}>
+        <Tabs.TabPane title={tab1TitleTxt}>{tab1Txt}</Tabs.TabPane>
+        <Tabs.TabPane title={tab2TitleTxt}>{tab2Txt}</Tabs.TabPane>
+        <Tabs.TabPane title={tab3TitleTxt}>{tab3Txt}</Tabs.TabPane>
+      </Tabs>,
+    );
+    const tab2 = screen.getByText(tab2TitleTxt);
+    const tab3 = screen.getByText(tab3TitleTxt);
+
+    userEvent.click(tab2);
+
+    expect(mockFn).toHaveBeenCalledTimes(1);
+    expect(mockFn).toHaveBeenCalledWith(1);
+
+    userEvent.click(tab3);
+
+    expect(mockFn).toHaveBeenCalledTimes(2);
+    expect(mockFn).toHaveBeenCalledWith(2);
+  });
+
   it("matches snapshot", () => {
     const { container } = render(
       <Tabs id="tab-1" className="tabs">

@@ -6,25 +6,25 @@ import { render, screen } from "@test-utils/render";
 
 const OPTIONS = [
   {
-    label: faker.commerce.department(),
-    value: faker.lorem.slug(),
-    name: faker.lorem.sentence(),
+    label: faker.unique(faker.lorem.words),
+    value: faker.unique(faker.lorem.word),
+    name: faker.unique(faker.lorem.word),
   },
   {
-    label: faker.company.catchPhrase(),
-    value: faker.company.bsAdjective(),
-    name: faker.company.catchPhraseAdjective(),
+    label: faker.unique(faker.lorem.words),
+    value: faker.unique(faker.lorem.word),
+    name: faker.unique(faker.lorem.word),
   },
   {
-    label: faker.git.commitMessage(),
-    value: faker.git.branch(),
-    name: faker.git.commitSha(),
+    label: faker.unique(faker.lorem.words),
+    value: faker.unique(faker.lorem.word),
+    name: faker.unique(faker.lorem.word),
   },
 ];
 
 describe("<CheckBoxGroup />", () => {
   it("renders correctly", () => {
-    const groupname = faker.lorem.slug();
+    const groupname = faker.unique(faker.lorem.word);
     render(
       <CheckBoxGroup id={faker.hacker.abbreviation()} groupname={groupname} options={OPTIONS} />,
     );
@@ -64,9 +64,9 @@ describe("<CheckBoxGroup />", () => {
 
   it("renders with a disabled checkbox", () => {
     const disabledCheckbox = {
-      label: faker.commerce.department(),
-      value: faker.lorem.slug(),
-      name: faker.lorem.slug(),
+      label: faker.unique(faker.lorem.words),
+      value: faker.unique(faker.lorem.word),
+      name: faker.unique(faker.lorem.word),
     };
     render(
       <CheckBoxGroup
@@ -93,10 +93,10 @@ describe("<CheckBoxGroup />", () => {
   });
 
   it("renders with mixed checked", () => {
-    const groupname = faker.lorem.slug();
+    const groupname = faker.unique(faker.lorem.word);
     render(
       <CheckBoxGroup
-        id={faker.hacker.abbreviation()}
+        id={faker.unique(faker.lorem.word)}
         groupname={groupname}
         options={OPTIONS}
         initialValues={[OPTIONS[0].value]}
@@ -118,7 +118,7 @@ describe("<CheckBoxGroup />", () => {
   it("checks one input and then un-checks it", () => {
     const groupname = faker.lorem.slug();
     render(
-      <CheckBoxGroup id={faker.hacker.abbreviation()} groupname={groupname} options={OPTIONS} />,
+      <CheckBoxGroup id={faker.unique(faker.lorem.word)} groupname={groupname} options={OPTIONS} />,
     );
 
     const legendCheck = screen.getByLabelText(groupname);
@@ -136,7 +136,7 @@ describe("<CheckBoxGroup />", () => {
   });
 
   it("checks all inputs at once and then un-checks them", () => {
-    const groupname = faker.lorem.slug();
+    const groupname = faker.unique(faker.lorem.word);
     render(
       <CheckBoxGroup id={faker.hacker.abbreviation()} groupname={groupname} options={OPTIONS} />,
     );

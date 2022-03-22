@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/epignosis/gnosis/compare/v2.1.8...v2.2.0) (2022-03-22)
+
+
+### Features
+
+* **modal / tabs:** new api and features for modal and tabs components ([311ec6f](https://github.com/epignosis/gnosis/commit/311ec6f72f60e79f91327020508e2b9163fd859e))
+
 ## [2.1.8](https://github.com/epignosis/gnosis/compare/v2.1.7...v2.1.8) (2022-03-18)
 
 ## [2.1.7](https://github.com/epignosis/gnosis/compare/v2.1.6...v2.1.7) (2022-02-23)

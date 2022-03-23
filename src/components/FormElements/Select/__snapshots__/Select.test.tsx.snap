@@ -3,7 +3,7 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="valid container-class css-yhxkub-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
+    class="valid container-class css-7fk1f7-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
     id="container-id"
   >
     <label
@@ -36,13 +36,6 @@ exports[`<Select /> matches snapshot 1`] = `
           TypeScript
         </option>
       </select>
-      <span
-        class="carret-wrapper"
-      >
-        <svg-file-stub
-          height="24"
-        />
-      </span>
     </div>
   </div>
 </div>

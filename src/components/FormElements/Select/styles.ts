@@ -18,35 +18,23 @@ export const selectContainer = (
     }
   }
 
-  &.disabled {
-    &:hover {
-      .select-input-wrapper {
-        .carret-wrapper {
-          cursor: not-allowed;
-          z-index: -1;
-        }
-      }
-    }
-  }
-
-  &:focus-within,
-  &:hover {
-    .select-input-wrapper {
-      .carret-wrapper {
-        z-index: 1;
-      }
-    }
-  }
-
   select {
     ${inputBaseStyles(formElements, { block: true, size })};
     background-color: transparent;
     padding-right: 2.5rem;
+    -moz-appearance: none;
+    -webkit-appearance: none;
     appearance: none;
 
+    &,
     &:hover,
     &:focus {
       border: 1px solid ${formElements.input.borderHoverColor};
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-size: 1.5rem;
+      background-position-x: 96%;
+      background-image: url("https://talentlms-prod-frontend-static.s3.amazonaws.com/svgs/caret_down.svg");
     }
   }
 
@@ -56,18 +44,5 @@ export const selectContainer = (
     background-color: ${formElements.input.background};
     border-radius: 5px;
     z-index: 1;
-
-    .carret-wrapper {
-      position: absolute;
-      right: 0.75rem;
-      height: 100%;
-      display: inline-flex;
-      align-items: center;
-      z-index: -1;
-
-      svg {
-        color: #000;
-      }
-    }
   }
 `;

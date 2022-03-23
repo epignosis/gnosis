@@ -25,8 +25,12 @@ export const selectContainer = (
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 1.5rem;
+    background-position-x: 96%;
+    background-image: url("https://talentlms-prod-frontend-static.s3.amazonaws.com/svgs/caret_down.svg");
 
-    &,
     &:hover,
     &:focus {
       border: 1px solid ${formElements.input.borderHoverColor};

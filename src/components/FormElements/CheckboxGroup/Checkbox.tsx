@@ -11,7 +11,7 @@ export type CheckboxOption = {
   isPartiallySelected?: boolean;
 };
 
-export type CheckboxSize = "sm" | "md" | "lg";
+export type CheckboxSize = "md" | "lg";
 
 export type CheckboxProps = ExtendableProps<
   Omit<React.InputHTMLAttributes<HTMLInputElement>, "type">,

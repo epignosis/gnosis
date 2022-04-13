@@ -5,7 +5,7 @@ import Label from "../Label/Label";
 import { inputContainer } from "./styles";
 import { ExtendableProps, IconType } from "types/common";
 
-export type InputSize = "md" | "lg";
+export type InputSize = "sm" | "md" | "lg";
 
 export type InputProps = ExtendableProps<
   React.InputHTMLAttributes<HTMLInputElement>,

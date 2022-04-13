@@ -9,7 +9,7 @@ export type SelectProps = ExtendableProps<
   React.SelectHTMLAttributes<HTMLSelectElement>,
   {
     status?: "valid" | "error";
-    size?: "md" | "lg";
+    size?: "sm" | "md" | "lg";
     label?: string;
     inline?: boolean;
     onChange?: (selectedValue: string) => void;

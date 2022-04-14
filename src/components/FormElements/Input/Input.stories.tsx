@@ -10,7 +10,7 @@ export default {
     size: {
       control: {
         type: "select",
-        options: ["md", "lg"],
+        options: ["sm", "md", "lg"],
       },
     },
     status: {

@@ -31,9 +31,9 @@ export const selectContainer = (
     &:focus {
       background-position: right center;
       background-repeat: no-repeat;
-      background-size: 1.5rem;
+      background-size: 1rem;
       background-position-x: 96%;
-      background-image: url("https://talentlms-prod-frontend-static.s3.amazonaws.com/svgs/caret_down.svg");
+      background-image: url("https://talentlms-prod-frontend-static.s3.amazonaws.com/images/chevron-down-solid.svg");
     }
 
     &:hover,

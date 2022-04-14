@@ -5,7 +5,7 @@ import Label from "../Label/Label";
 import { inputContainer } from "./styles";
 import { ExtendableProps, IconType } from "types/common";
 
-export type InputSize = "md" | "lg";
+export type InputSize = "sm" | "md" | "lg";
 
 export type InputProps = ExtendableProps<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -47,6 +47,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     inline: hasLabel && inline,
     disabled: Boolean(rest?.disabled),
   });
+  const iconHeight = size === "sm" ? 28 : 32;
 
   return (
     <div
@@ -58,13 +59,13 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
       <div className="input-wrapper">
         {IconBefore && (
           <span className="prefix-icon" data-testid="input-icon-before">
-            <IconBefore height={32} />
+            <IconBefore height={iconHeight} />
           </span>
         )}
         <input ref={forwardedRef} id={id} {...rest} />
         {IconAfter && (
           <span className="suffix-icon" data-testid="input-icon-after">
-            <IconAfter height={32} />
+            <IconAfter height={iconHeight} />
           </span>
         )}
       </div>

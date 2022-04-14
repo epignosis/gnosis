@@ -1,6 +1,5 @@
 import React, { FC, ChangeEvent, useState, useEffect } from "react";
-import { InputSize } from "../Input/Input";
-import Checkbox, { CheckboxOption } from "./Checkbox";
+import Checkbox, { CheckboxOption, CheckboxSize } from "./Checkbox";
 import { checkboxGroupContainer } from "./styles";
 
 export type CheckboxGroupProps = React.HTMLAttributes<HTMLFieldSetElement> & {
@@ -9,7 +8,7 @@ export type CheckboxGroupProps = React.HTMLAttributes<HTMLFieldSetElement> & {
   onChange?: (selectedValues: string[]) => void;
   initialValues?: string[];
   inline?: boolean;
-  size?: InputSize;
+  size?: CheckboxSize;
 };
 
 const CheckboxGroup: FC<CheckboxGroupProps> = ({

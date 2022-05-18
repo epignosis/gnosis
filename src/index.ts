@@ -34,5 +34,6 @@ export { default as CheckboxGroup } from "./components/FormElements/CheckboxGrou
 export { default as Checkbox } from "./components/FormElements/CheckboxGroup/Checkbox";
 export { default as RadioButtonGroup } from "./components/FormElements/RadioButtonGroup/RadioButtonGroup";
 export { default as RadioGroup } from "./components/FormElements/RadioGroup/RadioGroup";
+export { default as Radio } from "./components/FormElements/RadioGroup/Radio";
 export { default as Select } from "./components/FormElements/Select/Select";
 export { default as Textarea } from "./components/FormElements/Textarea/Textarea";

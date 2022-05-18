@@ -29,10 +29,9 @@ export const selectContainer = (
     &,
     &:hover,
     &:focus {
-      background-position: right center;
+      background-position: right 1rem center;
       background-repeat: no-repeat;
-      background-size: 1rem;
-      background-position-x: 96%;
+      background-size: 14px;
       background-image: url("https://talentlms-prod-frontend-static.s3.amazonaws.com/images/chevron-down-solid.svg");
     }
 

@@ -55,7 +55,7 @@ describe("<Tabs/>", () => {
   it("render with initial tab value", () => {
     const { tab1Txt, tab2Txt, tab3Txt, tab1TitleTxt, tab2TitleTxt, tab3TitleTxt } = getTabsProps();
     render(
-      <Tabs initialSelectedTab={1}>
+      <Tabs selectedTab={1}>
         <Tabs.TabPane title={tab1TitleTxt}>{tab1Txt}</Tabs.TabPane>
         <Tabs.TabPane title={tab2TitleTxt}>{tab2Txt}</Tabs.TabPane>
         <Tabs.TabPane title={tab3TitleTxt}>{tab3Txt}</Tabs.TabPane>

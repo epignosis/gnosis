@@ -1,4 +1,4 @@
-import React, { FC, useState, ReactElement, Children } from "react";
+import React, { FC, useState, ReactElement, Children, useEffect } from "react";
 import { SerializedStyles } from "@emotion/react";
 import Select from "../FormElements/Select/Select";
 import TabsNavItem from "./TabsNavItem";
@@ -8,7 +8,7 @@ import { container, tabsHeader } from "./styles";
 type TabsProps = React.HTMLAttributes<HTMLElement> & {
   stickyHeader?: boolean;
   responsiveHeader?: boolean;
-  initialSelectedTab?: number;
+  selectedTab?: number;
   onChangeTab?: (index: number) => void;
 };
 
@@ -27,11 +27,11 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   children,
   stickyHeader = false,
   responsiveHeader = false,
-  initialSelectedTab = 0,
+  selectedTab = 0,
   onChangeTab,
   ...rest
 }) => {
-  const [activeTab, setActiveTab] = useState(initialSelectedTab);
+  const [activeTab, setActiveTab] = useState(selectedTab);
   const tabTitles = Children.map(children, (child, i) => ({
     index: i,
     title: (child as ReactElement).props.title,
@@ -49,6 +49,22 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
     onChangeTab && onChangeTab(index);
   };
   const displayResponsiveHeader = tabTitles?.length && responsiveHeader;
+
+  useEffect(() => {
+    if (tabTitles) {
+      let newSelectedTab = selectedTab;
+
+      if (selectedTab < 0) {
+        newSelectedTab = 0;
+      }
+
+      if (selectedTab > tabTitles.length - 1) {
+        newSelectedTab = tabTitles.length - 1;
+      }
+
+      setActiveTab(newSelectedTab);
+    }
+  }, [selectedTab]);
 
   return (
     <section css={container} {...rest}>

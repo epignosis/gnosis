@@ -9,11 +9,10 @@ export default {
 
 const commonProps = {
   stickyHeader: false,
-  responsiveHeader: false,
 };
 
 const Template: Story = (args) => (
-  <Tabs {...args}>
+  <Tabs {...args} style={{ maxWidth: args.maxWidth ?? "100%" }}>
     <Tabs.TabPane title="Completed courses">
       <div style={{ padding: "2rem" }}>
         <Heading>Completed courses</Heading>
@@ -47,10 +46,10 @@ Basic.args = {
   ...commonProps,
 };
 
-export const ResponsiveHeader = Template.bind({});
+export const Responsive = Template.bind({});
 
-ResponsiveHeader.args = {
-  responsiveHeader: true,
+Responsive.args = {
+  maxWidth: "500px",
 };
 
 export const SelectedTab = Template.bind({});

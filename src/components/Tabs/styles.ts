@@ -11,6 +11,12 @@ export const container = css`
     flex: 1;
     z-index: 0;
   }
+
+  .nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
 
 export const tabsHeader = (
@@ -19,18 +25,23 @@ export const tabsHeader = (
 ): SerializedStyles => {
   return css`
     display: flex;
-    flex-wrap: wrap;
-    padding: 0 1rem;
+    flex-wrap: nowrap;
+    padding: 0;
     white-space: nowrap;
     background: ${tabs.headerBackground};
     position: ${stickyHeader ? "sticky" : "static"};
     top: ${stickyHeader ? 0 : "auto"};
     z-index: ${stickyHeader ? 1 : 0};
 
+    width: 100%;
+    overflow-x: auto;
+
     ${mq["sm"]} {
-      padding: 0 2rem;
-      flex-wrap: nowrap;
       border-bottom: 1px solid ${tabs.headerBorder};
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
     }
   `;
 };

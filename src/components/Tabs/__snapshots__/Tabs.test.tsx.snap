@@ -3,41 +3,45 @@
 exports[`<Tabs/> matches snapshot 1`] = `
 <div>
   <section
-    class="tabs css-a5ycro-container"
+    class="tabs css-3ghqkg-container"
     id="tab-1"
   >
-    <nav
-      class="css-1cv5t7l-tabsHeader-tabsHeader"
-      role="tablist"
+    <div
+      class="nav-wrapper"
     >
-      <a
-        aria-controls="content-0"
-        class="tab-link selected css-1v2oram-tabNavItem-tabNavItem"
-        href="#tab-0"
-        id="tab-0"
-        role="tab"
+      <nav
+        class="css-1hw6g2u-tabsHeader-tabsHeader"
+        role="tablist"
       >
-        Tab 1
-      </a>
-      <a
-        aria-controls="content-1"
-        class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
-        href="#tab-1"
-        id="tab-1"
-        role="tab"
-      >
-        Tab 2
-      </a>
-      <a
-        aria-controls="content-2"
-        class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
-        href="#tab-2"
-        id="tab-2"
-        role="tab"
-      >
-        Tab 3
-      </a>
-    </nav>
+        <a
+          aria-controls="content-0"
+          class="tab-link selected css-1v2oram-tabNavItem-tabNavItem"
+          href="#tab-0"
+          id="tab-0"
+          role="tab"
+        >
+          Tab 1
+        </a>
+        <a
+          aria-controls="content-1"
+          class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
+          href="#tab-1"
+          id="tab-1"
+          role="tab"
+        >
+          Tab 2
+        </a>
+        <a
+          aria-controls="content-2"
+          class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
+          href="#tab-2"
+          id="tab-2"
+          role="tab"
+        >
+          Tab 3
+        </a>
+      </nav>
+    </div>
     <section
       aria-live="polite"
       id="content"
@@ -57,40 +61,44 @@ exports[`<Tabs/> matches snapshot 1`] = `
 exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
 <div>
   <section
-    class="css-a5ycro-container"
+    class="css-3ghqkg-container"
   >
-    <nav
-      class="css-1b46b0m-tabsHeader-tabsHeader"
-      role="tablist"
+    <div
+      class="nav-wrapper"
     >
-      <a
-        aria-controls="content-0"
-        class="tab-link selected css-1v2oram-tabNavItem-tabNavItem"
-        href="#tab-0"
-        id="tab-0"
-        role="tab"
+      <nav
+        class="css-q855fv-tabsHeader-tabsHeader"
+        role="tablist"
       >
-        Tab 1
-      </a>
-      <a
-        aria-controls="content-1"
-        class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
-        href="#tab-1"
-        id="tab-1"
-        role="tab"
-      >
-        Tab 2
-      </a>
-      <a
-        aria-controls="content-2"
-        class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
-        href="#tab-2"
-        id="tab-2"
-        role="tab"
-      >
-        Tab 3
-      </a>
-    </nav>
+        <a
+          aria-controls="content-0"
+          class="tab-link selected css-1v2oram-tabNavItem-tabNavItem"
+          href="#tab-0"
+          id="tab-0"
+          role="tab"
+        >
+          Tab 1
+        </a>
+        <a
+          aria-controls="content-1"
+          class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
+          href="#tab-1"
+          id="tab-1"
+          role="tab"
+        >
+          Tab 2
+        </a>
+        <a
+          aria-controls="content-2"
+          class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
+          href="#tab-2"
+          id="tab-2"
+          role="tab"
+        >
+          Tab 3
+        </a>
+      </nav>
+    </div>
     <section
       aria-live="polite"
       id="content"

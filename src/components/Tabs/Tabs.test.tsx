@@ -13,6 +13,9 @@ const getTabsProps = () => ({
   tab3TitleTxt: faker.unique(faker.lorem.word),
 });
 
+// mock scrollIntoView function in jsdom
+window.HTMLElement.prototype.scrollIntoView = jest.fn();
+
 describe("<Tabs/>", () => {
   it("renders correctly", () => {
     const { tab1Txt, tab2Txt, tab3Txt, tab1TitleTxt, tab2TitleTxt, tab3TitleTxt } = getTabsProps();
@@ -114,32 +117,5 @@ describe("<Tabs/>", () => {
     );
 
     expect(container).toMatchSnapshot();
-  });
-
-  it("renders correctly mobile view", () => {
-    const { tab1Txt, tab2Txt, tab3Txt, tab1TitleTxt, tab2TitleTxt, tab3TitleTxt } = getTabsProps();
-    const tab1FallbackTitle = faker.lorem.word();
-
-    render(
-      <Tabs responsiveHeader>
-        <Tabs.TabPane title={<button>{tab1TitleTxt}</button>} fallbackTitle={tab1FallbackTitle}>
-          {tab1Txt}
-        </Tabs.TabPane>
-        <Tabs.TabPane title={tab2TitleTxt}>{tab2Txt}</Tabs.TabPane>
-        <Tabs.TabPane title={tab3TitleTxt}>{tab3Txt}</Tabs.TabPane>
-      </Tabs>,
-    );
-
-    const select = screen.getByLabelText("select tab");
-    const options = screen.getAllByRole("option");
-    const fallbackTitle = screen.getByText(tab1FallbackTitle);
-
-    expect(options).toHaveLength(3);
-    expect(fallbackTitle).toHaveTextContent(tab1FallbackTitle);
-    expect(select).toHaveValue("0");
-
-    userEvent.selectOptions(select, "1");
-
-    expect(select).toHaveValue("1");
   });
 });

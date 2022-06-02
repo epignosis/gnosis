@@ -23,13 +23,8 @@ type TabsCompoundProps = {
   TabPane: FC<TabPaneProps>;
 };
 
-const scrollToTab = (tabIndex: number) => {
-  const el = document.querySelector(`#tab-${tabIndex}`);
-
-  if (el) {
-    el.scrollIntoView();
-  }
-};
+const scrollToTab = (tabIndex: number) =>
+  document.querySelector(`#tab-${tabIndex}`)?.scrollIntoView();
 
 const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   children,

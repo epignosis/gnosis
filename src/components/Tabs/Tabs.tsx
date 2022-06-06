@@ -76,11 +76,9 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   };
 
   const handRightArrowClick = () => {
-    if (tabTitles) {
-      if (activeTab < tabTitles.length - 1) {
-        scrollToTab(activeTab + 1);
-        setActiveTab((currentTab) => currentTab + 1);
-      }
+    if (tabTitles && activeTab < tabTitles.length - 1) {
+      scrollToTab(activeTab + 1);
+      setActiveTab((currentTab) => currentTab + 1);
     }
   };
 
@@ -118,7 +116,7 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
     return () => {
       window.removeEventListener("resize", toggleTabsArrow);
     };
-  });
+  }, []);
 
   return (
     <section css={container} {...rest}>

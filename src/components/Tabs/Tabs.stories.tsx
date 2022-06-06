@@ -42,6 +42,7 @@ const commonProps = {
   selectedTab: 0,
   stickyHeader: false,
   onChangeTab: (index: number): void => {
+    // eslint-disable-next-line no-console
     console.log(index);
   },
 };

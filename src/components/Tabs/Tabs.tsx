@@ -1,14 +1,14 @@
-import React, { FC, useState, ReactElement, Children } from "react";
+import React, { FC, useState, ReactElement, Children, useEffect, useRef } from "react";
 import { SerializedStyles } from "@emotion/react";
-import Select from "../FormElements/Select/Select";
+import { ArrowLeftSVG, ArrowRightSVG } from "../../icons/";
+import Button from "../Button/Button";
 import TabsNavItem from "./TabsNavItem";
 import TabsContent from "./TabsContent";
 import { container, tabsHeader } from "./styles";
 
 type TabsProps = React.HTMLAttributes<HTMLElement> & {
   stickyHeader?: boolean;
-  responsiveHeader?: boolean;
-  initialSelectedTab?: number;
+  selectedTab?: number;
   onChangeTab?: (index: number) => void;
 };
 
@@ -23,15 +23,20 @@ type TabsCompoundProps = {
   TabPane: FC<TabPaneProps>;
 };
 
+const scrollToTab = (tabIndex: number) =>
+  document.querySelector(`#tab-${tabIndex}`)?.scrollIntoView();
+
 const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   children,
   stickyHeader = false,
-  responsiveHeader = false,
-  initialSelectedTab = 0,
+  selectedTab = 0,
   onChangeTab,
   ...rest
 }) => {
-  const [activeTab, setActiveTab] = useState(initialSelectedTab);
+  const [activeTab, setActiveTab] = useState(selectedTab);
+  const tabsNavEl = useRef<HTMLElement>(null);
+  const [isOverflowActive, setIsOverflowActive] = useState(false);
+
   const tabTitles = Children.map(children, (child, i) => ({
     index: i,
     title: (child as ReactElement).props.title,
@@ -40,21 +45,100 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
         ? (child as ReactElement).props.title
         : (child as ReactElement).props.fallbackTitle,
   }));
+
   const tabPanes = Children.map(children, (child, i) => ({
     index: i,
     content: (child as ReactElement).props.children,
   }));
+
   const onSelectTab = (index: number): void => {
+    scrollToTab(index);
     setActiveTab(index);
     onChangeTab && onChangeTab(index);
   };
-  const displayResponsiveHeader = tabTitles?.length && responsiveHeader;
+
+  const showLeftArrow = () => {
+    if (!isOverflowActive) return false;
+    return activeTab > 0;
+  };
+
+  const handLeftArrowClick = () => {
+    if (activeTab > 0) {
+      scrollToTab(activeTab - 1);
+      setActiveTab((currentTab) => currentTab - 1);
+    }
+  };
+
+  const showRightArrow = () => {
+    if (!isOverflowActive) return false;
+    if (!tabTitles) return false;
+    return activeTab < tabTitles.length - 1;
+  };
+
+  const handRightArrowClick = () => {
+    if (tabTitles && activeTab < tabTitles.length - 1) {
+      scrollToTab(activeTab + 1);
+      setActiveTab((currentTab) => currentTab + 1);
+    }
+  };
+
+  useEffect(() => {
+    if (tabTitles) {
+      let newSelectedTab = selectedTab;
+
+      if (selectedTab < 0) {
+        newSelectedTab = 0;
+      }
+
+      if (selectedTab > tabTitles.length - 1) {
+        newSelectedTab = tabTitles.length - 1;
+      }
+
+      setActiveTab(newSelectedTab);
+    }
+  }, [selectedTab]);
+
+  useEffect(() => {
+    toggleTabsArrow();
+  }, [tabsNavEl]);
+
+  const toggleTabsArrow = () => {
+    const el = tabsNavEl.current;
+    if (el) {
+      setIsOverflowActive(el.offsetWidth < el.scrollWidth);
+    }
+  };
+
+  // add listener on window resize to toggle tabs arrow visibility
+  useEffect(() => {
+    window.addEventListener("resize", toggleTabsArrow);
+
+    return () => {
+      window.removeEventListener("resize", toggleTabsArrow);
+    };
+  }, []);
 
   return (
     <section css={container} {...rest}>
-      <nav css={(theme): SerializedStyles => tabsHeader(theme, { stickyHeader })} role="tablist">
-        {!displayResponsiveHeader &&
-          tabTitles?.map(({ index, title }) => (
+      <div className="nav-wrapper">
+        {showLeftArrow() && (
+          <Button
+            data-testid="left-arrow"
+            variant="link"
+            color="secondary"
+            noGutters
+            onClick={handLeftArrowClick}
+          >
+            <ArrowLeftSVG height={22} />
+          </Button>
+        )}
+
+        <nav
+          css={(theme): SerializedStyles => tabsHeader(theme, { stickyHeader })}
+          role="tablist"
+          ref={tabsNavEl}
+        >
+          {tabTitles?.map(({ index, title }) => (
             <TabsNavItem
               key={index}
               index={index}
@@ -63,17 +147,20 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
               onSelectTab={onSelectTab}
             />
           ))}
+        </nav>
 
-        {displayResponsiveHeader && (
-          <Select aria-label="select tab" onChange={(index): void => onSelectTab(parseInt(index))}>
-            {tabTitles?.map(({ index, fallbackTitle }) => (
-              <option key={index} value={index}>
-                {fallbackTitle}
-              </option>
-            ))}
-          </Select>
+        {showRightArrow() && (
+          <Button
+            data-testid="right-arrow"
+            variant="link"
+            color="secondary"
+            noGutters
+            onClick={handRightArrowClick}
+          >
+            <ArrowRightSVG height={22} />
+          </Button>
         )}
-      </nav>
+      </div>
 
       <section id="content" aria-live="polite" role="region">
         {tabPanes?.length &&

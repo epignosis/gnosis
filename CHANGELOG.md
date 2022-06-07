@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/epignosis/gnosis/compare/v2.2.5...v2.3.0) (2022-06-07)
+
+
+### Features
+
+* responsive tabs component ([e3fd651](https://github.com/epignosis/gnosis/commit/e3fd651ff1f02729434511730727b7a9bdd20462))
+
 ## [2.2.5](https://github.com/epignosis/gnosis/compare/v2.2.4...v2.2.5) (2022-05-20)
 
 ## [2.2.4](https://github.com/epignosis/gnosis/compare/v2.2.3...v2.2.4) (2022-05-18)

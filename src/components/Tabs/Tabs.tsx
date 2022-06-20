@@ -23,8 +23,12 @@ type TabsCompoundProps = {
   TabPane: FC<TabPaneProps>;
 };
 
-const scrollToTab = (tabIndex: number) =>
-  document.querySelector(`#tab-${tabIndex}`)?.scrollIntoView();
+const scrollToTab = (tabIndex: number) => {
+  const tabOffset = document.querySelector(`#tab-${tabIndex}`)?.getBoundingClientRect().x;
+
+  const tablist = document.getElementsByTagName("nav")[0];
+  tabOffset && tablist.scrollTo(tabOffset > 0 ? tabOffset - 16 : 0, 0);
+};
 
 const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   children,

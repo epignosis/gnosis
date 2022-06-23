@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/epignosis/gnosis/compare/v2.3.0...v2.3.1) (2022-06-23)
+
+
+### Bug Fixes
+
+* **tabs:** tabs scrolling on x axis ([6449d3c](https://github.com/epignosis/gnosis/commit/6449d3c959c612d9a9ae787ccde5e34bb0d8acb5))
+
 # [2.3.0](https://github.com/epignosis/gnosis/compare/v2.2.5...v2.3.0) (2022-06-07)
 
 

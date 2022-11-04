@@ -31,8 +31,8 @@ const defaultTheme = {
     fontFamily: `"Mulish", Arial, sans-serif`,
   },
   link: {
-    color: colors.blue.base,
-    hoverColor: colors.blue.lighter,
+    color: colors.primary.base,
+    hoverColor: colors.primary.lighter,
   },
   typeScaleSizes,
   alert,

@@ -1,7 +1,8 @@
 import Color from "color";
 
 export const THEME_COLOURS = {
-  blue: "#1B68B3",
+  primary: "#1B68B3",
+  primaryAccent: "#0F6CE5",
   turquoise: "#2CD1F8",
   orange: "#FF9C28",
   red: "#F20000",
@@ -33,7 +34,8 @@ export const palletGenerator = (base: string): ThemeColors => ({
 });
 
 export const colors = {
-  blue: palletGenerator(THEME_COLOURS.blue),
+  primary: palletGenerator(THEME_COLOURS.primary),
+  primaryAccent: palletGenerator(THEME_COLOURS.primaryAccent),
   turquoise: palletGenerator(THEME_COLOURS.turquoise),
   orange: palletGenerator(THEME_COLOURS.orange),
   red: palletGenerator(THEME_COLOURS.red),

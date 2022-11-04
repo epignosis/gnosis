@@ -15,7 +15,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
       >
         <a
           aria-controls="content-0"
-          class="tab-link selected css-1v2oram-tabNavItem-tabNavItem"
+          class="tab-link selected css-qeb56i-tabNavItem-tabNavItem"
           href="#tab-0"
           id="tab-0"
           role="tab"
@@ -24,7 +24,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
         </a>
         <a
           aria-controls="content-1"
-          class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
+          class="tab-link css-towis9-tabNavItem-tabNavItem"
           href="#tab-1"
           id="tab-1"
           role="tab"
@@ -33,7 +33,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
         </a>
         <a
           aria-controls="content-2"
-          class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
+          class="tab-link css-towis9-tabNavItem-tabNavItem"
           href="#tab-2"
           id="tab-2"
           role="tab"
@@ -72,7 +72,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
       >
         <a
           aria-controls="content-0"
-          class="tab-link selected css-1v2oram-tabNavItem-tabNavItem"
+          class="tab-link selected css-qeb56i-tabNavItem-tabNavItem"
           href="#tab-0"
           id="tab-0"
           role="tab"
@@ -81,7 +81,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
         </a>
         <a
           aria-controls="content-1"
-          class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
+          class="tab-link css-towis9-tabNavItem-tabNavItem"
           href="#tab-1"
           id="tab-1"
           role="tab"
@@ -90,7 +90,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
         </a>
         <a
           aria-controls="content-2"
-          class="tab-link css-1n1jyfz-tabNavItem-tabNavItem"
+          class="tab-link css-towis9-tabNavItem-tabNavItem"
           href="#tab-2"
           id="tab-2"
           role="tab"

@@ -54,6 +54,7 @@ export const Default = Template.bind({});
 export const WithDisabledOptions = Template.bind({});
 
 WithDisabledOptions.args = {
+  groupname: "radio-group-disabled",
   options: [
     {
       label: "All",
@@ -79,5 +80,6 @@ WithDisabledOptions.args = {
 export const WithInitialValue = Template.bind({});
 
 WithInitialValue.args = {
+  groupname: "radio-group-with-value",
   initialValue: "completed",
 };

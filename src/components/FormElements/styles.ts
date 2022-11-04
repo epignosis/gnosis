@@ -46,9 +46,17 @@ export const inputBaseStyles = (
     background: ${formElements.input.hoverColor};
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     border: 1px solid ${formElements.input.borderHoverColor};
+  }
+
+  &:focus {
+    border: 2px solid ${formElements.input.borderHoverColor};
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
   }
 
   &:focus {

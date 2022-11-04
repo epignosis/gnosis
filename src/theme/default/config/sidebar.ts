@@ -1,11 +1,11 @@
 import { colors } from "../colors";
 
 export default {
-  background: colors.blue.base,
-  backgroundHover: colors.blue.dark,
-  backgroundHoverShadow: colors.blue.dark,
-  color: "#9EB8DB",
+  background: colors.primary.base,
+  backgroundHover: colors.primary.dark,
+  backgroundHoverShadow: colors.primary.dark,
+  color: colors.white,
   colorHover: colors.white,
   hamburgerBackground: colors.white,
-  border: "#4278BF",
+  border: colors.primary.base,
 };

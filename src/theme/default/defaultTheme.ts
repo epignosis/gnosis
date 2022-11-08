@@ -24,15 +24,15 @@ const typeScaleSizes = generateTypeScaleSizes(DEFAULT_TYPESCALE_CONFIG);
 
 const defaultTheme = {
   body: {
-    color: "#232323",
+    color: colors.black,
     background: colors.white,
     fontSize: "100%",
     lineHeight: 1.5715,
     fontFamily: `"Mulish", Arial, sans-serif`,
   },
   link: {
-    color: colors.blue.base,
-    hoverColor: colors.blue.lighter,
+    color: colors.primary.base,
+    hoverColor: colors.primary.lighter,
   },
   typeScaleSizes,
   alert,

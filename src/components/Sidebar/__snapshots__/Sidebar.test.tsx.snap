@@ -3,7 +3,7 @@
 exports[`<Sidebar/> matches snapshot 1`] = `
 <div>
   <nav
-    class="my-class css-1mig03n-mainNavContainer-mainNavContainer"
+    class="my-class css-wemhpb-mainNavContainer-mainNavContainer"
     id="my-id"
     style="min-width: 15rem;"
   >
@@ -11,10 +11,10 @@ exports[`<Sidebar/> matches snapshot 1`] = `
       class="nav-items-wrapper"
     >
       <button
-        class="nav-handle css-hnt32k-navHandleContainer-navHandleContainer"
+        class="nav-handle css-sms8qa-navHandleContainer-navHandleContainer"
       >
         <div
-          class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+          class="nav-item css-1fy3kx9-navItemContainer-navItemContainer"
         >
           <svg-file-stub
             height="32"
@@ -39,7 +39,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+                class="nav-item css-1fy3kx9-navItemContainer-navItemContainer"
               >
                 <svg-file-stub
                   height="32"
@@ -59,7 +59,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+                class="nav-item css-1fy3kx9-navItemContainer-navItemContainer"
               >
                 <svg-file-stub
                   height="32"
@@ -79,7 +79,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+                class="nav-item css-1fy3kx9-navItemContainer-navItemContainer"
               >
                 <svg-file-stub
                   height="32"
@@ -99,7 +99,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+                class="nav-item css-1fy3kx9-navItemContainer-navItemContainer"
               >
                 <svg-file-stub
                   height="32"
@@ -123,7 +123,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+                class="nav-item css-1fy3kx9-navItemContainer-navItemContainer"
               >
                 <svg-file-stub
                   height="32"
@@ -143,7 +143,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+                class="nav-item css-1fy3kx9-navItemContainer-navItemContainer"
               >
                 <svg-file-stub
                   height="32"
@@ -163,7 +163,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+                class="nav-item css-1fy3kx9-navItemContainer-navItemContainer"
               >
                 <svg-file-stub
                   height="32"
@@ -183,7 +183,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+                class="nav-item css-1fy3kx9-navItemContainer-navItemContainer"
               >
                 <svg-file-stub
                   height="32"
@@ -203,7 +203,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-5bqah4-navItemContainer-navItemContainer"
+                class="nav-item css-1fy3kx9-navItemContainer-navItemContainer"
               >
                 <figure
                   class="css-1al2x53-avatar-avatar"

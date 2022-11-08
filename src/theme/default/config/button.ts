@@ -8,31 +8,31 @@ export default {
   },
   primary: {
     default: {
-      background: colors.blue.base,
-      borderColor: colors.blue.base,
+      background: colors.primary.base,
+      borderColor: colors.primary.base,
       color: colors.white,
     },
     hover: {
-      background: "#3F8DF2",
-      borderColor: "#3F8DF2",
+      background: colors.primaryAccent.light,
+      borderColor: colors.primary.light,
       color: colors.white,
     },
     active: {
-      background: "#1978F3",
-      borderColor: "#1978F3",
+      background: colors.primaryAccent.base,
+      borderColor: colors.primaryAccent.base,
       color: colors.white,
     },
     ghost: {
-      color: colors.blue.base,
-      background: colors.blue.lightest,
+      color: colors.primary.base,
+      background: colors.primary.lightest,
     },
     outline: {
-      color: colors.blue.base,
-      borderColor: colors.blue.base,
+      color: colors.primary.base,
+      borderColor: colors.primary.base,
     },
     link: {
-      color: colors.blue.base,
-      hoverColor: "#3F8DF2",
+      color: colors.primary.base,
+      hoverColor: colors.primaryAccent.light,
     },
   },
   secondary: {

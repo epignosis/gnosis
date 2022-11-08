@@ -47,14 +47,14 @@ export const tabsHeader = (
 };
 
 export const tabNavItem = (
-  { tabs }: Theme,
+  { tabs, body }: Theme,
   { isActive }: { isActive: boolean },
 ): SerializedStyles => {
   return css`
     font-weight: ${isActive ? "700" : "400"};
     margin: 0 1rem 0 0;
     padding: 0.6rem;
-    color: ${tabs.linkNormal};
+    color: ${body.color};
     border-bottom: 4px solid ${isActive ? tabs.linkBorder : "transparent"};
   `;
 };

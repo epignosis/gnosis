@@ -1,3 +1,19 @@
+# [3.0.0](https://github.com/epignosis/gnosis/compare/v2.3.1...v3.0.0) (2022-11-08)
+
+
+### feature
+
+* primary colour ([#104](https://github.com/epignosis/gnosis/issues/104)) ([8590487](https://github.com/epignosis/gnosis/commit/8590487f686019413dfea246ac47825e02cd476e))
+
+
+### BREAKING CHANGES
+
+* Tab item colour changed to be the same as the body colour
+
+* fix(change hardcoded body colour): replaces the hardcoded  body colour in theme with the black color
+
+Co-authored-by: Thrasos Kafasis <thrasoskafasis@Epignosis-M170.local>
+
 ## [2.3.1](https://github.com/epignosis/gnosis/compare/v2.3.0...v2.3.1) (2022-06-23)
 
 

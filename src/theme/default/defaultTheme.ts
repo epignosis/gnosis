@@ -24,7 +24,7 @@ const typeScaleSizes = generateTypeScaleSizes(DEFAULT_TYPESCALE_CONFIG);
 
 const defaultTheme = {
   body: {
-    color: "#232323",
+    color: colors.black,
     background: colors.white,
     fontSize: "100%",
     lineHeight: 1.5715,

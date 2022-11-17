@@ -1,6 +1,6 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, useRef } from "react";
 import { m, AnimatePresence, Variants, Transition } from "framer-motion";
-import { useClickAway } from "@umijs/hooks";
+import { useClickAway } from "ahooks";
 import { CloseSVG } from "../../icons/";
 import { drawerContainer } from "./styles";
 
@@ -47,11 +47,13 @@ const drawerContentVariants: Variants = {
 };
 
 const Drawer: DrawerProps = ({ isOpen, onClose, title, footer, children }) => {
-  const containerRef = useClickAway((): void => {
+  const containerRef = useRef<HTMLBaseElement>(null);
+
+  useClickAway(() => {
     if (isOpen) {
       onClose();
     }
-  });
+  }, containerRef);
 
   return (
     <AnimatePresence>

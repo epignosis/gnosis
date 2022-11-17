@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from "react";
-import { useResponsive } from "@umijs/hooks";
+import { useResponsive } from "ahooks";
 import { SerializedStyles } from "@emotion/react";
 import Heading from "../Heading/Heading";
 import Text from "../Text/Text";

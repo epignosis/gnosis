@@ -4,11 +4,11 @@ import Breadcrumb from "./Breadcrumb";
 import { render, screen } from "@test-utils/render";
 
 const getBreadcrumbProps = () => ({
-  item1: faker.unique(faker.lorem.word),
-  item2: faker.unique(faker.lorem.word),
-  item3: faker.unique(faker.lorem.word),
-  item1Url: faker.unique(faker.internet.url),
-  item2Url: faker.unique(faker.internet.url),
+  item1: faker.helpers.unique(faker.lorem.word),
+  item2: faker.helpers.unique(faker.lorem.word),
+  item3: faker.helpers.unique(faker.lorem.word),
+  item1Url: faker.helpers.unique(faker.internet.url),
+  item2Url: faker.helpers.unique(faker.internet.url),
 });
 
 describe("<Breadcrumb> and <Breadcrumb.Item>", () => {

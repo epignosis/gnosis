@@ -5,7 +5,7 @@ import { screen, render } from "@test-utils/render";
 
 const OPTIONS = [
   {
-    label: faker.company.companyName(),
+    label: faker.company.name(),
     value: faker.company.companySuffix(),
   },
   {

@@ -5,12 +5,12 @@ import Tabs from "./Tabs";
 import { screen, render } from "@test-utils/render";
 
 const getTabsProps = () => ({
-  tab1Txt: faker.unique(faker.lorem.paragraph),
-  tab2Txt: faker.unique(faker.lorem.paragraph),
-  tab3Txt: faker.unique(faker.lorem.paragraph),
-  tab1TitleTxt: faker.unique(faker.lorem.word),
-  tab2TitleTxt: faker.unique(faker.lorem.word),
-  tab3TitleTxt: faker.unique(faker.lorem.word),
+  tab1Txt: faker.helpers.unique(faker.lorem.paragraph),
+  tab2Txt: faker.helpers.unique(faker.lorem.paragraph),
+  tab3Txt: faker.helpers.unique(faker.lorem.paragraph),
+  tab1TitleTxt: faker.helpers.unique(faker.lorem.word),
+  tab2TitleTxt: faker.helpers.unique(faker.lorem.word),
+  tab3TitleTxt: faker.helpers.unique(faker.lorem.word),
 });
 
 // mock scrollIntoView function in jsdom

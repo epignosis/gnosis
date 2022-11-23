@@ -1,4 +1,4 @@
-import { configResponsive } from "@umijs/hooks";
+import { configResponsive } from "ahooks";
 
 export const breakpoints = {
   xs: 320,

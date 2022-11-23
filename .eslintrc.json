@@ -43,6 +43,12 @@
       {
         "newlines-between": "never"
       }
+    ],
+    "react/no-unknown-property": [
+      "error",
+      {
+        "ignore": ["css"]
+      }
     ]
   }
 }

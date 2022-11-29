@@ -36,6 +36,7 @@ export const navItemContainer = ({ sidebar }: Theme): SerializedStyles => css`
   align-items: center;
   color: ${sidebar.color};
   padding: 0.625rem 1.5rem;
+  font-size: 1rem;
 
   &:hover,
   &.selected,

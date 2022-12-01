@@ -1,4 +1,5 @@
 import { css, SerializedStyles, Theme } from "@emotion/react";
+import { TypographyLevels } from "@theme/utils/typography";
 
 export const mainNavContainer = ({ sidebar }: Theme): SerializedStyles => css`
   position: sticky;
@@ -31,7 +32,10 @@ export const navHandleContainer = ({ sidebar }: Theme): SerializedStyles => css`
   }
 `;
 
-export const navItemContainer = ({ sidebar }: Theme): SerializedStyles => css`
+export const navItemContainer = (
+  { sidebar, typeScaleSizes }: Theme,
+  fontSize: TypographyLevels,
+): SerializedStyles => css`
   display: flex;
   align-items: center;
   color: ${sidebar.color};
@@ -58,5 +62,12 @@ export const navItemContainer = ({ sidebar }: Theme): SerializedStyles => css`
 
   .title {
     margin-left: 0.5rem;
+    font-size: ${typeScaleSizes[fontSize]};
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 12rem;
   }
 `;

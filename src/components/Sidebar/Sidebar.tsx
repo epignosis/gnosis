@@ -23,7 +23,7 @@ type SidebarCompoundProps = {
 
 const navVariants: Variants = {
   expanded: {
-    minWidth: "15rem",
+    minWidth: "16rem",
     transition: {
       ease: "easeInOut",
       duration: 0.2,
@@ -38,7 +38,7 @@ const navVariants: Variants = {
     },
   },
   a11yExpanded: {
-    minWidth: "15rem",
+    minWidth: "16rem",
     transition: {
       duration: 0,
     },

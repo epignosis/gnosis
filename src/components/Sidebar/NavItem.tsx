@@ -2,11 +2,13 @@ import React, { FC, ReactNode } from "react";
 import { m, AnimatePresence, Variants, useReducedMotion } from "framer-motion";
 import classNames from "classnames";
 import { navItemContainer } from "./styles";
+import { TypographyLevels } from "@theme/utils/typography";
 
 export type NavItemProps = FC<{
   isExpanded: boolean;
   icon: ReactNode;
   label: string | JSX.Element;
+  fontSize?: TypographyLevels;
   isActive?: boolean;
 }>;
 
@@ -17,7 +19,7 @@ const labelVariants: Variants = {
     x: -10,
   },
   visible: ({ isReducedMotion }) => ({
-    display: "block",
+    display: "-webkit-box",
     opacity: 1,
     x: 0,
     transition: {
@@ -37,7 +39,7 @@ const labelVariants: Variants = {
   }),
 };
 
-const NavItem: NavItemProps = ({ isExpanded, label, icon, isActive = false }) => {
+const NavItem: NavItemProps = ({ isExpanded, label, fontSize = "md", icon, isActive = false }) => {
   const isReducedMotion = useReducedMotion();
   const containerClassNames = classNames({
     selected: isActive,
@@ -45,7 +47,7 @@ const NavItem: NavItemProps = ({ isExpanded, label, icon, isActive = false }) =>
   });
 
   return (
-    <div css={navItemContainer} className={containerClassNames}>
+    <div css={(theme) => navItemContainer(theme, fontSize)} className={containerClassNames}>
       {icon}
       <AnimatePresence>
         {isExpanded && (

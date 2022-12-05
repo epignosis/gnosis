@@ -3,7 +3,7 @@
 exports[`<Sidebar/> matches snapshot 1`] = `
 <div>
   <nav
-    class="my-class css-wemhpb-mainNavContainer-mainNavContainer"
+    class="my-class css-18qpwq-mainNavContainer-mainNavContainer"
     id="my-id"
     style="min-width: 16rem;"
   >
@@ -14,11 +14,13 @@ exports[`<Sidebar/> matches snapshot 1`] = `
         class="nav-handle css-sms8qa-navHandleContainer-navHandleContainer"
       >
         <div
-          class="nav-item css-1vzmtzc-navItemContainer-navItemContainer"
+          class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
         >
-          <svg-file-stub
-            height="32"
-          />
+          <div>
+            <svg-file-stub
+              height="32"
+            />
+          </div>
           <div
             class="title"
             style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
@@ -39,11 +41,13 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1vzmtzc-navItemContainer-navItemContainer"
+                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
               >
-                <svg-file-stub
-                  height="32"
-                />
+                <div>
+                  <svg-file-stub
+                    height="32"
+                  />
+                </div>
                 <div
                   class="title"
                   style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
@@ -59,11 +63,13 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1vzmtzc-navItemContainer-navItemContainer"
+                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
               >
-                <svg-file-stub
-                  height="32"
-                />
+                <div>
+                  <svg-file-stub
+                    height="32"
+                  />
+                </div>
                 <div
                   class="title"
                   style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
@@ -79,11 +85,13 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1vzmtzc-navItemContainer-navItemContainer"
+                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
               >
-                <svg-file-stub
-                  height="32"
-                />
+                <div>
+                  <svg-file-stub
+                    height="32"
+                  />
+                </div>
                 <div
                   class="title"
                   style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
@@ -99,11 +107,13 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1vzmtzc-navItemContainer-navItemContainer"
+                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
               >
-                <svg-file-stub
-                  height="32"
-                />
+                <div>
+                  <svg-file-stub
+                    height="32"
+                  />
+                </div>
                 <div
                   class="title"
                   style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
@@ -123,11 +133,13 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1vzmtzc-navItemContainer-navItemContainer"
+                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
               >
-                <svg-file-stub
-                  height="32"
-                />
+                <div>
+                  <svg-file-stub
+                    height="32"
+                  />
+                </div>
                 <div
                   class="title"
                   style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
@@ -143,11 +155,13 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1vzmtzc-navItemContainer-navItemContainer"
+                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
               >
-                <svg-file-stub
-                  height="32"
-                />
+                <div>
+                  <svg-file-stub
+                    height="32"
+                  />
+                </div>
                 <div
                   class="title"
                   style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
@@ -163,11 +177,13 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1vzmtzc-navItemContainer-navItemContainer"
+                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
               >
-                <svg-file-stub
-                  height="32"
-                />
+                <div>
+                  <svg-file-stub
+                    height="32"
+                  />
+                </div>
                 <div
                   class="title"
                   style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
@@ -183,11 +199,13 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1vzmtzc-navItemContainer-navItemContainer"
+                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
               >
-                <svg-file-stub
-                  height="32"
-                />
+                <div>
+                  <svg-file-stub
+                    height="32"
+                  />
+                </div>
                 <div
                   class="title"
                   style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
@@ -203,17 +221,19 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1vzmtzc-navItemContainer-navItemContainer"
+                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
               >
-                <figure
-                  class="css-1al2x53-avatar-avatar"
-                >
-                  <span
-                    data-testid="avatar-children-container"
+                <div>
+                  <figure
+                    class="css-1al2x53-avatar-avatar"
                   >
-                    DS
-                  </span>
-                </figure>
+                    <span
+                      data-testid="avatar-children-container"
+                    >
+                      DS
+                    </span>
+                  </figure>
+                </div>
                 <div
                   class="title"
                   style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"

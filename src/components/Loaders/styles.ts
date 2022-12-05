@@ -1,4 +1,4 @@
-import { css, SerializedStyles, Theme } from "@emotion/react";
+import { css, SerializedStyles } from "@emotion/react";
 import { LoaderSize } from "./Loader";
 
 const loaderMargin = {
@@ -11,10 +11,13 @@ const loaderSize = {
   lg: "0.75rem",
 };
 
-export const container = (
-  { loader }: Theme,
-  { fullScreen, size }: { fullScreen: boolean; size: LoaderSize },
-): SerializedStyles => css`
+export const container = ({
+  fullScreen,
+  size,
+}: {
+  fullScreen: boolean;
+  size: LoaderSize;
+}): SerializedStyles => css`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +28,6 @@ export const container = (
     span > span {
       width: ${loaderSize[size]};
       height: ${loaderSize[size]};
-      background: ${loader.color};
       margin: ${loaderMargin[size]};
     }
   }

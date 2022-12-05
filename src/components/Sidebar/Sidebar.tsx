@@ -7,13 +7,16 @@ import {
   domAnimation,
   HTMLMotionProps,
 } from "framer-motion";
+import { HamburgerSVG } from "../../icons";
 import { mainNavContainer } from "./styles";
 import NavItem, { NavItemProps } from "./NavItem";
 import NavHandle from "./NavHandle";
+import { TypographyLevels } from "@theme/utils/typography";
 
 export type SidebarProps = HTMLMotionProps<"nav"> & {
   isCollapsed?: boolean;
   navHandleLabel?: string;
+  fontSize?: TypographyLevels;
   onToggle?: () => void;
 };
 
@@ -54,6 +57,7 @@ const navVariants: Variants = {
 const Sidebar: FC<SidebarProps> & SidebarCompoundProps = ({
   isCollapsed = false,
   navHandleLabel = "Menu",
+  fontSize = "md",
   onToggle = () => void 0,
   children,
   ...rest
@@ -78,11 +82,14 @@ const Sidebar: FC<SidebarProps> & SidebarCompoundProps = ({
         {...rest}
       >
         <div className="nav-items-wrapper">
-          <NavHandle
-            isExpanded={!isCollapsed}
-            navItemLabel={navHandleLabel}
-            toggleMainNav={onToggle}
-          />
+          <NavHandle toggleMainNav={onToggle}>
+            <NavItem
+              label={navHandleLabel}
+              isExpanded={!isCollapsed}
+              icon={<HamburgerSVG height={32} />}
+              fontSize={fontSize}
+            />
+          </NavHandle>
           {children}
         </div>
       </m.nav>

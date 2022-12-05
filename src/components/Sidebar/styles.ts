@@ -10,6 +10,7 @@ export const mainNavContainer = ({ sidebar }: Theme): SerializedStyles => css`
   background: ${sidebar.background};
   color: ${sidebar.color};
   z-index: 1001;
+  max-width: 16rem;
 
   .nav-items-wrapper {
     display: flex;
@@ -68,6 +69,6 @@ export const navItemContainer = (
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 12rem;
+    word-break: break-word;
   }
 `;

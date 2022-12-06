@@ -17,6 +17,7 @@ export type SidebarProps = HTMLMotionProps<"nav"> & {
   isCollapsed?: boolean;
   navHandleLabel?: string;
   fontSize?: TypographyLevels;
+  width?: string;
   onToggle?: () => void;
 };
 
@@ -24,46 +25,47 @@ type SidebarCompoundProps = {
   Item: NavItemProps;
 };
 
-const navVariants: Variants = {
-  expanded: {
-    minWidth: "16rem",
-    transition: {
-      ease: "easeInOut",
-      duration: 0.2,
-    },
-  },
-  collapsed: {
-    minWidth: "4.75rem",
-    transition: {
-      ease: "easeInOut",
-      duration: 0.2,
-      delay: 0.1,
-    },
-  },
-  a11yExpanded: {
-    minWidth: "16rem",
-    transition: {
-      duration: 0,
-    },
-  },
-  a11yCollapsed: {
-    minWidth: "4.75rem",
-    transition: {
-      duration: 0,
-    },
-  },
-};
-
 const Sidebar: FC<SidebarProps> & SidebarCompoundProps = ({
   isCollapsed = false,
   navHandleLabel = "Menu",
   fontSize = "md",
+  width = "16rem",
   onToggle = () => void 0,
   children,
   ...rest
 }) => {
   const isReducedMotion = useReducedMotion();
   let animate: string;
+
+  const navVariants: Variants = {
+    expanded: {
+      minWidth: width,
+      transition: {
+        ease: "easeInOut",
+        duration: 0.2,
+      },
+    },
+    collapsed: {
+      minWidth: "4.75rem",
+      transition: {
+        ease: "easeInOut",
+        duration: 0.2,
+        delay: 0.1,
+      },
+    },
+    a11yExpanded: {
+      minWidth: width,
+      transition: {
+        duration: 0,
+      },
+    },
+    a11yCollapsed: {
+      minWidth: "4.75rem",
+      transition: {
+        duration: 0,
+      },
+    },
+  };
 
   if (isReducedMotion) {
     animate = isCollapsed ? "a11yCollapsed" : "a11yExpanded";
@@ -74,7 +76,7 @@ const Sidebar: FC<SidebarProps> & SidebarCompoundProps = ({
   return (
     <LazyMotion features={domAnimation}>
       <m.nav
-        css={mainNavContainer}
+        css={(theme) => mainNavContainer(theme, width)}
         initial={false}
         animate={animate}
         variants={navVariants}

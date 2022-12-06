@@ -1,7 +1,7 @@
 import { css, SerializedStyles, Theme } from "@emotion/react";
 import { TypographyLevels } from "@theme/utils/typography";
 
-export const mainNavContainer = ({ sidebar }: Theme): SerializedStyles => css`
+export const mainNavContainer = ({ sidebar }: Theme, width: string): SerializedStyles => css`
   position: sticky;
   top: 0;
   display: flex;
@@ -10,7 +10,7 @@ export const mainNavContainer = ({ sidebar }: Theme): SerializedStyles => css`
   background: ${sidebar.background};
   color: ${sidebar.color};
   z-index: 1001;
-  max-width: 16rem;
+  max-width: ${width};
 
   .nav-items-wrapper {
     display: flex;

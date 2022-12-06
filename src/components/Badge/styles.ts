@@ -39,8 +39,8 @@ export const container = (
       background: ${badge.background};
       color: ${badge.color};
       border-radius: 50%;
-      top: ${offset.top};
-      right: ${offset.right};
+      inset-block-start: ${offset.top};
+      inset-inline-end: ${offset.right};
       z-index: 1;
     }
   `;

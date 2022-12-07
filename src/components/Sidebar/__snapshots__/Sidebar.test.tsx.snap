@@ -3,7 +3,7 @@
 exports[`<Sidebar/> matches snapshot 1`] = `
 <div>
   <nav
-    class="my-class css-18qpwq-mainNavContainer-mainNavContainer"
+    class="my-class css-ukfle2-mainNavContainer-mainNavContainer"
     id="my-id"
     style="min-width: 16rem;"
   >
@@ -11,10 +11,10 @@ exports[`<Sidebar/> matches snapshot 1`] = `
       class="nav-items-wrapper"
     >
       <button
-        class="nav-handle css-sms8qa-navHandleContainer-navHandleContainer"
+        class="nav-handle css-1vueq8q-navHandleContainer-navHandleContainer"
       >
         <div
-          class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
+          class="nav-item css-13k8u55-navItemContainer-navItemContainer"
         >
           <div>
             <svg-file-stub
@@ -41,7 +41,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
+                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
               >
                 <div>
                   <svg-file-stub
@@ -63,7 +63,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
+                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
               >
                 <div>
                   <svg-file-stub
@@ -85,7 +85,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
+                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
               >
                 <div>
                   <svg-file-stub
@@ -107,7 +107,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
+                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
               >
                 <div>
                   <svg-file-stub
@@ -133,7 +133,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
+                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
               >
                 <div>
                   <svg-file-stub
@@ -155,7 +155,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
+                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
               >
                 <div>
                   <svg-file-stub
@@ -177,7 +177,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
+                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
               >
                 <div>
                   <svg-file-stub
@@ -188,7 +188,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
                   class="title"
                   style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
                 >
-                  Notifications
+                  Show tour
                 </div>
               </div>
             </a>
@@ -199,29 +199,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
-              >
-                <div>
-                  <svg-file-stub
-                    height="32"
-                  />
-                </div>
-                <div
-                  class="title"
-                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
-                >
-                  Help
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a
-              href="www.google.com"
-              style="display: block;"
-            >
-              <div
-                class="nav-item css-1grmxmz-navItemContainer-navItemContainer"
+                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
               >
                 <div>
                   <figure

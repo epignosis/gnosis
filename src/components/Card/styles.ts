@@ -24,19 +24,6 @@ export const courseHeaderContainer = css`
   position: relative;
   height: 100%;
   width: 100%;
-
-  .info-btns-container {
-    position: absolute;
-    right: 1rem;
-    top: 1.125rem;
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
-
-    div:first-of-type {
-      margin-bottom: 0.75rem;
-    }
-  }
 `;
 
 export const thumbnailContainer = css`

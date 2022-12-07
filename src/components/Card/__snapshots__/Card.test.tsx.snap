@@ -14,7 +14,7 @@ exports[`<Card/> matches snapshot 1`] = `
         class="aspect-ratio-wrapper"
       >
         <section
-          class="css-pcvco1-courseHeaderContainer"
+          class="css-1og46qe-courseHeaderContainer"
         >
           <img
             alt="An image"
@@ -89,7 +89,7 @@ exports[`<Card/> matches snapshot with hover 1`] = `
         class="aspect-ratio-wrapper"
       >
         <section
-          class="css-pcvco1-courseHeaderContainer"
+          class="css-1og46qe-courseHeaderContainer"
         >
           <img
             alt="An image"
@@ -133,7 +133,7 @@ exports[`<Card/> matches snapshot with overlay 1`] = `
         class="aspect-ratio-wrapper"
       >
         <section
-          class="css-pcvco1-courseHeaderContainer"
+          class="css-1og46qe-courseHeaderContainer"
         >
           <img
             alt="An image"
@@ -160,7 +160,7 @@ exports[`<Card/> matches snapshot with transparent hover 1`] = `
         class="aspect-ratio-wrapper"
       >
         <section
-          class="css-pcvco1-courseHeaderContainer"
+          class="css-1og46qe-courseHeaderContainer"
         >
           <img
             alt="An image"

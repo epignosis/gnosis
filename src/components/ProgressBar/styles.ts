@@ -22,7 +22,7 @@ export const container = (
       content: " ";
       position: absolute;
       top: 0;
-      left: 0;
+      inset-inline-start: 0;
       height: 100%;
       min-width: ${percent ? "20%" : "0%"};
       width: ${percent}%;
@@ -37,7 +37,7 @@ export const container = (
       max-width: 95%;
       min-width: ${percent ? "13%" : "0%"};
       display: flex;
-      padding-left: 1rem;
+      padding-inline-start: 1rem;
       justify-content: flex-end;
       align-items: center;
       color: ${progressBar.percentColor};

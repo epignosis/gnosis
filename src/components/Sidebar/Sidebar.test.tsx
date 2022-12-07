@@ -10,7 +10,7 @@ describe("<Sidebar/>", () => {
     const handle = screen.getByRole("button");
     const items = screen.getAllByRole("link");
 
-    expect(items).toHaveLength(9);
+    expect(items).toHaveLength(8);
     expect(handle).toHaveTextContent("Menu");
     expect(items[0]).toHaveTextContent("Home");
     expect(items[1]).toHaveTextContent("My courses");
@@ -18,9 +18,8 @@ describe("<Sidebar/>", () => {
     expect(items[3]).toHaveTextContent("Calendar");
     expect(items[4]).toHaveTextContent("Messages");
     expect(items[5]).toHaveTextContent("Discussions");
-    expect(items[6]).toHaveTextContent("Notifications");
-    expect(items[7]).toHaveTextContent("Help");
-    expect(items[8]).toHaveTextContent("My profile");
+    expect(items[6]).toHaveTextContent("Show tour");
+    expect(items[7]).toHaveTextContent("My profile");
   });
 
   it("renders expanded correctly with changed nav item label", () => {
@@ -29,7 +28,7 @@ describe("<Sidebar/>", () => {
     const handle = screen.getByRole("button");
     const items = screen.getAllByRole("link");
 
-    expect(items).toHaveLength(9);
+    expect(items).toHaveLength(8);
     expect(handle).toHaveTextContent("Changed menu");
     expect(items[0]).toHaveTextContent("Home");
     expect(items[1]).toHaveTextContent("My courses");
@@ -37,9 +36,8 @@ describe("<Sidebar/>", () => {
     expect(items[3]).toHaveTextContent("Calendar");
     expect(items[4]).toHaveTextContent("Messages");
     expect(items[5]).toHaveTextContent("Discussions");
-    expect(items[6]).toHaveTextContent("Notifications");
-    expect(items[7]).toHaveTextContent("Help");
-    expect(items[8]).toHaveTextContent("My profile");
+    expect(items[6]).toHaveTextContent("Show tour");
+    expect(items[7]).toHaveTextContent("My profile");
   });
 
   it("renders collapsed correctly", () => {
@@ -48,7 +46,7 @@ describe("<Sidebar/>", () => {
     const handle = screen.getByRole("button");
     const items = screen.getAllByRole("link");
 
-    expect(items).toHaveLength(9);
+    expect(items).toHaveLength(8);
     expect(handle).not.toHaveTextContent("Menu");
     expect(items[0]).not.toHaveTextContent("Home");
     expect(items[1]).not.toHaveTextContent("My courses");
@@ -56,9 +54,8 @@ describe("<Sidebar/>", () => {
     expect(items[3]).not.toHaveTextContent("Calendar");
     expect(items[4]).not.toHaveTextContent("Messages");
     expect(items[5]).not.toHaveTextContent("Discussions");
-    expect(items[6]).not.toHaveTextContent("Notifications");
-    expect(items[7]).not.toHaveTextContent("Help");
-    expect(items[8]).not.toHaveTextContent("My profile");
+    expect(items[6]).not.toHaveTextContent("Show tour");
+    expect(items[7]).not.toHaveTextContent("My profile");
   });
 
   it("fires the onToggle handler", () => {

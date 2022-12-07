@@ -14,9 +14,11 @@ exports[`<Sidebar/> matches snapshot 1`] = `
         class="nav-handle css-1vueq8q-navHandleContainer-navHandleContainer"
       >
         <div
-          class="nav-item css-13k8u55-navItemContainer-navItemContainer"
+          class="nav-item css-sczh30-navItemContainer-navItemContainer"
         >
-          <div>
+          <div
+            class="icon-container"
+          >
             <svg-file-stub
               height="32"
             />
@@ -41,9 +43,11 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
+                class="nav-item css-sczh30-navItemContainer-navItemContainer"
               >
-                <div>
+                <div
+                  class="icon-container"
+                >
                   <svg-file-stub
                     height="32"
                   />
@@ -63,9 +67,11 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
+                class="nav-item css-sczh30-navItemContainer-navItemContainer"
               >
-                <div>
+                <div
+                  class="icon-container"
+                >
                   <svg-file-stub
                     height="32"
                   />
@@ -85,9 +91,11 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
+                class="nav-item css-sczh30-navItemContainer-navItemContainer"
               >
-                <div>
+                <div
+                  class="icon-container"
+                >
                   <svg-file-stub
                     height="32"
                   />
@@ -107,9 +115,11 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
+                class="nav-item css-sczh30-navItemContainer-navItemContainer"
               >
-                <div>
+                <div
+                  class="icon-container"
+                >
                   <svg-file-stub
                     height="32"
                   />
@@ -133,9 +143,11 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
+                class="nav-item css-sczh30-navItemContainer-navItemContainer"
               >
-                <div>
+                <div
+                  class="icon-container"
+                >
                   <svg-file-stub
                     height="32"
                   />
@@ -155,9 +167,11 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
+                class="nav-item css-sczh30-navItemContainer-navItemContainer"
               >
-                <div>
+                <div
+                  class="icon-container"
+                >
                   <svg-file-stub
                     height="32"
                   />
@@ -177,9 +191,11 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
+                class="nav-item css-sczh30-navItemContainer-navItemContainer"
               >
-                <div>
+                <div
+                  class="icon-container"
+                >
                   <svg-file-stub
                     height="32"
                   />
@@ -199,9 +215,11 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-13k8u55-navItemContainer-navItemContainer"
+                class="nav-item css-sczh30-navItemContainer-navItemContainer"
               >
-                <div>
+                <div
+                  class="icon-container"
+                >
                   <figure
                     class="css-1al2x53-avatar-avatar"
                   >

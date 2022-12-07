@@ -27,7 +27,7 @@ const Loader: FC<LoaderProps> = ({ fullScreen = false, size = "lg", ...rest }) =
       css={(): SerializedStyles => container({ fullScreen })}
       data-testid="loader"
       {...rest}
-      className={rest?.className ?? ""}
+      className={`loading-container${rest?.className ? `${rest?.className}` : ""}`}
     >
       <PulseLoader color={loader.color} size={loaderSize[size]} margin={loaderMargin[size]} />
     </div>

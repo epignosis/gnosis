@@ -16,13 +16,11 @@ export const mainNavContainer = ({ sidebar }: Theme, width: string): SerializedS
     display: flex;
     flex-direction: column;
     flex: 1;
-    margin: 0 0 1.75rem;
+    margin: 1.5rem 0;
   }
 `;
 
 export const navHandleContainer = ({ sidebar }: Theme): SerializedStyles => css`
-  min-height: 4.5rem;
-  width: 100%;
   background-color: transparent;
   padding: 0;
   border: 0;
@@ -40,7 +38,7 @@ export const navItemContainer = (
   display: flex;
   align-items: center;
   color: ${sidebar.color};
-  padding: 0.625rem 1.5rem;
+  padding: 0.25rem 1.5rem;
 
   &:hover,
   &.selected,

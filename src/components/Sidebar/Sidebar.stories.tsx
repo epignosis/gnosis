@@ -5,11 +5,10 @@ import {
   CalendarSVG,
   CatalogSVG,
   ChatCloudsSVG,
-  CommunicationSVG,
-  HelpSVG,
   HomeSVG,
   MyCoursesSVG,
   OpenedMessageSVG,
+  ShowTourSVG,
 } from "../../icons/";
 import SidebarComponent, { SidebarProps } from "./Sidebar";
 
@@ -96,17 +95,8 @@ export const Sidebar: Story<SidebarProps> = (args) => (
         <li>
           <a href="www.google.com" style={{ display: "block" }}>
             <SidebarComponent.Item
-              icon={<CommunicationSVG height={32} />}
-              label="Notifications"
-              isExpanded={!args.isCollapsed}
-            />
-          </a>
-        </li>
-        <li>
-          <a href="www.google.com" style={{ display: "block" }}>
-            <SidebarComponent.Item
-              icon={<HelpSVG height={32} />}
-              label="Help"
+              icon={<ShowTourSVG height={32} />}
+              label="Show tour"
               isExpanded={!args.isCollapsed}
             />
           </a>

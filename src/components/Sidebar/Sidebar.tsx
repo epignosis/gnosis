@@ -17,7 +17,8 @@ export type SidebarProps = HTMLMotionProps<"nav"> & {
   isCollapsed?: boolean;
   navHandleLabel?: string;
   fontSize?: TypographyLevels;
-  width?: string;
+  expandedWidth?: string;
+  collapsedWidth?: string;
   onToggle?: () => void;
 };
 
@@ -29,7 +30,8 @@ const Sidebar: FC<SidebarProps> & SidebarCompoundProps = ({
   isCollapsed = false,
   navHandleLabel = "Menu",
   fontSize = "md",
-  width = "16rem",
+  expandedWidth = "16rem",
+  collapsedWidth = "5rem",
   onToggle = () => void 0,
   children,
   ...rest
@@ -39,14 +41,14 @@ const Sidebar: FC<SidebarProps> & SidebarCompoundProps = ({
 
   const navVariants: Variants = {
     expanded: {
-      minWidth: width,
+      minWidth: expandedWidth,
       transition: {
         ease: "easeInOut",
         duration: 0.2,
       },
     },
     collapsed: {
-      minWidth: "4.75rem",
+      minWidth: collapsedWidth,
       transition: {
         ease: "easeInOut",
         duration: 0.2,
@@ -54,13 +56,13 @@ const Sidebar: FC<SidebarProps> & SidebarCompoundProps = ({
       },
     },
     a11yExpanded: {
-      minWidth: width,
+      minWidth: expandedWidth,
       transition: {
         duration: 0,
       },
     },
     a11yCollapsed: {
-      minWidth: "4.75rem",
+      minWidth: collapsedWidth,
       transition: {
         duration: 0,
       },
@@ -76,7 +78,7 @@ const Sidebar: FC<SidebarProps> & SidebarCompoundProps = ({
   return (
     <LazyMotion features={domAnimation}>
       <m.nav
-        css={(theme) => mainNavContainer(theme, width)}
+        css={(theme) => mainNavContainer(theme, expandedWidth)}
         initial={false}
         animate={animate}
         variants={navVariants}

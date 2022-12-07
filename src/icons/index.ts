@@ -101,5 +101,5 @@ export { default as EditSVG } from "./edit.svg";
 export { default as ExportDataSVG } from "./export_data.svg";
 export { default as GripLinesSVG } from "./grip_lines.svg";
 export { default as ImportDataSVG } from "./import_data.svg";
-export { default as ShowTourSVG } from "./hand-holding-magic.svg";
-export { default as LeavePortalSVG } from "./person-from-portal.svg";
+export { default as ShowTourSVG } from "./hand_holding_magic.svg";
+export { default as LeavePortalSVG } from "./person_from_portal.svg";

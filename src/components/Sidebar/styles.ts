@@ -40,6 +40,10 @@ export const navItemContainer = (
   color: ${sidebar.color};
   padding: 0.25rem 1.5rem;
 
+  .icon-container {
+    height: 2rem;
+  }
+
   &:hover,
   &.selected,
   &.focus-visible {

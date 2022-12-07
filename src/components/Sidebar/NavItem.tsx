@@ -48,7 +48,7 @@ const NavItem: NavItemProps = ({ isExpanded, label, fontSize = "md", icon, isAct
 
   return (
     <div css={(theme) => navItemContainer(theme, fontSize)} className={containerClassNames}>
-      <div>{icon}</div>
+      <div className="icon-container">{icon}</div>
       <AnimatePresence>
         {isExpanded && (
           <m.div

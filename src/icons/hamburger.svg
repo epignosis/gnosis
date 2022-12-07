@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><style>.a{fill:none;}.b{fill:currentcolor;}</style></defs><rect class="a" width="32" height="32"/><g transform="translate(6 8.5)"><path class="b" d="M19.464-12.61A.51.51,0,0,0,20-13.088v-1.277a.51.51,0,0,0-.536-.479H.536A.51.51,0,0,0,0-14.365v1.277a.51.51,0,0,0,.536.479Zm0,6.383A.51.51,0,0,0,20-6.705V-7.982a.51.51,0,0,0-.536-.479H.536A.51.51,0,0,0,0-7.982v1.277a.51.51,0,0,0,.536.479Zm0,6.383A.51.51,0,0,0,20-.322V-1.6a.51.51,0,0,0-.536-.479H.536A.51.51,0,0,0,0-1.6V-.322A.51.51,0,0,0,.536.156Z" transform="translate(0 14.844)"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: currentcolor;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <rect class="cls-1" width="32" height="32"/>
+      <path class="cls-2" d="M8.27,10.29c0-.47,.37-.86,.83-.86h13.8c.46,0,.83,.38,.83,.86s-.37,.86-.83,.86H9.1c-.46,0-.83-.38-.83-.86Zm0,5.71c0-.48,.37-.86,.83-.86h13.8c.46,0,.83,.38,.83,.86s-.37,.86-.83,.86H9.1c-.46,0-.83-.38-.83-.86Zm14.63,6.57H9.1c-.46,0-.83-.38-.83-.86s.37-.86,.83-.86h13.8c.46,0,.83,.38,.83,.86s-.37,.86-.83,.86Z"/>
+    </g>
+  </g>
+</svg>

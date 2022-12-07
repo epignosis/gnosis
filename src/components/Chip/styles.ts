@@ -21,7 +21,7 @@ export const chip = ({ typeScaleSizes }: Theme, { size }: { size: Size }): Seria
     border-radius: 5px;
 
     button {
-      margin-right: 0.5rem;
+      margin-inline-end: 0.5rem;
       display: inline-flex;
       color: white;
       background: transparent;

@@ -9,7 +9,8 @@ export const drawerHeader = (
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: ${noGutters ? 0 : "1rem 0 1rem 2rem"};
+    padding-inline: ${noGutters ? 0 : "2rem 0"};
+    padding-block: ${noGutters ? 0 : "1rem"};
     height: 100%;
     max-height: 4.5rem;
 

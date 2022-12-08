@@ -13,12 +13,13 @@ export const checkboxGroupContainer = (inline: boolean): SerializedStyles => css
 
     .dash {
       position: absolute;
-      top: 21px;
-      left: 7px;
+      inset-inline-start: 7px;
       width: 8px;
       height: 2px;
       background-color: white;
       z-index: 3;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     .checkbox-container {
@@ -27,7 +28,7 @@ export const checkboxGroupContainer = (inline: boolean): SerializedStyles => css
   }
 
   ul {
-    padding: 0 0 0 2rem;
+    padding-inline-start: 2rem;
     margin: 0;
     list-style: none;
 
@@ -48,17 +49,20 @@ export const checkboxContainer = (
 
   return css`
     display: ${inline ? "inline-flex" : "flex"};
-    padding: 0.75rem ${inline ? "1.5rem" : "0"} 0.75rem 0;
+    padding-inline: 0 ${inline ? "1.5rem" : "0"};
+    padding-block: 0.75rem;
     position: relative;
+    align-items: center;
 
     .dash {
       position: absolute;
-      top: 21px;
-      left: 7px;
+      inset-inline-start: 7px;
       width: 8px;
       height: 2px;
       background-color: white;
       z-index: 3;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
     input[type="checkbox"] {
@@ -74,7 +78,8 @@ export const checkboxContainer = (
       &:checked {
         + label::after {
           opacity: 1;
-          transform: scale(1);
+          top: 50%;
+          transform: scale(1) translateY(-50%);
         }
       }
 
@@ -96,7 +101,7 @@ export const checkboxContainer = (
         font-size: ${fontSizes[size]};
         position: relative;
         display: inline-block;
-        padding-left: 1.5rem;
+        padding-inline-start: 1.5rem;
         cursor: pointer;
 
         &::before {
@@ -104,15 +109,17 @@ export const checkboxContainer = (
           background-color: white;
           border: 1px solid ${formElements.checkbox.input.borderColor};
           border-radius: 3px;
-          margin-right: 1rem;
+          margin-inline-end: 1rem;
           z-index: 1;
+          top: 50%;
+          transform: translateY(-50%);
         }
 
         &::after {
           content: "";
           position: absolute;
           display: inline-block;
-          left: -9px;
+          inset-inline-start: -9px;
           top: 3px;
           width: 14px;
           height: 14px;
@@ -127,10 +134,12 @@ export const checkboxContainer = (
         &::before,
         .shadow-element {
           position: absolute;
-          left: -12px;
+          inset-inline-start: -12px;
           display: inline-block;
           width: 20px;
           height: 20px;
+          top: 50%;
+          transform: translateY(-50%);
         }
 
         .shadow-element {

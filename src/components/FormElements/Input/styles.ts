@@ -27,13 +27,13 @@ export const inputContainer = (
 
   &.with-prefix-icon {
     .input-wrapper input {
-      padding-left: 3.2rem;
+      padding-inline-start: 3.2rem;
     }
   }
 
   &.with-suffix-icon {
     .input-wrapper input {
-      padding-right: 3.2rem;
+      padding-inline-end: 3.2rem;
     }
   }
 
@@ -73,8 +73,8 @@ export const inputContainer = (
     }
 
     .suffix-icon {
-      right: 0;
-      padding-right: 0.5rem;
+      inset-inline-end: 0;
+      padding-inline-end: 0.5rem;
       color: ${formElements.input.iconColor};
     }
   }

@@ -51,20 +51,8 @@ export const navItemContainer = (
     color: ${sidebar.colorHover};
   }
 
-  &.profile-item {
-    padding: 0.5rem 1.125rem;
-
-    img {
-      border: none;
-    }
-
-    .title {
-      margin-left: 0.25rem;
-    }
-  }
-
   .title {
-    margin-left: 0.5rem;
+    margin-inline-start: 0.5rem;
     font-size: ${typeScaleSizes[fontSize]};
     display: -webkit-box;
     -webkit-line-clamp: 2;

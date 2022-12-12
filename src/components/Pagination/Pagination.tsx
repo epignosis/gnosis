@@ -4,25 +4,33 @@ import Button from "../Button/Button";
 import { ArrowLeftSVG, ArrowRightSVG } from "../../icons/";
 import { container } from "./styles";
 import { usePagination, ellipsis } from "./usePagination";
+import { ExtendableProps } from "types/utils";
 
-export type PaginationProps = {
-  current: number;
-  totalPages: number;
-  onChange: (page: number) => void;
-  containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
-};
+export type PaginationProps = ExtendableProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  {
+    current: number;
+    totalPages: number;
+    onChange: (page: number) => void;
+  }
+>;
 
 const classNamesContainer = (pageNumber: number, current: number) =>
   classNames({
     isActive: pageNumber === current,
   });
 
-const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, containerAttrs }) => {
+const Pagination: FC<PaginationProps> = ({
+  current,
+  onChange,
+  totalPages,
+  dir = "ltr",
+  ...rest
+}) => {
   const paginationRange = usePagination(current, totalPages);
-  const dir = document.dir;
 
   return (
-    <div css={container} {...containerAttrs}>
+    <div css={container} {...rest}>
       <Button
         className="previous-page-btn"
         data-testid="previous-page-btn"

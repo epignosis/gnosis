@@ -6,6 +6,12 @@ export default {
   component: Pagination,
   title: "Components/Pagination",
   argTypes: {
+    dir: {
+      control: {
+        type: "select",
+        options: ["ltr", "rtl"],
+      },
+    },
     onChange: { action: "Changed page!" },
   },
   args: {

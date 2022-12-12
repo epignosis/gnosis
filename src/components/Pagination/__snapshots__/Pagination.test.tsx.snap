@@ -3,8 +3,8 @@
 exports[`<Pagination /> matches snapshot with on page 1`] = `
 <div>
   <div
-    class="html-class css-qimyf6-container-container"
-    id="my-id"
+    class="css-qimyf6-container-container"
+    containerattrs="[object Object]"
   >
     <button
       class="previous-page-btn solid css-nnf82b-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"

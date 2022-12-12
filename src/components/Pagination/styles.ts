@@ -11,7 +11,7 @@ export const container = ({ pagination }: Theme): SerializedStyles => {
       margin: 0 1rem;
 
       button {
-        margin-right: 0.5rem;
+        margin-inline-end: 0.5rem;
 
         &:last-of-type {
           margin: 0;

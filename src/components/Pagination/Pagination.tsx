@@ -12,13 +12,14 @@ export type PaginationProps = {
   containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
 };
 
+const classNamesContainer = (pageNumber: number, current: number) =>
+  classNames({
+    isActive: pageNumber === current,
+  });
+
 const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, containerAttrs }) => {
   const paginationRange = usePagination(current, totalPages);
-
-  const classNamesContainer = (pageNumber: number) =>
-    classNames({
-      isActive: pageNumber === current,
-    });
+  const dir = document.dir;
 
   return (
     <div css={container} {...containerAttrs}>
@@ -31,7 +32,7 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, contai
         noGutters
         disabled={current === 1}
       >
-        <ArrowLeftSVG height={22} />
+        {dir === "rtl" ? <ArrowRightSVG height={22} /> : <ArrowLeftSVG height={22} />}
       </Button>
 
       <div className="pagination-options">
@@ -49,7 +50,7 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, contai
               onClick={(): void => onChange(pageNumber as number)}
               variant="ghost"
               noGutters
-              className={classNamesContainer(pageNumber as number)}
+              className={classNamesContainer(pageNumber as number, current)}
             >
               {pageNumber}
             </Button>
@@ -66,7 +67,7 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, contai
         noGutters
         disabled={current === totalPages}
       >
-        <ArrowRightSVG height={22} />
+        {dir === "rtl" ? <ArrowLeftSVG height={22} /> : <ArrowRightSVG height={22} />}
       </Button>
     </div>
   );

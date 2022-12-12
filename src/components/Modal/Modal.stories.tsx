@@ -83,7 +83,7 @@ export const ModalWithCotent: Story<ReactModalProps> = (args) => {
           <Button
             color="secondary"
             onClick={(): void => setIsOpen(false)}
-            style={{ marginRight: "1rem" }}
+            style={{ marginInlineEnd: "1rem" }}
           >
             Cancel
           </Button>
@@ -120,7 +120,7 @@ export const ModalNotCloseOnOutsideClick: Story<ReactModalProps> = (args) => {
           <Button
             color="secondary"
             onClick={(): void => setIsOpen(false)}
-            style={{ marginRight: "1rem" }}
+            style={{ marginInlineEnd: "1rem" }}
           >
             Cancel
           </Button>
@@ -160,7 +160,7 @@ export const ModalWithCustomStyles: Story<ReactModalProps> = (args) => {
           <Button
             color="secondary"
             onClick={(): void => setIsOpen(false)}
-            style={{ marginRight: "1rem" }}
+            style={{ marginInlineEnd: "1rem" }}
           >
             Cancel
           </Button>

@@ -19,7 +19,8 @@ export const radioButtonContainer = (
   };
 
   return css`
-    padding: 0.75rem ${inline ? "1.5rem" : "0"} 0.75rem 0;
+    padding-inline: 0 ${inline ? "1.5rem" : "0"};
+    padding-block: 0.75rem;
 
     input[type="radio"] {
       opacity: 0;
@@ -55,33 +56,36 @@ export const radioButtonContainer = (
         font-size: ${fontSizes[size]};
         position: relative;
         display: inline-block;
-        padding-left: 1.5rem;
+        padding-inline-start: 1.5rem;
         cursor: pointer;
 
         &::before {
           content: "";
           position: absolute;
-          left: -12px;
+          inset-inline-start: -12px;
           display: inline-block;
           width: 20px;
           height: 20px;
           background-color: transparent;
           border: 1px solid ${checkbox.input.borderColor};
           border-radius: 50%;
-          margin-right: 1rem;
+          margin-inline-end: 1rem;
           transition: box-shadow 0.1s ease-out;
+          top: 50%;
+          transform: translateY(-50%);
         }
 
         &::after {
           content: "";
           position: absolute;
           display: inline-block;
-          left: -9px;
-          top: 3px;
+          inset-inline-start: -9px;
+          top: 50%;
           width: 14px;
           height: 14px;
           border-radius: 50%;
           transition: background-color 0.1s ease-out;
+          transform: translateY(-50%);
         }
       }
     }

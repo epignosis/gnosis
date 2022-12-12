@@ -7,7 +7,7 @@ exports[`<RadioGroup /> matches snapshot 1`] = `
     id="testRadioGroup"
   >
     <div
-      class="css-zepc8-radioButtonContainer-radioButtonContainer"
+      class="css-1c23h75-radioButtonContainer-radioButtonContainer"
     >
       <input
         id="Test groupname-testOptionValue"
@@ -32,7 +32,7 @@ exports[`<RadioGroup /> matches snapshot with \`inline = true\` 1`] = `
     id="my-id"
   >
     <div
-      class="css-zepc8-radioButtonContainer-radioButtonContainer"
+      class="css-1c23h75-radioButtonContainer-radioButtonContainer"
     >
       <input
         id="Test groupname-testOptionValue"

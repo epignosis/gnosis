@@ -27,6 +27,7 @@ const Select: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (props,
     onChange,
     children,
     containerAttrs,
+    dir = "ltr",
     ...rest
   } = props;
   const hasLabel = Boolean(label);
@@ -40,7 +41,7 @@ const Select: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (props,
 
   return (
     <div
-      css={(theme): SerializedStyles => selectContainer(theme, { size, dir: document.dir })}
+      css={(theme): SerializedStyles => selectContainer(theme, { size, dir })}
       {...containerAttrs}
       className={containerClassNames}
     >

@@ -30,7 +30,7 @@ export const selectContainer = (
     &,
     &:hover,
     &:focus {
-      background-position: ${dir === "ltr" ? "right" : "left"} 1rem center;
+      background-position: ${dir === "rtl" ? "left" : "right"} 1rem center;
       background-repeat: no-repeat;
       background-size: 14px;
       background-image: url("https://talentlms-prod-frontend-static.s3.amazonaws.com/images/chevron-down-solid.svg");

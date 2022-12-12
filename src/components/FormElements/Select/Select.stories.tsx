@@ -20,6 +20,12 @@ export default {
         options: ["sm", "md", "lg"],
       },
     },
+    dir: {
+      control: {
+        type: "select",
+        options: ["ltr", "rtl"],
+      },
+    },
     status: {
       control: {
         type: "select",
@@ -51,7 +57,6 @@ const Template: Story<SelectProps> = (args) => (
 );
 
 export const Default = Template.bind({});
-
 export const Disabled = Template.bind({});
 
 Disabled.args = {

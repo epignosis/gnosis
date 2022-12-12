@@ -4,12 +4,13 @@ import { InputSize } from "../Input/Input";
 
 export const selectContainer = (
   { formElements }: Theme,
-  { size }: { size: InputSize },
+  { size, dir }: { size: InputSize; dir: string },
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })}
 
   label {
-    margin: 0 0 0.5rem 0.5rem;
+    margin-inline: 0.5rem 0;
+    margin-block: 0 0.5rem;
   }
 
   &.error {
@@ -21,7 +22,7 @@ export const selectContainer = (
   select {
     ${inputBaseStyles(formElements, { block: true, size })};
     background-color: transparent;
-    padding-right: 2.5rem;
+    padding-inline-end: 2.5rem;
     -moz-appearance: none;
     -webkit-appearance: none;
     appearance: none;
@@ -29,7 +30,7 @@ export const selectContainer = (
     &,
     &:hover,
     &:focus {
-      background-position: right 1rem center;
+      background-position: ${dir === "ltr" ? "right" : "left"} 1rem center;
       background-repeat: no-repeat;
       background-size: 14px;
       background-image: url("https://talentlms-prod-frontend-static.s3.amazonaws.com/images/chevron-down-solid.svg");

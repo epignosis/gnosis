@@ -40,7 +40,7 @@ const Select: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (props,
 
   return (
     <div
-      css={(theme): SerializedStyles => selectContainer(theme, { size })}
+      css={(theme): SerializedStyles => selectContainer(theme, { size, dir: document.dir })}
       {...containerAttrs}
       className={containerClassNames}
     >

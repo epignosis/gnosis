@@ -24,10 +24,7 @@ type TabsCompoundProps = {
 };
 
 const scrollToTab = (tabIndex: number) => {
-  const tabOffset = document.querySelector(`#tab-${tabIndex}`)?.getBoundingClientRect().x;
-
-  const tablist = document.getElementsByTagName("nav")[0];
-  tabOffset && tablist.scrollTo(tabOffset > 0 ? tabOffset - 16 : 0, 0);
+  document.querySelector(`#tab-${tabIndex}`)?.scrollIntoView();
 };
 
 const Tabs: FC<TabsProps> & TabsCompoundProps = ({
@@ -40,6 +37,7 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   const [activeTab, setActiveTab] = useState(selectedTab);
   const tabsNavEl = useRef<HTMLElement>(null);
   const [isOverflowActive, setIsOverflowActive] = useState(false);
+  const dir = document.dir;
 
   const tabTitles = Children.map(children, (child, i) => ({
     index: i,
@@ -133,7 +131,7 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
             noGutters
             onClick={handLeftArrowClick}
           >
-            <ArrowLeftSVG height={22} />
+            {dir === "rtl" ? <ArrowRightSVG height={22} /> : <ArrowLeftSVG height={22} />}
           </Button>
         )}
 
@@ -161,7 +159,7 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
             noGutters
             onClick={handRightArrowClick}
           >
-            <ArrowRightSVG height={22} />
+            {dir === "rtl" ? <ArrowLeftSVG height={22} /> : <ArrowRightSVG height={22} />}
           </Button>
         )}
       </div>

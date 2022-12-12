@@ -52,7 +52,8 @@ export const tabNavItem = (
 ): SerializedStyles => {
   return css`
     font-weight: ${isActive ? "700" : "400"};
-    margin: 0 1rem 0 0;
+    margin-inline: 0 1rem;
+    margin-block: 0;
     padding: 0.6rem;
     color: ${body.color};
     border-bottom: 4px solid ${isActive ? tabs.linkBorder : "transparent"};

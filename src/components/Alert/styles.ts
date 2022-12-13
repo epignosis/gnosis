@@ -12,11 +12,12 @@ export const container = ({ alert }: Theme, { type }: { type: AlertType }): Seri
     background-color: ${alert[type].background};
     color: ${alert[type].color};
     border-radius: 5px;
-    padding: 2rem 3.5rem 2rem 1.75rem;
+    padding-block: 2rem;
+    padding-inline: 1.75rem 3.5rem;
 
     .icon {
       display: none;
-      margin-right: 1.5rem;
+      margin-inline-end: 1.5rem;
 
       ${mq["md"]} {
         display: block;
@@ -26,7 +27,7 @@ export const container = ({ alert }: Theme, { type }: { type: AlertType }): Seri
     .close-btn {
       position: absolute;
       height: 100%;
-      right: 0.5rem;
+      inset-inline-end: 0.5rem;
       cursor: pointer;
       color: ${hexToRGBA(alert.closeBtnColor, 0.25)};
       background: transparent;
@@ -34,7 +35,7 @@ export const container = ({ alert }: Theme, { type }: { type: AlertType }): Seri
       border: 0;
 
       ${mq["xl"]} {
-        right: 1.5rem;
+        inset-inline-end: 1.5rem;
       }
     }
   `;

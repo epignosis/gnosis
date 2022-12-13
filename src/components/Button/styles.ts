@@ -61,7 +61,7 @@ const solidButton = (button: Theme["button"], color: Color): SerializedStyles =>
 
     .loading-container {
       span > span {
-        background: ${button[color].hover.color};
+        background: ${button[color].hover.color} !important;
       }
     }
   }
@@ -73,7 +73,7 @@ const solidButton = (button: Theme["button"], color: Color): SerializedStyles =>
 
     .loading-container {
       span > span {
-        background: ${button[color].hover.color};
+        background: ${button[color].hover.color} !important;
       }
     }
   }
@@ -85,7 +85,7 @@ const solidButton = (button: Theme["button"], color: Color): SerializedStyles =>
 
     .loading-container {
       span > span {
-        background: ${button[color].active.color};
+        background: ${button[color].active.color} !important;
       }
     }
   }
@@ -103,7 +103,7 @@ const outlineButton = (button: Theme["button"], color: Color): SerializedStyles 
 
     .loading-container {
       span > span {
-        background: ${button[color].hover.color};
+        background: ${button[color].hover.color} !important;
       }
     }
   }
@@ -115,7 +115,7 @@ const outlineButton = (button: Theme["button"], color: Color): SerializedStyles 
 
     .loading-container {
       span > span {
-        background: ${button[color].hover.color};
+        background: ${button[color].hover.color} !important;
       }
     }
   }
@@ -127,7 +127,7 @@ const outlineButton = (button: Theme["button"], color: Color): SerializedStyles 
 
     .loading-container {
       span > span {
-        background: ${button[color].active.color};
+        background: ${button[color].active.color} !important;
       }
     }
   }
@@ -155,29 +155,32 @@ const linkButton = (button: Theme["button"], color: Color): SerializedStyles => 
 
 const iconBeforeButton = (size: Size): SerializedStyles => {
   const btnPadding = {
-    md: "0 1.75rem 0 1.25rem",
-    lg: "0 3rem 0 1.875rem",
+    md: "1.25rem 1.75rem",
+    lg: "1.875rem 3rem",
   };
 
   return css`
-    padding: ${btnPadding[size]};
+    padding-block: 0;
+    padding-inline: ${btnPadding[size]};
 
     .icon {
-      margin-right: 0.5rem;
+      margin-inline-end: 0.5rem;
     }
   `;
 };
+
 const iconAfterButton = (size: Size): SerializedStyles => {
   const btnPadding = {
-    md: "0 1.25rem 0 1.75rem",
-    lg: "0 1.875rem 0 3rem",
+    md: "1.75rem 1.25rem",
+    lg: "3rem 1.875rem",
   };
 
   return css`
-    padding: ${btnPadding[size]};
+    padding-block: 0;
+    padding-inline: ${btnPadding[size]};
 
     .icon {
-      margin-left: 0.5rem;
+      margin-inline-start: 0.5rem;
     }
   `;
 };
@@ -226,7 +229,7 @@ export const btnContainer = (
 
         .loading-container {
           span > span {
-            background: ${button.disabled.color};
+            background: ${button.disabled.color} !important;
           }
         }
       }
@@ -248,12 +251,17 @@ export const btnContainer = (
 
     .loading-container {
       span > span {
-        background: ${button[color].default.color};
+        background: ${button[color].default.color} !important;
       }
     }
 
     .btn-text {
       display: inline-flex;
+    }
+
+    .loading {
+      position: relative;
+      inset-inline-start: -12px;
     }
   `;
 };

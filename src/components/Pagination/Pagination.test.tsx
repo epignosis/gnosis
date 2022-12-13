@@ -52,10 +52,11 @@ describe("<Pagination />", () => {
   it("matches snapshot with on page", () => {
     const { container } = render(
       <Pagination
-        containerAttrs={{ id: "my-id", className: "html-class" }}
         current={2}
         totalPages={6}
         onChange={jest.fn()}
+        id="my-id"
+        className="html-class"
       />,
     );
 

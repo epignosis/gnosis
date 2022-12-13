@@ -35,14 +35,14 @@ const iconSizes = {
 const spinnerWrapperVariants: Variants = {
   hidden: {
     opacity: 0,
-    marginRight: 0,
+    marginInlineEnd: 6,
     transition: {
       duration: 0.1,
     },
   },
   visible: {
     opacity: 1,
-    marginRight: 6,
+    marginInlineEnd: 6,
     transition: {
       duration: 0.1,
     },
@@ -93,7 +93,6 @@ const Button = <C extends ElementType = "button">(props: ButtonProps<C>): ReactE
           {isLoading && (
             <m.div
               key={props.id ?? "spinner"}
-              style={{ display: "inline-flex", x: -12 }}
               className="loading"
               aria-label="loading"
               initial="hidden"

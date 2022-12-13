@@ -22,24 +22,24 @@ export const radioButton = (
     background: ${radioButtonGroup.normalBackground};
     color: ${radioButtonGroup.normalFontColor};
     border: none;
-    border-left: 1px solid ${radioButtonGroup.borderColor};
+    border-inline-start: 1px solid ${radioButtonGroup.borderColor};
     cursor: pointer;
 
     &:first-of-type {
-      border-top-left-radius: 5px;
-      border-bottom-left-radius: 5px;
-      border-left: none;
+      border-start-start-radius: 5px;
+      border-end-start-radius: 5px;
+      border-inline-start: none;
     }
 
     &:last-of-type {
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
+      border-start-end-radius: 5px;
+      border-end-end-radius: 5px;
     }
 
     &.is-selected {
       background: ${radioButtonGroup.selectedBackground};
       color: ${radioButtonGroup.selectedFontColor};
-      border-left-color: ${radioButtonGroup.selectedBackground};
+      border-inline-start-color: ${radioButtonGroup.selectedBackground};
     }
   `;
 };

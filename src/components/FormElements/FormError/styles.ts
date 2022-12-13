@@ -8,5 +8,5 @@ export const errorContainer = ({ typeScaleSizes, formElements }: Theme): Seriali
   background-color: ${hexToRGBA(formElements.generalError.background, 0.25)};
   border: 1px solid ${formElements.generalError.borderColor};
   border-radius: 2px;
-  padding: 1.25rem 2rem 1.5rem;
+  padding: 1.5rem 2rem;
 `;

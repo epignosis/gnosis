@@ -4,24 +4,33 @@ import Button from "../Button/Button";
 import { ArrowLeftSVG, ArrowRightSVG } from "../../icons/";
 import { container } from "./styles";
 import { usePagination, ellipsis } from "./usePagination";
+import { ExtendableProps } from "types/utils";
 
-export type PaginationProps = {
-  current: number;
-  totalPages: number;
-  onChange: (page: number) => void;
-  containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
-};
+export type PaginationProps = ExtendableProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  {
+    current: number;
+    totalPages: number;
+    onChange: (page: number) => void;
+  }
+>;
 
-const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, containerAttrs }) => {
+const classNamesContainer = (pageNumber: number, current: number) =>
+  classNames({
+    isActive: pageNumber === current,
+  });
+
+const Pagination: FC<PaginationProps> = ({
+  current,
+  onChange,
+  totalPages,
+  dir = "ltr",
+  ...rest
+}) => {
   const paginationRange = usePagination(current, totalPages);
 
-  const classNamesContainer = (pageNumber: number) =>
-    classNames({
-      isActive: pageNumber === current,
-    });
-
   return (
-    <div css={container} {...containerAttrs}>
+    <div css={container} {...rest}>
       <Button
         className="previous-page-btn"
         data-testid="previous-page-btn"
@@ -31,7 +40,7 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, contai
         noGutters
         disabled={current === 1}
       >
-        <ArrowLeftSVG height={22} />
+        {dir === "rtl" ? <ArrowRightSVG height={22} /> : <ArrowLeftSVG height={22} />}
       </Button>
 
       <div className="pagination-options">
@@ -49,7 +58,7 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, contai
               onClick={(): void => onChange(pageNumber as number)}
               variant="ghost"
               noGutters
-              className={classNamesContainer(pageNumber as number)}
+              className={classNamesContainer(pageNumber as number, current)}
             >
               {pageNumber}
             </Button>
@@ -66,7 +75,7 @@ const Pagination: FC<PaginationProps> = ({ current, onChange, totalPages, contai
         noGutters
         disabled={current === totalPages}
       >
-        <ArrowRightSVG height={22} />
+        {dir === "rtl" ? <ArrowLeftSVG height={22} /> : <ArrowRightSVG height={22} />}
       </Button>
     </div>
   );

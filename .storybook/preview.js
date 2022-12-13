@@ -1,5 +1,6 @@
 import ThemeProvider from "../src/components/ThemeProvider/ThemeProvider";
 import defaultTheme from "../src/theme/default/defaultTheme";
+import { initializeRTL } from "storybook-addon-rtl";
 
 /* Parameters */
 const customViewports = {
@@ -52,6 +53,8 @@ export const parameters = {
     viewports: customViewports,
   },
 };
+
+initializeRTL();
 
 const themeDecorator = (Story) => (
   <ThemeProvider theme={defaultTheme}>

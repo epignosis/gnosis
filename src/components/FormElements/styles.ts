@@ -21,12 +21,14 @@ export const inputContainerBaseStyles = ({
     align-items: center;
 
     label {
-      margin: 0 0.75rem 0 0;
+      margin-inline: 0 0.75rem;
+      margin-block: 0;
     }
   }
 
   label {
-    margin: 0 0 0.5rem 0.5rem;
+    margin-inline: 0.5rem 0;
+    margin-block: 0 0.5rem;
   }
 `;
 

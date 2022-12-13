@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/epignosis/gnosis/compare/v3.0.3...v3.1.0) (2022-12-13)
+
+
+### Features
+
+* rtl support ([#116](https://github.com/epignosis/gnosis/issues/116)) ([0eec4cc](https://github.com/epignosis/gnosis/commit/0eec4cce573c5b69595159f01732885373c0db86))
+
 ## [3.0.3](https://github.com/epignosis/gnosis/compare/v3.0.2...v3.0.3) (2022-12-07)
 
 ## [3.0.2](https://github.com/epignosis/gnosis/compare/v3.0.1...v3.0.2) (2022-11-23)

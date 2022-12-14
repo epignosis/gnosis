@@ -30,7 +30,7 @@ const RadioGroup: FC<RadioGroupProps> = ({
   useEffect(() => {
     setSelectedValue(initialValue);
   }, [initialValue]);
-  
+
   useEffect(() => {
     onChange && onChange(selectedValue);
   }, [selectedValue, onChange]);

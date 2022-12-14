@@ -66,8 +66,10 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
 
   const handLeftArrowClick = () => {
     if (activeTab > 0) {
-      scrollToTab(activeTab - 1);
-      setActiveTab((currentTab) => currentTab - 1);
+      //scrollToTab(activeTab - 1);
+      //setActiveTab((currentTab) => currentTab - 1);
+
+      onSelectTab(activeTab - 1); //fix: fully simulate 'click'
     }
   };
 
@@ -79,8 +81,10 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
 
   const handRightArrowClick = () => {
     if (tabTitles && activeTab < tabTitles.length - 1) {
-      scrollToTab(activeTab + 1);
-      setActiveTab((currentTab) => currentTab + 1);
+      //scrollToTab(activeTab + 1);
+      //setActiveTab((currentTab) => currentTab + 1);
+
+      onSelectTab(activeTab + 1); //fix: fully simulate 'click'
     }
   };
 
@@ -96,6 +100,7 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
         newSelectedTab = tabTitles.length - 1;
       }
 
+      scrollToTab(newSelectedTab); //fix
       setActiveTab(newSelectedTab);
     }
   }, [selectedTab]);

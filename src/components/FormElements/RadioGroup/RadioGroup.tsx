@@ -26,6 +26,11 @@ const RadioGroup: FC<RadioGroupProps> = ({
     setSelectedValue(e.target.value);
   };
 
+  //fix
+  useEffect(() => {
+    setSelectedValue(initialValue);
+  }, [initialValue]);
+  
   useEffect(() => {
     onChange && onChange(selectedValue);
   }, [selectedValue, onChange]);

@@ -6,4 +6,8 @@ export const container = ({ fullScreen }: { fullScreen: boolean }): SerializedSt
   align-items: center;
   width: 100%;
   height: ${fullScreen ? "100vh" : "auto"};
+
+  .loader-wrapper {
+    display: block !important;
+  }
 `;

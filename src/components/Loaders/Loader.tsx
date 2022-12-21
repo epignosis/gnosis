@@ -29,7 +29,12 @@ const Loader: FC<LoaderProps> = ({ fullScreen = false, size = "lg", ...rest }) =
       {...rest}
       className={`loading-container${rest?.className ? `${rest?.className}` : ""}`}
     >
-      <PulseLoader color={loader.color} size={loaderSize[size]} margin={loaderMargin[size]} />
+      <PulseLoader
+        color={loader.color}
+        size={loaderSize[size]}
+        margin={loaderMargin[size]}
+        className="loader-wrapper"
+      />
     </div>
   );
 };

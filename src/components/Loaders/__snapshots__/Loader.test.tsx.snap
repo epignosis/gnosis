@@ -3,11 +3,12 @@
 exports[`<Loader> matches snapshot 1`] = `
 <div>
   <div
-    class="loading-containerloader css-1g9luka-container-container"
+    class="loading-containerloader css-18jy0x5-container-container"
     data-testid="loader"
     id="main-loader"
   >
     <span
+      class="loader-wrapper"
       style="display: inherit;"
     >
       <span
@@ -27,10 +28,11 @@ exports[`<Loader> matches snapshot 1`] = `
 exports[`<Loader> matches snapshot with fullscreen 1`] = `
 <div>
   <div
-    class="loading-container css-d7y4t5-container-container"
+    class="loading-container css-vss7sp-container-container"
     data-testid="loader"
   >
     <span
+      class="loader-wrapper"
       style="display: inherit;"
     >
       <span

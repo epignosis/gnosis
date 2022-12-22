@@ -1,13 +1,12 @@
 import React, { FC } from "react";
 import ReactPlayer from "react-player/lazy";
 import { PlayerProps } from "../MediaPlayer";
-import { videoPlayerContainer } from "./styles";
 
 export type VideoPlayerProps = PlayerProps;
 
 const VideoPlayer: FC<VideoPlayerProps> = ({ src, controls = true, containerAttrs, ...rest }) => {
   return (
-    <div css={videoPlayerContainer} {...containerAttrs}>
+    <div {...containerAttrs}>
       <ReactPlayer
         className="react-player"
         url={src}

@@ -46,6 +46,13 @@ const customViewports = {
       height: "945px",
     },
   },
+  "3xl": {
+    name: "Desktop large screen (3xl)",
+    styles: {
+      width: "1920px",
+      height: "945px",
+    },
+  },
 };
 
 export const parameters = {

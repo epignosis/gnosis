@@ -5,7 +5,15 @@ type NumberOrNull = number | null;
 type HTMLWrapperElement = "div" | "article" | "section";
 
 export type ResponsiveValues =
-  | [NumberOrNull, NumberOrNull, NumberOrNull?, NumberOrNull?, NumberOrNull?, NumberOrNull?]
+  | [
+      NumberOrNull,
+      NumberOrNull,
+      NumberOrNull?,
+      NumberOrNull?,
+      NumberOrNull?,
+      NumberOrNull?,
+      NumberOrNull?,
+    ]
   | number;
 
 export type GridProps = React.HTMLAttributes<HTMLElement> & {

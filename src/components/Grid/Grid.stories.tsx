@@ -14,7 +14,7 @@ export default {
     },
   },
   args: {
-    templateColumns: [1, 2, 3, 4, 5],
+    templateColumns: [1, 2, 3, 4, 5, 6, 7],
     gap: 2,
     as: "div",
     rowGap: 1,

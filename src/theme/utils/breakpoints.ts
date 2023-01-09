@@ -7,6 +7,7 @@ export const breakpoints = {
   lg: 992,
   xl: 1200,
   xxl: 1600,
+  "3xl": 1920,
 } as const;
 
 export const mq: Record<string, string> = Object.keys(breakpoints).reduce(

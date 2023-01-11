@@ -3,10 +3,15 @@ import { css, Theme, SerializedStyles } from "@emotion/react";
 export const tooltipContainer = ({ typeScaleSizes, tooltip }: Theme): SerializedStyles => {
   return css`
     background: ${tooltip.background};
-    border-color: ${tooltip.background};
+    border: 1px solid ${tooltip.border};
+    border-radius: 5px;
     color: ${tooltip.color};
     padding: 0.5rem;
     font-size: ${typeScaleSizes["2xs"]};
+
+    &.tooltip[data-placement^="top"] > #arrow {
+      bottom: -1px;
+    }
 
     &.tooltip[data-placement^="bottom"] > #arrow {
       top: -1px;
@@ -31,7 +36,7 @@ export const tooltipContainer = ({ typeScaleSizes, tooltip }: Theme): Serialized
     #arrow::before {
       content: "";
       transform: rotate(45deg);
-      background: ${tooltip.background};
+      background: ${tooltip.border};
     }
   `;
 };

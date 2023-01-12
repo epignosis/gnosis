@@ -103,3 +103,7 @@ export { default as GripLinesSVG } from "./grip_lines.svg";
 export { default as ImportDataSVG } from "./import_data.svg";
 export { default as ShowTourSVG } from "./hand_holding_magic.svg";
 export { default as LeavePortalSVG } from "./person_from_portal.svg";
+export { default as GamepadSVG } from "./gamepad.svg";
+export { default as SlidesSVG } from "./slides.svg";
+export { default as BranchesSVG } from "./branches.svg";
+export { default as GroupsSVG } from "./groups.svg";

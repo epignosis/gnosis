@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><style>.a{fill:none;}.b{fill:"currentcolor";}</style></defs><g transform="translate(-6466 -1341)"><rect class="a" width="24" height="24" transform="translate(6466 1341)"/><path class="b" d="M20,6H12L10,4H4A2,2,0,0,0,2.01,6L2,18a2.006,2.006,0,0,0,2,2H20a2.006,2.006,0,0,0,2-2V8A2.006,2.006,0,0,0,20,6Zm0,12H4V6H9.17l2,2H20Zm-5-5a2,2,0,1,0-2-2A2.006,2.006,0,0,0,15,13Zm-4,4h8V16c0-1.33-2.67-2-4-2s-4,.67-4,2Z" transform="translate(6466 1341)"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: currentColor;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <rect class="cls-1" width="32" height="32"/>
+      <path class="cls-2" d="M22.63,9.4l-2.67-2.67c-.43-.43-1.01-.67-1.62-.67h-5.34c-1.26,0-2.29,1.02-2.29,2.29v10.29c0,1.26,1.02,2.29,2.29,2.29h8c1.26,0,2.29-1.03,2.29-2.29v-7.62c0-.6-.24-1.19-.67-1.62Zm-1.05,9.24c0,.32-.26,.57-.57,.57H13.01c-.32,0-.57-.26-.57-.57V8.36c0-.32,.26-.57,.57-.57h4.57v2.85c0,.63,.51,1.14,1.14,1.14h2.86v6.86h0Zm-2.57,5.71h-7.43c-2.36,0-4.29-1.92-4.29-4.29V10.35c0-.47,.38-.86,.86-.86s.86,.39,.86,.86v9.71c0,1.42,1.15,2.57,2.57,2.57h7.43c.47,0,.86,.38,.86,.86s-.38,.86-.86,.86Z"/>
+    </g>
+  </g>
+</svg>

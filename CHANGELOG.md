@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/epignosis/gnosis/compare/v3.1.2...v3.2.0) (2023-01-12)
+
+
+### Features
+
+* update icons and tooltip's theme config ([#123](https://github.com/epignosis/gnosis/issues/123)) ([2fff96b](https://github.com/epignosis/gnosis/commit/2fff96bca17c1977e17b7f320aa6c2a0684f368f))
+
 ## [3.1.2](https://github.com/epignosis/gnosis/compare/v3.1.1...v3.1.2) (2023-01-09)
 
 ## [3.1.1](https://github.com/epignosis/gnosis/compare/v3.1.0...v3.1.1) (2022-12-22)

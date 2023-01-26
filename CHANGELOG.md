@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/epignosis/gnosis/compare/v3.2.0...v3.2.1) (2023-01-26)
+
+
+### Bug Fixes
+
+* **tabs component:** revert previous functionality of scrolling in tabs ([#124](https://github.com/epignosis/gnosis/issues/124)) ([0514760](https://github.com/epignosis/gnosis/commit/05147605dcb09a17829f505b273fb518a1837785))
+
 # [3.2.0](https://github.com/epignosis/gnosis/compare/v3.1.2...v3.2.0) (2023-01-12)
 
 

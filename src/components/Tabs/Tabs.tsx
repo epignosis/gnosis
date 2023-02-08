@@ -42,8 +42,9 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   const tabsNavEl = useRef<HTMLElement>(null);
   const [isOverflowActive, setIsOverflowActive] = useState(false);
   const dir = document.dir;
+  const arrayChildren = Children.toArray(children);
 
-  const tabTitles = Children.map(children, (child, i) => ({
+  const tabTitles = Children.map(arrayChildren, (child, i) => ({
     index: i,
     title: (child as ReactElement).props.title,
     fallbackTitle:
@@ -52,7 +53,7 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
         : (child as ReactElement).props.fallbackTitle,
   }));
 
-  const tabPanes = Children.map(children, (child, i) => ({
+  const tabPanes = Children.map(arrayChildren, (child, i) => ({
     index: i,
     content: (child as ReactElement).props.children,
   }));

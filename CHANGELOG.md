@@ -1,3 +1,10 @@
+## [3.2.2](https://github.com/epignosis/gnosis/compare/v3.2.1...v3.2.2) (2023-02-17)
+
+
+### Bug Fixes
+
+* do not render close button when onClose is undefined ([#128](https://github.com/epignosis/gnosis/issues/128)) ([bdf8d24](https://github.com/epignosis/gnosis/commit/bdf8d24a2f67567389adec59a10714db18241f65))
+
 ## [3.2.1](https://github.com/epignosis/gnosis/compare/v3.2.0...v3.2.1) (2023-01-26)
 
 

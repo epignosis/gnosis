@@ -15,7 +15,13 @@ const Header: FC<HeaderProps> = ({ children, onClose }) => {
     <header css={modalHeader} data-testid="modal-header">
       <div>{title}</div>
       {onClose && (
-        <a role="button" className="close-btn" aria-label="Close button" onClick={onClose}>
+        <a
+          role="button"
+          className="close-btn"
+          aria-label="Close button"
+          data-testid="header-close-button"
+          onClick={onClose}
+        >
           <CloseCircledSVG height={28} />
         </a>
       )}
@@ -66,7 +72,7 @@ export type ReactModalProps = Pick<Props, "isOpen"> & {
 const Modal: FC<ReactModalProps> & ModalCompoundProps = ({
   children,
   isOpen,
-  onClose = () => void 0,
+  onClose,
   size = "md",
   rootElementSelector = "#app",
   closeOnOutsideClick = true,

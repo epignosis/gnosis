@@ -170,3 +170,18 @@ export const ModalWithCustomStyles: Story<ReactModalProps> = (args) => {
     </div>
   );
 };
+
+export const ModalWithNoCloseButton: Story<ReactModalProps> = (args) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div>
+      <Button onClick={(): void => setIsOpen(true)}>Modal without close button</Button>
+      <Modal {...args} isOpen={isOpen}>
+        <Modal.Header>This is the modal title</Modal.Header>
+        <Modal.Body>This is the modal body</Modal.Body>
+        <Modal.Footer>This is the modal footer</Modal.Footer>
+      </Modal>
+    </div>
+  );
+};

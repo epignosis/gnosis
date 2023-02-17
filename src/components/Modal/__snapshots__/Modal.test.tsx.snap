@@ -19,15 +19,6 @@ exports[`<Modal> matches snapshot 1`] = `
         Test header
       </h2>
     </div>
-    <a
-      aria-label="Close button"
-      class="close-btn"
-      role="button"
-    >
-      <svg-file-stub
-        height="28"
-      />
-    </a>
   </header>
   <article
     class="css-18mo2pj-modalContent"
@@ -63,15 +54,6 @@ exports[`<Modal> matches snapshot with all props 1`] = `
         Test header
       </h2>
     </div>
-    <a
-      aria-label="Close button"
-      class="close-btn"
-      role="button"
-    >
-      <svg-file-stub
-        height="28"
-      />
-    </a>
   </header>
   <article
     class="css-18mo2pj-modalContent"
@@ -134,15 +116,6 @@ exports[`<Modal> matches snapshot with cutom HTML classes 1`] = `
         Test header
       </h2>
     </div>
-    <a
-      aria-label="Close button"
-      class="close-btn"
-      role="button"
-    >
-      <svg-file-stub
-        height="28"
-      />
-    </a>
   </header>
   <article
     class="css-18mo2pj-modalContent"

@@ -78,6 +78,19 @@ describe("<Modal>", () => {
     expect(mockedOnClose).toHaveBeenCalledTimes(1);
   });
 
+  it("Header renders correctly without close btn", () => {
+    const { headerTxt } = getModalProps();
+
+    render(
+      <Modal isOpen>
+        <Modal.Header>{headerTxt}</Modal.Header>
+      </Modal>,
+    );
+    const closeBtn = screen.queryByTestId("header-close-button");
+
+    expect(closeBtn).not.toBeInTheDocument();
+  });
+
   it("Header renders correctly with JSX content", () => {
     const { headerTxt } = getModalProps();
     render(

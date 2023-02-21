@@ -6,13 +6,14 @@ import { CloseCircledSVG } from "../../icons/";
 import { modalContent, modalFooter, modalHeader, portalStyles } from "./styles";
 
 export type HeaderProps = {
+  style?: CSSProperties;
   onClose?: () => void;
 };
 
-const Header: FC<HeaderProps> = ({ children, onClose }) => {
+const Header: FC<HeaderProps> = ({ children, style, onClose }) => {
   const title = typeof children === "string" ? <Heading size="md">{children}</Heading> : children;
   return (
-    <header css={modalHeader} data-testid="modal-header">
+    <header style={style} css={modalHeader} data-testid="modal-header">
       <div>{title}</div>
       {onClose && (
         <a

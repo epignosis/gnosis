@@ -1,19 +1,18 @@
-import React, { CSSProperties, FC, ReactElement, cloneElement, Children } from "react";
+import React, { FC, ReactElement, cloneElement, Children } from "react";
 import { ClassNames } from "@emotion/react";
 import ReactModal, { Props } from "react-modal";
 import Heading from "../Heading/Heading";
 import { CloseCircledSVG } from "../../icons/";
 import { modalContent, modalFooter, modalHeader, portalStyles } from "./styles";
 
-export type HeaderProps = {
-  style?: CSSProperties;
+export type HeaderProps = React.HTMLAttributes<HTMLElement> & {
   onClose?: () => void;
 };
 
-const Header: FC<HeaderProps> = ({ children, style, onClose }) => {
+const Header: FC<HeaderProps> = ({ children, onClose, ...rest }) => {
   const title = typeof children === "string" ? <Heading size="md">{children}</Heading> : children;
   return (
-    <header style={style} css={modalHeader} data-testid="modal-header">
+    <header css={modalHeader} data-testid="modal-header" {...rest}>
       <div>{title}</div>
       {onClose && (
         <a
@@ -30,25 +29,21 @@ const Header: FC<HeaderProps> = ({ children, style, onClose }) => {
   );
 };
 
-type BodyProps = {
-  style?: CSSProperties;
-};
+type BodyProps = React.HTMLAttributes<HTMLElement>;
 
-const Body: FC<BodyProps> = ({ children, style }) => {
+const Body: FC<BodyProps> = ({ children, ...rest }) => {
   return (
-    <article style={style} css={modalContent}>
+    <article css={modalContent} {...rest}>
       {children}
     </article>
   );
 };
 
-type FooterProps = {
-  style?: CSSProperties;
-};
+type FooterProps = React.HTMLAttributes<HTMLElement>;
 
-const Footer: FC<FooterProps> = ({ children, style }) => {
+const Footer: FC<FooterProps> = ({ children, ...rest }) => {
   return (
-    <footer style={style} css={modalFooter} data-testid="modal-footer">
+    <footer css={modalFooter} data-testid="modal-footer" {...rest}>
       {children}
     </footer>
   );

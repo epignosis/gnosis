@@ -146,7 +146,7 @@ export const ModalWithCustomStyles: Story<ReactModalProps> = (args) => {
           overlay: { backgroundColor: "blue" },
         }}
       >
-        <Modal.Header>This is the modal title</Modal.Header>
+        <Modal.Header style={{ border: "2px solid red" }}>This is the modal title</Modal.Header>
         <Modal.Body style={{ border: "2px solid green" }}>
           <div style={{ marginBottom: 16 }}>
             <Input id="password" type="password" label="Enter current password " />

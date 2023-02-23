@@ -1,3 +1,10 @@
+## [3.2.4](https://github.com/epignosis/gnosis/compare/v3.2.3...v3.2.4) (2023-02-23)
+
+
+### Bug Fixes
+
+* completed failed icons ([#127](https://github.com/epignosis/gnosis/issues/127)) ([a5d872e](https://github.com/epignosis/gnosis/commit/a5d872e20974d8fa8cb9e21b1833c30b9a0b02bb))
+
 ## [3.2.3](https://github.com/epignosis/gnosis/compare/v3.2.2...v3.2.3) (2023-02-22)
 
 ## [3.2.2](https://github.com/epignosis/gnosis/compare/v3.2.1...v3.2.2) (2023-02-17)

@@ -61,23 +61,23 @@ export default {
     },
     link: {
       color: "#232323",
-      hoverColor: "#3F8DF2",
+      hoverColor: colors.primaryAccent.light,
     },
   },
   danger: {
     default: {
-      background: "#F20000",
-      borderColor: "#F20000",
+      background: colors.red.base,
+      borderColor: colors.red.base,
       color: colors.white,
     },
     hover: {
-      background: "#F20000",
-      borderColor: "#F20000",
+      background: colors.red.base,
+      borderColor: colors.red.base,
       color: colors.white,
     },
     active: {
-      background: "#F20000",
-      borderColor: "#F20000",
+      background: colors.red.base,
+      borderColor: colors.red.base,
       color: colors.white,
     },
     ghost: {
@@ -85,12 +85,12 @@ export default {
       background: colors.red.lightest,
     },
     outline: {
-      color: "#F20000",
-      borderColor: "#F20000",
+      color: colors.red.base,
+      borderColor: colors.red.base,
     },
     link: {
-      color: "#F20000",
-      hoverColor: "#F20000",
+      color: colors.red.base,
+      hoverColor: colors.red.base,
     },
   },
   success: {

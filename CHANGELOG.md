@@ -1,3 +1,10 @@
+## [3.2.5](https://github.com/epignosis/gnosis/compare/v3.2.4...v3.2.5) (2023-03-01)
+
+
+### Bug Fixes
+
+* **colors:** replace hard-coded colors, export default theme, add palette icon ([#130](https://github.com/epignosis/gnosis/issues/130)) ([8b713d9](https://github.com/epignosis/gnosis/commit/8b713d98704958fc6f034e6b98cea52463321053))
+
 ## [3.2.4](https://github.com/epignosis/gnosis/compare/v3.2.3...v3.2.4) (2023-02-23)
 
 

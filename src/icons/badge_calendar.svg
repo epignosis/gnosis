@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 95 95">
   <g id="icon_today" transform="translate(-1390 -977)">
-    <circle id="Ellipse_221" data-name="Ellipse 221" cx="47.5" cy="47.5" r="47.5" transform="translate(1390 977)" fill="#0e59bb"/>
+    <circle id="Ellipse_221" data-name="Ellipse 221" cx="47.5" cy="47.5" r="47.5" transform="translate(1390 977)" fill="currentColor"/>
     <path id="Path_2102" data-name="Path 2102" d="M10.117-42.656h-4.1V-47.1A1.028,1.028,0,0,0,4.99-48.125H1.572A1.028,1.028,0,0,0,.547-47.1v4.443H-10.391V-47.1a1.028,1.028,0,0,0-1.025-1.025h-3.418A1.028,1.028,0,0,0-15.859-47.1v4.443h-4.1a4.1,4.1,0,0,0-4.1,4.1V-8.477a4.1,4.1,0,0,0,4.1,4.1H10.117a4.1,4.1,0,0,0,4.1-4.1V-38.555A4.1,4.1,0,0,0,10.117-42.656ZM9.6-8.477H-19.448a.514.514,0,0,1-.513-.513V-34.453H10.117V-8.989A.514.514,0,0,1,9.6-8.477Z" transform="translate(1442.063 1050.125)" fill="#fff"/>
     <rect id="Rectangle_1634" data-name="Rectangle 1634" width="57" height="57" transform="translate(1409 996)" fill="none"/>
   </g>

@@ -1,4 +1,4 @@
-<svg id="Icon-Survey" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+<svg id="Icon-Survey" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20">
   <rect id="Rectangle_8157" data-name="Rectangle 8157" width="32" height="32" fill="none"/>
   <path id="message-check-regular" d="M8.856,4.262,6.384,7.147l-.928-.928A.75.75,0,0,0,4.4,7.279l1.5,1.5a.751.751,0,0,0,.53.22h.028a.74.74,0,0,0,.539-.261l3-3.5a.749.749,0,1,0-1.137-.975ZM13.1,0H1.1a2,2,0,0,0-2,1.972v8.972a1.98,1.98,0,0,0,2,1.972h3v2.6a.375.375,0,0,0,.6.3l3.9-2.928h4.5a2,2,0,0,0,2-1.972V1.972A1.982,1.982,0,0,0,13.1,0Zm.528,11a.5.5,0,0,1-.5.5h-5l-2.5,1.875V11.5h-4.5a.5.5,0,0,1-.5-.5V2a.5.5,0,0,1,.5-.5h12a.5.5,0,0,1,.5.5Z" transform="translate(8.9 8)"/>
 </svg>

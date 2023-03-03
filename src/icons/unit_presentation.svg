@@ -1,4 +1,4 @@
-<svg id="Icon-Presentation" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+<svg id="Icon-Presentation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect id="Rectangle_8153" data-name="Rectangle 8153" width="32" height="32" fill="none"/>
   <path id="presentation-screen-regular" d="M13.778,8.444H2.222V2.222H.889V8.889a.892.892,0,0,0,.889.889H7.333v1.306l-2,2a.666.666,0,0,0,.941.942L8,12.3l1.725,1.725a.667.667,0,1,0,.941-.945l-2-2V9.778h5.556a.892.892,0,0,0,.889-.889V2.222H13.778ZM15.333,0H.666a.667.667,0,0,0,0,1.333H15.335a.667.667,0,0,0,0-1.333Z" transform="translate(8 9)"/>
 </svg>

@@ -1,3 +1,5 @@
+## [3.2.8](https://github.com/epignosis/gnosis/compare/v3.2.7...v3.2.8) (2023-03-03)
+
 ## [3.2.7](https://github.com/epignosis/gnosis/compare/v3.2.6...v3.2.7) (2023-03-03)
 
 ## [3.2.6](https://github.com/epignosis/gnosis/compare/v3.2.5...v3.2.6) (2023-03-02)

@@ -1,6 +1,7 @@
-<svg id="Test_Results-Result_Element" data-name="Test Results-Result Element" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 20 20">
-  <circle id="Ellipse_302" data-name="Ellipse 302" cx="10" cy="10" r="10" fill="#d12525"/>
-  <g id="Icon-Close">
+<svg id="Unit-Completion_Element" data-name="Unit-Completion Element" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <rect id="Rectangle_8255" data-name="Rectangle 8255" width="32" height="32" fill="none"/>
+  <circle id="Ellipse_302" data-name="Ellipse 302" cx="10" cy="10" r="10" transform="translate(6 6)" fill="#d12525"/>
+  <g id="Icon-Close" transform="translate(6 6)">
     <g id="close">
       <rect id="Rectangle_1774" data-name="Rectangle 1774" width="20" height="20" transform="translate(20 20) rotate(180)" fill="#fff" opacity="0"/>
       <path id="Path_2952" data-name="Path 2952" d="M10.94,10l2.868-2.861a.67.67,0,0,0-.947-.947L10,9.06,7.139,6.192a.67.67,0,0,0-.947.947L9.06,10,6.191,12.861a.67.67,0,1,0,.947.947L10,10.941l2.861,2.868a.67.67,0,1,0,.947-.947Z" fill="#fff"/>

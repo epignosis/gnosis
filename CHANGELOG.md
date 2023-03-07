@@ -1,3 +1,10 @@
+## [3.2.9](https://github.com/epignosis/gnosis/compare/v3.2.8...v3.2.9) (2023-03-07)
+
+
+### Bug Fixes
+
+* result support image ([#134](https://github.com/epignosis/gnosis/issues/134)) ([caf5b19](https://github.com/epignosis/gnosis/commit/caf5b196d776bac03ab9c7f5263cebf4028eb465))
+
 ## [3.2.8](https://github.com/epignosis/gnosis/compare/v3.2.7...v3.2.8) (2023-03-03)
 
 ## [3.2.7](https://github.com/epignosis/gnosis/compare/v3.2.6...v3.2.7) (2023-03-03)

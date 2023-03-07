@@ -14,11 +14,6 @@ export const container = (
     align-items: center;
     padding: 1rem 0;
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
     .body {
       text-align: center;
       margin-top: 2rem;

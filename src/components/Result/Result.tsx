@@ -41,7 +41,7 @@ const Result: FC<ResultProps> = ({ icon, title, info, footer, size = "lg", ...re
       {Icon && (
         <>
           {typeof Icon === "string" ? (
-            <img src={Icon} data-testid="result-icon" alt="result image"></img>
+            <img src={Icon} height={iconSize[size]} data-testid="result-icon" alt="result image" />
           ) : (
             <Icon height={iconSize[size]} data-testid="result-icon" />
           )}

@@ -10,7 +10,7 @@ import { TypographyLevels } from "@theme/utils/typography";
 export type Size = "md" | "lg";
 
 export type ResultProps = React.HTMLAttributes<HTMLElement> & {
-  icon?: IconType;
+  icon?: IconType | string;
   title: string;
   info?: string;
   size?: Size;
@@ -38,7 +38,15 @@ const Result: FC<ResultProps> = ({ icon, title, info, footer, size = "lg", ...re
       css={(theme): SerializedStyles => container(theme, { size })}
       {...rest}
     >
-      {Icon && <Icon height={iconSize[size]} data-testid="result-icon" />}
+      {Icon && (
+        <>
+          {typeof Icon === "string" ? (
+            <img src={Icon} height={iconSize[size]} data-testid="result-icon" alt="result image" />
+          ) : (
+            <Icon height={iconSize[size]} data-testid="result-icon" />
+          )}
+        </>
+      )}
       <div className="body">
         <Heading as="h3">{title}</Heading>
         {info && (

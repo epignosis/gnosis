@@ -32,3 +32,10 @@ WithFooter.args = {
   ...Default.args,
   footer: <Button>Go back to dashboard</Button>,
 };
+
+export const WithImage: Story<ResultProps> = (args) => <Result {...args} />;
+
+WithImage.args = {
+  ...Default.args,
+  icon: "https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png",
+};

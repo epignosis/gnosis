@@ -7,9 +7,11 @@ exports[`<Result/> matches snapshot 1`] = `
     data-testid="empty-state-container"
     id="my-id"
   >
-    <svg-file-stub
+    <img
+      alt="result image"
       data-testid="result-icon"
       height="100"
+      src="svg-file-stub"
     />
     <div
       class="body"

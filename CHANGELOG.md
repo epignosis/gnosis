@@ -1,3 +1,10 @@
+## [3.2.9](https://github.com/epignosis/gnosis/compare/v3.2.8...v3.2.9) (2023-03-07)
+
+
+### Bug Fixes
+
+* **result:** support image in Result component ([86ed977](https://github.com/epignosis/gnosis/commit/86ed97747aae9bd4606b0043db7cfb4d8d35dcee))
+
 ## [3.2.8](https://github.com/epignosis/gnosis/compare/v3.2.7...v3.2.8) (2023-03-03)
 
 ## [3.2.7](https://github.com/epignosis/gnosis/compare/v3.2.6...v3.2.7) (2023-03-03)

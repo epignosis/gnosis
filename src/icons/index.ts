@@ -109,3 +109,5 @@ export { default as BranchesSVG } from "./branches.svg";
 export { default as GroupsSVG } from "./groups.svg";
 export { default as PaletteSVG } from "./palette.svg";
 export { default as UnitNotSelectedSVG } from "./unit_not_selected.svg";
+export { default as RadioSelectedSVG } from "./radio_selected.svg";
+export { default as GripDotsSVG } from "./grip-dots-regular.svg";

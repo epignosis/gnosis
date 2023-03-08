@@ -8,9 +8,9 @@ describe("<ProgressBar />", () => {
     const progressPercentage = faker.datatype.number(100);
 
     render(<ProgressBar percent={progressPercentage} />);
-    const percentage = screen.getByText(`${progressPercentage}%`);
+    const percentage = screen.getByText(`${progressPercentage} %`);
 
-    expect(percentage).toHaveTextContent(`${progressPercentage}%`);
+    expect(percentage).toHaveTextContent(`${progressPercentage} %`);
   });
 
   it("matches snapshot", () => {

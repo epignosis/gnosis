@@ -1,3 +1,15 @@
+# [3.3.0](https://github.com/epignosis/gnosis/compare/v3.2.8...v3.3.0) (2023-03-09)
+
+
+### Bug Fixes
+
+* result support image ([#134](https://github.com/epignosis/gnosis/issues/134)) ([caf5b19](https://github.com/epignosis/gnosis/commit/caf5b196d776bac03ab9c7f5263cebf4028eb465))
+
+
+### Features
+
+* **icons:** rename icons to match exported names ([#139](https://github.com/epignosis/gnosis/issues/139)) ([d564ea9](https://github.com/epignosis/gnosis/commit/d564ea9e2c729176164925c503134f6f51920784))
+
 ## [3.2.9](https://github.com/epignosis/gnosis/compare/v3.2.8...v3.2.9) (2023-03-08)
 
 

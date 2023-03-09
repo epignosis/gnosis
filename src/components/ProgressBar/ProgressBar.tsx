@@ -15,7 +15,7 @@ const ProgressBar: FC<ProgressBarProps> = ({ percent, size = "md", rounded = tru
 
   return (
     <div css={(theme): SerializedStyles => container(theme, { percent, size, rounded })} {...rest}>
-      {showPercentage && <div>{percent} %</div>}
+      {showPercentage && <div>{percent}&rlm;%</div>}
     </div>
   );
 };

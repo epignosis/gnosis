@@ -1,3 +1,10 @@
+## [3.3.1](https://github.com/epignosis/gnosis/compare/v3.3.0...v3.3.1) (2023-03-09)
+
+
+### Bug Fixes
+
+* progress bar component in rtl ([#140](https://github.com/epignosis/gnosis/issues/140)) ([9390b23](https://github.com/epignosis/gnosis/commit/9390b23a8a6c2243d0d8efbb27f8ce8edeae256c))
+
 # [3.3.0](https://github.com/epignosis/gnosis/compare/v3.2.8...v3.3.0) (2023-03-09)
 
 

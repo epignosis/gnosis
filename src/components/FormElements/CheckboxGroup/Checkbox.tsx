@@ -5,7 +5,7 @@ import { ExtendableProps } from "types/common";
 
 export type CheckboxOption = {
   value: string;
-  label?: string;
+  label?: string | JSX.Element;
   name: string;
   disabled?: boolean;
   isPartiallySelected?: boolean;

@@ -54,7 +54,22 @@ const options = [
   },
 ];
 
-export const Checkbox: Story<Omit<CheckboxProps, "label" | "value" | "name" | "id">> = (args) => {
+const jsxOptions = [
+  {
+    label: <div>All</div>,
+    value: "all",
+    name: "all",
+  },
+  {
+    label: <button>In progress</button>,
+    value: "progress",
+    name: "progress",
+  },
+];
+
+type CheckboxStoryProps = Omit<CheckboxProps, "label" | "value" | "name" | "id">;
+
+export const Checkbox: Story<CheckboxStoryProps> = (args) => {
   return (
     <>
       {options.map((option) => (
@@ -65,6 +80,16 @@ export const Checkbox: Story<Omit<CheckboxProps, "label" | "value" | "name" | "i
           defaultChecked={option.disabled}
           {...option}
         />
+      ))}
+    </>
+  );
+};
+
+export const CheckboxWithJSXLabel: Story<CheckboxStoryProps> = (args) => {
+  return (
+    <>
+      {jsxOptions.map((option) => (
+        <CheckboxComponent key={option.value} {...args} id={option.name} {...option} />
       ))}
     </>
   );

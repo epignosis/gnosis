@@ -66,7 +66,7 @@ const solidButton = (button: Theme["button"], color: Color): SerializedStyles =>
     }
   }
 
-  &:focus {
+  &:focus-visible {
     color: ${button[color].hover.color};
     background-color: ${button[color].hover.background};
     border-color: ${button[color].hover.borderColor};
@@ -108,7 +108,7 @@ const outlineButton = (button: Theme["button"], color: Color): SerializedStyles 
     }
   }
 
-  &:focus {
+  &:focus-visible {
     color: ${button[color].hover.color};
     background-color: ${button[color].hover.background};
     border-color: ${button[color].hover.borderColor};

@@ -6,7 +6,7 @@ import { ExtendableProps } from "types/common";
 
 export type RadioOption = {
   value: string;
-  label: string;
+  label: string | JSX.Element;
   disabled?: boolean;
   containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
 };

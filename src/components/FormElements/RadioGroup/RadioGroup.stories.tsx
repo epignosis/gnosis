@@ -83,3 +83,19 @@ WithInitialValue.args = {
   groupname: "radio-group-with-value",
   initialValue: "completed",
 };
+
+export const RadioWithJsxLabel = Template.bind({});
+
+RadioWithJsxLabel.args = {
+  groupname: "radio-with-jsx-label",
+  options: [
+    {
+      label: <div>All</div>,
+      value: "all",
+    },
+    {
+      label: <button>In progress</button>,
+      value: "progress",
+    },
+  ],
+};

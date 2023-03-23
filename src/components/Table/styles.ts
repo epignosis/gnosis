@@ -29,6 +29,10 @@ export const tableContainer = ({ table }: Theme) => css`
             position: relative;
             cursor: pointer;
 
+            .sorting-icon {
+              margin-inline-start: 0.5rem;
+            }
+
             span {
               display: inline-block;
 

@@ -1,7 +1,7 @@
 import React, { FC, HTMLAttributes, useEffect, useReducer, useState } from "react";
 import Checkbox from "../FormElements/CheckboxGroup/Checkbox";
 import Result from "../Result/Result";
-import { CaretDownSVG } from "../../icons/index";
+import { IconChevronDownSVG, IconChevronUpSVG } from "../../icons/index";
 import { tableContainer } from "./styles";
 import { ExtendableProps } from "types/utils";
 
@@ -79,11 +79,12 @@ const Header: FC<ChildrenProps> = ({ state, dispatch }) => {
               >
                 <span>{typeof cell === "string" ? cell : cell({ accessor, cell })}</span>
                 {sortable && sorting?.column === accessor && (
-                  <span>
-                    <CaretDownSVG
-                      height={20}
-                      className={!sorting?.isDescending ? "icon-ascending" : ""}
-                    />
+                  <span className="sorting-icon">
+                    {!sorting?.isDescending ? (
+                      <IconChevronDownSVG height={20} />
+                    ) : (
+                      <IconChevronUpSVG height={20} />
+                    )}
                   </span>
                 )}
               </Cell>

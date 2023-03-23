@@ -81,9 +81,9 @@ const Header: FC<ChildrenProps> = ({ state, dispatch }) => {
                 {sortable && sorting?.column === accessor && (
                   <span className="sorting-icon">
                     {!sorting?.isDescending ? (
-                      <IconChevronDownSVG height={20} />
-                    ) : (
                       <IconChevronUpSVG height={20} />
+                    ) : (
+                      <IconChevronDownSVG height={20} />
                     )}
                   </span>
                 )}

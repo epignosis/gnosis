@@ -1,4 +1,5 @@
 import { css, Theme } from "@emotion/react";
+import { colors, hexToRGBA } from "@theme/default/colors";
 import { mq } from "@theme/utils/breakpoints";
 
 export const tableContainer = ({ table }: Theme) => css`
@@ -13,7 +14,7 @@ export const tableContainer = ({ table }: Theme) => css`
     max-width: 100%;
 
     thead {
-      border-bottom: 1px solid #dddddd;
+      border-bottom: 1px solid ${hexToRGBA(colors.gray.lightest.toString(), 0.4)};
       background-color: ${table.rowBackgroundColor};
 
       tr {

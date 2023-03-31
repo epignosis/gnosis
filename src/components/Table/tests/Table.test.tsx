@@ -1,6 +1,6 @@
 import React from "react";
 import { faker } from "@faker-js/faker";
-import Table from "./Table";
+import Table from "../Table";
 import { render } from "@test-utils/render";
 
 const COLUMNS = [

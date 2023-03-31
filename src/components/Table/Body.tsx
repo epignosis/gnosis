@@ -2,7 +2,8 @@ import React, { FC, useState } from "react";
 import Checkbox from "../FormElements/CheckboxGroup/Checkbox";
 import Result from "../Result/Result";
 import Cell from "./Cell";
-import { ChildrenProps, Row } from "./Table";
+import { ChildrenProps } from "./Table";
+import { Row } from "types/types";
 
 const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
   const { selectable, columns, selected, handleRowClick } = state;
@@ -10,31 +11,35 @@ const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
     .filter((column) => !column.hidden)
     .map((column) => column.accessor)
     .filter((column) => column !== "actions");
-  const selectedArr = selected.map((entry) => entry.id);
+  const selectedRows = selected.map((entry) => entry.id);
   const [hoveredRow, setHoveredRow] = useState("");
 
   const handleRowSelection = (e: React.ChangeEvent<HTMLInputElement>, row: Row): void => {
     e.preventDefault();
 
-    if (!selectedArr.includes(row.id)) {
-      dispatch({ type: "selectRow", payload: row });
+    if (!selectedRows.includes(row.id)) {
+      dispatch({ type: "SELECT_ROW", payload: row });
     }
 
-    if (selectedArr.includes(row.id)) {
-      dispatch({ type: "removeRow", payload: row });
+    if (selectedRows.includes(row.id)) {
+      dispatch({ type: "REMOVE_ROW", payload: row });
     }
   };
 
   return (
-    <>
+    <tbody>
       {state.rows.length > 0 ? (
-        <tbody>
+        <>
           {state.rows.map((row) => {
-            const isSelected = selectedArr.includes(row.id);
+            const isSelected = selectedRows.includes(row.id);
+            const hasClickHandler = handleRowClick ? "link" : "";
+            const isSelectedClassname = isSelected ? "selected" : "";
+            const isHoveredRow = row.actions && hoveredRow === `${row.id}`;
+
             return (
               <tr
-                key={`${row.id}-${isSelected ? "selected" : "not-selected"}`}
-                className={`${isSelected ? "selected" : ""} ${handleRowClick ? "link" : ""}`}
+                key={row.id}
+                className={`${isSelectedClassname} ${hasClickHandler}`}
                 onMouseEnter={(): void => setHoveredRow(row.id.toString())}
                 onMouseLeave={(): void => setHoveredRow("")}
               >
@@ -52,28 +57,25 @@ const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
 
                 {accessors.map((accessor) => {
                   const rowObj = row[accessor];
+                  const hasClickHandler = handleRowClick
+                    ? (): void => handleRowClick(row)
+                    : undefined;
 
                   if (typeof rowObj === "function") {
                     return (
-                      <Cell
-                        key={`entry-${row.id}-${accessor}`}
-                        onClick={handleRowClick ? (): void => handleRowClick(row) : undefined}
-                      >
+                      <Cell key={`entry-${row.id}-${accessor}`} onClick={hasClickHandler}>
                         {rowObj(row)}
                       </Cell>
                     );
                   }
                   return (
-                    <Cell
-                      key={`entry-${row.id}-${accessor}`}
-                      onClick={handleRowClick ? (): void => handleRowClick(row) : undefined}
-                    >
+                    <Cell key={`entry-${row.id}-${accessor}`} onClick={hasClickHandler}>
                       {rowObj as string}
                     </Cell>
                   );
                 })}
 
-                {row.actions && hoveredRow === `${row.id}` && (
+                {isHoveredRow && (
                   <td className="actions-container">
                     {typeof row?.actions === "function" && row?.actions(row)}
                   </td>
@@ -81,17 +83,15 @@ const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
               </tr>
             );
           })}
-        </tbody>
+        </>
       ) : (
-        <tbody>
-          <tr className="empty-state-container">
-            <td>
-              <Result title={state.emptyState.title} info={state.emptyState.info} />
-            </td>
-          </tr>
-        </tbody>
+        <tr className="empty-state-container">
+          <td>
+            <Result title={state.emptyState.title} info={state.emptyState.info} />
+          </td>
+        </tr>
       )}
-    </>
+    </tbody>
   );
 };
 

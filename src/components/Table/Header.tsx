@@ -1,8 +1,9 @@
 import React, { FC } from "react";
 import Checkbox from "../FormElements/CheckboxGroup/Checkbox";
 import { IconChevronDownSVG, IconChevronUpSVG } from "../../icons/index";
-import { ChildrenProps, Sorting } from "./Table";
 import Cell from "./Cell";
+import { ChildrenProps } from "./Table";
+import { Sorting } from "types/types";
 
 const Header: FC<ChildrenProps> = ({ state, dispatch }) => {
   const { rows, selectable, columns, selected, sortable, sorting } = state;
@@ -11,12 +12,12 @@ const Header: FC<ChildrenProps> = ({ state, dispatch }) => {
   const isSelectAllChecked = selected.length > 0;
   const allRowsSelected = rowIds.every((rowId) => selectedIds.includes(rowId));
 
-  const handleCheckbox = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleCheckboxClick = (e: React.ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();
-    selected.length === 0 ? dispatch({ type: "selectAll" }) : dispatch({ type: "removeAll" });
+    selected.length === 0 ? dispatch({ type: "SELECT_ALL" }) : dispatch({ type: "REMOVE_ALL" });
   };
 
-  const handleHeaderClick = (accesor: string): void => {
+  const handleSortingChange = (accesor: string): void => {
     if (sortable) {
       // new sorting object
       const newSorting: Sorting = {
@@ -29,7 +30,7 @@ const Header: FC<ChildrenProps> = ({ state, dispatch }) => {
         !sorting.isDescending ? (newSorting.isDescending = true) : (newSorting.column = "");
       }
 
-      dispatch({ type: "sortingChanged", payload: newSorting });
+      dispatch({ type: "SORTING_CHANGED", payload: newSorting });
     }
   };
 
@@ -42,7 +43,7 @@ const Header: FC<ChildrenProps> = ({ state, dispatch }) => {
               id="select-all"
               name="select-all"
               value="all"
-              onChange={handleCheckbox}
+              onChange={handleCheckboxClick}
               checked={isSelectAllChecked}
               isPartiallySelected={!allRowsSelected}
             />
@@ -57,7 +58,7 @@ const Header: FC<ChildrenProps> = ({ state, dispatch }) => {
                 className={`header-cell ${classNames.length > 0 && classNames.join(" ")}`}
                 onClick={(): void => {
                   if (sortableHeader) {
-                    handleHeaderClick(accessor);
+                    handleSortingChange(accessor);
                   }
                 }}
               >

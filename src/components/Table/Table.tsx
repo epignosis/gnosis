@@ -1,90 +1,10 @@
 import React, { FC, HTMLAttributes, useEffect, useReducer } from "react";
-import Body from "./Body";
+import { Dispatch, reducer } from "../../types/reducer";
 import { tableContainer } from "./styles";
+import Body from "./Body";
 import Header from "./Header";
 import { ExtendableProps } from "types/utils";
-
-export type Column = {
-  accessor: string;
-  cell: string | ((arg?: unknown) => JSX.Element | null);
-  hidden?: boolean;
-  classNames?: string[];
-  sortableHeader?: boolean;
-};
-
-export type Row = {
-  id: string | number;
-  [key: string]: unknown | ((arg?: unknown) => JSX.Element | string | null);
-};
-
-export type EmptyState = {
-  title: string;
-  info: string;
-};
-
-export type Sorting = {
-  column: string;
-  isDescending: boolean;
-};
-
-export type TableState = {
-  columns: Column[];
-  rows: Row[];
-  emptyState: EmptyState;
-  selected: Row[];
-  selectable: boolean;
-  sortable?: boolean;
-  sorting?: Sorting;
-  onSortingChanged?: (sorting: Sorting) => void;
-  handleRowClick?: (row: Row) => void;
-};
-
-export type Action =
-  | { type: "selectAll" }
-  | { type: "removeAll" }
-  | { type: "selectRow"; payload: Row }
-  | { type: "removeRow"; payload: Row }
-  | { type: "sortingChanged"; payload: Sorting }
-  | { type: "columnsChanged"; payload: Column[] }
-  | { type: "rowsChanged"; payload: Row[] };
-
-export type Dispatch = (action: Action) => void;
-
-const reducer = (state: TableState, action: Action): TableState => {
-  switch (action.type) {
-    case "selectAll": {
-      return { ...state, selected: [...state.rows] };
-    }
-    case "removeAll": {
-      return { ...state, selected: [] };
-    }
-    case "selectRow": {
-      return { ...state, selected: [...state.selected, action.payload] };
-    }
-    case "removeRow": {
-      const rowToRemoveId = action.payload.id;
-      const newSelectedRow = state.selected.filter((row) => row?.id !== rowToRemoveId);
-
-      return { ...state, selected: newSelectedRow };
-    }
-    case "sortingChanged": {
-      if (state.sorting && state?.onSortingChanged) {
-        state.onSortingChanged(action.payload);
-      }
-
-      return { ...state, sorting: action.payload };
-    }
-    case "columnsChanged": {
-      return { ...state, columns: action.payload };
-    }
-    case "rowsChanged": {
-      return { ...state, rows: action.payload };
-    }
-    default: {
-      return state;
-    }
-  }
-};
+import { Column, EmptyState, Row, Sorting, TableState } from "types/types";
 
 export type ChildrenProps = { state: TableState; dispatch: Dispatch };
 
@@ -136,11 +56,11 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
   });
 
   useEffect(() => {
-    dispatch({ type: "columnsChanged", payload: columns });
+    dispatch({ type: "COLUMNS_CHANGED", payload: columns });
   }, [columns]);
 
   useEffect(() => {
-    dispatch({ type: "rowsChanged", payload: rows });
+    dispatch({ type: "ROWS_CHANGED", payload: rows });
   }, [rows]);
 
   return (

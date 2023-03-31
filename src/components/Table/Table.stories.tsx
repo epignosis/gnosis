@@ -1,6 +1,6 @@
 import React from "react";
 import { Story } from "@storybook/react";
-import Table, { Sorting, TableProps } from "./Table";
+import Table, { Props } from "./Table";
 
 export default {
   component: Table,
@@ -28,69 +28,29 @@ export default {
   },
 };
 
-const sortingArgs = {
-  sorting: { column: "code", isDescending: true },
-  onSortingChanged: (sorting: Sorting): void => {
-    const text = !sorting.isDescending ? sorting.column + " asc" : sorting.column + " desc";
-    alert(text);
-  },
+const Template: Story<Props> = (args) => (
+  <>
+    <Table {...args} />
+  </>
+);
+
+export const Default = Template.bind({});
+
+export const WithSorting = Template.bind({});
+
+WithSorting.args = {
+  sortable: true,
+  sorting: { column: "id", isDescending: true },
 };
 
-export const Default: Story<TableProps> = (args) => {
-  return (
-    <div>
-      <Table {...args} />
-    </div>
-  );
+export const WithRowSelection = Template.bind({});
+
+WithRowSelection.args = {
+  selectable: true,
 };
 
-export const TableWithSorting: Story<TableProps> = (args) => {
-  return (
-    <div>
-      <Table
-        id="TableWithSorting"
-        {...args}
-        sortable={true}
-        sorting={sortingArgs.sorting}
-        onSortingChanged={sortingArgs.onSortingChanged}
-      />
-    </div>
-  );
-};
+export const WithoutData = Template.bind({});
 
-export const TableWithSelection: Story<TableProps> = (args) => {
-  return (
-    <div>
-      <Table id="TableWithSelection" {...args} selectable={true} />
-    </div>
-  );
-};
-
-export const TableWithBoth: Story<TableProps> = (args) => {
-  return (
-    <div>
-      <Table
-        id="TableWithBoth"
-        {...args}
-        sortable={true}
-        sorting={sortingArgs.sorting}
-        onSortingChanged={sortingArgs.onSortingChanged}
-        selectable={true}
-        rows={[
-          { id: 276, description: "Test", name: "Test", category: "Test", code: "Test" },
-          { id: 277, description: "Test", name: "Test", category: "Test", code: "Test" },
-          { id: 278, description: "Test", name: "Test", category: "Test", code: "Test" },
-          { id: 279, description: "Test", name: "Test", category: "Test", code: "Test" },
-        ]}
-      />
-    </div>
-  );
-};
-
-export const TableNoData: Story<TableProps> = (args) => {
-  return (
-    <div>
-      <Table id="TableNoData" {...args} rows={[]} />
-    </div>
-  );
+WithoutData.args = {
+  rows: [],
 };

@@ -88,7 +88,7 @@ const reducer = (state: TableState, action: Action): TableState => {
 
 export type ChildrenProps = { state: TableState; dispatch: Dispatch };
 
-export type TableProps = ExtendableProps<
+export type Props = ExtendableProps<
   HTMLAttributes<HTMLTableElement>,
   {
     columns: Column[];
@@ -107,7 +107,7 @@ type TableCompoundProps = {
   Body: FC<ChildrenProps>;
 };
 
-const Table: FC<TableProps> & TableCompoundProps = (props) => {
+const Table: FC<Props> & TableCompoundProps = (props) => {
   const defaultSorting: Sorting = {
     column: props.sortable ? props.columns[0].accessor : "",
     isDescending: false,

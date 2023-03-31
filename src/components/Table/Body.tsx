@@ -6,13 +6,13 @@ import { ChildrenProps } from "./Table";
 import { Row } from "types/types";
 
 const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
+  const [hoveredRow, setHoveredRow] = useState("");
   const { selectable, columns, selected, handleRowClick } = state;
   const accessors = columns
     .filter((column) => !column.hidden)
     .map((column) => column.accessor)
     .filter((column) => column !== "actions");
   const selectedRows = selected.map((entry) => entry.id);
-  const [hoveredRow, setHoveredRow] = useState("");
 
   const handleRowSelection = (e: React.ChangeEvent<HTMLInputElement>, row: Row): void => {
     e.preventDefault();

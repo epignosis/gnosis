@@ -5,9 +5,7 @@ export type CellProps = HTMLAttributes<HTMLTableCellElement> & {
   onClick?: () => void;
 };
 
-const Cell: FC<CellProps> = ({ children, as = "td", onClick, ...rest }) => {
-  const Component = as;
-
+const Cell: FC<CellProps> = ({ children, as: Component = "td", onClick, ...rest }) => {
   return (
     <Component onClick={onClick} {...rest}>
       {children}

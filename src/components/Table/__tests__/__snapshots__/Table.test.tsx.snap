@@ -3,7 +3,7 @@
 exports[`<Table> matches snapshot 1`] = `
 <div>
   <div
-    class="css-1lft5gi-tableContainer-tableContainer"
+    class="css-y6j0yl-tableContainer-tableContainer"
     data-testid="table"
   >
     <table
@@ -43,7 +43,7 @@ exports[`<Table> matches snapshot 1`] = `
       </thead>
       <tbody>
         <tr
-          class=" "
+          class=""
         >
           <td />
           <td />
@@ -51,7 +51,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td />
         </tr>
         <tr
-          class=" "
+          class=""
         >
           <td />
           <td />
@@ -59,7 +59,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td />
         </tr>
         <tr
-          class=" "
+          class=""
         >
           <td />
           <td />
@@ -67,7 +67,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td />
         </tr>
         <tr
-          class=" "
+          class=""
         >
           <td />
           <td />

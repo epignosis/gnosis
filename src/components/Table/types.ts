@@ -1,3 +1,5 @@
+import { Actions } from "./constants";
+
 export type Column = {
   accessor: string;
   cell: string | ((arg?: unknown) => JSX.Element | null);
@@ -32,3 +34,12 @@ export type TableState = {
   onSortingChanged?: (sorting: Sorting) => void;
   handleRowClick?: (row: Row) => void;
 };
+
+export type ActionType =
+  | { type: Actions.selectAll; payload: null }
+  | { type: Actions.removeAll; payload: null }
+  | { type: Actions.selectRow; payload: Row }
+  | { type: Actions.removeRow; payload: Row }
+  | { type: Actions.sortingChanged; payload: Sorting }
+  | { type: Actions.columnsChanged; payload: Column[] }
+  | { type: Actions.rowsChanged; payload: Row[] };

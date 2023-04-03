@@ -76,18 +76,6 @@ export const tableContainer = ({ table }: Theme) => css`
           }
         }
 
-        .actions-container {
-          background-color: ${table.rowHoverColor};
-          position: absolute;
-          inset-inline-end: 0;
-          top: 50%;
-          transform: translateY(-50%);
-          z-index: 2;
-          display: flex;
-          align-items: center;
-          padding: 0 2rem;
-        }
-
         &.empty-state-container {
           height: 20rem;
           background: transparent;

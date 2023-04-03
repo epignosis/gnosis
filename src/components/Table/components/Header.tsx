@@ -1,9 +1,10 @@
 import React, { FC } from "react";
-import Checkbox from "../FormElements/CheckboxGroup/Checkbox";
-import { IconChevronDownSVG, IconChevronUpSVG } from "../../icons/index";
+import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
+import { IconChevronDownSVG, IconChevronUpSVG } from "../../../icons/index";
+import { Sorting } from "../types";
+import { ChildrenProps } from "../Table";
+import { Actions } from "../constants";
 import Cell from "./Cell";
-import { ChildrenProps } from "./Table";
-import { Sorting } from "types/types";
 
 const Header: FC<ChildrenProps> = ({ state, dispatch }) => {
   const { rows, selectable, columns, selected, sortable, sorting } = state;
@@ -14,7 +15,9 @@ const Header: FC<ChildrenProps> = ({ state, dispatch }) => {
 
   const handleCheckboxClick = (e: React.ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();
-    selected.length === 0 ? dispatch({ type: "SELECT_ALL" }) : dispatch({ type: "REMOVE_ALL" });
+    selected.length === 0
+      ? dispatch({ type: Actions.selectAll, payload: null })
+      : dispatch({ type: Actions.removeAll, payload: null });
   };
 
   const handleSortingChange = (accesor: string): void => {
@@ -30,7 +33,7 @@ const Header: FC<ChildrenProps> = ({ state, dispatch }) => {
         !sorting.isDescending ? (newSorting.isDescending = true) : (newSorting.column = "");
       }
 
-      dispatch({ type: "SORTING_CHANGED", payload: newSorting });
+      dispatch({ type: Actions.sortingChanged, payload: newSorting });
     }
   };
 

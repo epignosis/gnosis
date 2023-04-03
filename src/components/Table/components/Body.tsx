@@ -1,12 +1,19 @@
-import React, { FC, useState } from "react";
-import Checkbox from "../FormElements/CheckboxGroup/Checkbox";
-import Result from "../Result/Result";
+import React, { FC } from "react";
+import classNames from "classnames";
+import { Row } from "../types";
+import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
+import Result from "../../Result/Result";
+import { ChildrenProps } from "../Table";
+import { Actions } from "../constants";
 import Cell from "./Cell";
-import { ChildrenProps } from "./Table";
-import { Row } from "types/types";
+
+const rowClassnames = (isSelected: boolean, callback: boolean): string =>
+  classNames({
+    selected: isSelected,
+    link: callback,
+  });
 
 const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
-  const [hoveredRow, setHoveredRow] = useState("");
   const { selectable, columns, selected, handleRowClick } = state;
   const accessors = columns
     .filter((column) => !column.hidden)
@@ -18,11 +25,11 @@ const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
     e.preventDefault();
 
     if (!selectedRows.includes(row.id)) {
-      dispatch({ type: "SELECT_ROW", payload: row });
+      dispatch({ type: Actions.selectRow, payload: row });
     }
 
     if (selectedRows.includes(row.id)) {
-      dispatch({ type: "REMOVE_ROW", payload: row });
+      dispatch({ type: Actions.removeRow, payload: row });
     }
   };
 
@@ -32,17 +39,10 @@ const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
         <>
           {state.rows.map((row) => {
             const isSelected = selectedRows.includes(row.id);
-            const hasClickHandler = handleRowClick ? "link" : "";
-            const isSelectedClassname = isSelected ? "selected" : "";
-            const isHoveredRow = row.actions && hoveredRow === `${row.id}`;
+            const rowKey = `${row.id}-${isSelected ? "selected" : "not-selected"}`;
 
             return (
-              <tr
-                key={row.id}
-                className={`${isSelectedClassname} ${hasClickHandler}`}
-                onMouseEnter={(): void => setHoveredRow(row.id.toString())}
-                onMouseLeave={(): void => setHoveredRow("")}
-              >
+              <tr key={rowKey} className={rowClassnames(isSelected, Boolean(handleRowClick))}>
                 {selectable && (
                   <Cell key={row.id} className="selectable-cell">
                     <Checkbox
@@ -57,29 +57,26 @@ const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
 
                 {accessors.map((accessor) => {
                   const rowObj = row[accessor];
-                  const hasClickHandler = handleRowClick
-                    ? (): void => handleRowClick(row)
-                    : undefined;
 
                   if (typeof rowObj === "function") {
                     return (
-                      <Cell key={`entry-${row.id}-${accessor}`} onClick={hasClickHandler}>
+                      <Cell
+                        key={`entry-${row.id}-${accessor}`}
+                        onClick={handleRowClick ? (): void => handleRowClick(row) : undefined}
+                      >
                         {rowObj(row)}
                       </Cell>
                     );
                   }
                   return (
-                    <Cell key={`entry-${row.id}-${accessor}`} onClick={hasClickHandler}>
+                    <Cell
+                      key={`entry-${row.id}-${accessor}`}
+                      onClick={handleRowClick ? (): void => handleRowClick(row) : undefined}
+                    >
                       {rowObj as string}
                     </Cell>
                   );
                 })}
-
-                {isHoveredRow && (
-                  <td className="actions-container">
-                    {typeof row?.actions === "function" && row?.actions(row)}
-                  </td>
-                )}
               </tr>
             );
           })}

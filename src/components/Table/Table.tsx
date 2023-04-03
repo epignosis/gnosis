@@ -1,10 +1,11 @@
 import React, { FC, HTMLAttributes, useEffect, useReducer } from "react";
-import { Dispatch, reducer } from "../../types/reducer";
+import { Dispatch, reducer } from "./reducer";
 import { tableContainer } from "./styles";
-import Body from "./Body";
-import Header from "./Header";
+import Body from "./components/Body";
+import Header from "./components/Header";
+import { Actions } from "./constants";
+import { Column, EmptyState, Row, Sorting, TableState } from "./types";
 import { ExtendableProps } from "types/utils";
-import { Column, EmptyState, Row, Sorting, TableState } from "types/types";
 
 export type ChildrenProps = { state: TableState; dispatch: Dispatch };
 
@@ -56,11 +57,11 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
   });
 
   useEffect(() => {
-    dispatch({ type: "COLUMNS_CHANGED", payload: columns });
+    dispatch({ type: Actions.columnsChanged, payload: columns });
   }, [columns]);
 
   useEffect(() => {
-    dispatch({ type: "ROWS_CHANGED", payload: rows });
+    dispatch({ type: Actions.rowsChanged, payload: rows });
   }, [rows]);
 
   return (

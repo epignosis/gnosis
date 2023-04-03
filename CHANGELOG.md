@@ -1,3 +1,10 @@
+# [3.4.0](https://github.com/epignosis/gnosis/compare/v3.3.3...v3.4.0) (2023-04-03)
+
+
+### Features
+
+* introducing table component in gnosis ([#143](https://github.com/epignosis/gnosis/issues/143)) ([d3625eb](https://github.com/epignosis/gnosis/commit/d3625eb4cfd246b2a239b77723ddae4c2c639081))
+
 ## [3.3.3](https://github.com/epignosis/gnosis/compare/v3.3.2...v3.3.3) (2023-03-16)
 
 ## [3.3.2](https://github.com/epignosis/gnosis/compare/v3.3.1...v3.3.2) (2023-03-14)

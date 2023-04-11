@@ -149,7 +149,7 @@ const linkButton = (button: Theme["button"], color: Color): SerializedStyles => 
   border: none;
 
   &:hover {
-    color: ${button[color].link.hoverColor};
+    color: ${button[color].link["hoverColor"]};
   }
 `;
 

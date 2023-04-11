@@ -3,8 +3,6 @@ import Color from "color";
 //updating color pallette
 export const THEME_COLOURS = {
   primary: "#1B68B3",
-  primaryAccent: "#0F6CE5",
-  turquoise: "#2CD1F8",
   orange: "#FF9C28",
   red: "#F20000",
   green: "#41BD54",
@@ -32,8 +30,6 @@ export const palletGenerator = (base: string): ThemeColors => ({
 
 export const colors = {
   primary: palletGenerator(THEME_COLOURS.primary),
-  primaryAccent: palletGenerator(THEME_COLOURS.primaryAccent),
-  turquoise: palletGenerator(THEME_COLOURS.turquoise),
   orange: palletGenerator(THEME_COLOURS.orange),
   red: palletGenerator(THEME_COLOURS.red),
   green: palletGenerator(THEME_COLOURS.green),

@@ -3,11 +3,11 @@ import { colors } from "../colors";
 
 export default {
   background: colors.white,
-  shadow: colors.gray.lightest,
+  shadow: colors.gray.lighter,
   hover: {
-    background: Color(colors.primaryAccent.darkest).alpha(0.6).string(),
+    background: Color(colors.primary.darker).alpha(0.5).string(),
   },
   overlay: {
-    background: Color(colors.primaryAccent.darkest).alpha(0.6).string(),
+    background: Color(colors.primary.darker).alpha(0.5).string(),
   },
 };

@@ -1,7 +1,7 @@
 import { colors } from "../colors";
 
 export default {
-  iconHover: colors.primary.base,
+  iconHover: colors.gray.base,
   color: colors.black,
-  border: colors.grayBlue.light,
+  border: colors.gray.lighter,
 };

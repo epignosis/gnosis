@@ -18,9 +18,7 @@ export type ThemeColors = {
   lighter: string;
   lightest: string;
   light: string;
-  dark: string;
   darker: string;
-  darkest: string;
 };
 
 export const palletGenerator = (base: string): ThemeColors => ({
@@ -28,9 +26,7 @@ export const palletGenerator = (base: string): ThemeColors => ({
   lightest: Color(base).lighten(0.7).hex(),
   lighter: Color(base).lighten(0.5).hex(),
   light: Color(base).lighten(0.2).hex(),
-  dark: Color(base).darken(0.2).hex(),
   darker: Color(base).darken(0.4).hex(),
-  darkest: Color(base).darken(0.6).hex(),
 });
 
 export const colors = {

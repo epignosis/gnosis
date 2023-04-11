@@ -1,6 +1,7 @@
+import Color from "color";
 import { colors } from "../colors";
 
 export default {
   color: colors.primary.base,
-  background: colors.primary.lightest,
+  background: Color(colors.primary.lightest).alpha(0.25).string(),
 };

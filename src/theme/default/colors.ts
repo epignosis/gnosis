@@ -1,5 +1,6 @@
 import Color from "color";
 
+//updating color pallette
 export const THEME_COLOURS = {
   primary: "#1B68B3",
   primaryAccent: "#0F6CE5",

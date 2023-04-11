@@ -10,7 +10,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
       class="nav-wrapper"
     >
       <nav
-        class="css-1hw6g2u-tabsHeader-tabsHeader"
+        class="css-hzqvm9-tabsHeader-tabsHeader"
         role="tablist"
       >
         <a
@@ -67,7 +67,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
       class="nav-wrapper"
     >
       <nav
-        class="css-q855fv-tabsHeader-tabsHeader"
+        class="css-eh83f-tabsHeader-tabsHeader"
         role="tablist"
       >
         <a

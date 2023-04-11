@@ -3,7 +3,7 @@
 exports[`<Card/> matches snapshot 1`] = `
 <div>
   <article
-    class="main-card css-1fot4qc-cardContainer-cardContainer"
+    class="main-card css-15e5qlf-cardContainer-cardContainer"
     data-testid="card"
     id="my-card"
   >
@@ -41,7 +41,7 @@ exports[`<Card/> matches snapshot 1`] = `
 exports[`<Card/> matches snapshot with drawer 1`] = `
 <div>
   <article
-    class="css-1fot4qc-cardContainer-cardContainer"
+    class="css-15e5qlf-cardContainer-cardContainer"
     data-testid="card"
   >
     <section
@@ -79,7 +79,7 @@ exports[`<Card/> matches snapshot with drawer 1`] = `
 exports[`<Card/> matches snapshot with hover 1`] = `
 <div>
   <article
-    class="css-1fot4qc-cardContainer-cardContainer"
+    class="css-15e5qlf-cardContainer-cardContainer"
     data-testid="card"
   >
     <div
@@ -97,7 +97,7 @@ exports[`<Card/> matches snapshot with hover 1`] = `
             src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
           />
           <div
-            class="css-139httr-hoverContainer-hoverContainer"
+            class="css-179biop-hoverContainer-hoverContainer"
             data-testid="card-hover"
             style="opacity: 0;"
           >
@@ -118,11 +118,11 @@ exports[`<Card/> matches snapshot with hover 1`] = `
 exports[`<Card/> matches snapshot with overlay 1`] = `
 <div>
   <article
-    class="css-1fot4qc-cardContainer-cardContainer"
+    class="css-15e5qlf-cardContainer-cardContainer"
     data-testid="card"
   >
     <div
-      class="css-17qhxzx-overlayContainer-overlayContainer"
+      class="css-1jazjqf-overlayContainer-overlayContainer"
     >
       Hello Overlay
     </div>
@@ -150,7 +150,7 @@ exports[`<Card/> matches snapshot with overlay 1`] = `
 exports[`<Card/> matches snapshot with transparent hover 1`] = `
 <div>
   <article
-    class="css-1fot4qc-cardContainer-cardContainer"
+    class="css-15e5qlf-cardContainer-cardContainer"
     data-testid="card"
   >
     <div

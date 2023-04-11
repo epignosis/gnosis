@@ -19,7 +19,7 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
     style="opacity: 0; transform: none;"
   >
     <header
-      class="css-koaq72-drawerHeader-drawerHeader"
+      class="css-1rd8y9t-drawerHeader-drawerHeader"
       data-testid="drawer-header"
       id="drawer-title"
     >
@@ -61,7 +61,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
     style="opacity: 0; transform: none;"
   >
     <header
-      class="css-koaq72-drawerHeader-drawerHeader"
+      class="css-1rd8y9t-drawerHeader-drawerHeader"
       data-testid="drawer-header"
       id="drawer-title"
     >
@@ -105,7 +105,7 @@ exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
     style="opacity: 0; transform: none;"
   >
     <header
-      class="css-telr36-drawerHeader-drawerHeader"
+      class="css-12d8aar-drawerHeader-drawerHeader"
       data-testid="drawer-header"
       id="drawer-title"
     >
@@ -138,7 +138,7 @@ exports[`<Drawer/> matches snapshot with right placement 1`] = `
     style="opacity: 0; transform: translateX(100%) translateZ(0);"
   >
     <header
-      class="css-koaq72-drawerHeader-drawerHeader"
+      class="css-1rd8y9t-drawerHeader-drawerHeader"
       data-testid="drawer-header"
       id="drawer-title"
     >

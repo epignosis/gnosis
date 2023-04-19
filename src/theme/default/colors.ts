@@ -1,6 +1,5 @@
 import Color from "color";
 
-//updating color pallette
 export const THEME_COLOURS = {
   primary: "#1B68B3",
   orange: "#FF9C28",

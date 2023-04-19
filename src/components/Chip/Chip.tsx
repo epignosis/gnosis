@@ -11,16 +11,10 @@ export type ChipProps = React.HTMLAttributes<HTMLDivElement> & {
   children: string;
 };
 
-const Chip: FC<ChipProps> = ({
-  size = "md",
-  onClose,
-  children,
-  style = { backgroundColor: "#5c5c5c", color: "#fff" },
-  ...rest
-}) => (
+const Chip: FC<ChipProps> = ({ size = "md", onClose, children, style, ...rest }) => (
   <div css={(theme): SerializedStyles => chip(theme, { size })} style={style} {...rest}>
     {onClose && (
-      <button onClick={onClose} aria-label={`Remove ${children}`} style={{ color: style.color }}>
+      <button onClick={onClose} aria-label={`Remove ${children}`}>
         <CloseSVG height={16} />
       </button>
     )}

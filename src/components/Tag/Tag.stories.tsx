@@ -10,6 +10,5 @@ export default {
 export const Default: Story<TagProps> = (args) => <Tag {...args} />;
 
 Default.args = {
-  style: { backgroundColor: "purple", color: "white" },
   children: "This is a tag",
 };

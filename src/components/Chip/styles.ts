@@ -6,7 +6,10 @@ const chipHeight = {
   lg: "3rem",
 };
 
-export const chip = ({ typeScaleSizes }: Theme, { size }: { size: Size }): SerializedStyles => {
+export const chip = (
+  { typeScaleSizes, chip }: Theme,
+  { size }: { size: Size },
+): SerializedStyles => {
   const fontSizes = {
     md: typeScaleSizes.sm,
     lg: typeScaleSizes.lg,
@@ -23,8 +26,8 @@ export const chip = ({ typeScaleSizes }: Theme, { size }: { size: Size }): Seria
     button {
       margin-inline-end: 0.5rem;
       display: inline-flex;
-      color: white;
-      background: transparent;
+      color: ${chip.color};
+      background: ${chip.backgroundColor};
       border: none;
       padding: 0;
     }

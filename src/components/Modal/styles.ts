@@ -1,6 +1,7 @@
 import { css, Theme, SerializedStyles } from "@emotion/react";
 import { Size } from "./Modal";
 import { mq } from "@theme/utils/breakpoints";
+import { modal } from "@theme/default/config";
 
 const widthDimensions = {
   md: "32rem",
@@ -66,7 +67,7 @@ export const portalStyles = (size: Size): SerializedStyles => {
     }
 
     .content-after {
-      background-color: #fff;
+      background-color: ${modal.content};
       height: 100%;
       width: 100%;
       border-radius: 0;

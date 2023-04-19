@@ -5,4 +5,5 @@ export default {
     base: colors.black,
     hover: colors.secondary.base,
   },
+  dialog: colors.white,
 };

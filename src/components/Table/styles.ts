@@ -14,7 +14,7 @@ export const tableContainer = ({ table }: Theme) => css`
     max-width: 100%;
 
     thead {
-      border-bottom: 1px solid ${hexToRGBA(colors.gray.lightest.toString(), 0.4)};
+      border-bottom: 1px solid ${hexToRGBA(colors.secondary.lightest.toString(), 0.4)};
       background-color: ${table.rowBackgroundColor};
 
       tr {

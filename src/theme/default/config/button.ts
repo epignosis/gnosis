@@ -3,9 +3,9 @@ import { colors } from "../colors";
 
 export default {
   disabled: {
-    background: colors.gray.lighter,
-    color: colors.gray.base,
-    borderColor: colors.gray.base,
+    background: colors.secondary.lighter,
+    color: colors.secondary.base,
+    borderColor: colors.secondary.base,
   },
   primary: {
     default: {
@@ -38,31 +38,31 @@ export default {
   },
   secondary: {
     default: {
-      background: colors.gray.lighter,
-      borderColor: colors.gray.lighter,
+      background: colors.secondary.lighter,
+      borderColor: colors.secondary.lighter,
       color: colors.black,
     },
     hover: {
-      background: colors.gray.base,
-      borderColor: colors.gray.base,
+      background: colors.secondary.base,
+      borderColor: colors.secondary.base,
       color: colors.black,
     },
     active: {
-      background: colors.gray.lighter,
-      borderColor: colors.gray.lighter,
+      background: colors.secondary.lighter,
+      borderColor: colors.secondary.lighter,
       color: colors.black,
     },
     ghost: {
       color: colors.black,
-      background: colors.gray.lighter,
+      background: colors.secondary.lighter,
     },
     outline: {
-      color: colors.gray.base,
-      borderColor: colors.gray.base,
+      color: colors.secondary.base,
+      borderColor: colors.secondary.base,
     },
     link: {
       color: colors.black,
-      hoverColor: colors.gray.lighter,
+      hoverColor: colors.secondary.lighter,
     },
   },
   danger: {

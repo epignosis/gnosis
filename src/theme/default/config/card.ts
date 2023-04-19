@@ -3,7 +3,7 @@ import { colors } from "../colors";
 
 export default {
   background: colors.white,
-  shadow: colors.gray.lighter,
+  shadow: colors.secondary.lighter,
   hover: {
     background: Color(colors.primary.darker).alpha(0.5).string(),
   },

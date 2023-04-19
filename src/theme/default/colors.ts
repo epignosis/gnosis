@@ -2,11 +2,10 @@ import Color from "color";
 
 export const THEME_COLOURS = {
   primary: "#1B68B3",
+  secondary: "#9EA5A9",
+  green: "#3CB744",
   orange: "#FF9C28",
-  red: "#F20000",
-  green: "#41BD54",
-  gray: "#6E6E6E",
-  grayBlue: "#9EA5A9",
+  red: "#D12525",
   black: "#232323",
   white: "#FFFFFF",
 };
@@ -16,7 +15,9 @@ export type ThemeColors = {
   lighter: string;
   lightest: string;
   light: string;
+  dark: string;
   darker: string;
+  darkest: string;
 };
 
 export const palletGenerator = (base: string): ThemeColors => ({
@@ -24,16 +25,17 @@ export const palletGenerator = (base: string): ThemeColors => ({
   lightest: Color(base).lighten(0.7).hex(),
   lighter: Color(base).lighten(0.5).hex(),
   light: Color(base).lighten(0.2).hex(),
+  dark: Color(base).darken(0.2).hex(),
   darker: Color(base).darken(0.4).hex(),
+  darkest: Color(base).darken(0.6).hex(),
 });
 
 export const colors = {
   primary: palletGenerator(THEME_COLOURS.primary),
+  secondary: palletGenerator(THEME_COLOURS.secondary),
+  green: palletGenerator(THEME_COLOURS.green),
   orange: palletGenerator(THEME_COLOURS.orange),
   red: palletGenerator(THEME_COLOURS.red),
-  green: palletGenerator(THEME_COLOURS.green),
-  gray: palletGenerator(THEME_COLOURS.gray),
-  grayBlue: palletGenerator(THEME_COLOURS.grayBlue),
   black: THEME_COLOURS.black,
   white: THEME_COLOURS.white,
 };

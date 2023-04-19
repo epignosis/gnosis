@@ -4,7 +4,7 @@ exports[`<Breadcrumb> and <Breadcrumb.Item> matches snapshot 1`] = `
 <div>
   <nav
     aria-label="breadcrumbs"
-    class="navigation css-t0d1y8-container-container"
+    class="navigation css-1uic99l-container-container"
     id="main-nav"
   >
     <ol>
@@ -39,7 +39,7 @@ exports[`<Breadcrumb> and <Breadcrumb.Item> matches snapshot 1`] = `
 exports[`<Breadcrumb> and <Breadcrumb.Item> renders correctly in portal 1`] = `
 <nav
   aria-label="breadcrumbs"
-  class="css-t0d1y8-container-container"
+  class="css-1uic99l-container-container"
 >
   <ol>
     <li

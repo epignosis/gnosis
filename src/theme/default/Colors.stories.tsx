@@ -62,7 +62,9 @@ const Pallette: FC<{ color: string; name: string }> = ({ color, name }) => {
           <ColorItem color={colors.lighter} />
           <ColorItem color={colors.light} />
           <ColorItem color={colors.base} />
+          <ColorItem text="white" color={colors.dark} />
           <ColorItem text="white" color={colors.darker} />
+          <ColorItem text="white" color={colors.darkest} />
         </>
       )}
     </div>

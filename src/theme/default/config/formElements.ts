@@ -8,25 +8,25 @@ export default {
   input: {
     placeholderColor: colors.black,
     borderHoverColor: colors.primary.light,
-    inputBorderColor: colors.gray.lighter,
-    background: colors.gray.lighter,
+    inputBorderColor: colors.secondary.lighter,
+    background: colors.secondary.lighter,
     backgroundFocus: colors.white,
     iconColor: colors.black,
     hoverColor: colors.black,
-    disabledBackground: colors.gray.lighter,
-    disabledBorder: colors.gray.base,
-    disabledIcon: colors.gray.base,
+    disabledBackground: colors.secondary.lighter,
+    disabledBorder: colors.secondary.base,
+    disabledIcon: colors.secondary.base,
     borderFocus: colors.primary.base,
   },
   radioButtonGroup: {
-    normalBackground: colors.gray.lighter,
+    normalBackground: colors.secondary.lighter,
     normalFontColor: colors.black,
     selectedBackground: colors.primary.base,
     selectedFontColor: colors.white,
-    borderColor: colors.gray.base,
+    borderColor: colors.secondary.base,
   },
   multiSelect: {
-    hover: colors.gray.lighter,
+    hover: colors.secondary.lighter,
   },
   checkbox: {
     input: {

@@ -3,7 +3,7 @@
 exports[`<Result/> matches snapshot 1`] = `
 <div>
   <article
-    class="my result css-1mw2snl-container-container"
+    class="my result css-vspyzv-container-container"
     data-testid="empty-state-container"
     id="my-id"
   >

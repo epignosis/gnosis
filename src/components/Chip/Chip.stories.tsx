@@ -1,5 +1,4 @@
 import React from "react";
-import Color from "color";
 import { Story } from "@storybook/react";
 import Chip, { ChipProps } from "./Chip";
 import { colors } from "@theme/default/colors";

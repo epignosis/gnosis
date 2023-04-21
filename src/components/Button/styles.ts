@@ -1,6 +1,5 @@
 import { css, Theme, SerializedStyles } from "@emotion/react";
 import { Color, Size } from "./Button";
-import { hexToRGBA } from "@theme/default/colors";
 
 type ButtonAttrs = {
   color: Color;

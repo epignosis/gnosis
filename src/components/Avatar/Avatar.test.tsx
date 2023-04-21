@@ -3,7 +3,6 @@ import { faker } from "@faker-js/faker";
 import { CertificateSVG } from "../../icons/";
 import Avatar from "./Avatar";
 import { render, screen } from "@test-utils/render";
-import { colors } from "@theme/default/colors";
 
 describe("<Avatar />", () => {
   it("renders with image", () => {
@@ -55,7 +54,7 @@ describe("<Avatar />", () => {
 
   it("matches children avatar snapshot", () => {
     const { container } = render(
-      <Avatar id="my-id" className="my-avatar" size="lg" bgColor={`${colors.secondary.lightest}`}>
+      <Avatar id="my-id" className="my-avatar" size="lg">
         AB
       </Avatar>,
     );

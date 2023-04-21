@@ -43,7 +43,7 @@ export const IconAvatar = Template.bind({});
 
 IconAvatar.args = {
   children: <CertificateSVG />,
-  bgColor: `${colors.primary.base}`,
+  bgColor: colors.primary.base,
 };
 
 IconAvatar.argTypes = {
@@ -59,7 +59,6 @@ export const StringAvatar = Template.bind({});
 
 StringAvatar.args = {
   children: "JT",
-  bgColor: `${colors.orange.base}`,
 };
 
 StringAvatar.argTypes = {

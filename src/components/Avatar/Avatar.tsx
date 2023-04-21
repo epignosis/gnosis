@@ -27,7 +27,7 @@ export type AvatarProps =
 const Avatar: FC<AvatarBaseProps & AvatarProps> = ({
   src,
   size = "sm",
-  bgColor = `${colors.orange.base}`,
+  bgColor = colors.orange.base,
   alt,
   children,
   ...rest

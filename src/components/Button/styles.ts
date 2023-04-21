@@ -139,7 +139,7 @@ const ghostButton = (button: Theme["button"], color: Color): SerializedStyles =>
 
   &:hover {
     color: ${button[color].ghost.color};
-    background-color: ${hexToRGBA(button[color].ghost.background, 0.16)};
+    background-color: ${button[color].ghost.background};
   }
 `;
 
@@ -149,7 +149,7 @@ const linkButton = (button: Theme["button"], color: Color): SerializedStyles => 
   border: none;
 
   &:hover {
-    color: ${button[color].link["hoverColor"]};
+    color: ${button[color].link.hoverColor};
   }
 `;
 

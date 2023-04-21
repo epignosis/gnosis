@@ -33,7 +33,7 @@ export default {
     },
     link: {
       color: colors.primary.base,
-      hoverColor: Color(colors.primary.lightest).alpha(0.25).string(),
+      hoverColor: colors.primary.lighter,
     },
   },
   secondary: {
@@ -62,7 +62,7 @@ export default {
     },
     link: {
       color: colors.black,
-      hoverColor: colors.secondary.lighter,
+      hoverColor: colors.secondary.base,
     },
   },
   danger: {
@@ -91,7 +91,7 @@ export default {
     },
     link: {
       color: colors.red.base,
-      background: Color(colors.red.light).alpha(0.15).string(),
+      hoverColor: colors.red.lighter,
     },
   },
   success: {
@@ -120,7 +120,7 @@ export default {
     },
     link: {
       color: colors.green.base,
-      hoverColor: Color(colors.green.light).alpha(0.15).string(),
+      hoverColor: colors.green.lighter,
     },
   },
 };

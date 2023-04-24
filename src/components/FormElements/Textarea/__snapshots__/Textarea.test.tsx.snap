@@ -3,7 +3,7 @@
 exports[`<Textarea /> matches snapshot 1`] = `
 <div>
   <div
-    class="valid textarea-container-class css-q460wb-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-textareaContainer-textareaContainer"
+    class="valid textarea-container-class css-vbl94w-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-textareaContainer-textareaContainer"
     id="textarea-container-id"
   >
     <label

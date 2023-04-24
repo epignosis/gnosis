@@ -16,3 +16,4 @@ export { default as table } from "./table";
 export { default as tag } from "./tag";
 export { default as tooltip } from "./tooltip";
 export { default as pagination } from "./pagination";
+export { default as statistics } from "./statistics";

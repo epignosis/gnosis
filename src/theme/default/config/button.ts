@@ -1,4 +1,3 @@
-import Color from "color";
 import { colors } from "../colors";
 
 export default {
@@ -25,7 +24,7 @@ export default {
     },
     ghost: {
       color: colors.primary.base,
-      background: Color(colors.primary.lightest).alpha(0.25).string(),
+      background: colors.primary.lightest,
     },
     outline: {
       color: colors.primary.base,
@@ -33,7 +32,7 @@ export default {
     },
     link: {
       color: colors.primary.base,
-      hoverColor: colors.primary.lighter,
+      hoverColor: colors.primary.lightest,
     },
   },
   secondary: {
@@ -54,7 +53,7 @@ export default {
     },
     ghost: {
       color: colors.black,
-      background: colors.secondary.lighter,
+      background: colors.secondary.light,
     },
     outline: {
       color: colors.secondary.base,
@@ -83,7 +82,7 @@ export default {
     },
     ghost: {
       color: colors.red.base,
-      background: Color(colors.red.light).alpha(0.15).string(),
+      background: colors.red.lightest,
     },
     outline: {
       color: colors.red.base,
@@ -91,7 +90,7 @@ export default {
     },
     link: {
       color: colors.red.base,
-      hoverColor: colors.red.lighter,
+      hoverColor: colors.red.lightest,
     },
   },
   success: {
@@ -112,7 +111,7 @@ export default {
     },
     ghost: {
       color: colors.green.base,
-      background: Color(colors.green.light).alpha(0.15).string(),
+      background: colors.green.lightest,
     },
     outline: {
       color: colors.green.base,
@@ -120,7 +119,7 @@ export default {
     },
     link: {
       color: colors.green.base,
-      hoverColor: colors.green.lighter,
+      hoverColor: colors.green.lightest,
     },
   },
 };

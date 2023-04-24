@@ -1,6 +1,5 @@
 import { css, Theme, SerializedStyles } from "@emotion/react";
 import { AlertType } from "./Alert";
-import { hexToRGBA } from "@theme/default/colors";
 import { mq } from "@theme/utils/breakpoints";
 
 export const container = ({ alert }: Theme, { type }: { type: AlertType }): SerializedStyles => {
@@ -29,7 +28,7 @@ export const container = ({ alert }: Theme, { type }: { type: AlertType }): Seri
       height: 100%;
       inset-inline-end: 0.5rem;
       cursor: pointer;
-      color: ${hexToRGBA(alert.closeBtnColor, 0.25)};
+      color: ${alert.closeBtnColor};
       background: transparent;
       padding: 0;
       border: 0;

@@ -87,12 +87,16 @@ export const checkboxContainer = (
         + label {
           cursor: not-allowed;
 
+          &::before {
+            border: 1px solid ${formElements.checkbox.disabled.borderColor};
+          }
+
           .shadow-element {
             box-shadow: none;
           }
 
           &::after {
-            background-color: ${formElements.checkbox.input.borderColor};
+            background-color: ${formElements.checkbox.disabled.borderColor};
           }
         }
       }

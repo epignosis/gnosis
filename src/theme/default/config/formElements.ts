@@ -12,7 +12,7 @@ export default {
     background: colors.secondary.lighter,
     backgroundFocus: colors.white,
     iconColor: colors.black,
-    hoverColor: colors.black,
+    hoverColor: colors.secondary.lighter,
     disabledBackground: colors.secondary.lighter,
     disabledBorder: colors.secondary.base,
     disabledIcon: colors.secondary.base,
@@ -33,6 +33,9 @@ export default {
       background: colors.primary.base,
       borderColor: colors.black,
       shadowColor: Color(colors.primary.lightest).alpha(0.25).string(),
+    },
+    disabled: {
+      borderColor: colors.secondary.base,
     },
   },
   generalError: {

@@ -43,11 +43,12 @@ export const radioButtonContainer = (
           cursor: not-allowed;
 
           &::before {
+            border: 1px solid ${checkbox.disabled.borderColor};
             box-shadow: none;
           }
 
           &::after {
-            background-color: ${checkbox.input.borderColor};
+            background-color: ${checkbox.disabled.borderColor};
           }
         }
       }

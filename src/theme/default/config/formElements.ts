@@ -23,7 +23,7 @@ export default {
     normalFontColor: colors.black,
     selectedBackground: colors.primary.base,
     selectedFontColor: colors.white,
-    borderColor: colors.secondary.base,
+    borderColor: Color(colors.secondary.light).alpha(0.5).string(),
   },
   multiSelect: {
     hover: colors.secondary.lighter,

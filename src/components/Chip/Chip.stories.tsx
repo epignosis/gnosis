@@ -17,13 +17,22 @@ export default {
   },
 };
 
-export const Default: Story<ChipProps> = (args) => <Chip {...args} />;
+const Template: Story<ChipProps> = (args) => <Chip {...args} />;
+
+export const Default = Template.bind({});
 
 Default.args = {
   size: "md",
+  children: "This is a default chip",
+};
+
+export const Custom = Template.bind({});
+
+Custom.args = {
+  size: "md",
+  children: "This is a custom chip",
   style: {
-    backgroundColor: `${colors.primary.lightest}`,
-    color: `${colors.white}`,
+    backgroundColor: colors.red.base,
+    color: colors.black,
   },
-  children: "This is a chip",
 };

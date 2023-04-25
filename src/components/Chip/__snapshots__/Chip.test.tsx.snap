@@ -3,12 +3,13 @@
 exports[`<Chip /> matches snapshot 1`] = `
 <div>
   <div
-    class="my-class css-15z8st3-chip-chip"
+    class="my-class css-yo4dzn-chip-chip"
     id="my-id"
     style="background-color: purple; color: white;"
   >
     <button
       aria-label="Remove This is a chip"
+      style="color: white;"
     >
       <svg-file-stub
         height="16"

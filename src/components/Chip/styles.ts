@@ -22,12 +22,14 @@ export const chip = (
     ${size && `height: ${chipHeight[size]}`};
     padding: 0 0.75rem;
     border-radius: 5px;
+    color: ${chip.color};
+    background-color: ${chip.backgroundColor};
 
     button {
       margin-inline-end: 0.5rem;
       display: inline-flex;
       color: ${chip.color};
-      background: ${chip.backgroundColor};
+      background: transparent;
       border: none;
       padding: 0;
     }

@@ -59,7 +59,7 @@ export const checkboxContainer = (
       inset-inline-start: 7px;
       width: 8px;
       height: 2px;
-      background-color: white;
+      background-color: ${formElements.checkbox.partiallySelected};
       z-index: 3;
       top: 50%;
       transform: translateY(-50%);

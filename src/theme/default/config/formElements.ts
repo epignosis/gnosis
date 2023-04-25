@@ -29,6 +29,7 @@ export default {
     hover: colors.secondary.lighter,
   },
   checkbox: {
+    partiallySelected: colors.white,
     input: {
       background: colors.primary.base,
       borderColor: colors.black,

@@ -55,6 +55,12 @@ export const inputContainer = (
     input {
       ${inputBaseStyles(formElements, { block: true, size })};
       background-color: transparent;
+
+      &:disabled {
+        &::placeholder {
+          color: ${formElements.input.disabledIcon};
+        }
+      }
     }
 
     .prefix-icon,

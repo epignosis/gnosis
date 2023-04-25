@@ -1,6 +1,6 @@
 {
   "name": "@epignosis_llc/gnosis",
-  "version": "3.4.0",
+  "version": "3.4.2",
   "description": "Epignosis official react design system.",
   "homepage": "https://github.com/epignosis/gnosis",
   "main": "dist/cjs/index.js",
@@ -101,7 +101,6 @@
     "color": "^4.2.3",
     "deepmerge": "^4.2.2",
     "framer-motion": "^6.5.1",
-    "modern-normalize": "^1.1.0",
     "react-modal": "^3.16.1",
     "react-player": "^2.11.0",
     "react-spinners": "^0.13.6",

@@ -27,12 +27,6 @@ export const selectContainer = (
     -webkit-appearance: none;
     appearance: none;
 
-    &:disabled {
-      &::placeholder {
-        color: ${formElements.input.disabledIcon};
-      }
-    }
-
     &,
     &:hover,
     &:focus {

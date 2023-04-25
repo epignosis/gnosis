@@ -23,11 +23,5 @@ export const textareaContainer = (
     min-height: 10rem;
     padding: 0.75rem;
     resize: ${resize};
-
-    &:disabled {
-      &::placeholder {
-        color: ${formElements.input.disabledIcon};
-      }
-    }
   }
 `;

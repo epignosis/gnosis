@@ -71,6 +71,11 @@ export const inputBaseStyles = (
       cursor: not-allowed;
       background-color: ${formElements.input.disabledBackground};
       border-color: ${formElements.input.disabledBorder};
+      color: ${formElements.input.disabledColor};
+    }
+
+    &::placeholder {
+      color: ${formElements.input.disabledColor};
     }
   }
 

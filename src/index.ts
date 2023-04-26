@@ -41,3 +41,4 @@ export { default as Textarea } from "./components/FormElements/Textarea/Textarea
 
 // Types
 export type { Props as TableProps } from "./components/Table/Table";
+export type { Column, Row } from "./components/Table/types";

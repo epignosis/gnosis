@@ -14,7 +14,7 @@ const rowClassnames = (isSelected: boolean, callback: boolean): string =>
   });
 
 const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
-  const { selectable, columns, selected, handleRowClick } = state;
+  const { selectable, columns, selected, handleRowClick, handleHoveredRowChange } = state;
   const accessors = columns
     .filter((column) => !column.hidden)
     .map((column) => column.accessor)
@@ -42,7 +42,16 @@ const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
             const rowKey = `${row.id}-${isSelected ? "selected" : "not-selected"}`;
 
             return (
-              <tr key={rowKey} className={rowClassnames(isSelected, Boolean(handleRowClick))}>
+              <tr
+                key={rowKey}
+                className={rowClassnames(isSelected, Boolean(handleRowClick))}
+                onMouseEnter={
+                  handleHoveredRowChange ? (): void => handleHoveredRowChange(row) : undefined
+                }
+                onMouseLeave={
+                  handleHoveredRowChange ? (): void => handleHoveredRowChange(null) : undefined
+                }
+              >
                 {selectable && (
                   <Cell key={row.id} className="selectable-cell">
                     <Checkbox

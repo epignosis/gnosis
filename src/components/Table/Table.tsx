@@ -20,6 +20,7 @@ export type Props = ExtendableProps<
     sorting?: Sorting;
     onSortingChanged?: (sorting: Sorting) => void;
     handleRowClick?: (row: Row) => void;
+    handleHoveredRowChange?: (hoveredRow: Row | null) => void;
   }
 >;
 
@@ -42,8 +43,10 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
     sorting = defaultSorting,
     onSortingChanged,
     handleRowClick,
+    handleHoveredRowChange,
     ...rest
   } = props;
+
   const [state, dispatch] = useReducer(reducer, {
     columns,
     rows,
@@ -54,6 +57,7 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
     sorting,
     onSortingChanged,
     handleRowClick,
+    handleHoveredRowChange,
   });
 
   useEffect(() => {

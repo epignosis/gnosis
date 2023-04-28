@@ -27,8 +27,8 @@ export type TableState = {
   columns: Column[];
   rows: Row[];
   emptyState: EmptyState;
-  selected: Row[];
-  selectable: boolean;
+  selected?: Row[];
+  selectable?: boolean;
   sortable?: boolean;
   sorting?: Sorting;
   onSortingChanged?: (sorting: Sorting) => void;

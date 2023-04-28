@@ -19,17 +19,19 @@ const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
     .filter((column) => !column.hidden)
     .map((column) => column.accessor)
     .filter((column) => column !== "actions");
-  const selectedRows = selected.map((entry) => entry.id);
+  const selectedRows = selected?.map((entry) => entry.id);
 
   const handleRowSelection = (e: React.ChangeEvent<HTMLInputElement>, row: Row): void => {
     e.preventDefault();
 
-    if (!selectedRows.includes(row.id)) {
-      dispatch({ type: Actions.selectRow, payload: row });
-    }
+    if (selectedRows) {
+      if (!selectedRows.includes(row.id)) {
+        dispatch({ type: Actions.selectRow, payload: row });
+      }
 
-    if (selectedRows.includes(row.id)) {
-      dispatch({ type: Actions.removeRow, payload: row });
+      if (selectedRows.includes(row.id)) {
+        dispatch({ type: Actions.removeRow, payload: row });
+      }
     }
   };
 
@@ -42,7 +44,7 @@ const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
       {state.rows.length > 0 ? (
         <>
           {state.rows.map((row) => {
-            const isSelected = selectedRows.includes(row.id);
+            const isSelected = Boolean(selectedRows?.includes(row.id));
             const rowKey = `${row.id}-${isSelected ? "selected" : "not-selected"}`;
 
             return (

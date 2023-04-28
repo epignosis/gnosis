@@ -33,12 +33,8 @@ const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
     }
   };
 
-  const handlRowMouseOver = (row: Row): void => {
-    onHoveredRowChange ? onHoveredRowChange(row) : undefined;
-  };
-
-  const handleRowMouseLeave = (): void => {
-    onHoveredRowChange ? onHoveredRowChange(null) : undefined;
+  const handleRowHover = (row: Row | null): void => {
+    onHoveredRowChange && onHoveredRowChange(row);
   };
 
   return (
@@ -53,8 +49,8 @@ const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
               <tr
                 key={rowKey}
                 className={rowClassnames(isSelected, Boolean(handleRowClick))}
-                onMouseEnter={(): void => handlRowMouseOver(row)}
-                onMouseLeave={handleRowMouseLeave}
+                onMouseEnter={(): void => handleRowHover(row)}
+                onMouseLeave={(): void => handleRowHover(null)}
               >
                 {selectable && (
                   <Cell key={row.id} className="selectable-cell">

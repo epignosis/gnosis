@@ -12,11 +12,11 @@ export const reducer = (state: TableState, action: ActionType): TableState => {
       return { ...state, selected: [] };
     }
     case Actions.selectRow: {
-      return { ...state, selected: [...state.selected, action.payload] };
+      return { ...state, selected: [...(state.selected ?? []), action.payload] };
     }
     case Actions.removeRow: {
       const rowToRemoveId = action.payload.id;
-      const newSelectedRow = state.selected.filter((row) => row?.id !== rowToRemoveId);
+      const newSelectedRow = state.selected?.filter((row) => row?.id !== rowToRemoveId);
 
       return { ...state, selected: newSelectedRow };
     }

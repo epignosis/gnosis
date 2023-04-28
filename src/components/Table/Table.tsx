@@ -4,25 +4,12 @@ import { tableContainer } from "./styles";
 import Body from "./components/Body";
 import Header from "./components/Header";
 import { Actions } from "./constants";
-import { Column, EmptyState, Row, Sorting, TableState } from "./types";
+import { Sorting, TableState } from "./types";
 import { ExtendableProps } from "types/utils";
 
 export type ChildrenProps = { state: TableState; dispatch: Dispatch };
 
-export type Props = ExtendableProps<
-  HTMLAttributes<HTMLTableElement>,
-  {
-    columns: Column[];
-    rows: Row[];
-    emptyState: EmptyState;
-    selectable?: boolean;
-    sortable?: boolean;
-    sorting?: Sorting;
-    onSortingChanged?: (sorting: Sorting) => void;
-    handleRowClick?: (row: Row) => void;
-    handleHoveredRowChange?: (hoveredRow: Row | null) => void;
-  }
->;
+export type Props = ExtendableProps<HTMLAttributes<HTMLTableElement>, TableState>;
 
 type TableCompoundProps = {
   Header: FC<ChildrenProps>;
@@ -43,7 +30,7 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
     sorting = defaultSorting,
     onSortingChanged,
     handleRowClick,
-    handleHoveredRowChange,
+    onHoveredRowChange,
     ...rest
   } = props;
 
@@ -57,7 +44,7 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
     sorting,
     onSortingChanged,
     handleRowClick,
-    handleHoveredRowChange,
+    onHoveredRowChange,
   });
 
   useEffect(() => {

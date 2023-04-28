@@ -33,7 +33,7 @@ export type TableState = {
   sorting?: Sorting;
   onSortingChanged?: (sorting: Sorting) => void;
   handleRowClick?: (row: Row) => void;
-  handleHoveredRowChange?: (hoveredRow: Row | null) => void;
+  onHoveredRowChange?: (hoveredRow: Row | null) => void;
 };
 
 export type ActionType =

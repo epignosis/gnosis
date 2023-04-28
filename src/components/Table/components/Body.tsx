@@ -14,7 +14,7 @@ const rowClassnames = (isSelected: boolean, callback: boolean): string =>
   });
 
 const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
-  const { selectable, columns, selected, handleRowClick, handleHoveredRowChange } = state;
+  const { selectable, columns, selected, handleRowClick, onHoveredRowChange } = state;
   const accessors = columns
     .filter((column) => !column.hidden)
     .map((column) => column.accessor)
@@ -33,6 +33,14 @@ const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
     }
   };
 
+  const handlRowMouseOver = (row: Row): void => {
+    onHoveredRowChange ? onHoveredRowChange(row) : undefined;
+  };
+
+  const handleRowMouseLeave = (): void => {
+    onHoveredRowChange ? onHoveredRowChange(null) : undefined;
+  };
+
   return (
     <tbody>
       {state.rows.length > 0 ? (
@@ -45,12 +53,8 @@ const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
               <tr
                 key={rowKey}
                 className={rowClassnames(isSelected, Boolean(handleRowClick))}
-                onMouseEnter={
-                  handleHoveredRowChange ? (): void => handleHoveredRowChange(row) : undefined
-                }
-                onMouseLeave={
-                  handleHoveredRowChange ? (): void => handleHoveredRowChange(null) : undefined
-                }
+                onMouseEnter={(): void => handlRowMouseOver(row)}
+                onMouseLeave={handleRowMouseLeave}
               >
                 {selectable && (
                   <Cell key={row.id} className="selectable-cell">

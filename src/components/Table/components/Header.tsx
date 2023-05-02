@@ -6,8 +6,14 @@ import { ChildrenProps } from "../Table";
 import { Actions } from "../constants";
 import Cell from "./Cell";
 
-const Header: FC<ChildrenProps> = ({ state, dispatch }) => {
-  const { rows, selectable, columns, selected = [], sortable, sorting } = state;
+const Header: FC<ChildrenProps> = ({
+  selectable = false,
+  sortable = false,
+  state,
+  dispatch,
+  onSortingChanged,
+}) => {
+  const { rows, columns, selected, sorting } = state;
   const selectedIds = selected.map((entry) => entry.id);
   const rowIds = rows.map((row) => row.id);
   const isSelectAllChecked = selected.length > 0;
@@ -29,11 +35,12 @@ const Header: FC<ChildrenProps> = ({ state, dispatch }) => {
       };
 
       // sorting the same column
-      if (sorting?.column === accesor) {
+      if (sorting.column === accesor) {
         !sorting.isDescending ? (newSorting.isDescending = true) : (newSorting.column = "");
       }
 
       dispatch({ type: Actions.sortingChanged, payload: newSorting });
+      onSortingChanged && onSortingChanged(newSorting);
     }
   };
 

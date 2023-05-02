@@ -4,12 +4,11 @@ import { tableContainer } from "./styles";
 import Body from "./components/Body";
 import Header from "./components/Header";
 import { Actions } from "./constants";
-import { Sorting, TableState } from "./types";
+import { Sorting, TableProps, TableState } from "./types";
 import { ExtendableProps } from "types/utils";
 
-export type ChildrenProps = { state: TableState; dispatch: Dispatch };
-
-export type Props = ExtendableProps<HTMLAttributes<HTMLTableElement>, TableState>;
+export type Props = ExtendableProps<HTMLAttributes<HTMLTableElement>, TableProps>;
+export type ChildrenProps = Props & { state: TableState; dispatch: Dispatch };
 
 type TableCompoundProps = {
   Header: FC<ChildrenProps>;
@@ -17,34 +16,19 @@ type TableCompoundProps = {
 };
 
 const Table: FC<Props> & TableCompoundProps = (props) => {
-  const defaultSorting: Sorting = {
-    column: props.sortable ? props.columns[0].accessor : "",
+  const { columns, rows, emptyState, sortable = false, sorting, ...rest } = props;
+
+  const defaultSorting: Sorting = sorting ?? {
+    column: sortable ? columns[0].accessor : "",
     isDescending: false,
   };
-  const {
-    columns,
-    rows,
-    emptyState,
-    selectable = false,
-    sortable = false,
-    sorting = defaultSorting,
-    onSortingChanged,
-    handleRowClick,
-    onHoveredRowChange,
-    ...rest
-  } = props;
 
   const [state, dispatch] = useReducer(reducer, {
     columns,
     rows,
     emptyState,
     selected: [],
-    selectable,
-    sortable,
-    sorting,
-    onSortingChanged,
-    handleRowClick,
-    onHoveredRowChange,
+    sorting: defaultSorting,
   });
 
   useEffect(() => {
@@ -58,8 +42,8 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
   return (
     <div css={tableContainer} data-testid="table">
       <table {...rest}>
-        <Table.Header state={state} dispatch={dispatch} />
-        <Table.Body state={state} dispatch={dispatch} />
+        <Table.Header state={state} dispatch={dispatch} {...props} />
+        <Table.Body state={state} dispatch={dispatch} {...props} />
       </table>
     </div>
   );

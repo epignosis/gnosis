@@ -13,8 +13,14 @@ const rowClassnames = (isSelected: boolean, callback: boolean): string =>
     link: callback,
   });
 
-const Body: FC<ChildrenProps> = ({ state, dispatch }) => {
-  const { selectable, columns, selected = [], handleRowClick, onHoveredRowChange } = state;
+const Body: FC<ChildrenProps> = ({
+  selectable,
+  state,
+  dispatch,
+  handleRowClick,
+  onHoveredRowChange,
+}) => {
+  const { columns, selected } = state;
   const accessors = columns
     .filter((column) => !column.hidden)
     .map((column) => column.accessor)

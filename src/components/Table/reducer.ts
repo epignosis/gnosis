@@ -21,10 +21,6 @@ export const reducer = (state: TableState, action: ActionType): TableState => {
       return { ...state, selected: newSelectedRow };
     }
     case Actions.sortingChanged: {
-      if (state.sorting && state?.onSortingChanged) {
-        state.onSortingChanged(action.payload);
-      }
-
       return { ...state, sorting: action.payload };
     }
     case Actions.columnsChanged: {

@@ -23,17 +23,25 @@ export type Sorting = {
   isDescending: boolean;
 };
 
-export type TableState = {
+export type TableProps = {
   columns: Column[];
   rows: Row[];
   emptyState: EmptyState;
-  selected?: Row[];
   selectable?: boolean;
   sortable?: boolean;
   sorting?: Sorting;
   onSortingChanged?: (sorting: Sorting) => void;
+  //TODO: should be changed to onSelectedRowsChanged that would return the selected rows
   handleRowClick?: (row: Row) => void;
   onHoveredRowChange?: (hoveredRow: Row | null) => void;
+};
+
+export type TableState = {
+  columns: Column[];
+  rows: Row[];
+  emptyState: EmptyState;
+  selected: Row[];
+  sorting: Sorting;
 };
 
 export type ActionType =

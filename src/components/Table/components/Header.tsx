@@ -7,15 +7,15 @@ import { Actions } from "../constants";
 import Cell from "./Cell";
 
 const Header: FC<ChildrenProps> = ({ state, dispatch }) => {
-  const { rows, selectable, columns, selected, sortable, sorting } = state;
-  const selectedIds = selected?.map((entry) => entry.id);
+  const { rows, selectable, columns, selected = [], sortable, sorting } = state;
+  const selectedIds = selected.map((entry) => entry.id);
   const rowIds = rows.map((row) => row.id);
-  const isSelectAllChecked = selected && Boolean(selected.length > 0);
-  const allRowsSelected = rowIds.every((rowId) => selectedIds?.includes(rowId));
+  const isSelectAllChecked = selected.length > 0;
+  const allRowsSelected = rowIds.every((rowId) => selectedIds.includes(rowId));
 
   const handleCheckboxClick = (e: React.ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();
-    selected?.length === 0
+    selected.length === 0
       ? dispatch({ type: Actions.selectAll, payload: null })
       : dispatch({ type: Actions.removeAll, payload: null });
   };

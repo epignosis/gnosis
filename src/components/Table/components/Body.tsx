@@ -21,10 +21,7 @@ const Body: FC<ChildrenProps> = ({
   onHoveredRowChange,
 }) => {
   const { columns, selected } = state;
-  const accessors = columns
-    .filter((column) => !column.hidden)
-    .map((column) => column.accessor)
-    .filter((column) => column !== "actions");
+  const accessors = columns.filter((column) => !column.hidden).map((column) => column.accessor);
   const selectedRows = selected.map((entry) => entry.id);
 
   const handleRowSelection = (e: React.ChangeEvent<HTMLInputElement>, row: Row): void => {

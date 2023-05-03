@@ -14,7 +14,6 @@ export default {
       { accessor: "description", cell: "Description", classNames: ["description"] },
       { accessor: "name", cell: "Name", classNames: ["name"] },
       { accessor: "category", cell: "Category", classNames: ["category"] },
-      { accessor: "actions", cell: "", classNames: ["hidden"] },
     ],
     rows: [
       { id: 271, description: "Test", name: "Test", category: "Test", code: "Test" },

@@ -51,7 +51,7 @@ export const portalStyles = (size: Size, opacity: number): SerializedStyles => {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: rgba(0, 0, 0, ${opacity.toString()});
+      background: rgba(0, 0, 0, ${opacity});
       opacity: 0;
       z-index: 9999;
       transition: opacity 0.2s ease-in-out;

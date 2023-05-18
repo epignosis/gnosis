@@ -51,7 +51,7 @@ export const portalStyles = (size: Size): SerializedStyles => {
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: rgba(0, 0, 0, 0.45);
+      background: rgba(0, 0, 0, 0.7);
       opacity: 0;
       z-index: 9999;
       transition: opacity 0.2s ease-in-out;

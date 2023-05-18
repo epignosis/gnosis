@@ -71,7 +71,6 @@ const Modal: FC<ReactModalProps> & ModalCompoundProps = ({
   isOpen,
   onClose,
   size = "md",
-  opacity = 0.7,
   rootElementSelector = "#app",
   closeOnOutsideClick = true,
   style,
@@ -102,7 +101,7 @@ const Modal: FC<ReactModalProps> & ModalCompoundProps = ({
             beforeClose: "content-before",
           }}
           closeTimeoutMS={200}
-          portalClassName={css(portalStyles(size, opacity))}
+          portalClassName={css(portalStyles(size))}
           ariaHideApp={false}
           shouldCloseOnOverlayClick={closeOnOutsideClick}
           style={style}

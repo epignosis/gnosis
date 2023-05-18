@@ -57,6 +57,8 @@ type ModalCompoundProps = {
 
 export type Size = "md" | "lg" | "fullscreen";
 
+//opacity is set 0.7 default
+
 export type ReactModalProps = Pick<Props, "isOpen"> & {
   onClose?: () => void;
   size?: Size;

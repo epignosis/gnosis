@@ -40,7 +40,7 @@ export const modalFooter = ({ modal }: Theme): SerializedStyles => {
 };
 
 // plain styles as string
-export const portalStyles = (size: Size): SerializedStyles => {
+export const portalStyles = (size: Size, opacity: number): SerializedStyles => {
   return css`
     .overlay-base {
       position: fixed;
@@ -51,7 +51,7 @@ export const portalStyles = (size: Size): SerializedStyles => {
       display: flex;
       justify-content: center;
       align-items: center;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, ${opacity.toString()});
       opacity: 0;
       z-index: 9999;
       transition: opacity 0.2s ease-in-out;

@@ -60,6 +60,7 @@ export type Size = "md" | "lg" | "fullscreen";
 export type ReactModalProps = Pick<Props, "isOpen"> & {
   onClose?: () => void;
   size?: Size;
+  opacity?: number;
   rootElementSelector?: string;
   closeOnOutsideClick?: boolean;
   style?: ReactModal.Styles;
@@ -70,6 +71,7 @@ const Modal: FC<ReactModalProps> & ModalCompoundProps = ({
   isOpen,
   onClose,
   size = "md",
+  opacity = 0.7,
   rootElementSelector = "#app",
   closeOnOutsideClick = true,
   style,
@@ -100,7 +102,7 @@ const Modal: FC<ReactModalProps> & ModalCompoundProps = ({
             beforeClose: "content-before",
           }}
           closeTimeoutMS={200}
-          portalClassName={css(portalStyles(size))}
+          portalClassName={css(portalStyles(size, opacity))}
           ariaHideApp={false}
           shouldCloseOnOverlayClick={closeOnOutsideClick}
           style={style}

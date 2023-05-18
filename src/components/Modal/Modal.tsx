@@ -60,7 +60,6 @@ export type Size = "md" | "lg" | "fullscreen";
 export type ReactModalProps = Pick<Props, "isOpen"> & {
   onClose?: () => void;
   size?: Size;
-  opacity?: number;
   rootElementSelector?: string;
   closeOnOutsideClick?: boolean;
   style?: ReactModal.Styles;

@@ -13,7 +13,7 @@ export const tableContainer = ({ table }: Theme) => css`
     max-width: 100%;
 
     thead {
-      border-bottom: 1px solid ${table.headerBorderColor};
+      border-bottom: 1px solid ${table.borderBottomColor};
       background-color: ${table.rowBackgroundColor};
 
       tr {
@@ -116,7 +116,7 @@ export const tableContainer = ({ table }: Theme) => css`
       width: 1.5rem;
 
       div {
-        margin-bottom: 0.25rem;
+        padding-block: 0;
 
         label {
           padding-inline-start: 0.5rem;

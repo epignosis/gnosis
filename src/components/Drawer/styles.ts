@@ -1,6 +1,6 @@
-import { css, SerializedStyles } from "@emotion/react";
+import { css, SerializedStyles, Theme } from "@emotion/react";
 
-export const drawerContainer = (width: string): SerializedStyles => {
+export const drawerContainer = ({ drawer }: Theme, width: string): SerializedStyles => {
   return css`
     position: fixed;
     top: 0;
@@ -16,7 +16,7 @@ export const drawerContainer = (width: string): SerializedStyles => {
       max-width: ${width};
       display: flex;
       flex-direction: column;
-      background-color: #ffffff;
+      background-color: ${drawer.dialog};
       padding: 0;
       border: 0;
 

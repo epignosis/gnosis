@@ -1,7 +1,7 @@
 import { colors } from "../colors";
 
 export default {
-  background: colors.black,
-  color: colors.white,
+  background: colors.white,
+  color: colors.black,
   border: colors.black,
 };

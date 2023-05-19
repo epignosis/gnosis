@@ -1,6 +1,7 @@
 import React from "react";
 import { Story } from "@storybook/react";
 import Chip, { ChipProps } from "./Chip";
+import { colors } from "@theme/default/colors";
 
 export default {
   component: Chip,
@@ -16,10 +17,22 @@ export default {
   },
 };
 
-export const Default: Story<ChipProps> = (args) => <Chip {...args} />;
+const Template: Story<ChipProps> = (args) => <Chip {...args} />;
+
+export const Default = Template.bind({});
 
 Default.args = {
   size: "md",
-  style: { backgroundColor: "#5c5c5c", color: "#fff" },
-  children: "This is a chip",
+  children: "This is a default chip",
+};
+
+export const Custom = Template.bind({});
+
+Custom.args = {
+  size: "md",
+  children: "This is a custom chip",
+  style: {
+    backgroundColor: colors.red.base,
+    color: colors.black,
+  },
 };

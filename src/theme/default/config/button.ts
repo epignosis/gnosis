@@ -2,9 +2,9 @@ import { colors } from "../colors";
 
 export default {
   disabled: {
-    background: "#EEEEEE",
-    color: "#B9B9B9",
-    borderColor: "#DBDBDB",
+    background: colors.secondary.lighter,
+    color: colors.secondary.base,
+    borderColor: colors.secondary.base,
   },
   primary: {
     default: {
@@ -13,13 +13,13 @@ export default {
       color: colors.white,
     },
     hover: {
-      background: colors.primaryAccent.light,
+      background: colors.primary.light,
       borderColor: colors.primary.light,
       color: colors.white,
     },
     active: {
-      background: colors.primaryAccent.base,
-      borderColor: colors.primaryAccent.base,
+      background: colors.primary.base,
+      borderColor: colors.primary.base,
       color: colors.white,
     },
     ghost: {
@@ -32,36 +32,36 @@ export default {
     },
     link: {
       color: colors.primary.base,
-      hoverColor: colors.primaryAccent.light,
+      hoverColor: colors.primary.lightest,
     },
   },
   secondary: {
     default: {
-      background: "#EDEFF3",
-      borderColor: "#EDEFF3",
-      color: "#57606B",
+      background: colors.secondary.lighter,
+      borderColor: colors.secondary.lighter,
+      color: colors.black,
     },
     hover: {
-      background: "#E3E4E8",
-      borderColor: "#E3E4E8",
-      color: "#57606B",
+      background: colors.secondary.base,
+      borderColor: colors.secondary.base,
+      color: colors.black,
     },
     active: {
-      background: "#DEDFE2",
-      borderColor: "#DEDFE2",
-      color: "#57606B",
+      background: colors.secondary.lighter,
+      borderColor: colors.secondary.lighter,
+      color: colors.black,
     },
     ghost: {
-      color: "#7A7A7A",
-      background: "#B8B8B8",
+      color: colors.black,
+      background: colors.secondary.light,
     },
     outline: {
-      color: "#5C5C5C",
-      borderColor: "#EDEFF3",
+      color: colors.secondary.base,
+      borderColor: colors.secondary.base,
     },
     link: {
-      color: "#232323",
-      hoverColor: colors.primaryAccent.light,
+      color: colors.black,
+      hoverColor: colors.secondary.base,
     },
   },
   danger: {
@@ -71,8 +71,8 @@ export default {
       color: colors.white,
     },
     hover: {
-      background: colors.red.base,
-      borderColor: colors.red.base,
+      background: colors.red.light,
+      borderColor: colors.red.light,
       color: colors.white,
     },
     active: {
@@ -90,7 +90,7 @@ export default {
     },
     link: {
       color: colors.red.base,
-      hoverColor: colors.red.base,
+      hoverColor: colors.red.lightest,
     },
   },
   success: {
@@ -100,8 +100,8 @@ export default {
       color: colors.white,
     },
     hover: {
-      background: colors.green.base,
-      borderColor: colors.green.base,
+      background: colors.green.light,
+      borderColor: colors.green.light,
       color: colors.white,
     },
     active: {
@@ -119,7 +119,7 @@ export default {
     },
     link: {
       color: colors.green.base,
-      hoverColor: colors.green.base,
+      hoverColor: colors.green.lightest,
     },
   },
 };

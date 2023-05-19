@@ -1,6 +1,5 @@
 import { css, Theme, SerializedStyles } from "@emotion/react";
 import { Color, Size } from "./Button";
-import { hexToRGBA } from "@theme/default/colors";
 
 type ButtonAttrs = {
   color: Color;
@@ -139,7 +138,7 @@ const ghostButton = (button: Theme["button"], color: Color): SerializedStyles =>
 
   &:hover {
     color: ${button[color].ghost.color};
-    background-color: ${hexToRGBA(button[color].ghost.background, 0.16)};
+    background-color: ${button[color].ghost.background};
   }
 `;
 

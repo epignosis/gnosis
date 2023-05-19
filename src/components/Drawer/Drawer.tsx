@@ -1,5 +1,6 @@
 import React, { Children, cloneElement, FC, ReactElement, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { SerializedStyles } from "@emotion/react";
 import { AnimatePresence, m, Variants, MotionStyle, domAnimation, LazyMotion } from "framer-motion";
 import classNames from "classnames";
 import { drawerContainer } from "./styles";
@@ -82,7 +83,11 @@ const Drawer: FC<DrawerProps> & DrawerCompoundProps = (props) => {
     <LazyMotion features={domAnimation}>
       <AnimatePresence>
         {isOpen && (
-          <div css={drawerContainer(width)} data-testid="drawer" {...rest}>
+          <div
+            css={(theme): SerializedStyles => drawerContainer(theme, width)}
+            data-testid="drawer"
+            {...rest}
+          >
             {showMask && <Mask onClose={onClose} />}
             <m.div
               id="drawer-dialog"

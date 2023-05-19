@@ -4,7 +4,7 @@ exports[`<RadioButton /> matches snapshot with \`size = lg\` 1`] = `
 <div>
   <button
     aria-selected="false"
-    class=" css-1wtcdo4-radioButton-radioButton"
+    class=" css-14wdg0m-radioButton-radioButton"
     id="radio-0"
   >
     Test label
@@ -16,7 +16,7 @@ exports[`<RadioButton /> matches snapshot with \`size = md\` 1`] = `
 <div>
   <button
     aria-selected="false"
-    class="my-radio-class css-kcclw-radioButton-radioButton"
+    class="my-radio-class css-1adxzfm-radioButton-radioButton"
     id="my-radio-id"
   >
     Test label

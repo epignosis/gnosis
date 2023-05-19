@@ -1,3 +1,10 @@
+## [3.5.3](https://github.com/epignosis/gnosis/compare/v3.5.2...v3.5.3) (2023-05-19)
+
+
+### Bug Fixes
+
+* updating color pallette ([#145](https://github.com/epignosis/gnosis/issues/145)) ([976e89d](https://github.com/epignosis/gnosis/commit/976e89d69e56b12fa1fd7e99ca61383e7040b04a))
+
 ## [3.5.2](https://github.com/epignosis/gnosis/compare/v3.5.1...v3.5.2) (2023-05-18)
 
 

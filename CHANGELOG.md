@@ -1,3 +1,14 @@
+## [3.5.1](https://github.com/epignosis/gnosis/compare/v3.5.0...v3.5.1) (2023-05-03)
+
+# [3.5.0](https://github.com/epignosis/gnosis/compare/v3.4.3...v3.5.0) (2023-05-02)
+
+
+### Features
+
+* **table.tsx:** Add a callback for hover actions ([#150](https://github.com/epignosis/gnosis/issues/150)) ([d55f0ee](https://github.com/epignosis/gnosis/commit/d55f0ee8046d4002e81ae84dbd4ec1f05d8a74a3))
+
+## [3.4.3](https://github.com/epignosis/gnosis/compare/v3.4.2...v3.4.3) (2023-04-26)
+
 ## [3.4.2](https://github.com/epignosis/gnosis/compare/v3.4.1...v3.4.2) (2023-04-24)
 
 ## [3.4.1](https://github.com/epignosis/gnosis/compare/v3.4.0...v3.4.1) (2023-04-19)

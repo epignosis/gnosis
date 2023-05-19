@@ -1,3 +1,10 @@
+## [3.5.2](https://github.com/epignosis/gnosis/compare/v3.5.1...v3.5.2) (2023-05-18)
+
+
+### Bug Fixes
+
+* dummy comment to release changes ([#153](https://github.com/epignosis/gnosis/issues/153)) ([54d838e](https://github.com/epignosis/gnosis/commit/54d838e667173a2d0adcee609518ee890af0181a))
+
 ## [3.5.1](https://github.com/epignosis/gnosis/compare/v3.5.0...v3.5.1) (2023-05-03)
 
 # [3.5.0](https://github.com/epignosis/gnosis/compare/v3.4.3...v3.5.0) (2023-05-02)

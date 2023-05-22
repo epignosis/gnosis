@@ -40,5 +40,6 @@ export { default as Select } from "./components/FormElements/Select/Select";
 export { default as Textarea } from "./components/FormElements/Textarea/Textarea";
 
 // Types
+export type { default as GnosisTheme } from "./theme/default/defaultTheme";
 export type { Props as TableProps } from "./components/Table/Table";
 export type { Column, Row } from "./components/Table/types";

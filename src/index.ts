@@ -39,7 +39,10 @@ export { default as Radio } from "./components/FormElements/RadioGroup/Radio";
 export { default as Select } from "./components/FormElements/Select/Select";
 export { default as Textarea } from "./components/FormElements/Textarea/Textarea";
 
+// Theme
+export type { GnosisTheme } from "./theme/default/defaultTheme";
+export { default as DefaultTheme } from "./theme/default/defaultTheme";
+
 // Types
-export type { default as GnosisTheme } from "./theme/default/defaultTheme";
 export type { Props as TableProps } from "./components/Table/Table";
 export type { Column, Row } from "./components/Table/types";

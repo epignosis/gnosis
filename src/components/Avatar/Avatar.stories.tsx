@@ -2,6 +2,7 @@ import React from "react";
 import { Story } from "@storybook/react";
 import { CertificateSVG } from "../../icons/";
 import Avatar, { AvatarBaseProps, AvatarProps } from "./Avatar";
+import { colors } from "@theme/default/colors";
 
 export default {
   component: Avatar,
@@ -42,7 +43,7 @@ export const IconAvatar = Template.bind({});
 
 IconAvatar.args = {
   children: <CertificateSVG />,
-  bgColor: "#1B68B3",
+  bgColor: colors.primary.base,
 };
 
 IconAvatar.argTypes = {
@@ -58,7 +59,6 @@ export const StringAvatar = Template.bind({});
 
 StringAvatar.args = {
   children: "JT",
-  bgColor: "#FF9C28",
 };
 
 StringAvatar.argTypes = {

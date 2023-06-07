@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Table> matches snapshot 1`] = `
+<div>
+  <div
+    class="css-9bskd0-tableContainer-tableContainer"
+    data-testid="table"
+  >
+    <table
+      id="table-1"
+    >
+      <thead>
+        <tr>
+          <th
+            class="header-cell header1"
+          >
+            <span>
+              Header1
+            </span>
+          </th>
+          <th
+            class="header-cell header2"
+          >
+            <span>
+              Header2
+            </span>
+          </th>
+          <th
+            class="header-cell header3"
+          >
+            <span>
+              Header3
+            </span>
+          </th>
+          <th
+            class="header-cell header4"
+          >
+            <span>
+              Header4
+            </span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class=""
+        >
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr
+          class=""
+        >
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr
+          class=""
+        >
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+        <tr
+          class=""
+        >
+          <td />
+          <td />
+          <td />
+          <td />
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

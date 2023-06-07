@@ -12,6 +12,7 @@ export { default as progressBar } from "./progressBar";
 export { default as result } from "./result";
 export { default as sidebar } from "./sidebar";
 export { default as tabs } from "./tabs";
+export { default as table } from "./table";
 export { default as tag } from "./tag";
 export { default as tooltip } from "./tooltip";
 export { default as pagination } from "./pagination";

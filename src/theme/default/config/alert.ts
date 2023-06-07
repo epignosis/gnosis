@@ -1,11 +1,11 @@
 import { colors } from "../colors";
 
 export default {
-  closeBtnColor: colors.black,
+  closeBtnColor: colors.white,
   info: {
-    background: colors.turquoise.lighter,
-    borderColor: colors.turquoise.lighter,
-    color: colors.black,
+    background: colors.primary.lighter,
+    borderColor: colors.primary.lighter,
+    color: colors.white,
   },
   danger: {
     background: colors.red.base,

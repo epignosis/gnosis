@@ -1,5 +1,4 @@
 import { css, Theme, SerializedStyles } from "@emotion/react";
-import { hexToRGBA } from "@theme/default/colors";
 
 export const cardContainer = ({ card }: Theme): SerializedStyles => css`
   position: relative;
@@ -8,7 +7,7 @@ export const cardContainer = ({ card }: Theme): SerializedStyles => css`
   justify-content: space-between;
   height: 100%;
   background-color: ${card.background};
-  box-shadow: 0px 0px 10px #00000026;
+  box-shadow: 0px 0px 10px ${card.shadow};
   border-radius: 5px;
   overflow: hidden;
   transition-duration: 0.2s;
@@ -61,7 +60,7 @@ export const overlayContainer = ({ card }: Theme): SerializedStyles => css`
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: ${hexToRGBA(card.overlay.background, 0.6)};
+  background-color: ${card.overlay.background};
   z-index: 2;
 `;
 

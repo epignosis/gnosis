@@ -17,7 +17,7 @@ export const container = (
       .content-container {
         min-width: 1.25rem;
         height: 1.25rem;
-        border: 2px solid white;
+        border: 2px solid ${badge.border};
       }
     }
 

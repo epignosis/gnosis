@@ -2,13 +2,10 @@ import Color from "color";
 
 export const THEME_COLOURS = {
   primary: "#1B68B3",
-  primaryAccent: "#0F6CE5",
-  turquoise: "#2CD1F8",
+  secondary: "#9EA5A9",
+  green: "#3CB744",
   orange: "#FF9C28",
-  red: "#F20000",
-  green: "#41BD54",
-  gray: "#6E6E6E",
-  grayBlue: "#9EA5A9",
+  red: "#D12525",
   black: "#232323",
   white: "#FFFFFF",
 };
@@ -35,13 +32,10 @@ export const palletGenerator = (base: string): ThemeColors => ({
 
 export const colors = {
   primary: palletGenerator(THEME_COLOURS.primary),
-  primaryAccent: palletGenerator(THEME_COLOURS.primaryAccent),
-  turquoise: palletGenerator(THEME_COLOURS.turquoise),
+  secondary: palletGenerator(THEME_COLOURS.secondary),
+  green: palletGenerator(THEME_COLOURS.green),
   orange: palletGenerator(THEME_COLOURS.orange),
   red: palletGenerator(THEME_COLOURS.red),
-  green: palletGenerator(THEME_COLOURS.green),
-  gray: palletGenerator(THEME_COLOURS.gray),
-  grayBlue: palletGenerator(THEME_COLOURS.grayBlue),
   black: THEME_COLOURS.black,
   white: THEME_COLOURS.white,
 };

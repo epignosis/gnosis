@@ -113,6 +113,8 @@ export { default as RadioSelectedSVG } from "./radio_selected.svg";
 export { default as GripDotsSVG } from "./grip_dots.svg";
 export { default as TextSVG } from "./text.svg";
 export { default as ArrowDownLeftSVG } from "./arrow_down_left.svg";
+export { default as IconChevronDownSVG } from "./icon_chevron_down.svg";
+export { default as IconChevronUpSVG } from "./icon_chevron_up.svg";
 export { default as GamificationFailedSVG } from "./gamification_failed.svg";
 export { default as GamificationPointsSVG } from "./gamification_points.svg";
 export { default as GamificationLevelUpSVG } from "./gamification_level_up.svg";

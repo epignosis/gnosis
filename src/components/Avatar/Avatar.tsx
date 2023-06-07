@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import { SerializedStyles } from "@emotion/react";
 import { avatar } from "./styles";
+import { colors } from "@theme/default/colors";
 
 export type Size = "xs" | "sm" | "md" | "lg" | "xl";
 
@@ -26,7 +27,7 @@ export type AvatarProps =
 const Avatar: FC<AvatarBaseProps & AvatarProps> = ({
   src,
   size = "sm",
-  bgColor = "#0E59BB",
+  bgColor = colors.orange.base,
   alt,
   children,
   ...rest

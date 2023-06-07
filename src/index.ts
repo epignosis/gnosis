@@ -20,6 +20,7 @@ export { default as Drawer } from "./components/Drawer/Drawer";
 export { default as Sidebar } from "./components/Sidebar/Sidebar";
 export { default as Card } from "./components/Card/Card";
 export { default as Grid } from "./components/Grid/Grid";
+export { default as Table } from "./components/Table/Table";
 
 //  Typography
 export { default as Heading } from "./components/Heading/Heading";
@@ -37,3 +38,11 @@ export { default as RadioGroup } from "./components/FormElements/RadioGroup/Radi
 export { default as Radio } from "./components/FormElements/RadioGroup/Radio";
 export { default as Select } from "./components/FormElements/Select/Select";
 export { default as Textarea } from "./components/FormElements/Textarea/Textarea";
+
+// Theme
+export type { GnosisTheme } from "./theme/default/defaultTheme";
+export { default as DefaultTheme } from "./theme/default/defaultTheme";
+
+// Types
+export type { Props as TableProps } from "./components/Table/Table";
+export type { Column, Row } from "./components/Table/types";

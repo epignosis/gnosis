@@ -14,7 +14,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
         class="nav-handle css-1vueq8q-navHandleContainer-navHandleContainer"
       >
         <div
-          class="nav-item css-r2c375-navItemContainer-navItemContainer"
+          class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
         >
           <div
             class="icon-container"
@@ -43,7 +43,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-r2c375-navItemContainer-navItemContainer"
+                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
               >
                 <div
                   class="icon-container"
@@ -67,7 +67,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-r2c375-navItemContainer-navItemContainer"
+                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
               >
                 <div
                   class="icon-container"
@@ -91,7 +91,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-r2c375-navItemContainer-navItemContainer"
+                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
               >
                 <div
                   class="icon-container"
@@ -115,7 +115,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-r2c375-navItemContainer-navItemContainer"
+                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
               >
                 <div
                   class="icon-container"
@@ -143,7 +143,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-r2c375-navItemContainer-navItemContainer"
+                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
               >
                 <div
                   class="icon-container"
@@ -167,7 +167,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-r2c375-navItemContainer-navItemContainer"
+                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
               >
                 <div
                   class="icon-container"
@@ -191,7 +191,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-r2c375-navItemContainer-navItemContainer"
+                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
               >
                 <div
                   class="icon-container"
@@ -215,7 +215,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-r2c375-navItemContainer-navItemContainer"
+                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
               >
                 <div
                   class="icon-container"

@@ -3,7 +3,7 @@
 exports[`<Table> matches snapshot 1`] = `
 <div>
   <div
-    class="css-9bskd0-tableContainer-tableContainer"
+    class="css-1limmsu-tableContainer-tableContainer"
     data-testid="table"
   >
     <table

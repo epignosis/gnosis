@@ -31,6 +31,12 @@ export const container = (
       p {
         color: ${result.infoColor};
       }
+
+      .link-text {
+        padding: 0;
+        text-decoration: underline;
+        margin-inline-start: 0.5rem;
+      }
     }
 
     footer {

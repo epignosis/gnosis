@@ -15,7 +15,9 @@ const Chip: FC<ChipProps> = ({ size = "md", onClose, children, style, ...rest })
   <div css={(theme): SerializedStyles => chip(theme, { size })} style={style} {...rest}>
     {onClose && (
       <button onClick={onClose} aria-label={`Remove ${children}`} style={{ color: style?.color }}>
-        <CloseSVG height={16} />
+        <span className="close-icon">
+          <CloseSVG height={16} />
+        </span>
       </button>
     )}
 

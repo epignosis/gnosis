@@ -1,4 +1,5 @@
 import { Actions } from "./constants";
+import { IconType } from "types/common";
 
 export type Column = {
   accessor: string;
@@ -16,6 +17,9 @@ export type Row = {
 export type EmptyState = {
   title: string;
   info: string;
+  icon?: IconType;
+  callbackInfo?: string;
+  callbackFn?: () => void;
 };
 
 export type Sorting = {

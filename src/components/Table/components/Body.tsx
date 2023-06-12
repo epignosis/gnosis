@@ -96,7 +96,14 @@ const Body: FC<ChildrenProps> = ({
       ) : (
         <tr className="empty-state-container">
           <td>
-            <Result title={state.emptyState.title} info={state.emptyState.info} />
+            <Result
+              title={state.emptyState.title}
+              info={state.emptyState.info}
+              icon={state.emptyState.icon}
+              callbackInfo={state.emptyState.callbackInfo}
+              isTable={true}
+              callbackFn={state.emptyState.callbackFn}
+            />
           </td>
         </tr>
       )}

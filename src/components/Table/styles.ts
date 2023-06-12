@@ -17,7 +17,7 @@ export const tableContainer = ({ table }: Theme) => css`
       background-color: ${table.rowBackgroundColor};
 
       tr {
-        height: 4rem;
+        height: 54px;
         white-space: nowrap;
 
         th {
@@ -53,6 +53,7 @@ export const tableContainer = ({ table }: Theme) => css`
 
     tbody {
       tr {
+        height: 54px;
         position: relative;
 
         &:last-of-type {
@@ -80,7 +81,11 @@ export const tableContainer = ({ table }: Theme) => css`
           background: transparent;
 
           ${mq["lg"]} {
-            height: 18rem;
+            height: 28rem;
+
+            svg {
+              height: 280px;
+            }
           }
 
           td {

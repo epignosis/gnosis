@@ -1,5 +1,6 @@
 import React from "react";
 import { Story } from "@storybook/react";
+import { IconEmptyStateSVG } from "../../icons/";
 import Table, { Props } from "./Table";
 
 export default {
@@ -22,8 +23,11 @@ export default {
       { id: 274, description: "Test", name: "Test", category: "Test", code: "Test" },
     ],
     emptyState: {
-      title: "No data",
-      info: "There are no data here",
+      title: "No results found with these criteria",
+      info: "Please try again or",
+      callbackInfo: "Restore to default",
+      icon: IconEmptyStateSVG,
+      callbackFn: () => window.alert("Hello"),
     },
   },
 };

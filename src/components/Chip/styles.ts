@@ -25,13 +25,23 @@ export const chip = (
     color: ${chip.color};
     background-color: ${chip.backgroundColor};
 
+    &:hover {
+      .close-icon {
+        display: flex;
+        margin-inline-end: 0.5rem;
+      }
+    }
+
     button {
-      margin-inline-end: 0.5rem;
       display: inline-flex;
       color: ${chip.color};
       background: transparent;
       border: none;
       padding: 0;
+
+      .close-icon {
+        display: none;
+      }
     }
   `;
 };

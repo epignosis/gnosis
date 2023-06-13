@@ -42,7 +42,7 @@ export const chip = (
       border: none;
       padding: 0;
       margin-inline-end: 0.5rem;
-      ${isFilterOn && "min-width: 1rem"};
+      ${isFilterOn && "min-width:1rem"};
 
       .icon {
         ${isFilterOn ? "display:flex" : "display:none"};

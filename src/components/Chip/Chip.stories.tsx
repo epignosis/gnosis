@@ -1,5 +1,6 @@
 import React from "react";
 import { Story } from "@storybook/react";
+import { UserOutlinedSVG } from "../../icons";
 import Chip, { ChipProps } from "./Chip";
 import { colors } from "@theme/default/colors";
 
@@ -35,4 +36,13 @@ Custom.args = {
     backgroundColor: colors.red.base,
     color: colors.black,
   },
+};
+
+export const Filters = Template.bind({});
+
+Filters.args = {
+  size: "md",
+  children: "Filter",
+  isFilter: true,
+  icon: <UserOutlinedSVG height={16} />,
 };

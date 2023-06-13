@@ -8,7 +8,7 @@ const chipHeight = {
 
 export const chip = (
   { typeScaleSizes, chip }: Theme,
-  { size }: { size: Size },
+  { size, isFilterOn }: { size: Size; isFilterOn: boolean },
 ): SerializedStyles => {
   const fontSizes = {
     md: typeScaleSizes.sm,
@@ -27,8 +27,11 @@ export const chip = (
 
     &:hover {
       .close-icon {
-        display: flex;
-        margin-inline-end: 0.5rem;
+        ${isFilterOn && "display: flex"};
+      }
+
+      .icon {
+        ${isFilterOn && "display: none"};
       }
     }
 
@@ -38,9 +41,15 @@ export const chip = (
       background: transparent;
       border: none;
       padding: 0;
+      margin-inline-end: 0.5rem;
+      ${isFilterOn && "min-width: 1rem"};
+
+      .icon {
+        ${isFilterOn ? "display:flex" : "display:none"};
+      }
 
       .close-icon {
-        display: none;
+        ${isFilterOn ? "display:none" : "display:flex"};
       }
     }
   `;

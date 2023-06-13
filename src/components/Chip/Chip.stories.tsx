@@ -43,6 +43,5 @@ export const Filters = Template.bind({});
 Filters.args = {
   size: "md",
   children: "Filter",
-  isFilter: true,
-  icon: <UserOutlinedSVG height={16} />,
+  icon: UserOutlinedSVG,
 };

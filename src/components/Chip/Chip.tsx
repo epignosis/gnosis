@@ -1,28 +1,20 @@
-import React, { FC, MouseEvent, ReactElement } from "react";
+import React, { FC, MouseEvent } from "react";
 import { SerializedStyles } from "@emotion/react";
 import { CloseSVG } from "../../icons/";
 import { chip } from "./styles";
+import { IconType } from "types/common";
 
 export type Size = "md" | "lg";
 
 export type ChipProps = React.HTMLAttributes<HTMLDivElement> & {
   onClose?: (e: MouseEvent) => void;
   size?: Size;
-  icon?: ReactElement;
-  isFilter?: boolean;
+  icon?: IconType;
   children: string;
 };
 
-const Chip: FC<ChipProps> = ({
-  size = "md",
-  onClose,
-  children,
-  isFilter,
-  icon,
-  style,
-  ...rest
-}) => {
-  const isFilterOn = Boolean(isFilter);
+const Chip: FC<ChipProps> = ({ size = "md", onClose, children, icon: Icon, style, ...rest }) => {
+  const isFilterOn = Boolean(Icon);
 
   return (
     <div
@@ -32,7 +24,7 @@ const Chip: FC<ChipProps> = ({
     >
       {onClose && (
         <button onClick={onClose} aria-label={`Remove ${children}`} style={{ color: style?.color }}>
-          {isFilterOn && <span className="icon">{icon}</span>}
+          {Icon && <Icon height={16} className="icon" data-testid="icon" />}
           <span className="close-icon">
             <CloseSVG height={16} />
           </span>

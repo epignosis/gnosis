@@ -5,6 +5,8 @@ import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
 import Result from "../../Result/Result";
 import { ChildrenProps } from "../Table";
 import { Actions } from "../constants";
+import Text from "../../Text/Text";
+import Button from "../../Button/Button";
 import Cell from "./Cell";
 
 const rowClassnames = (isSelected: boolean, callback: boolean): string =>
@@ -20,9 +22,19 @@ const Body: FC<ChildrenProps> = ({
   handleRowClick,
   onHoveredRowChange,
 }) => {
-  const { columns, selected } = state;
+  const { columns, selected, emptyState } = state;
   const accessors = columns.filter((column) => !column.hidden).map((column) => column.accessor);
   const selectedRows = selected.map((entry) => entry.id);
+  const emptyStateElement = (
+    <div className="body">
+      <Text fontSize="lg">{emptyState.title}</Text>
+      <br />
+      <Text fontSize="lg">{emptyState.info}</Text>
+      <Button variant="link" className="link-text" onClick={emptyState.callbackFn}>
+        <Text fontSize="lg">{emptyState.callbackInfo}</Text>
+      </Button>
+    </div>
+  );
 
   const handleRowSelection = (e: React.ChangeEvent<HTMLInputElement>, row: Row): void => {
     e.preventDefault();
@@ -100,9 +112,8 @@ const Body: FC<ChildrenProps> = ({
               title={state.emptyState.title}
               info={state.emptyState.info}
               icon={state.emptyState.icon}
-              callbackInfo={state.emptyState.callbackInfo}
-              isTable={true}
-              callbackFn={state.emptyState.callbackFn}
+              footer={emptyStateElement}
+              hideInfo={true}
             />
           </td>
         </tr>

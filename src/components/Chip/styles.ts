@@ -45,11 +45,11 @@ export const chip = (
       ${isFilterOn && "min-width:1rem"};
 
       .icon {
-        ${isFilterOn ? "display:flex" : "display:none"};
+        display: ${isFilterOn ? "flex" : "none"};
       }
 
       .close-icon {
-        ${isFilterOn ? "display:none" : "display:flex"};
+        display: ${isFilterOn ? "none" : "flex"};
       }
     }
   `;

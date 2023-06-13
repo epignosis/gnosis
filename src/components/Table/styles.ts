@@ -99,6 +99,7 @@ export const tableContainer = ({ table }: Theme) => css`
             inset-inline-end: 0;
             top: 50%;
             transform: translateY(-50%);
+            max-width: 100%;
 
             article {
               max-width: 80%;

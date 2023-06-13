@@ -17,7 +17,14 @@ export default {
       { accessor: "category", cell: "Category", classNames: ["category"] },
     ],
     rows: [
-      { id: 271, description: "Test", name: "Test", category: "Test", code: "Test" },
+      {
+        id: 271,
+        description:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        name: "Test",
+        category: "Test",
+        code: "Test",
+      },
       { id: 272, description: "Test", name: "Test", category: "Test", code: "Test" },
       { id: 273, description: "Test", name: "Test", category: "Test", code: "Test" },
       { id: 274, description: "Test", name: "Test", category: "Test", code: "Test" },

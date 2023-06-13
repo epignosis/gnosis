@@ -1,4 +1,5 @@
 import React, { FC, HTMLAttributes } from "react";
+import Tooltip from "../../Tooltip/Tooltip";
 
 export type CellProps = HTMLAttributes<HTMLTableCellElement> & {
   as?: "td" | "th";
@@ -7,9 +8,11 @@ export type CellProps = HTMLAttributes<HTMLTableCellElement> & {
 
 const Cell: FC<CellProps> = ({ children, as: Component = "td", onClick, ...rest }) => {
   return (
-    <Component onClick={onClick} {...rest}>
-      {children}
-    </Component>
+    <Tooltip content={"MAnos"}>
+      <Component onClick={onClick} {...rest}>
+        {children}
+      </Component>
+    </Tooltip>
   );
 };
 

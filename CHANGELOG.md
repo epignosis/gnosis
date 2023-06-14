@@ -1,3 +1,10 @@
+## [3.5.6](https://github.com/epignosis/gnosis/compare/v3.5.5...v3.5.6) (2023-06-14)
+
+
+### Bug Fixes
+
+* fixing some UI issues in Table component ([#156](https://github.com/epignosis/gnosis/issues/156)) ([328b577](https://github.com/epignosis/gnosis/commit/328b577bc1f40cdbf0b3c1c1d8a3eed515e3354c))
+
 ## [3.5.5](https://github.com/epignosis/gnosis/compare/v3.5.4...v3.5.5) (2023-05-22)
 
 ## [3.5.4](https://github.com/epignosis/gnosis/compare/v3.5.3...v3.5.4) (2023-05-22)

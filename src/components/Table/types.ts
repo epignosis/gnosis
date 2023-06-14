@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { Actions } from "./constants";
 import { IconType } from "types/common";
 
@@ -18,8 +19,7 @@ export type EmptyState = {
   title: string;
   info: string;
   icon?: IconType;
-  callbackInfo?: string;
-  callbackFn?: () => void;
+  footer?: ReactNode;
 };
 
 export type Sorting = {

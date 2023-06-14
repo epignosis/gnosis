@@ -1,7 +1,17 @@
 import React from "react";
 import { Story } from "@storybook/react";
 import { IconEmptyStateSVG } from "../../icons/";
+import Text from "../Text/Text";
+import Button from "../Button/Button";
 import Table, { Props } from "./Table";
+
+const emptyState = {
+  title: "No results found with these criteria",
+  info: "Please try again or",
+  callbackInfo: "Restore to default",
+  icon: IconEmptyStateSVG,
+  callbackFn: () => window.alert("Hello"),
+};
 
 export default {
   component: Table,
@@ -32,9 +42,7 @@ export default {
     emptyState: {
       title: "No results found with these criteria",
       info: "Please try again or",
-      callbackInfo: "Restore to default",
       icon: IconEmptyStateSVG,
-      callbackFn: () => window.alert("Hello"),
     },
   },
 };
@@ -64,4 +72,17 @@ export const WithoutData = Template.bind({});
 
 WithoutData.args = {
   rows: [],
+  emptyState: {
+    ...emptyState,
+    footer: (
+      <div className="body">
+        <Text fontSize="lg">{emptyState.title}</Text>
+        <br />
+        <Text fontSize="lg">{emptyState.info}</Text>
+        <Button variant="link" className="link-text" onClick={emptyState.callbackFn}>
+          <Text fontSize="lg">{emptyState.callbackInfo}</Text>
+        </Button>
+      </div>
+    ),
+  },
 };

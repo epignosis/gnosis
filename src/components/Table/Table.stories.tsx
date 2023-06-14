@@ -1,6 +1,17 @@
 import React from "react";
 import { Story } from "@storybook/react";
+import { IconEmptyStateSVG } from "../../icons/";
+import Text from "../Text/Text";
+import Button from "../Button/Button";
 import Table, { Props } from "./Table";
+
+const emptyState = {
+  title: "No results found with these criteria",
+  info: "Please try again or",
+  callbackInfo: "Restore to default",
+  icon: IconEmptyStateSVG,
+  callbackFn: () => window.alert("Hello"),
+};
 
 export default {
   component: Table,
@@ -16,14 +27,22 @@ export default {
       { accessor: "category", cell: "Category", classNames: ["category"] },
     ],
     rows: [
-      { id: 271, description: "Test", name: "Test", category: "Test", code: "Test" },
+      {
+        id: 271,
+        description:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        name: "Test",
+        category: "Test",
+        code: "Test",
+      },
       { id: 272, description: "Test", name: "Test", category: "Test", code: "Test" },
       { id: 273, description: "Test", name: "Test", category: "Test", code: "Test" },
       { id: 274, description: "Test", name: "Test", category: "Test", code: "Test" },
     ],
     emptyState: {
-      title: "No data",
-      info: "There are no data here",
+      title: "No results found with these criteria",
+      info: "Please try again or",
+      icon: IconEmptyStateSVG,
     },
   },
 };
@@ -53,4 +72,17 @@ export const WithoutData = Template.bind({});
 
 WithoutData.args = {
   rows: [],
+  emptyState: {
+    ...emptyState,
+    footer: (
+      <div className="body">
+        <Text fontSize="lg">{emptyState.title}</Text>
+        <br />
+        <Text fontSize="lg">{emptyState.info}</Text>
+        <Button variant="link" className="link-text" onClick={emptyState.callbackFn}>
+          <Text fontSize="lg">{emptyState.callbackInfo}</Text>
+        </Button>
+      </div>
+    ),
+  },
 };

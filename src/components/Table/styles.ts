@@ -17,7 +17,7 @@ export const tableContainer = ({ table }: Theme) => css`
       background-color: ${table.rowBackgroundColor};
 
       tr {
-        height: 4rem;
+        height: 54px;
         white-space: nowrap;
 
         th {
@@ -53,6 +53,7 @@ export const tableContainer = ({ table }: Theme) => css`
 
     tbody {
       tr {
+        height: 54px;
         position: relative;
 
         &:last-of-type {
@@ -69,6 +70,11 @@ export const tableContainer = ({ table }: Theme) => css`
 
         td {
           padding: 1rem 1.5rem;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          max-width: 100px;
+          overflow: hidden;
+          position: relative;
 
           .no-wrap {
             white-space: nowrap;
@@ -80,7 +86,11 @@ export const tableContainer = ({ table }: Theme) => css`
           background: transparent;
 
           ${mq["lg"]} {
-            height: 18rem;
+            height: 28rem;
+
+            svg {
+              height: 280px;
+            }
           }
 
           td {
@@ -89,6 +99,7 @@ export const tableContainer = ({ table }: Theme) => css`
             inset-inline-end: 0;
             top: 50%;
             transform: translateY(-50%);
+            max-width: 100%;
 
             article {
               max-width: 80%;

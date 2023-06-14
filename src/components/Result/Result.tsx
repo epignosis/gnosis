@@ -5,7 +5,6 @@ import Heading from "../Heading/Heading";
 import Text from "../Text/Text";
 import { container } from "./styles";
 import { IconType } from "types/common";
-import { TypographyLevels } from "@theme/utils/typography";
 
 export type Size = "md" | "lg";
 
@@ -15,6 +14,7 @@ export type ResultProps = React.HTMLAttributes<HTMLElement> & {
   info?: string;
   size?: Size;
   footer?: ReactNode;
+  hideInfo?: boolean;
 };
 
 type IconSize = {
@@ -27,7 +27,7 @@ const getIconSize = (isMd: boolean): IconSize => ({
   lg: isMd ? 180 : 135,
 });
 
-const Result: FC<ResultProps> = ({ icon, title, info, footer, size = "lg", ...rest }) => {
+const Result: FC<ResultProps> = ({ icon, title, info, footer, hideInfo, size = "lg", ...rest }) => {
   const { md } = useResponsive();
   const Icon = icon;
   const iconSize = getIconSize(md);
@@ -47,14 +47,18 @@ const Result: FC<ResultProps> = ({ icon, title, info, footer, size = "lg", ...re
           )}
         </>
       )}
-      <div className="body">
-        <Heading as="h3">{title}</Heading>
-        {info && (
-          <Text fontSize={size as TypographyLevels} as="p">
-            {info}
-          </Text>
-        )}
-      </div>
+      {!hideInfo && (
+        <div className="body">
+          <>
+            <Heading as="h3">{title}</Heading>
+            {info && (
+              <Text fontSize={size} as="p">
+                {info}
+              </Text>
+            )}
+          </>
+        </div>
+      )}
       {footer && <footer>{footer}</footer>}
     </article>
   );

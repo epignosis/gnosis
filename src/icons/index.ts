@@ -115,3 +115,4 @@ export { default as TextSVG } from "./text.svg";
 export { default as ArrowDownLeftSVG } from "./arrow_down_left.svg";
 export { default as IconChevronDownSVG } from "./icon_chevron_down.svg";
 export { default as IconChevronUpSVG } from "./icon_chevron_up.svg";
+export { default as IconEmptyStateSVG } from "./empty_state.svg";

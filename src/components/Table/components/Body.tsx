@@ -20,7 +20,7 @@ const Body: FC<ChildrenProps> = ({
   handleRowClick,
   onHoveredRowChange,
 }) => {
-  const { columns, selected } = state;
+  const { columns, selected, emptyState } = state;
   const accessors = columns.filter((column) => !column.hidden).map((column) => column.accessor);
   const selectedRows = selected.map((entry) => entry.id);
 
@@ -96,7 +96,7 @@ const Body: FC<ChildrenProps> = ({
       ) : (
         <tr className="empty-state-container">
           <td>
-            <Result title={state.emptyState.title} info={state.emptyState.info} />
+            <Result {...emptyState} hideInfo />
           </td>
         </tr>
       )}

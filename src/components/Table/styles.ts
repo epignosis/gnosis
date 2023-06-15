@@ -70,10 +70,6 @@ export const tableContainer = ({ table }: Theme) => css`
 
         td {
           padding: 1rem 1.5rem;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          max-width: 100px;
-          overflow: hidden;
           position: relative;
 
           .no-wrap {

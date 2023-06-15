@@ -1,6 +1,6 @@
 import React from "react";
 import { Story } from "@storybook/react";
-import { UserOutlinedSVG } from "../../icons";
+import { BranchesFilterSVG } from "../../icons";
 import Chip, { ChipProps } from "./Chip";
 import { colors } from "@theme/default/colors";
 
@@ -43,5 +43,5 @@ export const Filters = Template.bind({});
 Filters.args = {
   size: "md",
   children: "Filter",
-  icon: UserOutlinedSVG,
+  icon: BranchesFilterSVG,
 };

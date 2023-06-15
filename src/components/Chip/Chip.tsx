@@ -1,4 +1,4 @@
-import React, { FC, MouseEvent } from "react";
+import React, { FC, MouseEvent, ReactNode } from "react";
 import { SerializedStyles } from "@emotion/react";
 import { CloseSVG } from "../../icons/";
 import { chip } from "./styles";
@@ -10,7 +10,7 @@ export type ChipProps = React.HTMLAttributes<HTMLDivElement> & {
   onClose?: (e: MouseEvent) => void;
   size?: Size;
   icon?: IconType;
-  children: string;
+  children: ReactNode | string;
 };
 
 const Chip: FC<ChipProps> = ({ size = "md", onClose, children, icon: Icon, style, ...rest }) => {
@@ -24,7 +24,7 @@ const Chip: FC<ChipProps> = ({ size = "md", onClose, children, icon: Icon, style
     >
       {onClose && (
         <button onClick={onClose} aria-label={`Remove ${children}`} style={{ color: style?.color }}>
-          {Icon && <Icon height={16} className="icon" data-testid="icon" />}
+          {Icon && <Icon className="icon" data-testid="icon" />}
           <span className="close-icon">
             <CloseSVG height={16} />
           </span>

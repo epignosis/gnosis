@@ -1,3 +1,10 @@
+## [3.5.7](https://github.com/epignosis/gnosis/compare/v3.5.6...v3.5.7) (2023-06-15)
+
+
+### Bug Fixes
+
+* table UI corrections ([#157](https://github.com/epignosis/gnosis/issues/157)) ([0bf8be7](https://github.com/epignosis/gnosis/commit/0bf8be7ef8ffb126110298be11572fc8afad3c0e))
+
 ## [3.5.6](https://github.com/epignosis/gnosis/compare/v3.5.5...v3.5.6) (2023-06-14)
 
 

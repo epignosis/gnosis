@@ -46,6 +46,7 @@ export const chip = (
 
       .icon {
         display: ${isFilterOn ? "flex" : "none"};
+        fill: currentColor;
       }
 
       .close-icon {

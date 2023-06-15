@@ -1,83 +1,119 @@
-import React, { FC } from "react";
+import React, { FC, useRef, useState } from "react";
 import classNames from "classnames";
+import { SerializedStyles } from "@emotion/react";
 import Button from "../Button/Button";
-import { ArrowLeftSVG, ArrowRightSVG } from "../../icons/";
+import { ArrowLeftSVG, ArrowRightSVG, RightArrowSVG } from "../../icons/";
+import Text from "../Text/Text";
 import { container } from "./styles";
-import { usePagination, ellipsis } from "./usePagination";
-import { ExtendableProps } from "types/utils";
+import { PaginationProps, RowItem } from "./types";
+import { usePagination } from "./usePagination";
 
-export type PaginationProps = ExtendableProps<
-  React.HTMLAttributes<HTMLDivElement>,
-  {
-    current: number;
-    totalPages: number;
-    onChange: (page: number) => void;
-  }
->;
-
-const classNamesContainer = (pageNumber: number, current: number) =>
+const SelectedOptionClasses = (isSelected: boolean): string =>
   classNames({
-    isActive: pageNumber === current,
+    "is-selected": isSelected,
   });
 
 const Pagination: FC<PaginationProps> = ({
   current,
-  onChange,
+  list,
   totalPages,
+  size,
+  selectionText,
+  handlePaginationSizeChanged,
+  handlePaginationNumberChanged,
   dir = "ltr",
   ...rest
 }) => {
+  const [isListOpen, setIsListOpen] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const [listItemSelected, handleListItemSelected] = useState<number>(size);
   const paginationRange = usePagination(current, totalPages);
+  const hasItems = paginationRange.length > 0;
+
+  const toggleList = (): void => {
+    // We want to reset the dropdown list every time it opens
+    setIsListOpen((prevState) => !prevState);
+  };
+
+  const handleListItemSelect = (item: number): void => {
+    if (isListOpen) {
+      handlePaginationSizeChanged(item);
+      handleListItemSelected(item);
+      setIsListOpen(false);
+    }
+  };
+
+  const mapOptions = (items: RowItem[]): JSX.Element[] => {
+    return items
+      .slice()
+      .reverse()
+      .map((item) => {
+        const isSelected = item.id === listItemSelected;
+
+        return (
+          <li
+            data-testid="pagination-page"
+            key={"item" + item}
+            onClick={(): void => handleListItemSelect(item.id)}
+          >
+            <Text fontSize={"md"} className={SelectedOptionClasses(isSelected)}>
+              {item.value}
+            </Text>
+          </li>
+        );
+      });
+  };
 
   return (
-    <div css={container} {...rest}>
-      <Button
-        className="previous-page-btn"
-        data-testid="previous-page-btn"
-        name="Previous page"
-        onClick={(): void => onChange(current - 1)}
-        color="secondary"
-        noGutters
-        disabled={current === 1}
-      >
-        {dir === "rtl" ? <ArrowRightSVG height={22} /> : <ArrowLeftSVG height={22} />}
-      </Button>
+    <>
+      {hasItems && (
+        <div css={(theme): SerializedStyles => container(theme, { isOpen: isListOpen })} {...rest}>
+          <Button
+            className="previous-page-btn"
+            data-testid="previous-page-btn"
+            name="Previous page"
+            onClick={(): void => handlePaginationNumberChanged(current - 1)}
+            variant="ghost"
+            noGutters
+            disabled={current === 1}
+          >
+            {dir === "rtl" ? <ArrowRightSVG height={22} /> : <ArrowLeftSVG height={22} />}
+          </Button>
 
-      <div className="pagination-options">
-        {paginationRange.map((pageNumber) => {
-          if (pageNumber === ellipsis) {
-            return ellipsis;
-          }
+          <div className="pagination-options">
+            <div className="dropdown" ref={wrapperRef}>
+              <div className="dropdown-button" onClick={toggleList}>
+                <Button iconAfter={RightArrowSVG} variant="outline">
+                  <Text fontSize="md">{selectionText}</Text>
+                </Button>
+              </div>
 
-          return (
-            <Button
-              type="button"
-              key={pageNumber}
-              id={pageNumber.toString()}
-              data-testid="pagination-page"
-              onClick={(): void => onChange(pageNumber as number)}
-              variant="ghost"
-              noGutters
-              className={classNamesContainer(pageNumber as number, current)}
-            >
-              {pageNumber}
-            </Button>
-          );
-        })}
-      </div>
+              {isListOpen && list.length > 0 && (
+                <div className="open-list-container">
+                  <div className="dropdown-wrapper">
+                    <ul role="list" className="dropdown-list">
+                      {mapOptions(list)}
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
 
-      <Button
-        className="next-page-btn"
-        data-testid="next-page-btn"
-        name="Next page"
-        onClick={(): void => onChange(current + 1)}
-        color="secondary"
-        noGutters
-        disabled={current === totalPages}
-      >
-        {dir === "rtl" ? <ArrowLeftSVG height={22} /> : <ArrowRightSVG height={22} />}
-      </Button>
-    </div>
+          <Button
+            className="next-page-btn"
+            data-testid="next-page-btn"
+            name="Next page"
+            onClick={(): void => handlePaginationNumberChanged(current + 1)}
+            variant="ghost"
+            noGutters
+            disabled={current === paginationRange.length}
+          >
+            {dir === "rtl" ? <ArrowLeftSVG height={22} /> : <ArrowRightSVG height={22} />}
+          </Button>
+        </div>
+      )}
+    </>
   );
 };
 

@@ -3,11 +3,11 @@
 exports[`<Pagination /> matches snapshot with on page 1`] = `
 <div>
   <div
-    class="html-class css-qimyf6-container-container"
+    class="html-class css-14tu0o3-container-container"
     id="my-id"
   >
     <button
-      class="previous-page-btn solid css-2oial5-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      class="previous-page-btn ghost css-1r7tkf0-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="previous-page-btn"
       name="Previous page"
     >
@@ -22,81 +22,36 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
     <div
       class="pagination-options"
     >
-      <button
-        class="ghost css-1r7tkf0-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-        data-testid="pagination-page"
-        id="1"
-        type="button"
+      <div
+        class="dropdown"
       >
-        <span
-          class="btn-text"
+        <div
+          class="dropdown-button"
         >
-          1
-        </span>
-      </button>
-      <button
-        class="isActive ghost css-1r7tkf0-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-        data-testid="pagination-page"
-        id="2"
-        type="button"
-      >
-        <span
-          class="btn-text"
-        >
-          2
-        </span>
-      </button>
-      <button
-        class="ghost css-1r7tkf0-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-        data-testid="pagination-page"
-        id="3"
-        type="button"
-      >
-        <span
-          class="btn-text"
-        >
-          3
-        </span>
-      </button>
-      <button
-        class="ghost css-1r7tkf0-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-        data-testid="pagination-page"
-        id="4"
-        type="button"
-      >
-        <span
-          class="btn-text"
-        >
-          4
-        </span>
-      </button>
-      <button
-        class="ghost css-1r7tkf0-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-        data-testid="pagination-page"
-        id="5"
-        type="button"
-      >
-        <span
-          class="btn-text"
-        >
-          5
-        </span>
-      </button>
-      <button
-        class="ghost css-1r7tkf0-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-        data-testid="pagination-page"
-        id="6"
-        type="button"
-      >
-        <span
-          class="btn-text"
-        >
-          6
-        </span>
-      </button>
+          <button
+            class="outline icon-after css-19ls4bs-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+          >
+            <span
+              class="btn-text"
+            >
+              <span
+                class="css-1jr9658-textContainer-textContainer"
+                data-testid="text-component"
+              >
+                dummy
+              </span>
+            </span>
+            <svg-file-stub
+              classname="icon"
+              data-testid="suffix-icon"
+              height="30"
+            />
+          </button>
+        </div>
+      </div>
     </div>
     <button
-      class="next-page-btn solid css-2oial5-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      class="next-page-btn ghost css-1r7tkf0-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="next-page-btn"
       name="Next page"
     >

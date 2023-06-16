@@ -119,3 +119,4 @@ export { default as IconEmptyStateSVG } from "./empty_state.svg";
 export { default as RightArrowSVG } from "./right-arrow-icon.svg";
 export { default as GroupsFilterSVG } from "./groups-filter.svg";
 export { default as BranchesFilterSVG } from "./branches-filter.svg";
+export { default as UserFilterSVG } from "./user-avatar.svg";

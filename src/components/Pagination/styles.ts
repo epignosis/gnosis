@@ -32,9 +32,13 @@ export const container = (
           font-style: italic;
           padding-inline-start: 1rem;
 
-          &:active,
           &:hover {
-            background-color: ${pagination.boxShadowColor};
+            background-color: ${pagination.hoverBackground};
+            border: 1px solid ${pagination.color};
+          }
+
+          &:focus {
+            border: 1px solid ${pagination.color};
           }
 
           svg {
@@ -57,11 +61,13 @@ export const container = (
           overflow-y: auto;
           width: 100%;
           padding: 0;
+
           .empty-state {
             cursor: default;
             color: ${pagination.emptyState};
             padding: 0.25rem 0.75rem;
           }
+
           ::-webkit-scrollbar {
             width: 5px;
           }

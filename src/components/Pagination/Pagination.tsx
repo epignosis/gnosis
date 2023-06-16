@@ -83,7 +83,7 @@ const Pagination: FC<PaginationProps> = ({
           <div className="pagination-options">
             <div className="dropdown" ref={wrapperRef}>
               <div className="dropdown-button" onClick={toggleList}>
-                <Button iconAfter={RightArrowSVG} variant="outline">
+                <Button iconAfter={RightArrowSVG} variant="ghost">
                   <Text fontSize="md">{selectionText}</Text>
                 </Button>
               </div>

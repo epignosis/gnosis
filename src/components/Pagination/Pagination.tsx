@@ -2,7 +2,7 @@ import React, { FC, useRef, useState } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import Button from "../Button/Button";
-import { ArrowLeftSVG, ArrowRightSVG, RightArrowSVG } from "../../icons/";
+import { IconChevronDownSVG, RightArrowSVG } from "../../icons/";
 import Text from "../Text/Text";
 import { container } from "./styles";
 import { PaginationProps, RowItem } from "./types";
@@ -59,7 +59,7 @@ const Pagination: FC<PaginationProps> = ({
             key={"item" + item}
             onClick={(): void => handleListItemSelect(item.id)}
           >
-            <Text fontSize={"md"} className={SelectedOptionClasses(isSelected)}>
+            <Text fontSize={"sm"} className={SelectedOptionClasses(isSelected)}>
               {item.value}
             </Text>
           </li>
@@ -80,14 +80,18 @@ const Pagination: FC<PaginationProps> = ({
             noGutters
             disabled={current === 1}
           >
-            {dir === "rtl" ? <ArrowRightSVG height={22} /> : <ArrowLeftSVG height={22} />}
+            {dir === "rtl" ? (
+              <IconChevronDownSVG className="left" height={32} />
+            ) : (
+              <IconChevronDownSVG className="right" height={32} />
+            )}
           </Button>
 
           <div className="pagination-options">
             <div className="dropdown" ref={wrapperRef}>
               <div className="dropdown-button" onClick={toggleList}>
                 <Button iconAfter={RightArrowSVG} variant="ghost">
-                  <Text fontSize="md">{selectionText}</Text>
+                  <Text fontSize="sm">{selectionText}</Text>
                 </Button>
               </div>
 
@@ -112,7 +116,11 @@ const Pagination: FC<PaginationProps> = ({
             noGutters
             disabled={current === paginationRange.length}
           >
-            {dir === "rtl" ? <ArrowLeftSVG height={22} /> : <ArrowRightSVG height={22} />}
+            {dir === "rtl" ? (
+              <IconChevronDownSVG className="right" height={32} />
+            ) : (
+              <IconChevronDownSVG className="left" height={32} />
+            )}
           </Button>
         </div>
       )}

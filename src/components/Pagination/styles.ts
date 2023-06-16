@@ -11,14 +11,44 @@ export const container = (
 
     .previous-page-btn,
     .next-page-btn {
+      &:hover,
+      &:active,
+      &:link,
+      &:focus {
+        svg {
+          fill: ${pagination.color};
+        }
+        background-color: ${pagination.hoverBackground}!important;
+      }
+
+      .left {
+        height: 24px;
+        transform: rotateZ(-90deg);
+      }
+
+      .right {
+        height: 24px;
+        transform: rotateZ(90deg);
+      }
+
       &.disabled {
         background-color: transparent;
+        svg {
+          fill: currentColor;
+        }
+      }
+
+      &:hover {
+        &.disabled {
+          background-color: transparent !important;
+          svg {
+            fill: currentColor;
+          }
+        }
       }
     }
 
     .pagination-options {
-      margin: 0 1rem;
-
       .dropdown {
         position: relative;
         display: inline-block;
@@ -29,8 +59,8 @@ export const container = (
 
         button {
           color: ${pagination.textColor};
-          font-style: italic;
           padding-inline-start: 1rem;
+          font-style: ${isOpen ? "italic" : "normal"};
 
           &:hover {
             background-color: ${pagination.hoverBackground};
@@ -86,13 +116,13 @@ export const container = (
           padding: 0;
           z-index: 100;
           border-radius: 5px;
-          box-shadow: 0px 3px 6px ${pagination.boxShadowColor};
+          box-shadow: 0px -2px 6px ${pagination.boxShadowColor};
           background-color: ${pagination.emptyState};
           max-width: 50rem;
           width: 100%;
           bottom: 100%;
           inset-inline-start: 0;
-          margin-bottom: 0.5rem;
+          margin-bottom: 0.3rem;
         }
       }
     }

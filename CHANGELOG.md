@@ -1,3 +1,10 @@
+## [3.5.8](https://github.com/epignosis/gnosis/compare/v3.5.7...v3.5.8) (2023-06-16)
+
+
+### Bug Fixes
+
+* updating pagination gnosis version ([#159](https://github.com/epignosis/gnosis/issues/159)) ([f5180de](https://github.com/epignosis/gnosis/commit/f5180dea420328cef7b923ec080c56ac438ae10a))
+
 ## [3.5.7](https://github.com/epignosis/gnosis/compare/v3.5.6...v3.5.7) (2023-06-15)
 
 

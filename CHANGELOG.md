@@ -1,3 +1,10 @@
+## [3.5.10](https://github.com/epignosis/gnosis/compare/v3.5.9...v3.5.10) (2023-06-16)
+
+
+### Bug Fixes
+
+* small ui fix ([#162](https://github.com/epignosis/gnosis/issues/162)) ([46dbf4e](https://github.com/epignosis/gnosis/commit/46dbf4eccbe6f7094423ec0d618e31b11058189c))
+
 ## [3.5.9](https://github.com/epignosis/gnosis/compare/v3.5.8...v3.5.9) (2023-06-16)
 
 

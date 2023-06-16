@@ -3,7 +3,7 @@
 exports[`<Pagination /> matches snapshot with on page 1`] = `
 <div>
   <div
-    class="html-class css-14tu0o3-container-container"
+    class="html-class css-1p5ejmf-container-container"
     id="my-id"
   >
     <button
@@ -29,7 +29,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
           class="dropdown-button"
         >
           <button
-            class="outline icon-after css-19ls4bs-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+            class="ghost icon-after css-19ls4bs-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
           >
             <span
               class="btn-text"

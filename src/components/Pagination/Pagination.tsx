@@ -7,6 +7,7 @@ import Text from "../Text/Text";
 import { container } from "./styles";
 import { PaginationProps, RowItem } from "./types";
 import { usePagination } from "./usePagination";
+import useClickOutside from "./hooks";
 
 const SelectedOptionClasses = (isSelected: boolean): string =>
   classNames({
@@ -29,6 +30,8 @@ const Pagination: FC<PaginationProps> = ({
   const [listItemSelected, handleListItemSelected] = useState<number>(size);
   const paginationRange = usePagination(current, totalPages);
   const hasItems = paginationRange.length > 0;
+
+  useClickOutside(wrapperRef, () => setIsListOpen(false));
 
   const toggleList = (): void => {
     // We want to reset the dropdown list every time it opens

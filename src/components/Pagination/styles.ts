@@ -64,18 +64,21 @@ export const container = (
 
           &:hover {
             background-color: ${pagination.hoverBackground};
-            border: 1px solid ${pagination.color};
           }
 
           &:focus {
             border: 1px solid ${pagination.color};
           }
 
+          &:focus {
+            border: none;
+          }
+
           svg {
             margin-left: 1rem;
             height: 12px;
 
-            transform: ${isOpen ? "rotateZ(90deg)" : "rotateZ(-90deg)"};
+            transform: rotateZ(-90deg);
           }
         }
 

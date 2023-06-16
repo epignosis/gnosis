@@ -19,7 +19,7 @@ const Header: FC<ChildrenProps> = ({
   const isSelectAllChecked = selected.length > 0;
   const allRowsSelected = rowIds.every((rowId) => selectedIds.includes(rowId));
 
-  const handleCheckboxClick = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleToggleSelectAll = (e: React.ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();
     selected.length === 0
       ? dispatch({ type: Actions.selectAll, payload: null })
@@ -53,7 +53,7 @@ const Header: FC<ChildrenProps> = ({
               id="select-all"
               name="select-all"
               value="all"
-              onChange={handleCheckboxClick}
+              onChange={(e) => handleToggleSelectAll(e)}
               checked={isSelectAllChecked}
               isPartiallySelected={!allRowsSelected}
             />

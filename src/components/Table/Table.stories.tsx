@@ -1,9 +1,11 @@
+/* eslint-disable no-console */
 import React from "react";
 import { Story } from "@storybook/react";
 import { IconEmptyStateSVG } from "../../icons/";
 import Text from "../Text/Text";
 import Button from "../Button/Button";
 import Table, { Props } from "./Table";
+import { Row, Sorting } from "./types";
 
 const emptyState = {
   title: "No results found with these criteria",
@@ -60,12 +62,15 @@ export const WithSorting = Template.bind({});
 WithSorting.args = {
   sortable: true,
   sorting: { column: "id", isDescending: true },
+  onSortingChanged: (sorting: Sorting) => console.log(sorting),
 };
 
 export const WithRowSelection = Template.bind({});
 
 WithRowSelection.args = {
   selectable: true,
+  onSelectRow: (row: Row[]) => console.log(row),
+  onSelectRowClick: (row: Row) => console.log(row),
 };
 
 export const WithoutData = Template.bind({});

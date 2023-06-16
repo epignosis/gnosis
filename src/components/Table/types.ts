@@ -35,8 +35,8 @@ export type TableProps = {
   sortable?: boolean;
   sorting?: Sorting;
   onSortingChanged?: (sorting: Sorting) => void;
-  //TODO: should be changed to onSelectedRowsChanged that would return the selected rows
-  handleRowClick?: (row: Row) => void;
+  onSelectRow?: (selectedRows: Row[]) => void;
+  onSelectRowClick?: (row: Row) => void;
   onHoveredRowChange?: (hoveredRow: Row | null) => void;
 };
 

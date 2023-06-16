@@ -17,7 +17,7 @@ const Body: FC<ChildrenProps> = ({
   selectable,
   state,
   dispatch,
-  handleRowClick,
+  onSelectRowClick,
   onHoveredRowChange,
 }) => {
   const { columns, selected, emptyState } = state;
@@ -51,7 +51,7 @@ const Body: FC<ChildrenProps> = ({
             return (
               <tr
                 key={rowKey}
-                className={rowClassnames(isSelected, Boolean(handleRowClick))}
+                className={rowClassnames(isSelected, Boolean(onSelectRowClick))}
                 onMouseEnter={(): void => handleRowHover(row)}
                 onMouseLeave={(): void => handleRowHover(null)}
               >
@@ -74,7 +74,7 @@ const Body: FC<ChildrenProps> = ({
                     return (
                       <Cell
                         key={`entry-${row.id}-${accessor}`}
-                        onClick={handleRowClick ? (): void => handleRowClick(row) : undefined}
+                        onClick={onSelectRowClick ? (): void => onSelectRowClick(row) : undefined}
                       >
                         {rowObj(row)}
                       </Cell>
@@ -83,7 +83,7 @@ const Body: FC<ChildrenProps> = ({
                   return (
                     <Cell
                       key={`entry-${row.id}-${accessor}`}
-                      onClick={handleRowClick ? (): void => handleRowClick(row) : undefined}
+                      onClick={onSelectRowClick ? (): void => onSelectRowClick(row) : undefined}
                     >
                       {rowObj as string}
                     </Cell>

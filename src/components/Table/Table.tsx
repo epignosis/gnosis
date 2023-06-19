@@ -16,7 +16,7 @@ type TableCompoundProps = {
 };
 
 const Table: FC<Props> & TableCompoundProps = (props) => {
-  const { columns, rows, emptyState, sortable = false, sorting, ...rest } = props;
+  const { columns, rows, emptyState, sortable = false, sorting, onRowSelect } = props;
 
   const defaultSorting: Sorting = sorting ?? {
     column: sortable ? columns[0].accessor : "",
@@ -31,6 +31,8 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
     sorting: defaultSorting,
   });
 
+  const { selected } = state;
+
   useEffect(() => {
     dispatch({ type: Actions.columnsChanged, payload: columns });
   }, [columns]);
@@ -39,9 +41,13 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
     dispatch({ type: Actions.rowsChanged, payload: rows });
   }, [rows]);
 
+  useEffect(() => {
+    onRowSelect && onRowSelect(selected);
+  }, [selected]);
+
   return (
     <div css={tableContainer} data-testid="table">
-      <table {...rest}>
+      <table>
         <Table.Header state={state} dispatch={dispatch} {...props} />
         <Table.Body state={state} dispatch={dispatch} {...props} />
       </table>

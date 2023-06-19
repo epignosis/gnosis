@@ -6,9 +6,7 @@ exports[`<Table> matches snapshot 1`] = `
     class="css-sy84m1-tableContainer-tableContainer"
     data-testid="table"
   >
-    <table
-      id="table-1"
-    >
+    <table>
       <thead>
         <tr>
           <th

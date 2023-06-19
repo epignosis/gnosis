@@ -69,8 +69,8 @@ export const WithRowSelection = Template.bind({});
 
 WithRowSelection.args = {
   selectable: true,
-  onSelectRow: (row: Row[]) => console.log(row),
-  onSelectRowClick: (row: Row) => console.log(row),
+  onRowSelect: (selectedRows: Row[]) => console.log(selectedRows),
+  onRowClick: (row: Row) => console.log(row),
 };
 
 export const WithoutData = Template.bind({});

@@ -16,7 +16,7 @@ type TableCompoundProps = {
 };
 
 const Table: FC<Props> & TableCompoundProps = (props) => {
-  const { columns, rows, emptyState, sortable = false, sorting, onSelectRow } = props;
+  const { columns, rows, emptyState, sortable = false, sorting, onRowSelect: onSelectRow } = props;
 
   const defaultSorting: Sorting = sorting ?? {
     column: sortable ? columns[0].accessor : "",

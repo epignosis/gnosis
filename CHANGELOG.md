@@ -1,3 +1,24 @@
+# [4.0.0](https://github.com/epignosis/gnosis/compare/v3.5.10...v4.0.0) (2023-06-19)
+
+
+### Features
+
+* **table component:** add callbacks for the table row selections ([#160](https://github.com/epignosis/gnosis/issues/160)) ([06c1f9d](https://github.com/epignosis/gnosis/commit/06c1f9d212ecb7b493090d142bf81097a46702f5))
+
+
+### BREAKING CHANGES
+
+* **table component:** The callback handleRowClick has changed to onSelectRowClick
+
+* fix(table): update snapshots
+
+Update table component test snapshots
+
+* fix(table): callback changes
+* **table component:** Callback naming changed
+
+* fix(table): leftover fix
+
 ## [3.5.10](https://github.com/epignosis/gnosis/compare/v3.5.9...v3.5.10) (2023-06-16)
 
 

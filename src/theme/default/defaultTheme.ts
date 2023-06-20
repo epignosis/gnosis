@@ -19,6 +19,8 @@ import {
   tag,
   tooltip,
   pagination,
+  dropdown,
+  scrollbar,
 } from "./config";
 
 const typeScaleSizes = generateTypeScaleSizes(DEFAULT_TYPESCALE_CONFIG);
@@ -54,6 +56,8 @@ const defaultTheme = {
   tag,
   tooltip,
   pagination,
+  dropdown,
+  scrollbar,
 };
 
 export type GnosisTheme = typeof defaultTheme;

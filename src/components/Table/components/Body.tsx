@@ -96,7 +96,7 @@ const Body: FC<ChildrenProps> = ({
       ) : (
         <tr className="empty-state-container">
           <td>
-            <Result {...emptyState} hideInfo />
+            <Result {...emptyState} />
           </td>
         </tr>
       )}

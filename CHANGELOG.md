@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/epignosis/gnosis/compare/v4.0.1...v4.0.2) (2023-06-21)
+
+
+### Bug Fixes
+
+* **body.tsx:** hideInfo prop was not set correctly ([#164](https://github.com/epignosis/gnosis/issues/164)) ([ccac876](https://github.com/epignosis/gnosis/commit/ccac87693a353a40523f6abfd10cfaa0b2d1eb42))
+
 ## [4.0.1](https://github.com/epignosis/gnosis/compare/v4.0.0...v4.0.1) (2023-06-19)
 
 # [4.0.0](https://github.com/epignosis/gnosis/compare/v3.5.10...v4.0.0) (2023-06-19)

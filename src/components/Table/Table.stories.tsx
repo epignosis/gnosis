@@ -78,6 +78,7 @@ WithoutData.args = {
   rows: [],
   emptyState: {
     ...emptyState,
+    hideInfo: true,
     footer: (
       <div className="body">
         <Text fontSize="lg">{emptyState.title}</Text>

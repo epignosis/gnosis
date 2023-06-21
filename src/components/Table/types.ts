@@ -20,6 +20,7 @@ export type EmptyState = {
   info: string;
   icon?: IconType;
   footer?: ReactNode;
+  hideInfo?: boolean;
 };
 
 export type Sorting = {

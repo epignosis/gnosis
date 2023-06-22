@@ -1,3 +1,10 @@
+## [4.0.3](https://github.com/epignosis/gnosis/compare/v4.0.2...v4.0.3) (2023-06-22)
+
+
+### Bug Fixes
+
+* **pagination.tsx:** on Pagination component, use a unique key for the li element ([#165](https://github.com/epignosis/gnosis/issues/165)) ([3562208](https://github.com/epignosis/gnosis/commit/35622080302808fbf45c6760de130bb13ef4890d))
+
 ## [4.0.2](https://github.com/epignosis/gnosis/compare/v4.0.1...v4.0.2) (2023-06-21)
 
 

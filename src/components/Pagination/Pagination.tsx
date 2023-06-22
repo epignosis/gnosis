@@ -56,7 +56,7 @@ const Pagination: FC<PaginationProps> = ({
         return (
           <li
             data-testid="pagination-page"
-            key={"item" + item}
+            key={"item" + item.id}
             onClick={(): void => handleListItemSelect(item.id)}
           >
             <Text fontSize={"sm"} className={SelectedOptionClasses(isSelected)}>

@@ -1,3 +1,10 @@
+## [4.0.4](https://github.com/epignosis/gnosis/compare/v4.0.3...v4.0.4) (2023-06-22)
+
+
+### Bug Fixes
+
+* **pagination.tsx:** remove unused usePagination hook ([#166](https://github.com/epignosis/gnosis/issues/166)) ([b36f289](https://github.com/epignosis/gnosis/commit/b36f289afc9d2704560a5f4b6def36f6d7dbe2ee))
+
 ## [4.0.3](https://github.com/epignosis/gnosis/compare/v4.0.2...v4.0.3) (2023-06-22)
 
 

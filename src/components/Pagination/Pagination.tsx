@@ -6,7 +6,6 @@ import { IconChevronDownSVG, RightArrowSVG } from "../../icons/";
 import Text from "../Text/Text";
 import { container } from "./styles";
 import { PaginationProps, RowItem } from "./types";
-import { usePagination } from "./usePagination";
 import useClickOutside from "./hooks";
 
 const SelectedOptionClasses = (isSelected: boolean): string =>
@@ -28,8 +27,6 @@ const Pagination: FC<PaginationProps> = ({
   const [isListOpen, setIsListOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const [listItemSelected, handleListItemSelected] = useState<number>(size);
-  const paginationRange = usePagination(current, totalPages);
-  const hasItems = paginationRange.length > 0;
 
   useClickOutside(wrapperRef, () => setIsListOpen(false));
 
@@ -59,7 +56,7 @@ const Pagination: FC<PaginationProps> = ({
             key={`item-${item.id}`}
             onClick={(): void => handleListItemSelect(item.id)}
           >
-            <Text fontSize={"sm"} className={SelectedOptionClasses(isSelected)}>
+            <Text fontSize="sm" className={SelectedOptionClasses(isSelected)}>
               {item.value}
             </Text>
           </li>
@@ -68,63 +65,59 @@ const Pagination: FC<PaginationProps> = ({
   };
 
   return (
-    <>
-      {hasItems && (
-        <div css={(theme): SerializedStyles => container(theme, { isOpen: isListOpen })} {...rest}>
-          <Button
-            className="previous-page-btn"
-            data-testid="previous-page-btn"
-            name="Previous page"
-            onClick={(): void => handlePaginationNumberChanged(current - 1)}
-            variant="ghost"
-            noGutters
-            disabled={current === 1}
-          >
-            {dir === "rtl" ? (
-              <IconChevronDownSVG className="left" height={32} />
-            ) : (
-              <IconChevronDownSVG className="right" height={32} />
-            )}
-          </Button>
+    <div css={(theme): SerializedStyles => container(theme, { isOpen: isListOpen })} {...rest}>
+      <Button
+        className="previous-page-btn"
+        data-testid="previous-page-btn"
+        name="Previous page"
+        onClick={(): void => handlePaginationNumberChanged(current - 1)}
+        variant="ghost"
+        noGutters
+        disabled={current === 1}
+      >
+        {dir === "rtl" ? (
+          <IconChevronDownSVG className="left" height={32} />
+        ) : (
+          <IconChevronDownSVG className="right" height={32} />
+        )}
+      </Button>
 
-          <div className="pagination-options">
-            <div className="dropdown" ref={wrapperRef}>
-              <div className="dropdown-button" onClick={toggleList}>
-                <Button iconAfter={RightArrowSVG} variant="ghost">
-                  <Text fontSize="sm">{selectionText}</Text>
-                </Button>
-              </div>
-
-              {isListOpen && list.length > 0 && (
-                <div className="open-list-container">
-                  <div className="dropdown-wrapper">
-                    <ul role="list" className="dropdown-list">
-                      {mapOptions(list)}
-                    </ul>
-                  </div>
-                </div>
-              )}
-            </div>
+      <div className="pagination-options">
+        <div className="dropdown" ref={wrapperRef}>
+          <div className="dropdown-button" onClick={toggleList}>
+            <Button iconAfter={RightArrowSVG} variant="ghost">
+              <Text fontSize="sm">{selectionText}</Text>
+            </Button>
           </div>
 
-          <Button
-            className="next-page-btn"
-            data-testid="next-page-btn"
-            name="Next page"
-            onClick={(): void => handlePaginationNumberChanged(current + 1)}
-            variant="ghost"
-            noGutters
-            disabled={current === paginationRange.length}
-          >
-            {dir === "rtl" ? (
-              <IconChevronDownSVG className="right" height={32} />
-            ) : (
-              <IconChevronDownSVG className="left" height={32} />
-            )}
-          </Button>
+          {isListOpen && list.length > 0 && (
+            <div className="open-list-container">
+              <div className="dropdown-wrapper">
+                <ul role="list" className="dropdown-list">
+                  {mapOptions(list)}
+                </ul>
+              </div>
+            </div>
+          )}
         </div>
-      )}
-    </>
+      </div>
+
+      <Button
+        className="next-page-btn"
+        data-testid="next-page-btn"
+        name="Next page"
+        onClick={(): void => handlePaginationNumberChanged(current + 1)}
+        variant="ghost"
+        noGutters
+        disabled={current === totalPages}
+      >
+        {dir === "rtl" ? (
+          <IconChevronDownSVG className="right" height={32} />
+        ) : (
+          <IconChevronDownSVG className="left" height={32} />
+        )}
+      </Button>
+    </div>
   );
 };
 

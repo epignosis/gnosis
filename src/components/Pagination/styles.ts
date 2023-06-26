@@ -21,12 +21,12 @@ export const container = (
         background-color: ${pagination.hoverBackground}!important;
       }
 
-      .left {
+      .rotate-left {
         height: 24px;
         transform: rotateZ(-90deg);
       }
 
-      .right {
+      .rotate-right {
         height: 24px;
         transform: rotateZ(90deg);
       }
@@ -75,7 +75,7 @@ export const container = (
           }
 
           svg {
-            margin-left: 1rem;
+            margin-inline-start: 1rem;
             height: 12px;
 
             transform: rotateZ(-90deg);

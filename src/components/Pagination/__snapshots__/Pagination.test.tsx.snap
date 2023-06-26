@@ -3,7 +3,7 @@
 exports[`<Pagination /> matches snapshot with on page 1`] = `
 <div>
   <div
-    class="html-class css-1tae9op-container-container"
+    class="html-class css-4yx2bb-container-container"
     id="my-id"
   >
     <button
@@ -15,7 +15,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         class="btn-text"
       >
         <svg-file-stub
-          classname="right"
+          classname="rotate-right"
           height="32"
         />
       </span>
@@ -60,7 +60,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         class="btn-text"
       >
         <svg-file-stub
-          classname="left"
+          classname="rotate-left"
           height="32"
         />
       </span>

@@ -1,3 +1,10 @@
+## [4.0.5](https://github.com/epignosis/gnosis/compare/v4.0.4...v4.0.5) (2023-06-26)
+
+
+### Bug Fixes
+
+* **pagination:** types and styles ([#167](https://github.com/epignosis/gnosis/issues/167)) ([189330e](https://github.com/epignosis/gnosis/commit/189330eb5670514df7099c0e9c9e4dac27075f43))
+
 ## [4.0.4](https://github.com/epignosis/gnosis/compare/v4.0.3...v4.0.4) (2023-06-22)
 
 

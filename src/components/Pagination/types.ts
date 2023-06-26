@@ -3,17 +3,17 @@ import { ExtendableProps } from "types/utils";
 export type PaginationProps = ExtendableProps<
   React.HTMLAttributes<HTMLDivElement>,
   {
-    current: number;
+    page: number;
+    pageSize: number;
     totalPages: number;
-    list: RowItem[];
+    rowsPerPageOptions: RowsPerPageOption[];
     selectionText: string;
-    size: number;
-    handlePaginationSizeChanged: (size: number) => void;
-    handlePaginationNumberChanged: (page: number) => void;
+    onPageChange: (page: number) => void;
+    onPageSizeChange: (pageSize: number) => void;
   }
 >;
 
-export type RowItem = {
-  id: number;
-  value: string;
+export type RowsPerPageOption = {
+  value: number;
+  label: string;
 };

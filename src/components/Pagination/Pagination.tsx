@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 import { IconChevronDownSVG, RightArrowSVG } from "../../icons/";
 import Text from "../Text/Text";
 import { container } from "./styles";
-import { PaginationProps, RowItem } from "./types";
+import { PaginationProps } from "./types";
 import useClickOutside from "./hooks";
 
 const SelectedOptionClasses = (isSelected: boolean): string =>
@@ -14,19 +14,22 @@ const SelectedOptionClasses = (isSelected: boolean): string =>
   });
 
 const Pagination: FC<PaginationProps> = ({
-  current,
-  list,
+  page,
+  pageSize,
   totalPages,
-  size,
+  rowsPerPageOptions,
   selectionText,
-  handlePaginationSizeChanged,
-  handlePaginationNumberChanged,
   dir = "ltr",
+  onPageChange,
+  onPageSizeChange,
   ...rest
 }) => {
-  const [isListOpen, setIsListOpen] = useState(false);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
-  const [listItemSelected, handleListItemSelected] = useState<number>(size);
+  const [isListOpen, setIsListOpen] = useState(false);
+  const [selectedListItem, setSelectedListItem] = useState<number>(pageSize);
+  const isRtl = dir === "rtl";
+  const isPrevBtnDisabled = page === 1;
+  const isNextBtnDisabled = page === totalPages;
 
   useClickOutside(wrapperRef, () => setIsListOpen(false));
 
@@ -37,32 +40,13 @@ const Pagination: FC<PaginationProps> = ({
 
   const handleListItemSelect = (item: number): void => {
     if (isListOpen) {
-      handlePaginationSizeChanged(item);
-      handleListItemSelected(item);
+      onPageSizeChange(item);
+      setSelectedListItem(item);
       setIsListOpen(false);
     }
   };
 
-  const mapOptions = (items: RowItem[]): JSX.Element[] => {
-    return items
-      .slice()
-      .reverse()
-      .map((item) => {
-        const isSelected = item.id === listItemSelected;
-
-        return (
-          <li
-            data-testid="pagination-page"
-            key={`item-${item.id}`}
-            onClick={(): void => handleListItemSelect(item.id)}
-          >
-            <Text fontSize="sm" className={SelectedOptionClasses(isSelected)}>
-              {item.value}
-            </Text>
-          </li>
-        );
-      });
-  };
+  const options = rowsPerPageOptions.slice().reverse();
 
   return (
     <div css={(theme): SerializedStyles => container(theme, { isOpen: isListOpen })} {...rest}>
@@ -70,16 +54,12 @@ const Pagination: FC<PaginationProps> = ({
         className="previous-page-btn"
         data-testid="previous-page-btn"
         name="Previous page"
-        onClick={(): void => handlePaginationNumberChanged(current - 1)}
+        onClick={(): void => onPageChange(page - 1)}
         variant="ghost"
         noGutters
-        disabled={current === 1}
+        disabled={isPrevBtnDisabled}
       >
-        {dir === "rtl" ? (
-          <IconChevronDownSVG className="left" height={32} />
-        ) : (
-          <IconChevronDownSVG className="right" height={32} />
-        )}
+        <IconChevronDownSVG className={isRtl ? "rotate-left" : "rotate-right"} height={32} />
       </Button>
 
       <div className="pagination-options">
@@ -90,11 +70,25 @@ const Pagination: FC<PaginationProps> = ({
             </Button>
           </div>
 
-          {isListOpen && list.length > 0 && (
+          {isListOpen && rowsPerPageOptions.length > 0 && (
             <div className="open-list-container">
               <div className="dropdown-wrapper">
                 <ul role="list" className="dropdown-list">
-                  {mapOptions(list)}
+                  {options.map(({ value, label }) => {
+                    const isSelected = value === selectedListItem;
+
+                    return (
+                      <li
+                        data-testid="pagination-page"
+                        key={`item-${value}`}
+                        onClick={(): void => handleListItemSelect(value)}
+                      >
+                        <Text fontSize="sm" className={SelectedOptionClasses(isSelected)}>
+                          {label}
+                        </Text>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
@@ -106,16 +100,12 @@ const Pagination: FC<PaginationProps> = ({
         className="next-page-btn"
         data-testid="next-page-btn"
         name="Next page"
-        onClick={(): void => handlePaginationNumberChanged(current + 1)}
+        onClick={(): void => onPageChange(page + 1)}
         variant="ghost"
         noGutters
-        disabled={current === totalPages}
+        disabled={isNextBtnDisabled}
       >
-        {dir === "rtl" ? (
-          <IconChevronDownSVG className="right" height={32} />
-        ) : (
-          <IconChevronDownSVG className="left" height={32} />
-        )}
+        <IconChevronDownSVG className={isRtl ? "rotate-right" : "rotate-left"} height={32} />
       </Button>
     </div>
   );

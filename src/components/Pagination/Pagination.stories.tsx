@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Story } from "@storybook/react";
 import Pagination from "./Pagination";
-import { PaginationProps, RowItem } from "./types";
+import { PaginationProps, RowsPerPageOption } from "./types";
 
-const list: RowItem[] = [
-  { id: 10, value: "10 rows" },
-  { id: 20, value: "20 rows" },
-  { id: 30, value: "30 rows" },
+const rowsPerPageOptions: RowsPerPageOption[] = [
+  { value: 10, label: "10 rows" },
+  { value: 20, label: "20 rows" },
+  { value: 30, label: "30 rows" },
 ];
 
 export default {
@@ -19,64 +19,32 @@ export default {
         options: ["ltr", "rtl"],
       },
     },
-    handlePaginationNumberChanged: { action: "Changed page!" },
   },
   args: {
-    current: 1,
+    page: 1,
+    pageSize: 20,
     totalPages: 6,
-    list,
-    size: 20,
+    rowsPerPageOptions,
   },
 };
 
-export const Default: Story<PaginationProps> = (args) => {
-  const [value, setValue] = useState(1);
-  const updateValue = (val: number) => {
-    setValue(val);
-  };
-  const [size, setSize] = useState(args.size);
-  const handleSizeChanged = (size: number) => {
-    setSize(size);
-  };
+const Template: Story<PaginationProps> = (args) => {
+  const [page, setPage] = useState(args.page);
+  const [pageSize, setPageSize] = useState(args.pageSize);
 
-  const selectionText = `${value}-${args.totalPages} of ${size} results`;
+  const selectionText = `${page}-${args.totalPages} of ${pageSize} results`;
 
   return (
     <Pagination
       style={{ marginTop: "10rem" }}
       {...args}
-      current={value}
-      handlePaginationNumberChanged={updateValue}
+      page={page}
       selectionText={selectionText}
-      handlePaginationSizeChanged={handleSizeChanged}
+      onPageChange={setPage}
+      onPageSizeChange={setPageSize}
     />
   );
 };
 
-export const WithTooManyPages: Story<PaginationProps> = (args) => {
-  const [value, setValue] = useState(1);
-  const updateValue = (val: number) => {
-    setValue(val);
-  };
-  const [size, setSize] = useState(args.size);
-  const handleSizeChanged = (size: number) => {
-    setSize(size);
-  };
-
-  const selectionText = `${value}-${args.totalPages} of ${size} results`;
-
-  return (
-    <Pagination
-      style={{ marginTop: "10rem" }}
-      {...args}
-      current={value}
-      handlePaginationNumberChanged={updateValue}
-      selectionText={selectionText}
-      handlePaginationSizeChanged={handleSizeChanged}
-    />
-  );
-};
-
-WithTooManyPages.args = {
-  totalPages: 1000,
-};
+export const Default = Template.bind({});
+export const WithTooManyPages = Template.bind({ totalPages: 1000 });

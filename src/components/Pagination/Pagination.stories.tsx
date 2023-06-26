@@ -47,4 +47,6 @@ const Template: Story<PaginationProps> = (args) => {
 };
 
 export const Default = Template.bind({});
-export const WithTooManyPages = Template.bind({ totalPages: 1000 });
+
+export const WithTooManyPages = Template.bind({});
+WithTooManyPages.args = { totalPages: 1000 };

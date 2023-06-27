@@ -50,7 +50,7 @@ export { default as CaretRightCircledSVG } from "./caret_right_circled.svg";
 export { default as SettingsSVG } from "./settings_icon.svg";
 export { default as FolderSVG } from "./folder.svg";
 export { default as CloudDownloadSVG } from "./cloud_download.svg";
-export { default as FilterSVG } from "./filter.svg";
+export { default as FilterSVG } from "./icon-filter.svg";
 export { default as AttachmentSVG } from "./attachment.svg";
 export { default as ReplySVG } from "./reply.svg";
 export { default as ReplyAllSVG } from "./reply_all.svg";
@@ -120,3 +120,4 @@ export { default as RightArrowSVG } from "./right-arrow-icon.svg";
 export { default as GroupsFilterSVG } from "./groups-filter.svg";
 export { default as BranchesFilterSVG } from "./branches-filter.svg";
 export { default as UserFilterSVG } from "./user-avatar.svg";
+//Hello

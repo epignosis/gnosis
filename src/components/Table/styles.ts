@@ -72,6 +72,13 @@ export const tableContainer = ({ table }: Theme) => css`
           padding: 1rem 1.5rem;
           position: relative;
 
+          .has-overflow {
+            word-break: break-word;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+          }
+
           .no-wrap {
             white-space: nowrap;
           }

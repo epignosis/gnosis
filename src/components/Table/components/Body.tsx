@@ -69,12 +69,14 @@ const Body: FC<ChildrenProps> = ({
 
                 {accessors.map((accessor) => {
                   const rowObj = row[accessor];
+                  const { maxWidth } = columns.find((column) => column.accessor === accessor) ?? {};
 
                   if (typeof rowObj === "function") {
                     return (
                       <Cell
                         key={`entry-${row.id}-${accessor}`}
                         onClick={onRowClick ? (): void => onRowClick(row) : undefined}
+                        style={{ maxWidth: maxWidth ? `${maxWidth}px` : "auto" }}
                       >
                         {rowObj(row)}
                       </Cell>
@@ -84,6 +86,7 @@ const Body: FC<ChildrenProps> = ({
                     <Cell
                       key={`entry-${row.id}-${accessor}`}
                       onClick={onRowClick ? (): void => onRowClick(row) : undefined}
+                      style={{ maxWidth: maxWidth ? `${maxWidth}px` : "auto" }}
                     >
                       {rowObj as string}
                     </Cell>

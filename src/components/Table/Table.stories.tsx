@@ -78,11 +78,7 @@ WithOverflowColumns.args = {
   rows: [
     {
       id: 271,
-      description: (
-        <div className="has-overflow">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        </div>
-      ),
+      description: <div className="has-overflow">Testing Testing Testing</div>,
       name: "Test",
       category: "Test",
       code: "Test",

@@ -18,13 +18,19 @@ const Cell: FC<CellProps> = ({ children, as: Component = "td", onClick, style, .
   }, []);
 
   useEffect(() => {
-    if (Component === "td") {
+    function updateView() {
       const el = overflowRef.current;
 
       if (el) {
         setIsOverflowActive(el.offsetWidth < el.scrollWidth);
       }
     }
+
+    if (Component === "td") {
+      window.addEventListener("resize", updateView);
+      updateView();
+    }
+    return () => window.removeEventListener("resize", updateView);
   }, [overflowRef]);
 
   return (

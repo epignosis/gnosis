@@ -50,3 +50,6 @@ export const Default = Template.bind({});
 
 export const WithTooManyPages = Template.bind({});
 WithTooManyPages.args = { totalPages: 1000 };
+
+export const WithZeroPages = Template.bind({});
+WithZeroPages.args = { totalPages: 0 };

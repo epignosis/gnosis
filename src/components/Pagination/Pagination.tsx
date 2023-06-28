@@ -29,8 +29,7 @@ const Pagination: FC<PaginationProps> = ({
   const [selectedListItem, setSelectedListItem] = useState<number>(pageSize);
   const isRtl = dir === "rtl";
   const isPrevBtnDisabled = page === 1;
-  const isNextBtnDisabled = page === totalPages;
-
+  const isNextBtnDisabled = page === totalPages || totalPages === 0;
   useClickOutside(wrapperRef, () => setIsListOpen(false));
 
   const toggleList = (): void => {

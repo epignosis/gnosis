@@ -7,25 +7,25 @@ export type CellProps = HTMLAttributes<HTMLTableCellElement> & {
 };
 
 const Cell: FC<CellProps> = ({ children, as: Component = "td", onClick, style, ...rest }) => {
-  const ref = useRef<HTMLDivElement | null>(null);
   const componentRef = useRef<HTMLTableCellElement | null>(null);
+  const overflowRef = useRef<HTMLElement | null>(null);
   const [isOverflowActive, setIsOverflowActive] = useState(false);
 
   useLayoutEffect(() => {
     if (Component === "td" && componentRef.current) {
-      ref.current = componentRef.current.querySelector(".has-overflow");
+      overflowRef.current = componentRef.current.querySelector(".has-overflow");
     }
   }, []);
 
   useEffect(() => {
     if (Component === "td") {
-      const el = ref.current;
+      const el = overflowRef.current;
 
       if (el) {
         setIsOverflowActive(el.offsetWidth < el.scrollWidth);
       }
     }
-  }, [ref]);
+  }, [overflowRef]);
 
   return (
     <Component ref={componentRef} style={style} onClick={onClick} {...rest}>

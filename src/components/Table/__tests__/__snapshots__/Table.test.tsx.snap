@@ -3,7 +3,7 @@
 exports[`<Table> matches snapshot 1`] = `
 <div>
   <div
-    class="css-sy84m1-tableContainer-tableContainer"
+    class="css-yhq98i-tableContainer-tableContainer"
     data-testid="table"
   >
     <table>
@@ -12,30 +12,54 @@ exports[`<Table> matches snapshot 1`] = `
           <th
             class="header-cell header1"
           >
-            <span>
-              Header1
-            </span>
+            <div
+              aria-expanded="false"
+            >
+              <span>
+                <span>
+                  Header1
+                </span>
+              </span>
+            </div>
           </th>
           <th
             class="header-cell header2"
           >
-            <span>
-              Header2
-            </span>
+            <div
+              aria-expanded="false"
+            >
+              <span>
+                <span>
+                  Header2
+                </span>
+              </span>
+            </div>
           </th>
           <th
             class="header-cell header3"
           >
-            <span>
-              Header3
-            </span>
+            <div
+              aria-expanded="false"
+            >
+              <span>
+                <span>
+                  Header3
+                </span>
+              </span>
+            </div>
           </th>
           <th
             class="header-cell header4"
           >
-            <span>
-              Header4
-            </span>
+            <div
+              aria-expanded="false"
+            >
+              <span>
+                <span>
+                  Header4
+                </span>
+              </span>
+            </div>
           </th>
         </tr>
       </thead>
@@ -43,34 +67,194 @@ exports[`<Table> matches snapshot 1`] = `
         <tr
           class=""
         >
-          <td />
-          <td />
-          <td />
-          <td />
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
         </tr>
         <tr
           class=""
         >
-          <td />
-          <td />
-          <td />
-          <td />
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
         </tr>
         <tr
           class=""
         >
-          <td />
-          <td />
-          <td />
-          <td />
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
         </tr>
         <tr
           class=""
         >
-          <td />
-          <td />
-          <td />
-          <td />
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>

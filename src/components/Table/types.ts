@@ -8,6 +8,7 @@ export type Column = {
   hidden?: boolean;
   classNames?: string[];
   sortableHeader?: boolean;
+  maxWidth?: number;
 };
 
 export type Row = {

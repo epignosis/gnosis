@@ -29,13 +29,7 @@ export default {
       { accessor: "category", cell: "Category", classNames: ["category"] },
     ],
     rows: [
-      {
-        id: 271,
-        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
-        name: "Test",
-        category: "Test",
-        code: "Test",
-      },
+      { id: 271, description: "Test", name: "Test", category: "Test", code: "Test" },
       { id: 272, description: "Test", name: "Test", category: "Test", code: "Test" },
       { id: 273, description: "Test", name: "Test", category: "Test", code: "Test" },
       { id: 274, description: "Test", name: "Test", category: "Test", code: "Test" },
@@ -70,6 +64,43 @@ WithRowSelection.args = {
   selectable: true,
   onRowSelect: (selectedRows: Row[]) => console.log(selectedRows),
   onRowClick: (row: Row) => console.log(row),
+};
+
+export const WithOverflowColumns = Template.bind({});
+
+WithOverflowColumns.args = {
+  columns: [
+    { accessor: "id", cell: "Code", classNames: ["id"] },
+    { accessor: "description", cell: "Description", classNames: ["description"], maxWidth: 100 },
+    { accessor: "name", cell: "Name", classNames: ["name"], maxWidth: 100 },
+    { accessor: "category", cell: "Category", classNames: ["category"] },
+  ],
+  rows: [
+    {
+      id: 271,
+      description: (
+        <div className="has-overflow">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </div>
+      ),
+      name: "Test",
+      category: "Test",
+      code: "Test",
+    },
+    { id: 272, description: "Test", name: "Test", category: "Test", code: "Test" },
+    {
+      id: 273,
+      description: "Test",
+      name: (
+        <div className="has-overflow">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </div>
+      ),
+      category: "Test",
+      code: "Test",
+    },
+    { id: 274, description: "Test", name: "Test", category: "Test", code: "Test" },
+  ],
 };
 
 export const WithoutData = Template.bind({});

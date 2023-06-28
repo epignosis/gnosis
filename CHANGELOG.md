@@ -1,3 +1,10 @@
+## [4.0.7](https://github.com/epignosis/gnosis/compare/v4.0.6...v4.0.7) (2023-06-28)
+
+
+### Bug Fixes
+
+* **table:** display tooltip in overflow columns ([#169](https://github.com/epignosis/gnosis/issues/169)) ([8832abf](https://github.com/epignosis/gnosis/commit/8832abfab1b113bece93f811ea1cc4c4ef1c1917))
+
 ## [4.0.6](https://github.com/epignosis/gnosis/compare/v4.0.5...v4.0.6) (2023-06-27)
 
 ## [4.0.5](https://github.com/epignosis/gnosis/compare/v4.0.4...v4.0.5) (2023-06-26)

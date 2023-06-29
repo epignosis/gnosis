@@ -1,3 +1,10 @@
+## [4.0.8](https://github.com/epignosis/gnosis/compare/v4.0.7...v4.0.8) (2023-06-29)
+
+
+### Bug Fixes
+
+* resizing window apply tooltip ([#170](https://github.com/epignosis/gnosis/issues/170)) ([d2aa091](https://github.com/epignosis/gnosis/commit/d2aa091f6b992ee7805648e9278114705f7077ee))
+
 ## [4.0.7](https://github.com/epignosis/gnosis/compare/v4.0.6...v4.0.7) (2023-06-28)
 
 

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useLayoutEffect, useState } from "react";
 import classNames from "classnames";
 import { Row } from "../types";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
@@ -23,6 +23,17 @@ const Body: FC<ChildrenProps> = ({
   const { columns, selected, emptyState } = state;
   const accessors = columns.filter((column) => !column.hidden).map((column) => column.accessor);
   const selectedRows = selected.map((entry) => entry.id);
+  const [size, setSize] = useState([window.innerWidth, window.innerHeight]);
+
+  const updateSize = () => {
+    setSize([window.innerWidth, window.innerHeight]);
+  };
+
+  useLayoutEffect(() => {
+    window.addEventListener("resize", updateSize);
+
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
 
   const handleRowSelection = (e: React.ChangeEvent<HTMLInputElement>, row: Row): void => {
     e.preventDefault();
@@ -78,6 +89,7 @@ const Body: FC<ChildrenProps> = ({
                         key={`entry-${row.id}-${accessor}`}
                         onClick={onRowClick ? (): void => onRowClick(row) : undefined}
                         style={style}
+                        windowSize={size}
                       >
                         {rowObj(row)}
                       </Cell>
@@ -88,6 +100,7 @@ const Body: FC<ChildrenProps> = ({
                       key={`entry-${row.id}-${accessor}`}
                       onClick={onRowClick ? (): void => onRowClick(row) : undefined}
                       style={style}
+                      windowSize={size}
                     >
                       {rowObj as string}
                     </Cell>

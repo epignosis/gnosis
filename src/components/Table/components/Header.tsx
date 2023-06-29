@@ -36,7 +36,9 @@ const Header: FC<ChildrenProps> = ({
 
       // sorting the same column
       if (sorting.column === accesor) {
-        !sorting.isDescending ? (newSorting.isDescending = true) : (newSorting.column = "");
+        !sorting.isDescending
+          ? (newSorting.isDescending = true)
+          : (newSorting.isDescending = false);
       }
 
       dispatch({ type: Actions.sortingChanged, payload: newSorting });

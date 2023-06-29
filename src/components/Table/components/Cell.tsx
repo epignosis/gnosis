@@ -26,16 +26,12 @@ const Cell: FC<CellProps> = ({
   }, []);
 
   useEffect(() => {
-    function checkOverflow() {
+    if (Component === "td") {
       const el = overflowRef.current;
 
       if (el) {
         setIsOverflowActive(el.offsetWidth < el.scrollWidth);
       }
-    }
-
-    if (Component === "td") {
-      checkOverflow();
     }
   }, [overflowRef, windowSize]);
 

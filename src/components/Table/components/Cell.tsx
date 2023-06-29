@@ -3,10 +3,18 @@ import Tooltip from "../../Tooltip/Tooltip";
 
 export type CellProps = HTMLAttributes<HTMLTableCellElement> & {
   as?: "td" | "th";
+  windowSize?: number[];
   onClick?: () => void;
 };
 
-const Cell: FC<CellProps> = ({ children, as: Component = "td", onClick, style, ...rest }) => {
+const Cell: FC<CellProps> = ({
+  children,
+  as: Component = "td",
+  onClick,
+  windowSize,
+  style,
+  ...rest
+}) => {
   const componentRef = useRef<HTMLTableCellElement | null>(null);
   const overflowRef = useRef<HTMLElement | null>(null);
   const [isOverflowActive, setIsOverflowActive] = useState(false);
@@ -18,7 +26,7 @@ const Cell: FC<CellProps> = ({ children, as: Component = "td", onClick, style, .
   }, []);
 
   useEffect(() => {
-    function updateView() {
+    function checkOverflow() {
       const el = overflowRef.current;
 
       if (el) {
@@ -27,11 +35,9 @@ const Cell: FC<CellProps> = ({ children, as: Component = "td", onClick, style, .
     }
 
     if (Component === "td") {
-      window.addEventListener("resize", updateView);
-      updateView();
+      checkOverflow();
     }
-    return () => window.removeEventListener("resize", updateView);
-  }, [overflowRef]);
+  }, [overflowRef, windowSize]);
 
   return (
     <Component ref={componentRef} style={style} onClick={onClick} {...rest}>

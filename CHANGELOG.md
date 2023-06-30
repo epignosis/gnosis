@@ -1,3 +1,10 @@
+## [4.0.9](https://github.com/epignosis/gnosis/compare/v4.0.8...v4.0.9) (2023-06-30)
+
+
+### Bug Fixes
+
+* two states sorting in tables ([#171](https://github.com/epignosis/gnosis/issues/171)) ([0d088dd](https://github.com/epignosis/gnosis/commit/0d088dd5762ffe65791696d735105a5919fe5332))
+
 ## [4.0.8](https://github.com/epignosis/gnosis/compare/v4.0.7...v4.0.8) (2023-06-29)
 
 

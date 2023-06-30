@@ -25,15 +25,10 @@ const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSort
       // new sorting object
       const newSorting: Sorting = {
         column: accesor,
-        isDescending: false,
+        // when select new column to sort apply ascending order
+        // when select the same column change the current order
+        isDescending: sorting.column !== accesor ? false : !sorting.isDescending,
       };
-
-      // sorting the same column
-      if (sorting.column === accesor) {
-        !sorting.isDescending
-          ? (newSorting.isDescending = true)
-          : (newSorting.isDescending = false);
-      }
 
       dispatch({ type: Actions.sortingChanged, payload: newSorting });
       onSortingChanged && onSortingChanged(newSorting);
@@ -69,9 +64,9 @@ const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSort
                 }}
               >
                 <span>{typeof cell === "string" ? cell : cell({ accessor, cell })}</span>
-                {sorting && sorting?.column === accessor && (
+                {sorting?.column === accessor && (
                   <span className="sorting-icon">
-                    {!sorting?.isDescending ? (
+                    {!sorting.isDescending ? (
                       <IconChevronUpSVG height={20} />
                     ) : (
                       <IconChevronDownSVG height={20} />

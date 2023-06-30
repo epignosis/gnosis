@@ -24,12 +24,10 @@ export type EmptyState = {
   hideInfo?: boolean;
 };
 
-export type Sorting =
-  | {
-      column: string;
-      isDescending: boolean;
-    }
-  | undefined;
+export type Sorting = {
+  column: string;
+  isDescending: boolean;
+};
 
 export type TableProps = {
   columns: Column[];
@@ -48,7 +46,7 @@ export type TableState = {
   rows: Row[];
   emptyState: EmptyState;
   selected: Row[];
-  sorting: Sorting;
+  sorting?: Sorting;
 };
 
 export type ActionType =

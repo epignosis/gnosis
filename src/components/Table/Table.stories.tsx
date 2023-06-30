@@ -53,8 +53,7 @@ export const Default = Template.bind({});
 export const WithSorting = Template.bind({});
 
 WithSorting.args = {
-  sortable: true,
-  sorting: { column: "id", isDescending: true },
+  sorting: { column: "id", isDescending: false },
   onSortingChanged: (sorting: Sorting) => console.log(sorting),
 };
 

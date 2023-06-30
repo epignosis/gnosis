@@ -34,7 +34,6 @@ export type TableProps = {
   rows: Row[];
   emptyState: EmptyState;
   selectable?: boolean;
-  sortable?: boolean;
   sorting?: Sorting;
   onSortingChanged?: (sorting: Sorting) => void;
   onRowSelect?: (selectedRows: Row[]) => void;
@@ -47,7 +46,7 @@ export type TableState = {
   rows: Row[];
   emptyState: EmptyState;
   selected: Row[];
-  sorting: Sorting;
+  sorting?: Sorting;
 };
 
 export type ActionType =

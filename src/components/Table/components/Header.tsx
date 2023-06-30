@@ -6,13 +6,7 @@ import { ChildrenProps } from "../Table";
 import { Actions } from "../constants";
 import Cell from "./Cell";
 
-const Header: FC<ChildrenProps> = ({
-  selectable = false,
-  sortable = false,
-  state,
-  dispatch,
-  onSortingChanged,
-}) => {
+const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSortingChanged }) => {
   const { rows, columns, selected, sorting } = state;
   const selectedIds = selected.map((entry) => entry.id);
   const rowIds = rows.map((row) => row.id);
@@ -27,17 +21,14 @@ const Header: FC<ChildrenProps> = ({
   };
 
   const handleSortingChange = (accesor: string): void => {
-    if (sortable) {
+    if (sorting) {
       // new sorting object
       const newSorting: Sorting = {
         column: accesor,
-        isDescending: false,
+        // when select new column to sort apply ascending order
+        // when select the same column change the current order
+        isDescending: sorting.column !== accesor ? false : !sorting.isDescending,
       };
-
-      // sorting the same column
-      if (sorting.column === accesor) {
-        !sorting.isDescending ? (newSorting.isDescending = true) : (newSorting.column = "");
-      }
 
       dispatch({ type: Actions.sortingChanged, payload: newSorting });
       onSortingChanged && onSortingChanged(newSorting);
@@ -73,9 +64,9 @@ const Header: FC<ChildrenProps> = ({
                 }}
               >
                 <span>{typeof cell === "string" ? cell : cell({ accessor, cell })}</span>
-                {sortable && sorting?.column === accessor && (
+                {sorting?.column === accessor && (
                   <span className="sorting-icon">
-                    {!sorting?.isDescending ? (
+                    {!sorting.isDescending ? (
                       <IconChevronUpSVG height={20} />
                     ) : (
                       <IconChevronDownSVG height={20} />

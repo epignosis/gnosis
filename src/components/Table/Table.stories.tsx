@@ -53,12 +53,6 @@ export const Default = Template.bind({});
 export const WithSorting = Template.bind({});
 
 WithSorting.args = {
-  columns: [
-    { accessor: "id", cell: "Code", classNames: ["id"] },
-    { accessor: "description", cell: "Description", classNames: ["description"] },
-    { accessor: "name", cell: "Name", classNames: ["name"] },
-    { accessor: "category", cell: "Category", classNames: ["category"] },
-  ],
   sorting: { column: "id", isDescending: false },
   onSortingChanged: (sorting: Sorting) => console.log(sorting),
 };

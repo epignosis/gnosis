@@ -24,17 +24,18 @@ export type EmptyState = {
   hideInfo?: boolean;
 };
 
-export type Sorting = {
-  column: string;
-  isDescending: boolean;
-};
+export type Sorting =
+  | {
+      column: string;
+      isDescending: boolean;
+    }
+  | undefined;
 
 export type TableProps = {
   columns: Column[];
   rows: Row[];
   emptyState: EmptyState;
   selectable?: boolean;
-  sortable?: boolean;
   sorting?: Sorting;
   onSortingChanged?: (sorting: Sorting) => void;
   onRowSelect?: (selectedRows: Row[]) => void;

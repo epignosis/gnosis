@@ -4,7 +4,7 @@ import { tableContainer } from "./styles";
 import Body from "./components/Body";
 import Header from "./components/Header";
 import { Actions } from "./constants";
-import { Sorting, TableProps, TableState } from "./types";
+import { TableProps, TableState } from "./types";
 import { ExtendableProps } from "types/utils";
 
 export type Props = ExtendableProps<HTMLAttributes<HTMLTableElement>, TableProps>;
@@ -16,19 +16,14 @@ type TableCompoundProps = {
 };
 
 const Table: FC<Props> & TableCompoundProps = (props) => {
-  const { columns, rows, emptyState, sortable = false, sorting, onRowSelect } = props;
-
-  const defaultSorting: Sorting = sorting ?? {
-    column: sortable ? columns[0].accessor : "",
-    isDescending: false,
-  };
+  const { columns, rows, emptyState, sorting, onRowSelect } = props;
 
   const [state, dispatch] = useReducer(reducer, {
     columns,
     rows,
     emptyState,
     selected: [],
-    sorting: defaultSorting,
+    sorting,
   });
 
   const { selected } = state;

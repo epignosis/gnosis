@@ -6,13 +6,7 @@ import { ChildrenProps } from "../Table";
 import { Actions } from "../constants";
 import Cell from "./Cell";
 
-const Header: FC<ChildrenProps> = ({
-  selectable = false,
-  sortable = false,
-  state,
-  dispatch,
-  onSortingChanged,
-}) => {
+const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSortingChanged }) => {
   const { rows, columns, selected, sorting } = state;
   const selectedIds = selected.map((entry) => entry.id);
   const rowIds = rows.map((row) => row.id);
@@ -27,7 +21,7 @@ const Header: FC<ChildrenProps> = ({
   };
 
   const handleSortingChange = (accesor: string): void => {
-    if (sortable) {
+    if (sorting) {
       // new sorting object
       const newSorting: Sorting = {
         column: accesor,
@@ -75,7 +69,7 @@ const Header: FC<ChildrenProps> = ({
                 }}
               >
                 <span>{typeof cell === "string" ? cell : cell({ accessor, cell })}</span>
-                {sortable && sorting?.column === accessor && (
+                {sorting && sorting?.column === accessor && (
                   <span className="sorting-icon">
                     {!sorting?.isDescending ? (
                       <IconChevronUpSVG height={20} />

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
 import { IconChevronDownSVG, IconChevronUpSVG } from "../../../icons/index";
-import { Sorting } from "../types";
+import { Column, Sorting } from "../types";
 import { ChildrenProps } from "../Table";
 import { Actions } from "../constants";
 import Cell from "./Cell";
@@ -20,14 +20,15 @@ const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSort
       : dispatch({ type: Actions.removeAll, payload: null });
   };
 
-  const handleSortingChange = (accesor: string): void => {
+  const handleSortingChange = (accesor: string, sortOrder: Column["sortOrder"]): void => {
     if (sorting) {
+      const isDescendingOrder = sortOrder === "desc";
       // new sorting object
       const newSorting: Sorting = {
         column: accesor,
-        // when select new column to sort apply ascending order
+        // when select new column to sort apply default sortOrder
         // when select the same column change the current order
-        isDescending: sorting.column !== accesor ? false : !sorting.isDescending,
+        isDescending: sorting.column !== accesor ? isDescendingOrder : !sorting.isDescending,
       };
 
       dispatch({ type: Actions.sortingChanged, payload: newSorting });
@@ -51,7 +52,7 @@ const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSort
           </Cell>
         )}
         {columns.map(
-          ({ accessor, cell, hidden, sortableHeader = true, classNames = [] }) =>
+          ({ accessor, cell, hidden, sortableHeader = true, classNames = [], sortOrder }) =>
             !hidden && (
               <Cell
                 as="th"
@@ -59,7 +60,7 @@ const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSort
                 className={`header-cell ${classNames.length > 0 && classNames.join(" ")}`}
                 onClick={(): void => {
                   if (sortableHeader) {
-                    handleSortingChange(accessor);
+                    handleSortingChange(accessor, sortOrder);
                   }
                 }}
               >

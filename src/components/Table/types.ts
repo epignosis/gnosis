@@ -9,6 +9,7 @@ export type Column = {
   classNames?: string[];
   sortableHeader?: boolean;
   maxWidth?: number;
+  sortOrder?: "asc" | "desc";
 };
 
 export type Row = {

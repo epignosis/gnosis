@@ -23,16 +23,50 @@ export default {
   },
   args: {
     columns: [
-      { accessor: "id", cell: "Code", classNames: ["id"] },
-      { accessor: "description", cell: "Description", classNames: ["description"] },
-      { accessor: "name", cell: "Name", classNames: ["name"] },
-      { accessor: "category", cell: "Category", classNames: ["category"] },
+      { accessor: "id", cell: "Code", classNames: ["id"], sortOrder: "asc" },
+      {
+        accessor: "description",
+        cell: "Description",
+        classNames: ["description"],
+        sortOrder: "asc",
+      },
+      { accessor: "name", cell: "Name", classNames: ["name"], sortOrder: "asc" },
+      { accessor: "category", cell: "Category", classNames: ["category"], sortOrder: "asc" },
+      { accessor: "date", cell: "Date", classNames: ["date"], sortOrder: "desc" },
     ],
     rows: [
-      { id: 271, description: "Test", name: "Test", category: "Test", code: "Test" },
-      { id: 272, description: "Test", name: "Test", category: "Test", code: "Test" },
-      { id: 273, description: "Test", name: "Test", category: "Test", code: "Test" },
-      { id: 274, description: "Test", name: "Test", category: "Test", code: "Test" },
+      {
+        id: 271,
+        description: "Test",
+        name: "Test",
+        category: "Test",
+        code: "Test",
+        date: "27/05/1997",
+      },
+      {
+        id: 272,
+        description: "Test",
+        name: "Test",
+        category: "Test",
+        code: "Test",
+        date: "27/05/1997",
+      },
+      {
+        id: 273,
+        description: "Test",
+        name: "Test",
+        category: "Test",
+        code: "Test",
+        date: "27/05/1997",
+      },
+      {
+        id: 274,
+        description: "Test",
+        name: "Test",
+        category: "Test",
+        code: "Test",
+        date: "27/05/1997",
+      },
     ],
     emptyState: {
       title: "No results found with these criteria",
@@ -69,10 +103,16 @@ export const WithOverflowColumns = Template.bind({});
 
 WithOverflowColumns.args = {
   columns: [
-    { accessor: "id", cell: "Code", classNames: ["id"] },
-    { accessor: "description", cell: "Description", classNames: ["description"], maxWidth: 100 },
-    { accessor: "name", cell: "Name", classNames: ["name"], maxWidth: 100 },
-    { accessor: "category", cell: "Category", classNames: ["category"] },
+    { accessor: "id", cell: "Code", classNames: ["id"], sortOrder: "asc" },
+    {
+      accessor: "description",
+      cell: "Description",
+      classNames: ["description"],
+      maxWidth: 100,
+      sortOrder: "asc",
+    },
+    { accessor: "name", cell: "Name", classNames: ["name"], maxWidth: 100, sortOrder: "asc" },
+    { accessor: "category", cell: "Category", classNames: ["category"], sortOrder: "asc" },
   ],
   rows: [
     {

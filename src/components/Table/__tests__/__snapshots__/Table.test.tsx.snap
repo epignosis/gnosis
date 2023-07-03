@@ -61,6 +61,19 @@ exports[`<Table> matches snapshot 1`] = `
               </span>
             </div>
           </th>
+          <th
+            class="header-cell header5"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span>
+                <span>
+                  Header5
+                </span>
+              </span>
+            </div>
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -111,43 +124,6 @@ exports[`<Table> matches snapshot 1`] = `
               />
             </div>
           </td>
-        </tr>
-        <tr
-          class=""
-        >
-          <td
-            style="max-width: auto;"
-          >
-            <div
-              aria-expanded="false"
-            >
-              <span
-                style="max-width: auto;"
-              />
-            </div>
-          </td>
-          <td
-            style="max-width: auto;"
-          >
-            <div
-              aria-expanded="false"
-            >
-              <span
-                style="max-width: auto;"
-              />
-            </div>
-          </td>
-          <td
-            style="max-width: auto;"
-          >
-            <div
-              aria-expanded="false"
-            >
-              <span
-                style="max-width: auto;"
-              />
-            </div>
-          </td>
           <td
             style="max-width: auto;"
           >
@@ -207,10 +183,91 @@ exports[`<Table> matches snapshot 1`] = `
               />
             </div>
           </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
         </tr>
         <tr
           class=""
         >
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr
+          class=""
+        >
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
           <td
             style="max-width: auto;"
           >

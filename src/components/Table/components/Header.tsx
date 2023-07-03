@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
 import { IconChevronDownSVG, IconChevronUpSVG } from "../../../icons/index";
-import { Sorting } from "../types";
+import { Sorting, sortOrderType } from "../types";
 import { ChildrenProps } from "../Table";
 import { Actions } from "../constants";
 import Cell from "./Cell";
@@ -20,15 +20,15 @@ const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSort
       : dispatch({ type: Actions.removeAll, payload: null });
   };
 
-  const handleSortingChange = (accesor: string, reversedSorting: boolean): void => {
+  const handleSortingChange = (accesor: string, sortOrder: sortOrderType): void => {
     if (sorting) {
+      const descendingOrder = sortOrder === "desc";
       // new sorting object
       const newSorting: Sorting = {
         column: accesor,
         // when select new column to sort apply ascending order or descending if reversedSorting is enabled
         // when select the same column change the current order
-        isDescending:
-          sorting.column !== accesor ? (reversedSorting ? true : false) : !sorting.isDescending,
+        isDescending: sorting.column !== accesor ? descendingOrder : !sorting.isDescending,
       };
 
       dispatch({ type: Actions.sortingChanged, payload: newSorting });
@@ -52,7 +52,7 @@ const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSort
           </Cell>
         )}
         {columns.map(
-          ({ accessor, cell, hidden, sortableHeader = true, classNames = [], reversedSorting }) =>
+          ({ accessor, cell, hidden, sortableHeader = true, classNames = [], sortOrder }) =>
             !hidden && (
               <Cell
                 as="th"
@@ -60,7 +60,7 @@ const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSort
                 className={`header-cell ${classNames.length > 0 && classNames.join(" ")}`}
                 onClick={(): void => {
                   if (sortableHeader) {
-                    handleSortingChange(accessor, Boolean(reversedSorting));
+                    handleSortingChange(accessor, sortOrder);
                   }
                 }}
               >

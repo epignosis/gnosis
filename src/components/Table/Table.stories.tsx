@@ -23,11 +23,16 @@ export default {
   },
   args: {
     columns: [
-      { accessor: "id", cell: "Code", classNames: ["id"] },
-      { accessor: "description", cell: "Description", classNames: ["description"] },
-      { accessor: "name", cell: "Name", classNames: ["name"] },
-      { accessor: "category", cell: "Category", classNames: ["category"] },
-      { accessor: "date", cell: "Date", classNames: ["date"], reversedSorting: true },
+      { accessor: "id", cell: "Code", classNames: ["id"], sortOrder: "asc" },
+      {
+        accessor: "description",
+        cell: "Description",
+        classNames: ["description"],
+        sortOrder: "asc",
+      },
+      { accessor: "name", cell: "Name", classNames: ["name"], sortOrder: "asc" },
+      { accessor: "category", cell: "Category", classNames: ["category"], sortOrder: "asc" },
+      { accessor: "date", cell: "Date", classNames: ["date"], sortOrder: "desc" },
     ],
     rows: [
       {
@@ -98,10 +103,16 @@ export const WithOverflowColumns = Template.bind({});
 
 WithOverflowColumns.args = {
   columns: [
-    { accessor: "id", cell: "Code", classNames: ["id"] },
-    { accessor: "description", cell: "Description", classNames: ["description"], maxWidth: 100 },
-    { accessor: "name", cell: "Name", classNames: ["name"], maxWidth: 100 },
-    { accessor: "category", cell: "Category", classNames: ["category"] },
+    { accessor: "id", cell: "Code", classNames: ["id"], sortOrder: "asc" },
+    {
+      accessor: "description",
+      cell: "Description",
+      classNames: ["description"],
+      maxWidth: 100,
+      sortOrder: "asc",
+    },
+    { accessor: "name", cell: "Name", classNames: ["name"], maxWidth: 100, sortOrder: "asc" },
+    { accessor: "category", cell: "Category", classNames: ["category"], sortOrder: "asc" },
   ],
   rows: [
     {

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
 import { IconChevronDownSVG, IconChevronUpSVG } from "../../../icons/index";
-import { Sorting, sortOrderType } from "../types";
+import { Sorting } from "../types";
 import { ChildrenProps } from "../Table";
 import { Actions } from "../constants";
 import Cell from "./Cell";
@@ -20,7 +20,7 @@ const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSort
       : dispatch({ type: Actions.removeAll, payload: null });
   };
 
-  const handleSortingChange = (accesor: string, sortOrder: sortOrderType): void => {
+  const handleSortingChange = (accesor: string, sortOrder: "asc" | "desc"): void => {
     if (sorting) {
       const descendingOrder = sortOrder === "desc";
       // new sorting object
@@ -60,7 +60,7 @@ const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSort
                 className={`header-cell ${classNames.length > 0 && classNames.join(" ")}`}
                 onClick={(): void => {
                   if (sortableHeader) {
-                    handleSortingChange(accessor, sortOrder);
+                    handleSortingChange(accessor, sortOrder ?? "asc");
                   }
                 }}
               >

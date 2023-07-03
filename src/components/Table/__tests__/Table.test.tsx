@@ -1,7 +1,6 @@
 import React from "react";
 import { faker } from "@faker-js/faker";
 import Table from "../Table";
-import { sortOrderType } from "../types";
 import { render } from "@test-utils/render";
 
 const COLUMNS = [
@@ -9,31 +8,26 @@ const COLUMNS = [
     accessor: "header1",
     cell: "Header1",
     classNames: ["header1"],
-    sortOrder: "asc" as sortOrderType,
   },
   {
     accessor: "header2",
     cell: "Header2",
     classNames: ["header2"],
-    sortOrder: "asc" as sortOrderType,
   },
   {
     accessor: "header3",
     cell: "Header3",
     classNames: ["header3"],
-    sortOrder: "asc" as sortOrderType,
   },
   {
     accessor: "header4",
     cell: "Header4",
     classNames: ["header4"],
-    sortOrder: "asc" as sortOrderType,
   },
   {
     accessor: "header5",
     cell: "Header5",
     classNames: ["header5"],
-    sortOrder: "desc" as sortOrderType,
   },
 ];
 

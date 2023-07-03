@@ -9,10 +9,8 @@ export type Column = {
   classNames?: string[];
   sortableHeader?: boolean;
   maxWidth?: number;
-  sortOrder: sortOrderType;
+  sortOrder?: "asc" | "desc";
 };
-
-export type sortOrderType = "asc" | "desc";
 
 export type Row = {
   id: string | number;

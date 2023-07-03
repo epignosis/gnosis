@@ -1,6 +1,7 @@
 import React from "react";
 import { faker } from "@faker-js/faker";
 import Table from "../Table";
+import { sortOrderType } from "../types";
 import { render } from "@test-utils/render";
 
 const COLUMNS = [
@@ -8,21 +9,31 @@ const COLUMNS = [
     accessor: "header1",
     cell: "Header1",
     classNames: ["header1"],
+    sortOrder: "asc" as sortOrderType,
   },
   {
     accessor: "header2",
     cell: "Header2",
     classNames: ["header2"],
+    sortOrder: "asc" as sortOrderType,
   },
   {
     accessor: "header3",
     cell: "Header3",
     classNames: ["header3"],
+    sortOrder: "asc" as sortOrderType,
   },
   {
     accessor: "header4",
     cell: "Header4",
     classNames: ["header4"],
+    sortOrder: "asc" as sortOrderType,
+  },
+  {
+    accessor: "header5",
+    cell: "Header5",
+    classNames: ["header5"],
+    sortOrder: "desc" as sortOrderType,
   },
 ];
 
@@ -33,6 +44,7 @@ const ROWS = [
     name: "name1",
     category: "category1",
     code: "code1",
+    date: "date1",
   },
   {
     id: "id2",
@@ -40,6 +52,7 @@ const ROWS = [
     name: "name2",
     category: "category2",
     code: "code2",
+    date: "date2",
   },
   {
     id: "id3",
@@ -47,6 +60,7 @@ const ROWS = [
     name: "name3",
     category: "category3",
     code: "code3",
+    date: "date3",
   },
   {
     id: "id4",
@@ -54,6 +68,7 @@ const ROWS = [
     name: "name4",
     category: "category4",
     code: "code4",
+    date: "date4",
   },
 ];
 

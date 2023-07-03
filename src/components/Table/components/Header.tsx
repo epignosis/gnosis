@@ -20,14 +20,15 @@ const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSort
       : dispatch({ type: Actions.removeAll, payload: null });
   };
 
-  const handleSortingChange = (accesor: string): void => {
+  const handleSortingChange = (accesor: string, reversedSorting: boolean): void => {
     if (sorting) {
       // new sorting object
       const newSorting: Sorting = {
         column: accesor,
-        // when select new column to sort apply ascending order
+        // when select new column to sort apply ascending order or descending if reversedSorting is enabled
         // when select the same column change the current order
-        isDescending: sorting.column !== accesor ? false : !sorting.isDescending,
+        isDescending:
+          sorting.column !== accesor ? (reversedSorting ? true : false) : !sorting.isDescending,
       };
 
       dispatch({ type: Actions.sortingChanged, payload: newSorting });
@@ -51,7 +52,7 @@ const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSort
           </Cell>
         )}
         {columns.map(
-          ({ accessor, cell, hidden, sortableHeader = true, classNames = [] }) =>
+          ({ accessor, cell, hidden, sortableHeader = true, classNames = [], reversedSorting }) =>
             !hidden && (
               <Cell
                 as="th"
@@ -59,7 +60,7 @@ const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSort
                 className={`header-cell ${classNames.length > 0 && classNames.join(" ")}`}
                 onClick={(): void => {
                   if (sortableHeader) {
-                    handleSortingChange(accessor);
+                    handleSortingChange(accessor, Boolean(reversedSorting));
                   }
                 }}
               >

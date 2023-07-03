@@ -9,7 +9,7 @@ export type Column = {
   classNames?: string[];
   sortableHeader?: boolean;
   maxWidth?: number;
-  reversedSorting?: true;
+  reversedSorting?: boolean;
 };
 
 export type Row = {

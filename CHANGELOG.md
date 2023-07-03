@@ -1,3 +1,10 @@
+## [4.0.10](https://github.com/epignosis/gnosis/compare/v4.0.9...v4.0.10) (2023-07-03)
+
+
+### Bug Fixes
+
+* apply reversed sorting in a column ([#172](https://github.com/epignosis/gnosis/issues/172)) ([893681e](https://github.com/epignosis/gnosis/commit/893681e8dbe954813d57c262ed8fb94292b39a1c))
+
 ## [4.0.9](https://github.com/epignosis/gnosis/compare/v4.0.8...v4.0.9) (2023-06-30)
 
 

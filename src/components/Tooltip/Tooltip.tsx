@@ -18,7 +18,6 @@ const Tooltip: FC<TooltipProps> = ({
 
   return (
     <Tippy
-      interactive
       placement={placement}
       render={(attrs): ReactNode => (
         <div className="tooltip" css={tooltipContainer} {...attrs}>

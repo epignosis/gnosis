@@ -10,7 +10,6 @@ export type Column = {
   sortableHeader?: boolean;
   maxWidth?: number;
   sortOrder?: "asc" | "desc";
-  interactive?: boolean;
 };
 
 export type Row = {

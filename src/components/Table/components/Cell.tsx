@@ -13,7 +13,6 @@ const Cell: FC<CellProps> = ({
   as: Component = "td",
   onClick,
   windowSize,
-  interactive,
   style,
   ...rest
 }) => {
@@ -39,7 +38,7 @@ const Cell: FC<CellProps> = ({
 
   return (
     <Component ref={componentRef} style={style} onClick={onClick} {...rest}>
-      <Tooltip content={children} disabled={!isOverflowActive} interactive={interactive}>
+      <Tooltip content={children} disabled={!isOverflowActive}>
         <span style={style}>{children}</span>
       </Tooltip>
     </Component>

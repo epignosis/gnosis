@@ -117,7 +117,6 @@ WithOverflowColumns.args = {
       classNames: ["name"],
       maxWidth: 100,
       sortOrder: "asc",
-      interactive: false,
     },
     { accessor: "category", cell: "Category", classNames: ["category"], sortOrder: "asc" },
   ],

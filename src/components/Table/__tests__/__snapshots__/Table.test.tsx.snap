@@ -12,9 +12,7 @@ exports[`<Table> matches snapshot 1`] = `
           <th
             class="header-cell header1"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span>
                 <span>
                   Header1
@@ -25,9 +23,7 @@ exports[`<Table> matches snapshot 1`] = `
           <th
             class="header-cell header2"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span>
                 <span>
                   Header2
@@ -38,9 +34,7 @@ exports[`<Table> matches snapshot 1`] = `
           <th
             class="header-cell header3"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span>
                 <span>
                   Header3
@@ -51,9 +45,7 @@ exports[`<Table> matches snapshot 1`] = `
           <th
             class="header-cell header4"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span>
                 <span>
                   Header4
@@ -64,9 +56,7 @@ exports[`<Table> matches snapshot 1`] = `
           <th
             class="header-cell header5"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span>
                 <span>
                   Header5
@@ -83,9 +73,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -94,9 +82,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -105,9 +91,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -116,9 +100,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -127,9 +109,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -142,9 +122,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -153,9 +131,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -164,9 +140,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -175,9 +149,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -186,9 +158,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -201,9 +171,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -212,9 +180,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -223,9 +189,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -234,9 +198,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -245,9 +207,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -260,9 +220,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -271,9 +229,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -282,9 +238,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -293,9 +247,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />
@@ -304,9 +256,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div
-              aria-expanded="false"
-            >
+            <div>
               <span
                 style="max-width: auto;"
               />

@@ -5,7 +5,6 @@ export type CellProps = HTMLAttributes<HTMLTableCellElement> & {
   as?: "td" | "th";
   windowSize?: number[];
   onClick?: () => void;
-  interactive?: boolean;
 };
 
 const Cell: FC<CellProps> = ({

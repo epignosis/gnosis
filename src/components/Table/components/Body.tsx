@@ -80,7 +80,8 @@ const Body: FC<ChildrenProps> = ({
 
                 {accessors.map((accessor) => {
                   const rowObj = row[accessor];
-                  const { maxWidth } = columns.find((column) => column.accessor === accessor) ?? {};
+                  const { maxWidth, interactive } =
+                    columns.find((column) => column.accessor === accessor) ?? {};
                   const style = { maxWidth: maxWidth ? `${maxWidth}px` : "auto" };
 
                   if (typeof rowObj === "function") {
@@ -90,6 +91,7 @@ const Body: FC<ChildrenProps> = ({
                         onClick={onRowClick ? (): void => onRowClick(row) : undefined}
                         style={style}
                         windowSize={size}
+                        interactive={interactive}
                       >
                         {rowObj(row)}
                       </Cell>
@@ -101,6 +103,7 @@ const Body: FC<ChildrenProps> = ({
                       onClick={onRowClick ? (): void => onRowClick(row) : undefined}
                       style={style}
                       windowSize={size}
+                      interactive={interactive}
                     >
                       {rowObj as string}
                     </Cell>

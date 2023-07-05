@@ -5,6 +5,7 @@ export type CellProps = HTMLAttributes<HTMLTableCellElement> & {
   as?: "td" | "th";
   windowSize?: number[];
   onClick?: () => void;
+  interactive?: boolean;
 };
 
 const Cell: FC<CellProps> = ({
@@ -12,6 +13,7 @@ const Cell: FC<CellProps> = ({
   as: Component = "td",
   onClick,
   windowSize,
+  interactive,
   style,
   ...rest
 }) => {
@@ -37,7 +39,7 @@ const Cell: FC<CellProps> = ({
 
   return (
     <Component ref={componentRef} style={style} onClick={onClick} {...rest}>
-      <Tooltip content={children} disabled={!isOverflowActive}>
+      <Tooltip content={children} disabled={!isOverflowActive} interactive={interactive}>
         <span style={style}>{children}</span>
       </Tooltip>
     </Component>

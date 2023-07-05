@@ -5,6 +5,7 @@ import { tooltipContainer } from "./styles";
 export type TooltipProps = TippyProps & {
   as?: "div" | "span";
   content: TippyProps["content"];
+  interactive?: boolean;
 };
 
 const Tooltip: FC<TooltipProps> = ({
@@ -12,13 +13,14 @@ const Tooltip: FC<TooltipProps> = ({
   content,
   as = "div",
   placement = "top",
+  interactive = true,
   ...rest
 }) => {
   const Tag = as;
 
   return (
     <Tippy
-      interactive
+      interactive={interactive}
       placement={placement}
       render={(attrs): ReactNode => (
         <div className="tooltip" css={tooltipContainer} {...attrs}>

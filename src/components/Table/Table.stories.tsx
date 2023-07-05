@@ -111,7 +111,14 @@ WithOverflowColumns.args = {
       maxWidth: 100,
       sortOrder: "asc",
     },
-    { accessor: "name", cell: "Name", classNames: ["name"], maxWidth: 100, sortOrder: "asc" },
+    {
+      accessor: "name",
+      cell: "Name",
+      classNames: ["name"],
+      maxWidth: 100,
+      sortOrder: "asc",
+      interactive: false,
+    },
     { accessor: "category", cell: "Category", classNames: ["category"], sortOrder: "asc" },
   ],
   rows: [
@@ -128,7 +135,12 @@ WithOverflowColumns.args = {
       description: "Test",
       name: (
         <div className="has-overflow">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is
+          simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy
+          text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the
+          printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and
+          typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
         </div>
       ),
       category: "Test",

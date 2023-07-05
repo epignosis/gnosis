@@ -1,3 +1,10 @@
+## [4.0.11](https://github.com/epignosis/gnosis/compare/v4.0.10...v4.0.11) (2023-07-05)
+
+
+### Bug Fixes
+
+* optionally enable interactive tooltip ([#173](https://github.com/epignosis/gnosis/issues/173)) ([334092e](https://github.com/epignosis/gnosis/commit/334092e023b928f91937e49b2e14d28ccba0af83))
+
 ## [4.0.10](https://github.com/epignosis/gnosis/compare/v4.0.9...v4.0.10) (2023-07-03)
 
 

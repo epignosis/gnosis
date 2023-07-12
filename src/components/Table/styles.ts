@@ -13,7 +13,7 @@ export const tableContainer = ({ table }: Theme) => css`
     max-width: 100%;
 
     thead {
-      border-bottom: 1px solid ${table.borderBottomColor};
+      border-bottom: 1px solid ${table.border};
       background-color: ${table.rowBackgroundColor};
 
       tr {
@@ -31,6 +31,10 @@ export const tableContainer = ({ table }: Theme) => css`
 
             .sorting-icon {
               margin-inline-start: 0.5rem;
+            }
+
+            &.hidden {
+              cursor: default;
             }
 
             span {

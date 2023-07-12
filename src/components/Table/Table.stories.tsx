@@ -29,6 +29,7 @@ export default {
         cell: "Description",
         classNames: ["description"],
         sortOrder: "asc",
+        sortableHeader: false,
       },
       { accessor: "name", cell: "Name", classNames: ["name"], sortOrder: "asc" },
       { accessor: "category", cell: "Category", classNames: ["category"], sortOrder: "asc" },
@@ -103,7 +104,7 @@ export const WithOverflowColumns = Template.bind({});
 
 WithOverflowColumns.args = {
   columns: [
-    { accessor: "id", cell: "Code", classNames: ["id"], sortOrder: "asc" },
+    { accessor: "id", cell: "Code", classNames: ["id"], sortOrder: "asc", headerWidth: 100 },
     {
       accessor: "description",
       cell: "Description",

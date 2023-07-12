@@ -5,6 +5,7 @@ import { tooltipContainer } from "./styles";
 export type TooltipProps = TippyProps & {
   as?: "div" | "span";
   content: TippyProps["content"];
+  maxWidth?: string;
 };
 
 const Tooltip: FC<TooltipProps> = ({
@@ -12,6 +13,7 @@ const Tooltip: FC<TooltipProps> = ({
   content,
   as = "div",
   placement = "top",
+  maxWidth = "350px",
   ...rest
 }) => {
   const Tag = as;
@@ -20,7 +22,7 @@ const Tooltip: FC<TooltipProps> = ({
     <Tippy
       placement={placement}
       render={(attrs): ReactNode => (
-        <div className="tooltip" css={tooltipContainer} {...attrs}>
+        <div className="tooltip" css={(theme) => tooltipContainer(maxWidth, theme)} {...attrs}>
           {content}
           <div id="arrow" data-testid="tooltip-arrow" data-popper-arrow />
         </div>

@@ -5,7 +5,7 @@ import { tooltipContainer } from "./styles";
 export type TooltipProps = TippyProps & {
   as?: "div" | "span";
   content: TippyProps["content"];
-  maxWidth?: string;
+  maxWidth?: number;
 };
 
 const Tooltip: FC<TooltipProps> = ({
@@ -13,7 +13,7 @@ const Tooltip: FC<TooltipProps> = ({
   content,
   as = "div",
   placement = "top",
-  maxWidth = "350px",
+  maxWidth = 350,
   ...rest
 }) => {
   const Tag = as;

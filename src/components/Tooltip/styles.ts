@@ -2,6 +2,7 @@ import { css, Theme, SerializedStyles } from "@emotion/react";
 
 export const tooltipContainer = ({ typeScaleSizes, tooltip }: Theme): SerializedStyles => {
   return css`
+    max-width: 350px;
     background: ${tooltip.background};
     border: 1px solid ${tooltip.border};
     border-radius: 5px;

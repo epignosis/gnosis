@@ -8,6 +8,14 @@ export const inputContainer = (
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })};
 
+  .vertical-line {
+    position: absolute;
+    border-left: 1px solid ${formElements.input.verticalLineColor};
+    height: 2.5rem;
+    top: 0;
+    right: 3rem;
+  }
+
   .label-container {
     display: flex;
     justify-content: flex-start;

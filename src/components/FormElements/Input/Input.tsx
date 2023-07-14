@@ -65,7 +65,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           <Label htmlFor={id} margin={false}>
             {label}
           </Label>
-          {tooltipContent.length == 0 && (
+          {tooltipContent?.length > 0 && (
             <Tooltip content={tooltipContent}>
               <InfoCircledSVG height={20} />
             </Tooltip>
@@ -80,9 +80,12 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
         )}
         <input ref={forwardedRef} id={id} {...rest} />
         {IconAfter && (
-          <span className="suffix-icon" data-testid="input-icon-after">
-            <IconAfter height={iconHeight} />
-          </span>
+          <>
+            <div className="vertical-line" />
+            <span className="suffix-icon" data-testid="input-icon-after">
+              <IconAfter height={iconHeight} />
+            </span>
+          </>
         )}
       </div>
     </div>

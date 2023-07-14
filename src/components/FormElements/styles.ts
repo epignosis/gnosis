@@ -15,20 +15,11 @@ export const inputContainerBaseStyles = ({
   ${block && "width: 100%"};
   display: inline-flex;
   flex-direction: column;
+  gap: 0.5rem;
 
   &.inline {
     flex-direction: row;
     align-items: center;
-
-    label {
-      margin-inline: 0 0.75rem;
-      margin-block: 0;
-    }
-  }
-
-  label {
-    margin-inline: 0.5rem 0;
-    margin-block: 0 0.5rem;
   }
 `;
 

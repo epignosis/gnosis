@@ -8,6 +8,25 @@ export const inputContainer = (
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })};
 
+  .label-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      &:hover {
+        cursor: help;
+      }
+    }
+  }
+
   &.disabled {
     .input-wrapper {
       .prefix-icon,

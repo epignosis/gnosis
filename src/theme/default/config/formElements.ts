@@ -18,6 +18,7 @@ export default {
     disabledBorder: colors.secondary.base,
     disabledIcon: colors.secondary.base,
     borderFocus: colors.primary.base,
+    infoTooltipColor: colors.primary.base,
   },
   radioButtonGroup: {
     normalBackground: colors.secondary.lighter,

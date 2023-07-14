@@ -13,7 +13,7 @@ export const tableContainer = ({ table }: Theme) => css`
     max-width: 100%;
 
     thead {
-      border-bottom: 1px solid ${table.border};
+      border-bottom: 1px solid ${table.borderBottomColor};
       background-color: ${table.rowBackgroundColor};
 
       tr {

@@ -1,3 +1,10 @@
+## [4.0.12](https://github.com/epignosis/gnosis/compare/v4.0.11...v4.0.12) (2023-07-14)
+
+
+### Bug Fixes
+
+* table UI and tooltip fixes ([#176](https://github.com/epignosis/gnosis/issues/176)) ([06818c6](https://github.com/epignosis/gnosis/commit/06818c6470976205536f8b1c919b9e0c3672ecfe))
+
 ## [4.0.11](https://github.com/epignosis/gnosis/compare/v4.0.10...v4.0.11) (2023-07-05)
 
 

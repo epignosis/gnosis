@@ -8,6 +8,34 @@ export const inputContainer = (
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })};
 
+  .vertical-line {
+    position: absolute;
+    border-left: 1px solid ${formElements.input.verticalLineColor};
+    height: 2.5rem;
+    top: 0;
+    right: 3rem;
+  }
+
+  .label-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      color: ${formElements.input.infoTooltipColor};
+      &:hover {
+        cursor: help;
+      }
+    }
+  }
+
   &.disabled {
     .input-wrapper {
       .prefix-icon,
@@ -64,7 +92,6 @@ export const inputContainer = (
       bottom: 0;
       display: flex;
       align-items: center;
-      z-index: -1;
     }
 
     .prefix-icon {

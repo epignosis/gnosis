@@ -52,12 +52,23 @@ const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSort
           </Cell>
         )}
         {columns.map(
-          ({ accessor, cell, hidden, sortableHeader = true, classNames = [], sortOrder }) =>
+          ({
+            accessor,
+            cell,
+            hidden,
+            sortableHeader = true,
+            classNames = [],
+            sortOrder,
+            headerWidth,
+          }) =>
             !hidden && (
               <Cell
                 as="th"
                 key={accessor}
-                className={`header-cell ${classNames.length > 0 && classNames.join(" ")}`}
+                style={{ width: headerWidth ? `${headerWidth}px` : "auto" }}
+                className={`header-cell ${classNames.length > 0 && classNames.join(" ")} ${
+                  !sortableHeader && "hidden"
+                }`}
                 onClick={(): void => {
                   if (sortableHeader) {
                     handleSortingChange(accessor, sortOrder);

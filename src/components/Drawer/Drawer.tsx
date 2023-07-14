@@ -118,6 +118,12 @@ const Drawer: FC<DrawerProps> & DrawerCompoundProps = (props) => {
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    return () => {
+      (document.querySelector("body") as HTMLBodyElement).style.overflow = "";
+    };
+  }, []);
+
   return drawerEl && createPortal(drawer, drawerEl);
 };
 

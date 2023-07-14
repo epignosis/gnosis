@@ -3,17 +3,20 @@
 exports[`<Table> matches snapshot 1`] = `
 <div>
   <div
-    class="css-yhq98i-tableContainer-tableContainer"
+    class="css-qc60xe-tableContainer-tableContainer"
     data-testid="table"
   >
     <table>
       <thead>
         <tr>
           <th
-            class="header-cell header1"
+            class="header-cell header1 false"
+            style="width: auto;"
           >
             <div>
-              <span>
+              <span
+                style="width: auto;"
+              >
                 <span>
                   Header1
                 </span>
@@ -21,10 +24,13 @@ exports[`<Table> matches snapshot 1`] = `
             </div>
           </th>
           <th
-            class="header-cell header2"
+            class="header-cell header2 false"
+            style="width: auto;"
           >
             <div>
-              <span>
+              <span
+                style="width: auto;"
+              >
                 <span>
                   Header2
                 </span>
@@ -32,10 +38,13 @@ exports[`<Table> matches snapshot 1`] = `
             </div>
           </th>
           <th
-            class="header-cell header3"
+            class="header-cell header3 false"
+            style="width: auto;"
           >
             <div>
-              <span>
+              <span
+                style="width: auto;"
+              >
                 <span>
                   Header3
                 </span>
@@ -43,10 +52,13 @@ exports[`<Table> matches snapshot 1`] = `
             </div>
           </th>
           <th
-            class="header-cell header4"
+            class="header-cell header4 false"
+            style="width: auto;"
           >
             <div>
-              <span>
+              <span
+                style="width: auto;"
+              >
                 <span>
                   Header4
                 </span>
@@ -54,10 +66,13 @@ exports[`<Table> matches snapshot 1`] = `
             </div>
           </th>
           <th
-            class="header-cell header5"
+            class="header-cell header5 false"
+            style="width: auto;"
           >
             <div>
-              <span>
+              <span
+                style="width: auto;"
+              >
                 <span>
                   Header5
                 </span>

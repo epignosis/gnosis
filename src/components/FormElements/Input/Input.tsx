@@ -2,6 +2,8 @@ import React, { forwardRef, Ref, ForwardRefRenderFunction } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import Label from "../Label/Label";
+import { InfoCircledSVG } from "../../../icons/index";
+import Tooltip from "../../Tooltip/Tooltip";
 import { inputContainer } from "./styles";
 import { ExtendableProps, IconType } from "types/common";
 
@@ -20,6 +22,7 @@ export type InputProps = ExtendableProps<
     inline?: boolean;
     containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
     css?: SerializedStyles;
+    tooltipContent?: string;
   }
 >;
 
@@ -33,6 +36,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     inline = false,
     id,
     containerAttrs,
+    tooltipContent = "",
     ...rest
   },
   forwardedRef,
@@ -56,7 +60,18 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
       className={containerClasses}
       {...containerAttrs}
     >
-      {hasLabel && <Label htmlFor={id}>{label}</Label>}
+      {hasLabel && (
+        <div className="label-container">
+          <Label htmlFor={id} margin={false}>
+            {label}
+          </Label>
+          {tooltipContent?.length > 0 && (
+            <Tooltip content={tooltipContent}>
+              <InfoCircledSVG height={20} />
+            </Tooltip>
+          )}
+        </div>
+      )}
       <div className="input-wrapper">
         {IconBefore && (
           <span className="prefix-icon" data-testid="input-icon-before">
@@ -65,9 +80,12 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
         )}
         <input ref={forwardedRef} id={id} {...rest} />
         {IconAfter && (
-          <span className="suffix-icon" data-testid="input-icon-after">
-            <IconAfter height={iconHeight} />
-          </span>
+          <>
+            <div className="vertical-line" />
+            <span className="suffix-icon" data-testid="input-icon-after">
+              <IconAfter height={iconHeight} />
+            </span>
+          </>
         )}
       </div>
     </div>

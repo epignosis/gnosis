@@ -33,6 +33,10 @@ export const tableContainer = ({ table }: Theme) => css`
               margin-inline-start: 0.5rem;
             }
 
+            &.hidden {
+              cursor: default;
+            }
+
             span {
               display: inline-block;
 

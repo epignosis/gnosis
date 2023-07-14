@@ -3,7 +3,7 @@ import { LabelSize } from "./Label";
 
 export const label = (
   { typeScaleSizes }: Theme,
-  { size }: { size: LabelSize },
+  { size, margin }: { size: LabelSize; margin?: boolean },
 ): SerializedStyles => {
   const fontSizes = {
     md: typeScaleSizes.sm,
@@ -14,7 +14,7 @@ export const label = (
     font-size: ${fontSizes[size]};
     font-weight: 700;
     display: block;
-    margin: 0 0 0.5rem;
+    margin: ${margin ? "0 0 0.5rem" : 0};
     white-space: nowrap;
   `;
 };

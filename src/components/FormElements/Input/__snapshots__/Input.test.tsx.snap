@@ -3,7 +3,7 @@
 exports[`<Input /> matches snapshot 1`] = `
 <div>
   <div
-    class="container-classname css-1mdrvlz-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-inputContainer-inputContainer"
+    class="container-classname css-yicbnb-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-inputContainer-inputContainer"
     id="container-id"
   >
     <div
@@ -23,6 +23,7 @@ exports[`<Input /> matches snapshot 1`] = `
         class="input"
         id="my-input-id"
         name="test-input"
+        value=""
       />
       <div
         class="vertical-line"

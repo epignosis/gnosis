@@ -1,8 +1,8 @@
-import React, { forwardRef, Ref, ForwardRefRenderFunction } from "react";
+import React, { forwardRef, Ref, ForwardRefRenderFunction, useState, useRef } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import Label from "../Label/Label";
-import { InfoCircledSVG } from "../../../icons/index";
+import { InfoCircledSVG, CloseSVG } from "../../../icons/index";
 import Tooltip from "../../Tooltip/Tooltip";
 import { inputContainer } from "./styles";
 import { ExtendableProps, IconType } from "types/common";
@@ -37,10 +37,14 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     id,
     containerAttrs,
     tooltipContent = "",
+    value,
     ...rest
   },
   forwardedRef,
 ) => {
+  const [inputValue, setInputValue] = useState(value);
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const IconBefore = iconBefore;
   const IconAfter = iconAfter;
   const hasLabel = Boolean(label);
@@ -54,9 +58,26 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
   });
   const iconHeight = size === "sm" ? 28 : 32;
 
+  const changeInputValue = (value: string) => {
+    setInputValue(value);
+  };
+
+  const handleClearInput = () => {
+    setInputValue("");
+    resetFocus();
+  };
+
+  const resetFocus = () => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  };
+
   return (
     <div
-      css={(theme): SerializedStyles => inputContainer(theme, { size })}
+      css={(theme): SerializedStyles =>
+        inputContainer(theme, { size, hasIconAfter: Boolean(iconAfter) })
+      }
       className={containerClasses}
       {...containerAttrs}
     >
@@ -78,14 +99,25 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
             <IconBefore height={iconHeight} />
           </span>
         )}
-        <input ref={forwardedRef} id={id} {...rest} />
+        <input
+          ref={forwardedRef ?? inputRef}
+          id={id}
+          onChange={(e): void => changeInputValue(e.target.value)}
+          value={inputValue}
+          {...rest}
+        />
         {IconAfter && (
           <>
             <div className="vertical-line" />
-            <span className="suffix-icon" data-testid="input-icon-after">
+            <span className="suffix-icon" data-testid="input-icon-after" onClick={resetFocus}>
               <IconAfter height={iconHeight} />
             </span>
           </>
+        )}
+        {inputValue && (
+          <div className="close-icon" onClick={handleClearInput}>
+            <CloseSVG height={16} />
+          </div>
         )}
       </div>
     </div>

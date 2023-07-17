@@ -4,7 +4,7 @@ import { InputSize } from "./Input";
 
 export const inputContainer = (
   { formElements }: Theme,
-  { size }: { size: InputSize },
+  { size, hasIconAfter }: { size: InputSize; hasIconAfter: boolean },
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })};
 
@@ -61,7 +61,7 @@ export const inputContainer = (
 
   &.with-suffix-icon {
     .input-wrapper input {
-      padding-inline-end: 3.2rem;
+      padding-inline-end: 4.75rem;
     }
   }
 
@@ -83,6 +83,7 @@ export const inputContainer = (
     input {
       ${inputBaseStyles(formElements, { block: true, size })};
       background-color: transparent;
+      padding-inline-end: 2rem;
     }
 
     .prefix-icon,
@@ -101,8 +102,20 @@ export const inputContainer = (
 
     .suffix-icon {
       inset-inline-end: 0;
-      padding-inline-end: 0.5rem;
       color: ${formElements.input.iconColor};
+      width: 3rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .close-icon {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: ${hasIconAfter ? "3.5rem" : "0.75rem"};
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
   }
 `;

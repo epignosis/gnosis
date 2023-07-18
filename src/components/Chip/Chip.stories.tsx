@@ -44,4 +44,5 @@ Filters.args = {
   size: "md",
   children: "Filter",
   icon: BranchesFilterSVG,
+  maxWidth: 100,
 };

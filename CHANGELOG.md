@@ -1,3 +1,10 @@
+## [4.0.13](https://github.com/epignosis/gnosis/compare/v4.0.12...v4.0.13) (2023-07-18)
+
+
+### Bug Fixes
+
+* overflow on chips ([#178](https://github.com/epignosis/gnosis/issues/178)) ([c861f12](https://github.com/epignosis/gnosis/commit/c861f125e0a7f67844fa3e9b8b5739e8766321de))
+
 ## [4.0.12](https://github.com/epignosis/gnosis/compare/v4.0.11...v4.0.12) (2023-07-14)
 
 

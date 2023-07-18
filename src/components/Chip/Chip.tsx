@@ -26,7 +26,7 @@ const Chip: FC<ChipProps> = ({
   ...rest
 }) => {
   const isFilterOn = Boolean(Icon);
-  const componentRef = useRef<HTMLTableCellElement | null>(null);
+  const componentRef = useRef<HTMLDivElement | null>(null);
   const isOverflow = useIsOverflowX(componentRef);
 
   return (

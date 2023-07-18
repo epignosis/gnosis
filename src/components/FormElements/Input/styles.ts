@@ -61,7 +61,7 @@ export const inputContainer = (
 
   &.with-suffix-icon {
     .input-wrapper input {
-      padding-inline-end: 4.75rem;
+      padding-inline-end: 5rem;
     }
   }
 
@@ -107,7 +107,7 @@ export const inputContainer = (
       height: 100%;
       display: flex;
       align-items: center;
-      inset-inline-end: ${hasIconAfter ? "3.5rem" : "0.75rem"};
+      inset-inline-end: ${hasIconAfter ? "3.75rem" : "0.75rem"};
     }
   }
 `;

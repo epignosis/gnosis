@@ -13,7 +13,7 @@ export const inputContainer = (
     border-left: 1px solid ${formElements.input.verticalLineColor};
     height: 2.5rem;
     top: 0;
-    right: 3rem;
+    inset-inline-end: 3rem;
   }
 
   .label-container {
@@ -72,14 +72,6 @@ export const inputContainer = (
     z-index: 1;
     border-radius: 5px;
 
-    &:focus-within,
-    &:hover {
-      .prefix-icon,
-      .suffix-icon {
-        z-index: 1;
-      }
-    }
-
     input {
       ${inputBaseStyles(formElements, { block: true, size })};
       background-color: transparent;
@@ -112,10 +104,10 @@ export const inputContainer = (
       cursor: pointer;
       position: absolute;
       top: 0;
-      right: ${hasIconAfter ? "3.5rem" : "0.75rem"};
       height: 100%;
       display: flex;
       align-items: center;
+      inset-inline-end: ${hasIconAfter ? "3.5rem" : "0.75rem"};
     }
   }
 `;

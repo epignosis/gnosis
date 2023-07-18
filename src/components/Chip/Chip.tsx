@@ -1,6 +1,8 @@
-import React, { FC, MouseEvent, ReactNode } from "react";
+import React, { FC, MouseEvent, ReactNode, useRef } from "react";
 import { SerializedStyles } from "@emotion/react";
 import { CloseSVG } from "../../icons/";
+import Tooltip from "../Tooltip/Tooltip";
+import { useIsOverflowX } from "./helpers";
 import { chip } from "./styles";
 import { IconType } from "types/common";
 
@@ -11,14 +13,27 @@ export type ChipProps = React.HTMLAttributes<HTMLDivElement> & {
   size?: Size;
   icon?: IconType;
   children: ReactNode | string;
+  maxWidth?: number;
 };
 
-const Chip: FC<ChipProps> = ({ size = "md", onClose, children, icon: Icon, style, ...rest }) => {
+const Chip: FC<ChipProps> = ({
+  size = "md",
+  onClose,
+  children,
+  icon: Icon,
+  style,
+  maxWidth,
+  ...rest
+}) => {
   const isFilterOn = Boolean(Icon);
+  const componentRef = useRef<HTMLTableCellElement | null>(null);
+  const isOverflow = useIsOverflowX(componentRef);
 
   return (
     <div
-      css={(theme): SerializedStyles => chip(theme, { size, isFilterOn })}
+      css={(theme): SerializedStyles =>
+        chip(theme, { size, isFilterOn, maxWidth: `${maxWidth}px` ?? "auto" })
+      }
       style={style}
       {...rest}
     >
@@ -30,8 +45,11 @@ const Chip: FC<ChipProps> = ({ size = "md", onClose, children, icon: Icon, style
           </span>
         </button>
       )}
-
-      {children}
+      <Tooltip content={children} disabled={!isOverflow}>
+        <div ref={componentRef} className="has-overflow">
+          {children}
+        </div>
+      </Tooltip>
     </div>
   );
 };

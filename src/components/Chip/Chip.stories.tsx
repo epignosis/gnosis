@@ -35,6 +35,7 @@ Custom.args = {
   style: {
     backgroundColor: colors.red.base,
     color: colors.black,
+    maxWidth: " 200px",
   },
 };
 
@@ -44,4 +45,5 @@ Filters.args = {
   size: "md",
   children: "Filter",
   icon: BranchesFilterSVG,
+  maxWidth: 100,
 };

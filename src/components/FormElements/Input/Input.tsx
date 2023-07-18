@@ -1,4 +1,4 @@
-import React, { forwardRef, Ref, ForwardRefRenderFunction, useState, useRef } from "react";
+import React, { forwardRef, ForwardRefRenderFunction, useImperativeHandle, useRef } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import Label from "../Label/Label";
@@ -17,12 +17,13 @@ export type InputProps = ExtendableProps<
     size?: InputSize;
     iconBefore?: IconType;
     iconAfter?: IconType;
-    ref?: Ref<HTMLInputElement>;
     label?: string;
     inline?: boolean;
     containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
     css?: SerializedStyles;
     tooltipContent?: string;
+    isClearable?: boolean;
+    onClear?: () => void;
   }
 >;
 
@@ -38,12 +39,13 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     containerAttrs,
     tooltipContent = "",
     value,
+    isClearable = false,
+    onClear,
     ...rest
   },
   forwardedRef,
 ) => {
-  const [inputValue, setInputValue] = useState(value);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const internalRef = useRef<HTMLInputElement>(null);
 
   const IconBefore = iconBefore;
   const IconAfter = iconAfter;
@@ -58,19 +60,18 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
   });
   const iconHeight = size === "sm" ? 28 : 32;
 
-  const changeInputValue = (value: string) => {
-    setInputValue(value);
-  };
-
-  const handleClearInput = () => {
-    setInputValue("");
-    resetFocus();
-  };
+  useImperativeHandle<HTMLInputElement | null, HTMLInputElement | null>(
+    forwardedRef,
+    () => internalRef.current,
+  );
 
   const resetFocus = () => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
+    internalRef.current?.focus();
+  };
+
+  const handleClear = () => {
+    if (onClear) onClear();
+    resetFocus();
   };
 
   return (
@@ -99,13 +100,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
             <IconBefore height={iconHeight} />
           </span>
         )}
-        <input
-          ref={forwardedRef ?? inputRef}
-          id={id}
-          onChange={(e): void => changeInputValue(e.target.value)}
-          value={inputValue}
-          {...rest}
-        />
+        <input value={value} ref={internalRef} id={id} {...rest} />
         {IconAfter && (
           <>
             <div className="vertical-line" />
@@ -114,8 +109,8 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
             </span>
           </>
         )}
-        {inputValue && (
-          <div className="close-icon" onClick={handleClearInput}>
+        {isClearable && value && (
+          <div className="close-icon" onClick={handleClear}>
             <CloseSVG height={16} />
           </div>
         )}

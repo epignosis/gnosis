@@ -26,6 +26,7 @@ const Tabs: FC<TabsProps> = ({
   ...rest
 }) => {
   const [activeTab, setActiveTab] = useState(selectedTab);
+  const tabsLength = tabs.length - 1;
   const tabsNavEl = useRef<HTMLElement>(null);
   const [isOverflowActive, setIsOverflowActive] = useState(false);
   const dir = document.dir;
@@ -51,11 +52,11 @@ const Tabs: FC<TabsProps> = ({
   const showRightArrow = () => {
     if (!isOverflowActive) return false;
     if (!tabs) return false;
-    return activeTab < tabs.length - 1;
+    return activeTab < tabsLength;
   };
 
   const handRightArrowClick = () => {
-    if (tabs && activeTab < tabs.length - 1) {
+    if (tabs && activeTab < tabsLength) {
       scrollToTab(activeTab + 1);
       setActiveTab((currentTab) => currentTab + 1);
     }
@@ -68,8 +69,8 @@ const Tabs: FC<TabsProps> = ({
       newSelectedTab = 0;
     }
 
-    if (selectedTab > tabs.length - 1) {
-      newSelectedTab = tabs.length - 1;
+    if (selectedTab > tabsLength) {
+      newSelectedTab = tabsLength;
     }
 
     setActiveTab(newSelectedTab);

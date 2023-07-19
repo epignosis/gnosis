@@ -65,19 +65,19 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     () => internalRef.current,
   );
 
-  const resetFocus = () => {
+  const setFocus = () => {
     internalRef.current?.focus();
   };
 
   const handleClear = () => {
     if (onClear) onClear();
-    resetFocus();
+    setFocus();
   };
 
   return (
     <div
       css={(theme): SerializedStyles =>
-        inputContainer(theme, { size, hasIconAfter: Boolean(iconAfter) })
+        inputContainer(theme, { size, hasIconAfter: Boolean(iconAfter), isClearable })
       }
       className={containerClasses}
       {...containerAttrs}
@@ -102,7 +102,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
         {IconAfter && (
           <>
             <div className="vertical-line" />
-            <span className="suffix-icon" data-testid="input-icon-after" onClick={resetFocus}>
+            <span className="suffix-icon" data-testid="input-icon-after" onClick={setFocus}>
               <IconAfter height={iconHeight} />
             </span>
           </>

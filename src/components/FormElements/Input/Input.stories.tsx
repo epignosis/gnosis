@@ -41,7 +41,7 @@ export default {
 };
 
 const Template: Story<InputProps> = (args) => {
-  const [state, setState] = useState("My valu");
+  const [state, setState] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setState(e.target.value);

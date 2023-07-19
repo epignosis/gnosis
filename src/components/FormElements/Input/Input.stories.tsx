@@ -29,6 +29,7 @@ export default {
     isClearable: false,
     status: "valid",
     className: "inputStory",
+    tooltipContent: "",
   },
   decorators: [
     (Story: Story): JSX.Element => (
@@ -40,7 +41,7 @@ export default {
 };
 
 const Template: Story<InputProps> = (args) => {
-  const [state, setState] = useState("");
+  const [state, setState] = useState("My valu");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setState(e.target.value);

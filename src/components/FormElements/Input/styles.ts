@@ -4,7 +4,11 @@ import { InputSize } from "./Input";
 
 export const inputContainer = (
   { formElements }: Theme,
-  { size, hasIconAfter }: { size: InputSize; hasIconAfter: boolean },
+  {
+    size,
+    hasIconAfter,
+    isClearable,
+  }: { size: InputSize; hasIconAfter: boolean; isClearable: boolean },
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })};
 
@@ -66,7 +70,7 @@ export const inputContainer = (
 
   &.with-suffix-icon {
     .input-wrapper input {
-      padding-inline-end: 5rem;
+      padding-inline-end: ${isClearable ? "5rem" : "3.75rem"};
     }
   }
 
@@ -80,7 +84,7 @@ export const inputContainer = (
     input {
       ${inputBaseStyles(formElements, { block: true, size })};
       background-color: transparent;
-      padding-inline-end: 2rem;
+      padding-inline-end: ${isClearable ? "2rem" : "0.75rem"};
     }
 
     .prefix-icon,

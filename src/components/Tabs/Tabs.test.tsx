@@ -1,7 +1,7 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
 import { faker } from "@faker-js/faker";
-import Tabs from "./Tabs";
+import Tabs, { TabObject } from "./Tabs";
 import { screen, render } from "@test-utils/render";
 
 const getTabsProps = () => ({
@@ -19,13 +19,23 @@ window.HTMLElement.prototype.scrollIntoView = jest.fn();
 describe("<Tabs/>", () => {
   it("renders correctly", () => {
     const { tab1Txt, tab2Txt, tab3Txt, tab1TitleTxt, tab2TitleTxt, tab3TitleTxt } = getTabsProps();
-    render(
-      <Tabs>
-        <Tabs.TabPane title={tab1TitleTxt}>{tab1Txt}</Tabs.TabPane>
-        <Tabs.TabPane title={tab2TitleTxt}>{tab2Txt}</Tabs.TabPane>
-        <Tabs.TabPane title={tab3TitleTxt}>{tab3Txt}</Tabs.TabPane>
-      </Tabs>,
-    );
+
+    const tabs: TabObject[] = [
+      {
+        title: tab1TitleTxt,
+        content: tab1Txt,
+      },
+      {
+        title: tab2TitleTxt,
+        content: tab2Txt,
+      },
+      {
+        title: tab3TitleTxt,
+        content: tab3Txt,
+      },
+    ];
+
+    render(<Tabs tabs={tabs} />);
 
     const titles = screen.getAllByRole("tab");
     const tab1Content = screen.getByText(tab1Txt);
@@ -38,13 +48,17 @@ describe("<Tabs/>", () => {
 
   it("changes tabs correctly", () => {
     const { tab1Txt, tab2Txt, tab1TitleTxt, tab2TitleTxt } = getTabsProps();
-
-    render(
-      <Tabs>
-        <Tabs.TabPane title={tab1TitleTxt}>{tab1Txt}</Tabs.TabPane>
-        <Tabs.TabPane title={tab2TitleTxt}>{tab2Txt}</Tabs.TabPane>
-      </Tabs>,
-    );
+    const tabs: TabObject[] = [
+      {
+        title: tab1TitleTxt,
+        content: tab1Txt,
+      },
+      {
+        title: tab2TitleTxt,
+        content: tab2Txt,
+      },
+    ];
+    render(<Tabs tabs={tabs} />);
 
     const tab2 = screen.getByText(tab2TitleTxt);
 
@@ -57,13 +71,23 @@ describe("<Tabs/>", () => {
 
   it("render with initial tab value", () => {
     const { tab1Txt, tab2Txt, tab3Txt, tab1TitleTxt, tab2TitleTxt, tab3TitleTxt } = getTabsProps();
-    render(
-      <Tabs selectedTab={1}>
-        <Tabs.TabPane title={tab1TitleTxt}>{tab1Txt}</Tabs.TabPane>
-        <Tabs.TabPane title={tab2TitleTxt}>{tab2Txt}</Tabs.TabPane>
-        <Tabs.TabPane title={tab3TitleTxt}>{tab3Txt}</Tabs.TabPane>
-      </Tabs>,
-    );
+
+    const tabs: TabObject[] = [
+      {
+        title: tab1TitleTxt,
+        content: tab1Txt,
+      },
+      {
+        title: tab2TitleTxt,
+        content: tab2Txt,
+      },
+      {
+        title: tab3TitleTxt,
+        content: tab3Txt,
+      },
+    ];
+
+    render(<Tabs selectedTab={1} tabs={tabs} />);
     const tab2 = screen.getByText(tab2TitleTxt);
     const tab2Content = screen.getByText(tab2Txt);
 
@@ -74,13 +98,23 @@ describe("<Tabs/>", () => {
   it("to get tab index with `onChangeTab` callback", () => {
     const mockFn = jest.fn();
     const { tab1Txt, tab2Txt, tab3Txt, tab1TitleTxt, tab2TitleTxt, tab3TitleTxt } = getTabsProps();
-    render(
-      <Tabs onChangeTab={mockFn}>
-        <Tabs.TabPane title={tab1TitleTxt}>{tab1Txt}</Tabs.TabPane>
-        <Tabs.TabPane title={tab2TitleTxt}>{tab2Txt}</Tabs.TabPane>
-        <Tabs.TabPane title={tab3TitleTxt}>{tab3Txt}</Tabs.TabPane>
-      </Tabs>,
-    );
+
+    const tabs: TabObject[] = [
+      {
+        title: tab1TitleTxt,
+        content: tab1Txt,
+      },
+      {
+        title: tab2TitleTxt,
+        content: tab2Txt,
+      },
+      {
+        title: tab3TitleTxt,
+        content: tab3Txt,
+      },
+    ];
+
+    render(<Tabs onChangeTab={mockFn} tabs={tabs} />);
     const tab2 = screen.getByText(tab2TitleTxt);
     const tab3 = screen.getByText(tab3TitleTxt);
 
@@ -96,25 +130,43 @@ describe("<Tabs/>", () => {
   });
 
   it("matches snapshot", () => {
-    const { container } = render(
-      <Tabs id="tab-1" className="tabs">
-        <Tabs.TabPane title="Tab 1">Test tab 1</Tabs.TabPane>
-        <Tabs.TabPane title="Tab 2">Test tab 2</Tabs.TabPane>
-        <Tabs.TabPane title="Tab 3">Test tab 3</Tabs.TabPane>
-      </Tabs>,
-    );
+    const tabs = [
+      {
+        title: "Tab 1",
+        content: "Test tab 1",
+      },
+      {
+        title: "Tab 2",
+        content: "Test tab 2",
+      },
+      {
+        title: "Tab 3",
+        content: "Test tab 3",
+      },
+    ];
+
+    const { container } = render(<Tabs id="tab-1" className="tabs" tabs={tabs} />);
 
     expect(container).toMatchSnapshot();
   });
 
   it("matches snapshot with stickyHeader", () => {
-    const { container } = render(
-      <Tabs stickyHeader>
-        <Tabs.TabPane title="Tab 1">Test tab 1</Tabs.TabPane>
-        <Tabs.TabPane title="Tab 2">Test tab 2</Tabs.TabPane>
-        <Tabs.TabPane title="Tab 3">Test tab 3</Tabs.TabPane>
-      </Tabs>,
-    );
+    const tabs = [
+      {
+        title: "Tab 1",
+        content: "Test tab 1",
+      },
+      {
+        title: "Tab 2",
+        content: "Test tab 2",
+      },
+      {
+        title: "Tab 3",
+        content: "Test tab 3",
+      },
+    ];
+
+    const { container } = render(<Tabs stickyHeader tabs={tabs} />);
 
     expect(container).toMatchSnapshot();
   });

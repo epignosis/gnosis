@@ -6,9 +6,9 @@ import TabsNavItem from "./TabsNavItem";
 import TabsContent from "./TabsContent";
 import { container, tabsHeader } from "./styles";
 
-type TabObject = {
+export type TabObject = {
   title: JSX.Element | string;
-  content: JSX.Element;
+  content: JSX.Element | string;
 };
 
 type TabsProps = React.HTMLAttributes<HTMLElement> & {
@@ -19,7 +19,7 @@ type TabsProps = React.HTMLAttributes<HTMLElement> & {
 };
 
 const Tabs: FC<TabsProps> = ({
-  tabs,
+  tabs = [],
   stickyHeader = false,
   selectedTab = 0,
   onChangeTab,

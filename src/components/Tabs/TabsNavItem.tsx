@@ -5,7 +5,7 @@ import { tabNavItem } from "./styles";
 
 type TabsNavItemProps = {
   index: number;
-  title: string;
+  title: string | JSX.Element;
   isActive: boolean;
   onSelectTab: (i: number) => void;
 };

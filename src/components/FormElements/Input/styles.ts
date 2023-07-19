@@ -20,7 +20,12 @@ export const inputContainer = (
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+
+    label {
+      margin-bottom: 0;
+    }
 
     div {
       display: flex;

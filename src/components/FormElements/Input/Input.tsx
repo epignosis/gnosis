@@ -84,9 +84,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     >
       {hasLabel && (
         <div className="label-container">
-          <Label htmlFor={id} margin={false}>
-            {label}
-          </Label>
+          <Label htmlFor={id}>{label}</Label>
           {tooltipContent?.length > 0 && (
             <Tooltip content={tooltipContent}>
               <InfoCircledSVG height={20} />

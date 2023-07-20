@@ -23,6 +23,7 @@ export type InputProps = ExtendableProps<
     css?: SerializedStyles;
     tooltipContent?: string;
     isClearable?: boolean;
+    showVerticalLine?: boolean;
     onClear?: () => void;
   }
 >;
@@ -40,6 +41,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     tooltipContent = "",
     value,
     isClearable = false,
+    showVerticalLine = true,
     onClear,
     ...rest
   },
@@ -101,7 +103,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
         <input value={value} ref={internalRef} id={id} {...rest} />
         {IconAfter && (
           <>
-            <div className="vertical-line" />
+            {showVerticalLine && <div className="vertical-line" />}
             <span className="suffix-icon" data-testid="input-icon-after" onClick={setFocus}>
               <IconAfter height={iconHeight} />
             </span>

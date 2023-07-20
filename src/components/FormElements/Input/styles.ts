@@ -4,7 +4,11 @@ import { InputSize } from "./Input";
 
 export const inputContainer = (
   { formElements }: Theme,
-  { size }: { size: InputSize },
+  {
+    size,
+    hasIconAfter,
+    isClearable,
+  }: { size: InputSize; hasIconAfter: boolean; isClearable: boolean },
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })};
 
@@ -13,14 +17,19 @@ export const inputContainer = (
     border-left: 1px solid ${formElements.input.verticalLineColor};
     height: 2.5rem;
     top: 0;
-    right: 3rem;
+    inset-inline-end: 3rem;
   }
 
   .label-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+
+    label {
+      margin-bottom: 0;
+    }
 
     div {
       display: flex;
@@ -61,7 +70,7 @@ export const inputContainer = (
 
   &.with-suffix-icon {
     .input-wrapper input {
-      padding-inline-end: 3.2rem;
+      padding-inline-end: ${isClearable ? "5rem" : "3.75rem"};
     }
   }
 
@@ -72,17 +81,10 @@ export const inputContainer = (
     z-index: 1;
     border-radius: 5px;
 
-    &:focus-within,
-    &:hover {
-      .prefix-icon,
-      .suffix-icon {
-        z-index: 1;
-      }
-    }
-
     input {
       ${inputBaseStyles(formElements, { block: true, size })};
       background-color: transparent;
+      padding-inline-end: ${isClearable ? "2rem" : "0.75rem"};
     }
 
     .prefix-icon,
@@ -101,8 +103,20 @@ export const inputContainer = (
 
     .suffix-icon {
       inset-inline-end: 0;
-      padding-inline-end: 0.5rem;
       color: ${formElements.input.iconColor};
+      width: 3rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .close-icon {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      inset-inline-end: ${hasIconAfter ? "3.75rem" : "0.75rem"};
     }
   }
 `;

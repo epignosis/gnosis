@@ -1,8 +1,8 @@
-import React, { forwardRef, Ref, ForwardRefRenderFunction } from "react";
+import React, { forwardRef, ForwardRefRenderFunction, useImperativeHandle, useRef } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import Label from "../Label/Label";
-import { InfoCircledSVG } from "../../../icons/index";
+import { InfoCircledSVG, CloseSVG } from "../../../icons/index";
 import Tooltip from "../../Tooltip/Tooltip";
 import { inputContainer } from "./styles";
 import { ExtendableProps, IconType } from "types/common";
@@ -17,12 +17,14 @@ export type InputProps = ExtendableProps<
     size?: InputSize;
     iconBefore?: IconType;
     iconAfter?: IconType;
-    ref?: Ref<HTMLInputElement>;
     label?: string;
     inline?: boolean;
     containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
     css?: SerializedStyles;
     tooltipContent?: string;
+    showVerticalLine?: boolean;
+    isClearable?: boolean;
+    onClear?: () => void;
   }
 >;
 
@@ -37,10 +39,16 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     id,
     containerAttrs,
     tooltipContent = "",
+    value,
+    isClearable = false,
+    showVerticalLine = true,
+    onClear,
     ...rest
   },
   forwardedRef,
 ) => {
+  const internalRef = useRef<HTMLInputElement>(null);
+
   const IconBefore = iconBefore;
   const IconAfter = iconAfter;
   const hasLabel = Boolean(label);
@@ -54,17 +62,31 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
   });
   const iconHeight = size === "sm" ? 28 : 32;
 
+  useImperativeHandle<HTMLInputElement | null, HTMLInputElement | null>(
+    forwardedRef,
+    () => internalRef.current,
+  );
+
+  const setFocus = () => {
+    internalRef.current?.focus();
+  };
+
+  const handleClear = () => {
+    if (onClear) onClear();
+    setFocus();
+  };
+
   return (
     <div
-      css={(theme): SerializedStyles => inputContainer(theme, { size })}
+      css={(theme): SerializedStyles =>
+        inputContainer(theme, { size, hasIconAfter: Boolean(iconAfter), isClearable })
+      }
       className={containerClasses}
       {...containerAttrs}
     >
       {hasLabel && (
         <div className="label-container">
-          <Label htmlFor={id} margin={false}>
-            {label}
-          </Label>
+          <Label htmlFor={id}>{label}</Label>
           {tooltipContent?.length > 0 && (
             <Tooltip content={tooltipContent}>
               <InfoCircledSVG height={20} />
@@ -78,14 +100,19 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
             <IconBefore height={iconHeight} />
           </span>
         )}
-        <input ref={forwardedRef} id={id} {...rest} />
+        <input value={value} ref={internalRef} id={id} {...rest} />
         {IconAfter && (
           <>
-            <div className="vertical-line" />
-            <span className="suffix-icon" data-testid="input-icon-after">
+            {showVerticalLine && <div className="vertical-line" />}
+            <span className="suffix-icon" data-testid="input-icon-after" onClick={setFocus}>
               <IconAfter height={iconHeight} />
             </span>
           </>
+        )}
+        {isClearable && value && (
+          <div className="close-icon" onClick={handleClear}>
+            <CloseSVG height={16} />
+          </div>
         )}
       </div>
     </div>

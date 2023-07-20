@@ -8,11 +8,6 @@ export const selectContainer = (
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })}
 
-  label {
-    margin-inline: 0.5rem 0;
-    margin-block: 0 0.5rem;
-  }
-
   &.error {
     .select-input-wrapper select {
       border-color: ${formElements.errors.errorBorderColor};

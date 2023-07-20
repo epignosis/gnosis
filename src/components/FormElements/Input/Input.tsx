@@ -79,7 +79,12 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
   return (
     <div
       css={(theme): SerializedStyles =>
-        inputContainer(theme, { size, hasIconAfter: Boolean(iconAfter), isClearable })
+        inputContainer(theme, {
+          size,
+          hasIconAfter: Boolean(iconAfter),
+          isClearable,
+          showVerticalLine,
+        })
       }
       className={containerClasses}
       {...containerAttrs}

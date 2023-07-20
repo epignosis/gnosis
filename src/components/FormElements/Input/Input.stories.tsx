@@ -81,6 +81,13 @@ WithIconAfter.args = {
   iconAfter: CalendarSVG,
 };
 
+export const WithIconAfterNoVerticalLine = Template.bind({});
+
+WithIconAfterNoVerticalLine.args = {
+  iconAfter: CalendarSVG,
+  showVerticalLine: false,
+};
+
 export const WithError = Template.bind({});
 
 WithError.args = {

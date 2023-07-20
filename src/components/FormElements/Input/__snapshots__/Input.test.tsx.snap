@@ -3,7 +3,7 @@
 exports[`<Input /> matches snapshot 1`] = `
 <div>
   <div
-    class="container-classname css-1y4ua23-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-inputContainer-inputContainer"
+    class="container-classname css-hbqd6p-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-inputContainer-inputContainer"
     id="container-id"
   >
     <div

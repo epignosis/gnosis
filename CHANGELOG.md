@@ -1,3 +1,17 @@
+## [4.0.15](https://github.com/epignosis/gnosis/compare/v4.0.14...v4.0.15) (2023-07-20)
+
+
+### Bug Fixes
+
+* **input:** fix input spacing issues ([#182](https://github.com/epignosis/gnosis/issues/182)) ([e6a3e19](https://github.com/epignosis/gnosis/commit/e6a3e19dd14c147b646abbba24265c45bfe84dfe))
+
+## [4.0.14](https://github.com/epignosis/gnosis/compare/v4.0.13...v4.0.14) (2023-07-20)
+
+
+### Bug Fixes
+
+* input changes ([#177](https://github.com/epignosis/gnosis/issues/177)) ([3ce80dc](https://github.com/epignosis/gnosis/commit/3ce80dc0b9b0059ccf4e874b8213df862b90a136))
+
 ## [4.0.13](https://github.com/epignosis/gnosis/compare/v4.0.12...v4.0.13) (2023-07-18)
 
 

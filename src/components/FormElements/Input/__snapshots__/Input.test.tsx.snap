@@ -3,14 +3,14 @@
 exports[`<Input /> matches snapshot 1`] = `
 <div>
   <div
-    class="container-classname css-1mdrvlz-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-inputContainer-inputContainer"
+    class="container-classname css-hbqd6p-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-inputContainer-inputContainer"
     id="container-id"
   >
     <div
       class="label-container"
     >
       <label
-        class="css-1ffysa4-label-label"
+        class="css-xs6o3g-label-label"
         for="my-input-id"
       >
         Test label
@@ -23,6 +23,7 @@ exports[`<Input /> matches snapshot 1`] = `
         class="input"
         id="my-input-id"
         name="test-input"
+        value=""
       />
       <div
         class="vertical-line"

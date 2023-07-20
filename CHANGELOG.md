@@ -1,3 +1,20 @@
+# [5.0.0](https://github.com/epignosis/gnosis/compare/v4.0.15...v5.0.0) (2023-07-20)
+
+
+* Refactor Tabs (#180) ([a30df59](https://github.com/epignosis/gnosis/commit/a30df59e3f6590cd3c3bafd59db13b1422be76dd)), closes [#180](https://github.com/epignosis/gnosis/issues/180)
+
+
+### BREAKING CHANGES
+
+* You need to refactor you <Tabs> component with the suitable props. No more passing
+content as children.
+
+* refactor: update tests
+
+* refactor: readability changes
+
+* fix: forgotten changes
+
 ## [4.0.15](https://github.com/epignosis/gnosis/compare/v4.0.14...v4.0.15) (2023-07-20)
 
 

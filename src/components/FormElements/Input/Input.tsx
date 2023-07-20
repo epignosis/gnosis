@@ -22,8 +22,8 @@ export type InputProps = ExtendableProps<
     containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
     css?: SerializedStyles;
     tooltipContent?: string;
-    isClearable?: boolean;
     showVerticalLine?: boolean;
+    isClearable?: boolean;
     onClear?: () => void;
   }
 >;

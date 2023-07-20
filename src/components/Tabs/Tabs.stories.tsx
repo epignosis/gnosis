@@ -44,6 +44,11 @@ const tabs = [
       </div>
     ),
   },
+
+  {
+    title: "I should not be displayed",
+    content: undefined,
+  },
 ];
 
 const Template: Story = (args) => {
@@ -91,4 +96,11 @@ export const Responsive = ResponsiveTemplate.bind({});
 
 Responsive.args = {
   ...commonProps,
+};
+
+export const withOptionalTabs = Template.bind({});
+
+SelectedTab.args = {
+  ...commonProps,
+  selectedTab: 0,
 };

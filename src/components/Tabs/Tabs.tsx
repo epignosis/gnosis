@@ -50,13 +50,12 @@ const Tabs: FC<TabsProps> = ({
   };
 
   const showRightArrow = () => {
-    if (!isOverflowActive) return false;
-    if (!tabs) return false;
+    if (!isOverflowActive || !tabs.length) return false;
     return activeTab < tabsLength;
   };
 
   const handRightArrowClick = () => {
-    if (tabs && activeTab < tabsLength) {
+    if (tabs.length && activeTab < tabsLength) {
       scrollToTab(activeTab + 1);
       setActiveTab((currentTab) => currentTab + 1);
     }

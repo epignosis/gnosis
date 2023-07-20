@@ -8,7 +8,7 @@ import { container, tabsHeader } from "./styles";
 
 export type TabObject = {
   title: JSX.Element | string;
-  content: JSX.Element | string;
+  content?: JSX.Element | string | undefined;
 };
 
 type TabsProps = React.HTMLAttributes<HTMLElement> & {
@@ -123,15 +123,17 @@ const Tabs: FC<TabsProps> = ({
           role="tablist"
           ref={tabsNavEl}
         >
-          {tabs.map(({ title }, index) => (
-            <TabsNavItem
-              key={index}
-              index={index}
-              title={title}
-              isActive={activeTab === index}
-              onSelectTab={onSelectTab}
-            />
-          ))}
+          {tabs
+            .filter((tab) => tab.content)
+            .map(({ title }, index) => (
+              <TabsNavItem
+                key={index}
+                index={index}
+                title={title}
+                isActive={activeTab === index}
+                onSelectTab={onSelectTab}
+              />
+            ))}
         </nav>
 
         {showRightArrow() && (
@@ -148,14 +150,16 @@ const Tabs: FC<TabsProps> = ({
       </div>
 
       <section id="content" aria-live="polite" role="region">
-        {tabs.map(({ content }, index) => (
-          <TabsContent
-            key={index}
-            index={index}
-            content={content}
-            isVisible={activeTab === index}
-          />
-        ))}
+        {tabs
+          .filter((tab) => tab.content)
+          .map(({ content }, index) => (
+            <TabsContent
+              key={index}
+              index={index}
+              content={content}
+              isVisible={activeTab === index}
+            />
+          ))}
       </section>
     </section>
   );

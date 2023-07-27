@@ -23,10 +23,10 @@ export const inputContainerBaseStyles = ({
   &.inline {
     flex-direction: row;
     align-items: center;
+    gap: 0.5rem;
 
     label {
-      margin-inline: 0px 0.75rem;
-      margin-block: 0px;
+      margin: 0;
     }
   }
 `;

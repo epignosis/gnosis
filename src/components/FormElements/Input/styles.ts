@@ -88,6 +88,12 @@ export const inputContainer = (
       }
     }
 
+    &.inline {
+      .label-container {
+        margin-bottom: 0;
+      }
+    }
+
     &.disabled {
       .input-wrapper {
         .prefix-icon,

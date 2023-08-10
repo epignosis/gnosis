@@ -33,9 +33,9 @@ export const container = (
       }
 
       .link-text {
-        padding: 0;
+        padding-inline-start: 0;
         text-decoration: underline;
-        margin-inline-start: 0.5rem;
+        margin-inline-start: 0.2rem;
       }
     }
 

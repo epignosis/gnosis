@@ -27,7 +27,15 @@ const getIconSize = (isMd: boolean): IconSize => ({
   lg: isMd ? 180 : 135,
 });
 
-const Result: FC<ResultProps> = ({ icon, title, info, footer, hideInfo, size = "lg", ...rest }) => {
+const Result: FC<ResultProps> = ({
+  icon,
+  title,
+  info,
+  footer,
+  hideInfo = false,
+  size = "lg",
+  ...rest
+}) => {
   const { md } = useResponsive();
   const Icon = icon;
   const iconSize = getIconSize(md);

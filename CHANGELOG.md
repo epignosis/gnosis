@@ -1,3 +1,119 @@
+## [5.0.2](https://github.com/epignosis/gnosis/compare/v5.0.1...v5.0.2) (2023-07-27)
+
+## [5.0.1](https://github.com/epignosis/gnosis/compare/v5.0.0...v5.0.1) (2023-07-20)
+
+# [5.0.0](https://github.com/epignosis/gnosis/compare/v4.0.15...v5.0.0) (2023-07-20)
+
+
+* Refactor Tabs (#180) ([a30df59](https://github.com/epignosis/gnosis/commit/a30df59e3f6590cd3c3bafd59db13b1422be76dd)), closes [#180](https://github.com/epignosis/gnosis/issues/180)
+
+
+### BREAKING CHANGES
+
+* You need to refactor you <Tabs> component with the suitable props. No more passing
+content as children.
+
+* refactor: update tests
+
+* refactor: readability changes
+
+* fix: forgotten changes
+
+## [4.0.15](https://github.com/epignosis/gnosis/compare/v4.0.14...v4.0.15) (2023-07-20)
+
+
+### Bug Fixes
+
+* **input:** fix input spacing issues ([#182](https://github.com/epignosis/gnosis/issues/182)) ([e6a3e19](https://github.com/epignosis/gnosis/commit/e6a3e19dd14c147b646abbba24265c45bfe84dfe))
+
+## [4.0.14](https://github.com/epignosis/gnosis/compare/v4.0.13...v4.0.14) (2023-07-20)
+
+
+### Bug Fixes
+
+* input changes ([#177](https://github.com/epignosis/gnosis/issues/177)) ([3ce80dc](https://github.com/epignosis/gnosis/commit/3ce80dc0b9b0059ccf4e874b8213df862b90a136))
+
+## [4.0.13](https://github.com/epignosis/gnosis/compare/v4.0.12...v4.0.13) (2023-07-18)
+
+
+### Bug Fixes
+
+* overflow on chips ([#178](https://github.com/epignosis/gnosis/issues/178)) ([c861f12](https://github.com/epignosis/gnosis/commit/c861f125e0a7f67844fa3e9b8b5739e8766321de))
+
+## [4.0.12](https://github.com/epignosis/gnosis/compare/v4.0.11...v4.0.12) (2023-07-14)
+
+
+### Bug Fixes
+
+* table UI and tooltip fixes ([#176](https://github.com/epignosis/gnosis/issues/176)) ([06818c6](https://github.com/epignosis/gnosis/commit/06818c6470976205536f8b1c919b9e0c3672ecfe))
+
+## [4.0.11](https://github.com/epignosis/gnosis/compare/v4.0.10...v4.0.11) (2023-07-05)
+
+
+### Bug Fixes
+
+* optionally enable interactive tooltip ([#173](https://github.com/epignosis/gnosis/issues/173)) ([334092e](https://github.com/epignosis/gnosis/commit/334092e023b928f91937e49b2e14d28ccba0af83))
+
+## [4.0.10](https://github.com/epignosis/gnosis/compare/v4.0.9...v4.0.10) (2023-07-03)
+
+
+### Bug Fixes
+
+* apply reversed sorting in a column ([#172](https://github.com/epignosis/gnosis/issues/172)) ([893681e](https://github.com/epignosis/gnosis/commit/893681e8dbe954813d57c262ed8fb94292b39a1c))
+
+## [4.0.9](https://github.com/epignosis/gnosis/compare/v4.0.8...v4.0.9) (2023-06-30)
+
+
+### Bug Fixes
+
+* two states sorting in tables ([#171](https://github.com/epignosis/gnosis/issues/171)) ([0d088dd](https://github.com/epignosis/gnosis/commit/0d088dd5762ffe65791696d735105a5919fe5332))
+
+## [4.0.8](https://github.com/epignosis/gnosis/compare/v4.0.7...v4.0.8) (2023-06-29)
+
+
+### Bug Fixes
+
+* resizing window apply tooltip ([#170](https://github.com/epignosis/gnosis/issues/170)) ([d2aa091](https://github.com/epignosis/gnosis/commit/d2aa091f6b992ee7805648e9278114705f7077ee))
+
+## [4.0.7](https://github.com/epignosis/gnosis/compare/v4.0.6...v4.0.7) (2023-06-28)
+
+
+### Bug Fixes
+
+* **table:** display tooltip in overflow columns ([#169](https://github.com/epignosis/gnosis/issues/169)) ([8832abf](https://github.com/epignosis/gnosis/commit/8832abfab1b113bece93f811ea1cc4c4ef1c1917))
+
+## [4.0.6](https://github.com/epignosis/gnosis/compare/v4.0.5...v4.0.6) (2023-06-27)
+
+## [4.0.5](https://github.com/epignosis/gnosis/compare/v4.0.4...v4.0.5) (2023-06-26)
+
+
+### Bug Fixes
+
+* **pagination:** types and styles ([#167](https://github.com/epignosis/gnosis/issues/167)) ([189330e](https://github.com/epignosis/gnosis/commit/189330eb5670514df7099c0e9c9e4dac27075f43))
+
+## [4.0.4](https://github.com/epignosis/gnosis/compare/v4.0.3...v4.0.4) (2023-06-22)
+
+
+### Bug Fixes
+
+* **pagination.tsx:** remove unused usePagination hook ([#166](https://github.com/epignosis/gnosis/issues/166)) ([b36f289](https://github.com/epignosis/gnosis/commit/b36f289afc9d2704560a5f4b6def36f6d7dbe2ee))
+
+## [4.0.3](https://github.com/epignosis/gnosis/compare/v4.0.2...v4.0.3) (2023-06-22)
+
+
+### Bug Fixes
+
+* **pagination.tsx:** on Pagination component, use a unique key for the li element ([#165](https://github.com/epignosis/gnosis/issues/165)) ([3562208](https://github.com/epignosis/gnosis/commit/35622080302808fbf45c6760de130bb13ef4890d))
+
+## [4.0.2](https://github.com/epignosis/gnosis/compare/v4.0.1...v4.0.2) (2023-06-21)
+
+
+### Bug Fixes
+
+* **body.tsx:** hideInfo prop was not set correctly ([#164](https://github.com/epignosis/gnosis/issues/164)) ([ccac876](https://github.com/epignosis/gnosis/commit/ccac87693a353a40523f6abfd10cfaa0b2d1eb42))
+
+## [4.0.1](https://github.com/epignosis/gnosis/compare/v4.0.0...v4.0.1) (2023-06-19)
+
 # [4.0.0](https://github.com/epignosis/gnosis/compare/v3.5.10...v4.0.0) (2023-06-19)
 
 

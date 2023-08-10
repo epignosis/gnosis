@@ -3,39 +3,81 @@
 exports[`<Table> matches snapshot 1`] = `
 <div>
   <div
-    class="css-sy84m1-tableContainer-tableContainer"
+    class="css-qc60xe-tableContainer-tableContainer"
     data-testid="table"
   >
     <table>
       <thead>
         <tr>
           <th
-            class="header-cell header1"
+            class="header-cell header1 false"
+            style="width: auto;"
           >
-            <span>
-              Header1
-            </span>
+            <div>
+              <span
+                style="width: auto;"
+              >
+                <span>
+                  Header1
+                </span>
+              </span>
+            </div>
           </th>
           <th
-            class="header-cell header2"
+            class="header-cell header2 false"
+            style="width: auto;"
           >
-            <span>
-              Header2
-            </span>
+            <div>
+              <span
+                style="width: auto;"
+              >
+                <span>
+                  Header2
+                </span>
+              </span>
+            </div>
           </th>
           <th
-            class="header-cell header3"
+            class="header-cell header3 false"
+            style="width: auto;"
           >
-            <span>
-              Header3
-            </span>
+            <div>
+              <span
+                style="width: auto;"
+              >
+                <span>
+                  Header3
+                </span>
+              </span>
+            </div>
           </th>
           <th
-            class="header-cell header4"
+            class="header-cell header4 false"
+            style="width: auto;"
           >
-            <span>
-              Header4
-            </span>
+            <div>
+              <span
+                style="width: auto;"
+              >
+                <span>
+                  Header4
+                </span>
+              </span>
+            </div>
+          </th>
+          <th
+            class="header-cell header5 false"
+            style="width: auto;"
+          >
+            <div>
+              <span
+                style="width: auto;"
+              >
+                <span>
+                  Header5
+                </span>
+              </span>
+            </div>
           </th>
         </tr>
       </thead>
@@ -43,34 +85,198 @@ exports[`<Table> matches snapshot 1`] = `
         <tr
           class=""
         >
-          <td />
-          <td />
-          <td />
-          <td />
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
         </tr>
         <tr
           class=""
         >
-          <td />
-          <td />
-          <td />
-          <td />
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
         </tr>
         <tr
           class=""
         >
-          <td />
-          <td />
-          <td />
-          <td />
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
         </tr>
         <tr
           class=""
         >
-          <td />
-          <td />
-          <td />
-          <td />
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div>
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>

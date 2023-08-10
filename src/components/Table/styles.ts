@@ -33,6 +33,10 @@ export const tableContainer = ({ table }: Theme) => css`
               margin-inline-start: 0.5rem;
             }
 
+            &.hidden {
+              cursor: default;
+            }
+
             span {
               display: inline-block;
 
@@ -71,6 +75,13 @@ export const tableContainer = ({ table }: Theme) => css`
         td {
           padding: 1rem 1.5rem;
           position: relative;
+
+          .has-overflow {
+            word-break: break-word;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+          }
 
           .no-wrap {
             white-space: nowrap;

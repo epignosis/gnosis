@@ -8,6 +8,9 @@ export type Column = {
   hidden?: boolean;
   classNames?: string[];
   sortableHeader?: boolean;
+  maxWidth?: number;
+  headerWidth?: number;
+  sortOrder?: "asc" | "desc";
 };
 
 export type Row = {
@@ -20,6 +23,7 @@ export type EmptyState = {
   info: string;
   icon?: IconType;
   footer?: ReactNode;
+  hideInfo?: boolean;
 };
 
 export type Sorting = {
@@ -32,7 +36,6 @@ export type TableProps = {
   rows: Row[];
   emptyState: EmptyState;
   selectable?: boolean;
-  sortable?: boolean;
   sorting?: Sorting;
   onSortingChanged?: (sorting: Sorting) => void;
   onRowSelect?: (selectedRows: Row[]) => void;
@@ -45,7 +48,7 @@ export type TableState = {
   rows: Row[];
   emptyState: EmptyState;
   selected: Row[];
-  sorting: Sorting;
+  sorting?: Sorting;
 };
 
 export type ActionType =

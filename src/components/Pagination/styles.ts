@@ -21,12 +21,12 @@ export const container = (
         background-color: ${pagination.hoverBackground}!important;
       }
 
-      .left {
+      .rotate-left {
         height: 24px;
         transform: rotateZ(-90deg);
       }
 
-      .right {
+      .rotate-right {
         height: 24px;
         transform: rotateZ(90deg);
       }
@@ -75,7 +75,7 @@ export const container = (
           }
 
           svg {
-            margin-left: 1rem;
+            margin-inline-start: 1rem;
             height: 12px;
 
             transform: rotateZ(-90deg);
@@ -85,7 +85,6 @@ export const container = (
         .dropdown-list {
           list-style: none;
           margin: 0;
-          min-width: 14rem;
           box-sizing: border-box;
           white-space: nowrap;
           user-select: none;
@@ -110,6 +109,10 @@ export const container = (
 
             .is-selected {
               font-weight: bold;
+            }
+
+            &:hover {
+              background-color: ${pagination.hoverPaginationList};
             }
           }
         }

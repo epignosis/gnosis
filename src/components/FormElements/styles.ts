@@ -16,19 +16,18 @@ export const inputContainerBaseStyles = ({
   display: inline-flex;
   flex-direction: column;
 
+  label {
+    margin-inline-start: 0.5rem;
+  }
+
   &.inline {
     flex-direction: row;
     align-items: center;
+    gap: 0.5rem;
 
     label {
-      margin-inline: 0 0.75rem;
-      margin-block: 0;
+      margin: 0;
     }
-  }
-
-  label {
-    margin-inline: 0.5rem 0;
-    margin-block: 0 0.5rem;
   }
 `;
 
@@ -46,23 +45,25 @@ export const inputBaseStyles = (
 
   &:hover {
     background: ${formElements.input.hoverColor};
-  }
-
-  &:hover {
     border: 1px solid ${formElements.input.borderHoverColor};
   }
 
+  &:hover ~ .vertical-line {
+    border-left: 1px solid ${formElements.input.borderHoverColor};
+  }
+
+  &:focus ~ .vertical-line {
+    border-left: 1px solid ${formElements.input.borderFocusColor};
+  }
+
   &:focus {
-    border: 2px solid ${formElements.input.borderHoverColor};
+    border: 1px solid ${formElements.input.borderFocusColor};
+    background-color: ${formElements.input.backgroundFocus};
   }
 
   &:focus,
   &:focus-visible {
     outline: none;
-  }
-
-  &:focus {
-    background-color: ${formElements.input.backgroundFocus};
   }
 
   &:disabled {

@@ -1,26 +1,26 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
 import Pagination from "./Pagination";
-import { RowItem } from "./types";
+import { RowsPerPageOption } from "./types";
 import { render, screen } from "@test-utils/render";
 
-const list: RowItem[] = [
-  { id: 10, value: "10 rows" },
-  { id: 20, value: "20 rows" },
-  { id: 30, value: "30 rows" },
+const rowsPerPageOptions: RowsPerPageOption[] = [
+  { value: 10, label: "10 rows" },
+  { value: 20, label: "20 rows" },
+  { value: 30, label: "30 rows" },
 ];
 
 describe("<Pagination />", () => {
   it("renders correctly", () => {
     render(
       <Pagination
-        list={list}
-        size={20}
-        current={2}
+        page={2}
+        pageSize={20}
         totalPages={6}
+        rowsPerPageOptions={rowsPerPageOptions}
         selectionText="dummy"
-        handlePaginationSizeChanged={jest.fn()}
-        handlePaginationNumberChanged={jest.fn()}
+        onPageSizeChange={jest.fn()}
+        onPageChange={jest.fn()}
       />,
     );
 
@@ -34,13 +34,13 @@ describe("<Pagination />", () => {
   it("previous page button is disabled if it is the first page", () => {
     render(
       <Pagination
-        current={1}
-        list={list}
-        size={20}
+        page={1}
+        pageSize={20}
         totalPages={6}
+        rowsPerPageOptions={rowsPerPageOptions}
         selectionText="dummy"
-        handlePaginationSizeChanged={jest.fn()}
-        handlePaginationNumberChanged={jest.fn()}
+        onPageSizeChange={jest.fn()}
+        onPageChange={jest.fn()}
       />,
     );
 
@@ -53,13 +53,13 @@ describe("<Pagination />", () => {
   it("next page button is disabled if it is on the last page", () => {
     render(
       <Pagination
-        list={list}
-        size={20}
-        current={6}
+        page={6}
+        pageSize={20}
         totalPages={6}
+        rowsPerPageOptions={rowsPerPageOptions}
         selectionText="dummy"
-        handlePaginationSizeChanged={jest.fn()}
-        handlePaginationNumberChanged={jest.fn()}
+        onPageSizeChange={jest.fn()}
+        onPageChange={jest.fn()}
       />,
     );
 
@@ -73,13 +73,13 @@ describe("<Pagination />", () => {
     const mockFn = jest.fn();
     render(
       <Pagination
-        list={list}
-        size={20}
-        current={3}
+        page={3}
+        pageSize={20}
         totalPages={6}
+        rowsPerPageOptions={rowsPerPageOptions}
         selectionText="dummy"
-        handlePaginationSizeChanged={jest.fn()}
-        handlePaginationNumberChanged={mockFn}
+        onPageSizeChange={jest.fn()}
+        onPageChange={mockFn}
       />,
     );
     const nextBtn = screen.getByTestId("next-page-btn");
@@ -97,13 +97,13 @@ describe("<Pagination />", () => {
   it("matches snapshot with on page", () => {
     const { container } = render(
       <Pagination
-        list={list}
-        size={20}
-        current={3}
+        page={3}
+        pageSize={20}
         totalPages={6}
+        rowsPerPageOptions={rowsPerPageOptions}
         selectionText="dummy"
-        handlePaginationSizeChanged={jest.fn()}
-        handlePaginationNumberChanged={jest.fn()}
+        onPageSizeChange={jest.fn()}
+        onPageChange={jest.fn()}
         id="my-id"
         className="html-class"
       />,

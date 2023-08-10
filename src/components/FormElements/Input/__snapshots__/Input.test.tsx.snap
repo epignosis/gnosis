@@ -3,15 +3,19 @@
 exports[`<Input /> matches snapshot 1`] = `
 <div>
   <div
-    class="container-classname css-eptn9r-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-inputContainer-inputContainer"
+    class="container-classname css-1iabiqn-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-inputContainer-inputContainer"
     id="container-id"
   >
-    <label
-      class="css-xs6o3g-label-label"
-      for="my-input-id"
+    <div
+      class="label-container"
     >
-      Test label
-    </label>
+      <label
+        class="css-xs6o3g-label-label"
+        for="my-input-id"
+      >
+        Test label
+      </label>
+    </div>
     <div
       class="input-wrapper"
     >
@@ -19,6 +23,10 @@ exports[`<Input /> matches snapshot 1`] = `
         class="input"
         id="my-input-id"
         name="test-input"
+        value=""
+      />
+      <div
+        class="vertical-line"
       />
       <span
         class="suffix-icon"

@@ -1,4 +1,4 @@
-import React, { FC, useState, ReactElement, Children, useEffect, useRef } from "react";
+import React, { FC, useState, useEffect, useRef } from "react";
 import { SerializedStyles } from "@emotion/react";
 import { ArrowLeftSVG, ArrowRightSVG } from "../../icons/";
 import Button from "../Button/Button";
@@ -6,56 +6,30 @@ import TabsNavItem from "./TabsNavItem";
 import TabsContent from "./TabsContent";
 import { container, tabsHeader } from "./styles";
 
+export type TabObject = {
+  title: JSX.Element | string;
+  content?: JSX.Element | string | undefined;
+};
+
 type TabsProps = React.HTMLAttributes<HTMLElement> & {
   stickyHeader?: boolean;
   selectedTab?: number;
   onChangeTab?: (index: number) => void;
+  tabs: TabObject[];
 };
 
-type TabPaneProps = {
-  title: JSX.Element | string;
-  fallbackTitle?: string;
-};
-
-const TabPane: FC<TabPaneProps> = () => null;
-
-type TabsCompoundProps = {
-  TabPane: FC<TabPaneProps>;
-};
-
-//TODO: find a way to perform scrolling to tab
-const scrollToTab = (tabIndex: number) => {
-  const tabOffset = document.querySelector(`#tab-${tabIndex}`)?.getBoundingClientRect().x;
-
-  const tablist = document.getElementsByTagName("nav")[0];
-  tabOffset && tablist.scrollTo(tabOffset > 0 ? tabOffset - 16 : 0, 0);
-};
-
-const Tabs: FC<TabsProps> & TabsCompoundProps = ({
-  children,
+const Tabs: FC<TabsProps> = ({
+  tabs = [],
   stickyHeader = false,
   selectedTab = 0,
   onChangeTab,
   ...rest
 }) => {
   const [activeTab, setActiveTab] = useState(selectedTab);
+  const tabsLength = tabs.length - 1;
   const tabsNavEl = useRef<HTMLElement>(null);
   const [isOverflowActive, setIsOverflowActive] = useState(false);
   const dir = document.dir;
-
-  const tabTitles = Children.map(children, (child, i) => ({
-    index: i,
-    title: (child as ReactElement).props.title,
-    fallbackTitle:
-      typeof (child as ReactElement).props.title === "string"
-        ? (child as ReactElement).props.title
-        : (child as ReactElement).props.fallbackTitle,
-  }));
-
-  const tabPanes = Children.map(children, (child, i) => ({
-    index: i,
-    content: (child as ReactElement).props.children,
-  }));
 
   const onSelectTab = (index: number): void => {
     scrollToTab(index);
@@ -76,32 +50,29 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
   };
 
   const showRightArrow = () => {
-    if (!isOverflowActive) return false;
-    if (!tabTitles) return false;
-    return activeTab < tabTitles.length - 1;
+    if (!isOverflowActive || !tabs.length) return false;
+    return activeTab < tabsLength;
   };
 
   const handRightArrowClick = () => {
-    if (tabTitles && activeTab < tabTitles.length - 1) {
+    if (tabs.length && activeTab < tabsLength) {
       scrollToTab(activeTab + 1);
       setActiveTab((currentTab) => currentTab + 1);
     }
   };
 
   useEffect(() => {
-    if (tabTitles) {
-      let newSelectedTab = selectedTab;
+    let newSelectedTab = selectedTab;
 
-      if (selectedTab < 0) {
-        newSelectedTab = 0;
-      }
-
-      if (selectedTab > tabTitles.length - 1) {
-        newSelectedTab = tabTitles.length - 1;
-      }
-
-      setActiveTab(newSelectedTab);
+    if (selectedTab < 0) {
+      newSelectedTab = 0;
     }
+
+    if (selectedTab > tabsLength) {
+      newSelectedTab = tabsLength;
+    }
+
+    setActiveTab(newSelectedTab);
   }, [selectedTab]);
 
   useEffect(() => {
@@ -124,6 +95,14 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
     };
   }, []);
 
+  //TODO: find a way to perform scrolling to tab
+  const scrollToTab = (tabIndex: number) => {
+    const tabOffset = document.querySelector(`#tab-${tabIndex}`)?.getBoundingClientRect().x;
+
+    const tablist = document.getElementsByTagName("nav")[0];
+    tabOffset && tablist.scrollTo(tabOffset > 0 ? tabOffset - 16 : 0, 0);
+  };
+
   return (
     <section css={container} {...rest}>
       <div className="nav-wrapper">
@@ -144,15 +123,17 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
           role="tablist"
           ref={tabsNavEl}
         >
-          {tabTitles?.map(({ index, title }) => (
-            <TabsNavItem
-              key={index}
-              index={index}
-              title={title}
-              isActive={activeTab === index}
-              onSelectTab={onSelectTab}
-            />
-          ))}
+          {tabs
+            .filter((tab) => tab.content)
+            .map(({ title }, index) => (
+              <TabsNavItem
+                key={index}
+                index={index}
+                title={title}
+                isActive={activeTab === index}
+                onSelectTab={onSelectTab}
+              />
+            ))}
         </nav>
 
         {showRightArrow() && (
@@ -169,8 +150,9 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
       </div>
 
       <section id="content" aria-live="polite" role="region">
-        {tabPanes?.length &&
-          tabPanes.map(({ index, content }) => (
+        {tabs
+          .filter((tab) => tab.content)
+          .map(({ content }, index) => (
             <TabsContent
               key={index}
               index={index}
@@ -182,7 +164,5 @@ const Tabs: FC<TabsProps> & TabsCompoundProps = ({
     </section>
   );
 };
-
-Tabs.TabPane = TabPane;
 
 export default Tabs;

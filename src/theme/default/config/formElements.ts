@@ -8,6 +8,7 @@ export default {
   input: {
     placeholderColor: colors.black,
     borderHoverColor: colors.primary.light,
+    borderFocusColor: colors.primary.base,
     inputBorderColor: colors.secondary.lighter,
     background: colors.secondary.lighter,
     backgroundFocus: colors.white,
@@ -18,6 +19,8 @@ export default {
     disabledBorder: colors.secondary.base,
     disabledIcon: colors.secondary.base,
     borderFocus: colors.primary.base,
+    infoTooltipColor: colors.primary.base,
+    verticalLineColor: colors.secondary.base,
   },
   radioButtonGroup: {
     normalBackground: colors.secondary.lighter,

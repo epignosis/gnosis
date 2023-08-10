@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Story } from "@storybook/react";
 import { CalendarSVG } from "../../../icons/";
 import InputComponent, { InputProps } from "./Input";
@@ -26,8 +26,10 @@ export default {
     placeholder: "Your LMS username",
     label: "Username",
     inline: false,
+    isClearable: false,
     status: "valid",
     className: "inputStory",
+    tooltipContent: "",
   },
   decorators: [
     (Story: Story): JSX.Element => (
@@ -38,7 +40,19 @@ export default {
   ],
 };
 
-const Template: Story<InputProps> = (args) => <InputComponent {...args} />;
+const Template: Story<InputProps> = (args) => {
+  const [state, setState] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setState(e.target.value);
+  };
+
+  const onClear = () => {
+    setState("");
+  };
+
+  return <InputComponent {...args} value={state} onChange={handleChange} onClear={onClear} />;
+};
 
 export const Default = Template.bind({});
 
@@ -65,6 +79,13 @@ export const WithIconAfter = Template.bind({});
 
 WithIconAfter.args = {
   iconAfter: CalendarSVG,
+};
+
+export const WithIconAfterNoVerticalLine = Template.bind({});
+
+WithIconAfterNoVerticalLine.args = {
+  iconAfter: CalendarSVG,
+  showVerticalLine: false,
 };
 
 export const WithError = Template.bind({});

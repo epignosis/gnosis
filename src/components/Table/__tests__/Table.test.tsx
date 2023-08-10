@@ -24,6 +24,11 @@ const COLUMNS = [
     cell: "Header4",
     classNames: ["header4"],
   },
+  {
+    accessor: "header5",
+    cell: "Header5",
+    classNames: ["header5"],
+  },
 ];
 
 const ROWS = [
@@ -33,6 +38,7 @@ const ROWS = [
     name: "name1",
     category: "category1",
     code: "code1",
+    date: "date1",
   },
   {
     id: "id2",
@@ -40,6 +46,7 @@ const ROWS = [
     name: "name2",
     category: "category2",
     code: "code2",
+    date: "date2",
   },
   {
     id: "id3",
@@ -47,6 +54,7 @@ const ROWS = [
     name: "name3",
     category: "category3",
     code: "code3",
+    date: "date3",
   },
   {
     id: "id4",
@@ -54,6 +62,7 @@ const ROWS = [
     name: "name4",
     category: "category4",
     code: "code4",
+    date: "date4",
   },
 ];
 

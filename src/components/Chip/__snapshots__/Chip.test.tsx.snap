@@ -3,7 +3,7 @@
 exports[`<Chip /> matches snapshot 1`] = `
 <div>
   <div
-    class="my-class css-1ihpjvi-chip-chip"
+    class="my-class css-vrmhsq-chip-chip"
     id="my-id"
     style="background-color: purple; color: white;"
   >
@@ -19,7 +19,13 @@ exports[`<Chip /> matches snapshot 1`] = `
         />
       </span>
     </button>
-    This is a chip
+    <div>
+      <div
+        class="has-overflow"
+      >
+        This is a chip
+      </div>
+    </div>
   </div>
 </div>
 `;

@@ -2,10 +2,12 @@ import React, { FC, Fragment, useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 // import SearchInput from "@components/FormElements/SearchInput";
+import { useClickAway } from "ahooks";
 import Text from "../Text/Text";
-import useClickOutside from "./hooks";
+import SearchInput from "../FormElements/Input/SearchInput";
 import { DropdownContainer, DropdownList, DropdownListItem, DropdownTitle } from "./styles";
 import { DropdownItem, DropdownProps } from "./types";
+import { filterListByKeyword } from "./helpers";
 // import { filterListByKeyword } from "./helpers";
 
 const dropdownWrapperClasses = (placement: DropdownProps["placement"]): string =>
@@ -38,7 +40,9 @@ const Dropdown: FC<DropdownProps> = ({
   const [filteredList, setFilteredList] = useState<DropdownItem[]>(() => list);
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
-  useClickOutside(wrapperRef, () => setIsListOpen(false));
+  useClickAway(() => {
+    setIsListOpen(false);
+  }, wrapperRef);
 
   useEffect(() => {
     setFilteredList(list);
@@ -64,11 +68,7 @@ const Dropdown: FC<DropdownProps> = ({
       if (item.items) {
         return (
           <Fragment key={item.label}>
-            {/* Category title */}
-            <li
-              css={DropdownTitle({ level, isSearchable: Boolean(isSearchable) })}
-              key={"title" + item.label}
-            >
+            <li css={DropdownTitle({ level, isSearchable: Boolean(isSearchable) })}>
               <Text fontSize={textSize} weight="700">
                 {item.label}
               </Text>
@@ -79,7 +79,6 @@ const Dropdown: FC<DropdownProps> = ({
         );
       }
 
-      // Normal item
       return (
         <li
           className={dropdownItemClasses(item)}
@@ -96,11 +95,10 @@ const Dropdown: FC<DropdownProps> = ({
     });
   };
 
-  // const handleInputChanged = (keyword: string): void => {
-  //   // We need to reset the list if the keyword is empty
-  //   if (!keyword) setFilteredList(list);
-  //   setFilteredList(filterListByKeyword(list, keyword));
-  // };
+  const handleInputChanged = (keyword: string): void => {
+    if (!keyword) setFilteredList(list);
+    setFilteredList(filterListByKeyword(list, keyword));
+  };
 
   return (
     <div
@@ -114,16 +112,16 @@ const Dropdown: FC<DropdownProps> = ({
         {children}
       </div>
 
-      {isListOpen && list.length > 0 && (
+      {isListOpen && (
         <div className={dropdownWrapperClasses(placement)}>
-          {/* {isSearchable && (
+          {isSearchable && (
             <SearchInput
               placeholder="Search"
               onInputChanged={handleInputChanged}
               id="search-course-files-tags"
               delayBeforeSearch={300}
             />
-          )} */}
+          )}
 
           <ul
             css={(theme): SerializedStyles =>

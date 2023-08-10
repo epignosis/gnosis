@@ -1,4 +1,10 @@
-import React, { forwardRef, ForwardRefRenderFunction, useImperativeHandle, useRef } from "react";
+import React, {
+  forwardRef,
+  ForwardRefRenderFunction,
+  useImperativeHandle,
+  useRef,
+  MouseEvent,
+} from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import Label from "../Label/Label";
@@ -24,7 +30,7 @@ export type InputProps = ExtendableProps<
     tooltipContent?: string;
     showVerticalLine?: boolean;
     isClearable?: boolean;
-    onClear?: () => void;
+    onClear?: (e?: MouseEvent<HTMLDivElement>) => void;
   }
 >;
 
@@ -71,8 +77,8 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     internalRef.current?.focus();
   };
 
-  const handleClear = () => {
-    if (onClear) onClear();
+  const handleClear = (e: MouseEvent<HTMLDivElement>) => {
+    if (onClear) onClear(e);
     setFocus();
   };
 
@@ -115,7 +121,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           </>
         )}
         {isClearable && value && (
-          <div className="close-icon" onClick={handleClear}>
+          <div className="close-icon" onClick={(e: MouseEvent<HTMLDivElement>) => handleClear(e)}>
             <CloseSVG height={16} />
           </div>
         )}

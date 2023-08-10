@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Story } from "@storybook/react";
 import { CalendarSVG } from "../../../icons/";
 import InputComponent, { InputProps } from "./Input";
+import SearchInput from "./SearchInput";
 
 export default {
   title: "components/Form Elements/Input",
@@ -40,7 +41,7 @@ export default {
   ],
 };
 
-const Template: Story<InputProps> = (args) => {
+const InputTemplate: Story<InputProps> = (args) => {
   const [state, setState] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,42 +55,59 @@ const Template: Story<InputProps> = (args) => {
   return <InputComponent {...args} value={state} onChange={handleChange} onClear={onClear} />;
 };
 
-export const Default = Template.bind({});
+const SearchTemplate: Story<InputProps> = (args) => {
+  return (
+    <SearchInput
+      {...args}
+      id="search-input"
+      placeholder="Search"
+      onInputChanged={(): void => undefined}
+    />
+  );
+};
 
-export const Disabled = Template.bind({});
+export const Default = InputTemplate.bind({});
+
+export const Disabled = InputTemplate.bind({});
 
 Disabled.args = {
   disabled: true,
 };
 
-export const DisabledWithIcon = Template.bind({});
+export const DisabledWithIcon = InputTemplate.bind({});
 
 DisabledWithIcon.args = {
   disabled: true,
   iconAfter: CalendarSVG,
 };
 
-export const WithIconBefore = Template.bind({});
+export const WithIconBefore = InputTemplate.bind({});
 
 WithIconBefore.args = {
   iconBefore: CalendarSVG,
 };
 
-export const WithIconAfter = Template.bind({});
+export const WithIconAfter = InputTemplate.bind({});
 
 WithIconAfter.args = {
   iconAfter: CalendarSVG,
 };
 
-export const WithIconAfterNoVerticalLine = Template.bind({});
+export const WithIconAfterNoVerticalLine = InputTemplate.bind({});
 
 WithIconAfterNoVerticalLine.args = {
   iconAfter: CalendarSVG,
   showVerticalLine: false,
 };
 
-export const WithError = Template.bind({});
+export const WithError = InputTemplate.bind({});
 
 WithError.args = {
   status: "error",
+};
+
+export const Search = SearchTemplate.bind({});
+
+Search.args = {
+  // status: "error",
 };

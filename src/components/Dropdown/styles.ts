@@ -1,7 +1,7 @@
 import { Theme, css } from "@emotion/react";
 
 const getInlinePaddingStart = (level: number, isSearchable: boolean) => {
-  const initialPadding = isSearchable ? 0 : 1;
+  const initialPadding = isSearchable ? 0.25 : 1;
 
   return initialPadding + level * 0.75;
 };
@@ -68,8 +68,8 @@ export const DropdownList = (
   padding: ${isSearchable ? "0" : "0.5rem 0"};
   max-height: 21rem;
   overflow-y: auto;
-  width: ${fullWidth ? "100%" : "auto"};
-  min-width: 14rem;
+  width: ${fullWidth ? (isSearchable ? "auto" : "100%") : "auto"};
+  min-width: ${fullWidth ? "2rem" : "14rem"};
   border-radius: 5px;
 
   /* Works on Firefox */

@@ -1,14 +1,12 @@
 import React, { FC, Fragment, useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
-// import SearchInput from "@components/FormElements/SearchInput";
 import { useClickAway } from "ahooks";
 import Text from "../Text/Text";
 import SearchInput from "../FormElements/Input/SearchInput";
 import { DropdownContainer, DropdownList, DropdownListItem, DropdownTitle } from "./styles";
 import { DropdownItem, DropdownProps } from "./types";
 import { filterListByKeyword } from "./helpers";
-// import { filterListByKeyword } from "./helpers";
 
 const dropdownWrapperClasses = (placement: DropdownProps["placement"]): string =>
   classNames({
@@ -130,7 +128,7 @@ const Dropdown: FC<DropdownProps> = ({
             role="list"
             className="dropdown-list"
           >
-            {filteredList.length ? (
+            {filteredList?.length ? (
               renderItemsRecursively(filteredList)
             ) : (
               <li className="empty-state">

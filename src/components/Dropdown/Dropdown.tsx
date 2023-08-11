@@ -80,7 +80,7 @@ const Dropdown: FC<DropdownProps> = ({
       return (
         <li
           className={dropdownItemClasses(item)}
-          key={"item" + item.label}
+          key={`item ${item.label}`}
           onClick={(): void => handleListItemSelect(item)}
           css={(theme): SerializedStyles =>
             DropdownListItem(theme, { isSearchable: Boolean(isSearchable), level })
@@ -116,7 +116,7 @@ const Dropdown: FC<DropdownProps> = ({
             <SearchInput
               placeholder="Search"
               onInputChanged={handleInputChanged}
-              id="search-course-files-tags"
+              id="dropdown-search"
               delayBeforeSearch={300}
             />
           )}

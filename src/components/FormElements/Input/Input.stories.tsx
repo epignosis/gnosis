@@ -107,7 +107,3 @@ WithError.args = {
 };
 
 export const Search = SearchTemplate.bind({});
-
-Search.args = {
-  // status: "error",
-};

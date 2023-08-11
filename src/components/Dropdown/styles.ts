@@ -17,7 +17,7 @@ export const DropdownContainer = (
     position: absolute;
     z-index: 100;
     border-radius: 5px;
-    box-shadow: 0px 3px 6px ${dropdown.boxShadowColor};
+    box-shadow: 0 3px 6px ${dropdown.boxShadowColor};
     background-color: ${dropdown.backgroundColor};
     padding: ${isSearchable ? "0.75rem" : "0"};
     width: ${fullWidth ? (isSearchable ? "auto" : "100%") : "auto"};
@@ -93,7 +93,7 @@ export const DropdownList = (
 
   .empty-state {
     color: ${dropdown.emptyStateColor};
-    padding: 0rem 0.75rem;
+    padding: 0 0.75rem;
     display: flex;
     align-items: center;
     height: 2rem;

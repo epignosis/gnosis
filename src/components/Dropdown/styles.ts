@@ -20,7 +20,7 @@ export const DropdownContainer = (
     box-shadow: 0px 3px 6px ${dropdown.boxShadowColor};
     background-color: ${dropdown.backgroundColor};
     padding: ${isSearchable ? "0.75rem" : "0"};
-    width: ${fullWidth ? "100%" : "auto"};
+    width: ${fullWidth ? (isSearchable ? "auto" : "100%") : "auto"};
     max-width: ${fullWidth ? "50" : "19.5"}rem;
 
     &.bottom-start {
@@ -68,7 +68,7 @@ export const DropdownList = (
   padding: ${isSearchable ? "0" : "0.5rem 0"};
   max-height: 21rem;
   overflow-y: auto;
-  width: ${fullWidth ? (isSearchable ? "auto" : "100%") : "auto"};
+  width: ${fullWidth ? "100%" : "auto"};
   min-width: ${fullWidth ? "2rem" : "14rem"};
   border-radius: 5px;
 

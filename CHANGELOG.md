@@ -1,3 +1,10 @@
+## [5.0.4](https://github.com/epignosis/gnosis/compare/v5.0.3...v5.0.4) (2023-08-14)
+
+
+### Bug Fixes
+
+* **export dropdown:** dropdown export ([#192](https://github.com/epignosis/gnosis/issues/192)) ([130e325](https://github.com/epignosis/gnosis/commit/130e325b49003809d4afec755c8713f63ef94330))
+
 ## [5.0.3](https://github.com/epignosis/gnosis/compare/v5.0.2...v5.0.3) (2023-08-14)
 
 

@@ -4,6 +4,10 @@ on:
     branches:
       - main
 
+env:
+  AWS_REGION: us-east-1
+  CD_ROLE_ARN: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GnosisGithub
+
 jobs:
   release:
     name: Release
@@ -46,6 +50,9 @@ jobs:
   deploy:
     name: Deploy Gnosis Design System
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
     needs: release
     steps:
       - name: Checkout
@@ -53,13 +60,12 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Configure AWS credentials
-        id: aws-credentials-prod
+      - name: Configure AWS credentials with OIDC
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          role-to-assume: ${{ env.CD_ROLE_ARN }}
+          role-session-name: build-${{ github.sha }}
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
@@ -80,7 +86,3 @@ jobs:
         run: |
           INVALIDATION_ID=`aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_ID }} --paths "/*" | jq -r .Invalidation.Id`
           aws cloudfront wait invalidation-completed --distribution-id ${{ secrets.CDN_ID }} --id $INVALIDATION_ID
-
-      # - name: Remove old files
-      #   run: |
-      #     aws s3 sync dist/ s3://${{ secrets.CDN_BUCKET_NAME }}/ --delete

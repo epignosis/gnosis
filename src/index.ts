@@ -21,6 +21,7 @@ export { default as Sidebar } from "./components/Sidebar/Sidebar";
 export { default as Card } from "./components/Card/Card";
 export { default as Grid } from "./components/Grid/Grid";
 export { default as Table } from "./components/Table/Table";
+export { default as Dropdown } from "./components/Dropdown/Dropdown";
 
 //  Typography
 export { default as Heading } from "./components/Heading/Heading";

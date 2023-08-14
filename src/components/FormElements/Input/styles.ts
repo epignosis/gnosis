@@ -170,3 +170,32 @@ export const inputContainer = (
     }
   `;
 };
+
+export const searchInputContainer = css`
+  width: 100%;
+  position: relative;
+
+  .input-wrapper {
+    min-width: 250px;
+  }
+
+  input {
+    padding-inline-end: 2.5rem;
+  }
+
+  .clear-button {
+    position: absolute;
+    inset-inline-end: 0;
+    z-index: 1;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+  .prefix-icon,
+  .suffix-icon {
+    svg {
+      height: 24px;
+    }
+  }
+`;

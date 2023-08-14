@@ -5,7 +5,6 @@ on:
       - main
 
 env:
-  AWS_REGION: us-east-1
   CD_ROLE_ARN: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/GnosisGithub
 
 jobs:
@@ -65,7 +64,7 @@ jobs:
         with:
           role-to-assume: ${{ env.CD_ROLE_ARN }}
           role-session-name: build-${{ github.sha }}
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v2

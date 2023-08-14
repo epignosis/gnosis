@@ -36,6 +36,7 @@ const Dropdown: FC<DropdownProps> = ({
 }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [filteredList, setFilteredList] = useState<DropdownItem[]>(() => list);
+
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
   useClickAway(() => {

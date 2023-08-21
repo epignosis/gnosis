@@ -14,7 +14,7 @@ export const selectContainer = (
     }
   }
 
-  select {
+  .react-select__control {
     ${inputBaseStyles(formElements, { block: true, size })};
     background-color: transparent;
     padding-inline-end: 2.5rem;

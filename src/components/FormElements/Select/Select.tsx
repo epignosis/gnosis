@@ -1,15 +1,27 @@
-import React, { forwardRef, ForwardRefRenderFunction } from "react";
-import ReactSelect from "react-select";
-import type { Props as CustomSelectProps, SelectInstance } from "react-select";
+import React, { ForwardRefRenderFunction, forwardRef } from "react";
+import ReactSelect, { SelectInstance } from "react-select";
 import classNames from "classnames";
 import Label from "../Label/Label";
+import { CustomOptionType, CustomSelectProps } from "./types";
+import { fakeOptions } from "./data";
 
-const CustomSelect: ForwardRefRenderFunction<SelectInstance, CustomSelectProps> = (
-  props,
+const CustomSelect: ForwardRefRenderFunction<
+  SelectInstance<CustomOptionType>,
+  CustomSelectProps<CustomOptionType, false>
+> = (
+  {
+    id = "",
+    status = "valid",
+    label,
+    inline = false,
+    containerAttrs,
+    options = fakeOptions,
+    ...rest
+  },
   forwardedRef,
 ) => {
-  const { id = "", status = "valid", label, inline = false, containerAttrs, ...rest } = props;
   const hasLabel = Boolean(label);
+
   const containerClassNames = classNames({
     valid: status === "valid",
     error: status === "error",
@@ -18,18 +30,14 @@ const CustomSelect: ForwardRefRenderFunction<SelectInstance, CustomSelectProps> 
   });
 
   return (
-    <div
-      // css={(theme): SerializedStyles => selectContainer(theme, { size, dir })}
-      // {...containerAttrs}
-      className={containerClassNames}
-    >
+    <div className={containerClassNames}>
       {hasLabel && (
         <Label htmlFor={id} aria-labelledby={id}>
           {label}
         </Label>
       )}
       <div className="select-input-wrapper">
-        <ReactSelect ref={forwardedRef} instanceId={id} classNamePrefix="react-select" {...rest} />
+        <ReactSelect {...rest} options={options} ref={forwardedRef} />
       </div>
     </div>
   );

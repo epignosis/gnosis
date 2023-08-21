@@ -1,24 +1,33 @@
-import { ReactNode } from "react";
-import type { GroupBase } from "react-select";
+import type { GroupBase, Props as ReactSelectProps, SingleValue } from "react-select";
 
-type Status = "valid" | "error";
+export type Status = "valid" | "error";
 
-type SelectOption = {
+export type CustomOptionType = {
   label: string;
   value: string;
 };
 
-declare module "react-select/dist/declarations/src/Select" {
-  export interface Props<
-    Option extends SelectOption,
-    IsMulti extends boolean,
-    Group extends GroupBase<Option>,
-  > {
-    status?: Status;
-    label?: string;
-    inline?: boolean;
-    containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
-    isMulti: IsMulti;
-    formatGroupLabel: (group: Group) => ReactNode;
-  }
-}
+export type CustomTypeParam = SingleValue<CustomOptionType>;
+
+// declare module "react-select/dist/declarations/src/Select" {
+//   export interface ReactSelectProps<Option extends CustomOptionType> {
+//     status?: Status;
+//     label?: string;
+//     inline?: boolean;
+//     containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
+//     AriaLiveMesssage: boolean;
+//     options: Option[];
+//   }
+// }
+
+export type CustomSelectProps<
+  Option extends CustomOptionType,
+  IsMulti extends boolean = false,
+  Group extends GroupBase<Option> = GroupBase<Option>,
+> = ReactSelectProps<Option, IsMulti, Group> & {
+  status?: Status;
+  label?: string;
+  inline?: boolean;
+  containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
+  options: Option[];
+};

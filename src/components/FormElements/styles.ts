@@ -42,7 +42,7 @@ export const inputBaseStyles = (
   padding: 0 0.75rem;
   border: 1px solid ${formElements.input.inputBorderColor};
   border-radius: 5px;
-
+  background-color: "red";
   &:hover {
     background: ${formElements.input.hoverColor};
     border: 1px solid ${formElements.input.borderHoverColor};

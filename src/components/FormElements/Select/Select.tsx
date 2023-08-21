@@ -1,48 +1,26 @@
 import React, { forwardRef, ForwardRefRenderFunction } from "react";
-import { SerializedStyles } from "@emotion/react";
+import ReactSelect from "react-select";
+import type { Props as CustomSelectProps, SelectInstance } from "react-select";
 import classNames from "classnames";
 import Label from "../Label/Label";
-import { selectContainer } from "./styles";
-import { ExtendableProps } from "types/common";
 
-export type SelectProps = ExtendableProps<
-  React.SelectHTMLAttributes<HTMLSelectElement>,
-  {
-    status?: "valid" | "error";
-    size?: "sm" | "md" | "lg";
-    label?: string;
-    inline?: boolean;
-    onChange?: (selectedValue: string) => void;
-    containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
-  }
->;
-
-const Select: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (props, forwardedRef) => {
-  const {
-    id = "",
-    status = "valid",
-    size = "md",
-    label,
-    inline = false,
-    onChange,
-    children,
-    containerAttrs,
-    dir = "ltr",
-    ...rest
-  } = props;
+const CustomSelect: ForwardRefRenderFunction<SelectInstance, CustomSelectProps> = (
+  props,
+  forwardedRef,
+) => {
+  const { id = "", status = "valid", label, inline = false, containerAttrs, ...rest } = props;
   const hasLabel = Boolean(label);
   const containerClassNames = classNames({
     valid: status === "valid",
     error: status === "error",
     inline: hasLabel && inline,
-    disabled: Boolean(rest?.disabled),
     [containerAttrs?.className ?? ""]: Boolean(containerAttrs?.className),
   });
 
   return (
     <div
-      css={(theme): SerializedStyles => selectContainer(theme, { size, dir })}
-      {...containerAttrs}
+      // css={(theme): SerializedStyles => selectContainer(theme, { size, dir })}
+      // {...containerAttrs}
       className={containerClassNames}
     >
       {hasLabel && (
@@ -51,17 +29,10 @@ const Select: ForwardRefRenderFunction<HTMLSelectElement, SelectProps> = (props,
         </Label>
       )}
       <div className="select-input-wrapper">
-        <select
-          ref={forwardedRef}
-          onChange={onChange && ((e): void => onChange(e.target.value))}
-          id={id}
-          {...rest}
-        >
-          {children}
-        </select>
+        <ReactSelect ref={forwardedRef} instanceId={id} classNamePrefix="react-select" {...rest} />
       </div>
     </div>
   );
 };
 
-export default forwardRef(Select);
+export default forwardRef(CustomSelect);

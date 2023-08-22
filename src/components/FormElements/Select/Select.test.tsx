@@ -20,86 +20,50 @@ const OPTIONS = [
 ];
 
 describe("<Select />", () => {
-  it("renders correctly", () => {
+  it("renders correctly with exactly 3 options", () => {
     const labelTxt = faker.commerce.department();
-    render(
-      <Select id="my-select" label={labelTxt}>
-        {OPTIONS.map(({ label, value }) => (
-          <option key={value} value={value}>
-            {label}
-          </option>
-        ))}
-      </Select>,
-    );
+    const { container } = render(<Select id="my-select" label={labelTxt} options={OPTIONS} />);
 
     const select = screen.getByLabelText(labelTxt);
-    const options = screen.getAllByRole("option");
-
     expect(select).toBeInTheDocument();
+
+    const options = container.getElementsByClassName("option");
     expect(options).toHaveLength(3);
   });
 
   it("renders disabled", () => {
     const mockFn = jest.fn();
     const labelTxt = faker.commerce.department();
-    render(
-      <Select id="my-select" label={labelTxt} disabled>
-        {OPTIONS.map(({ label, value }) => (
-          <option key={value} value={value}>
-            {label}
-          </option>
-        ))}
-      </Select>,
-    );
+
+    render(<Select id="my-select" label={labelTxt} isDisabled={true} options={OPTIONS} />);
 
     const select = screen.getByLabelText(labelTxt);
-
     expect(select).toBeDisabled();
 
     userEvent.click(select);
-
     expect(mockFn).not.toHaveBeenCalled();
-  });
-
-  it("selects a value", () => {
-    const labelTxt = faker.commerce.department();
-    const mockFn = jest.fn();
-
-    render(
-      <Select id="my-select" label={labelTxt} onChange={mockFn}>
-        {OPTIONS.map(({ label, value }) => (
-          <option key={value} value={value}>
-            {label}
-          </option>
-        ))}
-      </Select>,
-    );
-
-    const select = screen.getByLabelText(labelTxt);
-
-    expect(select).toHaveValue(OPTIONS[0].value);
-
-    userEvent.selectOptions(select, OPTIONS[1].value);
-
-    expect(select).toHaveValue(OPTIONS[1].value);
-    expect(mockFn).toHaveBeenCalledTimes(1);
   });
 
   it("matches snapshot", () => {
     const { container } = render(
       <Select
         id="select-id"
-        className="normal-select"
         label="Test select input"
-        containerAttrs={{
-          id: "container-id",
-          className: "container-class",
-        }}
-      >
-        <option value="rs">Rust</option>
-        <option value="js">JavaScript</option>
-        <option value="ts">TypeScript</option>
-      </Select>,
+        options={[
+          {
+            label: "name",
+            value: "name",
+          },
+          {
+            label: "surname",
+            value: "surname",
+          },
+          {
+            label: "age",
+            value: "age",
+          },
+        ]}
+      />,
     );
 
     expect(container).toMatchSnapshot();

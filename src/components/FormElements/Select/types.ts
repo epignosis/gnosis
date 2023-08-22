@@ -9,25 +9,11 @@ export type CustomOptionType = {
 
 export type CustomTypeParam = SingleValue<CustomOptionType>;
 
-// declare module "react-select/dist/declarations/src/Select" {
-//   export interface ReactSelectProps<Option extends CustomOptionType> {
-//     status?: Status;
-//     label?: string;
-//     inline?: boolean;
-//     containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
-//     AriaLiveMesssage: boolean;
-//     options: Option[];
-//   }
-// }
-
 export type CustomSelectProps<
   Option extends CustomOptionType,
   IsMulti extends boolean = false,
   Group extends GroupBase<Option> = GroupBase<Option>,
 > = ReactSelectProps<Option, IsMulti, Group> & {
-  status?: Status;
   label?: string;
-  inline?: boolean;
-  containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
   options: Option[];
 };

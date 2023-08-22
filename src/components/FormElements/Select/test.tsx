@@ -15,8 +15,6 @@ const Test: FC = () => {
     <CustomSelect
       ref={ref}
       id="sorting"
-      containerAttrs={{ className: "select-wrapper" }}
-      isRtl={false}
       onChange={handleOnChange}
       options={[
         {

@@ -1,6 +1,5 @@
 import React, { ForwardRefRenderFunction, forwardRef } from "react";
 import ReactSelect, { SelectInstance } from "react-select";
-import classNames from "classnames";
 import Label from "../Label/Label";
 import { CustomOptionType, CustomSelectProps } from "./types";
 import { fakeOptions } from "./data";
@@ -8,36 +7,28 @@ import { fakeOptions } from "./data";
 const CustomSelect: ForwardRefRenderFunction<
   SelectInstance<CustomOptionType>,
   CustomSelectProps<CustomOptionType, false>
-> = (
-  {
-    id = "",
-    status = "valid",
-    label,
-    inline = false,
-    containerAttrs,
-    options = fakeOptions,
-    ...rest
-  },
-  forwardedRef,
-) => {
+> = (props, forwardedRef) => {
+  const { id = "", label, options = fakeOptions, ...rest } = props;
   const hasLabel = Boolean(label);
 
-  const containerClassNames = classNames({
-    valid: status === "valid",
-    error: status === "error",
-    inline: hasLabel && inline,
-    [containerAttrs?.className ?? ""]: Boolean(containerAttrs?.className),
-  });
-
   return (
-    <div className={containerClassNames}>
+    <div>
       {hasLabel && (
         <Label htmlFor={id} aria-labelledby={id}>
           {label}
         </Label>
       )}
       <div className="select-input-wrapper">
-        <ReactSelect {...rest} options={options} ref={forwardedRef} />
+        <ReactSelect
+          {...rest}
+          classNames={{
+            option: () => "foufoutos",
+          }}
+          options={options}
+          ref={forwardedRef}
+          // menuIsOpen={true}
+          // value={options[0]}
+        />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { faker } from "@faker-js/faker";
 import Select from "./Select";
-import { render } from "@test-utils/render";
+import { render, fireEvent } from "@test-utils/render";
 
 const OPTIONS = [
   {
@@ -22,19 +22,23 @@ describe("<Select />", () => {
   it("renders correctly with exactly 3 options", () => {
     const labelTxt = faker.commerce.department();
     const placeholder = faker.commerce.department();
-    const { container } = render(
+    const { container, queryByTestId } = render(
       <Select id="my-select" label={labelTxt} placeholder={placeholder} options={OPTIONS} />,
     );
 
-    const select = container.getElementsByClassName("control-md");
-    expect(select[0]).toBeInTheDocument();
+    const mySelectComponent = queryByTestId("custom-react-select");
+    expect(mySelectComponent).toBeDefined();
+    expect(mySelectComponent).not.toBeNull();
+    const selectInput = container.querySelector("input");
+    fireEvent.focus(selectInput as HTMLElement);
+    fireEvent.keyDown(selectInput as HTMLElement, { key: "ArrowDown", code: 40 });
 
     const options = container.getElementsByClassName("option-md");
     expect(options).toHaveLength(3);
   });
 
   it("matches snapshot", () => {
-    const { container } = render(
+    const { container, queryByTestId } = render(
       <Select
         id="select-id"
         label="Test select input"
@@ -54,6 +58,14 @@ describe("<Select />", () => {
         ]}
       />,
     );
+
+    const mySelectComponent = queryByTestId("custom-react-select");
+    expect(mySelectComponent).toBeDefined();
+    expect(mySelectComponent).not.toBeNull();
+
+    const selectInput = container.querySelector("input");
+    fireEvent.focus(selectInput as HTMLElement);
+    fireEvent.keyDown(selectInput as HTMLElement, { key: "ArrowDown", code: 40 });
 
     expect(container).toMatchSnapshot();
   });

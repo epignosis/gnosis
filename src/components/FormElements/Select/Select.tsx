@@ -39,7 +39,7 @@ const CustomSelect: ForwardRefRenderFunction<
           {label}
         </Label>
       )}
-      <div className="select-input-wrapper">
+      <div className="select-input-wrapper" data-testid="custom-react-select">
         <ReactSelect
           {...rest}
           ref={forwardedRef}

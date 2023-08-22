@@ -3,9 +3,12 @@ import ReactSelect, { SelectInstance } from "react-select";
 import { SerializedStyles } from "@emotion/react";
 import classNames from "classnames";
 import Label from "../Label/Label";
-import { CustomOptionType, CustomSelectProps } from "./types";
-import { fakeOptions } from "./data";
 import { selectContainer } from "./styles";
+import { CustomOptionType, CustomSelectProps } from "./types";
+import { formElements } from "@theme/default/config";
+
+const MAX_MENU_HEIGHT = 300;
+const INDICATOR_TRANSITION_DURATION = "250";
 
 const CustomSelect: ForwardRefRenderFunction<
   SelectInstance<CustomOptionType>,
@@ -14,10 +17,11 @@ const CustomSelect: ForwardRefRenderFunction<
   const {
     id = "",
     label,
-    options = fakeOptions,
+    options = [],
     size = "md",
     inline = true,
     status = "valid",
+    maxMenuHeight = MAX_MENU_HEIGHT,
     ...rest
   } = props;
   const hasLabel = Boolean(label);
@@ -37,23 +41,30 @@ const CustomSelect: ForwardRefRenderFunction<
       <div className="select-input-wrapper">
         <ReactSelect
           {...rest}
+          ref={forwardedRef}
+          options={options}
+          maxMenuHeight={maxMenuHeight}
           classNames={{
             control: () => `control-${size} ${containerClassNames}`,
             option: () => `option-${size}`,
           }}
-          options={options}
-          ref={forwardedRef}
           styles={{
             dropdownIndicator: (base, state) => ({
               ...base,
               transform: state.selectProps.menuIsOpen ? "rotate(-180deg)" : "rotate(0)",
-              transition: "250ms",
+              transition: INDICATOR_TRANSITION_DURATION,
+            }),
+            control: (baseStyles, state) => ({
+              ...baseStyles,
+              borderColor: state.isFocused
+                ? formElements.input.borderFocusColor
+                : baseStyles.borderColor,
+              ":hover": { borderColor: formElements.input.borderFocusColor },
             }),
           }}
           components={{
             IndicatorSeparator: () => null,
           }}
-          menuIsOpen={true}
         />
       </div>
     </div>

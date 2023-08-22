@@ -58,7 +58,13 @@ const options: OptionType[] = [
   { label: "TypeScript", value: "ts" },
   { label: "GoLang", value: "go" },
   { label: "Python", value: "python" },
-  { label: "PHP", value: "php", disabled: true },
+  { label: "PHP", value: "php" },
+  { label: "C++", value: "c++" },
+  { label: "C#", value: "c#" },
+  { label: "Java", value: "java" },
+  { label: "Ruby", value: "ruby" },
+  { label: "C", value: "c" },
+  { label: "Swift", value: "swift" },
 ];
 
 type OptionType = { label: string; value: string; disabled?: boolean };

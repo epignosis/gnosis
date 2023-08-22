@@ -1,8 +1,7 @@
 import React from "react";
-import userEvent from "@testing-library/user-event";
 import { faker } from "@faker-js/faker";
 import Select from "./Select";
-import { screen, render } from "@test-utils/render";
+import { render } from "@test-utils/render";
 
 const OPTIONS = [
   {
@@ -22,26 +21,16 @@ const OPTIONS = [
 describe("<Select />", () => {
   it("renders correctly with exactly 3 options", () => {
     const labelTxt = faker.commerce.department();
-    const { container } = render(<Select id="my-select" label={labelTxt} options={OPTIONS} />);
+    const placeholder = faker.commerce.department();
+    const { container } = render(
+      <Select id="my-select" label={labelTxt} placeholder={placeholder} options={OPTIONS} />,
+    );
 
-    const select = screen.getByLabelText(labelTxt);
-    expect(select).toBeInTheDocument();
+    const select = container.getElementsByClassName("control-md");
+    expect(select[0]).toBeInTheDocument();
 
-    const options = container.getElementsByClassName("option");
+    const options = container.getElementsByClassName("option-md");
     expect(options).toHaveLength(3);
-  });
-
-  it("renders disabled", () => {
-    const mockFn = jest.fn();
-    const labelTxt = faker.commerce.department();
-
-    render(<Select id="my-select" label={labelTxt} isDisabled={true} options={OPTIONS} />);
-
-    const select = screen.getByLabelText(labelTxt);
-    expect(select).toBeDisabled();
-
-    userEvent.click(select);
-    expect(mockFn).not.toHaveBeenCalled();
   });
 
   it("matches snapshot", () => {

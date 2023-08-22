@@ -1,47 +1,50 @@
 import { css, SerializedStyles, Theme } from "@emotion/react";
-import { inputBaseStyles, inputContainerBaseStyles } from "../styles";
 import { InputSize } from "../Input/Input";
+
+const inputHeight = {
+  sm: "1.875rem",
+  md: "2.5rem",
+  lg: "3rem",
+};
+
+const optionPadding = {
+  sm: "4px 12px",
+  md: "6px 12px",
+  lg: "8px 12px",
+};
 
 export const selectContainer = (
   { formElements }: Theme,
-  { size, dir }: { size: InputSize; dir: string },
+  { size, inline }: { size: InputSize; inline: boolean },
 ): SerializedStyles => css`
-  ${inputContainerBaseStyles({ block: true })}
-
-  &.error {
-    .select-input-wrapper select {
-      border-color: ${formElements.errors.errorBorderColor};
-    }
-  }
-
-  .react-select__control {
-    ${inputBaseStyles(formElements, { block: true, size })};
-    background-color: transparent;
-    padding-inline-end: 2.5rem;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-
-    &,
-    &:hover,
-    &:focus {
-      background-position: ${dir === "rtl" ? "left" : "right"} 1rem center;
-      background-repeat: no-repeat;
-      background-size: 14px;
-      background-image: url("https://talentlms-prod-frontend-static.s3.amazonaws.com/images/chevron-down-solid.svg");
-    }
-
-    &:hover,
-    &:focus {
-      border: 1px solid ${formElements.input.borderHoverColor};
-    }
-  }
+  display: flex;
+  flex-direction: ${inline ? "row" : "column"};
+  gap: ${inline ? "1rem" : "0"};
 
   .select-input-wrapper {
-    position: relative;
-    width: 100%;
+    flex-grow: 1;
+    max-width: 25rem;
     background-color: ${formElements.input.background};
-    border-radius: 5px;
-    z-index: 1;
+
+    .error {
+      border-color: ${formElements.errors.errorBorderColor};
+    }
+
+    .control-${size} {
+      height: ${inputHeight[size]};
+    }
+
+    .option-${size} {
+      padding: ${optionPadding[size]};
+      cursor: pointer;
+    }
+
+    .Select-arrow-zone {
+      background-color: red;
+    }
+
+    .Select-arrow {
+      background-color: blue;
+    }
   }
 `;

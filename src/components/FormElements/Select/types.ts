@@ -15,5 +15,7 @@ export type CustomSelectProps<
   Group extends GroupBase<Option> = GroupBase<Option>,
 > = ReactSelectProps<Option, IsMulti, Group> & {
   label?: string;
-  options: Option[];
+  size?: "sm" | "md" | "lg";
+  inline?: boolean;
+  status?: "valid" | "error";
 };

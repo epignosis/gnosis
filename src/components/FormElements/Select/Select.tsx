@@ -19,9 +19,10 @@ const CustomSelect: ForwardRefRenderFunction<
     label,
     options = [],
     size = "md",
-    inline = true,
+    inline = false,
     status = "valid",
     maxMenuHeight = MAX_MENU_HEIGHT,
+    isSearchable = false,
     ...rest
   } = props;
   const hasLabel = Boolean(label);
@@ -43,6 +44,7 @@ const CustomSelect: ForwardRefRenderFunction<
           {...rest}
           ref={forwardedRef}
           options={options}
+          isSearchable={isSearchable}
           maxMenuHeight={maxMenuHeight}
           classNames={{
             control: () => `control-${size} ${containerClassNames}`,

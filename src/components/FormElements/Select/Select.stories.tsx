@@ -24,6 +24,27 @@ export default {
         type: "boolean",
       },
     },
+    isDisabled: {
+      control: {
+        type: "boolean",
+      },
+    },
+    isClearable: {
+      control: {
+        type: "boolean",
+      },
+    },
+    isMulti: {
+      control: {
+        type: "boolean",
+      },
+    },
+    isSearchable: {
+      control: {
+        type: "boolean",
+      },
+    },
+
     status: {
       control: {
         type: "select",
@@ -46,11 +67,6 @@ const Template: Story<CustomSelectProps<OptionType>> = (args) => (
 );
 
 export const Default = Template.bind({});
-export const Disabled = Template.bind({});
-
-Disabled.args = {
-  isDisabled: true,
-};
 
 const options: OptionType[] = [
   { label: "Rust", value: "rs" },

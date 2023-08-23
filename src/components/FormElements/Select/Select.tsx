@@ -13,13 +13,106 @@ import classNames from "classnames";
 import { searchInputContainer } from "../Input/styles";
 import Label from "../Label/Label";
 import Input from "../Input/Input";
-import { selectContainer } from "./styles";
+import { customMenuList, selectContainer } from "./styles";
 import { CustomOptionType, CustomSelectProps } from "./types";
 import { formElements } from "@theme/default/config";
 
 const MAX_MENU_HEIGHT = 300;
 const INDICATOR_TRANSITION_DURATION = "250";
+const { MenuList, ValueContainer, SingleValue, Placeholder } = components;
 
+const CustomMenuList = (customMenuProps: any): JSX.Element => {
+  const { placeholder = "Select...", selectProps, ...props } = customMenuProps;
+  const { onInputChange, inputValue, onMenuInputFocus } = selectProps;
+
+  const ariaAttributes = {
+    "aria-autocomplete": "list" as const,
+    "aria-label": selectProps["aria-label"],
+    "aria-labelledby": selectProps["aria-labelledby"],
+  };
+
+  return (
+    <div css={customMenuList}>
+      <div css={searchInputContainer}>
+        <Input
+          id="react-select-inner-search-input"
+          placeholder={placeholder}
+          autoCorrect="off"
+          autoComplete="off"
+          spellCheck="false"
+          type="text"
+          value={inputValue}
+          showVerticalLine={false}
+          isClearable={true}
+          onChange={(e) => {
+            onInputChange(e.target.value, {
+              action: "input-change",
+            });
+          }}
+          onMouseDown={(e: MouseEvent<HTMLInputElement>) => {
+            e.stopPropagation();
+            const input = e.target as HTMLInputElement;
+            input.focus();
+          }}
+          onFocus={onMenuInputFocus}
+          {...ariaAttributes}
+        />
+      </div>
+
+      <MenuList {...props} selectProps={selectProps} />
+    </div>
+  );
+};
+
+const CustomValueContainer = (CustomValueContainerProps: any) => {
+  const { children, selectProps, ...props } = CustomValueContainerProps;
+
+  const commonProps: CommonProps<CustomOptionType, false, GroupBase<CustomOptionType>> = {
+    clearValue: props.clearValue,
+    getStyles: props.getStyles,
+    getValue: props.getValue,
+    hasValue: props.hasValue,
+    isMulti: props.isMulti,
+    isRtl: props.isRtl,
+    options: props.options,
+    selectOption: props.selectOption,
+    setValue: props.setValue,
+    selectProps,
+    cx: props.cx,
+    getClassNames: props.getClassNames,
+    theme: props.theme,
+  };
+
+  return (
+    <ValueContainer {...props} selectProps={selectProps}>
+      {Children.map(children, (child) => {
+        return child ? (
+          child
+        ) : props.hasValue ? (
+          <SingleValue
+            {...commonProps}
+            isDisabled={selectProps.isDisabled}
+            getClassNames={props.getClassNames}
+            innerProps={props.innerProps}
+            data={props.getValue()}
+          >
+            {selectProps.getOptionLabel(props.getValue()[0])}
+          </SingleValue>
+        ) : (
+          <Placeholder
+            {...commonProps}
+            isDisabled={selectProps.isDisabled}
+            getClassNames={props.getClassNames}
+            innerProps={props.innerProps}
+            isFocused={selectProps.isFocused}
+          >
+            {selectProps.placeholder}
+          </Placeholder>
+        );
+      })}
+    </ValueContainer>
+  );
+};
 const CustomSelect: ForwardRefRenderFunction<
   SelectInstance<CustomOptionType>,
   CustomSelectProps<CustomOptionType>
@@ -118,105 +211,11 @@ const CustomSelect: ForwardRefRenderFunction<
           onInputChange={(val) => {
             setInputValue(val);
           }}
+          blurInputOnSelect={true}
         />
       </div>
-    </div>
-  );
-};
-
-const { MenuList, ValueContainer, SingleValue, Placeholder } = components;
-
-const CustomMenuList = (customMenuProps: any): JSX.Element => {
-  const { placeholder = "Select...", selectProps, ...props } = customMenuProps;
-  const { onInputChange, inputValue, onMenuInputFocus } = selectProps;
-
-  const ariaAttributes = {
-    "aria-autocomplete": "list" as const,
-    "aria-label": selectProps["aria-label"],
-    "aria-labelledby": selectProps["aria-labelledby"],
-  };
-
-  return (
-    <div style={{ padding: "0.75rem" }}>
-      <div css={searchInputContainer}>
-        <Input
-          id="react-select-inner-search-input"
-          placeholder={placeholder}
-          autoCorrect="off"
-          autoComplete="off"
-          spellCheck="false"
-          type="text"
-          value={inputValue}
-          showVerticalLine={false}
-          isClearable={true}
-          onChange={(e) => {
-            onInputChange(e.target.value, {
-              action: "input-change",
-            });
-          }}
-          onMouseDown={(e: MouseEvent<HTMLInputElement>) => {
-            e.stopPropagation();
-            const input = e.target as HTMLInputElement;
-            input.focus();
-          }}
-          onFocus={onMenuInputFocus}
-          {...ariaAttributes}
-        />
-      </div>
-
-      <MenuList {...props} selectProps={selectProps} />
     </div>
   );
 };
 
 export default forwardRef(CustomSelect);
-
-const CustomValueContainer = (CustomValueContainerProps: any) => {
-  const { children, selectProps, ...props } = CustomValueContainerProps;
-
-  const commonProps: CommonProps<CustomOptionType, false, GroupBase<CustomOptionType>> = {
-    clearValue: props.clearValue,
-    getStyles: props.getStyles,
-    getValue: props.getValue,
-    hasValue: props.hasValue,
-    isMulti: props.isMulti,
-    isRtl: props.isRtl,
-    options: props.options,
-    selectOption: props.selectOption,
-    setValue: props.setValue,
-    selectProps,
-    cx: props.cx,
-    getClassNames: props.getClassNames,
-    theme: props.theme,
-  };
-
-  return (
-    <ValueContainer {...props} selectProps={selectProps}>
-      {Children.map(children, (child) => {
-        return child ? (
-          child
-        ) : props.hasValue ? (
-          <SingleValue
-            {...commonProps}
-            isDisabled={selectProps.isDisabled}
-            getClassNames={props.getClassNames}
-            innerProps={props.innerProps}
-            data={props.getValue()}
-          >
-            {selectProps.getOptionLabel(props.getValue()[0])}
-          </SingleValue>
-        ) : (
-          <Placeholder
-            {...commonProps}
-            isDisabled={selectProps.isDisabled}
-            getClassNames={props.getClassNames}
-            innerProps={props.innerProps}
-            isFocused={selectProps.isFocused}
-          >
-            {selectProps.placeholder}
-          </Placeholder>
-        );
-      })}
-    </ValueContainer>
-  );
-};

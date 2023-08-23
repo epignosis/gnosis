@@ -38,13 +38,9 @@ export const selectContainer = (
       padding: ${optionPadding[size]};
       cursor: pointer;
     }
-
-    .Select-arrow-zone {
-      background-color: red;
-    }
-
-    .Select-arrow {
-      background-color: blue;
-    }
   }
+`;
+
+export const customMenuList = (): SerializedStyles => css`
+  padding: 0.75rem;
 `;

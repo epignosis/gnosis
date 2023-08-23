@@ -1,4 +1,10 @@
-import type { GroupBase, Props as ReactSelectProps, SingleValue } from "react-select";
+import type {
+  GroupBase,
+  MenuListProps,
+  Props as ReactSelectProps,
+  SingleValue,
+  ValueContainerProps,
+} from "react-select";
 
 export type Status = "valid" | "error";
 
@@ -19,4 +25,17 @@ export type CustomSelectProps<
   inline?: boolean;
   status?: "valid" | "error";
   hasInnerSearch?: boolean;
+  onMenuInputFocus?: () => void;
 };
+
+export type CustomMenuListProps<
+  Option extends CustomOptionType,
+  IsMulti extends boolean = false,
+  Group extends GroupBase<Option> = GroupBase<Option>,
+> = MenuListProps<Option, IsMulti, Group>;
+
+export type CustomValueContainerProps<
+  Option extends CustomOptionType,
+  IsMulti extends boolean = false,
+  Group extends GroupBase<Option> = GroupBase<Option>,
+> = ValueContainerProps<Option, IsMulti, Group>;

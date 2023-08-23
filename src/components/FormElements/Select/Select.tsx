@@ -1,11 +1,11 @@
 import React, {
   Children,
   ForwardRefRenderFunction,
-  MouseEvent,
   forwardRef,
   useEffect,
   useRef,
   useState,
+  MouseEvent as ReactMouseEvent,
 } from "react";
 import ReactSelect, { CommonProps, GroupBase, SelectInstance, components } from "react-select";
 import { SerializedStyles } from "@emotion/react";
@@ -14,16 +14,22 @@ import { searchInputContainer } from "../Input/styles";
 import Label from "../Label/Label";
 import Input from "../Input/Input";
 import { customMenuList, selectContainer } from "./styles";
-import { CustomOptionType, CustomSelectProps } from "./types";
+import {
+  CustomMenuListProps,
+  CustomOptionType,
+  CustomSelectProps,
+  CustomValueContainerProps,
+} from "./types";
 import { formElements } from "@theme/default/config";
 
 const MAX_MENU_HEIGHT = 300;
 const INDICATOR_TRANSITION_DURATION = "250";
 const { MenuList, ValueContainer, SingleValue, Placeholder } = components;
 
-const CustomMenuList = (customMenuProps: any): JSX.Element => {
-  const { placeholder = "Select...", selectProps, ...props } = customMenuProps;
-  const { onInputChange, inputValue, onMenuInputFocus } = selectProps;
+const CustomMenuList: React.FC<CustomMenuListProps<CustomOptionType>> = (customMenuProps) => {
+  const { selectProps, ...props } = customMenuProps;
+  const { onInputChange, inputValue, placeholder } = selectProps;
+  const { onMenuInputFocus } = selectProps as any;
 
   const ariaAttributes = {
     "aria-autocomplete": "list" as const,
@@ -32,11 +38,11 @@ const CustomMenuList = (customMenuProps: any): JSX.Element => {
   };
 
   return (
-    <div css={customMenuList} onMouseDown={(e) => e.stopPropagation()}>
-      <div css={searchInputContainer}>
+    <div css={customMenuList}>
+      <div css={searchInputContainer} onMouseDown={(e) => e.stopPropagation()}>
         <Input
           id="react-select-inner-search-input"
-          placeholder={placeholder}
+          placeholder={placeholder as string}
           autoCorrect="off"
           autoComplete="off"
           spellCheck="false"
@@ -47,9 +53,10 @@ const CustomMenuList = (customMenuProps: any): JSX.Element => {
           onChange={(e) => {
             onInputChange(e.target.value, {
               action: "input-change",
+              prevInputValue: inputValue,
             });
           }}
-          onMouseDown={(e: MouseEvent<HTMLInputElement>) => {
+          onMouseDown={(e: ReactMouseEvent<HTMLInputElement>) => {
             e.stopPropagation();
             const input = e.target as HTMLInputElement;
             input.focus();
@@ -57,6 +64,7 @@ const CustomMenuList = (customMenuProps: any): JSX.Element => {
           onClear={() => {
             onInputChange("", {
               action: "input-change",
+              prevInputValue: inputValue,
             });
           }}
           onFocus={onMenuInputFocus}
@@ -69,8 +77,11 @@ const CustomMenuList = (customMenuProps: any): JSX.Element => {
   );
 };
 
-const CustomValueContainer = (CustomValueContainerProps: any) => {
-  const { children, selectProps, ...props } = CustomValueContainerProps;
+const CustomValueContainer: React.FC<CustomValueContainerProps<CustomOptionType>> = (
+  customProps,
+) => {
+  const { children, selectProps, ...props } = customProps;
+  const { isFocused } = selectProps as any;
 
   const commonProps: CommonProps<CustomOptionType, false, GroupBase<CustomOptionType>> = {
     clearValue: props.clearValue,
@@ -98,8 +109,8 @@ const CustomValueContainer = (CustomValueContainerProps: any) => {
             {...commonProps}
             isDisabled={selectProps.isDisabled}
             getClassNames={props.getClassNames}
-            innerProps={props.innerProps}
-            data={props.getValue()}
+            innerProps={Object.assign({}, props.innerProps, { "data-role": "menuList" })}
+            data={props.getValue()[0]}
           >
             {selectProps.getOptionLabel(props.getValue()[0])}
           </SingleValue>
@@ -108,8 +119,8 @@ const CustomValueContainer = (CustomValueContainerProps: any) => {
             {...commonProps}
             isDisabled={selectProps.isDisabled}
             getClassNames={props.getClassNames}
-            innerProps={props.innerProps}
-            isFocused={selectProps.isFocused}
+            innerProps={Object.assign({}, props.innerProps, { "data-role": "menuList" })}
+            isFocused={isFocused}
           >
             {selectProps.placeholder}
           </Placeholder>
@@ -141,7 +152,7 @@ const CustomSelect: ForwardRefRenderFunction<
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
-  const onDomClick = (e: any) => {
+  const onDomClick = (e: MouseEvent) => {
     const menu = containerRef.current?.querySelector(".select__menu");
 
     if (
@@ -204,7 +215,7 @@ const CustomSelect: ForwardRefRenderFunction<
           }}
           components={{
             IndicatorSeparator: () => null,
-            MenuList: hasInnerSearch ? CustomMenuList : components.MenuList,
+            MenuList: hasInnerSearch ? CustomMenuList : MenuList,
             ValueContainer: (props) => CustomValueContainer(props),
           }}
           {...{

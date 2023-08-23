@@ -32,7 +32,7 @@ const CustomMenuList = (customMenuProps: any): JSX.Element => {
   };
 
   return (
-    <div css={customMenuList}>
+    <div css={customMenuList} onMouseDown={(e) => e.stopPropagation()}>
       <div css={searchInputContainer}>
         <Input
           id="react-select-inner-search-input"
@@ -53,6 +53,11 @@ const CustomMenuList = (customMenuProps: any): JSX.Element => {
             e.stopPropagation();
             const input = e.target as HTMLInputElement;
             input.focus();
+          }}
+          onClear={() => {
+            onInputChange("", {
+              action: "input-change",
+            });
           }}
           onFocus={onMenuInputFocus}
           {...ariaAttributes}
@@ -113,6 +118,7 @@ const CustomValueContainer = (CustomValueContainerProps: any) => {
     </ValueContainer>
   );
 };
+
 const CustomSelect: ForwardRefRenderFunction<
   SelectInstance<CustomOptionType>,
   CustomSelectProps<CustomOptionType>
@@ -199,12 +205,13 @@ const CustomSelect: ForwardRefRenderFunction<
           components={{
             IndicatorSeparator: () => null,
             MenuList: hasInnerSearch ? CustomMenuList : components.MenuList,
-            ValueContainer: hasInnerSearch ? CustomValueContainer : components.ValueContainer,
+            ValueContainer: (props) => CustomValueContainer(props),
           }}
           {...{
             menuIsOpen: isFocused || undefined,
             isFocused: isFocused || undefined,
             onMenuInputFocus: () => setIsFocused(true),
+            onMouseDown: (e: MouseEvent) => e.stopPropagation(),
           }}
           inputValue={inputValue}
           onChange={() => setIsFocused(false)}

@@ -1,8 +1,18 @@
-import React, { ForwardRefRenderFunction, forwardRef } from "react";
-import ReactSelect, { SelectInstance } from "react-select";
+import React, {
+  Children,
+  ForwardRefRenderFunction,
+  MouseEvent,
+  forwardRef,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import ReactSelect, { CommonProps, GroupBase, SelectInstance, components } from "react-select";
 import { SerializedStyles } from "@emotion/react";
 import classNames from "classnames";
+import { searchInputContainer } from "../Input/styles";
 import Label from "../Label/Label";
+import Input from "../Input/Input";
 import { selectContainer } from "./styles";
 import { CustomOptionType, CustomSelectProps } from "./types";
 import { formElements } from "@theme/default/config";
@@ -23,9 +33,35 @@ const CustomSelect: ForwardRefRenderFunction<
     status = "valid",
     maxMenuHeight = MAX_MENU_HEIGHT,
     isSearchable = false,
+    hasInnerSearch = false,
     ...rest
   } = props;
   const hasLabel = Boolean(label);
+
+  const containerRef = useRef<HTMLInputElement>(null);
+  const [isFocused, setIsFocused] = useState(false);
+  const [inputValue, setInputValue] = useState("");
+
+  const onDomClick = (e: any) => {
+    const menu = containerRef.current?.querySelector(".select__menu");
+
+    if (
+      !containerRef.current?.contains(e.target as Node) ||
+      !menu ||
+      !menu.contains(e.target as Node)
+    ) {
+      setIsFocused(false);
+      setInputValue("");
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", onDomClick);
+
+    return () => {
+      document.removeEventListener("mousedown", onDomClick);
+    };
+  }, []);
 
   const containerClassNames = classNames({
     valid: status === "valid",
@@ -33,7 +69,10 @@ const CustomSelect: ForwardRefRenderFunction<
   });
 
   return (
-    <div css={(theme): SerializedStyles => selectContainer(theme, { size, inline })}>
+    <div
+      css={(theme): SerializedStyles => selectContainer(theme, { size, inline })}
+      ref={containerRef}
+    >
       {hasLabel && (
         <Label htmlFor={id} aria-labelledby={id}>
           {label}
@@ -66,6 +105,18 @@ const CustomSelect: ForwardRefRenderFunction<
           }}
           components={{
             IndicatorSeparator: () => null,
+            MenuList: hasInnerSearch ? CustomMenuList : components.MenuList,
+            ValueContainer: hasInnerSearch ? CustomValueContainer : components.ValueContainer,
+          }}
+          {...{
+            menuIsOpen: isFocused || undefined,
+            isFocused: isFocused || undefined,
+            onMenuInputFocus: () => setIsFocused(true),
+          }}
+          inputValue={inputValue}
+          onChange={() => setIsFocused(false)}
+          onInputChange={(val) => {
+            setInputValue(val);
           }}
         />
       </div>
@@ -73,4 +124,95 @@ const CustomSelect: ForwardRefRenderFunction<
   );
 };
 
+const { MenuList, ValueContainer, SingleValue, Placeholder } = components;
+
+const CustomMenuList = (customMenuProps: any): JSX.Element => {
+  const { placeholder = "Select...", selectProps, ...props } = customMenuProps;
+  const { onInputChange, inputValue, onMenuInputFocus } = selectProps;
+
+  const ariaAttributes = {
+    "aria-autocomplete": "list" as const,
+    "aria-label": selectProps["aria-label"],
+    "aria-labelledby": selectProps["aria-labelledby"],
+  };
+
+  return (
+    <div style={{ padding: "0.75rem" }}>
+      <div css={searchInputContainer}>
+        <Input
+          id="react-select-inner-search-input"
+          placeholder={placeholder}
+          autoCorrect="off"
+          autoComplete="off"
+          spellCheck="false"
+          type="text"
+          value={inputValue}
+          showVerticalLine={false}
+          isClearable={true}
+          onChange={(e) => {
+            onInputChange(e.target.value, {
+              action: "input-change",
+            });
+          }}
+          onMouseDown={(e: MouseEvent<HTMLInputElement>) => {
+            e.stopPropagation();
+            const input = e.target as HTMLInputElement;
+            input.focus();
+          }}
+          onFocus={onMenuInputFocus}
+          {...ariaAttributes}
+        />
+      </div>
+
+      <MenuList {...props} selectProps={selectProps} />
+    </div>
+  );
+};
+
 export default forwardRef(CustomSelect);
+
+const CustomValueContainer = (CustomValueContainerProps: any) => {
+  const { children, selectProps, ...props } = CustomValueContainerProps;
+
+  const commonProps: CommonProps<CustomOptionType, false, GroupBase<CustomOptionType>> = {
+    clearValue: props.clearValue,
+    getStyles: props.getStyles,
+    getValue: props.getValue,
+    hasValue: props.hasValue,
+    isMulti: props.isMulti,
+    isRtl: props.isRtl,
+    options: props.options,
+    selectOption: props.selectOption,
+    setValue: props.setValue,
+    selectProps,
+    cx: props.cx,
+    getClassNames: props.getClassNames,
+    theme: props.theme,
+  };
+
+  return (
+    <ValueContainer {...props} selectProps={selectProps}>
+      {Children.map(children, (child) => {
+        return child ? (
+          child
+        ) : props.hasValue ? (
+          <SingleValue
+            {...commonProps}
+            isDisabled={selectProps.isDisabled}
+            getClassNames={props.getClassNames}
+          >
+            {selectProps.getOptionLabel(props.getValue()[0])}
+          </SingleValue>
+        ) : (
+          <Placeholder
+            {...commonProps}
+            isDisabled={selectProps.isDisabled}
+            getClassNames={props.getClassNames}
+          >
+            {selectProps.placeholder}
+          </Placeholder>
+        );
+      })}
+    </ValueContainer>
+  );
+};

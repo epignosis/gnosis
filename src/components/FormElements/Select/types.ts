@@ -18,4 +18,5 @@ export type CustomSelectProps<
   size?: "sm" | "md" | "lg";
   inline?: boolean;
   status?: "valid" | "error";
+  hasInnerSearch?: boolean;
 };

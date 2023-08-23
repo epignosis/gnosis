@@ -44,6 +44,11 @@ export default {
         type: "boolean",
       },
     },
+    hasInnerSearch: {
+      control: {
+        type: "boolean",
+      },
+    },
 
     status: {
       control: {

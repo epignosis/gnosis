@@ -200,6 +200,8 @@ const CustomValueContainer = (CustomValueContainerProps: any) => {
             {...commonProps}
             isDisabled={selectProps.isDisabled}
             getClassNames={props.getClassNames}
+            innerProps={props.innerProps}
+            data={props.getValue()}
           >
             {selectProps.getOptionLabel(props.getValue()[0])}
           </SingleValue>
@@ -208,6 +210,8 @@ const CustomValueContainer = (CustomValueContainerProps: any) => {
             {...commonProps}
             isDisabled={selectProps.isDisabled}
             getClassNames={props.getClassNames}
+            innerProps={props.innerProps}
+            isFocused={selectProps.isFocused}
           >
             {selectProps.placeholder}
           </Placeholder>

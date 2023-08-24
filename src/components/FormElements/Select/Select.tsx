@@ -144,7 +144,6 @@ const CustomSelect: ForwardRefRenderFunction<
     inline = false,
     status = "valid",
     maxMenuHeight = MAX_MENU_HEIGHT,
-    isSearchable = false,
     hasInnerSearch = false,
     ...rest
   } = props;
@@ -195,7 +194,7 @@ const CustomSelect: ForwardRefRenderFunction<
           {...rest}
           ref={forwardedRef}
           options={options}
-          isSearchable={isSearchable}
+          isSearchable={false}
           maxMenuHeight={maxMenuHeight}
           classNames={{
             control: () => `control-${size} ${containerClassNames}`,

@@ -39,11 +39,6 @@ export default {
         type: "boolean",
       },
     },
-    isSearchable: {
-      control: {
-        type: "boolean",
-      },
-    },
     hasInnerSearch: {
       control: {
         type: "boolean",

@@ -1,7 +1,8 @@
 import React from "react";
 import { Story } from "@storybook/react";
 import CustomSelect from "./Select";
-import { CustomSelectProps } from "./types";
+import { CustomSelectProps, CustomOptionType } from "./types";
+import { defaultOptions, groupedOptions } from "./data";
 
 export default {
   title: "components/Form Elements/Select",
@@ -61,25 +62,16 @@ export default {
   ],
 };
 
-const Template: Story<CustomSelectProps<OptionType>> = (args) => (
-  <CustomSelect {...args} options={options} />
-);
+const Template: Story<CustomSelectProps<CustomOptionType>> = (args) => <CustomSelect {...args} />;
 
 export const Default = Template.bind({});
 
-const options: OptionType[] = [
-  { label: "Rust", value: "rs" },
-  { label: "JavaScript", value: "js" },
-  { label: "TypeScript", value: "ts" },
-  { label: "GoLang", value: "go" },
-  { label: "Python", value: "python" },
-  { label: "PHP", value: "php" },
-  { label: "C++", value: "c++" },
-  { label: "C#", value: "c#" },
-  { label: "Java", value: "java" },
-  { label: "Ruby", value: "ruby" },
-  { label: "C", value: "c" },
-  { label: "Swift", value: "swift" },
-];
+Default.args = {
+  options: defaultOptions,
+};
 
-type OptionType = { label: string; value: string };
+export const withGroupedOptions = Template.bind({ options: groupedOptions });
+
+withGroupedOptions.args = {
+  options: groupedOptions,
+};

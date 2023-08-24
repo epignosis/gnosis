@@ -25,7 +25,6 @@ import {
 import { formElements } from "@theme/default/config";
 
 const MAX_MENU_HEIGHT = 300;
-const INDICATOR_TRANSITION_DURATION = "250";
 const { MenuList, ValueContainer, SingleValue, Placeholder } = components;
 
 const CustomMenuList: React.FC<CustomMenuListProps<CustomOptionType>> = (customMenuProps) => {
@@ -204,7 +203,6 @@ const CustomSelect: ForwardRefRenderFunction<
             dropdownIndicator: (base, state) => ({
               ...base,
               transform: state.selectProps.menuIsOpen ? "rotate(-180deg)" : "rotate(0)",
-              transition: INDICATOR_TRANSITION_DURATION,
             }),
             control: (baseStyles, state) => ({
               ...baseStyles,

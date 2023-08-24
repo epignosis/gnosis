@@ -29,7 +29,7 @@ const { MenuList, ValueContainer, SingleValue, Placeholder } = components;
 const CustomMenuList: React.FC<CustomMenuListProps<CustomOptionType>> = (customMenuProps) => {
   const { selectProps, ...props } = customMenuProps;
   const { onInputChange, inputValue, placeholder } = selectProps;
-  const { onMenuInputFocus } = selectProps as any;
+  const { onMenuInputFocus } = selectProps;
 
   const ariaAttributes = {
     "aria-autocomplete": "list" as const,
@@ -81,7 +81,7 @@ const CustomValueContainer: React.FC<CustomValueContainerProps<CustomOptionType>
   customProps,
 ) => {
   const { children, selectProps, ...props } = customProps;
-  const { isFocused } = selectProps as any;
+  const { isFocused = false } = selectProps;
 
   const commonProps: CommonProps<CustomOptionType, false, GroupBase<CustomOptionType>> = {
     clearValue: props.clearValue,
@@ -220,7 +220,7 @@ const CustomSelect: ForwardRefRenderFunction<
           }}
           {...{
             menuIsOpen: isFocused || undefined,
-            isFocused: isFocused || undefined,
+            isFocused: isFocused,
             onMenuInputFocus: () => setIsFocused(true),
             onMouseDown: (e: MouseEvent) => e.stopPropagation(),
           }}

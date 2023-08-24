@@ -24,6 +24,7 @@ declare module "react-select/dist/declarations/src/Select" {
     onMenuInputFocus?: () => void;
     isFocused?: boolean;
     IsMulti?: IsMulti;
+    innerPlaceholder?: string;
   }
 }
 
@@ -37,6 +38,7 @@ export type CustomSelectProps<
   inline?: boolean;
   status?: "valid" | "error";
   hasInnerSearch?: boolean;
+  innerPlaceholder?: string;
 };
 
 export type CustomMenuListProps<

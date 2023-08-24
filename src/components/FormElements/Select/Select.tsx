@@ -25,11 +25,14 @@ import {
 import { formElements } from "@theme/default/config";
 
 const MAX_MENU_HEIGHT = 300;
+const OUTER_PLACEHOLDER = "Select...";
+const INNER_PLACEHOLDER = "Search...";
+
 const { MenuList, ValueContainer, SingleValue, Placeholder } = components;
 
 const CustomMenuList: React.FC<CustomMenuListProps<CustomOptionType>> = (customMenuProps) => {
   const { selectProps, ...props } = customMenuProps;
-  const { onInputChange, inputValue, placeholder } = selectProps;
+  const { onInputChange, inputValue, innerPlaceholder } = selectProps;
   const { onMenuInputFocus } = selectProps;
 
   const ariaAttributes = {
@@ -43,7 +46,7 @@ const CustomMenuList: React.FC<CustomMenuListProps<CustomOptionType>> = (customM
       <div css={searchInputContainer} onMouseDown={(e) => e.stopPropagation()}>
         <Input
           id="react-select-inner-search-input"
-          placeholder={placeholder as string}
+          placeholder={innerPlaceholder}
           autoCorrect="off"
           autoComplete="off"
           spellCheck="false"
@@ -144,6 +147,8 @@ const CustomSelect: ForwardRefRenderFunction<
     status = "valid",
     maxMenuHeight = MAX_MENU_HEIGHT,
     hasInnerSearch = false,
+    placeholder: outerPlaceholder = OUTER_PLACEHOLDER,
+    innerPlaceholder = INNER_PLACEHOLDER,
     ...rest
   } = props;
   const hasLabel = Boolean(label);
@@ -191,6 +196,7 @@ const CustomSelect: ForwardRefRenderFunction<
       <div className="select-input-wrapper" data-testid="custom-react-select">
         <ReactSelect
           {...rest}
+          placeholder={outerPlaceholder}
           ref={forwardedRef}
           options={options}
           isSearchable={false}
@@ -222,6 +228,7 @@ const CustomSelect: ForwardRefRenderFunction<
             isFocused: isFocused,
             onMenuInputFocus: () => setIsFocused(true),
             onMouseDown: (e: MouseEvent) => e.stopPropagation(),
+            innerPlaceholder,
           }}
           inputValue={inputValue}
           onChange={() => setIsFocused(false)}

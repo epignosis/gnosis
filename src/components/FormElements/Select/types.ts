@@ -21,9 +21,9 @@ declare module "react-select/dist/declarations/src/Select" {
     IsMulti extends boolean = false,
     Group extends GroupBase<Option> = GroupBase<Option>,
   > {
-    onMenuInputFocus: () => void;
-    isFocused: boolean;
-    IsMulti: IsMulti;
+    onMenuInputFocus?: () => void;
+    isFocused?: boolean;
+    IsMulti?: IsMulti;
   }
 }
 

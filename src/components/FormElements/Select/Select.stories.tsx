@@ -44,7 +44,6 @@ export default {
         type: "boolean",
       },
     },
-
     status: {
       control: {
         type: "select",
@@ -83,4 +82,4 @@ const options: OptionType[] = [
   { label: "Swift", value: "swift" },
 ];
 
-type OptionType = { label: string; value: string; disabled?: boolean };
+type OptionType = { label: string; value: string };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Story } from "@storybook/react";
 import CustomSelect from "./Select";
-import { CustomSelectProps, CustomOptionType } from "./types";
+import { CustomSelectProps, CustomOption } from "./types";
 import { defaultOptions, groupedOptions } from "./data";
 
 export default {
@@ -62,7 +62,7 @@ export default {
   ],
 };
 
-const Template: Story<CustomSelectProps<CustomOptionType>> = (args) => <CustomSelect {...args} />;
+const Template: Story<CustomSelectProps<CustomOption>> = (args) => <CustomSelect {...args} />;
 
 export const Default = Template.bind({});
 

@@ -1,35 +1,30 @@
-import type {
-  GroupBase,
-  MenuListProps,
-  Props,
-  SingleValue,
-  ValueContainerProps,
-} from "react-select";
+import type { GroupBase, MenuListProps, Props, ValueContainerProps } from "react-select";
 
 export type Status = "valid" | "error";
 
-export type CustomOptionType = {
+export type CustomOption = {
   label: string;
   value: string;
 };
 
-export type CustomTypeParam = SingleValue<CustomOptionType>;
-
+// Here we are extending the react-select types to add <Select..
 declare module "react-select/dist/declarations/src/Select" {
   export interface Props<
-    Option extends CustomOptionType,
+    Option extends CustomOption,
     IsMulti extends boolean = false,
     Group extends GroupBase<Option> = GroupBase<Option>,
   > {
-    onMenuInputFocus?: () => void;
-    isFocused?: boolean;
-    IsMulti?: IsMulti;
     innerPlaceholder?: string;
+    hasInnerSearch?: boolean;
+    isMulti: IsMulti; // this is required to relieve TS warning
+    group?: Group; // this is required to relieve TS warning
+    onMenuInputFocus?: () => void;
   }
 }
 
+// here we are adding our custom props to the react-select types
 export type CustomSelectProps<
-  Option extends CustomOptionType,
+  Option extends CustomOption,
   IsMulti extends boolean = false,
   Group extends GroupBase<Option> = GroupBase<Option>,
 > = Props<Option, IsMulti, Group> & {
@@ -42,13 +37,18 @@ export type CustomSelectProps<
 };
 
 export type CustomMenuListProps<
-  Option extends CustomOptionType,
+  Option extends CustomOption,
   IsMulti extends boolean = false,
   Group extends GroupBase<Option> = GroupBase<Option>,
-> = MenuListProps<Option, IsMulti, Group>;
+> = MenuListProps<Option, IsMulti, Group> & {
+  innerPlaceholder?: string;
+  hasInnerSearch?: boolean;
+};
 
 export type CustomValueContainerProps<
-  Option extends CustomOptionType,
+  Option extends CustomOption,
   IsMulti extends boolean = false,
   Group extends GroupBase<Option> = GroupBase<Option>,
-> = ValueContainerProps<Option, IsMulti, Group>;
+> = ValueContainerProps<Option, IsMulti, Group> & {
+  isFocused?: boolean;
+};

@@ -4,10 +4,12 @@ import { CustomValueContainerProps, CustomOption } from "../types";
 
 const { SingleValue, Placeholder, ValueContainer } = components;
 
-const CustomValueContainer: React.FC<CustomValueContainerProps<CustomOption>> = (customProps) => {
+const CustomValueContainer: React.FC<CustomValueContainerProps<CustomOption, boolean>> = (
+  customProps,
+) => {
   const { children, selectProps, isFocused = false, ...props } = customProps;
 
-  const commonProps: CommonProps<CustomOption, false, GroupBase<CustomOption>> = {
+  const commonProps: CommonProps<CustomOption, boolean, GroupBase<CustomOption>> = {
     clearValue: props.clearValue,
     getStyles: props.getStyles,
     getValue: props.getValue,

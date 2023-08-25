@@ -1,6 +1,6 @@
 // Inspired by this https://codesandbox.io/embed/m75wlyx3oy
 
-import React, { ForwardRefRenderFunction, forwardRef, useEffect, useRef, useState } from "react";
+import React, { ForwardRefRenderFunction, forwardRef, useRef, useState } from "react";
 import ReactSelect, {
   CSSObjectWithLabel,
   ControlProps,
@@ -9,6 +9,7 @@ import ReactSelect, {
   SelectInstance,
 } from "react-select";
 import { SerializedStyles } from "@emotion/react";
+import { useClickAway } from "ahooks";
 import classNames from "classnames";
 import Label from "../Label/Label";
 import CustomValueContainer from "./components/CustomValueContainer";
@@ -30,7 +31,7 @@ const containerClassNames = (status: string, size: string) =>
 
 const Select: ForwardRefRenderFunction<
   SelectInstance<CustomOption>,
-  CustomSelectProps<CustomOption>
+  CustomSelectProps<CustomOption, boolean>
 > = (props, forwardedRef) => {
   const {
     id = "",
@@ -51,27 +52,6 @@ const Select: ForwardRefRenderFunction<
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
-  const onDomClick = (e: MouseEvent) => {
-    const menu = containerRef.current?.querySelector(".select__menu");
-
-    if (
-      !containerRef.current?.contains(e.target as Node) ||
-      !menu ||
-      !menu.contains(e.target as Node)
-    ) {
-      setIsFocused(false);
-      setInputValue("");
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", onDomClick);
-
-    return () => {
-      document.removeEventListener("mousedown", onDomClick);
-    };
-  }, []);
-
   const styles = {
     dropdownIndicator: (
       base: CSSObjectWithLabel,
@@ -90,17 +70,29 @@ const Select: ForwardRefRenderFunction<
     }),
   };
 
+  useClickAway(
+    (e) => {
+      // Ignore clicks on the close icon, can be one of the 3 following:
+      const { nodeName, className } = e.target as HTMLElement;
+      const isSvg = nodeName === "svg";
+      const isPath = nodeName === "path";
+      const isCloseIcon = className === "close-icon";
+
+      if (isSvg || isPath || isCloseIcon) return;
+      setIsFocused(false);
+      setInputValue("");
+    },
+    [containerRef],
+  );
+
   return (
-    <div
-      css={(theme): SerializedStyles => selectContainer(theme, { size, inline })}
-      ref={containerRef}
-    >
+    <div css={(theme): SerializedStyles => selectContainer(theme, { size, inline })}>
       {hasLabel && (
         <Label htmlFor={id} aria-labelledby={id}>
           {label}
         </Label>
       )}
-      <div className="select-input-wrapper" data-testid="custom-react-select">
+      <div className="select-input-wrapper" data-testid="custom-react-select" ref={containerRef}>
         <ReactSelect
           {...rest}
           ref={forwardedRef}

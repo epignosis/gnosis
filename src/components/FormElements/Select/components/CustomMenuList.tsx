@@ -7,7 +7,7 @@ import { CustomMenuListProps, CustomOption } from "../types";
 
 const { MenuList } = components;
 
-const CustomMenuList: FC<CustomMenuListProps<CustomOption>> = (customMenuProps) => {
+const CustomMenuList: FC<CustomMenuListProps<CustomOption, boolean>> = (customMenuProps) => {
   const { selectProps, ...props } = customMenuProps;
   const {
     onInputChange,

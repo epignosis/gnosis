@@ -1,12 +1,12 @@
 import React from "react";
 import { Story } from "@storybook/react";
-import CustomSelect from "./Select";
+import Select from "./Select";
 import { CustomSelectProps, CustomOption } from "./types";
 import { defaultOptions, groupedOptions } from "./data";
 
 export default {
   title: "components/Form Elements/Select",
-  component: CustomSelect,
+  component: Select,
   args: {
     size: "md",
     label: "Choose a programming language",
@@ -62,7 +62,7 @@ export default {
   ],
 };
 
-const Template: Story<CustomSelectProps<CustomOption>> = (args) => <CustomSelect {...args} />;
+const Template: Story<CustomSelectProps<CustomOption, boolean>> = (args) => <Select {...args} />;
 
 export const Default = Template.bind({});
 
@@ -70,8 +70,29 @@ Default.args = {
   options: defaultOptions,
 };
 
-export const withGroupedOptions = Template.bind({ options: groupedOptions });
+export const withGroupedOptions = Template.bind({});
 
 withGroupedOptions.args = {
   options: groupedOptions,
+};
+
+export const withInnerSearch = Template.bind({});
+
+withInnerSearch.args = {
+  options: defaultOptions,
+  hasInnerSearch: true,
+};
+
+export const withMultipleValues = Template.bind({});
+
+withMultipleValues.args = {
+  options: defaultOptions,
+  isMulti: true,
+};
+
+export const Disabled = Template.bind({ options: defaultOptions, isDisabled: true });
+
+Disabled.args = {
+  options: defaultOptions,
+  isDisabled: true,
 };

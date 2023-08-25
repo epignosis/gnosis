@@ -3,7 +3,7 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="css-5w7njf-selectContainer-selectContainer"
+    class="css-1eklrn9-selectContainer-selectContainer"
   >
     <label
       aria-labelledby="select-id"
@@ -39,13 +39,13 @@ exports[`<Select /> matches snapshot 1`] = `
           </span>
         </span>
         <div
-          class="control-md valid css-zvr4ru-control"
+          class="control-md valid css-1ox8182-control"
         >
           <div
             class=" css-1fdsijx-ValueContainer"
           >
             <div
-              class=" css-1jqq78o-placeholder"
+              class=" css-zg71bx-placeholder"
               id="react-select-3-placeholder"
             >
               Select...
@@ -71,7 +71,7 @@ exports[`<Select /> matches snapshot 1`] = `
           >
             <div
               aria-hidden="true"
-              class=" css-1eyft5k-indicatorContainer"
+              class=" css-k6lq0n-indicatorContainer"
             >
               <svg
                 aria-hidden="true"
@@ -93,31 +93,35 @@ exports[`<Select /> matches snapshot 1`] = `
           id="react-select-3-listbox"
         >
           <div
-            class=" css-1n6sfyn-MenuList"
+            class="css-18mql3h-customMenuList"
           >
             <div
-              aria-disabled="false"
-              class="option-md css-d7l1ni-option"
-              id="react-select-3-option-0"
-              tabindex="-1"
+              class=" css-1n6sfyn-MenuList"
             >
-              name
-            </div>
-            <div
-              aria-disabled="false"
-              class="option-md css-10wo9uf-option"
-              id="react-select-3-option-1"
-              tabindex="-1"
-            >
-              surname
-            </div>
-            <div
-              aria-disabled="false"
-              class="option-md css-10wo9uf-option"
-              id="react-select-3-option-2"
-              tabindex="-1"
-            >
-              age
+              <div
+                aria-disabled="false"
+                class="option-md css-d7l1ni-option"
+                id="react-select-3-option-0"
+                tabindex="-1"
+              >
+                name
+              </div>
+              <div
+                aria-disabled="false"
+                class="option-md css-10wo9uf-option"
+                id="react-select-3-option-1"
+                tabindex="-1"
+              >
+                surname
+              </div>
+              <div
+                aria-disabled="false"
+                class="option-md css-10wo9uf-option"
+                id="react-select-3-option-2"
+                tabindex="-1"
+              >
+                age
+              </div>
             </div>
           </div>
         </div>

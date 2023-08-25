@@ -1,16 +1,11 @@
 import { css, SerializedStyles, Theme } from "@emotion/react";
 import { InputSize } from "../Input/Input";
-
-const inputHeight = {
-  sm: "1.875rem",
-  md: "2.5rem",
-  lg: "3rem",
-};
+import { inputHeight } from "../styles";
 
 const optionPadding = {
-  sm: "4px 12px",
-  md: "6px 12px",
-  lg: "8px 12px",
+  sm: "0.25rem 0.75rem",
+  md: "0.375rem 0.75rem",
+  lg: "0.5rem 0.75rem",
 };
 
 export const selectContainer = (

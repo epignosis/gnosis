@@ -3,6 +3,7 @@
 import React, { ForwardRefRenderFunction, forwardRef, useRef, useState } from "react";
 import ReactSelect, {
   CSSObjectWithLabel,
+  ClearIndicatorProps,
   ControlProps,
   DropdownIndicatorProps,
   GroupBase,
@@ -55,19 +56,46 @@ const Select: ForwardRefRenderFunction<
   const styles = {
     dropdownIndicator: (
       base: CSSObjectWithLabel,
-      state: DropdownIndicatorProps<CustomOption, boolean, GroupBase<CustomOption>>,
+      { selectProps }: DropdownIndicatorProps<CustomOption, boolean, GroupBase<CustomOption>>,
     ) => ({
       ...base,
-      transform: state.selectProps.menuIsOpen ? "rotate(-180deg)" : "rotate(0)",
+      transform: selectProps.menuIsOpen ? "rotate(-180deg)" : "rotate(0)",
+      transition: "all .2s ease",
+      color: selectProps.isDisabled ? base.color : formElements.input.iconColor,
+      "&:hover": { color: formElements.input.iconColor },
+    }),
+    clearIndicator: (
+      base: CSSObjectWithLabel,
+      { selectProps }: ClearIndicatorProps<CustomOption, boolean, GroupBase<CustomOption>>,
+    ) => ({
+      ...base,
+      color: selectProps.isDisabled ? base.color : formElements.input.iconColor,
+      "&:hover": { color: formElements.input.iconColor },
     }),
     control: (
       baseStyles: CSSObjectWithLabel,
-      state: ControlProps<CustomOption, boolean, GroupBase<CustomOption>>,
-    ) => ({
-      ...baseStyles,
-      borderColor: state.isFocused ? formElements.input.borderFocusColor : baseStyles.borderColor,
-      ":hover": { borderColor: formElements.input.borderFocusColor },
-    }),
+      { isFocused, isDisabled }: ControlProps<CustomOption, boolean, GroupBase<CustomOption>>,
+    ) => {
+      const border = isDisabled
+        ? `1px solid ${formElements.input.disabledBorder}`
+        : isFocused
+        ? `1px solid ${formElements.input.borderFocusColor}`
+        : // default case, set border equal to the background color to avoid pixel shift
+          `1px solid ${formElements.input.background}`;
+      const backgroundColor = isDisabled
+        ? formElements.input.disabledBackground
+        : isFocused
+        ? formElements.input.backgroundFocus
+        : formElements.input.background;
+
+      return {
+        ...baseStyles,
+        border,
+        backgroundColor,
+        boxShadow: "none",
+        "&:hover": { border: `1px solid ${formElements.input.borderHoverColor}` },
+      };
+    },
   };
 
   useClickAway(

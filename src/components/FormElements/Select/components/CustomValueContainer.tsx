@@ -5,9 +5,9 @@ import { CustomValueContainerProps, CustomOption } from "../types";
 const { SingleValue, Placeholder, ValueContainer } = components;
 
 const CustomValueContainer: React.FC<CustomValueContainerProps<CustomOption, boolean>> = (
-  customProps,
+  CustomValueContainerProps,
 ) => {
-  const { children, selectProps, isFocused = false, ...props } = customProps;
+  const { children, selectProps, isFocused = false, ...props } = CustomValueContainerProps;
 
   const commonProps: CommonProps<CustomOption, boolean, GroupBase<CustomOption>> = {
     clearValue: props.clearValue,
@@ -25,29 +25,23 @@ const CustomValueContainer: React.FC<CustomValueContainerProps<CustomOption, boo
     theme: props.theme,
   };
 
+  const customProps = {
+    isDisabled: selectProps.isDisabled,
+    getClassNames: props.getClassNames,
+    innerProps: Object.assign({}, props.innerProps, { "data-role": "menuList" }),
+  };
+
   return (
     <ValueContainer {...props} selectProps={selectProps}>
       {Children.map(children, (child) => {
         return child ? (
           child
         ) : props.hasValue ? (
-          <SingleValue
-            {...commonProps}
-            isDisabled={selectProps.isDisabled}
-            getClassNames={props.getClassNames}
-            innerProps={Object.assign({}, props.innerProps, { "data-role": "menuList" })}
-            data={props.getValue()[0]}
-          >
+          <SingleValue {...commonProps} {...customProps} data={props.getValue()[0]}>
             {selectProps.getOptionLabel(props.getValue()[0])}
           </SingleValue>
         ) : (
-          <Placeholder
-            {...commonProps}
-            isDisabled={selectProps.isDisabled}
-            getClassNames={props.getClassNames}
-            innerProps={Object.assign({}, props.innerProps, { "data-role": "menuList" })}
-            isFocused={isFocused}
-          >
+          <Placeholder {...commonProps} {...customProps} isFocused={isFocused}>
             {selectProps.placeholder}
           </Placeholder>
         );

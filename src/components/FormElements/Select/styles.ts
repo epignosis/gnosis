@@ -14,19 +14,24 @@ export const selectContainer = (
 ): SerializedStyles => css`
   display: flex;
   flex-direction: ${inline ? "row" : "column"};
-  gap: ${inline ? "1rem" : "0"};
+  gap: ${inline ? "1rem" : "0.5rem"};
+  align-items: ${inline ? "center" : "normal"};
+
+  label {
+    margin: 0;
+  }
 
   .select-input-wrapper {
     flex-grow: 1;
     max-width: 25rem;
     background-color: ${formElements.input.background};
-
+    border-radius: 0.3125rem;
     .error {
       border-color: ${formElements.errors.errorBorderColor};
     }
 
     .control-${size} {
-      height: ${inputHeight[size]};
+      min-height: ${inputHeight[size]};
     }
 
     .option-${size} {

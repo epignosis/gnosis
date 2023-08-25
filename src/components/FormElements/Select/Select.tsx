@@ -54,6 +54,13 @@ const Select: ForwardRefRenderFunction<
   const [inputValue, setInputValue] = useState("");
 
   const styles = {
+    placeholder: (base: CSSObjectWithLabel) => {
+      return {
+        ...base,
+        fontStyle: "italic",
+        color: formElements.input.placeholderColor,
+      };
+    },
     dropdownIndicator: (
       base: CSSObjectWithLabel,
       { selectProps }: DropdownIndicatorProps<CustomOption, boolean, GroupBase<CustomOption>>,
@@ -93,6 +100,7 @@ const Select: ForwardRefRenderFunction<
         border,
         backgroundColor,
         boxShadow: "none",
+        borderRadius: "5px",
         "&:hover": { border: `1px solid ${formElements.input.borderHoverColor}` },
       };
     },
@@ -124,6 +132,7 @@ const Select: ForwardRefRenderFunction<
         <ReactSelect
           {...rest}
           ref={forwardedRef}
+          // react-select props
           blurInputOnSelect={true}
           classNames={{
             control: () => containerClassNames(status, size),
@@ -134,7 +143,6 @@ const Select: ForwardRefRenderFunction<
             MenuList: CustomMenuList,
             ValueContainer: (props) => CustomValueContainer({ ...props, isFocused }),
           }}
-          // components={components}
           isSearchable={false}
           maxMenuHeight={maxMenuHeight}
           menuIsOpen={isFocused || undefined}

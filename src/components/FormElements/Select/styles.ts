@@ -1,47 +1,46 @@
 import { css, SerializedStyles, Theme } from "@emotion/react";
-import { inputBaseStyles, inputContainerBaseStyles } from "../styles";
 import { InputSize } from "../Input/Input";
+import { inputHeight } from "../styles";
+
+const optionPadding = {
+  sm: "0.25rem 0.75rem",
+  md: "0.375rem 0.75rem",
+  lg: "0.5rem 0.75rem",
+};
 
 export const selectContainer = (
   { formElements }: Theme,
-  { size, dir }: { size: InputSize; dir: string },
+  { size, inline }: { size: InputSize; inline: boolean },
 ): SerializedStyles => css`
-  ${inputContainerBaseStyles({ block: true })}
+  display: flex;
+  flex-direction: ${inline ? "row" : "column"};
+  gap: ${inline ? "1rem" : "0.5rem"};
+  align-items: ${inline ? "center" : "normal"};
 
-  &.error {
-    .select-input-wrapper select {
-      border-color: ${formElements.errors.errorBorderColor};
-    }
-  }
-
-  select {
-    ${inputBaseStyles(formElements, { block: true, size })};
-    background-color: transparent;
-    padding-inline-end: 2.5rem;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-
-    &,
-    &:hover,
-    &:focus {
-      background-position: ${dir === "rtl" ? "left" : "right"} 1rem center;
-      background-repeat: no-repeat;
-      background-size: 14px;
-      background-image: url("https://talentlms-prod-frontend-static.s3.amazonaws.com/images/chevron-down-solid.svg");
-    }
-
-    &:hover,
-    &:focus {
-      border: 1px solid ${formElements.input.borderHoverColor};
-    }
+  label {
+    margin: 0;
   }
 
   .select-input-wrapper {
-    position: relative;
-    width: 100%;
+    flex-grow: 1;
+    max-width: 25rem;
     background-color: ${formElements.input.background};
-    border-radius: 5px;
-    z-index: 1;
+    border-radius: 0.3125rem;
+    .error {
+      border-color: ${formElements.errors.errorBorderColor};
+    }
+
+    .control-${size} {
+      min-height: ${inputHeight[size]};
+    }
+
+    .option-${size} {
+      padding: ${optionPadding[size]};
+      cursor: pointer;
+    }
   }
+`;
+
+export const customMenuList = (): SerializedStyles => css`
+  padding: 0.75rem;
 `;

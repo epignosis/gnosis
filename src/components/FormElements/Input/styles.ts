@@ -175,10 +175,6 @@ export const searchInputContainer = css`
   width: 100%;
   position: relative;
 
-  .input-wrapper {
-    min-width: 250px;
-  }
-
   input {
     padding-inline-end: 2.5rem;
   }

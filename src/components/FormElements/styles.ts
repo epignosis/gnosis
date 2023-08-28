@@ -1,7 +1,7 @@
 import { css, SerializedStyles, Theme } from "@emotion/react";
 import { InputSize } from "./Input/Input";
 
-const inputHeight = {
+export const inputHeight = {
   sm: "1.875rem",
   md: "2.5rem",
   lg: "3rem",

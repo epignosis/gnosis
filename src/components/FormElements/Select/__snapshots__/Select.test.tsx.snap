@@ -3,8 +3,7 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="valid container-class css-1xvb6e9-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-selectContainer-selectContainer"
-    id="container-id"
+    class="css-1eklrn9-selectContainer-selectContainer"
   >
     <label
       aria-labelledby="select-id"
@@ -15,27 +14,118 @@ exports[`<Select /> matches snapshot 1`] = `
     </label>
     <div
       class="select-input-wrapper"
+      data-testid="custom-react-select"
     >
-      <select
-        class="normal-select"
-        id="select-id"
+      <div
+        class=" css-b62m3t-container"
       >
-        <option
-          value="rs"
+        <span
+          class="css-1f43avz-a11yText-A11yText"
+          id="react-select-3-live-region"
+        />
+        <span
+          aria-atomic="false"
+          aria-live="polite"
+          aria-relevant="additions text"
+          class="css-1f43avz-a11yText-A11yText"
         >
-          Rust
-        </option>
-        <option
-          value="js"
+          <span
+            id="aria-selection"
+          />
+          <span
+            id="aria-context"
+          >
+            option name focused, 1 of 3. 3 results available. Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
+          </span>
+        </span>
+        <div
+          class="control-md valid css-1ox8182-control"
         >
-          JavaScript
-        </option>
-        <option
-          value="ts"
+          <div
+            class=" css-1fdsijx-ValueContainer"
+          >
+            <div
+              class=" css-zg71bx-placeholder"
+              id="react-select-3-placeholder"
+            >
+              Select...
+            </div>
+            <input
+              aria-autocomplete="list"
+              aria-controls="react-select-3-listbox"
+              aria-describedby="react-select-3-placeholder"
+              aria-expanded="true"
+              aria-haspopup="true"
+              aria-owns="react-select-3-listbox"
+              aria-readonly="true"
+              class="css-mohuvp-dummyInput-DummyInput"
+              id="react-select-3-input"
+              inputmode="none"
+              role="combobox"
+              tabindex="0"
+              value=""
+            />
+          </div>
+          <div
+            class=" css-1hb7zxy-IndicatorsContainer"
+          >
+            <div
+              aria-hidden="true"
+              class=" css-15wc35w-indicatorContainer"
+            >
+              <svg
+                aria-hidden="true"
+                class="css-tj5bde-Svg"
+                focusable="false"
+                height="20"
+                viewBox="0 0 20 20"
+                width="20"
+              >
+                <path
+                  d="M4.516 7.548c0.436-0.446 1.043-0.481 1.576 0l3.908 3.747 3.908-3.747c0.533-0.481 1.141-0.446 1.574 0 0.436 0.445 0.408 1.197 0 1.615-0.406 0.418-4.695 4.502-4.695 4.502-0.217 0.223-0.502 0.335-0.787 0.335s-0.57-0.112-0.789-0.335c0 0-4.287-4.084-4.695-4.502s-0.436-1.17 0-1.615z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div
+          class=" css-1nmdiq5-menu"
+          id="react-select-3-listbox"
         >
-          TypeScript
-        </option>
-      </select>
+          <div
+            class="css-18mql3h-customMenuList"
+          >
+            <div
+              class=" css-1n6sfyn-MenuList"
+            >
+              <div
+                aria-disabled="false"
+                class="option-md css-1io4243-option"
+                id="react-select-3-option-0"
+                tabindex="-1"
+              >
+                name
+              </div>
+              <div
+                aria-disabled="false"
+                class="option-md css-1io4243-option"
+                id="react-select-3-option-1"
+                tabindex="-1"
+              >
+                surname
+              </div>
+              <div
+                aria-disabled="false"
+                class="option-md css-1io4243-option"
+                id="react-select-3-option-2"
+                tabindex="-1"
+              >
+                age
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

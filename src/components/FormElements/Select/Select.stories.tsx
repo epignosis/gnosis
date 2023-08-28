@@ -1,17 +1,17 @@
 import React from "react";
 import { Story } from "@storybook/react";
-import SelectComponent, { SelectProps } from "./Select";
+import Select from "./Select";
+import { CustomSelectProps, CustomOption } from "./types";
+import { defaultOptions, groupedOptions } from "./data";
 
 export default {
   title: "components/Form Elements/Select",
-  component: SelectComponent,
+  component: Select,
   args: {
     size: "md",
     label: "Choose a programming language",
     inline: false,
     id: "programming-language",
-    className: "selectStory",
-    status: "valid",
   },
   argTypes: {
     size: {
@@ -20,10 +20,29 @@ export default {
         options: ["sm", "md", "lg"],
       },
     },
-    dir: {
+    isRtl: {
       control: {
-        type: "select",
-        options: ["ltr", "rtl"],
+        type: "boolean",
+      },
+    },
+    isDisabled: {
+      control: {
+        type: "boolean",
+      },
+    },
+    isClearable: {
+      control: {
+        type: "boolean",
+      },
+    },
+    isMulti: {
+      control: {
+        type: "boolean",
+      },
+    },
+    hasInnerSearch: {
+      control: {
+        type: "boolean",
       },
     },
     status: {
@@ -36,29 +55,44 @@ export default {
   },
   decorators: [
     (Story: Story): JSX.Element => (
-      <div style={{ maxWidth: 400 }}>
+      <div>
         <Story />
       </div>
     ),
   ],
 };
 
-const Template: Story<SelectProps> = (args) => (
-  <SelectComponent {...args}>
-    <option value="rs">Rust</option>
-    <option value="js">JavaScript</option>
-    <option value="ts">TypeScript</option>
-    <option value="go">GoLang</option>
-    <option value="python">Python</option>
-    <option value="php" disabled>
-      PHP
-    </option>
-  </SelectComponent>
-);
+const Template: Story<CustomSelectProps<CustomOption, boolean>> = (args) => <Select {...args} />;
 
 export const Default = Template.bind({});
-export const Disabled = Template.bind({});
+
+Default.args = {
+  options: defaultOptions,
+};
+
+export const withGroupedOptions = Template.bind({});
+
+withGroupedOptions.args = {
+  options: groupedOptions,
+};
+
+export const withInnerSearch = Template.bind({});
+
+withInnerSearch.args = {
+  options: defaultOptions,
+  hasInnerSearch: true,
+};
+
+export const withMultipleValues = Template.bind({});
+
+withMultipleValues.args = {
+  options: defaultOptions,
+  isMulti: true,
+};
+
+export const Disabled = Template.bind({ options: defaultOptions, isDisabled: true });
 
 Disabled.args = {
-  disabled: true,
+  options: defaultOptions,
+  isDisabled: true,
 };

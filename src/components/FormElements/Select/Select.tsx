@@ -142,7 +142,7 @@ const Select: ForwardRefRenderFunction<
 
   useClickAway(
     (e) => {
-      // Ignore clicks on the close icon, can be one of the 3 following:
+      // Ignore clicks on the close icon, can be one of the three following:
       const { nodeName, className } = e.target as HTMLElement;
       const isSvg = nodeName === "svg";
       const isPath = nodeName === "path";

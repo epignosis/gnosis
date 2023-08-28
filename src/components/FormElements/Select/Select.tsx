@@ -7,6 +7,9 @@ import ReactSelect, {
   ControlProps,
   DropdownIndicatorProps,
   GroupBase,
+  MultiValueProps,
+  OptionProps,
+  PlaceholderProps,
   SelectInstance,
 } from "react-select";
 import { SerializedStyles } from "@emotion/react";
@@ -54,11 +57,14 @@ const Select: ForwardRefRenderFunction<
   const [inputValue, setInputValue] = useState("");
 
   const styles = {
-    placeholder: (base: CSSObjectWithLabel) => {
+    placeholder: (
+      base: CSSObjectWithLabel,
+      { isDisabled }: PlaceholderProps<CustomOption, boolean, GroupBase<CustomOption>>,
+    ) => {
       return {
         ...base,
         fontStyle: "italic",
-        color: formElements.input.placeholderColor,
+        color: isDisabled ? formElements.input.disabledColor : formElements.input.placeholderColor,
       };
     },
     dropdownIndicator: (
@@ -80,7 +86,7 @@ const Select: ForwardRefRenderFunction<
       "&:hover": { color: formElements.input.iconColor },
     }),
     control: (
-      baseStyles: CSSObjectWithLabel,
+      base: CSSObjectWithLabel,
       { isFocused, isDisabled }: ControlProps<CustomOption, boolean, GroupBase<CustomOption>>,
     ) => {
       const border = isDisabled
@@ -96,14 +102,34 @@ const Select: ForwardRefRenderFunction<
         : formElements.input.background;
 
       return {
-        ...baseStyles,
+        ...base,
         border,
         backgroundColor,
         boxShadow: "none",
         borderRadius: "5px",
         "&:hover": { border: `1px solid ${formElements.input.borderHoverColor}` },
+        color: !isDisabled ? base.color : formElements.input.disabledColor,
       };
     },
+    multiValueLabel: (
+      base: CSSObjectWithLabel,
+      { isDisabled }: MultiValueProps<CustomOption, boolean, GroupBase<CustomOption>>,
+    ) => ({
+      ...base,
+      color: !isDisabled ? base.color : formElements.input.disabledColor,
+    }),
+    option: (
+      base: CSSObjectWithLabel,
+      { isSelected }: OptionProps<CustomOption, boolean, GroupBase<CustomOption>>,
+    ) => ({
+      ...base,
+      backgroundColor: isSelected ? formElements.input.borderFocus : base.color,
+      "&:hover": {
+        backgroundColor: !isSelected
+          ? formElements.input.hoverColor
+          : formElements.input.borderFocus,
+      },
+    }),
   };
 
   useClickAway(

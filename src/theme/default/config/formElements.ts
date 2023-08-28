@@ -13,6 +13,7 @@ export default {
     background: colors.secondary.lighter,
     backgroundFocus: colors.white,
     iconColor: colors.black,
+    iconHoverColor: colors.secondary.base,
     hoverColor: colors.secondary.lighter,
     disabledColor: colors.secondary.base,
     disabledBackground: colors.secondary.lighter,

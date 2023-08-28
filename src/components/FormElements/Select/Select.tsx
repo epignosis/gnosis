@@ -75,7 +75,7 @@ const Select: ForwardRefRenderFunction<
       transform: selectProps.menuIsOpen ? "rotate(-180deg)" : "rotate(0)",
       transition: "all .2s ease",
       color: selectProps.isDisabled ? base.color : formElements.input.iconColor,
-      "&:hover": { color: formElements.input.iconColor },
+      "&:hover": { color: formElements.input.iconHoverColor, cursor: "pointer" },
     }),
     clearIndicator: (
       base: CSSObjectWithLabel,
@@ -83,7 +83,7 @@ const Select: ForwardRefRenderFunction<
     ) => ({
       ...base,
       color: selectProps.isDisabled ? base.color : formElements.input.iconColor,
-      "&:hover": { color: formElements.input.iconColor },
+      "&:hover": { color: formElements.input.iconHoverColor, cursor: "pointer" },
     }),
     control: (
       base: CSSObjectWithLabel,
@@ -117,6 +117,14 @@ const Select: ForwardRefRenderFunction<
     ) => ({
       ...base,
       color: !isDisabled ? base.color : formElements.input.disabledColor,
+    }),
+
+    multiValueRemove: (base: CSSObjectWithLabel) => ({
+      ...base,
+      ":hover": {
+        cursor: "pointer",
+        color: formElements.input.iconHoverColor,
+      },
     }),
     option: (
       base: CSSObjectWithLabel,

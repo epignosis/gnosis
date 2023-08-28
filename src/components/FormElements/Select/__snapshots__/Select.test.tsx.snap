@@ -71,7 +71,7 @@ exports[`<Select /> matches snapshot 1`] = `
           >
             <div
               aria-hidden="true"
-              class=" css-k6lq0n-indicatorContainer"
+              class=" css-15wc35w-indicatorContainer"
             >
               <svg
                 aria-hidden="true"

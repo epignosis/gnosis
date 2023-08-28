@@ -48,6 +48,7 @@ const Select: ForwardRefRenderFunction<
     hasInnerSearch = false,
     innerPlaceholder = INNER_PLACEHOLDER,
     placeholder: outerPlaceholder = OUTER_PLACEHOLDER,
+    onChange,
     ...rest
   } = props;
   const hasLabel = Boolean(label);
@@ -192,7 +193,10 @@ const Select: ForwardRefRenderFunction<
             hasInnerSearch,
           }}
           // events
-          onChange={() => setIsFocused(false)}
+          onChange={(option, action) => {
+            setIsFocused(false);
+            onChange && onChange(option, action);
+          }}
           onInputChange={(val) => setInputValue(val)}
         />
       </div>

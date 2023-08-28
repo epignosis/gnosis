@@ -48,4 +48,3 @@ export { default as DefaultTheme } from "./theme/default/defaultTheme";
 export type { Props as TableProps } from "./components/Table/Table";
 export type { Column, Row } from "./components/Table/types";
 export type { DropdownProps, DropdownItem } from "./components/Dropdown/types";
-export type { CustomOption } from "./components/FormElements/Select/types";

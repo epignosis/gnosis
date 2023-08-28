@@ -1,3 +1,10 @@
+## [5.0.7](https://github.com/epignosis/gnosis/compare/v5.0.6...v5.0.7) (2023-08-28)
+
+
+### Bug Fixes
+
+* **app:** deploy ([#197](https://github.com/epignosis/gnosis/issues/197)) ([846172a](https://github.com/epignosis/gnosis/commit/846172a3f2a82ba6e570d448e5481a769128ffd2))
+
 ## [5.0.6](https://github.com/epignosis/gnosis/compare/v5.0.5...v5.0.6) (2023-08-28)
 
 ## [5.0.5](https://github.com/epignosis/gnosis/compare/v5.0.4...v5.0.5) (2023-08-14)

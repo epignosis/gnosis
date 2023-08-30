@@ -34,6 +34,9 @@ export type CustomSelectProps<
   status?: "valid" | "error";
   hasInnerSearch?: boolean;
   innerPlaceholder?: string;
+  isInlineFlex?: boolean;
+  minWidth?: string;
+  maxWidth?: string;
 };
 
 export type CustomMenuListProps<

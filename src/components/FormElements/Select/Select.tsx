@@ -25,6 +25,8 @@ import { formElements } from "@theme/default/config";
 const MAX_MENU_HEIGHT = 300;
 const OUTER_PLACEHOLDER = "Select...";
 const INNER_PLACEHOLDER = "Search...";
+const MIN_WIDTH = "5rem";
+const MAX_WIDTH = "25rem";
 
 const containerClassNames = (status: string, size: string) =>
   classNames({
@@ -44,9 +46,12 @@ const Select: ForwardRefRenderFunction<
     size = "md",
     inline = false,
     status = "valid",
-    maxMenuHeight = MAX_MENU_HEIGHT,
+    isInlineFlex = false,
     hasInnerSearch = false,
+    maxMenuHeight = MAX_MENU_HEIGHT,
     innerPlaceholder = INNER_PLACEHOLDER,
+    minWidth = MIN_WIDTH,
+    maxWidth = MAX_WIDTH,
     placeholder: outerPlaceholder = OUTER_PLACEHOLDER,
     onChange,
     ...rest
@@ -58,6 +63,12 @@ const Select: ForwardRefRenderFunction<
   const [inputValue, setInputValue] = useState("");
 
   const styles = {
+    menu: (base: CSSObjectWithLabel) => {
+      return {
+        ...base,
+        zIndex: 3,
+      };
+    },
     placeholder: (
       base: CSSObjectWithLabel,
       { isDisabled }: PlaceholderProps<CustomOption, boolean, GroupBase<CustomOption>>,
@@ -157,7 +168,11 @@ const Select: ForwardRefRenderFunction<
   );
 
   return (
-    <div css={(theme): SerializedStyles => selectContainer(theme, { size, inline })}>
+    <div
+      css={(theme): SerializedStyles =>
+        selectContainer(theme, { size, inline, isInlineFlex, minWidth, maxWidth })
+      }
+    >
       {hasLabel && (
         <Label htmlFor={id} aria-labelledby={id}>
           {label}

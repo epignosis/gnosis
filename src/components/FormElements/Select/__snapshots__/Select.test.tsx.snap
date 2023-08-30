@@ -3,7 +3,7 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="css-z7mxsu-selectContainer-selectContainer"
+    class="css-851uoz-selectContainer-selectContainer"
   >
     <label
       aria-labelledby="select-id"

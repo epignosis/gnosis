@@ -193,7 +193,7 @@ const Select: ForwardRefRenderFunction<
           }}
           isSearchable={false}
           maxMenuHeight={maxMenuHeight}
-          menuIsOpen={isFocused || undefined || true}
+          menuIsOpen={isFocused || undefined}
           options={options}
           placeholder={outerPlaceholder}
           styles={styles}

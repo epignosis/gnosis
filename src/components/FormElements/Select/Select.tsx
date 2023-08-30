@@ -48,6 +48,9 @@ const Select: ForwardRefRenderFunction<
     hasInnerSearch = false,
     innerPlaceholder = INNER_PLACEHOLDER,
     placeholder: outerPlaceholder = OUTER_PLACEHOLDER,
+    isInlineFlex = false,
+    minWidth = "5rem",
+    maxWidth = "50rem",
     onChange,
     ...rest
   } = props;
@@ -58,6 +61,12 @@ const Select: ForwardRefRenderFunction<
   const [inputValue, setInputValue] = useState("");
 
   const styles = {
+    menu: (base: CSSObjectWithLabel) => {
+      return {
+        ...base,
+        zIndex: 3,
+      };
+    },
     placeholder: (
       base: CSSObjectWithLabel,
       { isDisabled }: PlaceholderProps<CustomOption, boolean, GroupBase<CustomOption>>,
@@ -157,7 +166,11 @@ const Select: ForwardRefRenderFunction<
   );
 
   return (
-    <div css={(theme): SerializedStyles => selectContainer(theme, { size, inline })}>
+    <div
+      css={(theme): SerializedStyles =>
+        selectContainer(theme, { size, inline, isInlineFlex, minWidth, maxWidth })
+      }
+    >
       {hasLabel && (
         <Label htmlFor={id} aria-labelledby={id}>
           {label}
@@ -180,7 +193,7 @@ const Select: ForwardRefRenderFunction<
           }}
           isSearchable={false}
           maxMenuHeight={maxMenuHeight}
-          menuIsOpen={isFocused || undefined}
+          menuIsOpen={isFocused || undefined || true}
           options={options}
           placeholder={outerPlaceholder}
           styles={styles}

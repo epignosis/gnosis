@@ -10,22 +10,37 @@ const optionPadding = {
 
 export const selectContainer = (
   { formElements }: Theme,
-  { size, inline }: { size: InputSize; inline: boolean },
+  {
+    size,
+    inline,
+    isInlineFlex,
+    minWidth,
+    maxWidth,
+  }: {
+    size: InputSize;
+    inline: boolean;
+    isInlineFlex: boolean;
+    minWidth: string;
+    maxWidth: string;
+  },
 ): SerializedStyles => css`
-  display: flex;
+  display: ${isInlineFlex ? "inline-flex" : "flex"};
   flex-direction: ${inline ? "row" : "column"};
   gap: ${inline ? "1rem" : "0.5rem"};
   align-items: ${inline ? "center" : "normal"};
 
   label {
     margin: 0;
+    margin-inline-start: ${inline ? "0" : "0.5rem"};
   }
 
   .select-input-wrapper {
+    min-width: ${minWidth};
+    max-width: ${maxWidth};
     flex-grow: 1;
-    max-width: 25rem;
     background-color: ${formElements.input.background};
     border-radius: 0.3125rem;
+
     .error {
       border-color: ${formElements.errors.errorBorderColor};
     }

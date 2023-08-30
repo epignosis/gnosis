@@ -1,3 +1,10 @@
+# [5.1.0](https://github.com/epignosis/gnosis/compare/v5.0.7...v5.1.0) (2023-08-30)
+
+
+### Features
+
+* extra changes to select component  ([#198](https://github.com/epignosis/gnosis/issues/198)) ([ab41553](https://github.com/epignosis/gnosis/commit/ab415537f9cee651ca204477709bd2497f8a7cd7))
+
 ## [5.0.7](https://github.com/epignosis/gnosis/compare/v5.0.6...v5.0.7) (2023-08-28)
 
 

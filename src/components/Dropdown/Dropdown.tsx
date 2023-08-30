@@ -72,6 +72,7 @@ const Dropdown: FC<DropdownProps> = ({
                 {item.label}
               </Text>
             </li>
+
             {renderItemsRecursively(item.items, level + 1)}
           </Fragment>
         );

@@ -1,5 +1,6 @@
 import React, { FC, MouseEvent as ReactMouseEvent } from "react";
 import { components } from "react-select";
+import { SerializedStyles } from "@emotion/react";
 import Input from "../../Input/Input";
 import { searchInputContainer } from "../../Input/styles";
 import { customMenuList } from "../styles";
@@ -24,7 +25,7 @@ const CustomMenuList: FC<CustomMenuListProps<CustomOption, boolean>> = (customMe
   };
 
   return (
-    <div css={customMenuList}>
+    <div css={(): SerializedStyles => customMenuList({ hasInnerSearch })}>
       {hasInnerSearch && (
         <div css={searchInputContainer} onMouseDown={(e) => e.stopPropagation()}>
           <Input

@@ -64,9 +64,6 @@ const Select: ForwardRefRenderFunction<
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
-  // it is important to set the indicator size to the same height as the input to avoid centering issues
-  const indicatorSize = `calc(${inputHeight[size]} - 0.125rem)`;
-
   const styles = {
     menu: (base: CSSObjectWithLabel) => {
       return {
@@ -174,7 +171,8 @@ const Select: ForwardRefRenderFunction<
     }),
     indicatorsContainer: (base: CSSObjectWithLabel) => ({
       ...base,
-      height: indicatorSize,
+      // it is important to set the indicator size to the same height as the input to avoid centering issues
+      height: `calc(${inputHeight[size]} - 2px)`,
     }),
   };
 

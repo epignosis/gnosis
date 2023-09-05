@@ -188,6 +188,7 @@ const Select: ForwardRefRenderFunction<
       setIsFocused(false);
       setInputValue("");
     },
+
     [containerRef],
   );
 

@@ -3,7 +3,7 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="css-851uoz-selectContainer-selectContainer"
+    class="css-krq6jl-selectContainer-selectContainer"
   >
     <label
       aria-labelledby="select-id"
@@ -67,7 +67,7 @@ exports[`<Select /> matches snapshot 1`] = `
             />
           </div>
           <div
-            class=" css-1hb7zxy-IndicatorsContainer"
+            class=" css-94iizy-IndicatorsContainer"
           >
             <div
               aria-hidden="true"
@@ -89,18 +89,18 @@ exports[`<Select /> matches snapshot 1`] = `
           </div>
         </div>
         <div
-          class=" css-1y5o33s-menu"
+          class=" css-5v3ri6-menu"
           id="react-select-3-listbox"
         >
           <div
-            class="css-18mql3h-customMenuList"
+            class="css-1w7wtdk-customMenuList-customMenuList"
           >
             <div
-              class=" css-1n6sfyn-MenuList"
+              class=" css-17690ek-MenuList"
             >
               <div
                 aria-disabled="false"
-                class="option-md css-1io4243-option"
+                class="option-md css-1ssz2xa-option"
                 id="react-select-3-option-0"
                 tabindex="-1"
               >
@@ -108,7 +108,7 @@ exports[`<Select /> matches snapshot 1`] = `
               </div>
               <div
                 aria-disabled="false"
-                class="option-md css-1io4243-option"
+                class="option-md css-1ssz2xa-option"
                 id="react-select-3-option-1"
                 tabindex="-1"
               >
@@ -116,7 +116,7 @@ exports[`<Select /> matches snapshot 1`] = `
               </div>
               <div
                 aria-disabled="false"
-                class="option-md css-1io4243-option"
+                class="option-md css-1ssz2xa-option"
                 id="react-select-3-option-2"
                 tabindex="-1"
               >

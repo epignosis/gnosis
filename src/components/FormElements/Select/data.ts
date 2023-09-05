@@ -51,7 +51,7 @@ export const groupedOptions: GroupedOption[] = [
 
 export const defaultOptions: OptionType[] = [
   { label: "Rust", value: "rs" },
-  { label: "JavaScript", value: "js" },
+  { label: "JavaScript is the best in the world", value: "js" },
   { label: "TypeScript", value: "ts" },
   { label: "GoLang", value: "go" },
   { label: "Python", value: "python" },

@@ -16,11 +16,12 @@ import { SerializedStyles } from "@emotion/react";
 import { useClickAway } from "ahooks";
 import classNames from "classnames";
 import Label from "../Label/Label";
+import { inputHeight } from "../styles";
 import CustomValueContainer from "./components/CustomValueContainer";
 import { selectContainer } from "./styles";
 import CustomMenuList from "./components/CustomMenuList";
 import { CustomOption, CustomSelectProps } from "./types";
-import { formElements } from "@theme/default/config";
+import { formElements, scrollbar } from "@theme/default/config";
 
 const MAX_MENU_HEIGHT = 300;
 const OUTER_PLACEHOLDER = "Select...";
@@ -48,6 +49,7 @@ const Select: ForwardRefRenderFunction<
     status = "valid",
     isInlineFlex = false,
     hasInnerSearch = false,
+    isMulti = false,
     maxMenuHeight = MAX_MENU_HEIGHT,
     innerPlaceholder = INNER_PLACEHOLDER,
     minWidth = MIN_WIDTH,
@@ -66,7 +68,7 @@ const Select: ForwardRefRenderFunction<
     menu: (base: CSSObjectWithLabel) => {
       return {
         ...base,
-        zIndex: 3,
+        zIndex: 1060,
       };
     },
     placeholder: (
@@ -144,11 +146,33 @@ const Select: ForwardRefRenderFunction<
     ) => ({
       ...base,
       backgroundColor: isSelected ? formElements.input.borderFocus : base.color,
+      borderRadius: hasInnerSearch ? "5px" : "none",
       "&:hover": {
         backgroundColor: !isSelected
           ? formElements.input.hoverColor
           : formElements.input.borderFocus,
       },
+    }),
+    menuList: (base: CSSObjectWithLabel) => ({
+      ...base,
+      margin: "0.5rem 0",
+      padding: "0",
+      "::-webkit-scrollbar": {
+        width: "5px",
+      },
+      "::-webkit-scrollbar-track": {
+        background: scrollbar.background,
+        borderRadius: "10px",
+      },
+      "::-webkit-scrollbar-thumb": {
+        backgroundColor: scrollbar.color,
+        borderRadius: "10px",
+      },
+    }),
+    indicatorsContainer: (base: CSSObjectWithLabel) => ({
+      ...base,
+      // it is important to set the indicator size to the same height as the input to avoid centering issues
+      height: `calc(${inputHeight[size]} - 2px)`,
     }),
   };
 
@@ -170,7 +194,7 @@ const Select: ForwardRefRenderFunction<
   return (
     <div
       css={(theme): SerializedStyles =>
-        selectContainer(theme, { size, inline, isInlineFlex, minWidth, maxWidth })
+        selectContainer(theme, { size, inline, isInlineFlex, minWidth, maxWidth, hasInnerSearch })
       }
     >
       {hasLabel && (
@@ -183,7 +207,9 @@ const Select: ForwardRefRenderFunction<
           {...rest}
           ref={forwardedRef}
           // react-select props
-          blurInputOnSelect={true}
+          blurInputOnSelect={!isMulti}
+          closeMenuOnSelect={!isMulti}
+          isMulti={isMulti}
           classNames={{
             control: () => containerClassNames(status, size),
             option: () => `option-${size}`,

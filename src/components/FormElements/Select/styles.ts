@@ -2,12 +2,6 @@ import { css, SerializedStyles, Theme } from "@emotion/react";
 import { InputSize } from "../Input/Input";
 import { inputHeight } from "../styles";
 
-const optionPadding = {
-  sm: "0.25rem 0.75rem",
-  md: "0.375rem 0.75rem",
-  lg: "0.5rem 0.75rem",
-};
-
 export const selectContainer = (
   { formElements }: Theme,
   {
@@ -16,12 +10,14 @@ export const selectContainer = (
     isInlineFlex,
     minWidth,
     maxWidth,
+    hasInnerSearch,
   }: {
     size: InputSize;
     inline: boolean;
     isInlineFlex: boolean;
     minWidth: string;
     maxWidth: string;
+    hasInnerSearch: boolean;
   },
 ): SerializedStyles => css`
   display: ${isInlineFlex ? "inline-flex" : "flex"};
@@ -46,16 +42,28 @@ export const selectContainer = (
     }
 
     .control-${size} {
-      min-height: ${inputHeight[size]};
+      /* minus border */
+      min-height: calc(${inputHeight[size]} - 2px);
     }
 
     .option-${size} {
-      padding: ${optionPadding[size]};
+      padding: 0.3125rem 1rem;
       cursor: pointer;
+      word-break: break-word;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-inline-end: ${hasInnerSearch ? "1rem" : "0"};
+      padding-inline-end: ${hasInnerSearch ? "0" : "1rem"};
+      width: auto;
     }
   }
 `;
 
-export const customMenuList = (): SerializedStyles => css`
-  padding: 0.75rem;
+export const customMenuList = ({
+  hasInnerSearch,
+}: {
+  hasInnerSearch: boolean;
+}): SerializedStyles => css`
+  padding: ${hasInnerSearch ? "0.75rem" : "0.5rem 0"};
 `;

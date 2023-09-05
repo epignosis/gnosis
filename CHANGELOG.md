@@ -1,3 +1,10 @@
+# [5.2.0](https://github.com/epignosis/gnosis/compare/v5.1.0...v5.2.0) (2023-09-05)
+
+
+### Features
+
+* **select:** redeploy ([#200](https://github.com/epignosis/gnosis/issues/200)) ([ced8161](https://github.com/epignosis/gnosis/commit/ced8161fd229057e26777670440b8eea0b87ccad))
+
 # [5.1.0](https://github.com/epignosis/gnosis/compare/v5.0.7...v5.1.0) (2023-08-30)
 
 

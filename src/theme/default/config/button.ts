@@ -1,3 +1,4 @@
+import Color from "color";
 import { colors } from "../colors";
 
 export default {
@@ -24,7 +25,7 @@ export default {
     },
     ghost: {
       color: colors.primary.base,
-      background: colors.primary.lightest,
+      background: Color(colors.primary.lightest).alpha(0.25).string(),
     },
     outline: {
       color: colors.primary.base,
@@ -32,7 +33,7 @@ export default {
     },
     link: {
       color: colors.primary.base,
-      hoverColor: colors.primary.lightest,
+      hoverColor: colors.primary.light,
     },
   },
   secondary: {

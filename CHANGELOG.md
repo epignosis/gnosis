@@ -1,3 +1,10 @@
+## [5.2.1](https://github.com/epignosis/gnosis/compare/v5.2.0...v5.2.1) (2023-09-06)
+
+
+### Bug Fixes
+
+* primary button colours ([#201](https://github.com/epignosis/gnosis/issues/201)) ([1c2f00b](https://github.com/epignosis/gnosis/commit/1c2f00b6e34c48bbd403acbd762926905c69b838))
+
 # [5.2.0](https://github.com/epignosis/gnosis/compare/v5.1.0...v5.2.0) (2023-09-05)
 
 

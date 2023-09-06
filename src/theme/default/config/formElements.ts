@@ -22,6 +22,8 @@ export default {
     borderFocus: colors.primary.base,
     infoTooltipColor: colors.primary.base,
     verticalLineColor: colors.secondary.base,
+    textColor: colors.black,
+    textColorFocused: colors.white,
   },
   radioButtonGroup: {
     normalBackground: colors.secondary.lighter,

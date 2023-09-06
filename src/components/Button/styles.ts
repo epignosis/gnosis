@@ -39,7 +39,7 @@ const baseButton = (
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: ${noGutters ? 0 : btnPadding[size]};
+    padding: ${noGutters ? "0 0.25rem" : btnPadding[size]};
     border-radius: 5px;
     line-height: 1.125rem;
     cursor: pointer;
@@ -135,9 +135,9 @@ const outlineButton = (button: Theme["button"], color: Color): SerializedStyles 
 const ghostButton = (button: Theme["button"], color: Color): SerializedStyles => css`
   background-color: transparent;
   border: none;
+  color: ${button[color].ghost.color};
 
   &:hover {
-    color: ${button[color].ghost.color};
     background-color: ${button[color].ghost.background};
   }
 `;
@@ -186,10 +186,10 @@ const iconAfterButton = (size: Size): SerializedStyles => {
 
 export const btnContainer = (
   { typeScaleSizes, button }: Theme,
-  { color, size, ...attrs }: ButtonAttrs,
+  { color, size, noGutters, ...attrs }: ButtonAttrs,
 ): SerializedStyles => {
   return css`
-    ${baseButton({ typeScaleSizes }, { size, ...attrs })};
+    ${baseButton({ typeScaleSizes }, { size, noGutters, ...attrs })};
 
     &.solid {
       ${solidButton(button, color)};
@@ -260,7 +260,7 @@ export const btnContainer = (
 
     .loading {
       position: relative;
-      inset-inline-start: -12px;
+      inset-inline-start: ${noGutters ? "0" : "-12px"};
     }
   `;
 };

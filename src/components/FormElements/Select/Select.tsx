@@ -154,9 +154,11 @@ const Select: ForwardRefRenderFunction<
       borderRadius: hasInnerSearch ? "5px" : "none",
       "&:hover": {
         color: isSelected ? formElements.input.textColorFocused : formElements.input.textColor,
-        backgroundColor: !isSelected
-          ? formElements.input.hoverColor
-          : formElements.input.borderFocus,
+        backgroundColor: isFocused
+          ? !isSelected
+            ? formElements.input.hoverColor
+            : formElements.input.borderFocus
+          : "transparent",
       },
     }),
     menuList: (base: CSSObjectWithLabel) => ({

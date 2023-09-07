@@ -100,7 +100,7 @@ exports[`<Select /> matches snapshot 1`] = `
             >
               <div
                 aria-disabled="false"
-                class="option-md css-1dcn42d-option"
+                class="option-md css-6kc27f-option"
                 id="react-select-3-option-0"
                 tabindex="-1"
               >
@@ -108,7 +108,7 @@ exports[`<Select /> matches snapshot 1`] = `
               </div>
               <div
                 aria-disabled="false"
-                class="option-md css-1rtowec-option"
+                class="option-md css-1naxi5l-option"
                 id="react-select-3-option-1"
                 tabindex="-1"
               >
@@ -116,7 +116,7 @@ exports[`<Select /> matches snapshot 1`] = `
               </div>
               <div
                 aria-disabled="false"
-                class="option-md css-1rtowec-option"
+                class="option-md css-1naxi5l-option"
                 id="react-select-3-option-2"
                 tabindex="-1"
               >

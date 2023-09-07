@@ -145,14 +145,20 @@ const Select: ForwardRefRenderFunction<
       { isSelected, isFocused }: OptionProps<CustomOption, boolean, GroupBase<CustomOption>>,
     ) => ({
       ...base,
-      backgroundColor: isSelected || isFocused ? formElements.input.borderFocus : base.color,
-      color: isSelected || isFocused ? formElements.input.textColorFocused : "inherit",
+      backgroundColor: isSelected
+        ? formElements.input.borderFocus
+        : !isFocused
+        ? "transparent"
+        : formElements.input.hoverColor,
+      color: isSelected ? formElements.input.textColorFocused : "inherit",
       borderRadius: hasInnerSearch ? "5px" : "none",
       "&:hover": {
         color: isSelected ? formElements.input.textColorFocused : formElements.input.textColor,
-        backgroundColor: !isSelected
-          ? formElements.input.hoverColor
-          : formElements.input.borderFocus,
+        backgroundColor: isFocused
+          ? !isSelected
+            ? formElements.input.hoverColor
+            : formElements.input.borderFocus
+          : "transparent",
       },
     }),
     menuList: (base: CSSObjectWithLabel) => ({

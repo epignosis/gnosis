@@ -7,7 +7,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
     id="my-id"
   >
     <button
-      class="previous-page-btn ghost css-1j7ui09-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      class="previous-page-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="previous-page-btn"
       name="Previous page"
     >
@@ -30,7 +30,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
           class="dropdown-button"
         >
           <button
-            class="ghost icon-after css-7gkhii-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+            class="ghost icon-after css-uj174w-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
           >
             <span
               class="btn-text"
@@ -52,7 +52,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       </div>
     </div>
     <button
-      class="next-page-btn ghost css-1j7ui09-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      class="next-page-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="next-page-btn"
       name="Next page"
     >

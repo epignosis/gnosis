@@ -26,6 +26,7 @@ export default {
     ghost: {
       color: colors.primary.base,
       background: Color(colors.primary.lightest).alpha(0.25).string(),
+      hoverColor: colors.primary.base,
     },
     outline: {
       color: colors.primary.base,
@@ -55,6 +56,7 @@ export default {
     ghost: {
       color: colors.black,
       background: colors.secondary.light,
+      hoverColor: colors.black,
     },
     outline: {
       color: colors.secondary.base,
@@ -83,7 +85,8 @@ export default {
     },
     ghost: {
       color: colors.red.base,
-      background: colors.red.lightest,
+      background: colors.red.light,
+      hoverColor: colors.white,
     },
     outline: {
       color: colors.red.base,
@@ -112,7 +115,8 @@ export default {
     },
     ghost: {
       color: colors.green.base,
-      background: colors.green.lightest,
+      background: colors.green.light,
+      hoverColor: colors.white,
     },
     outline: {
       color: colors.green.base,

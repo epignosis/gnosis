@@ -138,6 +138,7 @@ const ghostButton = (button: Theme["button"], color: Color): SerializedStyles =>
   color: ${button[color].ghost.color};
 
   &:hover {
+    color: ${button[color].ghost.hoverColor};
     background-color: ${button[color].ghost.background};
   }
 `;

@@ -101,9 +101,9 @@ Disabled.args = {
   isDisabled: true,
 };
 
-export const CreatableT = Creatable.bind({});
+export const withValueCreation = Creatable.bind({});
 
-CreatableT.args = {
+Creatable.args = {
   options: defaultOptions,
   isMulti: true,
   isSearchable: true,

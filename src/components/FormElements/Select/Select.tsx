@@ -3,10 +3,9 @@ import React, { ForwardRefRenderFunction, forwardRef, useRef, useState } from "r
 import ReactSelect, { SelectInstance } from "react-select";
 import { SerializedStyles } from "@emotion/react";
 import { useClickAway } from "ahooks";
-import classNames from "classnames";
 import Label from "../Label/Label";
 import CustomValueContainer from "./components/CustomValueContainer";
-import { resolveStyles, selectContainer } from "./styles";
+import { containerClassNames, resolveStyles, selectContainer } from "./styles";
 import CustomMenuList from "./components/CustomMenuList";
 import { CustomOption, CustomSelectProps } from "./types";
 import {
@@ -16,13 +15,6 @@ import {
   MAX_WIDTH,
   OUTER_PLACEHOLDER,
 } from "./constants";
-
-const containerClassNames = (status: string, size: string) =>
-  classNames({
-    [`control-${size}`]: true,
-    valid: status === "valid",
-    error: status === "error",
-  });
 
 const Select: ForwardRefRenderFunction<
   SelectInstance<CustomOption>,

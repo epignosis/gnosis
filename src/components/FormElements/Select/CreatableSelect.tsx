@@ -2,22 +2,11 @@ import React, { ForwardRefRenderFunction, forwardRef } from "react";
 import { SelectInstance } from "react-select";
 import CreatableSelect from "react-select/creatable";
 import { SerializedStyles } from "@emotion/react";
-import classNames from "classnames";
 import Label from "../Label/Label";
-import { resolveStyles, selectContainer } from "./styles";
+import { containerClassNames, resolveStyles, selectContainer } from "./styles";
 import CustomMenuList from "./components/CustomMenuList";
 import { CustomOption, CustomSelectProps } from "./types";
-
-const MAX_MENU_HEIGHT = 300;
-const MIN_WIDTH = "5rem";
-const MAX_WIDTH = "25rem";
-
-const containerClassNames = (status: string, size: string) =>
-  classNames({
-    [`control-${size}`]: true,
-    valid: status === "valid",
-    error: status === "error",
-  });
+import { MAX_MENU_HEIGHT, MAX_WIDTH, MIN_WIDTH } from "./constants";
 
 const Select: ForwardRefRenderFunction<
   SelectInstance<CustomOption>,
@@ -30,6 +19,8 @@ const Select: ForwardRefRenderFunction<
     status = "valid",
     hasInnerSearch = false,
     isMulti = false,
+    inline = false,
+    isInlineFlex = false,
     maxMenuHeight = MAX_MENU_HEIGHT,
     minWidth = MIN_WIDTH,
     maxWidth = MAX_WIDTH,
@@ -46,8 +37,8 @@ const Select: ForwardRefRenderFunction<
           size,
           minWidth,
           maxWidth,
-          inline: false,
-          isInlineFlex: false,
+          inline,
+          isInlineFlex,
           hasInnerSearch: false,
         })
       }
@@ -60,6 +51,7 @@ const Select: ForwardRefRenderFunction<
       <div className="select-input-wrapper" data-testid="custom-react-select">
         <CreatableSelect
           {...rest}
+          isSearchable={true}
           ref={forwardedRef}
           blurInputOnSelect={!isMulti}
           closeMenuOnSelect={!isMulti}

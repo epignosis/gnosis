@@ -106,6 +106,5 @@ export const withValueCreation = Creatable.bind({});
 withValueCreation.args = {
   options: defaultOptions,
   isMulti: true,
-  isSearchable: true,
   isClearable: true,
 };

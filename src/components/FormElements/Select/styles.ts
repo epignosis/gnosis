@@ -65,5 +65,5 @@ export const customMenuList = ({
 }: {
   hasInnerSearch: boolean;
 }): SerializedStyles => css`
-  padding: ${hasInnerSearch ? "0.75rem" : "0.5rem 0"};
+  padding: ${hasInnerSearch ? "0.75rem" : "0"};
 `;

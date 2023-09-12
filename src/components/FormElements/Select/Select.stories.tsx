@@ -3,6 +3,7 @@ import { Story } from "@storybook/react";
 import Select from "./Select";
 import { CustomSelectProps, CustomOption } from "./types";
 import { defaultOptions, groupedOptions } from "./data";
+import CreatableSelect from "./CreatableSelect";
 
 export default {
   title: "components/Form Elements/Select",
@@ -63,6 +64,9 @@ export default {
 };
 
 const Template: Story<CustomSelectProps<CustomOption, boolean>> = (args) => <Select {...args} />;
+const Creatable: Story<CustomSelectProps<CustomOption, boolean>> = (args) => (
+  <CreatableSelect {...args} />
+);
 
 export const Default = Template.bind({});
 
@@ -95,4 +99,13 @@ export const Disabled = Template.bind({ options: defaultOptions, isDisabled: tru
 Disabled.args = {
   options: defaultOptions,
   isDisabled: true,
+};
+
+export const CreatableT = Creatable.bind({});
+
+CreatableT.args = {
+  options: defaultOptions,
+  isMulti: true,
+  isSearchable: true,
+  isClearable: true,
 };

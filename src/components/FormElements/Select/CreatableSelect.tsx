@@ -74,7 +74,6 @@ const Select: ForwardRefRenderFunction<
           }}
           maxMenuHeight={maxMenuHeight}
           styles={styles}
-          menuIsOpen={true}
         />
       </div>
     </div>

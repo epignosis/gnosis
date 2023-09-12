@@ -103,7 +103,7 @@ Disabled.args = {
 
 export const withValueCreation = Creatable.bind({});
 
-Creatable.args = {
+withValueCreation.args = {
   options: defaultOptions,
   isMulti: true,
   isSearchable: true,

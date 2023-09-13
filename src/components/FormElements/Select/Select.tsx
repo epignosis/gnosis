@@ -23,6 +23,7 @@ import { AddOperatorSVG } from "../../../icons";
 import CustomValueContainer from "./components/CustomValueContainer";
 import { resolveStyles, selectContainer } from "./styles";
 import CustomMenuList from "./components/CustomMenuList";
+import CustomMenuAsync from "./components/CustomMenuAsync";
 import { CustomOption, CustomSelectProps } from "./types";
 import {
   MAX_MENU_HEIGHT,
@@ -31,7 +32,7 @@ import {
   MAX_WIDTH,
   OUTER_PLACEHOLDER,
 } from "./constants";
-import { containerClassNames } from "./heleprs";
+import { containerClassNames } from "./helpers";
 
 const Select: ForwardRefRenderFunction<
   SelectInstance<CustomOption>,
@@ -48,6 +49,7 @@ const Select: ForwardRefRenderFunction<
     hasInnerSearch = false,
     isMulti = false,
     isCreatable = false,
+    isAsync = false,
     creatableTooltip = "Create",
     maxMenuHeight = MAX_MENU_HEIGHT,
     innerPlaceholder = INNER_PLACEHOLDER,
@@ -157,8 +159,10 @@ const Select: ForwardRefRenderFunction<
       <div className="select-input-wrapper" data-testid="custom-react-select" ref={containerRef}>
         {isCreatable ? (
           <CreatableSelect {...customSelectProps} createOptionPosition="first" />
-        ) : (
+        ) : !isAsync ? (
           <ReactSelect {...customSelectProps} />
+        ) : (
+          <ReactSelect {...customSelectProps} components={{ MenuList: CustomMenuAsync }} />
         )}
       </div>
     </div>

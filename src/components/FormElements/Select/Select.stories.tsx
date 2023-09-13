@@ -51,6 +51,11 @@ export default {
         options: ["valid", "error"],
       },
     },
+    isAsync: {
+      control: {
+        type: "boolean",
+      },
+    },
     onChange: { action: "value changed" },
   },
   decorators: [
@@ -105,4 +110,12 @@ withValueCreation.args = {
   isClearable: true,
   isCreatable: true,
   hasInnerSearch: true,
+};
+
+export const asyncSelect = Template.bind({});
+
+asyncSelect.args = {
+  options: [],
+  isClearable: true,
+  isAsync: true,
 };

@@ -28,6 +28,7 @@ export type CustomSelectProps<
   IsMulti extends boolean = false,
   Group extends GroupBase<Option> = GroupBase<Option>,
 > = Props<Option, IsMulti, Group> & {
+  type?: "select" | "async" | "createable";
   label?: string;
   size?: "sm" | "md" | "lg";
   inline?: boolean;
@@ -39,6 +40,12 @@ export type CustomSelectProps<
   maxWidth?: string;
   isCreatable?: boolean;
   creatableTooltip?: string;
+  isAsync?: boolean;
+  asyncOptions?: {
+    onSearchChange?: () => void;
+    initialText?: string;
+    noOptionsText?: string;
+  };
 };
 
 export type CustomMenuListProps<

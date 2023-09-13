@@ -145,7 +145,6 @@ const Select: ForwardRefRenderFunction<
           minWidth,
           maxWidth,
           hasInnerSearch,
-          isCreatable,
         })
       }
     >

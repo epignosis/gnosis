@@ -24,7 +24,6 @@ export const selectContainer = (
     minWidth,
     maxWidth,
     hasInnerSearch,
-    isCreatable,
   }: {
     size: InputSize;
     inline: boolean;
@@ -32,7 +31,6 @@ export const selectContainer = (
     minWidth: string;
     maxWidth: string;
     hasInnerSearch: boolean;
-    isCreatable: boolean;
   },
 ): SerializedStyles => css`
   display: ${isInlineFlex ? "inline-flex" : "flex"};
@@ -49,13 +47,21 @@ export const selectContainer = (
     display: flex;
     justify-content: space-between;
     padding-inline-end: 1rem;
+    color: ${formElements.input.borderFocusColor};
+    background-color: ${formElements.input.backgroundFocus};
 
+    /* We do this to remove padding from the parent, this way we change background color */
+    margin: -0.3125rem -1rem;
+    padding: 0.3125rem 1rem;
+    padding-inline-end: 2rem; // to align plus icon with X icon
+
+    &:hover {
+      background-color: ${formElements.input.background};
+    }
     svg {
-      color: ${formElements.input.iconColor};
+      color: ${formElements.input.borderFocusColor};
 
-      &:hover {
-        color: ${formElements.input.iconHoverColor};
-      }
+      line-height: 0;
     }
   }
 
@@ -82,7 +88,6 @@ export const selectContainer = (
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      margin-inline-end: ${isCreatable ? 0 : hasInnerSearch ? "1rem" : "0"};
       padding-inline-end: ${hasInnerSearch ? "0" : "1rem"};
       width: auto;
     }

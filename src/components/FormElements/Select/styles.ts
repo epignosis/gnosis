@@ -24,6 +24,7 @@ export const selectContainer = (
     minWidth,
     maxWidth,
     hasInnerSearch,
+    isCreatable,
   }: {
     size: InputSize;
     inline: boolean;
@@ -31,6 +32,7 @@ export const selectContainer = (
     minWidth: string;
     maxWidth: string;
     hasInnerSearch: boolean;
+    isCreatable: boolean;
   },
 ): SerializedStyles => css`
   display: ${isInlineFlex ? "inline-flex" : "flex"};
@@ -41,6 +43,20 @@ export const selectContainer = (
   label {
     margin: 0;
     margin-inline-start: ${inline ? "0" : "0.5rem"};
+  }
+
+  .select-create-label {
+    display: flex;
+    justify-content: space-between;
+    padding-inline-end: 1rem;
+
+    svg {
+      color: ${formElements.input.iconColor};
+
+      &:hover {
+        color: ${formElements.input.iconHoverColor};
+      }
+    }
   }
 
   .select-input-wrapper {
@@ -66,7 +82,7 @@ export const selectContainer = (
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      margin-inline-end: ${hasInnerSearch ? "1rem" : "0"};
+      margin-inline-end: ${isCreatable ? 0 : hasInnerSearch ? "1rem" : "0"};
       padding-inline-end: ${hasInnerSearch ? "0" : "1rem"};
       width: auto;
     }

@@ -38,7 +38,6 @@ export { default as RadioButtonGroup } from "./components/FormElements/RadioButt
 export { default as RadioGroup } from "./components/FormElements/RadioGroup/RadioGroup";
 export { default as Radio } from "./components/FormElements/RadioGroup/Radio";
 export { default as Select } from "./components/FormElements/Select/Select";
-export { default as CreatableSelect } from "./components/FormElements/Select/CreatableSelect";
 export { default as Textarea } from "./components/FormElements/Textarea/Textarea";
 
 // Theme

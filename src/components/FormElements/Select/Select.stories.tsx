@@ -1,8 +1,8 @@
 import React from "react";
 import { Story } from "@storybook/react";
-import Select from "./Select";
 import { CustomSelectProps, CustomOption } from "./types";
 import { defaultOptions, groupedOptions } from "./data";
+import Select from "./Select";
 
 export default {
   title: "components/Form Elements/Select",
@@ -95,4 +95,14 @@ export const Disabled = Template.bind({ options: defaultOptions, isDisabled: tru
 Disabled.args = {
   options: defaultOptions,
   isDisabled: true,
+};
+
+export const withValueCreation = Template.bind({});
+
+withValueCreation.args = {
+  options: defaultOptions,
+  isMulti: true,
+  isClearable: true,
+  isCreatable: true,
+  hasInnerSearch: true,
 };

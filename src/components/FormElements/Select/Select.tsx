@@ -1,40 +1,37 @@
 // Inspired by this https://codesandbox.io/embed/m75wlyx3oy
-
-import React, { ForwardRefRenderFunction, forwardRef, useRef, useState } from "react";
+import React, {
+  ForwardRefRenderFunction,
+  PropsWithChildren,
+  forwardRef,
+  useRef,
+  useState,
+} from "react";
 import ReactSelect, {
-  CSSObjectWithLabel,
-  ClearIndicatorProps,
-  ControlProps,
-  DropdownIndicatorProps,
+  ActionMeta,
   GroupBase,
-  MultiValueProps,
-  OptionProps,
-  PlaceholderProps,
+  MultiValue,
   SelectInstance,
+  SingleValue,
+  ValueContainerProps,
 } from "react-select";
+import CreatableSelect from "react-select/creatable";
 import { SerializedStyles } from "@emotion/react";
 import { useClickAway } from "ahooks";
-import classNames from "classnames";
 import Label from "../Label/Label";
-import { inputHeight } from "../styles";
+import Tooltip from "../../Tooltip/Tooltip";
+import { AddOperatorSVG } from "../../../icons";
 import CustomValueContainer from "./components/CustomValueContainer";
-import { selectContainer } from "./styles";
+import { resolveStyles, selectContainer } from "./styles";
 import CustomMenuList from "./components/CustomMenuList";
 import { CustomOption, CustomSelectProps } from "./types";
-import { formElements, scrollbar } from "@theme/default/config";
-
-const MAX_MENU_HEIGHT = 300;
-const OUTER_PLACEHOLDER = "Select...";
-const INNER_PLACEHOLDER = "Search...";
-const MIN_WIDTH = "5rem";
-const MAX_WIDTH = "25rem";
-
-const containerClassNames = (status: string, size: string) =>
-  classNames({
-    [`control-${size}`]: true,
-    valid: status === "valid",
-    error: status === "error",
-  });
+import {
+  MAX_MENU_HEIGHT,
+  INNER_PLACEHOLDER,
+  MIN_WIDTH,
+  MAX_WIDTH,
+  OUTER_PLACEHOLDER,
+} from "./constants";
+import { containerClassNames } from "./heleprs";
 
 const Select: ForwardRefRenderFunction<
   SelectInstance<CustomOption>,
@@ -42,7 +39,7 @@ const Select: ForwardRefRenderFunction<
 > = (props, forwardedRef) => {
   const {
     id = "",
-    label,
+    label = "",
     options = [],
     size = "md",
     inline = false,
@@ -50,6 +47,8 @@ const Select: ForwardRefRenderFunction<
     isInlineFlex = false,
     hasInnerSearch = false,
     isMulti = false,
+    isCreatable = false,
+    creatableTooltip = "Create",
     maxMenuHeight = MAX_MENU_HEIGHT,
     innerPlaceholder = INNER_PLACEHOLDER,
     minWidth = MIN_WIDTH,
@@ -64,124 +63,60 @@ const Select: ForwardRefRenderFunction<
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
-  const styles = {
-    menu: (base: CSSObjectWithLabel) => {
-      return {
-        ...base,
-        zIndex: 1060,
-      };
-    },
-    placeholder: (
-      base: CSSObjectWithLabel,
-      { isDisabled }: PlaceholderProps<CustomOption, boolean, GroupBase<CustomOption>>,
-    ) => {
-      return {
-        ...base,
-        fontStyle: "italic",
-        color: isDisabled ? formElements.input.disabledColor : formElements.input.placeholderColor,
-      };
-    },
-    dropdownIndicator: (
-      base: CSSObjectWithLabel,
-      { selectProps }: DropdownIndicatorProps<CustomOption, boolean, GroupBase<CustomOption>>,
-    ) => ({
-      ...base,
-      transform: selectProps.menuIsOpen ? "rotate(-180deg)" : "rotate(0)",
-      transition: "all .2s ease",
-      color: selectProps.isDisabled ? base.color : formElements.input.iconColor,
-      "&:hover": { color: formElements.input.iconHoverColor, cursor: "pointer" },
-    }),
-    clearIndicator: (
-      base: CSSObjectWithLabel,
-      { selectProps }: ClearIndicatorProps<CustomOption, boolean, GroupBase<CustomOption>>,
-    ) => ({
-      ...base,
-      color: selectProps.isDisabled ? base.color : formElements.input.iconColor,
-      "&:hover": { color: formElements.input.iconHoverColor, cursor: "pointer" },
-    }),
-    control: (
-      base: CSSObjectWithLabel,
-      { isFocused, isDisabled }: ControlProps<CustomOption, boolean, GroupBase<CustomOption>>,
-    ) => {
-      const border = isDisabled
-        ? `1px solid ${formElements.input.disabledBorder}`
-        : isFocused
-        ? `1px solid ${formElements.input.borderFocusColor}`
-        : // default case, set border equal to the background color to avoid pixel shift
-          `1px solid ${formElements.input.background}`;
-      const backgroundColor = isDisabled
-        ? formElements.input.disabledBackground
-        : isFocused
-        ? formElements.input.backgroundFocus
-        : formElements.input.background;
+  const styles = resolveStyles(size, hasInnerSearch);
+  const formatCreateLabel = (inputValue: string) => (
+    <div>
+      <Tooltip content={creatableTooltip}>
+        <div className="select-create-label">
+          <span>{inputValue} </span>
+          <span>
+            <AddOperatorSVG color="black" height={12} />
+          </span>
+        </div>
+      </Tooltip>
+    </div>
+  );
 
-      return {
-        ...base,
-        border,
-        backgroundColor,
-        boxShadow: "none",
-        borderRadius: "5px",
-        "&:hover": { border: `1px solid ${formElements.input.borderHoverColor}` },
-        color: !isDisabled ? base.color : formElements.input.disabledColor,
-      };
+  const customSelectProps = {
+    ...rest,
+    ref: forwardedRef,
+    styles,
+    blurInputOnSelect: !isMulti,
+    closeMenuOnSelect: !isMulti,
+    isMulti,
+    classNames: {
+      control: () => containerClassNames(status, size),
+      option: () => `option-${size}`,
     },
-    multiValueLabel: (
-      base: CSSObjectWithLabel,
-      { isDisabled }: MultiValueProps<CustomOption, boolean, GroupBase<CustomOption>>,
-    ) => ({
-      ...base,
-      color: !isDisabled ? base.color : formElements.input.disabledColor,
-    }),
 
-    multiValueRemove: (base: CSSObjectWithLabel) => ({
-      ...base,
-      ":hover": {
-        cursor: "pointer",
-        color: formElements.input.iconHoverColor,
-      },
-    }),
-    option: (
-      base: CSSObjectWithLabel,
-      { isSelected, isFocused }: OptionProps<CustomOption, boolean, GroupBase<CustomOption>>,
-    ) => ({
-      ...base,
-      backgroundColor: isSelected
-        ? formElements.input.borderFocus
-        : !isFocused
-        ? "transparent"
-        : formElements.input.hoverColor,
-      color: isSelected ? formElements.input.textColorFocused : "inherit",
-      borderRadius: hasInnerSearch ? "5px" : "none",
-      "&:hover": {
-        color: isSelected ? formElements.input.textColorFocused : formElements.input.textColor,
-        backgroundColor: isFocused
-          ? !isSelected
-            ? formElements.input.hoverColor
-            : formElements.input.borderFocus
-          : "transparent",
-      },
-    }),
-    menuList: (base: CSSObjectWithLabel) => ({
-      ...base,
-      margin: "0.5rem 0",
-      padding: "0",
-      "::-webkit-scrollbar": {
-        width: "5px",
-      },
-      "::-webkit-scrollbar-track": {
-        background: scrollbar.background,
-        borderRadius: "10px",
-      },
-      "::-webkit-scrollbar-thumb": {
-        backgroundColor: scrollbar.color,
-        borderRadius: "10px",
-      },
-    }),
-    indicatorsContainer: (base: CSSObjectWithLabel) => ({
-      ...base,
-      // it is important to set the indicator size to the same height as the input to avoid centering issues
-      height: `calc(${inputHeight[size]} - 2px)`,
-    }),
+    components: {
+      IndicatorSeparator: () => null,
+      MenuList: CustomMenuList,
+      ValueContainer: (
+        props: PropsWithChildren<
+          ValueContainerProps<CustomOption, boolean, GroupBase<CustomOption>>
+        >,
+      ) => CustomValueContainer({ ...props, isFocused }),
+    },
+    formatCreateLabel,
+    isSearchable: false,
+    maxMenuHeight,
+    menuIsOpen: isFocused || undefined,
+    options,
+    placeholder: outerPlaceholder,
+    inputValue: inputValue,
+    onMenuInputFocus: () => setIsFocused(true),
+    onMouseDown: (e: MouseEvent) => e.stopPropagation(),
+    innerPlaceholder,
+    hasInnerSearch,
+    onChange: (
+      option: MultiValue<CustomOption> | SingleValue<CustomOption>,
+      action: ActionMeta<CustomOption>,
+    ) => {
+      setIsFocused(false);
+      onChange && onChange(option, action);
+    },
+    onInputChange: (val: string) => setInputValue(val),
   };
 
   useClickAway(
@@ -203,7 +138,14 @@ const Select: ForwardRefRenderFunction<
   return (
     <div
       css={(theme): SerializedStyles =>
-        selectContainer(theme, { size, inline, isInlineFlex, minWidth, maxWidth, hasInnerSearch })
+        selectContainer(theme, {
+          size,
+          inline,
+          isInlineFlex,
+          minWidth,
+          maxWidth,
+          hasInnerSearch,
+        })
       }
     >
       {hasLabel && (
@@ -212,43 +154,11 @@ const Select: ForwardRefRenderFunction<
         </Label>
       )}
       <div className="select-input-wrapper" data-testid="custom-react-select" ref={containerRef}>
-        <ReactSelect
-          {...rest}
-          ref={forwardedRef}
-          // react-select props
-          blurInputOnSelect={!isMulti}
-          closeMenuOnSelect={!isMulti}
-          isMulti={isMulti}
-          classNames={{
-            control: () => containerClassNames(status, size),
-            option: () => `option-${size}`,
-          }}
-          components={{
-            IndicatorSeparator: () => null,
-            MenuList: CustomMenuList,
-            ValueContainer: (props) => CustomValueContainer({ ...props, isFocused }),
-          }}
-          isSearchable={false}
-          maxMenuHeight={maxMenuHeight}
-          menuIsOpen={isFocused || undefined}
-          options={options}
-          placeholder={outerPlaceholder}
-          styles={styles}
-          inputValue={inputValue}
-          // custom props
-          {...{
-            onMenuInputFocus: () => setIsFocused(true),
-            onMouseDown: (e: MouseEvent) => e.stopPropagation(),
-            innerPlaceholder,
-            hasInnerSearch,
-          }}
-          // events
-          onChange={(option, action) => {
-            setIsFocused(false);
-            onChange && onChange(option, action);
-          }}
-          onInputChange={(val) => setInputValue(val)}
-        />
+        {isCreatable ? (
+          <CreatableSelect {...customSelectProps} createOptionPosition="first" />
+        ) : (
+          <ReactSelect {...customSelectProps} />
+        )}
       </div>
     </div>
   );

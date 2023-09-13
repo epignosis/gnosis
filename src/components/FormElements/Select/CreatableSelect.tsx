@@ -22,14 +22,16 @@ const Select: ForwardRefRenderFunction<
     isMulti = false,
     inline = false,
     isInlineFlex = false,
+    creatableLabel = "Create new...",
     maxMenuHeight = MAX_MENU_HEIGHT,
     minWidth = MIN_WIDTH,
     maxWidth = MAX_WIDTH,
     ...rest
   } = props;
-  const hasLabel = Boolean(label);
 
+  const hasLabel = Boolean(label);
   const styles = resolveStyles(size, hasInnerSearch);
+  const formatCreateLabel = (inputValue: string) => `${creatableLabel} ${inputValue}`;
 
   return (
     <div
@@ -65,6 +67,7 @@ const Select: ForwardRefRenderFunction<
             IndicatorSeparator: () => null,
             MenuList: CustomMenuList,
           }}
+          formatCreateLabel={formatCreateLabel}
           maxMenuHeight={maxMenuHeight}
           styles={styles}
         />

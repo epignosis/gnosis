@@ -37,6 +37,7 @@ export type CustomSelectProps<
   isInlineFlex?: boolean;
   minWidth?: string;
   maxWidth?: string;
+  creatableLabel?: string;
 };
 
 export type CustomMenuListProps<

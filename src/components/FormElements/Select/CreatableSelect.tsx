@@ -22,7 +22,7 @@ const Select: ForwardRefRenderFunction<
     isMulti = false,
     inline = false,
     isInlineFlex = false,
-    creatableLabel = "Create new...",
+    creatableLabel = "Create",
     maxMenuHeight = MAX_MENU_HEIGHT,
     minWidth = MIN_WIDTH,
     maxWidth = MAX_WIDTH,

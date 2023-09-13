@@ -3,10 +3,11 @@ import { SelectInstance } from "react-select";
 import CreatableSelect from "react-select/creatable";
 import { SerializedStyles } from "@emotion/react";
 import Label from "../Label/Label";
-import { containerClassNames, resolveStyles, selectContainer } from "./styles";
+import { resolveStyles, selectContainer } from "./styles";
 import CustomMenuList from "./components/CustomMenuList";
 import { CustomOption, CustomSelectProps } from "./types";
 import { MAX_MENU_HEIGHT, MAX_WIDTH, MIN_WIDTH } from "./constants";
+import { containerClassNames } from "./heleprs";
 
 const Select: ForwardRefRenderFunction<
   SelectInstance<CustomOption>,

@@ -5,7 +5,7 @@ import { SerializedStyles } from "@emotion/react";
 import { useClickAway } from "ahooks";
 import Label from "../Label/Label";
 import CustomValueContainer from "./components/CustomValueContainer";
-import { containerClassNames, resolveStyles, selectContainer } from "./styles";
+import { resolveStyles, selectContainer } from "./styles";
 import CustomMenuList from "./components/CustomMenuList";
 import { CustomOption, CustomSelectProps } from "./types";
 import {
@@ -15,6 +15,7 @@ import {
   MAX_WIDTH,
   OUTER_PLACEHOLDER,
 } from "./constants";
+import { containerClassNames } from "./heleprs";
 
 const Select: ForwardRefRenderFunction<
   SelectInstance<CustomOption>,

@@ -10,7 +10,6 @@ import {
   PlaceholderProps,
   StylesConfig,
 } from "react-select";
-import classNames from "classnames";
 import { InputSize } from "../Input/Input";
 import { inputHeight } from "../styles";
 import { CustomOption } from "./types";
@@ -204,10 +203,3 @@ export const resolveStyles = (
     height: `calc(${inputHeight[size]} - 2px)`,
   }),
 });
-
-export const containerClassNames = (status: string, size: string) =>
-  classNames({
-    [`control-${size}`]: true,
-    valid: status === "valid",
-    error: status === "error",
-  });

@@ -102,6 +102,18 @@ export const customMenuList = ({
   padding: ${hasInnerSearch ? "0.75rem" : "0"};
 `;
 
+export const customMenuAsync = (): SerializedStyles => css`
+  padding: 0.75rem;
+
+  .loader-container {
+    margin-top: 1rem;
+  }
+
+  .text-container {
+    margin-top: 1rem;
+  }
+`;
+
 export const resolveStyles = (
   size: string,
   hasInnerSearch: boolean,

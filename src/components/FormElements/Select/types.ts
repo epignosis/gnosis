@@ -7,6 +7,18 @@ export type CustomOption = {
   value: string;
 };
 
+export type SelectType = "select" | "creatable" | "async";
+
+type AsyncOptions = {
+  onAsyncSearchChange?: (value: string) => void;
+  initialText?: string | JSX.Element;
+  noOptionsText?: string | JSX.Element;
+  status?: {
+    isLoading: boolean;
+    error: boolean;
+  };
+};
+
 // Here we are extending the react-select types to add <Select..
 declare module "react-select/dist/declarations/src/Select" {
   export interface Props<
@@ -18,6 +30,7 @@ declare module "react-select/dist/declarations/src/Select" {
     hasInnerSearch?: boolean;
     isMulti: IsMulti; // this is required to relieve TS warning
     group?: Group; // this is required to relieve TS warning
+    asyncOptions?: AsyncOptions;
     onMenuInputFocus?: () => void;
   }
 }
@@ -28,6 +41,7 @@ export type CustomSelectProps<
   IsMulti extends boolean = false,
   Group extends GroupBase<Option> = GroupBase<Option>,
 > = Props<Option, IsMulti, Group> & {
+  type?: SelectType;
   label?: string;
   size?: "sm" | "md" | "lg";
   inline?: boolean;
@@ -37,8 +51,8 @@ export type CustomSelectProps<
   isInlineFlex?: boolean;
   minWidth?: string;
   maxWidth?: string;
-  isCreatable?: boolean;
   creatableTooltip?: string;
+  asyncOptions?: AsyncOptions;
 };
 
 export type CustomMenuListProps<
@@ -48,6 +62,7 @@ export type CustomMenuListProps<
 > = MenuListProps<Option, IsMulti, Group> & {
   innerPlaceholder?: string;
   hasInnerSearch?: boolean;
+  asyncOptions?: AsyncOptions;
 };
 
 export type CustomValueContainerProps<

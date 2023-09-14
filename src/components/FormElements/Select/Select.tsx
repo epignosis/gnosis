@@ -14,8 +14,8 @@ import ReactSelect, {
   SingleValue,
   ValueContainerProps,
 } from "react-select";
-import CreatableSelect from "react-select/creatable";
 import { SerializedStyles } from "@emotion/react";
+import CreatableSelect from "react-select/creatable";
 import { useClickAway } from "ahooks";
 import Label from "../Label/Label";
 import Tooltip from "../../Tooltip/Tooltip";
@@ -31,7 +31,8 @@ import {
   MAX_WIDTH,
   OUTER_PLACEHOLDER,
 } from "./constants";
-import { containerClassNames } from "./heleprs";
+import { containerClassNames } from "./helpers";
+import CustomMenuAsync from "./components/CustomMenuAsync";
 
 const Select: ForwardRefRenderFunction<
   SelectInstance<CustomOption>,
@@ -39,6 +40,7 @@ const Select: ForwardRefRenderFunction<
 > = (props, forwardedRef) => {
   const {
     id = "",
+    type = "select",
     label = "",
     options = [],
     size = "md",
@@ -47,7 +49,6 @@ const Select: ForwardRefRenderFunction<
     isInlineFlex = false,
     hasInnerSearch = false,
     isMulti = false,
-    isCreatable = false,
     creatableTooltip = "Create",
     maxMenuHeight = MAX_MENU_HEIGHT,
     innerPlaceholder = INNER_PLACEHOLDER,
@@ -153,12 +154,30 @@ const Select: ForwardRefRenderFunction<
           {label}
         </Label>
       )}
+
       <div className="select-input-wrapper" data-testid="custom-react-select" ref={containerRef}>
-        {isCreatable ? (
-          <CreatableSelect {...customSelectProps} createOptionPosition="first" />
-        ) : (
-          <ReactSelect {...customSelectProps} />
-        )}
+        {(() => {
+          switch (type) {
+            case "async": {
+              const { asyncOptions } = customSelectProps;
+              const noOptionMessage = asyncOptions?.noOptionsText ?? "No match found";
+
+              return (
+                <ReactSelect
+                  {...customSelectProps}
+                  noOptionsMessage={(): string | JSX.Element => noOptionMessage}
+                  components={{ ...customSelectProps.components, MenuList: CustomMenuAsync }}
+                />
+              );
+            }
+
+            case "creatable":
+              return <CreatableSelect {...customSelectProps} createOptionPosition="first" />;
+
+            default:
+              return <ReactSelect {...customSelectProps} />;
+          }
+        })()}
       </div>
     </div>
   );

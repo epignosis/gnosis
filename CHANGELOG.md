@@ -1,3 +1,10 @@
+## [5.3.2](https://github.com/epignosis/gnosis/compare/v5.3.1...v5.3.2) (2023-09-14)
+
+
+### Bug Fixes
+
+* centering tooltip arrow ([#208](https://github.com/epignosis/gnosis/issues/208)) ([68c9216](https://github.com/epignosis/gnosis/commit/68c9216d5a8c4b7b631bd24c3707db1505477d01))
+
 ## [5.3.1](https://github.com/epignosis/gnosis/compare/v5.3.0...v5.3.1) (2023-09-14)
 
 # [5.3.0](https://github.com/epignosis/gnosis/compare/v5.2.4...v5.3.0) (2023-09-13)

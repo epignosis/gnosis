@@ -14,6 +14,7 @@ const Tooltip: FC<TooltipProps> = ({
   as = "div",
   placement = "top",
   maxWidth = 350,
+  interactive = true,
   ...rest
 }) => {
   const Tag = as;
@@ -21,6 +22,7 @@ const Tooltip: FC<TooltipProps> = ({
   return (
     <Tippy
       placement={placement}
+      interactive={interactive}
       render={(attrs): ReactNode => (
         <div className="tooltip" css={(theme) => tooltipContainer(maxWidth, theme)} {...attrs}>
           {content}

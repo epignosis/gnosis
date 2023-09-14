@@ -14,19 +14,29 @@ export const tooltipContainer = (
     font-size: ${typeScaleSizes["2xs"]};
 
     &.tooltip[data-placement^="top"] > #arrow {
+      margin-left: -2px;
       bottom: -1px;
     }
 
     &.tooltip[data-placement^="bottom"] > #arrow {
       top: -1px;
+      margin-left: 3px;
     }
 
     &.tooltip[data-placement^="left"] > #arrow {
       right: -4px;
+      margin-top: -2px;
     }
 
     &.tooltip[data-placement^="right"] > #arrow {
       left: -4px;
+      margin-top: 3px;
+    }
+
+    #arrow {
+      svg {
+        text-align: center;
+      }
     }
 
     #arrow,

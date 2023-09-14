@@ -100,6 +100,14 @@ export const customMenuList = ({
   hasInnerSearch: boolean;
 }): SerializedStyles => css`
   padding: ${hasInnerSearch ? "0.75rem" : "0"};
+
+  .loader-container {
+    margin-top: 1rem;
+  }
+
+  .text-container {
+    margin-top: 1rem;
+  }
 `;
 
 export const resolveStyles = (

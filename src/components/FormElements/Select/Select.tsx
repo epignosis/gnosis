@@ -14,8 +14,8 @@ import ReactSelect, {
   SingleValue,
   ValueContainerProps,
 } from "react-select";
-import CreatableSelect from "react-select/creatable";
 import { SerializedStyles } from "@emotion/react";
+import CreatableSelect from "react-select/creatable";
 import { useClickAway } from "ahooks";
 import Label from "../Label/Label";
 import Tooltip from "../../Tooltip/Tooltip";
@@ -31,7 +31,7 @@ import {
   MAX_WIDTH,
   OUTER_PLACEHOLDER,
 } from "./constants";
-import { containerClassNames } from "./heleprs";
+import { containerClassNames } from "./helpers";
 
 const Select: ForwardRefRenderFunction<
   SelectInstance<CustomOption>,
@@ -39,6 +39,7 @@ const Select: ForwardRefRenderFunction<
 > = (props, forwardedRef) => {
   const {
     id = "",
+    type = "select",
     label = "",
     options = [],
     size = "md",
@@ -47,7 +48,6 @@ const Select: ForwardRefRenderFunction<
     isInlineFlex = false,
     hasInnerSearch = false,
     isMulti = false,
-    isCreatable = false,
     creatableTooltip = "Create",
     maxMenuHeight = MAX_MENU_HEIGHT,
     innerPlaceholder = INNER_PLACEHOLDER,
@@ -63,6 +63,7 @@ const Select: ForwardRefRenderFunction<
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
+  const innerSearchEnabled = type === "async" ? true : hasInnerSearch;
   const styles = resolveStyles(size, hasInnerSearch);
   const formatCreateLabel = (inputValue: string) => (
     <div>
@@ -88,7 +89,6 @@ const Select: ForwardRefRenderFunction<
       control: () => containerClassNames(status, size),
       option: () => `option-${size}`,
     },
-
     components: {
       IndicatorSeparator: () => null,
       MenuList: CustomMenuList,
@@ -108,7 +108,8 @@ const Select: ForwardRefRenderFunction<
     onMenuInputFocus: () => setIsFocused(true),
     onMouseDown: (e: MouseEvent) => e.stopPropagation(),
     innerPlaceholder,
-    hasInnerSearch,
+    hasInnerSearch: innerSearchEnabled,
+    type,
     onChange: (
       option: MultiValue<CustomOption> | SingleValue<CustomOption>,
       action: ActionMeta<CustomOption>,
@@ -153,8 +154,9 @@ const Select: ForwardRefRenderFunction<
           {label}
         </Label>
       )}
+
       <div className="select-input-wrapper" data-testid="custom-react-select" ref={containerRef}>
-        {isCreatable ? (
+        {type === "creatable" ? (
           <CreatableSelect {...customSelectProps} createOptionPosition="first" />
         ) : (
           <ReactSelect {...customSelectProps} />

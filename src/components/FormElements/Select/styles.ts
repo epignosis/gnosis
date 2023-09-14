@@ -100,10 +100,6 @@ export const customMenuList = ({
   hasInnerSearch: boolean;
 }): SerializedStyles => css`
   padding: ${hasInnerSearch ? "0.75rem" : "0"};
-`;
-
-export const customMenuAsync = (): SerializedStyles => css`
-  padding: 0.75rem;
 
   .loader-container {
     margin-top: 1rem;

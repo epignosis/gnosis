@@ -12,14 +12,13 @@ export type SelectType = "select" | "creatable" | "async";
 type AsyncOptions = {
   onAsyncSearchChange?: (value: string) => void;
   initialText?: string | JSX.Element;
-  noOptionsText?: string | JSX.Element;
   status?: {
     isLoading: boolean;
     error: boolean;
   };
 };
 
-// Here we are extending the react-select types to add <Select..
+// Here we are extending the react-select types with DS Select custom types to can access theme inside the react-select components
 declare module "react-select/dist/declarations/src/Select" {
   export interface Props<
     Option extends CustomOption,
@@ -31,11 +30,13 @@ declare module "react-select/dist/declarations/src/Select" {
     isMulti: IsMulti; // this is required to relieve TS warning
     group?: Group; // this is required to relieve TS warning
     asyncOptions?: AsyncOptions;
+    type?: SelectType;
     onMenuInputFocus?: () => void;
   }
 }
 
-// here we are adding our custom props to the react-select types
+// Here we are adding our custom props to the react-select types
+// These custom types used from the DS Select component
 export type CustomSelectProps<
   Option extends CustomOption,
   IsMulti extends boolean = false,

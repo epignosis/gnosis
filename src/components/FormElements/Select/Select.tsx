@@ -32,7 +32,6 @@ import {
   OUTER_PLACEHOLDER,
 } from "./constants";
 import { containerClassNames } from "./helpers";
-import CustomMenuAsync from "./components/CustomMenuAsync";
 
 const Select: ForwardRefRenderFunction<
   SelectInstance<CustomOption>,
@@ -64,6 +63,7 @@ const Select: ForwardRefRenderFunction<
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
+  const innerSearchEnabled = type === "async" ? true : hasInnerSearch;
   const styles = resolveStyles(size, hasInnerSearch);
   const formatCreateLabel = (inputValue: string) => (
     <div>
@@ -89,7 +89,6 @@ const Select: ForwardRefRenderFunction<
       control: () => containerClassNames(status, size),
       option: () => `option-${size}`,
     },
-
     components: {
       IndicatorSeparator: () => null,
       MenuList: CustomMenuList,
@@ -109,7 +108,8 @@ const Select: ForwardRefRenderFunction<
     onMenuInputFocus: () => setIsFocused(true),
     onMouseDown: (e: MouseEvent) => e.stopPropagation(),
     innerPlaceholder,
-    hasInnerSearch,
+    hasInnerSearch: innerSearchEnabled,
+    type,
     onChange: (
       option: MultiValue<CustomOption> | SingleValue<CustomOption>,
       action: ActionMeta<CustomOption>,
@@ -156,28 +156,11 @@ const Select: ForwardRefRenderFunction<
       )}
 
       <div className="select-input-wrapper" data-testid="custom-react-select" ref={containerRef}>
-        {(() => {
-          switch (type) {
-            case "async": {
-              const { asyncOptions } = customSelectProps;
-              const noOptionMessage = asyncOptions?.noOptionsText ?? "No match found";
-
-              return (
-                <ReactSelect
-                  {...customSelectProps}
-                  noOptionsMessage={(): string | JSX.Element => noOptionMessage}
-                  components={{ ...customSelectProps.components, MenuList: CustomMenuAsync }}
-                />
-              );
-            }
-
-            case "creatable":
-              return <CreatableSelect {...customSelectProps} createOptionPosition="first" />;
-
-            default:
-              return <ReactSelect {...customSelectProps} />;
-          }
-        })()}
+        {type === "creatable" ? (
+          <CreatableSelect {...customSelectProps} createOptionPosition="first" />
+        ) : (
+          <ReactSelect {...customSelectProps} />
+        )}
       </div>
     </div>
   );

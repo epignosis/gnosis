@@ -19,7 +19,9 @@ exports[`<Chip /> matches snapshot 1`] = `
         />
       </span>
     </button>
-    <div>
+    <div
+      aria-expanded="false"
+    >
       <div
         class="has-overflow"
       >

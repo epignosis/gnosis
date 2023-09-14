@@ -1,3 +1,14 @@
+## [5.3.1](https://github.com/epignosis/gnosis/compare/v5.3.0...v5.3.1) (2023-09-14)
+
+# [5.3.0](https://github.com/epignosis/gnosis/compare/v5.2.4...v5.3.0) (2023-09-13)
+
+
+### Features
+
+* Add creatable select component ([#206](https://github.com/epignosis/gnosis/issues/206)) ([56be846](https://github.com/epignosis/gnosis/commit/56be84616f7166d25c4e5e7f6361fa9c00a90556))
+
+## [5.2.4](https://github.com/epignosis/gnosis/compare/v5.2.3...v5.2.4) (2023-09-11)
+
 ## [5.2.3](https://github.com/epignosis/gnosis/compare/v5.2.2...v5.2.3) (2023-09-07)
 
 ## [5.2.2](https://github.com/epignosis/gnosis/compare/v5.2.1...v5.2.2) (2023-09-06)

@@ -5,6 +5,7 @@ import Input from "../../Input/Input";
 import { searchInputContainer } from "../../Input/styles";
 import { customMenuList } from "../styles";
 import { CustomMenuListProps, CustomOption } from "../types";
+import Loader from "../../../Loaders/Loader";
 
 const { MenuList } = components;
 
@@ -16,12 +17,46 @@ const CustomMenuList: FC<CustomMenuListProps<CustomOption, boolean>> = (customMe
     hasInnerSearch = false,
     inputValue,
     onMenuInputFocus,
+    asyncOptions,
+    type,
   } = selectProps;
+
+  const { onAsyncSearchChange, status, initialText = "" } = asyncOptions ?? {};
+  const isAsync = type === "async";
+  const showLoading = isAsync ? Boolean(status?.isLoading) : false;
+  const showMenuList = isAsync ? Boolean(!status?.isLoading && inputValue) : true;
+  const showInitialText = isAsync ? Boolean(!status?.isLoading && !inputValue) : true;
 
   const ariaAttributes = {
     "aria-autocomplete": "list" as const,
     "aria-label": selectProps["aria-label"],
     "aria-labelledby": selectProps["aria-labelledby"],
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    e.stopPropagation();
+    const value = e.target.value;
+    onInputChange(value, {
+      action: "input-change",
+      prevInputValue: inputValue,
+    });
+
+    onAsyncSearchChange && onAsyncSearchChange(value);
+  };
+
+  const handleOnMouseDown = (e: ReactMouseEvent<HTMLInputElement>) => {
+    e.stopPropagation();
+    const input = e.target as HTMLInputElement;
+    input.focus();
+  };
+
+  const handleOnClear = (): void => {
+    onInputChange("", {
+      action: "input-change",
+      prevInputValue: inputValue,
+    });
+
+    onAsyncSearchChange && onAsyncSearchChange("");
   };
 
   return (
@@ -38,31 +73,22 @@ const CustomMenuList: FC<CustomMenuListProps<CustomOption, boolean>> = (customMe
             value={inputValue}
             showVerticalLine={false}
             isClearable={true}
-            onChange={(e) => {
-              e.stopPropagation();
-              onInputChange(e.target.value, {
-                action: "input-change",
-                prevInputValue: inputValue,
-              });
-            }}
-            onMouseDown={(e: ReactMouseEvent<HTMLInputElement>) => {
-              e.stopPropagation();
-              const input = e.target as HTMLInputElement;
-              input.focus();
-            }}
-            onClear={() => {
-              onInputChange("", {
-                action: "input-change",
-                prevInputValue: inputValue,
-              });
-            }}
+            onChange={handleInputChange}
+            onMouseDown={handleOnMouseDown}
+            onClear={handleOnClear}
             onFocus={onMenuInputFocus}
             {...ariaAttributes}
           />
         </div>
       )}
 
-      <MenuList {...props} selectProps={selectProps} />
+      {showLoading && (
+        <div className="loader-container">
+          <Loader size="md" />
+        </div>
+      )}
+      {showMenuList && <MenuList {...props} selectProps={selectProps} />}
+      {showInitialText && <div className="text-container">{initialText}</div>}
     </div>
   );
 };

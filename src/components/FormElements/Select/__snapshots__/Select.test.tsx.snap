@@ -3,7 +3,7 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="css-krq6jl-selectContainer-selectContainer"
+    class="css-1qoxapi-selectContainer-selectContainer"
   >
     <label
       aria-labelledby="select-id"
@@ -93,7 +93,7 @@ exports[`<Select /> matches snapshot 1`] = `
           id="react-select-3-listbox"
         >
           <div
-            class="css-1w7wtdk-customMenuList-customMenuList"
+            class="css-ci9plw-customMenuList-customMenuList"
           >
             <div
               class=" css-17690ek-MenuList"
@@ -123,6 +123,9 @@ exports[`<Select /> matches snapshot 1`] = `
                 age
               </div>
             </div>
+            <div
+              class="text-container"
+            />
           </div>
         </div>
       </div>

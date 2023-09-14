@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Story } from "@storybook/react";
-import Select from "./Select";
 import { CustomSelectProps, CustomOption } from "./types";
 import { defaultOptions, groupedOptions } from "./data";
+import Select from "./Select";
 
 export default {
   title: "components/Form Elements/Select",
@@ -95,4 +95,57 @@ export const Disabled = Template.bind({ options: defaultOptions, isDisabled: tru
 Disabled.args = {
   options: defaultOptions,
   isDisabled: true,
+};
+
+export const withValueCreation = Template.bind({});
+
+withValueCreation.args = {
+  options: defaultOptions,
+  isMulti: true,
+  isClearable: true,
+  hasInnerSearch: true,
+  type: "creatable",
+};
+
+export const AsyncSelect: Story<CustomSelectProps<CustomOption, boolean>> = (args) => {
+  const [options, setOptions] = useState<CustomOption[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  const onAsyncSearchChange = (value: string): Promise<void> => {
+    setLoading(true);
+    return new Promise<void>((resolve) => {
+      // Simulate an async operation with a setTimeout
+      setTimeout(() => {
+        resolve();
+        setLoading(false);
+
+        const foundData = defaultOptions.filter((data) => data.value === value);
+
+        setOptions(foundData?.length > 0 ? foundData : []);
+      }, 3000);
+    });
+  };
+
+  return (
+    <>
+      <h2>
+        In order for the search to work corerctly, search on of the following: java, python, ruby,
+        php, c
+      </h2>
+
+      <Select
+        {...args}
+        options={options}
+        type="async"
+        asyncOptions={{
+          onAsyncSearchChange,
+          initialText: "Type 3 or more characters",
+          status: {
+            isLoading: loading,
+            error: false,
+          },
+        }}
+      />
+    </>
+  );
 };

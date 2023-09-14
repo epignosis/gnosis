@@ -33,12 +33,6 @@ export const tooltipContainer = (
       margin-top: 3px;
     }
 
-    #arrow {
-      svg {
-        text-align: center;
-      }
-    }
-
     #arrow,
     #arrow::before {
       position: absolute;

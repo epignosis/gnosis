@@ -13,7 +13,9 @@ exports[`<Table> matches snapshot 1`] = `
             class="header-cell header1 false"
             style="width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="width: auto;"
               >
@@ -27,7 +29,9 @@ exports[`<Table> matches snapshot 1`] = `
             class="header-cell header2 false"
             style="width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="width: auto;"
               >
@@ -41,7 +45,9 @@ exports[`<Table> matches snapshot 1`] = `
             class="header-cell header3 false"
             style="width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="width: auto;"
               >
@@ -55,7 +61,9 @@ exports[`<Table> matches snapshot 1`] = `
             class="header-cell header4 false"
             style="width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="width: auto;"
               >
@@ -69,7 +77,9 @@ exports[`<Table> matches snapshot 1`] = `
             class="header-cell header5 false"
             style="width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="width: auto;"
               >
@@ -88,7 +98,9 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="max-width: auto;"
               />
@@ -97,7 +109,9 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="max-width: auto;"
               />
@@ -106,7 +120,9 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="max-width: auto;"
               />
@@ -115,7 +131,9 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="max-width: auto;"
               />
@@ -124,56 +142,9 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div>
-              <span
-                style="max-width: auto;"
-              />
-            </div>
-          </td>
-        </tr>
-        <tr
-          class=""
-        >
-          <td
-            style="max-width: auto;"
-          >
-            <div>
-              <span
-                style="max-width: auto;"
-              />
-            </div>
-          </td>
-          <td
-            style="max-width: auto;"
-          >
-            <div>
-              <span
-                style="max-width: auto;"
-              />
-            </div>
-          </td>
-          <td
-            style="max-width: auto;"
-          >
-            <div>
-              <span
-                style="max-width: auto;"
-              />
-            </div>
-          </td>
-          <td
-            style="max-width: auto;"
-          >
-            <div>
-              <span
-                style="max-width: auto;"
-              />
-            </div>
-          </td>
-          <td
-            style="max-width: auto;"
-          >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="max-width: auto;"
               />
@@ -186,7 +157,9 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="max-width: auto;"
               />
@@ -195,7 +168,9 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="max-width: auto;"
               />
@@ -204,7 +179,9 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="max-width: auto;"
               />
@@ -213,7 +190,9 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="max-width: auto;"
               />
@@ -222,7 +201,9 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="max-width: auto;"
               />
@@ -235,7 +216,9 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="max-width: auto;"
               />
@@ -244,7 +227,9 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="max-width: auto;"
               />
@@ -253,7 +238,9 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="max-width: auto;"
               />
@@ -262,7 +249,9 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="max-width: auto;"
               />
@@ -271,7 +260,68 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           >
-            <div>
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr
+          class=""
+        >
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
+              <span
+                style="max-width: auto;"
+              />
+            </div>
+          </td>
+          <td
+            style="max-width: auto;"
+          >
+            <div
+              aria-expanded="false"
+            >
               <span
                 style="max-width: auto;"
               />

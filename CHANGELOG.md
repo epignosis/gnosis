@@ -1,3 +1,10 @@
+## [5.3.3](https://github.com/epignosis/gnosis/compare/v5.3.2...v5.3.3) (2023-09-18)
+
+
+### Bug Fixes
+
+* interactive tooltip fix ([#209](https://github.com/epignosis/gnosis/issues/209)) ([ccb68c0](https://github.com/epignosis/gnosis/commit/ccb68c0c61bf70a99c57087d39161bfc00f6a5f9))
+
 ## [5.3.2](https://github.com/epignosis/gnosis/compare/v5.3.1...v5.3.2) (2023-09-14)
 
 

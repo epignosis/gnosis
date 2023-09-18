@@ -23,6 +23,7 @@ const Tooltip: FC<TooltipProps> = ({
     <Tippy
       placement={placement}
       interactive={interactive}
+      appendTo={document.body}
       render={(attrs): ReactNode => (
         <div className="tooltip" css={(theme) => tooltipContainer(maxWidth, theme)} {...attrs}>
           {content}

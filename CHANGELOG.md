@@ -1,3 +1,10 @@
+# [5.4.0](https://github.com/epignosis/gnosis/compare/v5.3.4...v5.4.0) (2023-09-19)
+
+
+### Features
+
+* **table component:** add autohide row selection ([#211](https://github.com/epignosis/gnosis/issues/211)) ([8d0227c](https://github.com/epignosis/gnosis/commit/8d0227cc2ac8389c2046a46611c7698e072765f1))
+
 ## [5.3.4](https://github.com/epignosis/gnosis/compare/v5.3.3...v5.3.4) (2023-09-19)
 
 

@@ -12,7 +12,7 @@ const rowClassnames = (
   allRowsSelected: boolean,
   autohide: boolean,
 ): string =>
-  classNames("select-all-wrapper", {
+  classNames({
     selected: isSelectAllChecked || allRowsSelected,
     "autohide-cell": autohide,
   });

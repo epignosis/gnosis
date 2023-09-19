@@ -3,12 +3,14 @@
 exports[`<Table> matches snapshot 1`] = `
 <div>
   <div
-    class="css-qc60xe-tableContainer-tableContainer"
+    class="css-13omxwt-tableContainer-tableContainer"
     data-testid="table"
   >
     <table>
       <thead>
-        <tr>
+        <tr
+          class=""
+        >
           <th
             class="header-cell header1 false"
             style="width: auto;"

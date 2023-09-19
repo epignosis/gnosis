@@ -13,8 +13,14 @@ const rowClassnames = (isSelected: boolean, callback: boolean): string =>
     link: callback,
   });
 
+const checkboxWrapperClassnames = (autohide: boolean): string =>
+  classNames("selectable-cell", {
+    "autohide-cell": autohide,
+  });
+
 const Body: FC<ChildrenProps> = ({
   selectable,
+  autohide = false,
   state,
   dispatch,
   onRowClick,
@@ -67,7 +73,7 @@ const Body: FC<ChildrenProps> = ({
                 onMouseLeave={(): void => handleRowHover(null)}
               >
                 {selectable && (
-                  <Cell key={row.id} className="selectable-cell">
+                  <Cell key={row.id} className={checkboxWrapperClassnames(autohide)}>
                     <Checkbox
                       id={`entry-${row.id}`}
                       name={`entry-${row.id}`}

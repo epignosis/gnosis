@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import classNames from "classnames";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
 import { IconChevronDownSVG, IconChevronUpSVG } from "../../../icons/index";
 import { Column, Sorting } from "../types";
@@ -6,7 +7,23 @@ import { ChildrenProps } from "../Table";
 import { Actions } from "../constants";
 import Cell from "./Cell";
 
-const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSortingChanged }) => {
+const rowClassnames = (
+  isSelectAllChecked: boolean,
+  allRowsSelected: boolean,
+  autohide: boolean,
+): string =>
+  classNames("select-all-wrapper", {
+    selected: isSelectAllChecked || allRowsSelected,
+    "autohide-cell": autohide,
+  });
+
+const Header: FC<ChildrenProps> = ({
+  selectable = false,
+  autohide = false,
+  state,
+  dispatch,
+  onSortingChanged,
+}) => {
   const { rows, columns, selected, sorting } = state;
   const selectedIds = selected.map((entry) => entry.id);
   const rowIds = rows.map((row) => row.id);
@@ -38,7 +55,7 @@ const Header: FC<ChildrenProps> = ({ selectable = false, state, dispatch, onSort
 
   return (
     <thead>
-      <tr>
+      <tr className={rowClassnames(isSelectAllChecked, allRowsSelected, autohide)}>
         {selectable && (
           <Cell as="th" key={`select-all-${isSelectAllChecked}`} className="selectable-cell">
             <Checkbox

@@ -4,7 +4,7 @@ import { mq } from "@theme/utils/breakpoints";
 
 export const container = (
   { typeScaleSizes, result }: Theme,
-  { size }: { size: Size },
+  { size, hasBorder }: { size: Size; hasBorder: boolean },
 ): SerializedStyles => {
   return css`
     height: 100%;
@@ -12,7 +12,12 @@ export const container = (
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem 0;
+    padding: ${hasBorder ? "1.5rem 0.5rem" : "1rem 0"};
+    ${hasBorder &&
+    `
+      border-radius: 5px; 
+      box-shadow: 0px 3px 6px 0px ${result.shadowColor};
+    `}
 
     .body {
       text-align: center;

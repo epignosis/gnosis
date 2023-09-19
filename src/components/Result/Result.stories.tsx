@@ -17,7 +17,9 @@ export default {
   },
 };
 
-export const Default: Story<ResultProps> = (args) => <Result {...args} />;
+const Template: Story<ResultProps> = (args) => <Result {...args} />;
+
+export const Default = Template.bind({});
 
 Default.args = {
   icon: InfoSVG,
@@ -26,16 +28,23 @@ Default.args = {
   info: "This course is still under construction and will be ready soon",
 };
 
-export const WithFooter: Story<ResultProps> = (args) => <Result {...args} />;
+export const WithFooter = Template.bind({});
 
 WithFooter.args = {
   ...Default.args,
   footer: <Button>Go back to dashboard</Button>,
 };
 
-export const WithImage: Story<ResultProps> = (args) => <Result {...args} />;
+export const WithImage = Template.bind({});
 
 WithImage.args = {
   ...Default.args,
   icon: "https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png",
+};
+
+export const WithBorder = Template.bind({});
+
+WithBorder.args = {
+  ...Default.args,
+  hasBorder: true,
 };

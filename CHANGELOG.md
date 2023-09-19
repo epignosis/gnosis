@@ -1,3 +1,10 @@
+## [5.3.4](https://github.com/epignosis/gnosis/compare/v5.3.3...v5.3.4) (2023-09-19)
+
+
+### Bug Fixes
+
+* **result:** add border to Result component ([#210](https://github.com/epignosis/gnosis/issues/210)) ([85a0d50](https://github.com/epignosis/gnosis/commit/85a0d50dc8119cb272a4121490bbcd9c07775e43))
+
 ## [5.3.3](https://github.com/epignosis/gnosis/compare/v5.3.2...v5.3.3) (2023-09-18)
 
 

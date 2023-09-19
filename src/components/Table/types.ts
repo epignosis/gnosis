@@ -36,6 +36,7 @@ export type TableProps = {
   rows: Row[];
   emptyState: EmptyState;
   selectable?: boolean;
+  autohide?: boolean;
   sorting?: Sorting;
   onSortingChanged?: (sorting: Sorting) => void;
   onRowSelect?: (selectedRows: Row[]) => void;

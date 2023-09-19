@@ -20,6 +20,23 @@ export const tableContainer = ({ table }: Theme) => css`
         height: 54px;
         white-space: nowrap;
 
+        &.autohide-cell:hover,
+        &.selected {
+          .selectable-cell {
+            > div {
+              visibility: visible !important;
+            }
+          }
+        }
+
+        &.autohide-cell {
+          .selectable-cell {
+            > div {
+              visibility: hidden;
+            }
+          }
+        }
+
         th {
           font-weight: 700;
           padding: 0 1.5rem;
@@ -70,6 +87,21 @@ export const tableContainer = ({ table }: Theme) => css`
 
         &:hover {
           background-color: ${table.rowHoverColor};
+        }
+
+        &:hover,
+        &.selected {
+          .autohide-cell {
+            > div {
+              display: block;
+            }
+          }
+        }
+
+        .autohide-cell {
+          > div {
+            display: none;
+          }
         }
 
         td {

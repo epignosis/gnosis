@@ -15,6 +15,7 @@ export type ResultProps = React.HTMLAttributes<HTMLElement> & {
   size?: Size;
   footer?: ReactNode;
   hideInfo?: boolean;
+  hasBorder?: boolean;
 };
 
 type IconSize = {
@@ -31,9 +32,10 @@ const Result: FC<ResultProps> = ({
   icon,
   title,
   info,
+  size = "lg",
   footer,
   hideInfo = false,
-  size = "lg",
+  hasBorder = false,
   ...rest
 }) => {
   const { md } = useResponsive();
@@ -43,7 +45,7 @@ const Result: FC<ResultProps> = ({
   return (
     <article
       data-testid="empty-state-container"
-      css={(theme): SerializedStyles => container(theme, { size })}
+      css={(theme): SerializedStyles => container(theme, { size, hasBorder })}
       {...rest}
     >
       {Icon && (

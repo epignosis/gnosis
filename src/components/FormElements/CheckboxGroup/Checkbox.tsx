@@ -1,5 +1,4 @@
 import React, { forwardRef, ForwardRefRenderFunction } from "react";
-import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import { checkboxContainer } from "./styles";
 import { ExtendableProps } from "types/common";

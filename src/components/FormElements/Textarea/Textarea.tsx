@@ -12,6 +12,7 @@ export type TextareaProps = ExtendableProps<
   {
     id: string;
     label?: string;
+    required?: boolean;
     inline?: boolean;
     resize?: TextareaResize;
     status?: "valid" | "error";
@@ -24,6 +25,7 @@ const Textarea: ForwardRefRenderFunction<HTMLTextAreaElement, TextareaProps> = (
 ) => {
   const {
     label,
+    required = false,
     inline = false,
     id,
     resize = "none",
@@ -39,13 +41,19 @@ const Textarea: ForwardRefRenderFunction<HTMLTextAreaElement, TextareaProps> = (
     [containerAttrs?.className ?? ""]: Boolean(containerAttrs?.className),
   });
 
+  const labelClassNames = classNames({ required });
+
   return (
     <div
       css={(theme): SerializedStyles => textareaContainer(theme, { resize })}
       {...containerAttrs}
       className={containerClassNames}
     >
-      {hasLabel && <Label htmlFor={id}>{label}</Label>}
+      {hasLabel && (
+        <Label htmlFor={id} className={labelClassNames}>
+          {label}
+        </Label>
+      )}
       <textarea id={id} ref={forwardedRef} {...rest} />
     </div>
   );

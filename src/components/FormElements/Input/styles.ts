@@ -72,6 +72,11 @@ export const inputContainer = (
 
       label {
         margin-bottom: 0;
+
+        &.required::after {
+          content: " *";
+          color: ${formElements.generic.required};
+        }
       }
 
       div {

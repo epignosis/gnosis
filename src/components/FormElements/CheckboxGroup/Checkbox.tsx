@@ -17,6 +17,7 @@ export type CheckboxProps = ExtendableProps<
   Omit<React.InputHTMLAttributes<HTMLInputElement>, "type">,
   CheckboxOption & {
     id: string;
+    required?: boolean;
     size?: CheckboxSize;
     inline?: boolean;
     containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
@@ -28,6 +29,7 @@ const Checkbox: ForwardRefRenderFunction<HTMLDivElement, CheckboxProps> = (props
     id,
     label,
     size = "md",
+    required = false,
     inline = false,
     containerAttrs,
     isPartiallySelected,
@@ -45,6 +47,7 @@ const Checkbox: ForwardRefRenderFunction<HTMLDivElement, CheckboxProps> = (props
       <label htmlFor={id}>
         <span className="shadow-element" tabIndex={-1} aria-hidden="true" />
         {label}
+        {required && <span className="required" />}
       </label>
     </div>
   );

@@ -18,6 +18,15 @@ export const textareaContainer = (
     }
   }
 
+  label {
+    &.required::after {
+      display: inline-block;
+      content: " *";
+      margin-left: 0.2rem;
+      color: ${formElements.generic.required};
+    }
+  }
+
   textarea {
     ${inputBaseStyles(formElements, { block: true })};
     min-height: 10rem;

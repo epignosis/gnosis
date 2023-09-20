@@ -3,11 +3,11 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="css-1qoxapi-selectContainer-selectContainer"
+    class="css-1fna0cd-selectContainer-selectContainer"
   >
     <label
       aria-labelledby="select-id"
-      class="css-xs6o3g-label-label"
+      class=" css-xs6o3g-label-label"
       for="select-id"
     >
       Test select input

@@ -43,6 +43,7 @@ export type CustomSelectProps<
   Group extends GroupBase<Option> = GroupBase<Option>,
 > = Props<Option, IsMulti, Group> & {
   type?: SelectType;
+  required?: boolean;
   label?: string;
   size?: "sm" | "md" | "lg";
   inline?: boolean;

@@ -45,3 +45,9 @@ export const Disabled = Template.bind({});
 Disabled.args = {
   disabled: true,
 };
+
+export const WithRequired = Template.bind({});
+
+WithRequired.args = {
+  required: true,
+};

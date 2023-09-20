@@ -3,11 +3,11 @@
 exports[`<Textarea /> matches snapshot 1`] = `
 <div>
   <div
-    class="valid textarea-container-class css-t2f2i0-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-textareaContainer-textareaContainer"
+    class="valid textarea-container-class css-rhxnle-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-textareaContainer-textareaContainer"
     id="textarea-container-id"
   >
     <label
-      class="css-xs6o3g-label-label"
+      class=" css-xs6o3g-label-label"
       for="my-textarea-id"
     >
       Test textarea

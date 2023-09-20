@@ -76,6 +76,13 @@ withGroupedOptions.args = {
   options: groupedOptions,
 };
 
+export const WithRequired = Template.bind({});
+
+WithRequired.args = {
+  options: defaultOptions,
+  required: true,
+};
+
 export const withInnerSearch = Template.bind({});
 
 withInnerSearch.args = {

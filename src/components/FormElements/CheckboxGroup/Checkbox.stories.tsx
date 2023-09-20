@@ -85,6 +85,12 @@ export const Checkbox: Story<CheckboxStoryProps> = (args) => {
   );
 };
 
+export const WithRequired = Checkbox.bind({});
+
+WithRequired.args = {
+  required: true,
+};
+
 export const CheckboxWithJSXLabel: Story<CheckboxStoryProps> = (args) => {
   return (
     <>
@@ -93,4 +99,10 @@ export const CheckboxWithJSXLabel: Story<CheckboxStoryProps> = (args) => {
       ))}
     </>
   );
+};
+
+export const WithRequiredWithJSXLabel = CheckboxWithJSXLabel.bind({});
+
+WithRequiredWithJSXLabel.args = {
+  required: true,
 };

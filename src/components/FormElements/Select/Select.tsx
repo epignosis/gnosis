@@ -6,6 +6,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+import classNames from "classnames";
 import ReactSelect, {
   ActionMeta,
   GroupBase,
@@ -40,6 +41,7 @@ const Select: ForwardRefRenderFunction<
   const {
     id = "",
     type = "select",
+    required = false,
     label = "",
     options = [],
     size = "md",
@@ -62,6 +64,9 @@ const Select: ForwardRefRenderFunction<
   const containerRef = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const labelClassname = classNames({
+    required,
+  });
 
   const innerSearchEnabled = type === "async" ? true : hasInnerSearch;
   const styles = resolveStyles(size, hasInnerSearch);
@@ -150,7 +155,7 @@ const Select: ForwardRefRenderFunction<
       }
     >
       {hasLabel && (
-        <Label htmlFor={id} aria-labelledby={id}>
+        <Label htmlFor={id} aria-labelledby={id} className={labelClassname}>
           {label}
         </Label>
       )}

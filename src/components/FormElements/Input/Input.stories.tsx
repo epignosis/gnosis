@@ -74,6 +74,12 @@ Disabled.args = {
   disabled: true,
 };
 
+export const WithRequired = InputTemplate.bind({});
+
+WithRequired.args = {
+  required: true,
+};
+
 export const DisabledWithIcon = InputTemplate.bind({});
 
 DisabledWithIcon.args = {

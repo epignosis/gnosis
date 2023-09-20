@@ -2,6 +2,9 @@ import Color from "color";
 import { colors } from "../colors";
 
 export default {
+  generic: {
+    required: colors.red.base,
+  },
   errors: {
     errorBorderColor: colors.red.base,
   },

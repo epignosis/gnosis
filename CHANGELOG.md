@@ -1,3 +1,10 @@
+# [5.5.0](https://github.com/epignosis/gnosis/compare/v5.4.0...v5.5.0) (2023-09-20)
+
+
+### Features
+
+* **form fields:** add required prop (mandatory) ([#212](https://github.com/epignosis/gnosis/issues/212)) ([ec23139](https://github.com/epignosis/gnosis/commit/ec23139bb238193102aa1052f170a5e451ca9455))
+
 # [5.4.0](https://github.com/epignosis/gnosis/compare/v5.3.4...v5.4.0) (2023-09-19)
 
 

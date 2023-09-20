@@ -21,6 +21,7 @@ export type InputProps = ExtendableProps<
     id: string;
     status?: "valid" | "error";
     size?: InputSize;
+    required?: boolean;
     iconBefore?: IconType;
     iconAfter?: IconType;
     label?: string;
@@ -38,6 +39,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
   {
     size = "md",
     status = "valid",
+    required = false,
     iconBefore,
     iconAfter,
     label,
@@ -65,6 +67,10 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     "with-suffix-icon": Boolean(iconAfter),
     inline: hasLabel && inline,
     disabled: Boolean(rest?.disabled),
+  });
+
+  const labelClassname = classNames({
+    required,
   });
   const iconHeight = size === "sm" ? 28 : 32;
 
@@ -97,7 +103,9 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     >
       {hasLabel && (
         <div className="label-container">
-          <Label htmlFor={id}>{label}</Label>
+          <Label htmlFor={id} className={labelClassname}>
+            {label}
+          </Label>
           {tooltipContent?.length > 0 && (
             <Tooltip content={tooltipContent}>
               <InfoCircledSVG height={20} />

@@ -102,11 +102,18 @@ export const checkboxContainer = (
       }
 
       + label {
-        font-size: ${fontSizes[size]};
         position: relative;
-        display: inline-block;
+        display: flex;
         padding-inline-start: 1.5rem;
+        font-size: ${fontSizes[size]};
         cursor: pointer;
+
+        .required::after {
+          display: inline-block;
+          content: " *";
+          margin-left: 0.2rem;
+          color: ${formElements.generic.required};
+        }
 
         &::before {
           content: "";

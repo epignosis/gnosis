@@ -101,8 +101,8 @@ export const CheckboxWithJSXLabel: Story<CheckboxStoryProps> = (args) => {
   );
 };
 
-export const WithRequired2 = CheckboxWithJSXLabel.bind({});
+export const WithRequiredWithJSXLabel = CheckboxWithJSXLabel.bind({});
 
-WithRequired2.args = {
+WithRequiredWithJSXLabel.args = {
   required: true,
 };

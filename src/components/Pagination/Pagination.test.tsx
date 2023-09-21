@@ -1,10 +1,10 @@
 import React from "react";
 import userEvent from "@testing-library/user-event";
 import Pagination from "./Pagination";
-import { RowsPerPageOption } from "./types";
+import { PaginationDropDownOptions } from "./types";
 import { render, screen } from "@test-utils/render";
 
-const rowsPerPageOptions: RowsPerPageOption[] = [
+const rowsPerPageOptions: PaginationDropDownOptions[] = [
   { value: 10, label: "10 rows" },
   { value: 20, label: "20 rows" },
   { value: 30, label: "30 rows" },
@@ -17,8 +17,8 @@ describe("<Pagination />", () => {
         page={2}
         pageSize={20}
         totalPages={6}
+        perPageText="per page"
         rowsPerPageOptions={rowsPerPageOptions}
-        selectionText="dummy"
         onPageSizeChange={jest.fn()}
         onPageChange={jest.fn()}
       />,
@@ -37,8 +37,8 @@ describe("<Pagination />", () => {
         page={1}
         pageSize={20}
         totalPages={6}
+        perPageText="per page"
         rowsPerPageOptions={rowsPerPageOptions}
-        selectionText="dummy"
         onPageSizeChange={jest.fn()}
         onPageChange={jest.fn()}
       />,
@@ -56,8 +56,8 @@ describe("<Pagination />", () => {
         page={6}
         pageSize={20}
         totalPages={6}
+        perPageText="per page"
         rowsPerPageOptions={rowsPerPageOptions}
-        selectionText="dummy"
         onPageSizeChange={jest.fn()}
         onPageChange={jest.fn()}
       />,
@@ -76,8 +76,8 @@ describe("<Pagination />", () => {
         page={3}
         pageSize={20}
         totalPages={6}
+        perPageText="per page"
         rowsPerPageOptions={rowsPerPageOptions}
-        selectionText="dummy"
         onPageSizeChange={jest.fn()}
         onPageChange={mockFn}
       />,
@@ -100,8 +100,8 @@ describe("<Pagination />", () => {
         page={3}
         pageSize={20}
         totalPages={6}
+        perPageText="per page"
         rowsPerPageOptions={rowsPerPageOptions}
-        selectionText="dummy"
         onPageSizeChange={jest.fn()}
         onPageChange={jest.fn()}
         id="my-id"

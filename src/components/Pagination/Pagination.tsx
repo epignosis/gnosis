@@ -1,54 +1,68 @@
-import React, { FC, useRef, useState } from "react";
-import classNames from "classnames";
+import React, { FC } from "react";
 import { SerializedStyles } from "@emotion/react";
 import Button from "../Button/Button";
-import { IconChevronDownSVG, RightArrowSVG } from "../../icons/";
-import Text from "../Text/Text";
+import {
+  ChevronArrowLeftSVG,
+  ChevronArrowRightSVG,
+  ChevronArrowLineLeftSVG,
+  ChevronArrowLineRightSVG,
+} from "../../icons/";
 import { container } from "./styles";
+import PaginationSelector from "./components/PaginationSelector";
 import { PaginationProps } from "./types";
-import useClickOutside from "./hooks";
-
-const SelectedOptionClasses = (isSelected: boolean): string =>
-  classNames({
-    "is-selected": isSelected,
-  });
 
 const Pagination: FC<PaginationProps> = ({
-  page,
   pageSize,
+  page,
+  perPageText,
   totalPages,
   rowsPerPageOptions,
-  selectionText,
   dir = "ltr",
   onPageChange,
   onPageSizeChange,
   ...rest
 }) => {
-  const wrapperRef = useRef<HTMLDivElement | null>(null);
-  const [isListOpen, setIsListOpen] = useState(false);
-  const [selectedListItem, setSelectedListItem] = useState<number>(pageSize);
   const isRtl = dir === "rtl";
   const isPrevBtnDisabled = page === 1;
   const isNextBtnDisabled = page === totalPages || totalPages === 0;
-  useClickOutside(wrapperRef, () => setIsListOpen(false));
 
-  const toggleList = (): void => {
-    // We want to reset the dropdown list every time it opens
-    setIsListOpen((prevState) => !prevState);
+  const handlePageSize = (item: number): void => {
+    onPageSizeChange(item);
   };
 
-  const handleListItemSelect = (item: number): void => {
-    if (isListOpen) {
-      onPageSizeChange(item);
-      setSelectedListItem(item);
-      setIsListOpen(false);
-    }
+  const handlePageChange = (item: number): void => {
+    onPageChange(item);
   };
 
   const options = rowsPerPageOptions.slice().reverse();
 
+  const optionItems = Array(totalPages)
+    .fill(0)
+    .map((_, i) => ({ value: i + 1, label: `${i + 1}` }));
+
   return (
-    <div css={(theme): SerializedStyles => container(theme, { isOpen: isListOpen })} {...rest}>
+    <div css={(theme): SerializedStyles => container(theme)} {...rest}>
+      <div className="results-per-page">
+        <PaginationSelector
+          items={options}
+          selected={pageSize}
+          onClickItemHandler={handlePageSize}
+        />
+        <span>{perPageText}</span>
+      </div>
+
+      <Button
+        className="first-page-btn"
+        data-testid="first-page-btn"
+        name="First page"
+        onClick={(): void => onPageChange(1)}
+        variant="ghost"
+        noGutters
+        disabled={isPrevBtnDisabled}
+      >
+        <ChevronArrowLineLeftSVG className={isRtl ? "rotate-left" : "rotate-right"} height={32} />
+      </Button>
+
       <Button
         className="previous-page-btn"
         data-testid="previous-page-btn"
@@ -58,41 +72,16 @@ const Pagination: FC<PaginationProps> = ({
         noGutters
         disabled={isPrevBtnDisabled}
       >
-        <IconChevronDownSVG className={isRtl ? "rotate-left" : "rotate-right"} height={32} />
+        <ChevronArrowLeftSVG height={32} />
       </Button>
 
-      <div className="pagination-options">
-        <div className="dropdown" ref={wrapperRef}>
-          <div className="dropdown-button" onClick={toggleList}>
-            <Button iconAfter={RightArrowSVG} variant="ghost">
-              <Text fontSize="sm">{selectionText}</Text>
-            </Button>
-          </div>
-
-          {isListOpen && rowsPerPageOptions.length > 0 && (
-            <div className="open-list-container">
-              <div className="dropdown-wrapper">
-                <ul role="list" className="dropdown-list">
-                  {options.map(({ value, label }) => {
-                    const isSelected = value === selectedListItem;
-
-                    return (
-                      <li
-                        data-testid="pagination-page"
-                        key={`item-${value}`}
-                        onClick={(): void => handleListItemSelect(value)}
-                      >
-                        <Text fontSize="sm" className={SelectedOptionClasses(isSelected)}>
-                          {label}
-                        </Text>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            </div>
-          )}
-        </div>
+      <div className="total-pages">
+        <PaginationSelector
+          items={optionItems}
+          selected={page}
+          onClickItemHandler={handlePageChange}
+        />
+        <span>of {totalPages}</span>
       </div>
 
       <Button
@@ -104,7 +93,19 @@ const Pagination: FC<PaginationProps> = ({
         noGutters
         disabled={isNextBtnDisabled}
       >
-        <IconChevronDownSVG className={isRtl ? "rotate-right" : "rotate-left"} height={32} />
+        <ChevronArrowRightSVG height={32} />
+      </Button>
+
+      <Button
+        className="last-page-btn"
+        data-testid="last-page-btn"
+        name="Last page"
+        onClick={(): void => onPageChange(totalPages)}
+        variant="ghost"
+        noGutters
+        disabled={isNextBtnDisabled}
+      >
+        <ChevronArrowLineRightSVG className={isRtl ? "rotate-right" : "rotate-left"} height={32} />
       </Button>
     </div>
   );

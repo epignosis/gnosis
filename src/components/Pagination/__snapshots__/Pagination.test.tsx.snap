@@ -3,13 +3,41 @@
 exports[`<Pagination /> matches snapshot with on page 1`] = `
 <div>
   <div
-    class="html-class css-4yx2bb-container-container"
+    class="html-class css-90rncl-container-container"
     id="my-id"
   >
+    <div
+      class="results-per-page"
+    >
+      <div
+        class="css-1ixzowa-PaginationSelectorStyles-PaginationSelectorStyles"
+      >
+        <div
+          class="dropdown"
+        >
+          <div
+            class="dropdown-button"
+          >
+            <button>
+              <span
+                class="css-26eo9i-textContainer-textContainer"
+                data-testid="text-component"
+              >
+                20
+              </span>
+              <svg-file-stub />
+            </button>
+          </div>
+        </div>
+      </div>
+      <span>
+        per page
+      </span>
+    </div>
     <button
-      class="previous-page-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-      data-testid="previous-page-btn"
-      name="Previous page"
+      class="first-page-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      data-testid="first-page-btn"
+      name="First page"
     >
       <span
         class="btn-text"
@@ -20,41 +48,65 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         />
       </span>
     </button>
+    <button
+      class="previous-page-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      data-testid="previous-page-btn"
+      name="Previous page"
+    >
+      <span
+        class="btn-text"
+      >
+        <svg-file-stub
+          height="32"
+        />
+      </span>
+    </button>
     <div
-      class="pagination-options"
+      class="total-pages"
     >
       <div
-        class="dropdown"
+        class="css-1ixzowa-PaginationSelectorStyles-PaginationSelectorStyles"
       >
         <div
-          class="dropdown-button"
+          class="dropdown"
         >
-          <button
-            class="ghost icon-after css-uj174w-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+          <div
+            class="dropdown-button"
           >
-            <span
-              class="btn-text"
-            >
+            <button>
               <span
                 class="css-26eo9i-textContainer-textContainer"
                 data-testid="text-component"
               >
-                dummy
+                3
               </span>
-            </span>
-            <svg-file-stub
-              classname="icon"
-              data-testid="suffix-icon"
-              height="30"
-            />
-          </button>
+              <svg-file-stub />
+            </button>
+          </div>
         </div>
       </div>
+      <span>
+        of 
+        6
+      </span>
     </div>
     <button
       class="next-page-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="next-page-btn"
       name="Next page"
+    >
+      <span
+        class="btn-text"
+      >
+        <svg-file-stub
+          height="32"
+        />
+      </span>
+    </button>
+    <button
+      class="last-page-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      data-testid="last-page-btn"
+      name="Last page"
     >
       <span
         class="btn-text"

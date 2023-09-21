@@ -5,15 +5,15 @@ export type PaginationProps = ExtendableProps<
   {
     page: number;
     pageSize: number;
+    perPageText: string;
     totalPages: number;
-    rowsPerPageOptions: RowsPerPageOption[];
-    selectionText: string;
+    rowsPerPageOptions: PaginationDropDownOptions[];
     onPageChange: (page: number) => void;
     onPageSizeChange: (pageSize: number) => void;
   }
 >;
 
-export type RowsPerPageOption = {
+export type PaginationDropDownOptions = {
   value: number;
   label: string;
 };

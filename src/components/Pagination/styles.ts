@@ -1,9 +1,6 @@
 import { css, SerializedStyles, Theme } from "@emotion/react";
 
-export const container = (
-  { pagination }: Theme,
-  { isOpen }: { isOpen: boolean },
-): SerializedStyles => {
+export const container = ({ pagination }: Theme): SerializedStyles => {
   return css`
     display: flex;
     justify-content: center;
@@ -48,89 +45,16 @@ export const container = (
       }
     }
 
-    .pagination-options {
-      .dropdown {
-        position: relative;
-        display: inline-block;
+    .results-per-page {
+      display: flex;
+      align-items: center;
+      margin-right: 32px;
+    }
 
-        .dropdown-header {
-          cursor: pointer;
-        }
-
-        button {
-          color: ${pagination.textColor};
-          padding-inline-start: 1rem;
-          font-style: ${isOpen ? "italic" : "normal"};
-
-          &:hover {
-            background-color: ${pagination.hoverBackground};
-          }
-
-          &:focus {
-            border: 1px solid ${pagination.color};
-          }
-
-          &:focus {
-            border: none;
-          }
-
-          svg {
-            margin-inline-start: 1rem;
-            height: 12px;
-
-            transform: rotateZ(-90deg);
-          }
-        }
-
-        .dropdown-list {
-          list-style: none;
-          margin: 0;
-          box-sizing: border-box;
-          white-space: nowrap;
-          user-select: none;
-          cursor: pointer;
-          max-height: 21rem;
-          overflow-y: auto;
-          width: 100%;
-          padding: 0;
-
-          .empty-state {
-            cursor: default;
-            color: ${pagination.emptyState};
-            padding: 0.25rem 0.75rem;
-          }
-
-          ::-webkit-scrollbar {
-            width: 5px;
-          }
-
-          li {
-            padding: 0.5rem 1rem;
-
-            .is-selected {
-              font-weight: bold;
-            }
-
-            &:hover {
-              background-color: ${pagination.hoverPaginationList};
-            }
-          }
-        }
-
-        .open-list-container {
-          position: absolute;
-          padding: 0;
-          z-index: 100;
-          border-radius: 5px;
-          box-shadow: 0px -2px 6px ${pagination.boxShadowColor};
-          background-color: ${pagination.emptyState};
-          max-width: 50rem;
-          width: 100%;
-          bottom: 100%;
-          inset-inline-start: 0;
-          margin-bottom: 0.3rem;
-        }
-      }
+    .total-pages {
+      display: flex;
+      align-items: center;
+      margin-right: 8px;
     }
   `;
 };

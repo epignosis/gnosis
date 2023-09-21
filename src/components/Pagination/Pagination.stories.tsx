@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Story } from "@storybook/react";
 import Pagination from "./Pagination";
-import { PaginationProps, RowsPerPageOption } from "./types";
+import { PaginationProps, PaginationDropDownOptions } from "./types";
 
-const rowsPerPageOptions: RowsPerPageOption[] = [
-  { value: 10, label: "10 rows" },
-  { value: 20, label: "20 rows" },
-  { value: 30, label: "30 rows" },
+const rowsPerPageOptions: PaginationDropDownOptions[] = [
+  { value: 10, label: "10" },
+  { value: 20, label: "20" },
+  { value: 40, label: "40" },
+  { value: 80, label: "80" },
+  { value: 160, label: "160" },
 ];
 
 export default {
@@ -30,16 +32,14 @@ export default {
 
 const Template: Story<PaginationProps> = (args) => {
   const [page, setPage] = useState(args.page);
-  const [pageSize, setPageSize] = useState(args.pageSize);
-
-  const selectionText = `${page}-${args.totalPages} of ${pageSize} results`;
+  const [, setPageSize] = useState(args.pageSize);
 
   return (
     <Pagination
       style={{ marginTop: "10rem" }}
       {...args}
       page={page}
-      selectionText={selectionText}
+      perPageText={"per page"}
       onPageChange={setPage}
       onPageSizeChange={setPageSize}
     />

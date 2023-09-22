@@ -1,3 +1,10 @@
+## [5.5.4](https://github.com/epignosis/gnosis/compare/v5.5.3...v5.5.4) (2023-09-22)
+
+
+### Bug Fixes
+
+* **pagination:** minor fix on page button ([#217](https://github.com/epignosis/gnosis/issues/217)) ([a0858b6](https://github.com/epignosis/gnosis/commit/a0858b6b36b50b1bf426e9df2c52e2a35e8bf2c3))
+
 ## [5.5.3](https://github.com/epignosis/gnosis/compare/v5.5.2...v5.5.3) (2023-09-22)
 
 

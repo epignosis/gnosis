@@ -57,7 +57,7 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
         {items.length > 1 && <ChevronArrowDownSVG />}
       </button>
 
-      {isListOpen && items.length > 0 && (
+      {isListOpen && items.length > 1 && (
         <div className="dropdown-wrapper">
           <ul role="list" className="dropdown-list">
             {items.map(({ value, label }) => {

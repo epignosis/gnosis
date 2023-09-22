@@ -45,19 +45,21 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
     setSelectedListItem(selected);
   }, [selected]);
 
+  const hasItems = items.length > 1;
+
   return (
     <div
       css={(theme): SerializedStyles => PaginationSelectorStyles(theme, { isOpen: isListOpen })}
       ref={wrapperRef}
     >
-      <button className="dropdown-button" onClick={toggleList}>
+      <button className="dropdown-button" disabled={!hasItems} onClick={toggleList}>
         <Text fontSize="sm" weight="700">
           {selectedListItem}
         </Text>
-        {items.length > 1 && <ChevronArrowDownSVG />}
+        {hasItems && <ChevronArrowDownSVG />}
       </button>
 
-      {isListOpen && items.length > 1 && (
+      {isListOpen && hasItems && (
         <div className="dropdown-wrapper">
           <ul role="list" className="dropdown-list">
             {items.map(({ value, label }) => {

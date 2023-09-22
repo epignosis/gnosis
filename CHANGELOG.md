@@ -1,3 +1,10 @@
+## [5.5.3](https://github.com/epignosis/gnosis/compare/v5.5.2...v5.5.3) (2023-09-22)
+
+
+### Bug Fixes
+
+* **pagination:** prevent dropdown pages on single page ([#216](https://github.com/epignosis/gnosis/issues/216)) ([57aedb1](https://github.com/epignosis/gnosis/commit/57aedb131c3010f6a9a64b997e84dfb3b8b77d97))
+
 ## [5.5.2](https://github.com/epignosis/gnosis/compare/v5.5.1...v5.5.2) (2023-09-22)
 
 

@@ -1,3 +1,10 @@
+## [5.5.2](https://github.com/epignosis/gnosis/compare/v5.5.1...v5.5.2) (2023-09-22)
+
+
+### Bug Fixes
+
+* **pagination:** fix pagination styling when there is only one page ([#215](https://github.com/epignosis/gnosis/issues/215)) ([236970c](https://github.com/epignosis/gnosis/commit/236970c97963000a3c103b2aea808f2730b7f792))
+
 ## [5.5.1](https://github.com/epignosis/gnosis/compare/v5.5.0...v5.5.1) (2023-09-22)
 
 

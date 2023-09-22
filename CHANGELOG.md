@@ -1,3 +1,16 @@
+## [5.5.1](https://github.com/epignosis/gnosis/compare/v5.5.0...v5.5.1) (2023-09-22)
+
+
+### Code Refactoring
+
+* **pagination:** implementation of new pagination component ([40821da](https://github.com/epignosis/gnosis/commit/40821dabffb4432326dd0e3e67efbbf6cde0b406))
+
+
+### BREAKING CHANGES
+
+* **pagination:** We have removed the selectionText prop and instead we are now passing a perPageText
+prop which contains the per page translation text.
+
 # [5.5.0](https://github.com/epignosis/gnosis/compare/v5.4.0...v5.5.0) (2023-09-20)
 
 

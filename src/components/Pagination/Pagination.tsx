@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { SerializedStyles } from "@emotion/react";
+import classNames from "classnames";
 import Button from "../Button/Button";
 import {
   ChevronArrowLeftSVG,
@@ -40,9 +41,11 @@ const Pagination: FC<PaginationProps> = ({
     .fill(0)
     .map((_, i) => ({ value: i + 1, label: `${i + 1}` }));
 
+  const rtlClass = classNames({ isRtl });
+
   return (
-    <div css={(theme): SerializedStyles => container(theme)} {...rest}>
-      <div className="results-per-page">
+    <div css={(theme): SerializedStyles => container(theme)} {...rest} className={rtlClass}>
+      <div className="pagination-selector-wrapper">
         <PaginationSelector
           items={options}
           selected={pageSize}
@@ -50,63 +53,64 @@ const Pagination: FC<PaginationProps> = ({
         />
         <span>{perPageText}</span>
       </div>
+      <div className="pagination">
+        <Button
+          className="pagination-btn"
+          data-testid="first-page-btn"
+          name="First page"
+          onClick={(): void => onPageChange(1)}
+          variant="ghost"
+          noGutters
+          disabled={isPrevBtnDisabled}
+        >
+          <ChevronArrowLineLeftSVG />
+        </Button>
 
-      <Button
-        className="first-page-btn"
-        data-testid="first-page-btn"
-        name="First page"
-        onClick={(): void => onPageChange(1)}
-        variant="ghost"
-        noGutters
-        disabled={isPrevBtnDisabled}
-      >
-        <ChevronArrowLineLeftSVG className={isRtl ? "rotate-left" : "rotate-right"} height={32} />
-      </Button>
+        <Button
+          className="pagination-btn"
+          data-testid="previous-page-btn"
+          name="Previous page"
+          onClick={(): void => onPageChange(page - 1)}
+          variant="ghost"
+          noGutters
+          disabled={isPrevBtnDisabled}
+        >
+          <ChevronArrowLeftSVG />
+        </Button>
 
-      <Button
-        className="previous-page-btn"
-        data-testid="previous-page-btn"
-        name="Previous page"
-        onClick={(): void => onPageChange(page - 1)}
-        variant="ghost"
-        noGutters
-        disabled={isPrevBtnDisabled}
-      >
-        <ChevronArrowLeftSVG height={32} />
-      </Button>
+        <div className="pagination-selector-wrapper">
+          <PaginationSelector
+            items={optionItems}
+            selected={page}
+            onClickItemHandler={handlePageChange}
+          />
+          {totalPages > 0 && <span>of {totalPages}</span>}
+        </div>
 
-      <div className="total-pages">
-        <PaginationSelector
-          items={optionItems}
-          selected={page}
-          onClickItemHandler={handlePageChange}
-        />
-        <span>of {totalPages}</span>
+        <Button
+          className="pagination-btn"
+          data-testid="next-page-btn"
+          name="Next page"
+          onClick={(): void => onPageChange(page + 1)}
+          variant="ghost"
+          noGutters
+          disabled={isNextBtnDisabled}
+        >
+          <ChevronArrowRightSVG />
+        </Button>
+
+        <Button
+          className="pagination-btn"
+          data-testid="last-page-btn"
+          name="Last page"
+          onClick={(): void => onPageChange(totalPages)}
+          variant="ghost"
+          noGutters
+          disabled={isNextBtnDisabled}
+        >
+          <ChevronArrowLineRightSVG />
+        </Button>
       </div>
-
-      <Button
-        className="next-page-btn"
-        data-testid="next-page-btn"
-        name="Next page"
-        onClick={(): void => onPageChange(page + 1)}
-        variant="ghost"
-        noGutters
-        disabled={isNextBtnDisabled}
-      >
-        <ChevronArrowRightSVG height={32} />
-      </Button>
-
-      <Button
-        className="last-page-btn"
-        data-testid="last-page-btn"
-        name="Last page"
-        onClick={(): void => onPageChange(totalPages)}
-        variant="ghost"
-        noGutters
-        disabled={isNextBtnDisabled}
-      >
-        <ChevronArrowLineRightSVG className={isRtl ? "rotate-right" : "rotate-left"} height={32} />
-      </Button>
     </div>
   );
 };

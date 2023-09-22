@@ -46,39 +46,39 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
   }, [selected]);
 
   return (
-    <div css={(theme): SerializedStyles => PaginationSelectorStyles(theme, { isOpen: isListOpen })}>
-      <div className="dropdown" ref={wrapperRef}>
-        <div className="dropdown-button" onClick={toggleList}>
-          <button>
-            <Text fontSize="sm">{selectedListItem}</Text>
-            <ChevronArrowDownSVG />
-          </button>
+    <div
+      css={(theme): SerializedStyles => PaginationSelectorStyles(theme, { isOpen: isListOpen })}
+      ref={wrapperRef}
+    >
+      <button className="dropdown-button" onClick={toggleList}>
+        <Text fontSize="sm" weight="700">
+          {selectedListItem}
+        </Text>
+        {items.length > 0 && <ChevronArrowDownSVG />}
+      </button>
+
+      {isListOpen && items.length > 0 && (
+        <div className="dropdown-wrapper">
+          <ul role="list" className="dropdown-list">
+            {items.map(({ value, label }) => {
+              const isSelected = value === selectedListItem;
+
+              return (
+                <li
+                  className="dropdown-list-item"
+                  data-testid="pagination-page"
+                  key={`item-${value}`}
+                  onClick={(): void => handleListItemSelect(value)}
+                >
+                  <Text fontSize="sm" className={SelectedOptionClasses(isSelected)}>
+                    {label}
+                  </Text>
+                </li>
+              );
+            })}
+          </ul>
         </div>
-
-        {isListOpen && items.length > 0 && (
-          <div className="open-list-container">
-            <div className="dropdown-wrapper">
-              <ul role="list" className="dropdown-list">
-                {items.map(({ value, label }) => {
-                  const isSelected = value === selectedListItem;
-
-                  return (
-                    <li
-                      data-testid="pagination-page"
-                      key={`item-${value}`}
-                      onClick={(): void => handleListItemSelect(value)}
-                    >
-                      <Text fontSize="sm" className={SelectedOptionClasses(isSelected)}>
-                        {label}
-                      </Text>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-        )}
-      </div>
+      )}
     </div>
   );
 };

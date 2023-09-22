@@ -3,120 +3,102 @@
 exports[`<Pagination /> matches snapshot with on page 1`] = `
 <div>
   <div
-    class="html-class css-90rncl-container-container"
+    class=" css-1ee41na-container-container"
     id="my-id"
   >
     <div
-      class="results-per-page"
+      class="pagination-selector-wrapper"
     >
       <div
-        class="css-1ixzowa-PaginationSelectorStyles-PaginationSelectorStyles"
+        class="css-i80tdu-PaginationSelectorStyles-PaginationSelectorStyles"
       >
-        <div
-          class="dropdown"
+        <button
+          class="dropdown-button"
         >
-          <div
-            class="dropdown-button"
+          <span
+            class="css-g06jqs-textContainer-textContainer"
+            data-testid="text-component"
           >
-            <button>
-              <span
-                class="css-26eo9i-textContainer-textContainer"
-                data-testid="text-component"
-              >
-                20
-              </span>
-              <svg-file-stub />
-            </button>
-          </div>
-        </div>
+            20
+          </span>
+          <svg-file-stub />
+        </button>
       </div>
       <span>
         per page
       </span>
     </div>
-    <button
-      class="first-page-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-      data-testid="first-page-btn"
-      name="First page"
-    >
-      <span
-        class="btn-text"
-      >
-        <svg-file-stub
-          classname="rotate-right"
-          height="32"
-        />
-      </span>
-    </button>
-    <button
-      class="previous-page-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-      data-testid="previous-page-btn"
-      name="Previous page"
-    >
-      <span
-        class="btn-text"
-      >
-        <svg-file-stub
-          height="32"
-        />
-      </span>
-    </button>
     <div
-      class="total-pages"
+      class="pagination"
     >
+      <button
+        class="pagination-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        data-testid="first-page-btn"
+        name="First page"
+      >
+        <span
+          class="btn-text"
+        >
+          <svg-file-stub />
+        </span>
+      </button>
+      <button
+        class="pagination-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        data-testid="previous-page-btn"
+        name="Previous page"
+      >
+        <span
+          class="btn-text"
+        >
+          <svg-file-stub />
+        </span>
+      </button>
       <div
-        class="css-1ixzowa-PaginationSelectorStyles-PaginationSelectorStyles"
+        class="pagination-selector-wrapper"
       >
         <div
-          class="dropdown"
+          class="css-i80tdu-PaginationSelectorStyles-PaginationSelectorStyles"
         >
-          <div
+          <button
             class="dropdown-button"
           >
-            <button>
-              <span
-                class="css-26eo9i-textContainer-textContainer"
-                data-testid="text-component"
-              >
-                3
-              </span>
-              <svg-file-stub />
-            </button>
-          </div>
+            <span
+              class="css-g06jqs-textContainer-textContainer"
+              data-testid="text-component"
+            >
+              3
+            </span>
+            <svg-file-stub />
+          </button>
         </div>
+        <span>
+          of 
+          6
+        </span>
       </div>
-      <span>
-        of 
-        6
-      </span>
+      <button
+        class="pagination-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        data-testid="next-page-btn"
+        name="Next page"
+      >
+        <span
+          class="btn-text"
+        >
+          <svg-file-stub />
+        </span>
+      </button>
+      <button
+        class="pagination-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        data-testid="last-page-btn"
+        name="Last page"
+      >
+        <span
+          class="btn-text"
+        >
+          <svg-file-stub />
+        </span>
+      </button>
     </div>
-    <button
-      class="next-page-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-      data-testid="next-page-btn"
-      name="Next page"
-    >
-      <span
-        class="btn-text"
-      >
-        <svg-file-stub
-          height="32"
-        />
-      </span>
-    </button>
-    <button
-      class="last-page-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
-      data-testid="last-page-btn"
-      name="Last page"
-    >
-      <span
-        class="btn-text"
-      >
-        <svg-file-stub
-          classname="rotate-left"
-          height="32"
-        />
-      </span>
-    </button>
   </div>
 </div>
 `;

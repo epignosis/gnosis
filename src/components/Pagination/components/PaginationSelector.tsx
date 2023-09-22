@@ -54,7 +54,7 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
         <Text fontSize="sm" weight="700">
           {selectedListItem}
         </Text>
-        {items.length > 0 && <ChevronArrowDownSVG />}
+        {items.length > 1 && <ChevronArrowDownSVG />}
       </button>
 
       {isListOpen && items.length > 0 && (

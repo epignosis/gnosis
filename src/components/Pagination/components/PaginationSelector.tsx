@@ -52,7 +52,11 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
       css={(theme): SerializedStyles => PaginationSelectorStyles(theme, { isOpen: isListOpen })}
       ref={wrapperRef}
     >
-      <button className="dropdown-button" disabled={!hasItems} onClick={toggleList}>
+      <button
+        className={`dropdown-button ${!hasItems ? "dissabled" : ""}`}
+        disabled={!hasItems}
+        onClick={toggleList}
+      >
         <Text fontSize="sm" weight="700">
           {selectedListItem}
         </Text>

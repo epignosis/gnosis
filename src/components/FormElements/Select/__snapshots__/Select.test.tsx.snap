@@ -123,9 +123,6 @@ exports[`<Select /> matches snapshot 1`] = `
                 age
               </div>
             </div>
-            <div
-              class="text-container"
-            />
           </div>
         </div>
       </div>

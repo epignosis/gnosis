@@ -1,3 +1,10 @@
+## [5.5.6](https://github.com/epignosis/gnosis/compare/v5.5.5...v5.5.6) (2023-09-25)
+
+
+### Bug Fixes
+
+* **tag:** styles and theme fixes ([#220](https://github.com/epignosis/gnosis/issues/220)) ([8b095b5](https://github.com/epignosis/gnosis/commit/8b095b5e91e3cf3ef0b1dd5b273d7b87acc71711))
+
 ## [5.5.5](https://github.com/epignosis/gnosis/compare/v5.5.4...v5.5.5) (2023-09-25)
 
 

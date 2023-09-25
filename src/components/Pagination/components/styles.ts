@@ -32,6 +32,12 @@ export const PaginationSelectorStyles = (
             transform: rotate(180deg);
           }
       `}
+
+      &.disabled:hover {
+        background-color: ${pagination.dropdownBackground};
+        border: 1px solid ${pagination.dropdownBackground};
+        cursor: default;
+      }
     }
 
     .dropdown-list {

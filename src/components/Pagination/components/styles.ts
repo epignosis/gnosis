@@ -33,7 +33,7 @@ export const PaginationSelectorStyles = (
           }
       `}
 
-      &.dissabled:hover {
+      &.disabled:hover {
         background-color: ${pagination.dropdownBackground};
         border: 1px solid ${pagination.dropdownBackground};
         cursor: default;

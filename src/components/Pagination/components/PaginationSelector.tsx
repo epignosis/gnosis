@@ -53,7 +53,7 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
       ref={wrapperRef}
     >
       <button
-        className={`dropdown-button ${!hasItems ? "dissabled" : ""}`}
+        className={`dropdown-button ${!hasItems ? "disabled" : ""}`}
         disabled={!hasItems}
         onClick={toggleList}
       >

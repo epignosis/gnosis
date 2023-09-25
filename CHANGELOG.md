@@ -1,3 +1,10 @@
+## [5.5.7](https://github.com/epignosis/gnosis/compare/v5.5.6...v5.5.7) (2023-09-25)
+
+
+### Bug Fixes
+
+* **select:** remove text container ([#221](https://github.com/epignosis/gnosis/issues/221)) ([f22c9b0](https://github.com/epignosis/gnosis/commit/f22c9b00b72c6884cc4222cae06c41378b8481a6))
+
 ## [5.5.6](https://github.com/epignosis/gnosis/compare/v5.5.5...v5.5.6) (2023-09-25)
 
 

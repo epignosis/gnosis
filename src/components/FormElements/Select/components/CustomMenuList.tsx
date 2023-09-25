@@ -25,7 +25,7 @@ const CustomMenuList: FC<CustomMenuListProps<CustomOption, boolean>> = (customMe
   const isAsync = type === "async";
   const showLoading = isAsync ? Boolean(status?.isLoading) : false;
   const showMenuList = isAsync ? Boolean(!status?.isLoading && inputValue) : true;
-  const showInitialText = isAsync ? Boolean(!status?.isLoading && !inputValue) : true;
+  const showInitialText = isAsync ? Boolean(!status?.isLoading && !inputValue) : false;
 
   const ariaAttributes = {
     "aria-autocomplete": "list" as const,

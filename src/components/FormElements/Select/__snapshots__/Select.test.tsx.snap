@@ -96,7 +96,7 @@ exports[`<Select /> matches snapshot 1`] = `
             class="css-ci9plw-customMenuList-customMenuList"
           >
             <div
-              class=" css-17690ek-MenuList"
+              class=" css-mpsorv-MenuList"
             >
               <div
                 aria-disabled="false"

@@ -1,3 +1,10 @@
+## [5.5.5](https://github.com/epignosis/gnosis/compare/v5.5.4...v5.5.5) (2023-09-25)
+
+
+### Bug Fixes
+
+* minor fix in select styles ([#218](https://github.com/epignosis/gnosis/issues/218)) ([d80b6dd](https://github.com/epignosis/gnosis/commit/d80b6dd761932c3f07dc1c54d5427aea7a930c6f))
+
 ## [5.5.4](https://github.com/epignosis/gnosis/compare/v5.5.3...v5.5.4) (2023-09-22)
 
 

@@ -217,7 +217,8 @@ export const resolveStyles = (
   }),
   menuList: (base: CSSObjectWithLabel) => ({
     ...base,
-    margin: "0.5rem 0",
+    marginTop: "0.5rem",
+    marginBottom: hasInnerSearch ? "0" : "0.5rem",
     padding: "0",
     "::-webkit-scrollbar": {
       width: "5px",

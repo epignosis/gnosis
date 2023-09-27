@@ -1,3 +1,10 @@
+## [5.5.8](https://github.com/epignosis/gnosis/compare/v5.5.7...v5.5.8) (2023-09-27)
+
+
+### Bug Fixes
+
+* **pagination:** add title to buttons ([#222](https://github.com/epignosis/gnosis/issues/222)) ([05f611e](https://github.com/epignosis/gnosis/commit/05f611e748674c970a59586891755288e07eb914))
+
 ## [5.5.7](https://github.com/epignosis/gnosis/compare/v5.5.6...v5.5.7) (2023-09-25)
 
 

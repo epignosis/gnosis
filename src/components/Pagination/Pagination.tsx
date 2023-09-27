@@ -51,7 +51,7 @@ const Pagination: FC<PaginationProps> = ({
           selected={pageSize}
           onClickItemHandler={handlePageSize}
         />
-        <span>{translations.perPageText}</span>
+        <span>{translations.perPage}</span>
       </div>
       <div className="pagination">
         <Button

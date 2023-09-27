@@ -12,7 +12,7 @@ const rowsPerPageOptions: PaginationDropDownOptions[] = [
 ];
 
 const translations = {
-  perPageText: "Per page",
+  perPage: "Per page",
   nextPage: "Next page",
   previousPage: "Previous page",
   firstPage: "First page",

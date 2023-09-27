@@ -14,6 +14,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       >
         <button
           class="dropdown-button "
+          title="20"
         >
           <span
             class="css-g06jqs-textContainer-textContainer"
@@ -25,7 +26,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         </button>
       </div>
       <span>
-        per page
+        Per page
       </span>
     </div>
     <div
@@ -34,7 +35,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       <button
         class="pagination-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="first-page-btn"
-        name="First page"
+        title="First page"
       >
         <span
           class="btn-text"
@@ -46,6 +47,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         class="pagination-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="previous-page-btn"
         name="Previous page"
+        title="Previous page"
       >
         <span
           class="btn-text"
@@ -61,6 +63,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         >
           <button
             class="dropdown-button "
+            title="3"
           >
             <span
               class="css-g06jqs-textContainer-textContainer"
@@ -80,6 +83,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         class="pagination-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="next-page-btn"
         name="Next page"
+        title="Next page"
       >
         <span
           class="btn-text"
@@ -91,6 +95,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         class="pagination-btn ghost css-kbndlg-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="last-page-btn"
         name="Last page"
+        title="Last page"
       >
         <span
           class="btn-text"

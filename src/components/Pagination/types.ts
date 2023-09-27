@@ -6,7 +6,7 @@ export type PaginationProps = ExtendableProps<
     page: number;
     pageSize: number;
     translations: {
-      perPageText: string;
+      perPage: string;
       nextPage: string;
       previousPage: string;
       firstPage: string;

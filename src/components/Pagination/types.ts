@@ -5,7 +5,13 @@ export type PaginationProps = ExtendableProps<
   {
     page: number;
     pageSize: number;
-    perPageText: string;
+    translations: {
+      perPageText: string;
+      nextPage: string;
+      previousPage: string;
+      firstPage: string;
+      lastPage: string;
+    };
     totalPages: number;
     rowsPerPageOptions: PaginationDropDownOptions[];
     onPageChange: (page: number) => void;

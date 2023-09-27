@@ -17,7 +17,13 @@ describe("<Pagination />", () => {
         page={2}
         pageSize={20}
         totalPages={6}
-        perPageText="per page"
+        translations={{
+          perPage: "Per page",
+          nextPage: "Next page",
+          previousPage: "Previous page",
+          firstPage: "First page",
+          lastPage: "Last page",
+        }}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}
         onPageChange={jest.fn()}
@@ -37,7 +43,13 @@ describe("<Pagination />", () => {
         page={1}
         pageSize={20}
         totalPages={6}
-        perPageText="per page"
+        translations={{
+          perPage: "Per page",
+          nextPage: "Next page",
+          previousPage: "Previous page",
+          firstPage: "First page",
+          lastPage: "Last page",
+        }}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}
         onPageChange={jest.fn()}
@@ -56,7 +68,13 @@ describe("<Pagination />", () => {
         page={6}
         pageSize={20}
         totalPages={6}
-        perPageText="per page"
+        translations={{
+          perPage: "Per page",
+          nextPage: "Next page",
+          previousPage: "Previous page",
+          firstPage: "First page",
+          lastPage: "Last page",
+        }}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}
         onPageChange={jest.fn()}
@@ -76,7 +94,13 @@ describe("<Pagination />", () => {
         page={3}
         pageSize={20}
         totalPages={6}
-        perPageText="per page"
+        translations={{
+          perPage: "Per page",
+          nextPage: "Next page",
+          previousPage: "Previous page",
+          firstPage: "First page",
+          lastPage: "Last page",
+        }}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}
         onPageChange={mockFn}
@@ -100,7 +124,13 @@ describe("<Pagination />", () => {
         page={3}
         pageSize={20}
         totalPages={6}
-        perPageText="per page"
+        translations={{
+          perPage: "Per page",
+          nextPage: "Next page",
+          previousPage: "Previous page",
+          firstPage: "First page",
+          lastPage: "Last page",
+        }}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}
         onPageChange={jest.fn()}

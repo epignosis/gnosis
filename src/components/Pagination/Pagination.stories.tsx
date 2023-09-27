@@ -11,6 +11,14 @@ const rowsPerPageOptions: PaginationDropDownOptions[] = [
   { value: 160, label: "160" },
 ];
 
+const translations = {
+  perPage: "Per page",
+  nextPage: "Next page",
+  previousPage: "Previous page",
+  firstPage: "First page",
+  lastPage: "Last page",
+};
+
 export default {
   component: Pagination,
   title: "Components/Pagination",
@@ -24,6 +32,7 @@ export default {
   },
   args: {
     page: 1,
+    translations,
     pageSize: 20,
     totalPages: 6,
     rowsPerPageOptions,
@@ -39,7 +48,6 @@ const Template: Story<PaginationProps> = (args) => {
       style={{ marginTop: "10rem" }}
       {...args}
       page={page}
-      perPageText={"per page"}
       onPageChange={setPage}
       onPageSizeChange={setPageSize}
     />

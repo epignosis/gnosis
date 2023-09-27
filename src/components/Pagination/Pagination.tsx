@@ -15,7 +15,7 @@ import { PaginationProps } from "./types";
 const Pagination: FC<PaginationProps> = ({
   pageSize,
   page,
-  perPageText,
+  translations,
   totalPages,
   rowsPerPageOptions,
   dir = "ltr",
@@ -51,13 +51,13 @@ const Pagination: FC<PaginationProps> = ({
           selected={pageSize}
           onClickItemHandler={handlePageSize}
         />
-        <span>{perPageText}</span>
+        <span>{translations.perPage}</span>
       </div>
       <div className="pagination">
         <Button
           className="pagination-btn"
           data-testid="first-page-btn"
-          name="First page"
+          title={translations.firstPage}
           onClick={(): void => onPageChange(1)}
           variant="ghost"
           noGutters
@@ -70,6 +70,7 @@ const Pagination: FC<PaginationProps> = ({
           className="pagination-btn"
           data-testid="previous-page-btn"
           name="Previous page"
+          title={translations.previousPage}
           onClick={(): void => onPageChange(page - 1)}
           variant="ghost"
           noGutters
@@ -91,6 +92,7 @@ const Pagination: FC<PaginationProps> = ({
           className="pagination-btn"
           data-testid="next-page-btn"
           name="Next page"
+          title={translations.nextPage}
           onClick={(): void => onPageChange(page + 1)}
           variant="ghost"
           noGutters
@@ -103,6 +105,7 @@ const Pagination: FC<PaginationProps> = ({
           className="pagination-btn"
           data-testid="last-page-btn"
           name="Last page"
+          title={translations.lastPage}
           onClick={(): void => onPageChange(totalPages)}
           variant="ghost"
           noGutters

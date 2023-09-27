@@ -56,6 +56,7 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
         className={`dropdown-button ${!hasItems ? "disabled" : ""}`}
         disabled={!hasItems}
         onClick={toggleList}
+        title={`${selectedListItem}`}
       >
         <Text fontSize="sm" weight="700">
           {selectedListItem}
@@ -74,6 +75,7 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
                   className="dropdown-list-item"
                   data-testid="pagination-page"
                   key={`item-${value}`}
+                  title={`${value}`}
                   onClick={(): void => handleListItemSelect(value)}
                 >
                   <Text fontSize="sm" className={SelectedOptionClasses(isSelected)}>

@@ -36,6 +36,7 @@ const Dropdown: FC<DropdownProps> = ({
 }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [filteredList, setFilteredList] = useState<DropdownItem[]>(() => list);
+  const shouldFocus = Boolean(isSearchable);
 
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
@@ -118,6 +119,7 @@ const Dropdown: FC<DropdownProps> = ({
               onInputChanged={handleInputChanged}
               id="dropdown-search"
               delayBeforeSearch={300}
+              autoFocus={shouldFocus}
             />
           )}
 

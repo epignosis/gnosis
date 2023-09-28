@@ -10,6 +10,7 @@ type SearchInputProps = React.HTMLAttributes<HTMLInputElement> & {
   onInputChanged: (inputValue: string) => void;
   delayBeforeSearch?: number;
   resetInput?: boolean;
+  autoFocus?: boolean;
 };
 
 const SearchInput: FC<SearchInputProps> = ({
@@ -18,6 +19,7 @@ const SearchInput: FC<SearchInputProps> = ({
   onInputChanged,
   delayBeforeSearch = 500,
   resetInput = false,
+  autoFocus = false,
   ...rest
 }) => {
   const [searchValue, setSearchValue] = useState("");
@@ -57,6 +59,7 @@ const SearchInput: FC<SearchInputProps> = ({
         iconAfter={MagnifierSVG}
         showVerticalLine={false}
         isClearable={true}
+        autoFocus={autoFocus}
         onClear={(e?: MouseEvent<HTMLDivElement>): void => clearSearch(e)}
       />
     </div>

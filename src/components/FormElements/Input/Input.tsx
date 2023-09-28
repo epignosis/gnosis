@@ -4,6 +4,7 @@ import React, {
   useImperativeHandle,
   useRef,
   MouseEvent,
+  useEffect,
 } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
@@ -31,6 +32,7 @@ export type InputProps = ExtendableProps<
     tooltipContent?: string;
     showVerticalLine?: boolean;
     isClearable?: boolean;
+    autoFocus?: boolean;
     onClear?: (e?: MouseEvent<HTMLDivElement>) => void;
   }
 >;
@@ -51,6 +53,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     isClearable = false,
     showVerticalLine = true,
     onClear,
+    autoFocus = false,
     ...rest
   },
   forwardedRef,
@@ -82,6 +85,10 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
   const setFocus = () => {
     internalRef.current?.focus();
   };
+
+  useEffect(() => {
+    autoFocus && internalRef.current?.focus();
+  }, [autoFocus]);
 
   const handleClear = (e: MouseEvent<HTMLDivElement>) => {
     if (onClear) onClear(e);

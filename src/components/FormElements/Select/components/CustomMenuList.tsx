@@ -26,6 +26,7 @@ const CustomMenuList: FC<CustomMenuListProps<CustomOption, boolean>> = (customMe
   const showLoading = isAsync ? Boolean(status?.isLoading) : false;
   const showMenuList = isAsync ? Boolean(!status?.isLoading && inputValue) : true;
   const showInitialText = isAsync ? Boolean(!status?.isLoading && !inputValue) : false;
+  const shouldFocus = Boolean(hasInnerSearch);
 
   const ariaAttributes = {
     "aria-autocomplete": "list" as const,
@@ -77,6 +78,7 @@ const CustomMenuList: FC<CustomMenuListProps<CustomOption, boolean>> = (customMe
             onMouseDown={handleOnMouseDown}
             onClear={handleOnClear}
             onFocus={onMenuInputFocus}
+            autoFocus={shouldFocus}
             {...ariaAttributes}
           />
         </div>

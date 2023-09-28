@@ -20,6 +20,11 @@ export default {
         options: ["valid", "error"],
       },
     },
+    autoFocus: {
+      control: {
+        type: "boolean",
+      },
+    },
   },
   args: {
     id: "input",
@@ -31,6 +36,7 @@ export default {
     status: "valid",
     className: "inputStory",
     tooltipContent: "",
+    autoFocus: false,
   },
   decorators: [
     (Story: Story): JSX.Element => (
@@ -67,6 +73,12 @@ const SearchTemplate: Story<InputProps> = (args) => {
 };
 
 export const Default = InputTemplate.bind({});
+
+export const withAutoFocus = InputTemplate.bind({});
+
+withAutoFocus.args = {
+  autoFocus: true,
+};
 
 export const Disabled = InputTemplate.bind({});
 

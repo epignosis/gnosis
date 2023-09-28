@@ -5,7 +5,7 @@ export type DropdownItem = {
   label: string;
   value?: string;
   id?: string;
-  icon?: JSX.Element;
+  icon?: JSX.Element | SVGAElement;
   className?: string;
   items?: DropdownItem[];
   category?: string;

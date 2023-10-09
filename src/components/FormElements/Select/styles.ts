@@ -40,7 +40,6 @@ export const selectContainer = (
 
   label {
     margin: 0;
-    margin-inline-start: ${inline ? "0" : "0.5rem"};
 
     &.required::after {
       content: " *";

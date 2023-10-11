@@ -174,8 +174,15 @@ export const resolveStyles = (
       backgroundColor,
       boxShadow: "none",
       borderRadius: "5px",
-      "&:hover": { border: `1px solid ${formElements.input.borderHoverColor}` },
       color: !isDisabled ? base.color : formElements.input.disabledColor,
+      cursor: !isDisabled ? "default" : "not-allowed",
+      pointerEvents: "auto",
+
+      "&:hover": {
+        borderColor: isDisabled
+          ? formElements.input.disabledBorder
+          : formElements.input.borderFocusColor,
+      },
     };
   },
   multiValueLabel: (

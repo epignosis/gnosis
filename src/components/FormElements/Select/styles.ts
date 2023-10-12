@@ -142,7 +142,10 @@ export const resolveStyles = (
     transform: selectProps.menuIsOpen ? "rotate(-180deg)" : "rotate(0)",
     transition: "all .2s ease",
     color: selectProps.isDisabled ? base.color : formElements.input.iconColor,
-    "&:hover": { color: formElements.input.iconHoverColor, cursor: "pointer" },
+    "&:hover": {
+      color: formElements.input.iconHoverColor,
+      cursor: !selectProps.isDisabled ? "pointer" : "not-allowed",
+    },
   }),
   clearIndicator: (
     base: CSSObjectWithLabel,

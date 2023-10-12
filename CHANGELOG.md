@@ -1,3 +1,10 @@
+## [5.5.13](https://github.com/epignosis/gnosis/compare/v5.5.12...v5.5.13) (2023-10-12)
+
+
+### Bug Fixes
+
+* **fix disabled select pointers:** fix cursor pointers in disabled select fields ([#229](https://github.com/epignosis/gnosis/issues/229)) ([e1573c3](https://github.com/epignosis/gnosis/commit/e1573c3b26f3c8728dcebb433379669e0bb6c2a9))
+
 ## [5.5.12](https://github.com/epignosis/gnosis/compare/v5.5.11...v5.5.12) (2023-10-09)
 
 ## [5.5.11](https://github.com/epignosis/gnosis/compare/v5.5.10...v5.5.11) (2023-09-28)

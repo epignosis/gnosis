@@ -153,7 +153,7 @@ const linkButton = (button: Theme["button"], color: Color): SerializedStyles => 
   }
 `;
 
-const iconBeforeButton = (size: Size): SerializedStyles => {
+const iconBeforeButton = (size: Size, noGutters: boolean): SerializedStyles => {
   const btnPadding = {
     md: "1.25rem 1.75rem",
     lg: "1.875rem 3rem",
@@ -161,15 +161,15 @@ const iconBeforeButton = (size: Size): SerializedStyles => {
 
   return css`
     padding-block: 0;
-    padding-inline: ${btnPadding[size]};
+    padding-inline: ${noGutters ? "0.25rem 0.75rem" : btnPadding[size]};
 
     .icon {
-      margin-inline-end: 0.5rem;
+      margin-inline-end: ${noGutters ? "0.25rem" : " 0.5rem"};
     }
   `;
 };
 
-const iconAfterButton = (size: Size): SerializedStyles => {
+const iconAfterButton = (size: Size, noGutters: boolean): SerializedStyles => {
   const btnPadding = {
     md: "1.75rem 1.25rem",
     lg: "3rem 1.875rem",
@@ -177,10 +177,10 @@ const iconAfterButton = (size: Size): SerializedStyles => {
 
   return css`
     padding-block: 0;
-    padding-inline: ${btnPadding[size]};
+    padding-inline: ${noGutters ? "0.75rem 0.25rem" : btnPadding[size]};
 
     .icon {
-      margin-inline-start: 0.5rem;
+      margin-inline-start: ${noGutters ? "0.25rem" : " 0.5rem"};
     }
   `;
 };
@@ -209,11 +209,11 @@ export const btnContainer = (
     }
 
     &.icon-before {
-      ${iconBeforeButton(size)};
+      ${iconBeforeButton(size, noGutters)};
     }
 
     &.icon-after {
-      ${iconAfterButton(size)}
+      ${iconAfterButton(size, noGutters)}
     }
 
     &:disabled,

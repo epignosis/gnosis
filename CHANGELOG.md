@@ -1,3 +1,10 @@
+## [5.5.14](https://github.com/epignosis/gnosis/compare/v5.5.13...v5.5.14) (2023-10-17)
+
+
+### Bug Fixes
+
+* **button:** fix noGutters styles for buttons with icons ([#230](https://github.com/epignosis/gnosis/issues/230)) ([48147ab](https://github.com/epignosis/gnosis/commit/48147ab94e412653e125ac5d142290d389af04ae))
+
 ## [5.5.13](https://github.com/epignosis/gnosis/compare/v5.5.12...v5.5.13) (2023-10-12)
 
 

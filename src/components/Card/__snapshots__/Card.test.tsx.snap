@@ -25,7 +25,7 @@ exports[`<Card/> matches snapshot 1`] = `
       </div>
     </div>
     <section
-      class="css-1m2q5o0-cardBody"
+      class="card-body-container css-1m2q5o0-cardBody"
     >
       <a>
         Something

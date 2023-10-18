@@ -21,7 +21,6 @@ export const cardContainer = ({ card }: Theme): SerializedStyles => css`
 
 export const courseHeaderContainer = css`
   position: relative;
-  height: 100%;
   width: 100%;
 `;
 

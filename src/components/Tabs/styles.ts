@@ -32,13 +32,9 @@ export const tabsHeader = (
     position: ${stickyHeader ? "sticky" : "static"};
     top: ${stickyHeader ? 0 : "auto"};
     z-index: ${stickyHeader ? 1 : 0};
-
     width: 100%;
     overflow-x: auto;
-
-    ${mq["sm"]} {
-      border-bottom: 1px solid ${tabs.headerBorder};
-    }
+    border-bottom: 1px solid ${tabs.headerBorder};
 
     &::-webkit-scrollbar {
       display: none;

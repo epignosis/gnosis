@@ -1,5 +1,4 @@
 import { css, Theme, SerializedStyles } from "@emotion/react";
-import { mq } from "@theme/utils/breakpoints";
 
 export const container = css`
   position: relative;

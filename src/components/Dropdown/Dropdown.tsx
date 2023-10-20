@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useEffect, useRef, useState } from "react";
+import React, { FC, Fragment, useEffect, useLayoutEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import { useClickAway } from "ahooks";
@@ -39,6 +39,7 @@ const Dropdown: FC<DropdownProps> = ({
   const shouldFocus = Boolean(isSearchable);
 
   const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const dropdownWrapperRef = useRef<HTMLDivElement | null>(null);
 
   useClickAway(() => {
     setIsListOpen(false);
@@ -55,6 +56,12 @@ const Dropdown: FC<DropdownProps> = ({
     }
     setIsListOpen((prevState) => !prevState);
   };
+
+  useLayoutEffect(() => {
+    if (isListOpen && dropdownWrapperRef.current) {
+      dropdownWrapperRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+  }, [isListOpen]);
 
   const handleListItemSelect = (item: DropdownItem): void => {
     if (isListOpen) {
@@ -112,7 +119,7 @@ const Dropdown: FC<DropdownProps> = ({
       </div>
 
       {isListOpen && (
-        <div className={dropdownWrapperClasses(placement)}>
+        <div className={dropdownWrapperClasses(placement)} ref={dropdownWrapperRef}>
           {isSearchable && (
             <SearchInput
               placeholder="Search"

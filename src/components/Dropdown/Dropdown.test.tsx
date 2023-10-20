@@ -5,6 +5,8 @@ import { DropdownItem } from "./types";
 import { fireEvent, render } from "@test-utils/render";
 
 describe("<Dropdown />", () => {
+  window.HTMLElement.prototype.scrollIntoView = jest.fn();
+
   it("opens the dropdown and matches snapshot", () => {
     const { getByText, container } = render(
       <Dropdown list={mockList}>

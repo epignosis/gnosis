@@ -1,3 +1,10 @@
+## [5.5.17](https://github.com/epignosis/gnosis/compare/v5.5.16...v5.5.17) (2023-10-20)
+
+
+### Bug Fixes
+
+* **dropdown:** scroll to list bottom on open ([#235](https://github.com/epignosis/gnosis/issues/235)) ([c7fe68a](https://github.com/epignosis/gnosis/commit/c7fe68a647a264290fd845afdac2c9b734469a51))
+
 ## [5.5.16](https://github.com/epignosis/gnosis/compare/v5.5.15...v5.5.16) (2023-10-19)
 
 ## [5.5.15](https://github.com/epignosis/gnosis/compare/v5.5.14...v5.5.15) (2023-10-18)

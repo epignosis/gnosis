@@ -18,6 +18,7 @@ export type DropdownProps = {
   isSearchable?: boolean;
   textSize?: TypographyLevels;
   fullWidth?: boolean;
+  scrollToBottom?: boolean;
   onListItemSelect?: (item: DropdownItem) => void;
 };
 

@@ -20,6 +20,7 @@ export type DropdownProps = {
   fullWidth?: boolean;
   scrollToBottom?: boolean;
   onListItemSelect?: (item: DropdownItem) => void;
+  emptyStateText?: string;
 };
 
 type PlacementOptions = "bottom-start" | "bottom-end" | "top-start" | "top-end" | "end-top";

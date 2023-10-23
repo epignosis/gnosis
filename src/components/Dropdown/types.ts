@@ -21,6 +21,7 @@ export type DropdownProps = {
   scrollToBottom?: boolean;
   onListItemSelect?: (item: DropdownItem) => void;
   emptyStateText?: string;
+  placeholderText?: string;
 };
 
 type PlacementOptions = "bottom-start" | "bottom-end" | "top-start" | "top-end" | "end-top";

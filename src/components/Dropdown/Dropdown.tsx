@@ -35,6 +35,7 @@ const Dropdown: FC<DropdownProps> = ({
   fullWidth = false,
   scrollToBottom = false,
   emptyStateText = "No match found",
+  placeholderText = "Search",
 }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [filteredList, setFilteredList] = useState<DropdownItem[]>(() => list);
@@ -124,7 +125,7 @@ const Dropdown: FC<DropdownProps> = ({
         <div className={dropdownWrapperClasses(placement)} ref={dropdownWrapperRef}>
           {isSearchable && (
             <SearchInput
-              placeholder="Search"
+              placeholder={placeholderText}
               onInputChanged={handleInputChanged}
               id="dropdown-search"
               delayBeforeSearch={300}

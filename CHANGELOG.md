@@ -1,3 +1,10 @@
+## [5.5.19](https://github.com/epignosis/gnosis/compare/v5.5.18...v5.5.19) (2023-10-23)
+
+
+### Bug Fixes
+
+* **pagination:** add missing translation ([#237](https://github.com/epignosis/gnosis/issues/237)) ([ac3d6b2](https://github.com/epignosis/gnosis/commit/ac3d6b21e55738c10739d389068acc7eb9848c44))
+
 ## [5.5.18](https://github.com/epignosis/gnosis/compare/v5.5.17...v5.5.18) (2023-10-23)
 
 

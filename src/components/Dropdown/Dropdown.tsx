@@ -43,6 +43,7 @@ const Dropdown: FC<DropdownProps> = ({
   textSize = "sm",
   fullWidth = false,
   scrollToBottom = false,
+  emptyStateText = "No match found",
 }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [filteredList, setFilteredList] = useState<DropdownItem[]>(() => list);
@@ -154,7 +155,7 @@ const Dropdown: FC<DropdownProps> = ({
             ) : (
               <li className="empty-state">
                 <Text fontSize="xs" weight="400">
-                  No match Found
+                  {emptyStateText}
                 </Text>
               </li>
             )}

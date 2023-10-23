@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 import Dropdown from "./Dropdown";
 import { DropdownItem, DropdownProps } from "./types";
 
-const dropdownlist: DropdownItem[] = [
+const dropdownList: DropdownItem[] = [
   {
     label: "Category 1",
     items: [
@@ -90,7 +90,7 @@ const Template: Story<DropdownProps> = (args) => {
   );
 };
 
-const extendedDropdownlist: DropdownItem[] = [
+const extendedDropdownList: DropdownItem[] = [
   {
     label: "Category 1",
     items: [
@@ -121,11 +121,11 @@ const extendedDropdownlist: DropdownItem[] = [
 export const Default = Template.bind({});
 
 Default.args = {
-  list: dropdownlist,
+  list: dropdownList,
 };
 
 export const withExtendedList = Template.bind({});
 
 withExtendedList.args = {
-  list: extendedDropdownlist,
+  list: extendedDropdownList,
 };

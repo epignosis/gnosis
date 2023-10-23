@@ -23,6 +23,7 @@ describe("<Pagination />", () => {
           previousPage: "Previous page",
           firstPage: "First page",
           lastPage: "Last page",
+          ofPages: "of",
         }}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}
@@ -49,6 +50,7 @@ describe("<Pagination />", () => {
           previousPage: "Previous page",
           firstPage: "First page",
           lastPage: "Last page",
+          ofPages: "of",
         }}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}
@@ -74,6 +76,7 @@ describe("<Pagination />", () => {
           previousPage: "Previous page",
           firstPage: "First page",
           lastPage: "Last page",
+          ofPages: "of",
         }}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}
@@ -100,6 +103,7 @@ describe("<Pagination />", () => {
           previousPage: "Previous page",
           firstPage: "First page",
           lastPage: "Last page",
+          ofPages: "of",
         }}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}
@@ -130,6 +134,7 @@ describe("<Pagination />", () => {
           previousPage: "Previous page",
           firstPage: "First page",
           lastPage: "Last page",
+          ofPages: "of",
         }}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}

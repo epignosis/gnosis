@@ -85,7 +85,11 @@ const Pagination: FC<PaginationProps> = ({
             selected={page}
             onClickItemHandler={handlePageChange}
           />
-          {totalPages > 1 && <span>of {totalPages}</span>}
+          {totalPages > 1 && (
+            <span>
+              {translations.ofPages} {totalPages}
+            </span>
+          )}
         </div>
 
         <Button

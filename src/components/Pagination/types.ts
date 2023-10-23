@@ -11,6 +11,7 @@ export type PaginationProps = ExtendableProps<
       previousPage: string;
       firstPage: string;
       lastPage: string;
+      ofPages: string;
     };
     totalPages: number;
     rowsPerPageOptions: PaginationDropDownOptions[];

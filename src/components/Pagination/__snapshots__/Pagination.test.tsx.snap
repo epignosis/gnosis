@@ -75,7 +75,8 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
           </button>
         </div>
         <span>
-          of 
+          of
+           
           6
         </span>
       </div>

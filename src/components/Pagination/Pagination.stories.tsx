@@ -17,6 +17,7 @@ const translations = {
   previousPage: "Previous page",
   firstPage: "First page",
   lastPage: "Last page",
+  ofPages: "of",
 };
 
 export default {

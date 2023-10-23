@@ -25,15 +25,6 @@ const dropdownItemClasses = (item: DropdownItem): string =>
     [`${item.className}`]: Boolean(item.className),
   });
 
-function isDropdownListOverflowing(element: HTMLElement | null): boolean {
-  if (!element) return false;
-
-  const viewportHeight = window.innerHeight;
-  const elementRect = element.getBoundingClientRect();
-
-  return elementRect.bottom > viewportHeight;
-}
-
 const Dropdown: FC<DropdownProps> = ({
   list,
   children,
@@ -69,9 +60,7 @@ const Dropdown: FC<DropdownProps> = ({
 
   useLayoutEffect(() => {
     if (isListOpen && scrollToBottom) {
-      if (isDropdownListOverflowing(dropdownWrapperRef.current)) {
-        dropdownWrapperRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
-      }
+      dropdownWrapperRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
     }
   }, [isListOpen]);
 

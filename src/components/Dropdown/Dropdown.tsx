@@ -36,6 +36,7 @@ const Dropdown: FC<DropdownProps> = ({
   scrollToBottom = false,
   emptyStateText = "No match found",
   placeholderText = "Search",
+  remainOpenOnSelect = false,
 }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [filteredList, setFilteredList] = useState<DropdownItem[]>(() => list);
@@ -69,19 +70,23 @@ const Dropdown: FC<DropdownProps> = ({
   const handleListItemSelect = (item: DropdownItem): void => {
     if (isListOpen) {
       onListItemSelect && onListItemSelect(item);
-      setIsListOpen(false);
+      !remainOpenOnSelect && setIsListOpen(false);
     }
   };
 
   const renderItemsRecursively = (items: DropdownItem[], level = 0): JSX.Element[] => {
-    return items.map((item) => {
+    return items.map((item, index) => {
       if (item.items) {
         return (
-          <Fragment key={item.label}>
+          <Fragment key={index}>
             <li css={DropdownTitle({ level, isSearchable: Boolean(isSearchable) })}>
-              <Text fontSize={textSize} weight="700">
-                {item.label}
-              </Text>
+              {typeof item.label === "string" ? (
+                <Text fontSize={textSize} weight="700">
+                  {item.label}
+                </Text>
+              ) : (
+                item.label
+              )}
             </li>
             {renderItemsRecursively(item.items, level + 1)}
           </Fragment>
@@ -91,7 +96,7 @@ const Dropdown: FC<DropdownProps> = ({
       return (
         <li
           className={dropdownItemClasses(item)}
-          key={`item ${item.label}`}
+          key={`item-${index}`}
           onClick={(): void => handleListItemSelect(item)}
           css={(theme): SerializedStyles =>
             DropdownListItem(theme, { isSearchable: Boolean(isSearchable), level })

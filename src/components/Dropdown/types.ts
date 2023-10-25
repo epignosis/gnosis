@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { TypographyLevels } from "@theme/utils/typography";
 
 export type DropdownItem = {
-  label: string;
+  label: string | JSX.Element;
   value?: string;
   id?: string;
   icon?: JSX.Element | SVGAElement;
@@ -22,6 +22,7 @@ export type DropdownProps = {
   onListItemSelect?: (item: DropdownItem) => void;
   emptyStateText?: string;
   placeholderText?: string;
+  remainOpenOnSelect?: boolean;
 };
 
 type PlacementOptions = "bottom-start" | "bottom-end" | "top-start" | "top-end" | "end-top";

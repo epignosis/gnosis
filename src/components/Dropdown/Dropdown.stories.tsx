@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Story } from "@storybook/react";
 import Button from "../Button/Button";
+import Radio from "../FormElements/RadioGroup/Radio";
+import Checkbox from "../FormElements/CheckboxGroup/Checkbox";
 import Dropdown from "./Dropdown";
 import { DropdownItem, DropdownProps } from "./types";
 
@@ -128,4 +130,45 @@ export const withExtendedList = Template.bind({});
 
 withExtendedList.args = {
   list: extendedDropdownList,
+};
+
+const mockList = [
+  {
+    id: "options",
+    label: "Options",
+    items: [
+      {
+        id: "score",
+        value: "score",
+        label: <Checkbox id="score" value="score" label={"Score"} name="Course score" />,
+      },
+      {
+        id: "progress",
+        value: "progress",
+        label: (
+          <Checkbox id="progress" value="progress" label={"Progress"} name="Course progress" />
+        ),
+      },
+    ],
+  },
+  {
+    id: "focus",
+    value: "",
+    label: "Focus",
+    items: [
+      {
+        id: "all",
+        value: "all",
+        label: <Radio id="all" value="all" label={"All"} name="All" />,
+      },
+    ],
+  },
+];
+
+export const withJsxElementLabels = Template.bind({});
+
+withJsxElementLabels.args = {
+  list: mockList,
+  remainOpenOnSelect: true,
+  isSearchable: false,
 };

@@ -1,3 +1,10 @@
+## [5.5.23](https://github.com/epignosis/gnosis/compare/v5.5.22...v5.5.23) (2023-10-27)
+
+
+### Bug Fixes
+
+* **input:** prevent characters in number inputs ([#243](https://github.com/epignosis/gnosis/issues/243)) ([e64207d](https://github.com/epignosis/gnosis/commit/e64207d5c23815a059db69822e8086f099196c54))
+
 ## [5.5.22](https://github.com/epignosis/gnosis/compare/v5.5.21...v5.5.22) (2023-10-26)
 
 ## [5.5.21](https://github.com/epignosis/gnosis/compare/v5.5.20...v5.5.21) (2023-10-23)

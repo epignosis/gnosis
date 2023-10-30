@@ -16,7 +16,7 @@ type TableCompoundProps = {
 };
 
 const Table: FC<Props> & TableCompoundProps = (props) => {
-  const { columns, rows, emptyState, hasSorting, onRowSelect } = props;
+  const { columns, rows, emptyState, onRowSelect } = props;
 
   const [state, dispatch] = useReducer(reducer, {
     columns,

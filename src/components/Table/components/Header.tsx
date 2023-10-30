@@ -2,7 +2,7 @@ import React, { FC, useEffect } from "react";
 import classNames from "classnames";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
 import { IconChevronDownSVG, IconChevronUpSVG } from "../../../icons/index";
-import { Column, Sorting } from "../types";
+import { Column } from "../types";
 import { ChildrenProps } from "../Table";
 import { Actions } from "../constants";
 import Cell from "./Cell";

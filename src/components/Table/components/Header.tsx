@@ -49,7 +49,7 @@ const Header: FC<ChildrenProps> = ({
     }, {});
 
     setColumnsSorting(sortingPerColumn);
-  }, [sorting, columns]);
+  }, []);
 
   const handleToggleSelectAll = (e: React.ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();
@@ -125,10 +125,10 @@ const Header: FC<ChildrenProps> = ({
                 <span>{typeof cell === "string" ? cell : cell({ accessor, cell })}</span>
                 {hasSorting && sortableHeader && (
                   <span className={sortingIconClassNames(accessor === sorting?.column)}>
-                    {!columnsSorting[accessor]?.isDescending ? (
-                      <IconChevronUpSVG height={20} />
-                    ) : (
+                    {columnsSorting[accessor]?.isDescending ? (
                       <IconChevronDownSVG height={20} />
+                    ) : (
+                      <IconChevronUpSVG height={20} />
                     )}
                   </span>
                 )}

@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react";
+import React, { FC } from "react";
 import classNames from "classnames";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
 import { IconChevronDownSVG, IconChevronUpSVG } from "../../../icons/index";
@@ -25,30 +25,16 @@ const sortingIconClassNames = (isDefaultSort: boolean): string =>
 const Header: FC<ChildrenProps> = ({
   selectable = false,
   autohide = false,
-  hasSorting = false,
   state,
   dispatch,
   onSortingChanged,
 }) => {
   const { rows, columns, selected, sorting } = state;
-
   const selectedIds = selected.map((entry) => entry.id);
   const rowIds = rows.map((row) => row.id);
   const isSelectAllChecked = selected.length > 0;
   const allRowsSelected = rowIds.every((rowId) => selectedIds.includes(rowId));
-
-  const sortingPerColumn = columns.reduce((acc, column) => {
-    acc[column.accessor] = {
-      isDescending: column.sortOrder === "desc",
-      isDefaultSort: column.isDefaultSort,
-    };
-
-    return acc;
-  }, {});
-
-  useEffect(() => {
-    dispatch({ type: Actions.sortingChanged, payload: sortingPerColumn });
-  }, []);
+  const hasSorting = Object.keys(sorting || {}).length > 0;
 
   const handleToggleSelectAll = (e: React.ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();
@@ -58,35 +44,19 @@ const Header: FC<ChildrenProps> = ({
   };
 
   const handleSortingChange = (accessor: string, sortOrder: Column["sortOrder"]): void => {
-    if (hasSorting && sorting) {
-      const newSorting = { ...sorting };
-      const isDefaultSort = newSorting[accessor].isDefaultSort;
-
-      const newSortingOrder = Object.entries(newSorting).reduce((acc, [key]) => {
-        const { isDescending } = newSorting[key];
-        acc[key] = {
-          isDescending,
-          isDefaultSort: false,
-        };
-
-        return acc;
-      }, {});
-
+    if (hasSorting) {
+      const isDefaultSort = sorting?.column === accessor;
       const isDescendingOrder = sortOrder === "desc";
+
       // When a new column is clicked to sort, apply the default sortOrder in the columns array.
       // When we select the same column (the default sort column) change it's current order to the opposite.
-      newSortingOrder[accessor] = {
+      const newSorting = {
         column: accessor,
-        isDescending: isDefaultSort ? !newSortingOrder[accessor].isDescending : isDescendingOrder,
-        isDefaultSort: true,
+        isDescending: isDefaultSort ? !sorting.isDescending : isDescendingOrder,
       };
 
-      dispatch({ type: Actions.sortingChanged, payload: { ...newSortingOrder } });
-
-      onSortingChanged &&
-        onSortingChanged({
-          ...newSortingOrder[accessor],
-        });
+      dispatch({ type: Actions.sortingChanged, payload: newSorting });
+      onSortingChanged && onSortingChanged(newSorting);
     }
   };
 
@@ -131,8 +101,8 @@ const Header: FC<ChildrenProps> = ({
               >
                 <span>{typeof cell === "string" ? cell : cell({ accessor, cell })}</span>
                 {hasSorting && sortableHeader && (
-                  <span className={sortingIconClassNames(sorting?.[accessor]?.isDefaultSort)}>
-                    {sorting && !sorting[accessor]?.isDescending ? (
+                  <span className={sortingIconClassNames(accessor === sorting?.column)}>
+                    {!sorting?.isDescending ? (
                       <IconChevronUpSVG height={20} />
                     ) : (
                       <IconChevronDownSVG height={20} />

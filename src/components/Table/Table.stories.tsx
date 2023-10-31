@@ -23,7 +23,7 @@ export default {
   },
   args: {
     columns: [
-      { accessor: "id", cell: "Code", classNames: ["id"], sortOrder: "asc", isDefaultSort: true },
+      { accessor: "id", cell: "Code", classNames: ["id"], sortOrder: "asc" },
       {
         accessor: "description",
         cell: "Description",
@@ -93,7 +93,7 @@ export const Default = Template.bind({});
 export const WithSorting = Template.bind({});
 
 WithSorting.args = {
-  hasSorting: true,
+  sorting: { column: "id", isDescending: false },
   onSortingChanged: (sorting: Sorting) => console.log(sorting),
 };
 

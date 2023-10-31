@@ -31,10 +31,7 @@ export const container = ({ pagination }: Theme): SerializedStyles => {
         fill: ${pagination.iconColor};
       }
 
-      &:hover,
-      &:active,
-      &:link,
-      &:focus {
+      &:hover {
         svg {
           fill: ${pagination.color};
         }

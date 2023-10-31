@@ -23,7 +23,7 @@ export default {
   },
   args: {
     columns: [
-      { accessor: "id", cell: "Code", classNames: ["id"], sortOrder: "asc" },
+      { accessor: "id", cell: "Code", classNames: ["id"], sortOrder: "asc", isDefaultSort: true },
       {
         accessor: "description",
         cell: "Description",
@@ -32,7 +32,12 @@ export default {
         sortableHeader: false,
       },
       { accessor: "name", cell: "Name", classNames: ["name"], sortOrder: "asc" },
-      { accessor: "category", cell: "Category", classNames: ["category"], sortOrder: "asc" },
+      {
+        accessor: "category",
+        cell: "Category",
+        classNames: ["category"],
+        sortOrder: "asc",
+      },
       { accessor: "date", cell: "Date", classNames: ["date"], sortOrder: "desc" },
     ],
     rows: [
@@ -88,7 +93,7 @@ export const Default = Template.bind({});
 export const WithSorting = Template.bind({});
 
 WithSorting.args = {
-  sorting: { column: "id", isDescending: false },
+  hasSorting: true,
   onSortingChanged: (sorting: Sorting) => console.log(sorting),
 };
 

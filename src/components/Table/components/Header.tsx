@@ -49,7 +49,7 @@ const Header: FC<ChildrenProps> = ({
     }, {});
 
     setColumnsSorting(sortingPerColumn);
-  }, []);
+  }, [sorting]);
 
   const handleToggleSelectAll = (e: React.ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();

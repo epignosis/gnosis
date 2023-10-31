@@ -1,3 +1,10 @@
+## [5.5.25](https://github.com/epignosis/gnosis/compare/v5.5.24...v5.5.25) (2023-10-31)
+
+
+### Bug Fixes
+
+* **table:** make sortable columns hoverable ([#244](https://github.com/epignosis/gnosis/issues/244)) ([f42a05e](https://github.com/epignosis/gnosis/commit/f42a05e34f75e735b4fd9afa61d0062fddd6bdfd))
+
 ## [5.5.24](https://github.com/epignosis/gnosis/compare/v5.5.23...v5.5.24) (2023-10-31)
 
 

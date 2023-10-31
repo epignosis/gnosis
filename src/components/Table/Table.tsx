@@ -16,12 +16,13 @@ type TableCompoundProps = {
 };
 
 const Table: FC<Props> & TableCompoundProps = (props) => {
-  const { columns, rows, emptyState, onRowSelect } = props;
+  const { columns, rows, emptyState, onRowSelect, sorting } = props;
 
   const [state, dispatch] = useReducer(reducer, {
     columns,
     rows,
     emptyState,
+    sorting,
     selected: [],
   });
 

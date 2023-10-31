@@ -30,7 +30,6 @@ export type EmptyState = {
 export type Sorting = {
   column?: string;
   isDescending?: boolean;
-  isDefaultSort?: boolean;
 };
 
 export type TableProps = {
@@ -39,7 +38,7 @@ export type TableProps = {
   emptyState: EmptyState;
   selectable?: boolean;
   autohide?: boolean;
-  hasSorting?: boolean;
+  sorting?: Sorting;
   onSortingChanged?: (sorting: Sorting) => void;
   onRowSelect?: (selectedRows: Row[]) => void;
   onRowClick?: (row: Row) => void;

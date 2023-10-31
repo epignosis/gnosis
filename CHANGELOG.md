@@ -1,3 +1,10 @@
+## [5.5.26](https://github.com/epignosis/gnosis/compare/v5.5.25...v5.5.26) (2023-10-31)
+
+
+### Bug Fixes
+
+* **tables:** fix issue with sorting in tables ([#246](https://github.com/epignosis/gnosis/issues/246)) ([dbc69ac](https://github.com/epignosis/gnosis/commit/dbc69accfbd72a7728af13014831b7000b468c00))
+
 ## [5.5.25](https://github.com/epignosis/gnosis/compare/v5.5.24...v5.5.25) (2023-10-31)
 
 

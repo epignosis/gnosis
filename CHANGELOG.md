@@ -1,3 +1,10 @@
+## [5.5.24](https://github.com/epignosis/gnosis/compare/v5.5.23...v5.5.24) (2023-10-31)
+
+
+### Bug Fixes
+
+* **pagination:** fix hover color glitch ([#245](https://github.com/epignosis/gnosis/issues/245)) ([d8f4ecf](https://github.com/epignosis/gnosis/commit/d8f4ecf8e87827adde50edc8cddf3d9cd7385e79))
+
 ## [5.5.23](https://github.com/epignosis/gnosis/compare/v5.5.22...v5.5.23) (2023-10-27)
 
 

@@ -1,3 +1,10 @@
+## [5.5.27](https://github.com/epignosis/gnosis/compare/v5.5.26...v5.5.27) (2023-10-31)
+
+
+### Bug Fixes
+
+* **table:** various fixes ([#248](https://github.com/epignosis/gnosis/issues/248)) ([1aecb74](https://github.com/epignosis/gnosis/commit/1aecb74f9191dbba49e33cb9865dc08ec895c3c3))
+
 ## [5.5.26](https://github.com/epignosis/gnosis/compare/v5.5.25...v5.5.26) (2023-10-31)
 
 

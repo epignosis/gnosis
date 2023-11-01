@@ -16,11 +16,6 @@ export const tableContainer = ({ table }: Theme) => css`
       border-bottom: 1px solid ${table.borderBottomColor};
       background-color: ${table.rowBackgroundColor};
 
-      &:hover {
-        .sorting-icon {
-          visibility: visible !important;
-        }
-      }
       tr {
         height: 54px;
         white-space: nowrap;
@@ -50,6 +45,12 @@ export const tableContainer = ({ table }: Theme) => css`
           &.header-cell {
             position: relative;
             cursor: pointer;
+
+            &:hover {
+              .sorting-icon {
+                visibility: visible !important;
+              }
+            }
 
             .sorting-icon {
               &.is-default-sort {

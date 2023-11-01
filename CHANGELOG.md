@@ -1,3 +1,10 @@
+## [5.5.31](https://github.com/epignosis/gnosis/compare/v5.5.30...v5.5.31) (2023-11-01)
+
+
+### Bug Fixes
+
+* **tables:** very minor fix on th hover ([#251](https://github.com/epignosis/gnosis/issues/251)) ([d10b12c](https://github.com/epignosis/gnosis/commit/d10b12c8a21caf13b2cc245815442485718f0607))
+
 ## [5.5.30](https://github.com/epignosis/gnosis/compare/v5.5.29...v5.5.30) (2023-11-01)
 
 ## [5.5.29](https://github.com/epignosis/gnosis/compare/v5.5.28...v5.5.29) (2023-10-31)

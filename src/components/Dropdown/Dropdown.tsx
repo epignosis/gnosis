@@ -6,7 +6,7 @@ import Text from "../Text/Text";
 import SearchInput from "../FormElements/Input/SearchInput";
 import { DropdownContainer, DropdownList, DropdownListItem, DropdownTitle } from "./styles";
 import { DropdownItem, DropdownProps } from "./types";
-import { filterListByKeyword } from "./helpers";
+import { filterListByKeyword, getScrollableParent } from "./helpers";
 
 const dropdownWrapperClasses = (placement: DropdownProps["placement"]): string =>
   classNames({
@@ -33,16 +33,18 @@ const Dropdown: FC<DropdownProps> = ({
   isSearchable,
   textSize = "sm",
   fullWidth = false,
-  scrollToBottom = false,
+  fixPlacement = false,
   emptyStateText = "No match found",
   placeholderText = "Search",
   remainOpenOnSelect = false,
 }) => {
   const [isListOpen, setIsListOpen] = useState(false);
+  const [currentPlacement, setCurrentPlacement] = useState(placement);
   const [filteredList, setFilteredList] = useState<DropdownItem[]>(() => list);
   const shouldFocus = Boolean(isSearchable);
 
   const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const dropdownButtonRef = useRef<HTMLDivElement | null>(null);
   const dropdownWrapperRef = useRef<HTMLDivElement | null>(null);
 
   useClickAway(() => {
@@ -61,9 +63,64 @@ const Dropdown: FC<DropdownProps> = ({
     setIsListOpen((prevState) => !prevState);
   };
 
+  const fixDropdownPlacement = (): void => {
+    if (dropdownButtonRef.current && dropdownWrapperRef.current && wrapperRef.current) {
+      const scrollableParent = getScrollableParent(wrapperRef.current.parentNode);
+      const dropdownMenuHeight = dropdownWrapperRef.current.getBoundingClientRect().height;
+
+      switch (placement) {
+        // all bottom placements
+        case "bottom-end":
+        case "bottom-start": {
+          const dropdownButtonBottom = dropdownButtonRef.current.getBoundingClientRect().bottom;
+
+          // check if there is space bellow in the window
+          if (!scrollableParent) {
+            const spaceBelow = window.innerHeight - dropdownButtonBottom;
+            setCurrentPlacement(spaceBelow < dropdownMenuHeight ? "top-start" : placement);
+            break;
+          }
+
+          // check if there is space bellow in the scrollable parent
+          if (scrollableParent instanceof HTMLElement) {
+            const spaceBelow =
+              scrollableParent.clientHeight -
+              (dropdownButtonBottom - scrollableParent.getBoundingClientRect().top);
+
+            setCurrentPlacement(spaceBelow < dropdownMenuHeight ? "top-start" : placement);
+          }
+          break;
+        }
+        // all top placements
+        default: {
+          const dropdownButtonTop = dropdownButtonRef.current.getBoundingClientRect().top;
+
+          // check if there is space above in the window
+          if (!scrollableParent) {
+            setCurrentPlacement(
+              dropdownButtonTop < dropdownMenuHeight ? "bottom-start" : placement,
+            );
+            break;
+          }
+
+          // check if there is space above in the scrollable parent
+          if (scrollableParent instanceof HTMLElement) {
+            const spaceAbove =
+              dropdownButtonTop -
+              scrollableParent.getBoundingClientRect().top -
+              scrollableParent.scrollTop;
+
+            setCurrentPlacement(spaceAbove < dropdownMenuHeight ? "bottom-start" : placement);
+          }
+          break;
+        }
+      }
+    }
+  };
+
   useLayoutEffect(() => {
-    if (isListOpen && scrollToBottom) {
-      dropdownWrapperRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    if (isListOpen) {
+      fixPlacement && fixDropdownPlacement();
     }
   }, [isListOpen]);
 
@@ -122,12 +179,13 @@ const Dropdown: FC<DropdownProps> = ({
       className="dropdown"
       ref={wrapperRef}
     >
-      <div className="dropdown-button" onClick={toggleList}>
+      <div className="dropdown-button" ref={dropdownButtonRef} onClick={toggleList}>
         {children}
       </div>
 
       {isListOpen && (
-        <div className={dropdownWrapperClasses(placement)} ref={dropdownWrapperRef}>
+        // <div className={dropdownWrapperClasses(placement)} ref={dropdownWrapperRef}>
+        <div className={dropdownWrapperClasses(currentPlacement)} ref={dropdownWrapperRef}>
           {isSearchable && (
             <SearchInput
               placeholder={placeholderText}

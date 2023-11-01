@@ -18,11 +18,11 @@ export type DropdownProps = {
   isSearchable?: boolean;
   textSize?: TypographyLevels;
   fullWidth?: boolean;
-  scrollToBottom?: boolean;
-  onListItemSelect?: (item: DropdownItem) => void;
+  fixPlacement?: boolean;
   emptyStateText?: string;
   placeholderText?: string;
   remainOpenOnSelect?: boolean;
+  onListItemSelect?: (item: DropdownItem) => void;
 };
 
 type PlacementOptions = "bottom-start" | "bottom-end" | "top-start" | "top-end" | "end-top";

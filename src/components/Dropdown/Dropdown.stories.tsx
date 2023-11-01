@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { Story } from "@storybook/react";
 import Button from "../Button/Button";
 import Radio from "../FormElements/RadioGroup/Radio";
@@ -51,6 +51,9 @@ export default {
         type: "select",
         options: ["xs", "sm", "md"],
       },
+    },
+    fixPlacement: {
+      control: "boolean",
     },
   },
   args: {
@@ -171,4 +174,64 @@ withJsxElementLabels.args = {
   list: mockList,
   remainOpenOnSelect: true,
   isSearchable: false,
+};
+
+const smallDropdownList: DropdownItem[] = [
+  { label: "Option 1", value: "1" },
+  { label: "Option 2", value: "2" },
+  { label: "Option 3", value: "3" },
+];
+
+const ScrollableContainer: FC = ({ children }) => (
+  <div
+    style={{
+      backgroundColor: "#F5F5F6",
+      height: "300px",
+      width: "100%",
+      overflow: "auto",
+      padding: "1rem",
+    }}
+  >
+    {children}
+  </div>
+);
+
+const ScrollableTemplate: Story<DropdownProps & React.CSSProperties> = ({
+  position,
+  top,
+  ...args
+}) => {
+  const [show, toggle] = useState(false);
+
+  const toggleDropdown = () => {
+    toggle((show) => !show);
+  };
+
+  return (
+    <ScrollableContainer>
+      <div style={{ position, top }}>
+        <Dropdown {...args}>
+          <Button color="primary" as="div" className="filter-button" onClick={toggleDropdown}>
+            Click to {show ? "close" : "open"}
+          </Button>
+        </Dropdown>
+      </div>
+    </ScrollableContainer>
+  );
+};
+
+export const ScrollableContainerSpaceBelow = ScrollableTemplate.bind({});
+
+ScrollableContainerSpaceBelow.args = {
+  list: smallDropdownList,
+  position: "relative",
+  top: "0",
+};
+
+export const ScrollableContainerSpaceAbove = ScrollableTemplate.bind({});
+
+ScrollableContainerSpaceAbove.args = {
+  list: smallDropdownList,
+  position: "relative",
+  top: "200px",
 };

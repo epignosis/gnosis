@@ -22,3 +22,18 @@ export const filterListByKeyword = (list: DropdownItem[], keyword: string): Drop
     return arr;
   }, [] as DropdownItem[]);
 };
+
+// Reference: https://gist.github.com/twxia/bb20843c495a49644be6ea3804c0d775
+export const getScrollableParent = (node: ParentNode | null): ParentNode | null => {
+  const isElement = node instanceof HTMLElement;
+  const overflowY = isElement && window.getComputedStyle(node).overflowY;
+  const isScrollable = overflowY !== "visible" && overflowY !== "hidden";
+
+  if (!node) {
+    return null;
+  } else if (isScrollable && isElement && node.scrollHeight >= node.clientHeight) {
+    return node;
+  }
+
+  return getScrollableParent(node.parentNode) || null;
+};

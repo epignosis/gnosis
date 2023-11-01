@@ -78,7 +78,7 @@ const Dropdown: FC<DropdownProps> = ({
     return items.map((item, index) => {
       if (item.items) {
         return (
-          <Fragment key={index}>
+          <Fragment key={`${index}-${item.value}`}>
             <li css={DropdownTitle({ level, isSearchable: Boolean(isSearchable) })}>
               {typeof item.label === "string" ? (
                 <Text fontSize={textSize} weight="700">
@@ -96,7 +96,7 @@ const Dropdown: FC<DropdownProps> = ({
       return (
         <li
           className={dropdownItemClasses(item)}
-          key={`item-${index}`}
+          key={`item-${index}-${item.value}`}
           onClick={(): void => handleListItemSelect(item)}
           css={(theme): SerializedStyles =>
             DropdownListItem(theme, { isSearchable: Boolean(isSearchable), level })

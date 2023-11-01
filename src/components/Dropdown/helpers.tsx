@@ -13,8 +13,10 @@ export const filterListByKeyword = (list: DropdownItem[], keyword: string): Drop
       return arr;
     }
 
-    if (label.toLowerCase().includes(keyword.toLowerCase())) {
-      arr.push(item);
+    if (typeof label === "string") {
+      if (label.toLowerCase().includes(keyword.toLowerCase())) {
+        arr.push(item);
+      }
     }
 
     return arr;

@@ -12,6 +12,7 @@ import Label from "../Label/Label";
 import { InfoCircledSVG, CloseSVG } from "../../../icons/index";
 import Tooltip from "../../Tooltip/Tooltip";
 import { inputContainer } from "./styles";
+import { preventNonNumericalInput } from "./helpers";
 import { ExtendableProps, IconType } from "types/common";
 
 export type InputSize = "sm" | "md" | "lg";
@@ -54,12 +55,14 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     showVerticalLine = true,
     onClear,
     autoFocus = false,
+    type,
     ...rest
   },
   forwardedRef,
 ) => {
   const internalRef = useRef<HTMLInputElement>(null);
 
+  const isNumberType = type === "number";
   const IconBefore = iconBefore;
   const IconAfter = iconAfter;
   const hasLabel = Boolean(label);
@@ -126,7 +129,14 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
             <IconBefore height={iconHeight} />
           </span>
         )}
-        <input value={value} ref={internalRef} id={id} {...rest} />
+        <input
+          value={value}
+          ref={internalRef}
+          id={id}
+          onKeyDown={(e): void => preventNonNumericalInput(e, isNumberType)}
+          type={type}
+          {...rest}
+        />
         {IconAfter && (
           <>
             {showVerticalLine && <div className="vertical-line" />}

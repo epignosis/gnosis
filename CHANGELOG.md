@@ -1,3 +1,54 @@
+## [5.5.29](https://github.com/epignosis/gnosis/compare/v5.5.28...v5.5.29) (2023-10-31)
+
+
+### Bug Fixes
+
+* **table:** small fix ([#250](https://github.com/epignosis/gnosis/issues/250)) ([2cc4f34](https://github.com/epignosis/gnosis/commit/2cc4f3431e6ceb79dc7409bc6c0e2a2566c9409a))
+
+## [5.5.28](https://github.com/epignosis/gnosis/compare/v5.5.27...v5.5.28) (2023-10-31)
+
+
+### Bug Fixes
+
+* **table:** fix ([#249](https://github.com/epignosis/gnosis/issues/249)) ([7e5260e](https://github.com/epignosis/gnosis/commit/7e5260e85ca90c428cd6bd4921f10034643e733d))
+
+## [5.5.27](https://github.com/epignosis/gnosis/compare/v5.5.26...v5.5.27) (2023-10-31)
+
+
+### Bug Fixes
+
+* **table:** various fixes ([#248](https://github.com/epignosis/gnosis/issues/248)) ([1aecb74](https://github.com/epignosis/gnosis/commit/1aecb74f9191dbba49e33cb9865dc08ec895c3c3))
+
+## [5.5.26](https://github.com/epignosis/gnosis/compare/v5.5.25...v5.5.26) (2023-10-31)
+
+
+### Bug Fixes
+
+* **tables:** fix issue with sorting in tables ([#246](https://github.com/epignosis/gnosis/issues/246)) ([dbc69ac](https://github.com/epignosis/gnosis/commit/dbc69accfbd72a7728af13014831b7000b468c00))
+
+## [5.5.25](https://github.com/epignosis/gnosis/compare/v5.5.24...v5.5.25) (2023-10-31)
+
+
+### Bug Fixes
+
+* **table:** make sortable columns hoverable ([#244](https://github.com/epignosis/gnosis/issues/244)) ([f42a05e](https://github.com/epignosis/gnosis/commit/f42a05e34f75e735b4fd9afa61d0062fddd6bdfd))
+
+## [5.5.24](https://github.com/epignosis/gnosis/compare/v5.5.23...v5.5.24) (2023-10-31)
+
+
+### Bug Fixes
+
+* **pagination:** fix hover color glitch ([#245](https://github.com/epignosis/gnosis/issues/245)) ([d8f4ecf](https://github.com/epignosis/gnosis/commit/d8f4ecf8e87827adde50edc8cddf3d9cd7385e79))
+
+## [5.5.23](https://github.com/epignosis/gnosis/compare/v5.5.22...v5.5.23) (2023-10-27)
+
+
+### Bug Fixes
+
+* **input:** prevent characters in number inputs ([#243](https://github.com/epignosis/gnosis/issues/243)) ([e64207d](https://github.com/epignosis/gnosis/commit/e64207d5c23815a059db69822e8086f099196c54))
+
+## [5.5.22](https://github.com/epignosis/gnosis/compare/v5.5.21...v5.5.22) (2023-10-26)
+
 ## [5.5.21](https://github.com/epignosis/gnosis/compare/v5.5.20...v5.5.21) (2023-10-23)
 
 ## [5.5.20](https://github.com/epignosis/gnosis/compare/v5.5.19...v5.5.20) (2023-10-23)

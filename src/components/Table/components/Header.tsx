@@ -1,8 +1,8 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import classNames from "classnames";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
 import { IconChevronDownSVG, IconChevronUpSVG } from "../../../icons/index";
-import { Column, Sorting } from "../types";
+import { Column } from "../types";
 import { ChildrenProps } from "../Table";
 import { Actions } from "../constants";
 import Cell from "./Cell";
@@ -17,6 +17,11 @@ const rowClassnames = (
     "autohide-cell": autohide,
   });
 
+const sortingIconClassNames = (isDefaultSort: boolean): string =>
+  classNames("sorting-icon", {
+    "is-default-sort": isDefaultSort,
+  });
+
 const Header: FC<ChildrenProps> = ({
   selectable = false,
   autohide = false,
@@ -25,10 +30,26 @@ const Header: FC<ChildrenProps> = ({
   onSortingChanged,
 }) => {
   const { rows, columns, selected, sorting } = state;
+  const [columnsSorting, setColumnsSorting] = useState({});
   const selectedIds = selected.map((entry) => entry.id);
   const rowIds = rows.map((row) => row.id);
   const isSelectAllChecked = selected.length > 0;
   const allRowsSelected = rowIds.every((rowId) => selectedIds.includes(rowId));
+  const hasSorting = Object.keys(sorting || {}).length > 0;
+
+  useEffect(() => {
+    const sortingPerColumn = columns.reduce((acc, column) => {
+      const isDefault = sorting?.column === column.accessor;
+      acc[column.accessor] = {
+        column: column.accessor,
+        isDescending: isDefault ? sorting.isDescending : column.sortOrder === "desc",
+      };
+
+      return acc;
+    }, {});
+
+    setColumnsSorting(sortingPerColumn);
+  }, [sorting]);
 
   const handleToggleSelectAll = (e: React.ChangeEvent<HTMLInputElement>): void => {
     e.preventDefault();
@@ -37,15 +58,24 @@ const Header: FC<ChildrenProps> = ({
       : dispatch({ type: Actions.removeAll, payload: null });
   };
 
-  const handleSortingChange = (accesor: string, sortOrder: Column["sortOrder"]): void => {
-    if (sorting) {
+  const handleSortingChange = (accessor: string, sortOrder: Column["sortOrder"]): void => {
+    if (hasSorting) {
+      const isDefaultSort = sorting?.column === accessor;
       const isDescendingOrder = sortOrder === "desc";
-      // new sorting object
-      const newSorting: Sorting = {
-        column: accesor,
-        // when select new column to sort apply default sortOrder
-        // when select the same column change the current order
-        isDescending: sorting.column !== accesor ? isDescendingOrder : !sorting.isDescending,
+
+      setColumnsSorting({
+        ...columnsSorting,
+        [accessor]: {
+          column: accessor,
+          isDescending: isDefaultSort ? !sorting.isDescending : isDescendingOrder,
+        },
+      });
+
+      // When a new column is clicked to sort, apply the default sortOrder in the columns array.
+      // When we select the same column (the default sort column) change it's current order to the opposite.
+      const newSorting = {
+        column: accessor,
+        isDescending: isDefaultSort ? !sorting.isDescending : isDescendingOrder,
       };
 
       dispatch({ type: Actions.sortingChanged, payload: newSorting });
@@ -84,7 +114,7 @@ const Header: FC<ChildrenProps> = ({
                 key={accessor}
                 style={{ width: headerWidth ? `${headerWidth}px` : "auto" }}
                 className={`header-cell ${classNames.length > 0 && classNames.join(" ")} ${
-                  !sortableHeader && "hidden"
+                  !sortableHeader ? "hidden" : ""
                 }`}
                 onClick={(): void => {
                   if (sortableHeader) {
@@ -93,12 +123,12 @@ const Header: FC<ChildrenProps> = ({
                 }}
               >
                 <span>{typeof cell === "string" ? cell : cell({ accessor, cell })}</span>
-                {sorting?.column === accessor && (
-                  <span className="sorting-icon">
-                    {!sorting.isDescending ? (
-                      <IconChevronUpSVG height={20} />
-                    ) : (
+                {hasSorting && sortableHeader && (
+                  <span className={sortingIconClassNames(accessor === sorting?.column)}>
+                    {columnsSorting[accessor]?.isDescending ? (
                       <IconChevronDownSVG height={20} />
+                    ) : (
+                      <IconChevronUpSVG height={20} />
                     )}
                   </span>
                 )}

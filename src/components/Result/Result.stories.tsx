@@ -1,7 +1,7 @@
 import React from "react";
 import { Story } from "@storybook/react";
 import { Button } from "../../";
-import { InfoSVG } from "../../icons/";
+import { WarningSVG } from "../../icons/";
 import Result, { ResultProps } from "./Result";
 
 export default {
@@ -22,7 +22,7 @@ const Template: Story<ResultProps> = (args) => <Result {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  icon: InfoSVG,
+  icon: WarningSVG,
   size: "md",
   title: "This course has no content",
   info: "This course is still under construction and will be ready soon",

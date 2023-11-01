@@ -4,6 +4,7 @@ import { IconType } from "types/common";
 
 export type Column = {
   accessor: string;
+  isDefaultSort?: boolean;
   cell: string | ((arg?: unknown) => JSX.Element | null);
   hidden?: boolean;
   classNames?: string[];
@@ -27,8 +28,8 @@ export type EmptyState = {
 };
 
 export type Sorting = {
-  column: string;
-  isDescending: boolean;
+  column?: string;
+  isDescending?: boolean;
 };
 
 export type TableProps = {

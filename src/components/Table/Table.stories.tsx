@@ -32,7 +32,12 @@ export default {
         sortableHeader: false,
       },
       { accessor: "name", cell: "Name", classNames: ["name"], sortOrder: "asc" },
-      { accessor: "category", cell: "Category", classNames: ["category"], sortOrder: "asc" },
+      {
+        accessor: "category",
+        cell: "Category",
+        classNames: ["category"],
+        sortOrder: "asc",
+      },
       { accessor: "date", cell: "Date", classNames: ["date"], sortOrder: "desc" },
     ],
     rows: [

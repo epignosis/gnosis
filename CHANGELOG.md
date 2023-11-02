@@ -1,3 +1,10 @@
+# [5.6.0](https://github.com/epignosis/gnosis/compare/v5.5.32...v5.6.0) (2023-11-02)
+
+
+### Features
+
+* **dropdown:** fix placement when there is no space available ([#253](https://github.com/epignosis/gnosis/issues/253)) ([ac73d70](https://github.com/epignosis/gnosis/commit/ac73d70f5b48ef70d833c8d88b0740d0bde41371))
+
 ## [5.5.32](https://github.com/epignosis/gnosis/compare/v5.5.31...v5.5.32) (2023-11-02)
 
 ## [5.5.31](https://github.com/epignosis/gnosis/compare/v5.5.30...v5.5.31) (2023-11-01)

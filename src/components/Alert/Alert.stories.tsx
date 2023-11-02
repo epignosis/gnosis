@@ -5,6 +5,14 @@ import Alert, { AlertProps } from "./Alert";
 export default {
   component: Alert,
   title: "Components/Alert",
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "THIS COMPONENT'S VARIATIONS AND STYLES IS BEING OVERWITTEN BY PLUS. - THIS DESIGN IS OBSOLETE.",
+      },
+    },
+  },
   argTypes: {
     type: {
       control: {
@@ -22,12 +30,12 @@ export default {
   },
 };
 
-const Template: Story<AlertProps> = (args) => <Alert {...args} />;
+// const Template: Story<AlertProps> = (args) => <Alert {...args} />;
 
-export const Default = Template.bind({});
+// export const Default = Template.bind({});
 
-export const WithCloseBtn = Template.bind({});
+// export const WithCloseBtn = Template.bind({});
 
-WithCloseBtn.argTypes = {
-  onClose: { action: "onClose" },
-};
+// WithCloseBtn.argTypes = {
+//   onClose: { action: "onClose" },
+// };

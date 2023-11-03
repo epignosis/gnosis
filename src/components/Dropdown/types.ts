@@ -25,4 +25,4 @@ export type DropdownProps = {
   onListItemSelect?: (item: DropdownItem) => void;
 };
 
-type PlacementOptions = "bottom-start" | "bottom-end" | "top-start" | "top-end" | "end-top";
+export type PlacementOptions = "bottom-start" | "bottom-end" | "top-start" | "top-end" | "end-top";

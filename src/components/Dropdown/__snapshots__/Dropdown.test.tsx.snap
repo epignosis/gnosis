@@ -3,7 +3,7 @@
 exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
 <div>
   <div
-    class="dropdown css-1jsm8fy-DropdownContainer-DropdownContainer"
+    class="dropdown css-puwzth-DropdownContainer-DropdownContainer"
   >
     <div
       class="dropdown-button"

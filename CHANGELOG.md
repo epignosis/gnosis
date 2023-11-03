@@ -1,3 +1,10 @@
+## [5.6.1](https://github.com/epignosis/gnosis/compare/v5.6.0...v5.6.1) (2023-11-03)
+
+
+### Bug Fixes
+
+* **dropdown:** fix placement issues ([#255](https://github.com/epignosis/gnosis/issues/255)) ([56e765f](https://github.com/epignosis/gnosis/commit/56e765f3602abd068c9188e085d82fbb9fe32517))
+
 # [5.6.0](https://github.com/epignosis/gnosis/compare/v5.5.32...v5.6.0) (2023-11-02)
 
 

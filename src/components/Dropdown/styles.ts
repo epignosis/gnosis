@@ -25,22 +25,24 @@ export const DropdownContainer = (
 
     &.bottom-start {
       inset-inline-start: 0;
+      margin-top: 0.25rem;
     }
 
     &.bottom-end {
       inset-inline-end: 0;
+      margin-top: 0.25rem;
     }
 
     &.top-start {
       bottom: 100%;
       inset-inline-start: 0;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
 
     &.top-end {
       bottom: 100%;
-      inset-inline-end: 100%;
-      margin-bottom: 0.5rem;
+      inset-inline-end: 0;
+      margin-bottom: 0.25rem;
     }
 
     &.end-top {

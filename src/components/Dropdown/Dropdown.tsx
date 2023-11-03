@@ -5,10 +5,10 @@ import { useClickAway } from "ahooks";
 import Text from "../Text/Text";
 import SearchInput from "../FormElements/Input/SearchInput";
 import { DropdownContainer, DropdownList, DropdownListItem, DropdownTitle } from "./styles";
-import { DropdownItem, DropdownProps } from "./types";
+import { DropdownItem, DropdownProps, PlacementOptions } from "./types";
 import { filterListByKeyword, getScrollableParent } from "./helpers";
 
-const dropdownWrapperClasses = (placement: DropdownProps["placement"]): string =>
+const dropdownWrapperClasses = (placement: PlacementOptions): string =>
   classNames({
     "dropdown-wrapper": true,
     "bottom-start": placement === "bottom-start",
@@ -24,6 +24,14 @@ const dropdownItemClasses = (item: DropdownItem): string =>
     [`${item.value}`]: true,
     [`${item.className}`]: Boolean(item.className),
   });
+
+const fixPlacementMapping: Record<PlacementOptions, PlacementOptions> = {
+  "bottom-start": "top-start",
+  "bottom-end": "top-end",
+  "top-start": "bottom-start",
+  "top-end": "bottom-end",
+  "end-top": "end-top",
+};
 
 const Dropdown: FC<DropdownProps> = ({
   list,
@@ -67,6 +75,7 @@ const Dropdown: FC<DropdownProps> = ({
     if (dropdownButtonRef.current && dropdownWrapperRef.current && wrapperRef.current) {
       const scrollableParent = getScrollableParent(wrapperRef.current.parentNode);
       const dropdownMenuHeight = dropdownWrapperRef.current.getBoundingClientRect().height;
+      const fixedPlacement = fixPlacementMapping[placement];
 
       switch (placement) {
         // all bottom placements
@@ -77,7 +86,7 @@ const Dropdown: FC<DropdownProps> = ({
           // check if there is space bellow in the window
           if (!scrollableParent) {
             const spaceBelow = window.innerHeight - dropdownButtonBottom;
-            setCurrentPlacement(spaceBelow < dropdownMenuHeight ? "top-start" : placement);
+            setCurrentPlacement(spaceBelow < dropdownMenuHeight ? fixedPlacement : placement);
             break;
           }
 
@@ -87,7 +96,7 @@ const Dropdown: FC<DropdownProps> = ({
               scrollableParent.clientHeight -
               (dropdownButtonBottom - scrollableParent.getBoundingClientRect().top);
 
-            setCurrentPlacement(spaceBelow < dropdownMenuHeight ? "top-start" : placement);
+            setCurrentPlacement(spaceBelow < dropdownMenuHeight ? fixedPlacement : placement);
           }
           break;
         }
@@ -98,7 +107,7 @@ const Dropdown: FC<DropdownProps> = ({
           // check if there is space above in the window
           if (!scrollableParent) {
             setCurrentPlacement(
-              dropdownButtonTop < dropdownMenuHeight ? "bottom-start" : placement,
+              dropdownButtonTop < dropdownMenuHeight ? fixedPlacement : placement,
             );
             break;
           }
@@ -110,7 +119,7 @@ const Dropdown: FC<DropdownProps> = ({
               scrollableParent.getBoundingClientRect().top -
               scrollableParent.scrollTop;
 
-            setCurrentPlacement(spaceAbove < dropdownMenuHeight ? "bottom-start" : placement);
+            setCurrentPlacement(spaceAbove < dropdownMenuHeight ? fixedPlacement : placement);
           }
           break;
         }
@@ -184,7 +193,6 @@ const Dropdown: FC<DropdownProps> = ({
       </div>
 
       {isListOpen && (
-        // <div className={dropdownWrapperClasses(placement)} ref={dropdownWrapperRef}>
         <div className={dropdownWrapperClasses(currentPlacement)} ref={dropdownWrapperRef}>
           {isSearchable && (
             <SearchInput

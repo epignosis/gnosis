@@ -21,6 +21,7 @@ const Pagination: FC<PaginationProps> = ({
   dir = "ltr",
   onPageChange,
   onPageSizeChange,
+  listPlacement = "top",
   ...rest
 }) => {
   const isRtl = dir === "rtl";
@@ -83,6 +84,7 @@ const Pagination: FC<PaginationProps> = ({
           <PaginationSelector
             items={optionItems}
             selected={page}
+            listPlacement={listPlacement}
             onClickItemHandler={handlePageChange}
           />
           {totalPages > 1 && (

@@ -15,6 +15,7 @@ export type PaginationProps = ExtendableProps<
     };
     totalPages: number;
     rowsPerPageOptions: PaginationDropDownOptions[];
+    listPlacement?: ListPlacement;
     onPageChange: (page: number) => void;
     onPageSizeChange: (pageSize: number) => void;
   }
@@ -24,3 +25,5 @@ export type PaginationDropDownOptions = {
   value: number;
   label: string;
 };
+
+export type ListPlacement = "top" | "bottom";

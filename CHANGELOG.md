@@ -1,3 +1,10 @@
+## [5.6.2](https://github.com/epignosis/gnosis/compare/v5.6.1...v5.6.2) (2023-11-06)
+
+
+### Bug Fixes
+
+* **paginationselector.tsx:** add listPlacement prop ([#256](https://github.com/epignosis/gnosis/issues/256)) ([836686a](https://github.com/epignosis/gnosis/commit/836686aefeb5b61a17572a68ccd0918db72f4002))
+
 ## [5.6.1](https://github.com/epignosis/gnosis/compare/v5.6.0...v5.6.1) (2023-11-03)
 
 

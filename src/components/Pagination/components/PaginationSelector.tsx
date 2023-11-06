@@ -4,8 +4,15 @@ import { SerializedStyles } from "@emotion/react";
 import { ChevronArrowDownSVG } from "../../../icons/";
 import Text from "../../Text/Text";
 import useClickOutside from "../hooks";
-import { PaginationDropDownOptions } from "../types";
+import { ListPlacement, PaginationDropDownOptions } from "../types";
 import { PaginationSelectorStyles } from "./styles";
+
+const dropdownWrapperClasses = (placement: ListPlacement): string =>
+  classNames({
+    "dropdown-wrapper": true,
+    bottom: placement === "bottom",
+    top: placement === "top",
+  });
 
 const SelectedOptionClasses = (isSelected: boolean): string =>
   classNames({
@@ -15,12 +22,14 @@ const SelectedOptionClasses = (isSelected: boolean): string =>
 type PaginationSelectorProps = {
   items: PaginationDropDownOptions[];
   selected: number;
+  listPlacement?: ListPlacement;
   onClickItemHandler: (item: number) => void;
 };
 
 const PaginationSelector: FC<PaginationSelectorProps> = ({
   items,
   selected,
+  listPlacement = "top",
   onClickItemHandler,
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -65,7 +74,7 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
       </button>
 
       {isListOpen && hasItems && (
-        <div className="dropdown-wrapper">
+        <div className={dropdownWrapperClasses(listPlacement)}>
           <ul role="list" className="dropdown-list">
             {items.map(({ value, label }) => {
               const isSelected = value === selectedListItem;

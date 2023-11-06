@@ -10,7 +10,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       class="pagination-selector-wrapper"
     >
       <div
-        class="css-1fc48yp-PaginationSelectorStyles-PaginationSelectorStyles"
+        class="css-1dqrv36-PaginationSelectorStyles-PaginationSelectorStyles"
       >
         <button
           class="dropdown-button "
@@ -59,7 +59,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         class="pagination-selector-wrapper"
       >
         <div
-          class="css-1fc48yp-PaginationSelectorStyles-PaginationSelectorStyles"
+          class="css-1dqrv36-PaginationSelectorStyles-PaginationSelectorStyles"
         >
           <button
             class="dropdown-button "

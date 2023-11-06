@@ -94,8 +94,6 @@ export const PaginationSelectorStyles = (
 
     .dropdown-wrapper {
       position: absolute;
-      bottom: 100%;
-      margin-bottom: 0.3rem;
       padding: 0;
       max-width: 50rem;
       width: 100%;
@@ -104,6 +102,16 @@ export const PaginationSelectorStyles = (
       border-radius: 5px;
       box-shadow: 0 3px 6px 0 ${pagination.boxShadowColor};
       z-index: 100;
+
+      &.top {
+        bottom: 100%;
+        margin-bottom: 0.3rem;
+      }
+
+      &.bottom {
+        top: 100%;
+        margin-top: 0.3rem;
+      }
     }
   `;
 };

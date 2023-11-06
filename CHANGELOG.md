@@ -1,3 +1,10 @@
+## [5.6.3](https://github.com/epignosis/gnosis/compare/v5.6.2...v5.6.3) (2023-11-06)
+
+
+### Bug Fixes
+
+* **pagination.tsx:** add listPlacement to page size selector ([#257](https://github.com/epignosis/gnosis/issues/257)) ([792a6fc](https://github.com/epignosis/gnosis/commit/792a6fcbe79d1336331a74b4583950f08b9598e2))
+
 ## [5.6.2](https://github.com/epignosis/gnosis/compare/v5.6.1...v5.6.2) (2023-11-06)
 
 

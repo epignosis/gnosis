@@ -50,6 +50,7 @@ const Pagination: FC<PaginationProps> = ({
         <PaginationSelector
           items={options}
           selected={pageSize}
+          listPlacement={listPlacement}
           onClickItemHandler={handlePageSize}
         />
         <span>{translations.perPage}</span>

@@ -1,3 +1,10 @@
+## [5.6.4](https://github.com/epignosis/gnosis/compare/v5.6.3...v5.6.4) (2023-11-09)
+
+
+### Bug Fixes
+
+* rename link button class ([#258](https://github.com/epignosis/gnosis/issues/258)) ([52bdaf9](https://github.com/epignosis/gnosis/commit/52bdaf9522dc18eb4b96691752d89ceb4c5f92fe))
+
 ## [5.6.3](https://github.com/epignosis/gnosis/compare/v5.6.2...v5.6.3) (2023-11-06)
 
 

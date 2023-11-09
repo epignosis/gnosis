@@ -76,7 +76,7 @@ const Button = <C extends ElementType = "button">(props: ButtonProps<C>): ReactE
     solid: variant === "solid",
     outline: variant === "outline",
     ghost: variant === "ghost",
-    link: variant === "link",
+    linkButton: variant === "link",
     "icon-after": SuffixIcon,
     "icon-before": PrefixIcon,
   });

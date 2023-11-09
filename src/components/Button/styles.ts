@@ -204,7 +204,7 @@ export const btnContainer = (
       ${ghostButton(button, color)};
     }
 
-    &.link {
+    &.linkButton {
       ${linkButton(button, color)};
     }
 

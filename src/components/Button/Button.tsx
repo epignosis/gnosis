@@ -66,6 +66,7 @@ const Button = <C extends ElementType = "button">(props: ButtonProps<C>): ReactE
     disabled,
     ...rest
   } = props;
+
   const Component = as || "button";
   const PrefixIcon = iconBefore;
   const SuffixIcon = iconAfter;

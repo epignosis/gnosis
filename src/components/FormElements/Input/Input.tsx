@@ -5,6 +5,7 @@ import React, {
   useRef,
   MouseEvent,
   useEffect,
+  isValidElement,
 } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
@@ -30,7 +31,7 @@ export type InputProps = ExtendableProps<
     inline?: boolean;
     containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
     css?: SerializedStyles;
-    tooltipContent?: string;
+    tooltipContent?: string | JSX.Element;
     showVerticalLine?: boolean;
     isClearable?: boolean;
     autoFocus?: boolean;
@@ -98,6 +99,10 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     setFocus();
   };
 
+  const shouldRenderTooltip =
+    (tooltipContent && typeof tooltipContent === "string" && tooltipContent !== "") ||
+    isValidElement(tooltipContent);
+
   return (
     <div
       css={(theme): SerializedStyles =>
@@ -116,7 +121,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           <Label htmlFor={id} className={labelClassname}>
             {label}
           </Label>
-          {tooltipContent?.length > 0 && (
+          {shouldRenderTooltip && (
             <Tooltip content={tooltipContent}>
               <InfoCircledSVG height={20} />
             </Tooltip>

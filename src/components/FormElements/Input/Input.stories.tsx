@@ -109,6 +109,7 @@ export const WithIconAfter = InputTemplate.bind({});
 
 WithIconAfter.args = {
   iconAfter: CalendarSVG,
+  tooltipContent: <div> This is an html tooltip </div>,
 };
 
 export const WithIconAfterNoVerticalLine = InputTemplate.bind({});

@@ -11,7 +11,7 @@ export const container = (inline: boolean): SerializedStyles => css`
 
 export const radioButtonContainer = (
   { typeScaleSizes, formElements: { checkbox } }: Theme,
-  { size, inline }: { size: InputSize; inline: boolean },
+  { size, inline, readOnly }: { size: InputSize; inline: boolean; readOnly: boolean },
 ): SerializedStyles => {
   const fontSizes = {
     md: typeScaleSizes.sm,
@@ -28,7 +28,7 @@ export const radioButtonContainer = (
       &:focus,
       &:hover {
         + label::before {
-          box-shadow: 0px 0px 0px 9px ${checkbox.input.shadowColor};
+          box-shadow: ${readOnly ? 0 : `0px 0px 0px 9px ${checkbox.input.shadowColor}`};
         }
       }
 
@@ -58,7 +58,7 @@ export const radioButtonContainer = (
         position: relative;
         display: inline-block;
         padding-inline-start: 1.5rem;
-        cursor: pointer;
+        cursor: ${readOnly ? "normal" : "pointer"};
 
         &::before {
           content: "";

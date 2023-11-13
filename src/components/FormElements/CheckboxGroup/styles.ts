@@ -40,7 +40,7 @@ export const checkboxGroupContainer = (inline: boolean): SerializedStyles => css
 
 export const checkboxContainer = (
   { typeScaleSizes, formElements }: Theme,
-  { size, inline }: { size: CheckboxSize; inline: boolean },
+  { size, inline, readOnly }: { size: CheckboxSize; inline: boolean; readOnly: boolean },
 ): SerializedStyles => {
   const fontSizes = {
     md: typeScaleSizes.sm,
@@ -71,7 +71,9 @@ export const checkboxContainer = (
       &:focus,
       &:hover {
         + label > .shadow-element {
-          box-shadow: 0px 0px 0px 9px ${formElements.checkbox.input.shadowColor};
+          box-shadow: ${readOnly
+            ? 0
+            : `0px 0px 0px 9px ${formElements.checkbox.input.shadowColor}`};
         }
       }
 
@@ -106,7 +108,7 @@ export const checkboxContainer = (
         display: flex;
         padding-inline-start: 1.5rem;
         font-size: ${fontSizes[size]};
-        cursor: pointer;
+        cursor: ${readOnly ? "normal" : "pointer"};
 
         .required::after {
           display: inline-block;

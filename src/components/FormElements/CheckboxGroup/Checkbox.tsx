@@ -33,13 +33,14 @@ const Checkbox: ForwardRefRenderFunction<HTMLDivElement, CheckboxProps> = (props
     inline = false,
     containerAttrs,
     isPartiallySelected,
+    readOnly = false,
     ...rest
   } = props;
 
   return (
     <div
       ref={ref}
-      css={(theme): SerializedStyles => checkboxContainer(theme, { size, inline })}
+      css={(theme): SerializedStyles => checkboxContainer(theme, { size, inline, readOnly })}
       {...containerAttrs}
     >
       {isPartiallySelected && <span data-testid="is-partially-selected" className="dash" />}

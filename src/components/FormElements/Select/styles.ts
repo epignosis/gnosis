@@ -82,7 +82,16 @@ export const selectContainer = (
 
     .control-${size} {
       /* minus border */
+      &:hover,
+      &.focused {
+        border: 1px solid ${formElements.input.borderFocus};
+      }
+
       min-height: calc(${inputHeight[size]} - 2px);
+    }
+
+    .selected {
+      background-color: ${formElements.input.borderFocus};
     }
 
     .option-${size} {
@@ -169,7 +178,7 @@ export const resolveStyles = (
       ? formElements.input.disabledBackground
       : isFocused
       ? formElements.input.backgroundFocus
-      : formElements.input.background;
+      : "formElements.input.background;";
 
     return {
       ...base,

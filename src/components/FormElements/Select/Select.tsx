@@ -70,6 +70,7 @@ const Select: ForwardRefRenderFunction<
 
   const innerSearchEnabled = type === "async" ? true : hasInnerSearch;
   const styles = resolveStyles(size, hasInnerSearch);
+
   const formatCreateLabel = (inputValue: string) => (
     <div>
       <Tooltip content={creatableTooltip}>
@@ -91,8 +92,10 @@ const Select: ForwardRefRenderFunction<
     closeMenuOnSelect: !isMulti,
     isMulti,
     classNames: {
-      control: () => containerClassNames(status, size),
-      option: () => `option-${size}`,
+      control: ({ isFocused }: { isFocused: boolean }) =>
+        containerClassNames(status, size, isFocused),
+      option: ({ isSelected }: { isSelected: boolean }) =>
+        `${isSelected ? "selected" : ""} option-${size}`,
     },
     components: {
       IndicatorSeparator: () => null,

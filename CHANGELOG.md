@@ -1,3 +1,10 @@
+## [5.6.6](https://github.com/epignosis/gnosis/compare/v5.6.5...v5.6.6) (2023-11-14)
+
+
+### Bug Fixes
+
+* **select:** fix primary color to selected item ([#262](https://github.com/epignosis/gnosis/issues/262)) ([358229c](https://github.com/epignosis/gnosis/commit/358229c25df82dec97bd8b0008780fbd7e92e8b4))
+
 ## [5.6.5](https://github.com/epignosis/gnosis/compare/v5.6.4...v5.6.5) (2023-11-14)
 
 ## [5.6.4](https://github.com/epignosis/gnosis/compare/v5.6.3...v5.6.4) (2023-11-09)

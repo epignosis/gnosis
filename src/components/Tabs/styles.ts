@@ -52,5 +52,9 @@ export const tabNavItem = (
     padding: 0.6rem;
     color: ${body.color};
     border-bottom: 4px solid ${isActive ? tabs.linkBorder : "transparent"};
+
+    &:hover {
+      color: ${tabs.linkHover};
+    }
   `;
 };

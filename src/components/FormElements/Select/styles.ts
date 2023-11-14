@@ -85,6 +85,10 @@ export const selectContainer = (
       min-height: calc(${inputHeight[size]} - 2px);
     }
 
+    .selected {
+      background-color: ${formElements.input.borderFocus};
+    }
+
     .option-${size} {
       padding: 0.3125rem 1rem;
       cursor: pointer;

@@ -92,7 +92,8 @@ const Select: ForwardRefRenderFunction<
     closeMenuOnSelect: !isMulti,
     isMulti,
     classNames: {
-      control: () => containerClassNames(status, size),
+      control: ({ isFocused }: { isFocused: boolean }) =>
+        containerClassNames(status, size, isFocused),
       option: ({ isSelected }: { isSelected: boolean }) =>
         `${isSelected ? "selected" : ""} option-${size}`,
     },

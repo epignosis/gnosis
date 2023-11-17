@@ -35,7 +35,7 @@ export const container = ({ pagination }: Theme): SerializedStyles => {
         svg {
           fill: ${pagination.color};
         }
-        background-color: ${pagination.hoverBackground};
+        background-color: ${pagination.hoverBackground} !important;
       }
 
       &.disabled,

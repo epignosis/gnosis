@@ -8,6 +8,7 @@ export const THEME_COLOURS = {
   red: "#D12525",
   black: "#232323",
   white: "#FFFFFF",
+  blue: "#1B68B3",
 };
 
 export type ThemeColors = {
@@ -38,6 +39,7 @@ export const colors = {
   red: palletGenerator(THEME_COLOURS.red),
   black: THEME_COLOURS.black,
   white: THEME_COLOURS.white,
+  blue: THEME_COLOURS.blue,
 };
 
 export const hexToRGBA = (hex: string, alpha: number): string => {

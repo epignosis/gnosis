@@ -23,7 +23,7 @@ export default {
     disabledBorder: colors.secondary.base,
     disabledIcon: colors.secondary.base,
     borderFocus: colors.primary.base,
-    infoTooltipColor: colors.primary.base,
+    infoTooltipColor: colors.blue,
     verticalLineColor: colors.secondary.base,
     textColor: colors.black,
     textColorFocused: colors.white,

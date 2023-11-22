@@ -23,6 +23,7 @@ export type DropdownProps = {
   placeholderText?: string;
   remainOpenOnSelect?: boolean;
   onListItemSelect?: (item: DropdownItem) => void;
+  onToggleList?: (isListOpen: boolean) => void;
 };
 
 export type PlacementOptions = "bottom-start" | "bottom-end" | "top-start" | "top-end" | "end-top";

@@ -235,3 +235,12 @@ ScrollableContainerSpaceAbove.args = {
   position: "relative",
   top: "200px",
 };
+
+export const WithInfoOnListOpen = Template.bind({});
+
+WithInfoOnListOpen.args = {
+  list: smallDropdownList,
+  onToggleList(isListOpen) {
+    alert(isListOpen);
+  },
+};

@@ -68,7 +68,7 @@ const Select: ForwardRefRenderFunction<
     required,
   });
 
-  const innerSearchEnabled = type === "async" ? true : hasInnerSearch;
+  const innerSearchEnabled = type === "async" ? true : options.length >= 10 ? true : hasInnerSearch;
   const styles = resolveStyles(size, hasInnerSearch);
 
   const formatCreateLabel = (inputValue: string) => (

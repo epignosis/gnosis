@@ -59,7 +59,4 @@ export const defaultOptions: OptionType[] = [
   { label: "C++", value: "c++" },
   { label: "C#", value: "c#" },
   { label: "Java", value: "java" },
-  { label: "Ruby", value: "ruby" },
-  { label: "C", value: "c" },
-  { label: "Swift", value: "swift" },
 ];

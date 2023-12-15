@@ -57,6 +57,7 @@ const Select: ForwardRefRenderFunction<
     maxWidth = MAX_WIDTH,
     placeholder: outerPlaceholder = OUTER_PLACEHOLDER,
     onChange,
+    isInputValid,
     ...rest
   } = props;
   const hasLabel = Boolean(label);
@@ -126,6 +127,7 @@ const Select: ForwardRefRenderFunction<
       onChange && onChange(option, action);
     },
     onInputChange: (val: string) => setInputValue(val),
+    isValidNewOption: isInputValid,
   };
 
   useClickAway(

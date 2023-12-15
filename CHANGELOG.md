@@ -1,10 +1,3 @@
-## [5.6.10](https://github.com/epignosis/gnosis/compare/v5.6.9...v5.6.10) (2023-11-23)
-
-
-### Bug Fixes
-
-* **input:** allow arrow up and arrow down keys in number input ([#266](https://github.com/epignosis/gnosis/issues/266)) ([035e25a](https://github.com/epignosis/gnosis/commit/035e25af0ff92757adf60ca8229bef8626187419))
-
 ## [5.6.9](https://github.com/epignosis/gnosis/compare/v5.6.8...v5.6.9) (2023-11-22)
 
 ## [5.6.8](https://github.com/epignosis/gnosis/compare/v5.6.7...v5.6.8) (2023-11-17)

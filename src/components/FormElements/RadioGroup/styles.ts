@@ -19,8 +19,11 @@ export const radioButtonContainer = (
   };
 
   return css`
+    display: ${inline ? "inline-flex" : "flex"};
     padding-inline: 0 ${inline ? "1.5rem" : "0"};
     padding-block: 0.75rem;
+    position: relative;
+    align-items: center;
 
     input[type="radio"] {
       opacity: 0;
@@ -54,10 +57,10 @@ export const radioButtonContainer = (
       }
 
       + label {
-        font-size: ${fontSizes[size]};
         position: relative;
-        display: inline-block;
+        display: flex;
         padding-inline-start: 1.5rem;
+        font-size: ${fontSizes[size]};
         cursor: ${readOnly ? "normal" : "pointer"};
 
         &::before {

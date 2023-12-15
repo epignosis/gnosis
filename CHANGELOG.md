@@ -1,3 +1,10 @@
+## [5.6.11](https://github.com/epignosis/gnosis/compare/v5.6.10...v5.6.11) (2023-12-15)
+
+
+### Reverts
+
+* Revert "chore(release): 5.6.10 [skip ci]" ([5052ff9](https://github.com/epignosis/gnosis/commit/5052ff93f0fed5ffc9c286c407ec6e5f2cea61b7))
+
 ## [5.6.9](https://github.com/epignosis/gnosis/compare/v5.6.8...v5.6.9) (2023-11-22)
 
 ## [5.6.8](https://github.com/epignosis/gnosis/compare/v5.6.7...v5.6.8) (2023-11-17)

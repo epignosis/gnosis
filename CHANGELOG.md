@@ -1,3 +1,10 @@
+## [5.6.12](https://github.com/epignosis/gnosis/compare/v5.6.11...v5.6.12) (2023-12-18)
+
+
+### Bug Fixes
+
+* **radio, checkbox:** fix styles and readonly property ([#269](https://github.com/epignosis/gnosis/issues/269)) ([1fafaaf](https://github.com/epignosis/gnosis/commit/1fafaafe06e4e6e7b683d7563f57411f07077bce))
+
 ## [5.6.11](https://github.com/epignosis/gnosis/compare/v5.6.10...v5.6.11) (2023-12-15)
 
 

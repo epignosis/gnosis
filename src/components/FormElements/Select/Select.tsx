@@ -68,7 +68,25 @@ const Select: ForwardRefRenderFunction<
     required,
   });
 
-  const innerSearchEnabled = type === "async" ? true : options.length >= 10 ? true : hasInnerSearch;
+  const getOptionsCount = () => {
+    let optionsCount = 0;
+
+    // better ways to do this exist, but this is to relieve TS
+    options.forEach((option) => {
+      if ("options" in option) {
+        optionsCount += option.options.length;
+      } else {
+        optionsCount += 1;
+      }
+    });
+
+    return optionsCount;
+  };
+
+  const forceShowInnerSearch = getOptionsCount() > 10;
+
+  const innerSearchEnabled = type === "async" ? true : forceShowInnerSearch ? true : hasInnerSearch;
+
   const styles = resolveStyles(size, hasInnerSearch);
 
   const formatCreateLabel = (inputValue: string) => (

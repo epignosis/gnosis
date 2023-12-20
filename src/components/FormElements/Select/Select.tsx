@@ -69,7 +69,7 @@ const Select: ForwardRefRenderFunction<
   });
 
   const countOptions = () => {
-    // Count the number of options, including nested options if present
+    // Count the number of options, including nested options if exists
     return options.reduce((count, option) => {
       return count + ("options" in option ? option.options.length : 1);
     }, 0);

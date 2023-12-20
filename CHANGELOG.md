@@ -1,3 +1,10 @@
+## [5.6.14](https://github.com/epignosis/gnosis/compare/v5.6.13...v5.6.14) (2023-12-20)
+
+
+### Bug Fixes
+
+* fix default inner search for select when having grouped options ([#270](https://github.com/epignosis/gnosis/issues/270)) ([01f79ea](https://github.com/epignosis/gnosis/commit/01f79ea83f049096a2fa7ef4d080f70c074bb07f))
+
 ## [5.6.13](https://github.com/epignosis/gnosis/compare/v5.6.12...v5.6.13) (2023-12-19)
 
 ## [5.6.12](https://github.com/epignosis/gnosis/compare/v5.6.11...v5.6.12) (2023-12-18)

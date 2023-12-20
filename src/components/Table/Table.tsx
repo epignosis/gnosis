@@ -28,6 +28,7 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
 
   const { selected } = state;
 
+  // If selectedRows is empty, remove all selected rows from table
   useEffect(() => {
     if (selectedRows.length === 0) {
       dispatch({ type: Actions.removeAll, payload: null });

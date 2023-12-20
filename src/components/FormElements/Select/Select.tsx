@@ -68,24 +68,22 @@ const Select: ForwardRefRenderFunction<
     required,
   });
 
-  const getOptionsCount = () => {
-    let optionsCount = 0;
-
-    // better ways to do this exist, but this is to relieve TS
-    options.forEach((option) => {
-      if ("options" in option) {
-        optionsCount += option.options.length;
-      } else {
-        optionsCount += 1;
-      }
-    });
-
-    return optionsCount;
+  const countOptions = () => {
+    // Count the number of options, including nested options if present
+    return options.reduce((count, option) => {
+      return count + ("options" in option ? option.options.length : 1);
+    }, 0);
   };
 
-  const forceShowInnerSearch = getOptionsCount() > 10;
+  const shouldShowInnerSearch = () => {
+    // Force show inner search if the number of options exceeds 10 or certain conditions are met
+    const isAsyncType = type === "async";
+    const hasManyOptions = countOptions() > 10;
 
-  const innerSearchEnabled = type === "async" ? true : forceShowInnerSearch ? true : hasInnerSearch;
+    return isAsyncType || hasManyOptions || hasInnerSearch;
+  };
+
+  const innerSearchEnabled = shouldShowInnerSearch();
 
   const styles = resolveStyles(size, hasInnerSearch);
 

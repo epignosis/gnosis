@@ -16,21 +16,21 @@ type TableCompoundProps = {
 };
 
 const Table: FC<Props> & TableCompoundProps = (props) => {
-  const { columns, rows, emptyState, onRowSelect, sorting, selectedRows = [] } = props;
+  const { columns, rows, emptyState, onRowSelect, sorting, selectedRows } = props;
 
   const [state, dispatch] = useReducer(reducer, {
     columns,
     rows,
     emptyState,
     sorting,
-    selected: selectedRows,
+    selected: [],
   });
 
   const { selected } = state;
 
   // If selectedRows is empty, remove all selected rows from table
   useEffect(() => {
-    if (selectedRows.length === 0) {
+    if (selectedRows && selectedRows.length === 0) {
       dispatch({ type: Actions.removeAll, payload: null });
     }
   }, [selectedRows]);

@@ -39,6 +39,7 @@ export type TableProps = {
   selectable?: boolean;
   autohide?: boolean;
   sorting?: Sorting;
+  selectedRows?: Row[];
   onSortingChanged?: (sorting: Sorting) => void;
   onRowSelect?: (selectedRows: Row[]) => void;
   onRowClick?: (row: Row) => void;

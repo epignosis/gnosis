@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React from "react";
+import React, { useState } from "react";
 import { Story } from "@storybook/react";
 import { IconEmptyStateSVG } from "../../icons/";
 import Text from "../Text/Text";
@@ -82,11 +82,15 @@ export default {
   },
 };
 
-const Template: Story<Props> = (args) => (
-  <>
-    <Table {...args} />
-  </>
-);
+const Template: Story<Props> = (args) => {
+  const [selectedRows, setSelectedRows] = useState([]);
+  return (
+    <>
+      <Button onClick={() => setSelectedRows([])}> Uncheck rows </Button>
+      <Table {...args} selectedRows={selectedRows} />
+    </>
+  );
+};
 
 export const Default = Template.bind({});
 

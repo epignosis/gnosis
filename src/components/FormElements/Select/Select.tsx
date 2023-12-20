@@ -68,7 +68,23 @@ const Select: ForwardRefRenderFunction<
     required,
   });
 
-  const innerSearchEnabled = type === "async" ? true : options.length >= 10 ? true : hasInnerSearch;
+  const countOptions = () => {
+    // Count the number of options, including nested options if exists
+    return options.reduce((count, option) => {
+      return count + ("options" in option ? option.options.length : 1);
+    }, 0);
+  };
+
+  const shouldShowInnerSearch = () => {
+    // Force show inner search if the number of options exceeds 10 or certain conditions are met
+    const isAsyncType = type === "async";
+    const hasManyOptions = countOptions() > 10;
+
+    return isAsyncType || hasManyOptions || hasInnerSearch;
+  };
+
+  const innerSearchEnabled = shouldShowInnerSearch();
+
   const styles = resolveStyles(size, hasInnerSearch);
 
   const formatCreateLabel = (inputValue: string) => (

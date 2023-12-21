@@ -9,6 +9,7 @@ export type DropdownItem = {
   className?: string;
   items?: DropdownItem[];
   category?: string;
+  isDisabled?: boolean;
 };
 
 export type DropdownProps = {

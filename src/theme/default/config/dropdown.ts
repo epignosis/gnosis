@@ -6,4 +6,6 @@ export default {
   emptyStateColor: colors.secondary.base,
   hoverBackgroundColor: colors.secondary.lighter,
   borderBottomColor: colors.secondary.lighter,
+  textColor: colors.black,
+  disabledColor: colors.secondary.light,
 };

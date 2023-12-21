@@ -115,15 +115,21 @@ export const DropdownTitle = ({
 
 export const DropdownListItem = (
   { dropdown }: Theme,
-  { isSearchable, level }: { isSearchable: boolean; level: number },
+  {
+    isSearchable,
+    level,
+    isDisabled,
+  }: { isSearchable: boolean; level: number; isDisabled: boolean },
 ) => css`
   padding-inline: ${getInlinePaddingStart(level, isSearchable)}rem 1rem;
   padding-block: 0.5rem;
   display: flex;
   align-items: center;
   max-height: 2rem;
-  cursor: pointer;
+
   margin-inline-end: ${isSearchable ? "0.5rem" : "0"};
+  cursor: ${isDisabled ? "default" : "pointer"};
+  color: ${isDisabled ? dropdown.disabledColor : dropdown.textColor};
 
   &.separator {
     border-bottom: 1px solid ${dropdown.borderBottomColor};
@@ -144,7 +150,7 @@ export const DropdownListItem = (
   }
 
   &:hover {
-    background-color: ${dropdown.hoverBackgroundColor};
+    background-color: ${isDisabled ? "inherit" : dropdown.hoverBackgroundColor};
     border-radius: ${isSearchable ? "5px" : "0"};
   }
 `;

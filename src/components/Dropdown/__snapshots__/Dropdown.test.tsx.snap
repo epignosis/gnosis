@@ -36,7 +36,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </span>
         </li>
         <li
-          class="1 dropdown-list-item css-sy405u-DropdownListItem-DropdownListItem"
+          class="1 dropdown-list-item css-3jxyqn-DropdownListItem-DropdownListItem"
         >
           <span
             class="css-26eo9i-textContainer-textContainer"
@@ -56,7 +56,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </span>
         </li>
         <li
-          class="2 dropdown-list-item css-ujap1a-DropdownListItem-DropdownListItem"
+          class="2 dropdown-list-item css-1ppcfed-DropdownListItem-DropdownListItem"
         >
           <span
             class="css-26eo9i-textContainer-textContainer"
@@ -66,7 +66,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </span>
         </li>
         <li
-          class="3 dropdown-list-item css-ujap1a-DropdownListItem-DropdownListItem"
+          class="3 dropdown-list-item css-1ppcfed-DropdownListItem-DropdownListItem"
         >
           <span
             class="css-26eo9i-textContainer-textContainer"
@@ -86,7 +86,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </span>
         </li>
         <li
-          class="15 dropdown-list-item css-sy405u-DropdownListItem-DropdownListItem"
+          class="15 dropdown-list-item css-3jxyqn-DropdownListItem-DropdownListItem"
         >
           <span
             class="css-26eo9i-textContainer-textContainer"
@@ -96,7 +96,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </span>
         </li>
         <li
-          class="16 dropdown-list-item css-sy405u-DropdownListItem-DropdownListItem"
+          class="16 dropdown-list-item css-3jxyqn-DropdownListItem-DropdownListItem"
         >
           <span
             class="css-26eo9i-textContainer-textContainer"
@@ -106,7 +106,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </span>
         </li>
         <li
-          class="5 dropdown-list-item css-1e4noth-DropdownListItem-DropdownListItem"
+          class="5 dropdown-list-item css-2cjai3-DropdownListItem-DropdownListItem"
         >
           <span
             class="css-26eo9i-textContainer-textContainer"

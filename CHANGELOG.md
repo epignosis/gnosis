@@ -1,3 +1,10 @@
+# [5.7.0](https://github.com/epignosis/gnosis/compare/v5.6.14...v5.7.0) (2023-12-21)
+
+
+### Features
+
+* **dropdown:** add disabled state ([#274](https://github.com/epignosis/gnosis/issues/274)) ([a8de3bb](https://github.com/epignosis/gnosis/commit/a8de3bbe92b58b45cf5b266d9ed7cc081dba91a0))
+
 ## [5.6.14](https://github.com/epignosis/gnosis/compare/v5.6.13...v5.6.14) (2023-12-20)
 
 

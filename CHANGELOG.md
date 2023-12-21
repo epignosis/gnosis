@@ -1,3 +1,10 @@
+# [5.8.0](https://github.com/epignosis/gnosis/compare/v5.7.0...v5.8.0) (2023-12-21)
+
+
+### Features
+
+* add selectedRows prop to table ([#273](https://github.com/epignosis/gnosis/issues/273)) ([0aaa69c](https://github.com/epignosis/gnosis/commit/0aaa69c054e26ee14253508e5d1443cdb63b5967))
+
 # [5.7.0](https://github.com/epignosis/gnosis/compare/v5.6.14...v5.7.0) (2023-12-21)
 
 

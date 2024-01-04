@@ -54,4 +54,4 @@ const Checkbox: ForwardRefRenderFunction<HTMLDivElement, CheckboxProps> = (props
   );
 };
 
-export default forwardRef(Checkbox);
+export default React.memo(forwardRef(Checkbox));

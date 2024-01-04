@@ -37,4 +37,4 @@ const Tooltip: FC<TooltipProps> = ({
   );
 };
 
-export default Tooltip;
+export default React.memo(Tooltip);

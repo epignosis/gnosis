@@ -1,4 +1,4 @@
-import React, { FC, useLayoutEffect, useState } from "react";
+import React, { FC, useCallback, useLayoutEffect, useState } from "react";
 import classNames from "classnames";
 import { Row } from "../types";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
@@ -56,6 +56,12 @@ const Body: FC<ChildrenProps> = ({
   const handleRowHover = (row: Row | null): void => {
     onHoveredRowChange && onHoveredRowChange(row);
   };
+  const handleOnClickRow = useCallback(
+    (row: Row): void => {
+      onRowClick && onRowClick(row);
+    },
+    [onRowClick],
+  );
 
   return (
     <tbody>
@@ -87,14 +93,14 @@ const Body: FC<ChildrenProps> = ({
                 {accessors.map((accessor) => {
                   const rowObj = row[accessor];
                   const { maxWidth } = columns.find((column) => column.accessor === accessor) ?? {};
-                  const style = { maxWidth: maxWidth ? `${maxWidth}px` : "auto" };
 
                   if (typeof rowObj === "function") {
                     return (
                       <Cell
                         key={`entry-${row.id}-${accessor}`}
-                        onClick={onRowClick ? (): void => onRowClick(row) : undefined}
-                        style={style}
+                        row={row}
+                        onClick={handleOnClickRow}
+                        style={maxWidth}
                         windowSize={size}
                       >
                         {rowObj(row)}
@@ -104,8 +110,9 @@ const Body: FC<ChildrenProps> = ({
                   return (
                     <Cell
                       key={`entry-${row.id}-${accessor}`}
-                      onClick={onRowClick ? (): void => onRowClick(row) : undefined}
-                      style={style}
+                      row={row}
+                      onClick={handleOnClickRow}
+                      maxWidth={maxWidth}
                       windowSize={size}
                     >
                       {rowObj as string}

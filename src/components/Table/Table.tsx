@@ -59,4 +59,4 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
 Table.Header = Header;
 Table.Body = Body;
 
-export default Table;
+export default React.memo(Table);

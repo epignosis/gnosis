@@ -3,6 +3,7 @@ import React, {
   ForwardRefRenderFunction,
   PropsWithChildren,
   forwardRef,
+  isValidElement,
   useRef,
   useState,
 } from "react";
@@ -20,7 +21,7 @@ import CreatableSelect from "react-select/creatable";
 import { useClickAway } from "ahooks";
 import Label from "../Label/Label";
 import Tooltip from "../../Tooltip/Tooltip";
-import { AddOperatorSVG } from "../../../icons";
+import { AddOperatorSVG, InfoCircledSVG } from "../../../icons";
 import CustomValueContainer from "./components/CustomValueContainer";
 import { resolveStyles, selectContainer } from "./styles";
 import CustomMenuList from "./components/CustomMenuList";
@@ -56,6 +57,7 @@ const Select: ForwardRefRenderFunction<
     minWidth = MIN_WIDTH,
     maxWidth = MAX_WIDTH,
     placeholder: outerPlaceholder = OUTER_PLACEHOLDER,
+    tooltipContent = "",
     onChange,
     ...rest
   } = props;
@@ -84,6 +86,9 @@ const Select: ForwardRefRenderFunction<
   };
 
   const innerSearchEnabled = shouldShowInnerSearch();
+  const shouldRenderTooltip =
+    (tooltipContent && typeof tooltipContent === "string" && tooltipContent !== "") ||
+    isValidElement(tooltipContent);
 
   const styles = resolveStyles(size, hasInnerSearch);
 
@@ -174,9 +179,16 @@ const Select: ForwardRefRenderFunction<
       }
     >
       {hasLabel && (
-        <Label htmlFor={id} aria-labelledby={id} className={labelClassname}>
-          {label}
-        </Label>
+        <div className="label-container">
+          <Label htmlFor={id} aria-labelledby={id} className={labelClassname}>
+            {label}
+          </Label>
+          {shouldRenderTooltip && (
+            <Tooltip content={tooltipContent}>
+              <InfoCircledSVG height={20} />
+            </Tooltip>
+          )}
+        </div>
       )}
 
       <div className="select-input-wrapper" data-testid="custom-react-select" ref={containerRef}>

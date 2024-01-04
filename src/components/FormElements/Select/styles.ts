@@ -38,12 +38,32 @@ export const selectContainer = (
   gap: ${inline ? "1rem" : "0.5rem"};
   align-items: ${inline ? "center" : "normal"};
 
-  label {
-    margin: 0;
+  .label-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.25rem;
 
-    &.required::after {
-      content: " *";
-      color: ${formElements.generic.required};
+    label {
+      margin: 0;
+
+      &.required::after {
+        content: " *";
+        color: ${formElements.generic.required};
+      }
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      color: ${formElements.input.infoTooltipColor};
+      &:hover {
+        cursor: help;
+      }
     }
   }
 

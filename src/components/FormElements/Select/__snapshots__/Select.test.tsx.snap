@@ -3,15 +3,19 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="css-q6q58u-selectContainer-selectContainer"
+    class="css-1scuon3-selectContainer-selectContainer"
   >
-    <label
-      aria-labelledby="select-id"
-      class=" css-xs6o3g-label-label"
-      for="select-id"
+    <div
+      class="label-container"
     >
-      Test select input
-    </label>
+      <label
+        aria-labelledby="select-id"
+        class=" css-xs6o3g-label-label"
+        for="select-id"
+      >
+        Test select input
+      </label>
+    </div>
     <div
       class="select-input-wrapper"
       data-testid="custom-react-select"

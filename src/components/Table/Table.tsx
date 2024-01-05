@@ -16,7 +16,7 @@ type TableCompoundProps = {
 };
 
 const Table: FC<Props> & TableCompoundProps = (props) => {
-  const { columns, rows, emptyState, onRowSelect, sorting } = props;
+  const { columns, rows, emptyState, onRowSelect, sorting, selectedRows } = props;
 
   const [state, dispatch] = useReducer(reducer, {
     columns,
@@ -27,6 +27,12 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
   });
 
   const { selected } = state;
+
+  useEffect(() => {
+    if (selectedRows && selectedRows.length === 0) {
+      dispatch({ type: Actions.removeAll, payload: null });
+    }
+  }, [selectedRows]);
 
   useEffect(() => {
     dispatch({ type: Actions.columnsChanged, payload: columns });

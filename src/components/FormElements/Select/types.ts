@@ -30,6 +30,7 @@ declare module "react-select/dist/declarations/src/Select" {
     isMulti: IsMulti; // this is required to relieve TS warning
     group?: Group; // this is required to relieve TS warning
     asyncOptions?: AsyncOptions;
+    tooltipContent?: string | JSX.Element;
     type?: SelectType;
     onMenuInputFocus?: () => void;
   }
@@ -56,6 +57,7 @@ export type CustomSelectProps<
   creatableTooltip?: string;
   asyncOptions?: AsyncOptions;
   isInputValid?: (input: string) => boolean;
+  tooltipContent?: string | JSX.Element;
 };
 
 export type CustomMenuListProps<
@@ -66,6 +68,7 @@ export type CustomMenuListProps<
   innerPlaceholder?: string;
   hasInnerSearch?: boolean;
   asyncOptions?: AsyncOptions;
+  tooltipContent?: string | JSX.Element;
 };
 
 export type CustomValueContainerProps<

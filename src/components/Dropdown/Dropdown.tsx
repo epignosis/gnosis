@@ -147,6 +147,7 @@ const Dropdown: FC<DropdownProps> = ({
 
   const renderItemsRecursively = (items: DropdownItem[], level = 0): JSX.Element[] => {
     return items.map((item, index) => {
+      const { isDisabled = false } = item;
       if (item.items) {
         return (
           <Fragment key={`${index}-${item.value}`}>
@@ -168,9 +169,17 @@ const Dropdown: FC<DropdownProps> = ({
         <li
           className={dropdownItemClasses(item)}
           key={`item-${index}-${item.value}`}
-          onClick={(): void => handleListItemSelect(item)}
+          onClick={(): void => {
+            if (!isDisabled) {
+              handleListItemSelect(item);
+            }
+          }}
           css={(theme): SerializedStyles =>
-            DropdownListItem(theme, { isSearchable: Boolean(isSearchable), level })
+            DropdownListItem(theme, {
+              isSearchable: Boolean(isSearchable),
+              level,
+              isDisabled,
+            })
           }
         >
           {item?.icon}

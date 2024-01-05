@@ -1,9 +1,41 @@
-## [5.6.10](https://github.com/epignosis/gnosis/compare/v5.6.9...v5.6.10) (2023-11-23)
+## [5.8.1](https://github.com/epignosis/gnosis/compare/v5.8.0...v5.8.1) (2024-01-04)
+
+# [5.8.0](https://github.com/epignosis/gnosis/compare/v5.7.0...v5.8.0) (2023-12-21)
+
+
+### Features
+
+* add selectedRows prop to table ([#273](https://github.com/epignosis/gnosis/issues/273)) ([0aaa69c](https://github.com/epignosis/gnosis/commit/0aaa69c054e26ee14253508e5d1443cdb63b5967))
+
+# [5.7.0](https://github.com/epignosis/gnosis/compare/v5.6.14...v5.7.0) (2023-12-21)
+
+
+### Features
+
+* **dropdown:** add disabled state ([#274](https://github.com/epignosis/gnosis/issues/274)) ([a8de3bb](https://github.com/epignosis/gnosis/commit/a8de3bbe92b58b45cf5b266d9ed7cc081dba91a0))
+
+## [5.6.14](https://github.com/epignosis/gnosis/compare/v5.6.13...v5.6.14) (2023-12-20)
 
 
 ### Bug Fixes
 
-* **input:** allow arrow up and arrow down keys in number input ([#266](https://github.com/epignosis/gnosis/issues/266)) ([035e25a](https://github.com/epignosis/gnosis/commit/035e25af0ff92757adf60ca8229bef8626187419))
+* fix default inner search for select when having grouped options ([#270](https://github.com/epignosis/gnosis/issues/270)) ([01f79ea](https://github.com/epignosis/gnosis/commit/01f79ea83f049096a2fa7ef4d080f70c074bb07f))
+
+## [5.6.13](https://github.com/epignosis/gnosis/compare/v5.6.12...v5.6.13) (2023-12-19)
+
+## [5.6.12](https://github.com/epignosis/gnosis/compare/v5.6.11...v5.6.12) (2023-12-18)
+
+
+### Bug Fixes
+
+* **radio, checkbox:** fix styles and readonly property ([#269](https://github.com/epignosis/gnosis/issues/269)) ([1fafaaf](https://github.com/epignosis/gnosis/commit/1fafaafe06e4e6e7b683d7563f57411f07077bce))
+
+## [5.6.11](https://github.com/epignosis/gnosis/compare/v5.6.10...v5.6.11) (2023-12-15)
+
+
+### Reverts
+
+* Revert "chore(release): 5.6.10 [skip ci]" ([5052ff9](https://github.com/epignosis/gnosis/commit/5052ff93f0fed5ffc9c286c407ec6e5f2cea61b7))
 
 ## [5.6.9](https://github.com/epignosis/gnosis/compare/v5.6.8...v5.6.9) (2023-11-22)
 

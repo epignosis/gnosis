@@ -33,7 +33,7 @@ const Radio: FC<RadioProps> = ({
     css={(theme): SerializedStyles => radioButtonContainer(theme, { size, inline, readOnly })}
     {...containerAttrs}
   >
-    <input id={id} type="radio" {...rest} />
+    <input id={id} type="radio" readOnly={readOnly} {...rest} />
     <label htmlFor={id}>{label}</label>
   </div>
 );

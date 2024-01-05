@@ -12,6 +12,7 @@ export default {
     label: "Choose a programming language",
     inline: false,
     id: "programming-language",
+    tooltipContent: "",
   },
   argTypes: {
     size: {

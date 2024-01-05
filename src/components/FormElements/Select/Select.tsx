@@ -3,6 +3,7 @@ import React, {
   ForwardRefRenderFunction,
   PropsWithChildren,
   forwardRef,
+  isValidElement,
   useRef,
   useState,
 } from "react";
@@ -20,7 +21,7 @@ import CreatableSelect from "react-select/creatable";
 import { useClickAway } from "ahooks";
 import Label from "../Label/Label";
 import Tooltip from "../../Tooltip/Tooltip";
-import { AddOperatorSVG } from "../../../icons";
+import { AddOperatorSVG, InfoCircledSVG } from "../../../icons";
 import CustomValueContainer from "./components/CustomValueContainer";
 import { resolveStyles, selectContainer } from "./styles";
 import CustomMenuList from "./components/CustomMenuList";
@@ -56,6 +57,7 @@ const Select: ForwardRefRenderFunction<
     minWidth = MIN_WIDTH,
     maxWidth = MAX_WIDTH,
     placeholder: outerPlaceholder = OUTER_PLACEHOLDER,
+    tooltipContent = "",
     onChange,
     isInputValid,
     ...rest
@@ -69,7 +71,26 @@ const Select: ForwardRefRenderFunction<
     required,
   });
 
-  const innerSearchEnabled = type === "async" ? true : hasInnerSearch;
+  const countOptions = () => {
+    // Count the number of options, including nested options if exists
+    return options.reduce((count, option) => {
+      return count + ("options" in option ? option.options.length : 1);
+    }, 0);
+  };
+
+  const shouldShowInnerSearch = () => {
+    // Force show inner search if the number of options exceeds 10 or certain conditions are met
+    const isAsyncType = type === "async";
+    const hasManyOptions = countOptions() > 10;
+
+    return isAsyncType || hasManyOptions || hasInnerSearch;
+  };
+
+  const innerSearchEnabled = shouldShowInnerSearch();
+  const shouldRenderTooltip =
+    (tooltipContent && typeof tooltipContent === "string" && tooltipContent !== "") ||
+    isValidElement(tooltipContent);
+
   const styles = resolveStyles(size, hasInnerSearch);
 
   const formatCreateLabel = (inputValue: string) => (
@@ -160,9 +181,16 @@ const Select: ForwardRefRenderFunction<
       }
     >
       {hasLabel && (
-        <Label htmlFor={id} aria-labelledby={id} className={labelClassname}>
-          {label}
-        </Label>
+        <div className="label-container">
+          <Label htmlFor={id} aria-labelledby={id} className={labelClassname}>
+            {label}
+          </Label>
+          {shouldRenderTooltip && (
+            <Tooltip content={tooltipContent}>
+              <InfoCircledSVG height={20} />
+            </Tooltip>
+          )}
+        </div>
       )}
 
       <div className="select-input-wrapper" data-testid="custom-react-select" ref={containerRef}>

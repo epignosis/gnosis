@@ -59,6 +59,7 @@ const Select: ForwardRefRenderFunction<
     placeholder: outerPlaceholder = OUTER_PLACEHOLDER,
     tooltipContent = "",
     onChange,
+    isInputValid,
     ...rest
   } = props;
   const hasLabel = Boolean(label);
@@ -147,6 +148,7 @@ const Select: ForwardRefRenderFunction<
       onChange && onChange(option, action);
     },
     onInputChange: (val: string) => setInputValue(val),
+    isValidNewOption: isInputValid,
   };
 
   useClickAway(

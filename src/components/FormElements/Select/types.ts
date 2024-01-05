@@ -56,6 +56,7 @@ export type CustomSelectProps<
   maxWidth?: string;
   creatableTooltip?: string;
   asyncOptions?: AsyncOptions;
+  isInputValid?: (input: string) => boolean;
   tooltipContent?: string | JSX.Element;
 };
 

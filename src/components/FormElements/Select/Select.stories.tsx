@@ -115,6 +115,17 @@ withValueCreation.args = {
   type: "creatable",
 };
 
+export const withValueCreationValidation = Template.bind({});
+
+withValueCreationValidation.args = {
+  options: defaultOptions,
+  isMulti: true,
+  isClearable: true,
+  hasInnerSearch: true,
+  type: "creatable",
+  isInputValid: (value: string): boolean => /^(?=.*[^\d])(?=.*\S).+$/.test(value),
+};
+
 export const AsyncSelect: Story<CustomSelectProps<CustomOption, boolean>> = (args) => {
   const [options, setOptions] = useState<CustomOption[]>([]);
   const [loading, setLoading] = useState(false);

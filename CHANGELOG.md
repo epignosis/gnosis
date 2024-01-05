@@ -1,3 +1,10 @@
+## [5.8.2](https://github.com/epignosis/gnosis/compare/v5.8.1...v5.8.2) (2024-01-05)
+
+
+### Bug Fixes
+
+* validating new input values on select component ([#268](https://github.com/epignosis/gnosis/issues/268)) ([f772f1b](https://github.com/epignosis/gnosis/commit/f772f1bc4997f8648375623914f6b4c75702071c))
+
 ## [5.8.1](https://github.com/epignosis/gnosis/compare/v5.8.0...v5.8.1) (2024-01-04)
 
 # [5.8.0](https://github.com/epignosis/gnosis/compare/v5.7.0...v5.8.0) (2023-12-21)

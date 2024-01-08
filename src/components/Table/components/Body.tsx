@@ -65,23 +65,25 @@ const Body: FC<ChildrenProps> = ({
         <>
           {state.rows.map((row) => {
             const isSelected = selectedRows.includes(row.id);
-            const rowKey = `${row.id}-${isSelected ? "selected" : "not-selected"}`;
 
             return (
               <tr
-                key={rowKey}
+                key={`entry-${row.id}-select`}
                 className={rowClassnames(isSelected, Boolean(onRowClick))}
                 onMouseEnter={(): void => handleRowHover(row)}
                 onMouseLeave={(): void => handleRowHover(null)}
               >
                 {selectable && (
-                  <Cell key={row.id} className={checkboxWrapperClassnames(autohide)}>
+                  <Cell
+                    key={`${row.id}-${isSelected ? "selected" : "not-selected"}`}
+                    className={checkboxWrapperClassnames(autohide)}
+                  >
                     <Checkbox
                       id={`entry-${row.id}`}
                       name={`entry-${row.id}`}
                       value={`entry-${row.id}`}
-                      onChange={(e): void => handleRowSelection(e, row)}
                       checked={isSelected}
+                      onChange={(e): void => handleRowSelection(e, row)}
                     />
                   </Cell>
                 )}
@@ -93,10 +95,10 @@ const Body: FC<ChildrenProps> = ({
                   return (
                     <Cell
                       key={`entry-${row.id}-${accessor}`}
-                      onClick={onRowClick ? (): void => onRowClick(row) : undefined}
                       maxWidth={maxWidth}
                       windowWidth={windowWidth}
                       windowHeight={windowHeight}
+                      onClick={onRowClick ? (): void => onRowClick(row) : undefined}
                     >
                       {typeof rowObj === "function" ? rowObj(row) : rowObj}
                     </Cell>

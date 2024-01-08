@@ -15,22 +15,6 @@ const emptyState = {
   callbackFn: () => window.alert("Hello"),
 };
 
-const rows = [];
-for (let i = 0; i < 200; i++) {
-  rows.push({
-    id: i,
-    description: () => (
-      <div className="has-overflow">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      </div>
-    ),
-    name: "Test",
-    category: "Test",
-    code: "Test",
-    date: "27/05/1997",
-  });
-}
-
 export default {
   component: Table,
   title: "Components/Table",
@@ -46,7 +30,6 @@ export default {
         classNames: ["description"],
         sortOrder: "asc",
         sortableHeader: false,
-        maxWidth: 100,
       },
       { accessor: "name", cell: "Name", classNames: ["name"], sortOrder: "asc" },
       {
@@ -57,41 +40,40 @@ export default {
       },
       { accessor: "date", cell: "Date", classNames: ["date"], sortOrder: "desc" },
     ],
-    rows: rows,
-    // rows: [
-    //   {
-    //     id: 271,
-    //     description: "Test",
-    //     name: "Test",
-    //     category: "Test",
-    //     code: "Test",
-    //     date: "27/05/1997",
-    //   },
-    //   {
-    //     id: 272,
-    //     description: "Test",
-    //     name: "Test",
-    //     category: "Test",
-    //     code: "Test",
-    //     date: "27/05/1997",
-    //   },
-    //   {
-    //     id: 273,
-    //     description: "Test",
-    //     name: "Test",
-    //     category: "Test",
-    //     code: "Test",
-    //     date: "27/05/1997",
-    //   },
-    //   {
-    //     id: 274,
-    //     description: "Test",
-    //     name: "Test",
-    //     category: "Test",
-    //     code: "Test",
-    //     date: "27/05/1997",
-    //   },
-    // ],
+    rows: [
+      {
+        id: 271,
+        description: "Test",
+        name: "Test",
+        category: "Test",
+        code: "Test",
+        date: "27/05/1997",
+      },
+      {
+        id: 272,
+        description: "Test",
+        name: "Test",
+        category: "Test",
+        code: "Test",
+        date: "27/05/1997",
+      },
+      {
+        id: 273,
+        description: "Test",
+        name: "Test",
+        category: "Test",
+        code: "Test",
+        date: "27/05/1997",
+      },
+      {
+        id: 274,
+        description: "Test",
+        name: "Test",
+        category: "Test",
+        code: "Test",
+        date: "27/05/1997",
+      },
+    ],
     emptyState: {
       title: "No results found with these criteria",
       info: "Please try again or",
@@ -157,34 +139,33 @@ WithOverflowColumns.args = {
     },
     { accessor: "category", cell: "Category", classNames: ["category"], sortOrder: "asc" },
   ],
-  rows,
-  // rows: [
-  //   {
-  //     id: 271,
-  //     description: <div className="has-overflow">Testing Testing Testing</div>,
-  //     name: "Test",
-  //     category: "Test",
-  //     code: "Test",
-  //   },
-  //   { id: 272, description: "Test", name: "Test", category: "Test", code: "Test" },
-  //   {
-  //     id: 273,
-  //     description: "Test",
-  //     name: (
-  //       <div className="has-overflow">
-  //         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is
-  //         simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy
-  //         text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the
-  //         printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and
-  //         typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting
-  //         industry.
-  //       </div>
-  //     ),
-  //     category: "Test",
-  //     code: "Test",
-  //   },
-  //   { id: 274, description: "Test", name: "Test", category: "Test", code: "Test" },
-  // ],
+  rows: [
+    {
+      id: 271,
+      description: <div className="has-overflow">Testing Testing Testing</div>,
+      name: "Test",
+      category: "Test",
+      code: "Test",
+    },
+    { id: 272, description: "Test", name: "Test", category: "Test", code: "Test" },
+    {
+      id: 273,
+      description: "Test",
+      name: (
+        <div className="has-overflow">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is
+          simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy
+          text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the
+          printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and
+          typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
+        </div>
+      ),
+      category: "Test",
+      code: "Test",
+    },
+    { id: 274, description: "Test", name: "Test", category: "Test", code: "Test" },
+  ],
 };
 
 export const WithoutData = Template.bind({});

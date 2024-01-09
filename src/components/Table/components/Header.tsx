@@ -112,7 +112,7 @@ const Header: FC<ChildrenProps> = ({
               <Cell
                 as="th"
                 key={accessor}
-                style={{ width: headerWidth ? `${headerWidth}px` : "auto" }}
+                maxWidth={headerWidth}
                 className={`header-cell ${classNames.length > 0 && classNames.join(" ")} ${
                   !sortableHeader ? "hidden" : ""
                 }`}

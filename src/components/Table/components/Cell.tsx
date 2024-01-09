@@ -55,7 +55,7 @@ const Cell: FC<CellProps> = ({
           <span style={style}>{children}</span>
         </Tooltip>
       ) : (
-        children
+        <span style={style}>{children}</span>
       )}
     </Component>
   );

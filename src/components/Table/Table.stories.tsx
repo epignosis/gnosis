@@ -15,6 +15,18 @@ const emptyState = {
   callbackFn: () => window.alert("Hello"),
 };
 
+const rows = [];
+for (let i = 0; i < 10; i++) {
+  rows.push({
+    id: i,
+    description: "Test",
+    name: "Test",
+    category: "Test",
+    code: "Test",
+    date: "27/05/1997",
+  });
+}
+
 export default {
   component: Table,
   title: "Components/Table",
@@ -40,40 +52,7 @@ export default {
       },
       { accessor: "date", cell: "Date", classNames: ["date"], sortOrder: "desc" },
     ],
-    rows: [
-      {
-        id: 271,
-        description: "Test",
-        name: "Test",
-        category: "Test",
-        code: "Test",
-        date: "27/05/1997",
-      },
-      {
-        id: 272,
-        description: "Test",
-        name: "Test",
-        category: "Test",
-        code: "Test",
-        date: "27/05/1997",
-      },
-      {
-        id: 273,
-        description: "Test",
-        name: "Test",
-        category: "Test",
-        code: "Test",
-        date: "27/05/1997",
-      },
-      {
-        id: 274,
-        description: "Test",
-        name: "Test",
-        category: "Test",
-        code: "Test",
-        date: "27/05/1997",
-      },
-    ],
+    rows,
     emptyState: {
       title: "No results found with these criteria",
       info: "Please try again or",

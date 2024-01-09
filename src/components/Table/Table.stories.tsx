@@ -84,9 +84,16 @@ export default {
 
 const Template: Story<Props> = (args) => {
   const [selectedRows, setSelectedRows] = useState([]);
+  const { selectable, autohide } = args;
+  const showUncheckBtn = selectable && !autohide;
+
   return (
     <>
-      <Button onClick={() => setSelectedRows([])}> Uncheck rows </Button>
+      {showUncheckBtn && (
+        <Button onClick={() => setSelectedRows([])} style={{ marginBottom: "1rem" }}>
+          Uncheck rows
+        </Button>
+      )}
       <Table {...args} selectedRows={selectedRows} />
     </>
   );

@@ -123,7 +123,14 @@ withValueCreationValidation.args = {
   isClearable: true,
   hasInnerSearch: true,
   type: "creatable",
-  isInputValid: (value: string): boolean => /^(?=.*[^\d])(?=.*\S).+$/.test(value),
+  isInputValid: (value: string): boolean =>
+    /^(?=.*[^\d])(?=.*\S).+$/.test(value) &&
+    !defaultOptions.find((option) => option.label === value),
+  checkIfInputIsSelected: (inputValue: string): string => {
+    return defaultOptions.find((option) => option.label === inputValue)
+      ? "Already selected"
+      : "No options";
+  },
 };
 
 export const AsyncSelect: Story<CustomSelectProps<CustomOption, boolean>> = (args) => {

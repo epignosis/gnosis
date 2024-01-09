@@ -207,7 +207,7 @@ export const resolveStyles = (
       boxShadow: "none",
       borderRadius: "5px",
       color: !isDisabled ? base.color : formElements.input.disabledColor,
-      cursor: !isDisabled ? "default" : "not-allowed",
+      cursor: !isDisabled ? "pointer" : "not-allowed",
       pointerEvents: "auto",
 
       "&:hover": {

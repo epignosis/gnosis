@@ -106,7 +106,7 @@ export const tableContainer = ({ table }: Theme) => css`
         &.selected {
           .autohide-cell {
             > div {
-              display: block;
+              display: flex;
             }
           }
         }

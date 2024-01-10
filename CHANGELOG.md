@@ -1,3 +1,10 @@
+## [5.8.5](https://github.com/epignosis/gnosis/compare/v5.8.4...v5.8.5) (2024-01-10)
+
+
+### Bug Fixes
+
+* table auto hide styles ([#279](https://github.com/epignosis/gnosis/issues/279)) ([de4e34d](https://github.com/epignosis/gnosis/commit/de4e34d55e68b5ff6c4b38a39b6a05212365e754))
+
 ## [5.8.4](https://github.com/epignosis/gnosis/compare/v5.8.3...v5.8.4) (2024-01-10)
 
 

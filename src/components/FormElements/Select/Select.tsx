@@ -60,6 +60,7 @@ const Select: ForwardRefRenderFunction<
     tooltipContent = "",
     onChange,
     isInputValid,
+    checkIfInputIsSelected,
     ...rest
   } = props;
   const hasLabel = Boolean(label);
@@ -149,6 +150,7 @@ const Select: ForwardRefRenderFunction<
     },
     onInputChange: (val: string) => setInputValue(val),
     isValidNewOption: isInputValid,
+    noOptionsMessage: () => checkIfInputIsSelected && checkIfInputIsSelected(inputValue),
   };
 
   useClickAway(

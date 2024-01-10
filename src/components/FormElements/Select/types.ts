@@ -57,6 +57,7 @@ export type CustomSelectProps<
   creatableTooltip?: string;
   asyncOptions?: AsyncOptions;
   isInputValid?: (input: string) => boolean;
+  checkIfInputIsSelected?: (inputValue: string) => string;
   tooltipContent?: string | JSX.Element;
 };
 

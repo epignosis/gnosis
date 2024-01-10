@@ -1,3 +1,10 @@
+## [5.8.4](https://github.com/epignosis/gnosis/compare/v5.8.3...v5.8.4) (2024-01-10)
+
+
+### Bug Fixes
+
+* Select component duplicate values and no options message ([#278](https://github.com/epignosis/gnosis/issues/278)) ([22ea9a6](https://github.com/epignosis/gnosis/commit/22ea9a64e945ae4ddf7576d425c9059c929a0dab))
+
 ## [5.8.3](https://github.com/epignosis/gnosis/compare/v5.8.2...v5.8.3) (2024-01-09)
 
 

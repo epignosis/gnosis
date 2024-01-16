@@ -10,11 +10,13 @@ import React, {
 import classNames from "classnames";
 import ReactSelect, {
   ActionMeta,
+  DropdownIndicatorProps,
   GroupBase,
   MultiValue,
   SelectInstance,
   SingleValue,
   ValueContainerProps,
+  components,
 } from "react-select";
 import { SerializedStyles } from "@emotion/react";
 import CreatableSelect from "react-select/creatable";
@@ -107,6 +109,25 @@ const Select: ForwardRefRenderFunction<
     </div>
   );
 
+  const CustomDropdownIndicator: React.FC<DropdownIndicatorProps<CustomOption, boolean>> = (
+    props,
+  ) => {
+    const {
+      selectProps: { menuIsOpen },
+    } = props;
+
+    const handleCloseMenu = () => {
+      if (menuIsOpen) {
+        setIsFocused(false);
+      }
+    };
+    return (
+      <components.DropdownIndicator {...props}>
+        <components.DownChevron onClick={handleCloseMenu} />
+      </components.DropdownIndicator>
+    );
+  };
+
   const customSelectProps = {
     ...rest,
     ref: forwardedRef,
@@ -122,6 +143,11 @@ const Select: ForwardRefRenderFunction<
     },
     components: {
       IndicatorSeparator: () => null,
+      DropdownIndicator: (
+        props: PropsWithChildren<
+          DropdownIndicatorProps<CustomOption, boolean, GroupBase<CustomOption>>
+        >,
+      ) => CustomDropdownIndicator(props),
       MenuList: CustomMenuList,
       ValueContainer: (
         props: PropsWithChildren<

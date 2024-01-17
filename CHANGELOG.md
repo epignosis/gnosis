@@ -1,3 +1,11 @@
+## [5.8.6](https://github.com/epignosis/gnosis/compare/v5.8.5...v5.8.6) (2024-01-17)
+
+
+### Bug Fixes
+
+* **select:** improve indicator ([#282](https://github.com/epignosis/gnosis/issues/282)) ([fcd8d2d](https://github.com/epignosis/gnosis/commit/fcd8d2d0005aa4f698353601d83796b1478114ad))
+* **table:** reset selected rows when unmounting ([#281](https://github.com/epignosis/gnosis/issues/281)) ([6d28814](https://github.com/epignosis/gnosis/commit/6d2881405c53d4af10e865b5787c94e1796349f7))
+
 ## [5.8.5](https://github.com/epignosis/gnosis/compare/v5.8.4...v5.8.5) (2024-01-10)
 
 

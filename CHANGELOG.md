@@ -1,3 +1,10 @@
+## [5.8.9](https://github.com/epignosis/gnosis/compare/v5.8.8...v5.8.9) (2024-01-17)
+
+
+### Bug Fixes
+
+* **deploy:** for deploy ([#286](https://github.com/epignosis/gnosis/issues/286)) ([930c1b0](https://github.com/epignosis/gnosis/commit/930c1b022c9868304bfc40bbcd108b27bf4ec26d))
+
 ## [5.8.8](https://github.com/epignosis/gnosis/compare/v5.8.7...v5.8.8) (2024-01-17)
 
 

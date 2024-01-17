@@ -1,3 +1,10 @@
+## [5.8.8](https://github.com/epignosis/gnosis/compare/v5.8.7...v5.8.8) (2024-01-17)
+
+
+### Bug Fixes
+
+* **select:** handle menu open ([#284](https://github.com/epignosis/gnosis/issues/284)) ([43ecaf8](https://github.com/epignosis/gnosis/commit/43ecaf889d816a04700151efa0405fb364edd149))
+
 ## [5.8.7](https://github.com/epignosis/gnosis/compare/v5.8.6...v5.8.7) (2024-01-17)
 
 

@@ -1,3 +1,10 @@
+## [5.8.7](https://github.com/epignosis/gnosis/compare/v5.8.6...v5.8.7) (2024-01-17)
+
+
+### Bug Fixes
+
+* **table:** revert latest change ([#283](https://github.com/epignosis/gnosis/issues/283)) ([3bc428b](https://github.com/epignosis/gnosis/commit/3bc428bdb7d1c715bee400e19ade7107fc31c0d9))
+
 ## [5.8.6](https://github.com/epignosis/gnosis/compare/v5.8.5...v5.8.6) (2024-01-17)
 
 

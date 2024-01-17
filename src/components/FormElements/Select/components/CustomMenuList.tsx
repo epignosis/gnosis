@@ -19,12 +19,13 @@ const CustomMenuList: FC<CustomMenuListProps<CustomOption, boolean>> = (customMe
     onMenuInputFocus,
     asyncOptions,
     type,
+    menuIsOpen,
   } = selectProps;
 
   const { onAsyncSearchChange, status, initialText = "" } = asyncOptions ?? {};
   const isAsync = type === "async";
   const showLoading = isAsync ? Boolean(status?.isLoading) : false;
-  const showMenuList = isAsync ? Boolean(!status?.isLoading && inputValue) : true;
+  const showMenuList = isAsync ? Boolean(!status?.isLoading && inputValue) : menuIsOpen;
   const showInitialText = isAsync ? Boolean(!status?.isLoading && !inputValue) : false;
   const shouldFocus = Boolean(hasInnerSearch);
 

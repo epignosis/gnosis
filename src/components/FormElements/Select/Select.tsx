@@ -122,6 +122,7 @@ const Select: ForwardRefRenderFunction<
         setIsFocused(false);
       }
     };
+
     return (
       <components.DropdownIndicator {...props}>
         <components.DownChevron onClick={handleCloseMenu} />

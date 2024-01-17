@@ -29,12 +29,6 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
   const { selected } = state;
 
   useEffect(() => {
-    return () => {
-      dispatch({ type: Actions.removeAll, payload: null });
-    };
-  }, []);
-
-  useEffect(() => {
     if (selectedRows && selectedRows.length === 0) {
       dispatch({ type: Actions.removeAll, payload: null });
     }

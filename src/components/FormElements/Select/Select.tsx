@@ -63,6 +63,7 @@ const Select: ForwardRefRenderFunction<
     onChange,
     isInputValid,
     checkIfInputIsSelected,
+    closeMenuOnSelect,
     ...rest
   } = props;
   const hasLabel = Boolean(label);
@@ -132,8 +133,8 @@ const Select: ForwardRefRenderFunction<
     ...rest,
     ref: forwardedRef,
     styles,
-    blurInputOnSelect: !isMulti,
-    closeMenuOnSelect: !isMulti,
+    blurInputOnSelect: closeMenuOnSelect || !isMulti,
+    closeMenuOnSelect: closeMenuOnSelect || !isMulti,
     isMulti,
     classNames: {
       control: ({ isFocused }: { isFocused: boolean }) =>

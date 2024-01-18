@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useCallback, useEffect, useState } from "react";
 import classNames from "classnames";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
 import { IconChevronDownSVG, IconChevronUpSVG } from "../../../icons/index";
@@ -51,12 +51,13 @@ const Header: FC<ChildrenProps> = ({
     setColumnsSorting(sortingPerColumn);
   }, [sorting]);
 
-  const handleToggleSelectAll = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    e.preventDefault();
-    selected.length === 0
-      ? dispatch({ type: Actions.selectAll, payload: null })
-      : dispatch({ type: Actions.removeAll, payload: null });
-  };
+  const handleToggleSelectAll = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>): void => {
+      e.preventDefault();
+      dispatch({ type: Actions.toggleAll, payload: null });
+    },
+    [dispatch],
+  );
 
   const handleSortingChange = (accessor: string, sortOrder: Column["sortOrder"]): void => {
     if (hasSorting) {

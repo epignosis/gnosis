@@ -29,16 +29,13 @@ const Body: FC<ChildrenProps> = ({
     return () => window.removeEventListener("resize", debouncedUpdateSize);
   }, []);
 
-  const handleRowSelection = (e: React.ChangeEvent<HTMLInputElement>, row: Row): void => {
-    e.preventDefault();
-    if (!selectedRowsIds.includes(row.id)) {
-      dispatch({ type: Actions.selectRow, payload: row });
-    }
-
-    if (selectedRowsIds.includes(row.id)) {
-      dispatch({ type: Actions.removeRow, payload: row });
-    }
-  };
+  const handleRowSelection = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>, row: Row): void => {
+      e.preventDefault();
+      dispatch({ type: Actions.toggle, payload: row });
+    },
+    [dispatch],
+  );
 
   const handleRowHover = useCallback(
     (row: Row | null): void => {

@@ -1,8 +1,6 @@
 export enum Actions {
-  selectAll = "SELECT_ALL",
-  removeAll = "REMOVE_ALL",
-  selectRow = "SELECT_ROW",
-  removeRow = "REMOVE_ROW",
+  toggleAll = "TOGGLE_ALL",
+  toggle = "TOGGLE",
   sortingChanged = "SORTING_CHANGED",
   columnsChanged = "COLUMNS_CHANGED",
   rowsChanged = "ROWS_CHANGED",

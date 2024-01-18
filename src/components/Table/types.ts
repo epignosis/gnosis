@@ -55,10 +55,8 @@ export type TableState = {
 };
 
 export type ActionType =
-  | { type: Actions.selectAll; payload: null }
-  | { type: Actions.removeAll; payload: null }
-  | { type: Actions.selectRow; payload: Row }
-  | { type: Actions.removeRow; payload: Row }
+  | { type: Actions.toggleAll; payload: null }
+  | { type: Actions.toggle; payload: Row }
   | { type: Actions.sortingChanged; payload: Sorting }
   | { type: Actions.columnsChanged; payload: Column[] }
   | { type: Actions.rowsChanged; payload: Row[] };

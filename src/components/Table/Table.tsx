@@ -30,7 +30,7 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
 
   useEffect(() => {
     if (selectedRows && selectedRows.length === 0) {
-      dispatch({ type: Actions.removeAll, payload: null });
+      dispatch({ type: Actions.toggleAll, payload: null });
     }
   }, [selectedRows]);
 

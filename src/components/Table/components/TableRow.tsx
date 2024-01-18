@@ -2,6 +2,8 @@ import React, { FC, memo, useCallback } from "react";
 import classNames from "classnames";
 import { Column, Row } from "../types";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
+import { Dispatch } from "../reducer";
+import { Actions } from "../constants";
 import Cell from "./Cell";
 
 const rowClassnames = (isSelected: boolean, callback: boolean): string =>
@@ -23,9 +25,9 @@ export type TableRowProps = {
   isSelected: boolean;
   selectable: boolean;
   autohide?: boolean;
+  dispatch: Dispatch;
   onRowClick?: (row: Row) => void;
   onHoveredRowChange: (row: Row | null) => void;
-  handleRowSelection: (e: React.ChangeEvent<HTMLInputElement>, row: Row) => void;
 };
 
 const TableRow: FC<TableRowProps> = ({
@@ -36,18 +38,23 @@ const TableRow: FC<TableRowProps> = ({
   isSelected,
   selectable,
   autohide,
+  dispatch,
   onRowClick,
   onHoveredRowChange,
-  handleRowSelection,
 }) => {
   const accessors = columns.filter((column) => !column.hidden).map((column) => column.accessor);
 
-  const handleCellClick = useCallback((): void => {
+  const handleRowClick = useCallback((): void => {
     onRowClick && onRowClick(row);
-  }, [row]);
+  }, [row.id]);
 
-  const handleRowChange = (e: React.ChangeEvent<HTMLInputElement>): void =>
-    handleRowSelection(e, row);
+  const handleRowSelection = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>, row: Row): void => {
+      e.preventDefault();
+      dispatch({ type: Actions.toggle, payload: row });
+    },
+    [dispatch],
+  );
 
   return (
     <tr
@@ -55,6 +62,7 @@ const TableRow: FC<TableRowProps> = ({
       className={rowClassnames(isSelected, Boolean(onRowClick))}
       onMouseEnter={() => onHoveredRowChange(row)}
       onMouseLeave={() => onHoveredRowChange(null)}
+      onClick={handleRowClick}
     >
       {selectable && (
         <Cell
@@ -66,7 +74,7 @@ const TableRow: FC<TableRowProps> = ({
             name={`entry-${row.id}`}
             value={`entry-${row.id}`}
             checked={isSelected}
-            onChange={handleRowChange}
+            onChange={(e) => handleRowSelection(e, row)}
           />
         </Cell>
       )}
@@ -81,7 +89,6 @@ const TableRow: FC<TableRowProps> = ({
             maxWidth={maxWidth}
             windowWidth={windowWidth}
             windowHeight={windowHeight}
-            onClick={handleCellClick}
           >
             {typeof rowObj === "function" ? rowObj(row) : rowObj}
           </Cell>

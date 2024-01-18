@@ -3,7 +3,6 @@ import { useDebounceFn } from "ahooks";
 import { Row } from "../types";
 import Result from "../../Result/Result";
 import { ChildrenProps } from "../Table";
-import { Actions } from "../constants";
 import TableRow from "./TableRow";
 
 const Body: FC<ChildrenProps> = ({
@@ -29,14 +28,6 @@ const Body: FC<ChildrenProps> = ({
     return () => window.removeEventListener("resize", debouncedUpdateSize);
   }, []);
 
-  const handleRowSelection = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>, row: Row): void => {
-      e.preventDefault();
-      dispatch({ type: Actions.toggle, payload: row });
-    },
-    [dispatch],
-  );
-
   const handleRowHover = useCallback(
     (row: Row | null): void => {
       onHoveredRowChange && onHoveredRowChange(row);
@@ -61,9 +52,9 @@ const Body: FC<ChildrenProps> = ({
                 isSelected={isSelected}
                 selectable={Boolean(selectable)}
                 autohide={autohide}
+                dispatch={dispatch}
                 onRowClick={onRowClick}
                 onHoveredRowChange={handleRowHover}
-                handleRowSelection={handleRowSelection}
               />
             );
           })}

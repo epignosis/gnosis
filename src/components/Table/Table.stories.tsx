@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Story } from "@storybook/react";
 import { IconEmptyStateSVG } from "../../icons/";
 import Text from "../Text/Text";
 import Button from "../Button/Button";
-import Table, { Props } from "./Table";
+import Table, { Props, ImperativeHandlers } from "./Table";
 import { Row, Sorting } from "./types";
 
 const emptyState = {
@@ -62,18 +62,29 @@ export default {
 };
 
 const Template: Story<Props> = (args) => {
-  const [selectedRows, setSelectedRows] = useState([]);
+  const [selectedRows, setSelectedRows] = useState<number[]>([]);
   const { selectable, autohide } = args;
   const showUncheckBtn = selectable && !autohide;
+  const tableRef = useRef<ImperativeHandlers>(null);
+
+  const handleClick = (): void => {
+    if (tableRef.current && selectedRows.length > 0) {
+      tableRef.current?.toggleSelected();
+    }
+  };
+
+  const handleRowSelect = (selectedRows: Row[]): void => {
+    setSelectedRows(selectedRows.map((row) => Number(row.id)));
+  };
 
   return (
     <>
       {showUncheckBtn && (
-        <Button onClick={() => setSelectedRows([])} style={{ marginBottom: "1rem" }}>
+        <Button onClick={handleClick} style={{ marginBottom: "1rem" }}>
           Uncheck rows
         </Button>
       )}
-      <Table {...args} selectedRows={selectedRows} />
+      <Table {...args} ref={tableRef} onRowSelect={handleRowSelect} />
     </>
   );
 };

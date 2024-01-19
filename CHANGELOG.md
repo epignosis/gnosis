@@ -1,3 +1,10 @@
+## [5.8.10](https://github.com/epignosis/gnosis/compare/v5.8.9...v5.8.10) (2024-01-19)
+
+
+### Performance Improvements
+
+* **table:** create separate tableRow component ([#280](https://github.com/epignosis/gnosis/issues/280)) ([625a68e](https://github.com/epignosis/gnosis/commit/625a68e05c6dc697869f8ecdc92e2e447caddd50))
+
 ## [5.8.9](https://github.com/epignosis/gnosis/compare/v5.8.8...v5.8.9) (2024-01-17)
 
 

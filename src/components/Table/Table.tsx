@@ -1,4 +1,11 @@
-import React, { FC, HTMLAttributes, useEffect, useReducer } from "react";
+import React, {
+  ForwardRefRenderFunction,
+  HTMLAttributes,
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useReducer,
+} from "react";
 import { Dispatch, reducer } from "./reducer";
 import { tableContainer } from "./styles";
 import Body from "./components/Body";
@@ -10,13 +17,12 @@ import { ExtendableProps } from "types/utils";
 export type Props = ExtendableProps<HTMLAttributes<HTMLTableElement>, TableProps>;
 export type ChildrenProps = Props & { state: TableState; dispatch: Dispatch };
 
-type TableCompoundProps = {
-  Header: FC<ChildrenProps>;
-  Body: FC<ChildrenProps>;
+export type ImperativeHandlers = {
+  toggleSelected: () => void;
 };
 
-const Table: FC<Props> & TableCompoundProps = (props) => {
-  const { columns, rows, emptyState, onRowSelect, sorting, selectedRows } = props;
+const Table: ForwardRefRenderFunction<ImperativeHandlers, Props> = (props, ref) => {
+  const { columns, rows, emptyState, onRowSelect, sorting } = props;
 
   const [state, dispatch] = useReducer(reducer, {
     columns,
@@ -27,12 +33,6 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
   });
 
   const { selected } = state;
-
-  useEffect(() => {
-    if (selectedRows && selectedRows.length === 0) {
-      dispatch({ type: Actions.removeAll, payload: null });
-    }
-  }, [selectedRows]);
 
   useEffect(() => {
     dispatch({ type: Actions.columnsChanged, payload: columns });
@@ -46,17 +46,18 @@ const Table: FC<Props> & TableCompoundProps = (props) => {
     onRowSelect && onRowSelect(selected);
   }, [selected]);
 
+  useImperativeHandle(ref, () => ({
+    toggleSelected: () => dispatch({ type: Actions.toggleAll, payload: null }),
+  }));
+
   return (
     <div css={tableContainer} data-testid="table">
       <table>
-        <Table.Header state={state} dispatch={dispatch} {...props} />
-        <Table.Body state={state} dispatch={dispatch} {...props} />
+        <Header state={state} dispatch={dispatch} {...props} />
+        <Body state={state} dispatch={dispatch} {...props} />
       </table>
     </div>
   );
 };
 
-Table.Header = Header;
-Table.Body = Body;
-
-export default Table;
+export default forwardRef(Table);

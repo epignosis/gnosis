@@ -12,7 +12,6 @@ export type CellProps = HTMLAttributes<HTMLTableCellElement> & {
 const Cell: FC<CellProps> = ({
   children,
   as: Component = "td",
-  onClick,
   maxWidth,
   windowWidth,
   windowHeight,
@@ -49,7 +48,7 @@ const Cell: FC<CellProps> = ({
   }, [windowWidth, windowHeight]);
 
   return (
-    <Component ref={componentRef} style={style} onClick={onClick} {...rest}>
+    <Component ref={componentRef} style={style} {...rest}>
       {shouldRenderTooltip ? (
         <Tooltip content={children} disabled={!isOverflowActive}>
           <span style={style}>{children}</span>

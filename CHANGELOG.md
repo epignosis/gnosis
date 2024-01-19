@@ -1,3 +1,10 @@
+## [5.8.11](https://github.com/epignosis/gnosis/compare/v5.8.10...v5.8.11) (2024-01-19)
+
+
+### Bug Fixes
+
+* **table:** row click triggered from row selection ([#287](https://github.com/epignosis/gnosis/issues/287)) ([f4b5863](https://github.com/epignosis/gnosis/commit/f4b5863705b3236ebbf0af5c83e08cf5910f3e5c))
+
 ## [5.8.10](https://github.com/epignosis/gnosis/compare/v5.8.9...v5.8.10) (2024-01-19)
 
 

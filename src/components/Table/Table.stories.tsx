@@ -74,7 +74,9 @@ const Template: Story<Props> = (args) => {
   };
 
   const handleRowSelect = (selectedRows: Row[]): void => {
-    setSelectedRows(selectedRows.map((row) => Number(row.id)));
+    const selectedRowIds = selectedRows.map((row) => Number(row.id));
+    console.log("selectedRowIds", selectedRowIds);
+    setSelectedRows(selectedRowIds);
   };
 
   return (

@@ -15,6 +15,7 @@ const Cell: FC<CellProps> = ({
   maxWidth,
   windowWidth,
   windowHeight,
+  onClick,
   ...rest
 }) => {
   const componentRef = useRef<HTMLTableCellElement | null>(null);
@@ -48,7 +49,7 @@ const Cell: FC<CellProps> = ({
   }, [windowWidth, windowHeight]);
 
   return (
-    <Component ref={componentRef} style={style} {...rest}>
+    <Component ref={componentRef} style={style} onClick={onClick} {...rest}>
       {shouldRenderTooltip ? (
         <Tooltip content={children} disabled={!isOverflowActive}>
           <span style={style}>{children}</span>

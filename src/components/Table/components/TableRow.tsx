@@ -44,9 +44,12 @@ const TableRow: FC<TableRowProps> = ({
 }) => {
   const accessors = columns.filter((column) => !column.hidden).map((column) => column.accessor);
 
-  const handleRowClick = useCallback((): void => {
-    onRowClick && onRowClick(row);
-  }, [row.id]);
+  const handleRowClick = useCallback(
+    (row: Row): void => {
+      onRowClick && onRowClick(row);
+    },
+    [row.id],
+  );
 
   const handleRowSelection = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>, row: Row): void => {
@@ -62,7 +65,6 @@ const TableRow: FC<TableRowProps> = ({
       className={rowClassnames(isSelected, Boolean(onRowClick))}
       onMouseEnter={() => onHoveredRowChange(row)}
       onMouseLeave={() => onHoveredRowChange(null)}
-      onClick={handleRowClick}
     >
       {selectable && (
         <Cell
@@ -89,6 +91,7 @@ const TableRow: FC<TableRowProps> = ({
             maxWidth={maxWidth}
             windowWidth={windowWidth}
             windowHeight={windowHeight}
+            onClick={() => handleRowClick(row)}
           >
             {typeof rowObj === "function" ? rowObj(row) : rowObj}
           </Cell>

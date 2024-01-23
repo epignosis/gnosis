@@ -93,7 +93,7 @@ const Header: FC<ChildrenProps> = ({
               id="select-all"
               name="select-all"
               value="all"
-              onChange={(e) => handleToggleSelectAll(e)}
+              onChange={handleToggleSelectAll}
               checked={isSelectAllChecked}
               isPartiallySelected={!allRowsSelected}
             />

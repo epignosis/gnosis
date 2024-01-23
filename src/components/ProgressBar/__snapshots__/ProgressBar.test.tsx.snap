@@ -3,13 +3,17 @@
 exports[`<ProgressBar /> matches snapshot 1`] = `
 <div>
   <div
-    class="progress css-v8d7y-container-container"
+    class="progress css-6qp8f1-container-container"
     id="my-progress-1"
   >
     <div
-      data-testid="percentage"
+      class="percentage-container"
     >
-      75‏%
+      <div
+        data-testid="percentage"
+      >
+        75‏%
+      </div>
     </div>
   </div>
 </div>
@@ -18,12 +22,16 @@ exports[`<ProgressBar /> matches snapshot 1`] = `
 exports[`<ProgressBar /> matches snapshot with zero percent 1`] = `
 <div>
   <div
-    class="css-wt9ld7-container-container"
+    class="css-1new4py-container-container"
   >
     <div
-      data-testid="percentage"
+      class="percentage-container"
     >
-      0‏%
+      <div
+        data-testid="percentage"
+      >
+        0‏%
+      </div>
     </div>
   </div>
 </div>

@@ -17,7 +17,13 @@ export default {
     size: {
       control: {
         type: "select",
-        options: ["md", "lg"],
+        options: ["xs", "sm", "md", "lg"],
+      },
+    },
+    color: {
+      control: {
+        type: "select",
+        options: ["success", "primary"],
       },
     },
   },
@@ -26,10 +32,61 @@ export default {
   ],
 };
 
-export const Default: Story<ProgressBarProps> = (args) => <ProgressBar {...args} />;
+const Template: Story<ProgressBarProps> = (args) => <ProgressBar {...args} />;
+
+export const Default = Template.bind({});
 
 Default.args = {
   size: "md",
   percent: 75,
-  rounded: false,
+};
+
+export const Large = Template.bind({});
+
+Large.args = {
+  size: "lg",
+  percent: 75,
+};
+
+export const Small = Template.bind({});
+
+Small.args = {
+  size: "sm",
+  percent: 75,
+};
+
+export const ExtraSmall = Template.bind({});
+
+ExtraSmall.args = {
+  size: "xs",
+  percent: 75,
+};
+
+export const WithLabelBefore = Template.bind({});
+
+WithLabelBefore.args = {
+  size: "md",
+  percent: 75,
+  labelBefore: "Completed 75%",
+};
+
+export const WithLabelAfter = Template.bind({});
+
+WithLabelAfter.args = {
+  size: "sm",
+  percent: 75,
+  labelAfter: "Completed 75%",
+};
+
+export const White: Story<ProgressBarProps> = (args) => (
+  <div style={{ background: "#103E6B", padding: "2rem" }}>
+    <ProgressBar {...args} />
+  </div>
+);
+
+White.args = {
+  size: "md",
+  percent: 75,
+  labelAfter: "Completed 75%",
+  color: "white",
 };

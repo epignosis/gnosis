@@ -5,6 +5,7 @@ import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
 import { Dispatch } from "../reducer";
 import { Actions } from "../constants";
 import Cell from "./Cell";
+import DataCells from "./DataCells";
 
 const rowClassnames = (isSelected: boolean, callback: boolean): string =>
   classNames({
@@ -44,15 +45,12 @@ const TableRow: FC<TableRowProps> = ({
 }) => {
   const accessors = columns.filter((column) => !column.hidden).map((column) => column.accessor);
 
-  const handleRowClick = useCallback(
-    (row: Row): void => {
-      onRowClick && onRowClick(row);
-    },
-    [row.id],
-  );
+  const handleRowClick = useCallback((): void => {
+    onRowClick && onRowClick(row);
+  }, [row.id]);
 
   const handleRowSelection = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>, row: Row): void => {
+    (e: React.ChangeEvent<HTMLInputElement>): void => {
       e.preventDefault();
       dispatch({ type: Actions.toggle, payload: row });
     },
@@ -76,27 +74,19 @@ const TableRow: FC<TableRowProps> = ({
             name={`entry-${row.id}`}
             value={`entry-${row.id}`}
             checked={isSelected}
-            onChange={(e) => handleRowSelection(e, row)}
+            onChange={handleRowSelection}
           />
         </Cell>
       )}
 
-      {accessors.map((accessor) => {
-        const rowObj = row[accessor];
-        const { maxWidth } = columns.find((column) => column.accessor === accessor) ?? {};
-
-        return (
-          <Cell
-            key={`entry-${row.id}-${accessor}`}
-            maxWidth={maxWidth}
-            windowWidth={windowWidth}
-            windowHeight={windowHeight}
-            onClick={() => handleRowClick(row)}
-          >
-            {typeof rowObj === "function" ? rowObj(row) : rowObj}
-          </Cell>
-        );
-      })}
+      <DataCells
+        row={row}
+        columns={columns}
+        accessors={accessors}
+        windowHeight={windowHeight}
+        windowWidth={windowWidth}
+        handleRowClick={handleRowClick}
+      />
     </tr>
   );
 };

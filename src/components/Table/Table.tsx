@@ -11,15 +11,11 @@ import { tableContainer } from "./styles";
 import Body from "./components/Body";
 import Header from "./components/Header";
 import { Actions } from "./constants";
-import { TableProps, TableState } from "./types";
+import { ImperativeHandlers, TableProps, TableState } from "./types";
 import { ExtendableProps } from "types/utils";
 
 export type Props = ExtendableProps<HTMLAttributes<HTMLTableElement>, TableProps>;
 export type ChildrenProps = Props & { state: TableState; dispatch: Dispatch };
-
-export type ImperativeHandlers = {
-  toggleSelected: () => void;
-};
 
 const Table: ForwardRefRenderFunction<ImperativeHandlers, Props> = (props, ref) => {
   const { columns, rows, emptyState, onRowSelect, sorting } = props;

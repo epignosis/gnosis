@@ -60,3 +60,7 @@ export type ActionType =
   | { type: Actions.sortingChanged; payload: Sorting }
   | { type: Actions.columnsChanged; payload: Column[] }
   | { type: Actions.rowsChanged; payload: Row[] };
+
+export type ImperativeHandlers = {
+  toggleSelected: () => void;
+};

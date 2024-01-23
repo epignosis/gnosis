@@ -1,3 +1,10 @@
+## [5.8.12](https://github.com/epignosis/gnosis/compare/v5.8.11...v5.8.12) (2024-01-23)
+
+
+### Performance Improvements
+
+* **table:** more changes to improve perfomance ([#288](https://github.com/epignosis/gnosis/issues/288)) ([b88751b](https://github.com/epignosis/gnosis/commit/b88751b9028382eafd3db45e4583e82c09e94bdc))
+
 ## [5.8.11](https://github.com/epignosis/gnosis/compare/v5.8.10...v5.8.11) (2024-01-19)
 
 

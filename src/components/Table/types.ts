@@ -61,6 +61,6 @@ export type ActionType =
   | { type: Actions.columnsChanged; payload: Column[] }
   | { type: Actions.rowsChanged; payload: Row[] };
 
-export type ImperativeHandlers = {
+export type TableHandlers = {
   toggleSelected: () => void;
 };

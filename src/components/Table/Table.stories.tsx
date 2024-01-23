@@ -16,7 +16,7 @@ const emptyState = {
 };
 
 const rows = [];
-for (let i = 0; i < 200; i++) {
+for (let i = 0; i < 10; i++) {
   rows.push({
     id: i,
     description: "Test",

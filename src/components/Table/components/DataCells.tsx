@@ -37,7 +37,6 @@ const DataCells: FC<DataCellsProps> = ({
           </Cell>
         );
       })}
-      ;
     </>
   );
 };

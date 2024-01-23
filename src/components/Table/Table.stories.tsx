@@ -4,8 +4,8 @@ import { Story } from "@storybook/react";
 import { IconEmptyStateSVG } from "../../icons/";
 import Text from "../Text/Text";
 import Button from "../Button/Button";
-import Table, { Props, ImperativeHandlers } from "./Table";
-import { Row, Sorting } from "./types";
+import Table, { Props } from "./Table";
+import { Row, Sorting, TableHandlers } from "./types";
 
 const emptyState = {
   title: "No results found with these criteria",
@@ -65,7 +65,7 @@ const Template: Story<Props> = (args) => {
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
   const { selectable, autohide } = args;
   const showUncheckBtn = selectable && !autohide;
-  const tableRef = useRef<ImperativeHandlers>(null);
+  const tableRef = useRef<TableHandlers>(null);
 
   const handleClick = (): void => {
     if (tableRef.current && selectedRows.length > 0) {

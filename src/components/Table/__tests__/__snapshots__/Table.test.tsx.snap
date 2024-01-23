@@ -72,6 +72,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           />
+          ;
         </tr>
         <tr
           class=""
@@ -91,6 +92,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           />
+          ;
         </tr>
         <tr
           class=""
@@ -110,6 +112,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           />
+          ;
         </tr>
         <tr
           class=""
@@ -129,6 +132,7 @@ exports[`<Table> matches snapshot 1`] = `
           <td
             style="max-width: auto;"
           />
+          ;
         </tr>
       </tbody>
     </table>

@@ -1,3 +1,10 @@
+## [5.8.13](https://github.com/epignosis/gnosis/compare/v5.8.12...v5.8.13) (2024-01-23)
+
+
+### Bug Fixes
+
+* **datacell:** remove extra char ([#289](https://github.com/epignosis/gnosis/issues/289)) ([fe04d81](https://github.com/epignosis/gnosis/commit/fe04d81bdce8ccb13589d660bdefa661c5be6f1b))
+
 ## [5.8.12](https://github.com/epignosis/gnosis/compare/v5.8.11...v5.8.12) (2024-01-23)
 
 

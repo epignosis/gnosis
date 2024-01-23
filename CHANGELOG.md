@@ -1,3 +1,10 @@
+# [5.9.0](https://github.com/epignosis/gnosis/compare/v5.8.13...v5.9.0) (2024-01-23)
+
+
+### Features
+
+* **progressbar:** add label and color properties ([#290](https://github.com/epignosis/gnosis/issues/290)) ([8bc1179](https://github.com/epignosis/gnosis/commit/8bc117949c67b01e762b417fb565a8eb50aa5277))
+
 ## [5.8.13](https://github.com/epignosis/gnosis/compare/v5.8.12...v5.8.13) (2024-01-23)
 
 

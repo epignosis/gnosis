@@ -11,7 +11,7 @@ exports[`<Input /> matches snapshot 1`] = `
     >
       <label
         class=" css-xs6o3g-label-label"
-        data-testid="test-label-label"
+        data-testid="test--label"
         for="my-input-id"
       >
         Test label

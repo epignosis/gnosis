@@ -233,7 +233,9 @@ const Select: ForwardRefRenderFunction<
 
       <div
         className="select-input-wrapper"
-        data-testid={`${convertToDataTestIdName(label)}-custom-react-select`}
+        data-testid={`${
+          label ? convertToDataTestIdName(label) + "-custom-react-select" : "custom-react-select"
+        }`}
         ref={containerRef}
       >
         {type === "creatable" ? (

@@ -147,6 +147,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           id={id}
           onKeyDown={(e): void => preventNonNumericalInput(e, isNumberType)}
           type={type}
+          data-testid={`${label ? convertToDataTestIdName(label) + "-input" : "input"}`}
           {...rest}
         />
         {IconAfter && (

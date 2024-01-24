@@ -22,6 +22,7 @@ exports[`<Input /> matches snapshot 1`] = `
     >
       <input
         class="input"
+        data-testid="test-label-input"
         id="my-input-id"
         name="test-input"
         value=""

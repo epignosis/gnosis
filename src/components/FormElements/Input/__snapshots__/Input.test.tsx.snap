@@ -11,6 +11,7 @@ exports[`<Input /> matches snapshot 1`] = `
     >
       <label
         class=" css-xs6o3g-label-label"
+        data-testid="test-label-label"
         for="my-input-id"
       >
         Test label
@@ -21,6 +22,7 @@ exports[`<Input /> matches snapshot 1`] = `
     >
       <input
         class="input"
+        data-testid="test-label-input"
         id="my-input-id"
         name="test-input"
         value=""

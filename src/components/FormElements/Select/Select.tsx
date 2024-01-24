@@ -23,6 +23,7 @@ import CreatableSelect from "react-select/creatable";
 import { useClickAway } from "ahooks";
 import Label from "../Label/Label";
 import Tooltip from "../../Tooltip/Tooltip";
+import { convertToDataTestIdName } from "../../../helpers";
 import { AddOperatorSVG, InfoCircledSVG } from "../../../icons";
 import CustomValueContainer from "./components/CustomValueContainer";
 import { resolveStyles, selectContainer } from "./styles";
@@ -212,18 +213,31 @@ const Select: ForwardRefRenderFunction<
     >
       {hasLabel && (
         <div className="label-container">
-          <Label htmlFor={id} aria-labelledby={id} className={labelClassname}>
+          <Label
+            htmlFor={id}
+            aria-labelledby={id}
+            data-testid={`${convertToDataTestIdName(label)}-label`}
+            className={labelClassname}
+          >
             {label}
           </Label>
           {shouldRenderTooltip && (
-            <Tooltip content={tooltipContent}>
-              <InfoCircledSVG height={20} />
-            </Tooltip>
+            <div data-testid={`${convertToDataTestIdName(label)}-tooltip`}>
+              <Tooltip content={tooltipContent}>
+                <InfoCircledSVG height={20} />
+              </Tooltip>
+            </div>
           )}
         </div>
       )}
 
-      <div className="select-input-wrapper" data-testid="custom-react-select" ref={containerRef}>
+      <div
+        className="select-input-wrapper"
+        data-testid={`${
+          label ? convertToDataTestIdName(label) + "-custom-react-select" : "custom-react-select"
+        }`}
+        ref={containerRef}
+      >
         {type === "creatable" ? (
           <CreatableSelect {...customSelectProps} createOptionPosition="first" />
         ) : (

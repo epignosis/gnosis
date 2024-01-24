@@ -11,6 +11,7 @@ exports[`<Select /> matches snapshot 1`] = `
       <label
         aria-labelledby="select-id"
         class=" css-xs6o3g-label-label"
+        data-testid="test-select-input-label"
         for="select-id"
       >
         Test select input
@@ -18,7 +19,7 @@ exports[`<Select /> matches snapshot 1`] = `
     </div>
     <div
       class="select-input-wrapper"
-      data-testid="custom-react-select"
+      data-testid="test-select-input-custom-react-select"
     >
       <div
         class=" css-b62m3t-container"

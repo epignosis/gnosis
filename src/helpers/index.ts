@@ -9,7 +9,9 @@ export const convertToDataTestIdName = (input: string | undefined): string => {
   // Remove trailing hyphens without using regular expressions
   const lastHyphenIndex = sanitizedString.lastIndexOf("-");
   const finalString =
-    lastHyphenIndex !== -1 ? sanitizedString.slice(0, lastHyphenIndex + 1) : sanitizedString;
+    lastHyphenIndex === sanitizedString.length - 1
+      ? sanitizedString.slice(0, lastHyphenIndex)
+      : sanitizedString;
 
   return finalString;
 };

@@ -10,6 +10,7 @@ import React, {
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import Label from "../Label/Label";
+import { convertToDataTestIdName } from "../../../helpers";
 import { InfoCircledSVG, CloseSVG } from "../../../icons/index";
 import Tooltip from "../../Tooltip/Tooltip";
 import { inputContainer } from "./styles";
@@ -118,13 +119,19 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     >
       {hasLabel && (
         <div className="label-container">
-          <Label htmlFor={id} className={labelClassname}>
+          <Label
+            htmlFor={id}
+            className={labelClassname}
+            data-testid={`${convertToDataTestIdName(label)}-label`}
+          >
             {label}
           </Label>
           {shouldRenderTooltip && (
-            <Tooltip content={tooltipContent}>
-              <InfoCircledSVG height={20} />
-            </Tooltip>
+            <div data-testid={`${convertToDataTestIdName(label)}-tooltip`}>
+              <Tooltip content={tooltipContent}>
+                <InfoCircledSVG height={20} />
+              </Tooltip>
+            </div>
           )}
         </div>
       )}

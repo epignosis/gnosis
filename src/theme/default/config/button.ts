@@ -127,4 +127,34 @@ export default {
       hoverColor: colors.green.lightest,
     },
   },
+  primaryLight: {
+    default: {
+      background: Color(colors.primary.lightest).alpha(0.25).string(),
+      borderColor: Color(colors.primary.lightest).alpha(0.25).string(),
+      color: colors.white,
+    },
+    hover: {
+      background: Color(colors.primary.lightest).alpha(0.5).string(),
+      borderColor: Color(colors.primary.lightest).alpha(0.5).string(),
+      color: colors.white,
+    },
+    active: {
+      background: Color(colors.primary.lightest).alpha(0.5).string(),
+      borderColor: Color(colors.primary.lightest).alpha(0.5).string(),
+      color: colors.white,
+    },
+    ghost: {
+      color: Color(colors.primary.lightest).alpha(0.25).string(),
+      background: Color(colors.primary.lightest).alpha(0.25).string(),
+      hoverColor: Color(colors.primary.lightest).alpha(0.5).string(),
+    },
+    outline: {
+      color: Color(colors.primary.lightest).alpha(0.25).string(),
+      borderColor: Color(colors.primary.lightest).alpha(0.25).string(),
+    },
+    link: {
+      color: Color(colors.primary.lightest).alpha(0.25).string(),
+      hoverColor: Color(colors.primary.lightest).alpha(0.5).string(),
+    },
+  },
 };

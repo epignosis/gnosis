@@ -1,7 +1,8 @@
 import React from "react";
 import { Story } from "@storybook/react";
 import { CalendarSVG } from "../../icons/";
-import Button, { Props } from "./Button";
+import Button, { ButtonProps } from "./Button";
+import { colors } from "@theme/default/colors";
 
 export default {
   title: "Components/Button",
@@ -10,7 +11,7 @@ export default {
     color: {
       control: {
         type: "select",
-        options: ["primary", "secondary", "danger", "success"],
+        options: ["primary", "secondary", "danger", "success", "primaryLight"],
       },
     },
   },
@@ -24,8 +25,8 @@ export default {
   },
 };
 
-const Template: Story<Props> = (args) => (
-  <>
+const Template: Story<ButtonProps<"button">> = ({ style, ...args }) => (
+  <div style={style}>
     <div style={{ marginBottom: 16 }}>
       <Button {...args} />
       <span style={{ marginRight: 16 }} />
@@ -44,7 +45,7 @@ const Template: Story<Props> = (args) => (
       <span style={{ marginRight: 16 }} />
       <Button size="lg" {...args} variant="link" />
     </div>
-  </>
+  </div>
 );
 
 export const Primary = Template.bind({});
@@ -73,6 +74,14 @@ export const Success = Template.bind({});
 Success.args = {
   color: "success",
   children: "Success",
+};
+
+export const PrimaryLight = Template.bind({});
+
+PrimaryLight.args = {
+  color: "primaryLight",
+  children: "Primary light",
+  style: { background: colors.primary.darker, padding: "1rem 1rem 0" },
 };
 
 export const WithIconBefore = Template.bind({});

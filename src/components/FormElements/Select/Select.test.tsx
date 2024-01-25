@@ -1,6 +1,5 @@
 import React from "react";
 import { faker } from "@faker-js/faker";
-import { convertToDataTestIdName } from "../../../helpers";
 import Select from "./Select";
 import { render, fireEvent } from "@test-utils/render";
 
@@ -27,9 +26,7 @@ describe("<Select />", () => {
       <Select id="my-select" label={labelTxt} placeholder={placeholder} options={OPTIONS} />,
     );
 
-    const mySelectComponent = queryByTestId(
-      `${convertToDataTestIdName(labelTxt)}-custom-react-select`,
-    );
+    const mySelectComponent = queryByTestId("my-select-select");
     expect(mySelectComponent).toBeDefined();
     expect(mySelectComponent).not.toBeNull();
     const selectInput = container.querySelector("input");
@@ -43,7 +40,7 @@ describe("<Select />", () => {
   it("matches snapshot", () => {
     const { container, queryByTestId } = render(
       <Select
-        id="select-id"
+        id="my-select"
         label="Test select input"
         options={[
           {
@@ -62,9 +59,7 @@ describe("<Select />", () => {
       />,
     );
 
-    const mySelectComponent = queryByTestId(
-      `${convertToDataTestIdName("Test select input")}-custom-react-select`,
-    );
+    const mySelectComponent = queryByTestId("my-select-select");
     expect(mySelectComponent).toBeDefined();
     expect(mySelectComponent).not.toBeNull();
 

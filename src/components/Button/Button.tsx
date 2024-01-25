@@ -6,7 +6,7 @@ import Loader from "../Loaders/Loader";
 import { btnContainer } from "./styles";
 import { IconType, PolymorphicComponentProps } from "types/common";
 
-export type Color = "primary" | "secondary" | "danger" | "success";
+export type Color = "primary" | "secondary" | "danger" | "success" | "primaryLight";
 export type Size = "md" | "lg";
 
 export type Props = {

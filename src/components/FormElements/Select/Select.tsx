@@ -23,7 +23,6 @@ import CreatableSelect from "react-select/creatable";
 import { useClickAway } from "ahooks";
 import Label from "../Label/Label";
 import Tooltip from "../../Tooltip/Tooltip";
-import { convertToDataTestIdName } from "../../../helpers";
 import { AddOperatorSVG, InfoCircledSVG } from "../../../icons";
 import CustomValueContainer from "./components/CustomValueContainer";
 import { resolveStyles, selectContainer } from "./styles";
@@ -216,13 +215,13 @@ const Select: ForwardRefRenderFunction<
           <Label
             htmlFor={id}
             aria-labelledby={id}
-            data-testid={`${convertToDataTestIdName(label)}-label`}
+            data-testid={`${id}-label`}
             className={labelClassname}
           >
             {label}
           </Label>
           {shouldRenderTooltip && (
-            <div data-testid={`${convertToDataTestIdName(label)}-tooltip`}>
+            <div data-testid={`${id}-tooltip`}>
               <Tooltip content={tooltipContent}>
                 <InfoCircledSVG height={20} />
               </Tooltip>
@@ -233,9 +232,7 @@ const Select: ForwardRefRenderFunction<
 
       <div
         className="select-input-wrapper"
-        data-testid={`${
-          label ? convertToDataTestIdName(label) + "-custom-react-select" : "custom-react-select"
-        }`}
+        data-testid={`${id ? id + "-select" : "select"}`}
         ref={containerRef}
       >
         {type === "creatable" ? (

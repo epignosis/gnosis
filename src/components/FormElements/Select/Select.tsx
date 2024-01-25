@@ -230,11 +230,7 @@ const Select: ForwardRefRenderFunction<
         </div>
       )}
 
-      <div
-        className="select-input-wrapper"
-        data-testid={`${id ? id + "-select" : "select"}`}
-        ref={containerRef}
-      >
+      <div className="select-input-wrapper" data-testid={`${id}-select`} ref={containerRef}>
         {type === "creatable" ? (
           <CreatableSelect {...customSelectProps} createOptionPosition="first" />
         ) : (

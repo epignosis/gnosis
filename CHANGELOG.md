@@ -1,3 +1,10 @@
+## [5.10.1](https://github.com/epignosis/gnosis/compare/v5.10.0...v5.10.1) (2024-01-29)
+
+
+### Bug Fixes
+
+* **table:** missing type ([#295](https://github.com/epignosis/gnosis/issues/295)) ([711a2fa](https://github.com/epignosis/gnosis/commit/711a2fadee3f45b3cfbf8855db7e3957271d9f0e))
+
 # [5.10.0](https://github.com/epignosis/gnosis/compare/v5.9.3...v5.10.0) (2024-01-29)
 
 

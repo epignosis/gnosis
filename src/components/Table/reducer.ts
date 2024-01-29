@@ -34,6 +34,9 @@ export const reducer = (state: TableState, action: ActionType): TableState => {
     case Actions.rowsChanged: {
       return { ...state, rows: action.payload };
     }
+    case Actions.resetSelectedRows: {
+      return { ...state, selected: [] };
+    }
     default: {
       return state;
     }

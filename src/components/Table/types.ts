@@ -59,7 +59,8 @@ export type ActionType =
   | { type: Actions.toggle; payload: Row }
   | { type: Actions.sortingChanged; payload: Sorting }
   | { type: Actions.columnsChanged; payload: Column[] }
-  | { type: Actions.rowsChanged; payload: Row[] };
+  | { type: Actions.rowsChanged; payload: Row[] }
+  | { type: Actions.resetSelectedRows; payload: null };
 
 export type TableHandlers = {
   toggleSelected: () => void;

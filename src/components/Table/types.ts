@@ -64,4 +64,5 @@ export type ActionType =
 
 export type TableHandlers = {
   toggleSelected: () => void;
+  resetSelected: () => void;
 };

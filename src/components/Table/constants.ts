@@ -4,4 +4,5 @@ export enum Actions {
   sortingChanged = "SORTING_CHANGED",
   columnsChanged = "COLUMNS_CHANGED",
   rowsChanged = "ROWS_CHANGED",
+  resetSelectedRows = "RESET",
 }

@@ -44,6 +44,7 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
 
   useImperativeHandle(ref, () => ({
     toggleSelected: () => dispatch({ type: Actions.toggleAll, payload: null }),
+    resetSelected: () => dispatch({ type: Actions.resetSelectedRows, payload: null }),
   }));
 
   return (

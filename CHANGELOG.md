@@ -1,3 +1,10 @@
+# [5.10.0](https://github.com/epignosis/gnosis/compare/v5.9.3...v5.10.0) (2024-01-29)
+
+
+### Features
+
+* **table:** new imperative handler to reset selected rows ([#294](https://github.com/epignosis/gnosis/issues/294)) ([e2f59e8](https://github.com/epignosis/gnosis/commit/e2f59e8bb74f540fbfe25e2a907d3f31a4f817b0))
+
 ## [5.9.3](https://github.com/epignosis/gnosis/compare/v5.9.2...v5.9.3) (2024-01-25)
 
 ## [5.9.2](https://github.com/epignosis/gnosis/compare/v5.9.1...v5.9.2) (2024-01-25)

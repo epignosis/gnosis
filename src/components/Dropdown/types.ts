@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import { TypographyLevels } from "@theme/utils/typography";
 
 export type DropdownItem = {
@@ -12,7 +12,7 @@ export type DropdownItem = {
   isDisabled?: boolean;
 };
 
-export type DropdownProps = {
+export type DropdownProps = HTMLAttributes<HTMLDivElement> & {
   list: DropdownItem[];
   children: ReactNode;
   placement?: PlacementOptions;

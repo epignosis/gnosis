@@ -157,4 +157,34 @@ export default {
       hoverColor: Color(colors.primary.lightest).alpha(0.5).string(),
     },
   },
+  primaryDarker: {
+    default: {
+      background: colors.primary.darker,
+      borderColor: colors.primary.darker,
+      color: colors.white,
+    },
+    hover: {
+      background: Color(colors.primary.darker).alpha(0.9).string(),
+      borderColor: Color(colors.primary.darker).alpha(0.9).string(),
+      color: colors.white,
+    },
+    active: {
+      background: colors.primary.darker,
+      borderColor: colors.primary.darker,
+      color: colors.white,
+    },
+    ghost: {
+      color: colors.primary.darker,
+      background: Color(colors.primary.darker).alpha(0.15).string(),
+      hoverColor: colors.primary.darker,
+    },
+    outline: {
+      color: colors.primary.darker,
+      borderColor: colors.primary.darker,
+    },
+    link: {
+      color: colors.primary.darker,
+      hoverColor: colors.primary.base,
+    },
+  },
 };

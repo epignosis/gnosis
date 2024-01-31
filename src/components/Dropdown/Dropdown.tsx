@@ -46,6 +46,7 @@ const Dropdown: FC<DropdownProps> = ({
   placeholderText = "Search",
   remainOpenOnSelect = false,
   onToggleList,
+  ...rest
 }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [currentPlacement, setCurrentPlacement] = useState(placement);
@@ -201,6 +202,7 @@ const Dropdown: FC<DropdownProps> = ({
       }
       className="dropdown"
       ref={wrapperRef}
+      {...rest}
     >
       <div className="dropdown-button" ref={dropdownButtonRef} onClick={toggleList}>
         {children}

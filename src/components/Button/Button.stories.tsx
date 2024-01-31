@@ -84,6 +84,13 @@ PrimaryLight.args = {
   style: { background: colors.primary.darker, padding: "1rem 1rem 0" },
 };
 
+export const PrimaryDarker = Template.bind({});
+
+PrimaryDarker.args = {
+  color: "primaryDarker",
+  children: "Primary darker",
+};
+
 export const WithIconBefore = Template.bind({});
 
 WithIconBefore.args = {

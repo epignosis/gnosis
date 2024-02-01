@@ -178,17 +178,17 @@ describe("<Tabs/>", () => {
       {
         title: "Tab 1",
         content: "Test tab 1",
-        id: "my-tab-1",
+        id: "my-tab-0",
       },
       {
         title: "Tab 2",
         content: "Test tab 2",
-        id: "my-tab-2",
+        id: "my-tab-1",
       },
       {
         title: "Tab 3",
         content: "Test tab 3",
-        id: "my-tab-3",
+        id: "my-tab-2",
       },
     ];
 
@@ -202,17 +202,17 @@ describe("<Tabs/>", () => {
       {
         title: "Tab 1",
         content: "Test tab 1",
-        id: "my-tab-1",
+        id: "my-tab-0",
       },
       {
         title: "Tab 2",
         content: "Test tab 2",
-        id: "my-tab-2",
+        id: "my-tab-1",
       },
       {
         title: "Tab 3",
         content: "Test tab 3",
-        id: "my-tab-3",
+        id: "my-tab-2",
       },
     ];
 

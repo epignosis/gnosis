@@ -8,8 +8,8 @@ import { container, tabsHeader } from "./styles";
 
 export type TabObject = {
   title: JSX.Element | string;
-  id: string;
-  content?: JSX.Element | string | undefined;
+  id?: string;
+  content?: JSX.Element | string;
 };
 
 type TabsProps = React.HTMLAttributes<HTMLElement> & {

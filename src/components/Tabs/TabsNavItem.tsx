@@ -3,12 +3,11 @@ import { SerializedStyles } from "@emotion/react";
 import classNames from "classnames";
 import { tabNavItem } from "./styles";
 
-type TabsNavItemProps = {
+type TabsNavItemProps = React.HTMLAttributes<HTMLAnchorElement> & {
   index: number;
   title: string | JSX.Element;
   isActive: boolean;
   onSelectTab: (i: number) => void;
-  id: string;
 };
 
 const TabsNavItem: FC<TabsNavItemProps> = ({ index, title, isActive, onSelectTab, id }) => {

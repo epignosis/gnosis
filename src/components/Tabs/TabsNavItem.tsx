@@ -8,9 +8,10 @@ type TabsNavItemProps = {
   title: string | JSX.Element;
   isActive: boolean;
   onSelectTab: (i: number) => void;
+  id: string;
 };
 
-const TabsNavItem: FC<TabsNavItemProps> = ({ index, title, isActive, onSelectTab }) => {
+const TabsNavItem: FC<TabsNavItemProps> = ({ index, title, isActive, onSelectTab, id }) => {
   const HtmlClasses = classNames({
     "tab-link": true,
     selected: isActive,
@@ -24,7 +25,8 @@ const TabsNavItem: FC<TabsNavItemProps> = ({ index, title, isActive, onSelectTab
     <a
       css={(theme): SerializedStyles => tabNavItem(theme, { isActive })}
       href={`#tab-${index}`}
-      id={`tab-${index}`}
+      id={id}
+      data-testid={`${id}-tab`}
       aria-controls={`content-${index}`}
       role="tab"
       className={HtmlClasses}

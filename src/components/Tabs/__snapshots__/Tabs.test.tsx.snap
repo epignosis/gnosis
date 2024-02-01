@@ -18,6 +18,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
           class="tab-link selected css-xyfmbj-tabNavItem-tabNavItem"
           href="#tab-0"
           id="tab-0"
+          data-testid="tab-0-tab"
           role="tab"
         >
           Tab 1
@@ -27,6 +28,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
           class="tab-link css-a3wd5z-tabNavItem-tabNavItem"
           href="#tab-1"
           id="tab-1"
+          data-testid="tab-1-tab"
           role="tab"
         >
           Tab 2
@@ -36,6 +38,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
           class="tab-link css-a3wd5z-tabNavItem-tabNavItem"
           href="#tab-2"
           id="tab-2"
+          data-testid="tab-2-tab"
           role="tab"
         >
           Tab 3
@@ -75,6 +78,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
           class="tab-link selected css-xyfmbj-tabNavItem-tabNavItem"
           href="#tab-0"
           id="tab-0"
+          data-testid="tab-0-tab"
           role="tab"
         >
           Tab 1
@@ -84,6 +88,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
           class="tab-link css-a3wd5z-tabNavItem-tabNavItem"
           href="#tab-1"
           id="tab-1"
+          data-testid="tab-1-tab"
           role="tab"
         >
           Tab 2
@@ -93,6 +98,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
           class="tab-link css-a3wd5z-tabNavItem-tabNavItem"
           href="#tab-2"
           id="tab-2"
+          data-testid="tab-2-tab"
           role="tab"
         >
           Tab 3

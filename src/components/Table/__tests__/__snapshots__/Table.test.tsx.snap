@@ -4,7 +4,8 @@ exports[`<Table> matches snapshot 1`] = `
 <div>
   <div
     class="css-iej7o-tableContainer-tableContainer"
-    data-testid="table"
+    id="unique-table-id"
+    data-testid="unique-table-id-table"
   >
     <table>
       <thead>

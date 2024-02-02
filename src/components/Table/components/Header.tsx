@@ -113,6 +113,7 @@ const Header: FC<ChildrenProps> = ({
               <Cell
                 as="th"
                 key={accessor}
+                data-testid={`${accessor}-column`}
                 maxWidth={headerWidth}
                 className={`header-cell ${classNames.length > 0 && classNames.join(" ")} ${
                   !sortableHeader ? "hidden" : ""
@@ -125,7 +126,10 @@ const Header: FC<ChildrenProps> = ({
               >
                 <span>{typeof cell === "string" ? cell : cell({ accessor, cell })}</span>
                 {hasSorting && sortableHeader && (
-                  <span className={sortingIconClassNames(accessor === sorting?.column)}>
+                  <span
+                    className={sortingIconClassNames(accessor === sorting?.column)}
+                    data-testid={`${accessor}-sorting`}
+                  >
                     {columnsSorting[accessor]?.isDescending ? (
                       <IconChevronDownSVG height={20} />
                     ) : (

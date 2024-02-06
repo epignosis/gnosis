@@ -16,6 +16,7 @@ const tabs = [
         <p>Completed courses content!</p>
       </div>
     ),
+    id: "completed-courses",
   },
   {
     title: "My super points",
@@ -25,6 +26,7 @@ const tabs = [
         <p>My super points content!</p>
       </div>
     ),
+    id: "super-points",
   },
   {
     title: "My superior level",
@@ -34,6 +36,7 @@ const tabs = [
         <p>My superior level content!</p>
       </div>
     ),
+    id: "superior-level",
   },
   {
     title: "I have a lot of certifications",
@@ -43,11 +46,13 @@ const tabs = [
         <p>I have a lot of certifications content!</p>
       </div>
     ),
+    id: "certifications",
   },
 
   {
     title: "I should not be displayed",
     content: undefined,
+    id: "undefined",
   },
 ];
 

@@ -11,6 +11,9 @@ const getTabsProps = () => ({
   tab1TitleTxt: faker.helpers.unique(faker.lorem.word),
   tab2TitleTxt: faker.helpers.unique(faker.lorem.word),
   tab3TitleTxt: faker.helpers.unique(faker.lorem.word),
+  tab1Id: faker.helpers.unique(faker.lorem.word),
+  tab2Id: faker.helpers.unique(faker.lorem.word),
+  tab3Id: faker.helpers.unique(faker.lorem.word),
 });
 
 // mock scrollIntoView function in jsdom
@@ -18,20 +21,33 @@ window.HTMLElement.prototype.scrollIntoView = jest.fn();
 
 describe("<Tabs/>", () => {
   it("renders correctly", () => {
-    const { tab1Txt, tab2Txt, tab3Txt, tab1TitleTxt, tab2TitleTxt, tab3TitleTxt } = getTabsProps();
+    const {
+      tab1Txt,
+      tab2Txt,
+      tab3Txt,
+      tab1TitleTxt,
+      tab2TitleTxt,
+      tab3TitleTxt,
+      tab1Id,
+      tab2Id,
+      tab3Id,
+    } = getTabsProps();
 
     const tabs: TabObject[] = [
       {
         title: tab1TitleTxt,
         content: tab1Txt,
+        id: tab1Id,
       },
       {
         title: tab2TitleTxt,
         content: tab2Txt,
+        id: tab2Id,
       },
       {
         title: tab3TitleTxt,
         content: tab3Txt,
+        id: tab3Id,
       },
     ];
 
@@ -47,15 +63,17 @@ describe("<Tabs/>", () => {
   });
 
   it("changes tabs correctly", () => {
-    const { tab1Txt, tab2Txt, tab1TitleTxt, tab2TitleTxt } = getTabsProps();
+    const { tab1Txt, tab2Txt, tab1TitleTxt, tab2TitleTxt, tab1Id, tab2Id } = getTabsProps();
     const tabs: TabObject[] = [
       {
         title: tab1TitleTxt,
         content: tab1Txt,
+        id: tab1Id,
       },
       {
         title: tab2TitleTxt,
         content: tab2Txt,
+        id: tab2Id,
       },
     ];
     render(<Tabs tabs={tabs} />);
@@ -70,20 +88,33 @@ describe("<Tabs/>", () => {
   });
 
   it("render with initial tab value", () => {
-    const { tab1Txt, tab2Txt, tab3Txt, tab1TitleTxt, tab2TitleTxt, tab3TitleTxt } = getTabsProps();
+    const {
+      tab1Txt,
+      tab2Txt,
+      tab3Txt,
+      tab1TitleTxt,
+      tab2TitleTxt,
+      tab3TitleTxt,
+      tab1Id,
+      tab2Id,
+      tab3Id,
+    } = getTabsProps();
 
     const tabs: TabObject[] = [
       {
         title: tab1TitleTxt,
         content: tab1Txt,
+        id: tab1Id,
       },
       {
         title: tab2TitleTxt,
         content: tab2Txt,
+        id: tab2Id,
       },
       {
         title: tab3TitleTxt,
         content: tab3Txt,
+        id: tab3Id,
       },
     ];
 
@@ -97,20 +128,33 @@ describe("<Tabs/>", () => {
 
   it("to get tab index with `onChangeTab` callback", () => {
     const mockFn = jest.fn();
-    const { tab1Txt, tab2Txt, tab3Txt, tab1TitleTxt, tab2TitleTxt, tab3TitleTxt } = getTabsProps();
+    const {
+      tab1Txt,
+      tab2Txt,
+      tab3Txt,
+      tab1TitleTxt,
+      tab2TitleTxt,
+      tab3TitleTxt,
+      tab1Id,
+      tab2Id,
+      tab3Id,
+    } = getTabsProps();
 
     const tabs: TabObject[] = [
       {
         title: tab1TitleTxt,
         content: tab1Txt,
+        id: tab1Id,
       },
       {
         title: tab2TitleTxt,
         content: tab2Txt,
+        id: tab2Id,
       },
       {
         title: tab3TitleTxt,
         content: tab3Txt,
+        id: tab3Id,
       },
     ];
 
@@ -134,14 +178,17 @@ describe("<Tabs/>", () => {
       {
         title: "Tab 1",
         content: "Test tab 1",
+        id: "my-tab-0",
       },
       {
         title: "Tab 2",
         content: "Test tab 2",
+        id: "my-tab-1",
       },
       {
         title: "Tab 3",
         content: "Test tab 3",
+        id: "my-tab-2",
       },
     ];
 
@@ -155,14 +202,17 @@ describe("<Tabs/>", () => {
       {
         title: "Tab 1",
         content: "Test tab 1",
+        id: "my-tab-0",
       },
       {
         title: "Tab 2",
         content: "Test tab 2",
+        id: "my-tab-1",
       },
       {
         title: "Tab 3",
         content: "Test tab 3",
+        id: "my-tab-2",
       },
     ];
 

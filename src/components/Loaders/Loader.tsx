@@ -8,7 +8,7 @@ export type LoaderSize = "md" | "lg";
 export type LoaderProps = React.HTMLAttributes<HTMLDivElement> & {
   fullScreen?: boolean;
   size?: "md" | "lg";
-  type: "pulse" | "clip";
+  type?: "pulse" | "clip";
 };
 
 const loaderSize = {

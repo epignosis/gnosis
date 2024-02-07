@@ -130,12 +130,12 @@ export default {
   primaryLight: {
     default: {
       background: Color(colors.primary.lightest).alpha(0.25).string(),
-      borderColor: Color(colors.primary.lightest).alpha(0.25).string(),
+      borderColor: "transparent",
       color: colors.white,
     },
     hover: {
       background: Color(colors.primary.lightest).alpha(0.5).string(),
-      borderColor: Color(colors.primary.lightest).alpha(0.5).string(),
+      borderColor: "transparent",
       color: colors.white,
     },
     active: {

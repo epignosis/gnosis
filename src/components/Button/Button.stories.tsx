@@ -81,7 +81,7 @@ export const PrimaryLight = Template.bind({});
 PrimaryLight.args = {
   color: "primaryLight",
   children: "Primary light",
-  style: { background: colors.primary.darker, padding: "1rem 1rem 0" },
+  style: { background: colors.primary.darker, padding: "1rem 1rem 0.5rem" },
 };
 
 export const PrimaryDarker = Template.bind({});

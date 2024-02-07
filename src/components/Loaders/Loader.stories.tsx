@@ -12,6 +12,12 @@ export default {
         options: ["md", "lg"],
       },
     },
+    type: {
+      control: {
+        type: "select",
+        options: ["pulse", "clip"],
+      },
+    },
   },
   args: {
     size: "md",
@@ -19,4 +25,12 @@ export default {
   },
 };
 
-export const Deafult: Story<LoaderProps> = ({ ...args }): JSX.Element => <Loader {...args} />;
+const Template: Story<LoaderProps> = ({ ...args }): JSX.Element => <Loader {...args} />;
+
+export const PulseLoader = Template.bind({});
+
+export const ClipLoader = Template.bind({});
+
+ClipLoader.args = {
+  type: "clip",
+};

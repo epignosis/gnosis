@@ -1,6 +1,6 @@
 import { SerializedStyles, useTheme } from "@emotion/react";
 import React, { FC } from "react";
-import { PulseLoader } from "react-spinners";
+import { PulseLoader, ClipLoader } from "react-spinners";
 import { container } from "./styles";
 
 export type LoaderSize = "md" | "lg";
@@ -8,20 +8,35 @@ export type LoaderSize = "md" | "lg";
 export type LoaderProps = React.HTMLAttributes<HTMLDivElement> & {
   fullScreen?: boolean;
   size?: "md" | "lg";
+  type?: "pulse" | "clip";
 };
 
 const loaderSize = {
-  md: "0.375rem",
-  lg: "0.75rem",
+  pulse: {
+    md: "0.375rem",
+    lg: "0.75rem",
+  },
+  clip: {
+    md: "1.5rem",
+    lg: "2rem",
+  },
 };
 
 const loaderMargin = {
-  md: "0.0625rem",
-  lg: "0.625rem",
+  pulse: {
+    md: "0.0625rem",
+    lg: "0.625rem",
+  },
+  clip: {
+    md: "0.5rem",
+    lg: "0.5rem",
+  },
 };
 
-const Loader: FC<LoaderProps> = ({ fullScreen = false, size = "lg", ...rest }) => {
+const Loader: FC<LoaderProps> = ({ fullScreen = false, size = "lg", type = "pulse", ...rest }) => {
   const { loader } = useTheme();
+  const Loader = type === "pulse" ? PulseLoader : ClipLoader;
+
   return (
     <div
       css={(): SerializedStyles => container({ fullScreen })}
@@ -29,10 +44,10 @@ const Loader: FC<LoaderProps> = ({ fullScreen = false, size = "lg", ...rest }) =
       {...rest}
       className={`loading-container${rest?.className ? `${rest?.className}` : ""}`}
     >
-      <PulseLoader
+      <Loader
         color={loader.color}
-        size={loaderSize[size]}
-        margin={loaderMargin[size]}
+        size={loaderSize[type][size]}
+        margin={loaderMargin[type][size]}
         className="loader-wrapper"
       />
     </div>

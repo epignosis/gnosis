@@ -8,7 +8,8 @@ import { container, tabsHeader } from "./styles";
 
 export type TabObject = {
   title: JSX.Element | string;
-  content?: JSX.Element | string | undefined;
+  id?: string;
+  content?: JSX.Element | string;
 };
 
 type TabsProps = React.HTMLAttributes<HTMLElement> & {
@@ -125,8 +126,9 @@ const Tabs: FC<TabsProps> = ({
         >
           {tabs
             .filter((tab) => tab.content)
-            .map(({ title }, index) => (
+            .map(({ title, id }, index) => (
               <TabsNavItem
+                id={id}
                 key={index}
                 index={index}
                 title={title}

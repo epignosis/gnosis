@@ -16,8 +16,9 @@ exports[`<Tabs/> matches snapshot 1`] = `
         <a
           aria-controls="content-0"
           class="tab-link selected css-xyfmbj-tabNavItem-tabNavItem"
+          data-testid="my-tab-0-tab"
           href="#tab-0"
-          id="tab-0"
+          id="my-tab-0"
           role="tab"
         >
           Tab 1
@@ -25,8 +26,9 @@ exports[`<Tabs/> matches snapshot 1`] = `
         <a
           aria-controls="content-1"
           class="tab-link css-a3wd5z-tabNavItem-tabNavItem"
+          data-testid="my-tab-1-tab"
           href="#tab-1"
-          id="tab-1"
+          id="my-tab-1"
           role="tab"
         >
           Tab 2
@@ -34,8 +36,9 @@ exports[`<Tabs/> matches snapshot 1`] = `
         <a
           aria-controls="content-2"
           class="tab-link css-a3wd5z-tabNavItem-tabNavItem"
+          data-testid="my-tab-2-tab"
           href="#tab-2"
-          id="tab-2"
+          id="my-tab-2"
           role="tab"
         >
           Tab 3
@@ -73,8 +76,9 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
         <a
           aria-controls="content-0"
           class="tab-link selected css-xyfmbj-tabNavItem-tabNavItem"
+          data-testid="my-tab-0-tab"
           href="#tab-0"
-          id="tab-0"
+          id="my-tab-0"
           role="tab"
         >
           Tab 1
@@ -82,8 +86,9 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
         <a
           aria-controls="content-1"
           class="tab-link css-a3wd5z-tabNavItem-tabNavItem"
+          data-testid="my-tab-1-tab"
           href="#tab-1"
-          id="tab-1"
+          id="my-tab-1"
           role="tab"
         >
           Tab 2
@@ -91,8 +96,9 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
         <a
           aria-controls="content-2"
           class="tab-link css-a3wd5z-tabNavItem-tabNavItem"
+          data-testid="my-tab-2-tab"
           href="#tab-2"
-          id="tab-2"
+          id="my-tab-2"
           role="tab"
         >
           Tab 3

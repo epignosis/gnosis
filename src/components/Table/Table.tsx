@@ -48,7 +48,7 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
   }));
 
   return (
-    <div css={tableContainer} id={id} data-testid={`${id ? id + "-table" : "table"}`}>
+    <div css={tableContainer} data-testid={`${id ? id + "-table" : "table"}`}>
       <table>
         <Header state={state} dispatch={dispatch} {...props} />
         <Body state={state} dispatch={dispatch} {...props} />

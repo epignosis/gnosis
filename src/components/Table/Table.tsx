@@ -18,7 +18,7 @@ export type Props = ExtendableProps<HTMLAttributes<HTMLTableElement>, TableProps
 export type ChildrenProps = Props & { state: TableState; dispatch: Dispatch };
 
 const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
-  const { columns, rows, emptyState, onRowSelect, sorting } = props;
+  const { columns, rows, emptyState, onRowSelect, sorting, id = "table" } = props;
 
   const [state, dispatch] = useReducer(reducer, {
     columns,
@@ -48,7 +48,7 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
   }));
 
   return (
-    <div css={tableContainer} data-testid="table">
+    <div css={tableContainer} data-testid={id}>
       <table>
         <Header state={state} dispatch={dispatch} {...props} />
         <Body state={state} dispatch={dispatch} {...props} />

@@ -4,7 +4,7 @@ exports[`<Table> matches snapshot 1`] = `
 <div>
   <div
     class="css-iej7o-tableContainer-tableContainer"
-    data-testid="table"
+    data-testid="table-1"
   >
     <table>
       <thead>
@@ -13,6 +13,7 @@ exports[`<Table> matches snapshot 1`] = `
         >
           <th
             class="header-cell header1 "
+            data-testid="header1-column"
             style="width: auto;"
           >
             <span>
@@ -21,6 +22,7 @@ exports[`<Table> matches snapshot 1`] = `
           </th>
           <th
             class="header-cell header2 "
+            data-testid="header2-column"
             style="width: auto;"
           >
             <span>
@@ -29,6 +31,7 @@ exports[`<Table> matches snapshot 1`] = `
           </th>
           <th
             class="header-cell header3 "
+            data-testid="header3-column"
             style="width: auto;"
           >
             <span>
@@ -37,6 +40,7 @@ exports[`<Table> matches snapshot 1`] = `
           </th>
           <th
             class="header-cell header4 "
+            data-testid="header4-column"
             style="width: auto;"
           >
             <span>
@@ -45,6 +49,7 @@ exports[`<Table> matches snapshot 1`] = `
           </th>
           <th
             class="header-cell header5 "
+            data-testid="header5-column"
             style="width: auto;"
           >
             <span>

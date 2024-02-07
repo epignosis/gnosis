@@ -1,3 +1,10 @@
+# [5.11.0](https://github.com/epignosis/gnosis/compare/v5.10.4...v5.11.0) (2024-02-07)
+
+
+### Features
+
+* **loader:** implement clip loader ([#299](https://github.com/epignosis/gnosis/issues/299)) ([c76f74e](https://github.com/epignosis/gnosis/commit/c76f74ef078b08f85a18a087ed157f213d194e15))
+
 ## [5.10.4](https://github.com/epignosis/gnosis/compare/v5.10.3...v5.10.4) (2024-02-07)
 
 ## [5.10.3](https://github.com/epignosis/gnosis/compare/v5.10.2...v5.10.3) (2024-02-06)

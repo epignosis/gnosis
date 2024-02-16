@@ -26,10 +26,10 @@ const dropdownItemClasses = (item: DropdownItem): string =>
   });
 
 const fixPlacementMapping: Record<PlacementOptions, PlacementOptions> = {
-  "bottom-start": "top-start",
-  "bottom-end": "top-end",
-  "top-start": "bottom-start",
-  "top-end": "bottom-end",
+  "bottom-start": "bottom-end",
+  "bottom-end": "bottom-start",
+  "top-start": "top-end",
+  "top-end": "top-start",
   "end-top": "end-top",
 };
 
@@ -57,6 +57,9 @@ const Dropdown: FC<DropdownProps> = ({
   const dropdownButtonRef = useRef<HTMLDivElement | null>(null);
   const dropdownWrapperRef = useRef<HTMLDivElement | null>(null);
 
+  const dir = document.dir;
+  const isRtl = dir === "rtl";
+
   useClickAway(() => {
     setIsListOpen(false);
   }, wrapperRef);
@@ -78,59 +81,106 @@ const Dropdown: FC<DropdownProps> = ({
   };
 
   const fixDropdownPlacement = (): void => {
-    if (dropdownButtonRef.current && dropdownWrapperRef.current && wrapperRef.current) {
-      const scrollableParent = getScrollableParent(wrapperRef.current.parentNode);
-      const dropdownMenuHeight = dropdownWrapperRef.current.getBoundingClientRect().height;
-      const fixedPlacement = fixPlacementMapping[placement];
+    if (!dropdownButtonRef.current || !dropdownWrapperRef.current || !wrapperRef.current) return;
 
-      switch (placement) {
-        // all bottom placements
-        case "bottom-end":
-        case "bottom-start": {
-          const dropdownButtonBottom = dropdownButtonRef.current.getBoundingClientRect().bottom;
+    const dropdownRect = dropdownButtonRef.current.getBoundingClientRect();
+    const scrollableParent = getScrollableParent(wrapperRef.current.parentNode);
+    const dropdownMenuHeight = dropdownWrapperRef.current.getBoundingClientRect().height;
+    const dropdownMenuWidth = dropdownWrapperRef.current.getBoundingClientRect().width;
 
-          // check if there is space bellow in the window
-          if (!scrollableParent) {
-            const spaceBelow = window.innerHeight - dropdownButtonBottom;
-            setCurrentPlacement(spaceBelow < dropdownMenuHeight ? fixedPlacement : placement);
-            break;
-          }
+    let vertical = "bottom";
+    let horizontal = "start";
 
-          // check if there is space bellow in the scrollable parent
-          if (scrollableParent instanceof HTMLElement) {
-            const spaceBelow =
-              scrollableParent.clientHeight -
-              (dropdownButtonBottom - scrollableParent.getBoundingClientRect().top);
+    switch (placement) {
+      case "bottom-start": {
+        const dropdownButtonBottom = dropdownRect.bottom;
+        if (!scrollableParent) {
+          const spaceOnTheRight = window.innerWidth - dropdownRect.right;
+          const spaceBelow = window.innerHeight - dropdownButtonBottom;
 
-            setCurrentPlacement(spaceBelow < dropdownMenuHeight ? fixedPlacement : placement);
-          }
-          break;
+          horizontal = spaceOnTheRight < dropdownMenuWidth ? "end" : "start";
+          vertical = spaceBelow < dropdownMenuHeight ? "top" : "bottom";
         }
-        // all top placements
-        default: {
-          const dropdownButtonTop = dropdownButtonRef.current.getBoundingClientRect().top;
 
-          // check if there is space above in the window
-          if (!scrollableParent) {
-            setCurrentPlacement(
-              dropdownButtonTop < dropdownMenuHeight ? fixedPlacement : placement,
-            );
-            break;
-          }
+        if (scrollableParent instanceof HTMLElement) {
+          const spaceOnTheRight = scrollableParent.clientWidth - dropdownRect.right;
+          const spaceBelow =
+            scrollableParent.clientHeight -
+            (dropdownButtonBottom - scrollableParent.getBoundingClientRect().top);
 
-          // check if there is space above in the scrollable parent
-          if (scrollableParent instanceof HTMLElement) {
-            const spaceAbove =
-              dropdownButtonTop -
-              scrollableParent.getBoundingClientRect().top -
-              scrollableParent.scrollTop;
-
-            setCurrentPlacement(spaceAbove < dropdownMenuHeight ? fixedPlacement : placement);
-          }
-          break;
+          horizontal = spaceOnTheRight < dropdownMenuWidth ? "end" : "start";
+          vertical = spaceBelow < dropdownMenuHeight ? "top" : "bottom";
         }
+        break;
+      }
+
+      case "bottom-end": {
+        const dropdownButtonBottom = dropdownRect.bottom;
+        if (!scrollableParent) {
+          const spaceOnTheLeft = dropdownRect.left;
+          const spaceBelow = window.innerHeight - dropdownButtonBottom;
+
+          horizontal = spaceOnTheLeft < dropdownMenuWidth ? "start" : "end";
+          vertical = spaceBelow < dropdownMenuHeight ? "top" : "bottom";
+        }
+
+        if (scrollableParent instanceof HTMLElement) {
+          const spaceOnTheLeft = dropdownRect.left;
+          const spaceBelow =
+            scrollableParent.clientHeight -
+            (dropdownButtonBottom - scrollableParent.getBoundingClientRect().top);
+
+          vertical = spaceBelow < dropdownMenuHeight ? "top" : "bottom";
+          horizontal = spaceOnTheLeft < dropdownMenuWidth ? "start" : "end";
+        }
+        break;
+      }
+
+      case "top-start": {
+        if (!scrollableParent) {
+          const spaceAbove = dropdownRect.top;
+          const spaceOnTheRight = window.innerWidth - dropdownRect.right;
+
+          horizontal = spaceOnTheRight < dropdownMenuWidth ? "end" : "start";
+          vertical = spaceAbove < dropdownMenuHeight ? "bottom" : "top";
+        }
+        if (scrollableParent instanceof HTMLElement) {
+          const spaceAbove = dropdownRect.top - scrollableParent.getBoundingClientRect().top;
+          const spaceOnTheRight = scrollableParent.clientWidth - dropdownRect.right;
+
+          horizontal = spaceOnTheRight < dropdownMenuWidth ? "end" : "start";
+          vertical = spaceAbove < dropdownMenuHeight ? "bottom" : "top";
+        }
+        break;
+      }
+
+      case "top-end": {
+        if (!scrollableParent) {
+          const spaceAbove = dropdownRect.top;
+          const spaceOnTheLeft = dropdownRect.left;
+
+          horizontal = spaceOnTheLeft < dropdownMenuWidth ? "start" : "end";
+          vertical = spaceAbove < dropdownMenuHeight ? "bottom" : "top";
+        }
+
+        if (scrollableParent instanceof HTMLElement) {
+          const spaceAbove = dropdownRect.top - scrollableParent.getBoundingClientRect().top;
+          const spaceOnTheLeft = dropdownRect.left;
+
+          horizontal = spaceOnTheLeft < dropdownMenuWidth ? "start" : "end";
+          vertical = spaceAbove < dropdownMenuHeight ? "bottom" : "top";
+        }
+        break;
       }
     }
+
+    let res = `${vertical}-${horizontal}` as PlacementOptions;
+
+    if (isRtl) {
+      res = fixPlacementMapping[res];
+    }
+
+    setCurrentPlacement(res);
   };
 
   useLayoutEffect(() => {

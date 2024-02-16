@@ -184,12 +184,14 @@ const smallDropdownList: DropdownItem[] = [
 
 const ScrollableContainer: FC = ({ children }) => (
   <div
+    id="scrollable-container"
     style={{
       backgroundColor: "#F5F5F6",
-      height: "300px",
+      height: "350px",
       width: "100%",
       overflow: "auto",
       padding: "1rem",
+      display: "flex",
     }}
   >
     {children}
@@ -199,6 +201,8 @@ const ScrollableContainer: FC = ({ children }) => (
 const ScrollableTemplate: Story<DropdownProps & React.CSSProperties> = ({
   position,
   top,
+  marginLeft,
+  height,
   ...args
 }) => {
   const [show, toggle] = useState(false);
@@ -209,8 +213,8 @@ const ScrollableTemplate: Story<DropdownProps & React.CSSProperties> = ({
 
   return (
     <ScrollableContainer>
-      <div style={{ position, top }}>
-        <Dropdown {...args}>
+      <div style={{ position, top, marginLeft, height }}>
+        <Dropdown {...args} fixPlacement placement="top-end">
           <Button color="primary" as="div" className="filter-button" onClick={toggleDropdown}>
             Click to {show ? "close" : "open"}
           </Button>
@@ -220,20 +224,46 @@ const ScrollableTemplate: Story<DropdownProps & React.CSSProperties> = ({
   );
 };
 
-export const ScrollableContainerSpaceBelow = ScrollableTemplate.bind({});
+export const ScrollableContainerTopLeft = ScrollableTemplate.bind({});
+export const ScrollableContainerBottomLeft = ScrollableTemplate.bind({});
+export const ScrollableContainerTopRight = ScrollableTemplate.bind({});
+export const ScrollableContainerBottomRight = ScrollableTemplate.bind({});
+export const ScrollableContainerMiddle = ScrollableTemplate.bind({});
 
-ScrollableContainerSpaceBelow.args = {
+ScrollableContainerTopLeft.args = {
   list: smallDropdownList,
   position: "relative",
   top: "0",
+  height: "fit-content",
 };
 
-export const ScrollableContainerSpaceAbove = ScrollableTemplate.bind({});
-
-ScrollableContainerSpaceAbove.args = {
+ScrollableContainerBottomLeft.args = {
   list: smallDropdownList,
   position: "relative",
   top: "200px",
+  height: "fit-content",
+};
+
+ScrollableContainerTopRight.args = {
+  list: smallDropdownList,
+  marginLeft: "auto",
+  height: "fit-content",
+};
+
+ScrollableContainerBottomRight.args = {
+  list: smallDropdownList,
+  marginLeft: "auto",
+  position: "relative",
+  top: "200px",
+  height: "fit-content",
+};
+
+ScrollableContainerMiddle.args = {
+  list: smallDropdownList,
+  marginLeft: "350px",
+  position: "relative",
+  top: "100px",
+  height: "fit-content",
 };
 
 export const WithInfoOnListOpen = Template.bind({});

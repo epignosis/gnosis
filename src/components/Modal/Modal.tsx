@@ -2,7 +2,7 @@ import React, { FC, ReactElement, cloneElement, Children } from "react";
 import { ClassNames } from "@emotion/react";
 import ReactModal, { Props } from "react-modal";
 import Heading from "../Heading/Heading";
-import { CloseCircledSVG } from "../../icons/";
+import { CloseModalSVG } from "../../icons/";
 import { modalContent, modalFooter, modalHeader, portalStyles } from "./styles";
 
 export type HeaderProps = React.HTMLAttributes<HTMLElement> & {
@@ -22,7 +22,7 @@ const Header: FC<HeaderProps> = ({ children, onClose, ...rest }) => {
           data-testid="header-close-button"
           onClick={onClose}
         >
-          <CloseCircledSVG height={28} />
+          <CloseModalSVG height={32} />
         </a>
       )}
     </header>

@@ -22,7 +22,7 @@ const Header: FC<HeaderProps> = ({ children, onClose, ...rest }) => {
           data-testid="header-close-button"
           onClick={onClose}
         >
-          <CloseModalSVG height={28} />
+          <CloseModalSVG height={32} />
         </a>
       )}
     </header>

@@ -180,6 +180,7 @@ const smallDropdownList: DropdownItem[] = [
   { label: "Option 1", value: "1" },
   { label: "Option 2", value: "2" },
   { label: "Option 3", value: "3" },
+  { label: "Option 4", value: "4" },
 ];
 
 const ScrollableContainer: FC = ({ children }) => (
@@ -201,7 +202,7 @@ const ScrollableContainer: FC = ({ children }) => (
 const ScrollableTemplate: Story<DropdownProps & React.CSSProperties> = ({
   position,
   top,
-  marginLeft,
+  marginInlineStart,
   height,
   ...args
 }) => {
@@ -213,7 +214,7 @@ const ScrollableTemplate: Story<DropdownProps & React.CSSProperties> = ({
 
   return (
     <ScrollableContainer>
-      <div style={{ position, top, marginLeft, height }}>
+      <div style={{ position, top, marginInlineStart, height }}>
         <Dropdown {...args} fixPlacement placement="top-end">
           <Button color="primary" as="div" className="filter-button" onClick={toggleDropdown}>
             Click to {show ? "close" : "open"}
@@ -224,35 +225,35 @@ const ScrollableTemplate: Story<DropdownProps & React.CSSProperties> = ({
   );
 };
 
-export const ScrollableContainerTopLeft = ScrollableTemplate.bind({});
-export const ScrollableContainerBottomLeft = ScrollableTemplate.bind({});
-export const ScrollableContainerTopRight = ScrollableTemplate.bind({});
-export const ScrollableContainerBottomRight = ScrollableTemplate.bind({});
+export const ScrollableContainerTopStart = ScrollableTemplate.bind({});
+export const ScrollableContainerBottomStart = ScrollableTemplate.bind({});
+export const ScrollableContainerTopEnd = ScrollableTemplate.bind({});
+export const ScrollableContainerBottomEnd = ScrollableTemplate.bind({});
 export const ScrollableContainerMiddle = ScrollableTemplate.bind({});
 
-ScrollableContainerTopLeft.args = {
+ScrollableContainerTopStart.args = {
   list: smallDropdownList,
   position: "relative",
   top: "0",
   height: "fit-content",
 };
 
-ScrollableContainerBottomLeft.args = {
+ScrollableContainerBottomStart.args = {
   list: smallDropdownList,
   position: "relative",
   top: "200px",
   height: "fit-content",
 };
 
-ScrollableContainerTopRight.args = {
+ScrollableContainerTopEnd.args = {
   list: smallDropdownList,
-  marginLeft: "auto",
+  marginInlineStart: "auto",
   height: "fit-content",
 };
 
-ScrollableContainerBottomRight.args = {
+ScrollableContainerBottomEnd.args = {
   list: smallDropdownList,
-  marginLeft: "auto",
+  marginInlineStart: "auto",
   position: "relative",
   top: "200px",
   height: "fit-content",
@@ -260,7 +261,7 @@ ScrollableContainerBottomRight.args = {
 
 ScrollableContainerMiddle.args = {
   list: smallDropdownList,
-  marginLeft: "350px",
+  marginInlineStart: "350px",
   position: "relative",
   top: "100px",
   height: "fit-content",

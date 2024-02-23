@@ -44,6 +44,8 @@ export type TableProps = {
   onRowSelect?: (selectedRows: Row[]) => void;
   onRowClick?: (row: Row) => void;
   onHoveredRowChange?: (hoveredRow: Row | null) => void;
+  disabled?: boolean;
+  className?: string;
 };
 
 export type TableState = {

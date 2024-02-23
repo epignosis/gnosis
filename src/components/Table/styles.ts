@@ -7,6 +7,11 @@ export const tableContainer = ({ table }: Theme) => css`
   width: 100%;
   overflow-x: auto;
 
+  .disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
   table {
     border-collapse: collapse;
     width: 100%;

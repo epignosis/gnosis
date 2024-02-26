@@ -25,7 +25,7 @@ const dropdownItemClasses = (item: DropdownItem): string =>
     [`${item.className}`]: Boolean(item.className),
   });
 
-const fixPlacementMapping: Record<PlacementOptions, PlacementOptions> = {
+const RTLMapping: Record<PlacementOptions, PlacementOptions> = {
   "bottom-start": "bottom-end",
   "bottom-end": "bottom-start",
   "top-start": "top-end",
@@ -91,6 +91,12 @@ const Dropdown: FC<DropdownProps> = ({
     let vertical = "bottom";
     let horizontal = "start";
 
+    // Each case works with the same logic, but for different placements
+    // We check if there is enough space on the right or left and top or bottom
+    // and then we decide where to place the dropdown list
+    // The dropdown list will be placed on the opposite side if there is not enough space
+    // If there is a scrollable parent, we calculate the space based on the parent's dimensions
+    // If there is no scrollable parent, we calculate the space based on the window's dimensions
     switch (placement) {
       case "bottom-start": {
         const dropdownButtonBottom = dropdownRect.bottom;
@@ -177,7 +183,7 @@ const Dropdown: FC<DropdownProps> = ({
     let res = `${vertical}-${horizontal}` as PlacementOptions;
 
     if (isRtl) {
-      res = fixPlacementMapping[res];
+      res = RTLMapping[res];
     }
 
     setCurrentPlacement(res);
@@ -259,7 +265,10 @@ const Dropdown: FC<DropdownProps> = ({
       </div>
 
       {isListOpen && (
-        <div className={dropdownWrapperClasses(currentPlacement)} ref={dropdownWrapperRef}>
+        <div
+          className={dropdownWrapperClasses(fixPlacement ? currentPlacement : placement)}
+          ref={dropdownWrapperRef}
+        >
           {isSearchable && (
             <SearchInput
               placeholder={placeholderText}

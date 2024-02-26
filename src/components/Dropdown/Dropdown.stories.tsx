@@ -215,7 +215,7 @@ const ScrollableTemplate: Story<DropdownProps & React.CSSProperties> = ({
   return (
     <ScrollableContainer>
       <div style={{ position, top, marginInlineStart, height }}>
-        <Dropdown {...args} fixPlacement placement="top-end">
+        <Dropdown {...args}>
           <Button color="primary" as="div" className="filter-button" onClick={toggleDropdown}>
             Click to {show ? "close" : "open"}
           </Button>
@@ -229,13 +229,13 @@ export const ScrollableContainerTopStart = ScrollableTemplate.bind({});
 export const ScrollableContainerBottomStart = ScrollableTemplate.bind({});
 export const ScrollableContainerTopEnd = ScrollableTemplate.bind({});
 export const ScrollableContainerBottomEnd = ScrollableTemplate.bind({});
-export const ScrollableContainerMiddle = ScrollableTemplate.bind({});
 
 ScrollableContainerTopStart.args = {
   list: smallDropdownList,
   position: "relative",
   top: "0",
   height: "fit-content",
+  fixPlacement: true,
 };
 
 ScrollableContainerBottomStart.args = {
@@ -243,12 +243,14 @@ ScrollableContainerBottomStart.args = {
   position: "relative",
   top: "200px",
   height: "fit-content",
+  fixPlacement: true,
 };
 
 ScrollableContainerTopEnd.args = {
   list: smallDropdownList,
   marginInlineStart: "auto",
   height: "fit-content",
+  fixPlacement: true,
 };
 
 ScrollableContainerBottomEnd.args = {
@@ -257,14 +259,7 @@ ScrollableContainerBottomEnd.args = {
   position: "relative",
   top: "200px",
   height: "fit-content",
-};
-
-ScrollableContainerMiddle.args = {
-  list: smallDropdownList,
-  marginInlineStart: "350px",
-  position: "relative",
-  top: "100px",
-  height: "fit-content",
+  fixPlacement: true,
 };
 
 export const WithInfoOnListOpen = Template.bind({});

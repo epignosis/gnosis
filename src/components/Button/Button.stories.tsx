@@ -28,6 +28,15 @@ export default {
 const Template: Story<ButtonProps<"button">> = ({ style, ...args }) => (
   <div style={style}>
     <div style={{ marginBottom: 16 }}>
+      <Button size="sm" {...args} />
+      <span style={{ marginRight: 16 }} />
+      <Button size="sm" {...args} variant="outline" />
+      <span style={{ marginRight: 16 }} />
+      <Button size="sm" {...args} variant="ghost" />
+      <span style={{ marginRight: 16 }} />
+      <Button size="sm" {...args} variant="link" />
+    </div>
+    <div style={{ marginBottom: 16 }}>
       <Button {...args} />
       <span style={{ marginRight: 16 }} />
       <Button {...args} variant="outline" />

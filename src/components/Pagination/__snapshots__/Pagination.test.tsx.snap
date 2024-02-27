@@ -8,6 +8,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
   >
     <div
       class="pagination-selector-wrapper"
+      data-testid="pagination-per-page-btn"
     >
       <div
         class="css-1dqrv36-PaginationSelectorStyles-PaginationSelectorStyles"
@@ -57,6 +58,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       </button>
       <div
         class="pagination-selector-wrapper"
+        data-testid="pagination-page-selector-btn"
       >
         <div
           class="css-1dqrv36-PaginationSelectorStyles-PaginationSelectorStyles"

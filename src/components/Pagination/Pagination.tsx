@@ -46,7 +46,7 @@ const Pagination: FC<PaginationProps> = ({
 
   return (
     <div css={(theme): SerializedStyles => container(theme)} {...rest} className={rtlClass}>
-      <div className="pagination-selector-wrapper">
+      <div className="pagination-selector-wrapper" data-testid="pagination-per-page-btn">
         <PaginationSelector
           items={options}
           selected={pageSize}
@@ -81,7 +81,7 @@ const Pagination: FC<PaginationProps> = ({
           <ChevronArrowLeftSVG />
         </Button>
 
-        <div className="pagination-selector-wrapper">
+        <div className="pagination-selector-wrapper" data-testid="pagination-page-selector-btn">
           <PaginationSelector
             items={optionItems}
             selected={page}

@@ -13,7 +13,7 @@ export type Color =
   | "success"
   | "primaryLight"
   | "primaryDarker";
-export type Size = "md" | "lg";
+export type Size = "sm" | "md" | "lg";
 
 export type Props = {
   color?: Color;

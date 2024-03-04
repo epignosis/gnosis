@@ -1,3 +1,18 @@
+## [5.12.2](https://github.com/epignosis/gnosis/compare/v5.12.1...v5.12.2) (2024-02-28)
+
+## [5.12.1](https://github.com/epignosis/gnosis/compare/v5.12.0...v5.12.1) (2024-02-27)
+
+# [5.12.0](https://github.com/epignosis/gnosis/compare/v5.11.2...v5.12.0) (2024-02-26)
+
+
+### Features
+
+* **dropdown:** adjust menu position when there is not available space ([#300](https://github.com/epignosis/gnosis/issues/300)) ([1b8549b](https://github.com/epignosis/gnosis/commit/1b8549b883e122f9c80ef4db0bf3fc0024d5314e))
+
+## [5.11.2](https://github.com/epignosis/gnosis/compare/v5.11.1...v5.11.2) (2024-02-19)
+
+## [5.11.1](https://github.com/epignosis/gnosis/compare/v5.11.0...v5.11.1) (2024-02-19)
+
 # [5.11.0](https://github.com/epignosis/gnosis/compare/v5.10.4...v5.11.0) (2024-02-07)
 
 

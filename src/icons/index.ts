@@ -41,6 +41,7 @@ export { default as CourseTypeSVG } from "./course_type.svg";
 export { default as UnitTypeSVG } from "./unit_type.svg";
 export { default as UserTypeSVG } from "./user_type.svg";
 export { default as CloseSVG } from "./close.svg";
+export { default as CloseModalSVG } from "./close_modal.svg";
 export { default as MessageIconSVG } from "./icon_message.svg";
 export { default as ProfileIconSVG } from "./icon_profile.svg";
 export { default as CaretDownSVG } from "./caret_down.svg";

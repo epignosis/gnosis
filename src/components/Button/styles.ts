@@ -9,6 +9,7 @@ type ButtonAttrs = {
 };
 
 const roundDimensions = {
+  sm: "3rem",
   md: "3.5rem",
   lg: "5rem",
 };
@@ -18,14 +19,17 @@ const baseButton = (
   { size, block, noGutters }: Omit<ButtonAttrs, "color">,
 ): SerializedStyles => {
   const fontSizes = {
+    sm: typeScaleSizes.sm,
     md: typeScaleSizes.sm,
     lg: typeScaleSizes.lg,
   };
   const btnHeightDimensions = {
+    sm: "2rem",
     md: "2.5rem",
     lg: "3rem",
   };
   const btnPadding = {
+    sm: "0 1rem",
     md: "0 1.75rem",
     lg: "0 3rem",
   };

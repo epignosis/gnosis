@@ -9,7 +9,7 @@ exports[`<Modal> matches snapshot 1`] = `
   tabindex="-1"
 >
   <header
-    class="css-17ib8ki-modalHeader-modalHeader"
+    class="css-chhwiz-modalHeader-modalHeader"
     data-testid="modal-header"
   >
     <div>
@@ -44,7 +44,7 @@ exports[`<Modal> matches snapshot with all props 1`] = `
   tabindex="-1"
 >
   <header
-    class="css-17ib8ki-modalHeader-modalHeader"
+    class="css-chhwiz-modalHeader-modalHeader"
     data-testid="modal-header"
   >
     <div>
@@ -106,7 +106,7 @@ exports[`<Modal> matches snapshot with cutom HTML classes 1`] = `
   tabindex="-1"
 >
   <header
-    class="css-17ib8ki-modalHeader-modalHeader"
+    class="css-chhwiz-modalHeader-modalHeader"
     data-testid="modal-header"
   >
     <div>

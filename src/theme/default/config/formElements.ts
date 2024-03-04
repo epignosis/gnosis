@@ -36,6 +36,8 @@ export default {
     borderColor: Color(colors.secondary.light).alpha(0.5).string(),
   },
   multiSelect: {
+    background: Color(colors.primary.lightest).alpha(0.25).string(),
+    hoverClose: Color(colors.primary.lighter).alpha(0.5).string(),
     hover: colors.secondary.lighter,
   },
   checkbox: {

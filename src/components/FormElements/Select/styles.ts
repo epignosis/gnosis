@@ -217,19 +217,30 @@ export const resolveStyles = (
       },
     };
   },
+  multiValue: (base) => ({
+    ...base,
+    background: "transparent",
+  }),
   multiValueLabel: (
     base: CSSObjectWithLabel,
     { isDisabled }: MultiValueProps<CustomOption, boolean, GroupBase<CustomOption>>,
   ) => ({
     ...base,
     color: !isDisabled ? base.color : formElements.input.disabledColor,
+    background: formElements.multiSelect.background,
+    order: "1",
+    borderRadius: "0 2px 2px 0",
+    paddingRight: "6px",
+    paddingLeft: "6px",
   }),
 
   multiValueRemove: (base: CSSObjectWithLabel) => ({
     ...base,
+    background: formElements.multiSelect.background,
+    borderRadius: "2px 0 0 2px",
     ":hover": {
       cursor: "pointer",
-      color: formElements.input.iconHoverColor,
+      background: formElements.multiSelect.hoverClose,
     },
   }),
   option: (

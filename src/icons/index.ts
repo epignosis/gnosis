@@ -124,3 +124,4 @@ export { default as ChevronArrowLineRightSVG } from "./chevron_arrow_line_right.
 export { default as ChevronArrowLeftSVG } from "./chevron_arrow_left.svg";
 export { default as ChevronArrowRightSVG } from "./chevron_arrow_right.svg";
 export { default as ChevronArrowDownSVG } from "./chevron_arrow_down.svg";
+export { default as CarretArrowRight } from "./icon_caret_right.svg";

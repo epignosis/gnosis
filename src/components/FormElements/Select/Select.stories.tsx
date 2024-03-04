@@ -3,6 +3,8 @@ import { Story } from "@storybook/react";
 import { CustomSelectProps, CustomOption } from "./types";
 import { defaultOptions, groupedOptions } from "./data";
 import Select from "./Select";
+import { selectOptionsWithLevels } from "./constants";
+import { formatOptionLabel } from "./helpers";
 
 export default {
   title: "components/Form Elements/Select",
@@ -63,12 +65,20 @@ export default {
   ],
 };
 
-const Template: Story<CustomSelectProps<CustomOption, boolean>> = (args) => <Select {...args} />;
+const Template: Story<CustomSelectProps<CustomOption, boolean>> = (args) => {
+  return <Select {...args} formatOptionLabel={formatOptionLabel} />;
+};
 
 export const Default = Template.bind({});
 
 Default.args = {
   options: defaultOptions,
+};
+
+export const WithNestLevels = Template.bind({});
+
+WithNestLevels.args = {
+  options: selectOptionsWithLevels,
 };
 
 export const withGroupedOptions = Template.bind({});

@@ -276,3 +276,11 @@ export const resolveStyles = (
     height: `calc(${inputHeight[size]} - 2px)`,
   }),
 });
+
+export const CustomContainerStyles = (): SerializedStyles => {
+  return css`
+    span {
+      padding-left: 0 !important;
+    }
+  `;
+};

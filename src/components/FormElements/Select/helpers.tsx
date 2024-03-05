@@ -1,7 +1,11 @@
 import React from "react";
 import classNames from "classnames";
-import { FormatOptionLabelContext } from "react-select";
+import ReactSelect, { FormatOptionLabelContext } from "react-select";
+import CreatableSelect from "react-select/creatable";
+import { SerializedStyles } from "@emotion/react";
 import { CarretArrowRight } from "../../../icons/";
+import { SelectType, CustomSelectProps, CustomOption } from "./types";
+import { customLabelStyles } from "./styles";
 
 export const containerClassNames = (status: string, size: string, isFocused: boolean) =>
   classNames({
@@ -17,26 +21,33 @@ export const formatOptionLabel = (
 ): JSX.Element => {
   if (!level || context === "value") return <>{label}</>;
 
-  const styles = {
-    paddingLeft: calculatePadding(level),
-    display: "flex",
-    justifyContent: "flex-start",
-    gap: "0.5rem",
-  };
+  const isRtl = document.dir === "rtl";
+  const rotation = isRtl ? 180 : 0;
 
   return (
-    <span style={styles}>
+    <span css={(): SerializedStyles => customLabelStyles({ level })}>
       {level ? (
-        <div>
-          <CarretArrowRight height={10} />
-        </div>
+        <CarretArrowRight height={10} style={{ transform: `rotate(${rotation}deg)` }} />
       ) : null}
       <span>{label}</span>
     </span>
   );
 };
 
-const calculatePadding = (level: number): string => {
-  if (level <= 1) return "0";
-  return `${0.5 * level}rem`;
+export const renderSelect = (
+  type: SelectType,
+  customSelectProps: CustomSelectProps<CustomOption, boolean>,
+) => {
+  switch (type) {
+    case "creatable":
+      return (
+        <CreatableSelect
+          {...customSelectProps}
+          createOptionPosition="first"
+          formatOptionLabel={formatOptionLabel}
+        />
+      );
+    default:
+      return <ReactSelect {...customSelectProps} formatOptionLabel={formatOptionLabel} />;
+  }
 };

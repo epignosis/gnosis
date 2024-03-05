@@ -47,7 +47,7 @@ exports[`<Select /> matches snapshot 1`] = `
           class="control-md valid focused css-1hos8av-control"
         >
           <div
-            class=" css-1fdsijx-ValueContainer"
+            class="css-1t0b0vt-CustomContainerStyles"
           >
             <div
               class=" css-zg71bx-placeholder"

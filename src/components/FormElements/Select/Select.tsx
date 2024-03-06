@@ -68,6 +68,7 @@ const Select: ForwardRefRenderFunction<
   const hasLabel = Boolean(label);
 
   const containerRef = useRef<HTMLInputElement>(null);
+
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const labelClassname = classNames({

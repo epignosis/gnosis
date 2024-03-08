@@ -53,6 +53,7 @@ export type TableState = {
   emptyState: EmptyState;
   selected: Row[];
   sorting?: Sorting;
+  disabled?: boolean;
 };
 
 export type ActionType =
@@ -61,7 +62,8 @@ export type ActionType =
   | { type: Actions.sortingChanged; payload: Sorting }
   | { type: Actions.columnsChanged; payload: Column[] }
   | { type: Actions.rowsChanged; payload: Row[] }
-  | { type: Actions.resetSelectedRows; payload: null };
+  | { type: Actions.resetSelectedRows; payload: null }
+  | { type: Actions.setDisabled; payload: boolean };
 
 export type TableHandlers = {
   toggleSelected: () => void;

@@ -5,4 +5,5 @@ export enum Actions {
   columnsChanged = "COLUMNS_CHANGED",
   rowsChanged = "ROWS_CHANGED",
   resetSelectedRows = "RESET",
+  setDisabled = "SET_DISABLED",
 }

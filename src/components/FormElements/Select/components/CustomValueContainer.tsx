@@ -1,6 +1,7 @@
 import React, { Children } from "react";
 import { CommonProps, GroupBase, components } from "react-select";
 import { CustomValueContainerProps, CustomOption } from "../types";
+import { CustomContainerStyles } from "../styles";
 
 const { SingleValue, Placeholder, ValueContainer } = components;
 
@@ -32,17 +33,21 @@ const CustomValueContainer: React.FC<CustomValueContainerProps<CustomOption, boo
   };
 
   return (
-    <ValueContainer {...props} selectProps={selectProps}>
+    <ValueContainer {...props} selectProps={selectProps} css={CustomContainerStyles}>
       {Children.map(children, (child) => {
+        const data = props.getValue()[0];
+        const { hasValue } = props;
+        const { placeholder } = selectProps;
+
         return child ? (
           child
-        ) : props.hasValue ? (
-          <SingleValue {...commonProps} {...customProps} data={props.getValue()[0]}>
-            {selectProps.getOptionLabel(props.getValue()[0])}
+        ) : hasValue ? (
+          <SingleValue {...commonProps} {...customProps} data={data}>
+            {selectProps.getOptionLabel(data)}
           </SingleValue>
         ) : (
           <Placeholder {...commonProps} {...customProps} isFocused={isFocused}>
-            {selectProps.placeholder}
+            {placeholder}
           </Placeholder>
         );
       })}

@@ -7,6 +7,10 @@ export type CustomOption = {
   value: string;
 };
 
+export type NestedCustomOption = CustomOption & {
+  level?: number;
+};
+
 export type SelectType = "select" | "creatable" | "async";
 
 type AsyncOptions = {

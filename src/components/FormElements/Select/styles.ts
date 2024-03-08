@@ -287,3 +287,21 @@ export const resolveStyles = (
     height: `calc(${inputHeight[size]} - 2px)`,
   }),
 });
+
+export const CustomContainerStyles = (): SerializedStyles => {
+  return css`
+    span {
+      padding-left: 0 !important;
+    }
+  `;
+};
+
+export const customLabelStyles = ({ level }: { level: number }): SerializedStyles => {
+  return css`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    padding-inline-start: ${level <= 1 ? "0" : `${0.5 * level}rem`};
+  `;
+};

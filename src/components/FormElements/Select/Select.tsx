@@ -8,7 +8,7 @@ import React, {
   useState,
 } from "react";
 import classNames from "classnames";
-import ReactSelect, {
+import {
   ActionMeta,
   DropdownIndicatorProps,
   GroupBase,
@@ -19,7 +19,6 @@ import ReactSelect, {
   components,
 } from "react-select";
 import { SerializedStyles } from "@emotion/react";
-import CreatableSelect from "react-select/creatable";
 import { useClickAway } from "ahooks";
 import Label from "../Label/Label";
 import Tooltip from "../../Tooltip/Tooltip";
@@ -35,7 +34,7 @@ import {
   MAX_WIDTH,
   OUTER_PLACEHOLDER,
 } from "./constants";
-import { containerClassNames } from "./helpers";
+import { containerClassNames, renderSelect } from "./helpers";
 
 const Select: ForwardRefRenderFunction<
   SelectInstance<CustomOption>,
@@ -69,6 +68,7 @@ const Select: ForwardRefRenderFunction<
   const hasLabel = Boolean(label);
 
   const containerRef = useRef<HTMLInputElement>(null);
+
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const labelClassname = classNames({
@@ -229,13 +229,8 @@ const Select: ForwardRefRenderFunction<
           )}
         </div>
       )}
-
       <div className="select-input-wrapper" data-testid={`${id}-select`} ref={containerRef}>
-        {type === "creatable" ? (
-          <CreatableSelect {...customSelectProps} createOptionPosition="first" />
-        ) : (
-          <ReactSelect {...customSelectProps} />
-        )}
+        {renderSelect(type, customSelectProps)}
       </div>
     </div>
   );

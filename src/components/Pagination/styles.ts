@@ -1,5 +1,4 @@
 import { css, SerializedStyles, Theme } from "@emotion/react";
-import { button, formElements } from "@theme/default/config";
 import { mq } from "@theme/utils/breakpoints";
 
 export const container = ({ pagination, button }: Theme): SerializedStyles => {

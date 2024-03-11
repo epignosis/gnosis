@@ -1,7 +1,8 @@
 import { css, SerializedStyles, Theme } from "@emotion/react";
+import { button, formElements } from "@theme/default/config";
 import { mq } from "@theme/utils/breakpoints";
 
-export const container = ({ pagination }: Theme): SerializedStyles => {
+export const container = ({ pagination, button }: Theme): SerializedStyles => {
   return css`
     display: flex;
     justify-content: center;
@@ -28,12 +29,12 @@ export const container = ({ pagination }: Theme): SerializedStyles => {
       height: 2.5rem;
 
       svg {
-        fill: ${pagination.iconColor};
+        fill: ${pagination.textColor};
       }
 
       &:hover {
         svg {
-          fill: ${pagination.color};
+          fill: ${button.primary.ghost.color};
         }
         background-color: ${pagination.hoverBackground} !important;
       }

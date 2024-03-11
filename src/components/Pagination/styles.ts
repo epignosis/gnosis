@@ -28,7 +28,7 @@ export const container = ({ pagination, button }: Theme): SerializedStyles => {
       height: 2.5rem;
 
       svg {
-        fill: ${pagination.textColor};
+        fill: ${pagination.iconColor};
       }
 
       &:hover {

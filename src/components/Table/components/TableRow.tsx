@@ -40,7 +40,7 @@ const TableRow: FC<TableRowProps> = ({
   isSelected,
   selectable,
   autohide,
-  disabled,
+  disabled = false,
   dispatch,
   onRowClick,
   onHoveredRowChange,

@@ -28,7 +28,7 @@ const Header: FC<ChildrenProps> = ({
   state,
   dispatch,
   onSortingChanged,
-  disabled,
+  disabled = false,
 }) => {
   const { rows, columns, selected, sorting } = state;
   const [columnsSorting, setColumnsSorting] = useState({});

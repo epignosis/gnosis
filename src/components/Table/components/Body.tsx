@@ -12,7 +12,7 @@ const Body: FC<ChildrenProps> = ({
   dispatch,
   onRowClick,
   onHoveredRowChange,
-  disabled,
+  disabled = false,
 }) => {
   const { columns, selected, emptyState } = state;
   const selectedRowsIds = selected.map((entry) => entry.id);

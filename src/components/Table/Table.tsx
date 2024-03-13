@@ -26,7 +26,7 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
     onRowSelect,
     sorting,
     id = "table",
-    disabled,
+    disabled = false,
     className = "",
   } = props;
 

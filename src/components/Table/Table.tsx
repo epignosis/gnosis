@@ -6,6 +6,7 @@ import React, {
   useImperativeHandle,
   useReducer,
 } from "react";
+import classNames from "classnames";
 import { Dispatch, reducer } from "./reducer";
 import { tableContainer } from "./styles";
 import Body from "./components/Body";
@@ -18,7 +19,16 @@ export type Props = ExtendableProps<HTMLAttributes<HTMLTableElement>, TableProps
 export type ChildrenProps = Props & { state: TableState; dispatch: Dispatch };
 
 const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
-  const { columns, rows, emptyState, onRowSelect, sorting, id = "table" } = props;
+  const {
+    columns,
+    rows,
+    emptyState,
+    onRowSelect,
+    sorting,
+    id = "table",
+    disabled = false,
+    className = "",
+  } = props;
 
   const [state, dispatch] = useReducer(reducer, {
     columns,
@@ -47,9 +57,14 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
     resetSelected: () => dispatch({ type: Actions.resetSelectedRows, payload: null }),
   }));
 
+  const containerClassNames = classNames({
+    [className]: Boolean(className),
+    disabled: disabled,
+  });
+
   return (
     <div css={tableContainer} data-testid={id}>
-      <table>
+      <table className={containerClassNames}>
         <Header state={state} dispatch={dispatch} {...props} />
         <Body state={state} dispatch={dispatch} {...props} />
       </table>

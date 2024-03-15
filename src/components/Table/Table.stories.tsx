@@ -58,6 +58,7 @@ export default {
       info: "Please try again or",
       icon: IconEmptyStateSVG,
     },
+    disabled: false,
   },
 };
 

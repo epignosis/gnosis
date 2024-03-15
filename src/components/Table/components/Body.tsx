@@ -12,6 +12,7 @@ const Body: FC<ChildrenProps> = ({
   dispatch,
   onRowClick,
   onHoveredRowChange,
+  disabled = false,
 }) => {
   const { columns, selected, emptyState } = state;
   const selectedRowsIds = selected.map((entry) => entry.id);
@@ -30,9 +31,10 @@ const Body: FC<ChildrenProps> = ({
 
   const handleRowHover = useCallback(
     (row: Row | null): void => {
+      if (disabled) return;
       onHoveredRowChange && onHoveredRowChange(row);
     },
-    [onHoveredRowChange],
+    [onHoveredRowChange, disabled],
   );
 
   return (
@@ -55,6 +57,7 @@ const Body: FC<ChildrenProps> = ({
                 dispatch={dispatch}
                 onRowClick={onRowClick}
                 onHoveredRowChange={handleRowHover}
+                disabled={disabled}
               />
             );
           })}

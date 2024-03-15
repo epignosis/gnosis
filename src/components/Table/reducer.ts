@@ -37,6 +37,9 @@ export const reducer = (state: TableState, action: ActionType): TableState => {
     case Actions.resetSelectedRows: {
       return { ...state, selected: [] };
     }
+    case Actions.setDisabled: {
+      return { ...state, disabled: action.payload };
+    }
     default: {
       return state;
     }

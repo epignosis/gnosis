@@ -26,6 +26,7 @@ export type TableRowProps = {
   isSelected: boolean;
   selectable: boolean;
   autohide?: boolean;
+  disabled?: boolean;
   dispatch: Dispatch;
   onRowClick?: (row: Row) => void;
   onHoveredRowChange: (row: Row | null) => void;
@@ -39,6 +40,7 @@ const TableRow: FC<TableRowProps> = ({
   isSelected,
   selectable,
   autohide,
+  disabled = false,
   dispatch,
   onRowClick,
   onHoveredRowChange,
@@ -46,23 +48,25 @@ const TableRow: FC<TableRowProps> = ({
   const accessors = columns.filter((column) => !column.hidden).map((column) => column.accessor);
 
   const handleRowClick = useCallback((): void => {
+    if (disabled) return;
     onRowClick && onRowClick(row);
-  }, [row.id]);
+  }, [row.id, disabled]);
 
   const handleRowSelection = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>): void => {
+      if (disabled) return;
       e.preventDefault();
       dispatch({ type: Actions.toggle, payload: row });
     },
-    [dispatch],
+    [dispatch, disabled],
   );
 
   return (
     <tr
       key={`entry-${row.id}-select`}
       className={rowClassnames(isSelected, Boolean(onRowClick))}
-      onMouseEnter={() => onHoveredRowChange(row)}
-      onMouseLeave={() => onHoveredRowChange(null)}
+      onMouseEnter={() => !disabled && onHoveredRowChange(row)}
+      onMouseLeave={() => !disabled && onHoveredRowChange(null)}
     >
       {selectable && (
         <Cell
@@ -75,6 +79,7 @@ const TableRow: FC<TableRowProps> = ({
             value={`entry-${row.id}`}
             checked={isSelected}
             onChange={handleRowSelection}
+            disabled={disabled}
           />
         </Cell>
       )}

@@ -28,6 +28,7 @@ const Header: FC<ChildrenProps> = ({
   state,
   dispatch,
   onSortingChanged,
+  disabled = false,
 }) => {
   const { rows, columns, selected, sorting } = state;
   const [columnsSorting, setColumnsSorting] = useState({});
@@ -53,13 +54,15 @@ const Header: FC<ChildrenProps> = ({
 
   const handleToggleSelectAll = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>): void => {
+      if (disabled) return;
       e.preventDefault();
       dispatch({ type: Actions.toggleAll, payload: null });
     },
-    [dispatch],
+    [dispatch, disabled],
   );
 
   const handleSortingChange = (accessor: string, sortOrder: Column["sortOrder"]): void => {
+    if (disabled) return;
     if (hasSorting) {
       const isDefaultSort = sorting?.column === accessor;
       const isDescendingOrder = sortOrder === "desc";
@@ -96,6 +99,7 @@ const Header: FC<ChildrenProps> = ({
               onChange={handleToggleSelectAll}
               checked={isSelectAllChecked}
               isPartiallySelected={!allRowsSelected}
+              disabled={disabled}
             />
           </Cell>
         )}
@@ -119,7 +123,7 @@ const Header: FC<ChildrenProps> = ({
                   !sortableHeader ? "hidden" : ""
                 }`}
                 onClick={(): void => {
-                  if (sortableHeader) {
+                  if (!disabled && sortableHeader) {
                     handleSortingChange(accessor, sortOrder);
                   }
                 }}

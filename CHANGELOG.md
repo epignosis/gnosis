@@ -1,3 +1,10 @@
+# [5.13.0](https://github.com/epignosis/gnosis/compare/v5.12.4...v5.13.0) (2024-03-15)
+
+
+### Features
+
+* **table:** implement table disable state ([#303](https://github.com/epignosis/gnosis/issues/303)) ([add9c0d](https://github.com/epignosis/gnosis/commit/add9c0de53ce90e5e344be95a56325fd41659db9))
+
 ## [5.12.4](https://github.com/epignosis/gnosis/compare/v5.12.3...v5.12.4) (2024-03-12)
 
 ## [5.12.3](https://github.com/epignosis/gnosis/compare/v5.12.2...v5.12.3) (2024-03-06)

@@ -37,6 +37,7 @@ export default {
     className: "inputStory",
     tooltipContent: "",
     autoFocus: false,
+    disabled: false,
   },
   decorators: [
     (Story: Story): JSX.Element => (

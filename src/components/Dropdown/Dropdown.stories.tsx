@@ -61,6 +61,7 @@ export default {
     isSearchable: true,
     textSize: "sm",
     fullWidth: false,
+    disabled: false,
   },
   decorators: [
     (Story: Story): JSX.Element => (
@@ -83,12 +84,20 @@ const Template: Story<DropdownProps> = (args) => {
   const [show, toggle] = useState(false);
 
   const toggleDropdown = () => {
-    toggle((show) => !show);
+    if (!args.disabled) {
+      toggle((show) => !show);
+    }
   };
 
   return (
     <Dropdown {...args}>
-      <Button color="primary" as="div" className="filter-button" onClick={toggleDropdown}>
+      <Button
+        color="primary"
+        as="div"
+        className="filter-button"
+        onClick={toggleDropdown}
+        disabled={args.disabled}
+      >
         Click to {show ? "close" : "open"}
       </Button>
     </Dropdown>
@@ -204,19 +213,28 @@ const ScrollableTemplate: Story<DropdownProps & React.CSSProperties> = ({
   top,
   marginInlineStart,
   height,
+  disabled = false,
   ...args
 }) => {
   const [show, toggle] = useState(false);
 
   const toggleDropdown = () => {
-    toggle((show) => !show);
+    if (!disabled) {
+      toggle((show) => !show);
+    }
   };
 
   return (
     <ScrollableContainer>
       <div style={{ position, top, marginInlineStart, height }}>
-        <Dropdown {...args}>
-          <Button color="primary" as="div" className="filter-button" onClick={toggleDropdown}>
+        <Dropdown {...args} disabled={disabled}>
+          <Button
+            color="primary"
+            as="div"
+            className="filter-button"
+            onClick={toggleDropdown}
+            disabled={disabled}
+          >
             Click to {show ? "close" : "open"}
           </Button>
         </Dropdown>

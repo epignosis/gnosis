@@ -22,6 +22,7 @@ export default {
     noGutters: false,
     rounded: false,
     as: "button",
+    underlined: false,
   },
 };
 
@@ -90,7 +91,7 @@ export const PrimaryLight = Template.bind({});
 PrimaryLight.args = {
   color: "primaryLight",
   children: "Primary light",
-  style: { background: colors.primary.darker, padding: "1rem 1rem 0" },
+  style: { background: colors.primary.darker, padding: "1.25rem 1.25rem 0.25rem" },
 };
 
 export const PrimaryDarker = Template.bind({});

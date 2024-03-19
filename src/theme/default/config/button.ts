@@ -130,12 +130,12 @@ export default {
   primaryLight: {
     default: {
       background: Color(colors.primary.lightest).alpha(0.25).string(),
-      borderColor: Color(colors.primary.lightest).alpha(0.25).string(),
+      borderColor: "transparent",
       color: colors.white,
     },
     hover: {
       background: Color(colors.primary.lightest).alpha(0.5).string(),
-      borderColor: Color(colors.primary.lightest).alpha(0.5).string(),
+      borderColor: "transparent",
       color: colors.white,
     },
     active: {
@@ -144,17 +144,17 @@ export default {
       color: colors.white,
     },
     ghost: {
-      color: Color(colors.primary.lightest).alpha(0.25).string(),
-      background: Color(colors.primary.lightest).alpha(0.25).string(),
-      hoverColor: Color(colors.primary.lightest).alpha(0.5).string(),
+      color: colors.white,
+      background: Color(colors.primary.lightest).alpha(0.5).string(),
+      hoverColor: colors.white,
     },
     outline: {
-      color: Color(colors.primary.lightest).alpha(0.25).string(),
+      color: colors.white,
       borderColor: Color(colors.primary.lightest).alpha(0.25).string(),
     },
     link: {
-      color: Color(colors.primary.lightest).alpha(0.25).string(),
-      hoverColor: Color(colors.primary.lightest).alpha(0.5).string(),
+      color: colors.white,
+      hoverColor: Color(colors.white).alpha(0.7).string(),
     },
   },
   primaryDarker: {

@@ -259,6 +259,10 @@ export const btnContainer = (
       }
     }
 
+    &.underlined .btn-text {
+      text-decoration: underline;
+    }
+
     .btn-text {
       display: inline-flex;
     }

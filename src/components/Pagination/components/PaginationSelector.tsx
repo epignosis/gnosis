@@ -40,9 +40,10 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
   useClickOutside(wrapperRef, () => setIsListOpen(false));
 
   const toggleList = (): void => {
-    if (disabled) return;
-    // We want to reset the dropdown list every time it opens
-    setIsListOpen((prevState) => !prevState);
+    if (!disabled) {
+      // We want to reset the dropdown list every time it opens
+      setIsListOpen((prevState) => !prevState);
+    }
   };
 
   const handleListItemSelect = (item: number): void => {

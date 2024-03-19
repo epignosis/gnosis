@@ -22,6 +22,7 @@ const Pagination: FC<PaginationProps> = ({
   onPageChange,
   onPageSizeChange,
   listPlacement = "top",
+  disabled = false,
   ...rest
 }) => {
   const isRtl = dir === "rtl";
@@ -52,6 +53,7 @@ const Pagination: FC<PaginationProps> = ({
           selected={pageSize}
           listPlacement={listPlacement}
           onClickItemHandler={handlePageSize}
+          disabled={disabled}
         />
         <span>{translations.perPage}</span>
       </div>
@@ -63,7 +65,7 @@ const Pagination: FC<PaginationProps> = ({
           onClick={(): void => onPageChange(1)}
           variant="ghost"
           noGutters
-          disabled={isPrevBtnDisabled}
+          disabled={isPrevBtnDisabled || disabled}
         >
           <ChevronArrowLineLeftSVG />
         </Button>
@@ -76,7 +78,7 @@ const Pagination: FC<PaginationProps> = ({
           onClick={(): void => onPageChange(page - 1)}
           variant="ghost"
           noGutters
-          disabled={isPrevBtnDisabled}
+          disabled={isPrevBtnDisabled || disabled}
         >
           <ChevronArrowLeftSVG />
         </Button>
@@ -87,6 +89,7 @@ const Pagination: FC<PaginationProps> = ({
             selected={page}
             listPlacement={listPlacement}
             onClickItemHandler={handlePageChange}
+            disabled={disabled}
           />
           {totalPages > 1 && (
             <span>
@@ -103,7 +106,7 @@ const Pagination: FC<PaginationProps> = ({
           onClick={(): void => onPageChange(page + 1)}
           variant="ghost"
           noGutters
-          disabled={isNextBtnDisabled}
+          disabled={isNextBtnDisabled || disabled}
         >
           <ChevronArrowRightSVG />
         </Button>
@@ -116,7 +119,7 @@ const Pagination: FC<PaginationProps> = ({
           onClick={(): void => onPageChange(totalPages)}
           variant="ghost"
           noGutters
-          disabled={isNextBtnDisabled}
+          disabled={isNextBtnDisabled || disabled}
         >
           <ChevronArrowLineRightSVG />
         </Button>

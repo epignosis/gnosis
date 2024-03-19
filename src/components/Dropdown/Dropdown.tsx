@@ -70,8 +70,9 @@ const Dropdown: FC<DropdownProps> = ({
   }, [list]);
 
   useEffect(() => {
-    if (disabled) return;
-    onToggleList && onToggleList(isListOpen);
+    if (!disabled && onToggleList) {
+      onToggleList(isListOpen);
+    }
   }, [isListOpen]);
 
   useEffect(() => {

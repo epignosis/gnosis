@@ -14,6 +14,7 @@ export type PaginationProps = ExtendableProps<
       ofPages: string;
     };
     totalPages: number;
+    disabled?: boolean;
     rowsPerPageOptions: PaginationDropDownOptions[];
     listPlacement?: ListPlacement;
     onPageChange: (page: number) => void;

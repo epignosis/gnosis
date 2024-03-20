@@ -146,4 +146,37 @@ describe("<Pagination />", () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it("disables all pagination controls when the disabled prop is true", async () => {
+    render(
+      <Pagination
+        page={2}
+        pageSize={20}
+        totalPages={6}
+        translations={{
+          perPage: "Per page",
+          nextPage: "Next page",
+          previousPage: "Previous page",
+          firstPage: "First page",
+          lastPage: "Last page",
+          ofPages: "of",
+        }}
+        rowsPerPageOptions={rowsPerPageOptions}
+        onPageSizeChange={jest.fn()}
+        onPageChange={jest.fn()}
+        disabled
+      />,
+    );
+
+    const buttons = screen.getAllByRole("button");
+    for (const button of buttons) {
+      expect(button).toBeDisabled();
+    }
+
+    const onPageChangeMock = jest.fn();
+    const nextBtn = screen.getByTestId("next-page-btn");
+
+    userEvent.click(nextBtn);
+    expect(onPageChangeMock).not.toHaveBeenCalled();
+  });
 });

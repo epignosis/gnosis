@@ -23,6 +23,7 @@ type PaginationSelectorProps = {
   items: PaginationDropDownOptions[];
   selected: number;
   listPlacement?: ListPlacement;
+  disabled?: boolean;
   onClickItemHandler: (item: number) => void;
 };
 
@@ -30,6 +31,7 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
   items,
   selected,
   listPlacement = "top",
+  disabled = false,
   onClickItemHandler,
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -38,8 +40,10 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
   useClickOutside(wrapperRef, () => setIsListOpen(false));
 
   const toggleList = (): void => {
-    // We want to reset the dropdown list every time it opens
-    setIsListOpen((prevState) => !prevState);
+    if (!disabled) {
+      // We want to reset the dropdown list every time it opens
+      setIsListOpen((prevState) => !prevState);
+    }
   };
 
   const handleListItemSelect = (item: number): void => {
@@ -54,6 +58,12 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
     setSelectedListItem(selected);
   }, [selected]);
 
+  useEffect(() => {
+    if (disabled) {
+      setIsListOpen(false);
+    }
+  }, [disabled]);
+
   const hasItems = items.length > 1;
 
   return (
@@ -63,7 +73,7 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
     >
       <button
         className={`dropdown-button ${!hasItems ? "disabled" : ""}`}
-        disabled={!hasItems}
+        disabled={!hasItems || disabled}
         onClick={toggleList}
         title={`${selectedListItem}`}
       >

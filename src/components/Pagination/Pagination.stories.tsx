@@ -37,6 +37,7 @@ export default {
     pageSize: 20,
     totalPages: 6,
     rowsPerPageOptions,
+    disabled: false,
   },
 };
 

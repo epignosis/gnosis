@@ -46,6 +46,7 @@ const Dropdown: FC<DropdownProps> = ({
   placeholderText = "Search",
   remainOpenOnSelect = false,
   onToggleList,
+  disabled = false,
   ...rest
 }) => {
   const [isListOpen, setIsListOpen] = useState(false);
@@ -69,10 +70,20 @@ const Dropdown: FC<DropdownProps> = ({
   }, [list]);
 
   useEffect(() => {
-    onToggleList && onToggleList(isListOpen);
+    if (!disabled && onToggleList) {
+      onToggleList(isListOpen);
+    }
   }, [isListOpen]);
 
+  useEffect(() => {
+    if (disabled) {
+      setIsListOpen(false);
+      setFilteredList(list);
+    }
+  }, [disabled, list]);
+
   const toggleList = (): void => {
+    if (disabled) return;
     // We want to reset the dropdown list every time it opens
     if (!isListOpen) {
       setFilteredList(list);
@@ -276,6 +287,7 @@ const Dropdown: FC<DropdownProps> = ({
               id="dropdown-search"
               delayBeforeSearch={300}
               autoFocus={shouldFocus}
+              disabled={disabled}
             />
           )}
 

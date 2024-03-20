@@ -11,6 +11,7 @@ type SearchInputProps = React.HTMLAttributes<HTMLInputElement> & {
   delayBeforeSearch?: number;
   resetInput?: boolean;
   autoFocus?: boolean;
+  disabled?: boolean;
 };
 
 const SearchInput: FC<SearchInputProps> = ({
@@ -20,6 +21,7 @@ const SearchInput: FC<SearchInputProps> = ({
   delayBeforeSearch = 500,
   resetInput = false,
   autoFocus = false,
+  disabled = false,
   ...rest
 }) => {
   const [searchValue, setSearchValue] = useState("");
@@ -61,6 +63,7 @@ const SearchInput: FC<SearchInputProps> = ({
         isClearable={true}
         autoFocus={autoFocus}
         onClear={(e?: MouseEvent<HTMLDivElement>): void => clearSearch(e)}
+        disabled={disabled}
       />
     </div>
   );

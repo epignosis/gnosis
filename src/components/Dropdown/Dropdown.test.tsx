@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../Button/Button";
 import Dropdown from "./Dropdown";
 import { DropdownItem } from "./types";
-import { fireEvent, render } from "@test-utils/render";
+import { fireEvent, render, screen } from "@test-utils/render";
 
 describe("<Dropdown />", () => {
   window.HTMLElement.prototype.scrollIntoView = jest.fn();
@@ -32,6 +32,25 @@ describe("<Dropdown />", () => {
 
     expect(mockOnListItemSelect).toHaveBeenCalledWith({ label: "Option 2", value: "2" });
   });
+});
+
+it("disabled dropdown does not call onToggleList when clicked", () => {
+  const mockOnToggleList = jest.fn();
+  const { getByText } = render(
+    <Dropdown list={mockList} onToggleList={mockOnToggleList} disabled>
+      <Button disabled color="primary">
+        Toggle
+      </Button>
+    </Dropdown>,
+  );
+
+  const button = screen.getByRole("button");
+
+  expect(button).toBeDisabled();
+
+  fireEvent.click(getByText("Toggle"));
+
+  expect(mockOnToggleList).not.toHaveBeenCalled();
 });
 
 const mockList: DropdownItem[] = [

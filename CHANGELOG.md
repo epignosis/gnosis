@@ -1,3 +1,10 @@
+# [5.14.0](https://github.com/epignosis/gnosis/compare/v5.13.1...v5.14.0) (2024-03-20)
+
+
+### Features
+
+* **pagination:** implement pagination disable state ([#310](https://github.com/epignosis/gnosis/issues/310)) ([c0b9d4b](https://github.com/epignosis/gnosis/commit/c0b9d4be0dc96e7d3d5e92a755d365546afa29a6))
+
 ## [5.13.1](https://github.com/epignosis/gnosis/compare/v5.13.0...v5.13.1) (2024-03-19)
 
 # [5.13.0](https://github.com/epignosis/gnosis/compare/v5.12.4...v5.13.0) (2024-03-15)

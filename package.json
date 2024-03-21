@@ -31,7 +31,8 @@
   "keywords": [
     "epignosis",
     "react",
-    "design system"
+    "design system",
+    "component library"
   ],
   "peerDependencies": {
     "react": ">=16.8.0",

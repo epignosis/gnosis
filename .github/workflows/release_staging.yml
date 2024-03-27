@@ -1,0 +1,81 @@
+name: Release
+on:
+  push:
+    branches:
+      - development
+
+env:
+  CD_ROLE_ARN: arn:aws:iam::${{ secrets.AWS_DEVELOPMENT_ACCOUNT_ID }}:role/GnosisGithubDevelopment
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/gallium"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check types
+        run: npm run check-types
+
+      - name: Linting
+        run: npm run eslint
+
+      - name: Code styling (prettier)
+        run: npm run prettier
+
+      - name: Tests
+        run: npm test
+
+      - name: Build package
+        run: npm run build
+
+  deploy:
+    name: Deploy Gnosis Design System on Development
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    needs: release
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure AWS credentials with OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.CD_ROLE_ARN }}
+          role-session-name: build-${{ github.sha }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/gallium"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build package
+        run: npm run build:design-system
+
+      - name: Deploy to S3 bucket
+        run: |
+          aws s3 sync design-system/ s3://${{ secrets.CDN_DEVELOPMENT_BUCKET_NAME }}/
+
+      - name: Invalidate CloudFront cache and wait until complete
+        run: |
+          INVALIDATION_ID=`aws cloudfront create-invalidation --distribution-id ${{ secrets.CDN_DEVELOPMENT_ID }} --paths "/*" | jq -r .Invalidation.Id`
+          aws cloudfront wait invalidation-completed --distribution-id ${{ secrets.CDN_DEVELOPMENT_ID }} --id $INVALIDATION_ID

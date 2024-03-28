@@ -237,6 +237,7 @@ const Dropdown: FC<DropdownProps> = ({
         <li
           className={dropdownItemClasses(item)}
           key={`item-${index}-${item.value}`}
+          data-testid={item.id}
           onClick={(): void => {
             if (!isDisabled) {
               handleListItemSelect(item);

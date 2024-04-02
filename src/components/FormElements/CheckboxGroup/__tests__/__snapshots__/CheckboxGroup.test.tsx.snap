@@ -18,8 +18,8 @@ exports[`<CheckBoxGroup /> matches snapshot 1`] = `
           value=""
         />
         <label
-          for="Test groupname-container"
           data-testid="checkbox-label-Test groupname-container"
+          for="Test groupname-container"
         >
           <span
             aria-hidden="true"
@@ -42,8 +42,8 @@ exports[`<CheckBoxGroup /> matches snapshot 1`] = `
             value="testValue"
           />
           <label
-            for="Test groupname-testValue"
             data-testid="checkbox-label-Test groupname-testValue"
+            for="Test groupname-testValue"
           >
             <span
               aria-hidden="true"
@@ -77,8 +77,8 @@ exports[`<CheckBoxGroup /> matches snapshot with \`inline = true\` 1`] = `
           value=""
         />
         <label
-          for="Test groupname-container"
           data-testid="checkbox-label-Test groupname-container"
+          for="Test groupname-container"
         >
           <span
             aria-hidden="true"
@@ -101,8 +101,8 @@ exports[`<CheckBoxGroup /> matches snapshot with \`inline = true\` 1`] = `
             value="testValue"
           />
           <label
-            for="Test groupname-testValue"
             data-testid="checkbox-label-Test groupname-testValue"
+            for="Test groupname-testValue"
           >
             <span
               aria-hidden="true"

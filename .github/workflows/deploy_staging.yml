@@ -1,4 +1,4 @@
-name: Release
+name: Deploy Development
 on:
   push:
     branches:
@@ -9,8 +9,8 @@ env:
   CD_ROLE_ARN: arn:aws:iam::${{ secrets.AWS_DEVELOPMENT_ACCOUNT_ID }}:role/GnosisGithubDevelopment
 
 jobs:
-  release:
-    name: Release
+  tests:
+    name: Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -38,16 +38,13 @@ jobs:
       - name: Tests
         run: npm test
 
-      - name: Build package
-        run: npm run build
-
   deploy:
     name: Deploy Gnosis Design System on Development
     runs-on: ubuntu-latest
     permissions:
       id-token: write
       contents: read
-    needs: release
+    needs: tests
     steps:
       - name: Checkout
         uses: actions/checkout@v4

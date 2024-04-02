@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - development
+  workflow_dispatch:
 
 env:
   CD_ROLE_ARN: arn:aws:iam::${{ secrets.AWS_DEVELOPMENT_ACCOUNT_ID }}:role/GnosisGithubDevelopment

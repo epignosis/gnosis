@@ -45,7 +45,7 @@ const Checkbox: ForwardRefRenderFunction<HTMLDivElement, CheckboxProps> = (props
     >
       {isPartiallySelected && <span data-testid="is-partially-selected" className="dash" />}
       <input id={id} type="checkbox" readOnly={readOnly} {...rest} />
-      <label htmlFor={id}>
+      <label htmlFor={id} data-testid={`checkbox-label-${id}`}>
         <span className="shadow-element" tabIndex={-1} aria-hidden="true" />
         {label}
         {required && <span className="required" />}

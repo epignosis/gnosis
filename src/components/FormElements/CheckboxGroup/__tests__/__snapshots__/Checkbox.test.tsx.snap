@@ -12,6 +12,7 @@ exports[`<Checkbox /> matches snapshot with \`inline\` = true 1`] = `
       value="testValue"
     />
     <label
+      data-testid="checkbox-label-testId"
       for="testId"
     >
       <span
@@ -37,6 +38,7 @@ exports[`<Checkbox /> matches snapshot with \`lg\` size 1`] = `
       value="testValue"
     />
     <label
+      data-testid="checkbox-label-testId"
       for="testId"
     >
       <span
@@ -64,6 +66,7 @@ exports[`<Checkbox /> matches snapshot with \`md\` size 1`] = `
       value="testValue"
     />
     <label
+      data-testid="checkbox-label-my-id"
       for="my-id"
     >
       <span

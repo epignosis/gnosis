@@ -50,7 +50,7 @@ const Textarea: ForwardRefRenderFunction<HTMLTextAreaElement, TextareaProps> = (
       className={containerClassNames}
     >
       {hasLabel && (
-        <Label htmlFor={id} className={labelClassNames}>
+        <Label htmlFor={id} className={labelClassNames} data-testid={`textarea-label-${id}`}>
           {label}
         </Label>
       )}

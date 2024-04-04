@@ -1,0 +1,1173 @@
+
+> @repo/gnosis@0.0.0 validate
+> npm run check-types && npm run eslint && npm run prettier && npm test
+
+
+> @repo/gnosis@0.0.0 check-types
+> tsc
+
+
+> @repo/gnosis@0.0.0 eslint
+> eslint src --ext .ts,.tsx,.js,.jsx
+
+[0m[0m
+[0m[4m/Users/aantoniadis/Projects/tlms-monorepo/packages/gnosis/src/components/Dropdown/Dropdown.tsx[24m[0m
+[0m   [2m73:6[22m  [33mwarning[39m  React Hook useEffect has a missing dependency: 'onToggleList'. Either include it or remove the dependency array. If 'onToggleList' changes too often, find the parent component that defines it and wrap that definition in useCallback  [2mreact-hooks/exhaustive-deps[22m[0m
+[0m  [2m196:6[22m  [33mwarning[39m  React Hook useLayoutEffect has missing dependencies: 'fixDropdownPlacement' and 'fixPlacement'. Either include them or remove the dependency array                                                                                       [2mreact-hooks/exhaustive-deps[22m[0m
+[0m[0m
+[0m[4m/Users/aantoniadis/Projects/tlms-monorepo/packages/gnosis/src/components/FormElements/Input/SearchInput.tsx[24m[0m
+[0m  [2m41:6[22m  [33mwarning[39m  React Hook useEffect has a missing dependency: 'clearSearch'. Either include it or remove the dependency array  [2mreact-hooks/exhaustive-deps[22m[0m
+[0m[0m
+[0m[4m/Users/aantoniadis/Projects/tlms-monorepo/packages/gnosis/src/components/Table/Table.tsx[24m[0m
+[0m  [2m43:6[22m  [33mwarning[39m  React Hook useEffect has a missing dependency: 'onRowSelect'. Either include it or remove the dependency array  [2mreact-hooks/exhaustive-deps[22m[0m
+[0m[0m
+[0m[4m/Users/aantoniadis/Projects/tlms-monorepo/packages/gnosis/src/components/Table/components/Body.tsx[24m[0m
+[0m  [2m29:6[22m  [33mwarning[39m  React Hook useLayoutEffect has a missing dependency: 'debouncedUpdateSize'. Either include it or remove the dependency array  [2mreact-hooks/exhaustive-deps[22m[0m
+[0m[0m
+[0m[4m/Users/aantoniadis/Projects/tlms-monorepo/packages/gnosis/src/components/Table/components/Cell.tsx[24m[0m
+[0m  [2m41:6[22m  [33mwarning[39m  React Hook useLayoutEffect has a missing dependency: 'shouldRenderTooltip'. Either include it or remove the dependency array  [2mreact-hooks/exhaustive-deps[22m[0m
+[0m  [2m49:6[22m  [33mwarning[39m  React Hook useLayoutEffect has a missing dependency: 'shouldRenderTooltip'. Either include it or remove the dependency array  [2mreact-hooks/exhaustive-deps[22m[0m
+[0m[0m
+[0m[4m/Users/aantoniadis/Projects/tlms-monorepo/packages/gnosis/src/components/Table/components/Header.tsx[24m[0m
+[0m  [2m52:6[22m  [33mwarning[39m  React Hook useEffect has a missing dependency: 'columns'. Either include it or remove the dependency array  [2mreact-hooks/exhaustive-deps[22m[0m
+[0m[0m
+[0m[4m/Users/aantoniadis/Projects/tlms-monorepo/packages/gnosis/src/components/Table/components/TableRow.tsx[24m[0m
+[0m  [2m50:6[22m  [33mwarning[39m  React Hook useCallback has missing dependencies: 'onRowClick' and 'row'. Either include them or remove the dependency array. If 'onRowClick' changes too often, find the parent component that defines it and wrap that definition in useCallback  [2mreact-hooks/exhaustive-deps[22m[0m
+[0m  [2m57:5[22m  [33mwarning[39m  React Hook useCallback has a missing dependency: 'row'. Either include it or remove the dependency array                                                                                                                                           [2mreact-hooks/exhaustive-deps[22m[0m
+[0m[0m
+[0m[4m/Users/aantoniadis/Projects/tlms-monorepo/packages/gnosis/src/components/Tabs/Tabs.tsx[24m[0m
+[0m  [2m77:6[22m  [33mwarning[39m  React Hook useEffect has a missing dependency: 'tabsLength'. Either include it or remove the dependency array  [2mreact-hooks/exhaustive-deps[22m[0m
+[0m[0m
+[0m[33m[1m✖ 11 problems (0 errors, 11 warnings)[22m[39m[0m
+[0m[33m[1m[22m[39m[0m
+
+> @repo/gnosis@0.0.0 prettier
+> prettier -c src
+
+Checking formatting...
+src/components/__snapshots__/Alert.test.tsx.snap[2K[1Gsrc/components/Alert/__snapshots__/Alert.test.tsx.snap[2K[1Gsrc/components/Alert/Alert.stories.tsx[2K[1Gsrc/components/Alert/Alert.test.tsx[2K[1Gsrc/components/Alert/Alert.tsx[2K[1Gsrc/components/Alert/styles.ts[2K[1Gsrc/components/AspectRatio/__snapshots__/AspectRatio.test.tsx.snap[2K[1Gsrc/components/AspectRatio/AspectRatio.stories.tsx[2K[1Gsrc/components/AspectRatio/AspectRatio.test.tsx[2K[1Gsrc/components/AspectRatio/AspectRatio.tsx[2K[1Gsrc/components/AspectRatio/styles.ts[2K[1Gsrc/components/Avatar/__snapshots__/Avatar.test.tsx.snap[2K[1Gsrc/components/Avatar/Avatar.stories.tsx[2K[1Gsrc/components/Avatar/Avatar.test.tsx[2K[1Gsrc/components/Avatar/Avatar.tsx[2K[1Gsrc/components/Avatar/styles.ts[2K[1Gsrc/components/Badge/__snapshots__/Badge.test.tsx.snap[2K[1Gsrc/components/Badge/Badge.stories.tsx[2K[1Gsrc/components/Badge/Badge.test.tsx[2K[1Gsrc/components/Badge/Badge.tsx[2K[1Gsrc/components/Badge/styles.ts[2K[1Gsrc/components/Breadcrumb/__snapshots__/Breadcrumb.test.tsx.snap[2K[1Gsrc/components/Breadcrumb/Breadcrumb.stories.tsx[2K[1Gsrc/components/Breadcrumb/Breadcrumb.test.tsx[2K[1Gsrc/components/Breadcrumb/Breadcrumb.tsx[2K[1Gsrc/components/Breadcrumb/styles.ts[2K[1Gsrc/components/Button/__snapshots__/Button.test.tsx.snap[2K[1Gsrc/components/Button/Button.stories.tsx[2K[1Gsrc/components/Button/Button.test.tsx[2K[1Gsrc/components/Button/Button.tsx[2K[1Gsrc/components/Button/styles.ts[2K[1Gsrc/components/Card/__snapshots__/Card.test.tsx.snap[2K[1Gsrc/components/Card/Body.tsx[2K[1Gsrc/components/Card/Card.stories.tsx[2K[1Gsrc/components/Card/Card.test.tsx[2K[1Gsrc/components/Card/Card.tsx[2K[1Gsrc/components/Card/Drawer.tsx[2K[1Gsrc/components/Card/Header.tsx[2K[1Gsrc/components/Card/Hover.tsx[2K[1Gsrc/components/Card/Overlay.tsx[2K[1Gsrc/components/Card/styles.ts[2K[1Gsrc/components/Card/Thumbnail.tsx[2K[1Gsrc/components/Chip/__snapshots__/Chip.test.tsx.snap[2K[1Gsrc/components/Chip/Chip.stories.tsx[2K[1Gsrc/components/Chip/Chip.test.tsx[2K[1Gsrc/components/Chip/Chip.tsx[2K[1Gsrc/components/Chip/helpers.ts[2K[1Gsrc/components/Chip/styles.ts[2K[1Gsrc/components/Drawer/__snapshots__/Drawer.test.tsx.snap[2K[1Gsrc/components/Drawer/components/Body.tsx[2K[1Gsrc/components/Drawer/components/Footer.tsx[2K[1Gsrc/components/Drawer/components/Header.tsx[2K[1Gsrc/components/Drawer/components/Mask.tsx[2K[1Gsrc/components/Drawer/components/styles.ts[2K[1Gsrc/components/Drawer/Drawer.stories.tsx[2K[1Gsrc/components/Drawer/Drawer.test.tsx[2K[1Gsrc/components/Drawer/Drawer.tsx[2K[1Gsrc/components/Drawer/styles.ts[2K[1Gsrc/components/Dropdown/__snapshots__/Dropdown.test.tsx.snap[2K[1Gsrc/components/Dropdown/Dropdown.stories.tsx[2K[1Gsrc/components/Dropdown/Dropdown.test.tsx[2K[1Gsrc/components/Dropdown/Dropdown.tsx[2K[1Gsrc/components/Dropdown/helpers.tsx[2K[1Gsrc/components/Dropdown/styles.ts[2K[1Gsrc/components/Dropdown/types.ts[2K[1Gsrc/components/FormElements/CheckboxGroup/__tests__/__snapshots__/Checkbox.test.tsx.snap[2K[1Gsrc/components/FormElements/CheckboxGroup/__tests__/__snapshots__/CheckboxGroup.test.tsx.snap[2K[1Gsrc/components/FormElements/CheckboxGroup/__tests__/Checkbox.test.tsx[2K[1Gsrc/components/FormElements/CheckboxGroup/__tests__/CheckboxGroup.test.tsx[2K[1Gsrc/components/FormElements/CheckboxGroup/Checkbox.stories.tsx[2K[1Gsrc/components/FormElements/CheckboxGroup/Checkbox.tsx[2K[1Gsrc/components/FormElements/CheckboxGroup/CheckboxGroup.stories.tsx[2K[1Gsrc/components/FormElements/CheckboxGroup/CheckboxGroup.tsx[2K[1Gsrc/components/FormElements/CheckboxGroup/styles.ts[2K[1Gsrc/components/FormElements/FormError/__snapshots__/FormError.test.tsx.snap[2K[1Gsrc/components/FormElements/FormError/FormError.stories.tsx[2K[1Gsrc/components/FormElements/FormError/FormError.test.tsx[2K[1Gsrc/components/FormElements/FormError/FormError.tsx[2K[1Gsrc/components/FormElements/FormError/styles.ts[2K[1Gsrc/components/FormElements/Input/__snapshots__/Input.test.tsx.snap[2K[1Gsrc/components/FormElements/Input/helpers.ts[2K[1Gsrc/components/FormElements/Input/Input.stories.tsx[2K[1Gsrc/components/FormElements/Input/Input.test.tsx[2K[1Gsrc/components/FormElements/Input/Input.tsx[2K[1Gsrc/components/FormElements/Input/SearchInput.tsx[2K[1Gsrc/components/FormElements/Input/styles.ts[2K[1Gsrc/components/FormElements/InputError/__snapshots__/InputError.test.tsx.snap[2K[1Gsrc/components/FormElements/InputError/InputError.stories.tsx[2K[1Gsrc/components/FormElements/InputError/InputError.test.tsx[2K[1Gsrc/components/FormElements/InputError/InputError.tsx[2K[1Gsrc/components/FormElements/InputError/styles.ts[2K[1Gsrc/components/FormElements/Label/__snapshots__/Label.test.tsx.snap[2K[1Gsrc/components/FormElements/Label/Label.stories.tsx[2K[1Gsrc/components/FormElements/Label/Label.test.tsx[2K[1Gsrc/components/FormElements/Label/Label.tsx[2K[1Gsrc/components/FormElements/Label/styles.ts[2K[1Gsrc/components/FormElements/RadioButtonGroup/__tests__/__snapshots__/RadioButton.test.tsx.snap[2K[1Gsrc/components/FormElements/RadioButtonGroup/__tests__/__snapshots__/RadioButtonGroup.test.tsx.snap[2K[1Gsrc/components/FormElements/RadioButtonGroup/__tests__/RadioButton.test.tsx[2K[1Gsrc/components/FormElements/RadioButtonGroup/__tests__/RadioButtonGroup.test.tsx[2K[1Gsrc/components/FormElements/RadioButtonGroup/RadioButton.tsx[2K[1Gsrc/components/FormElements/RadioButtonGroup/RadioButtonGroup.stories.tsx[2K[1Gsrc/components/FormElements/RadioButtonGroup/RadioButtonGroup.tsx[2K[1Gsrc/components/FormElements/RadioButtonGroup/styles.ts[2K[1Gsrc/components/FormElements/RadioGroup/__tests__/__snapshots__/Radio.test.tsx.snap[2K[1Gsrc/components/FormElements/RadioGroup/__tests__/__snapshots__/RadioGroup.test.tsx.snap[2K[1Gsrc/components/FormElements/RadioGroup/__tests__/Radio.test.tsx[2K[1Gsrc/components/FormElements/RadioGroup/__tests__/RadioGroup.test.tsx[2K[1Gsrc/components/FormElements/RadioGroup/Radio.tsx[2K[1Gsrc/components/FormElements/RadioGroup/RadioGroup.stories.tsx[2K[1Gsrc/components/FormElements/RadioGroup/RadioGroup.tsx[2K[1Gsrc/components/FormElements/RadioGroup/styles.ts[2K[1Gsrc/components/FormElements/Select/__snapshots__/Select.test.tsx.snap[2K[1Gsrc/components/FormElements/Select/components/CustomMenuList.tsx[2K[1Gsrc/components/FormElements/Select/components/CustomValueContainer.tsx[2K[1Gsrc/components/FormElements/Select/constants.ts[2K[1Gsrc/components/FormElements/Select/data.ts[2K[1Gsrc/components/FormElements/Select/helpers.tsx[2K[1Gsrc/components/FormElements/Select/Select.stories.tsx[2K[1Gsrc/components/FormElements/Select/Select.test.tsx[2K[1Gsrc/components/FormElements/Select/Select.tsx[2K[1Gsrc/components/FormElements/Select/styles.ts[2K[1Gsrc/components/FormElements/Select/types.ts[2K[1Gsrc/components/FormElements/styles.ts[2K[1Gsrc/components/FormElements/Textarea/__snapshots__/Textarea.test.tsx.snap[2K[1Gsrc/components/FormElements/Textarea/styles.ts[2K[1Gsrc/components/FormElements/Textarea/Textarea.stories.tsx[2K[1Gsrc/components/FormElements/Textarea/Textarea.test.tsx[2K[1Gsrc/components/FormElements/Textarea/Textarea.tsx[2K[1Gsrc/components/Grid/__snapshots__/Grid.test.tsx.snap[2K[1Gsrc/components/Grid/Grid.stories.tsx[2K[1Gsrc/components/Grid/Grid.test.tsx[2K[1Gsrc/components/Grid/Grid.tsx[2K[1Gsrc/components/Grid/styles.ts[2K[1Gsrc/components/Heading/__snapshots__/Heading.test.tsx.snap[2K[1Gsrc/components/Heading/Heading.stories.tsx[2K[1Gsrc/components/Heading/Heading.test.tsx[2K[1Gsrc/components/Heading/Heading.tsx[2K[1Gsrc/components/Heading/styles.ts[2K[1Gsrc/components/Loaders/__snapshots__/Loader.test.tsx.snap[2K[1Gsrc/components/Loaders/Loader.stories.tsx[2K[1Gsrc/components/Loaders/Loader.test.tsx[2K[1Gsrc/components/Loaders/Loader.tsx[2K[1Gsrc/components/Loaders/styles.ts[2K[1Gsrc/components/MediaPlayer/AudioPlayer/AudioPlayer.tsx[2K[1Gsrc/components/MediaPlayer/MediaPlayer.stories.tsx[2K[1Gsrc/components/MediaPlayer/MediaPlayer.tsx[2K[1Gsrc/components/MediaPlayer/VideoPlayer/VideoPlayer.tsx[2K[1Gsrc/components/Modal/__snapshots__/Modal.test.tsx.snap[2K[1Gsrc/components/Modal/Modal.stories.tsx[2K[1Gsrc/components/Modal/Modal.test.tsx[2K[1Gsrc/components/Modal/Modal.tsx[2K[1Gsrc/components/Modal/styles.ts[2K[1Gsrc/components/Pagination/__snapshots__/Pagination.test.tsx.snap[2K[1Gsrc/components/Pagination/components/PaginationSelector.tsx[2K[1Gsrc/components/Pagination/components/styles.ts[2K[1Gsrc/components/Pagination/hooks.ts[2K[1Gsrc/components/Pagination/Pagination.stories.tsx[2K[1Gsrc/components/Pagination/Pagination.test.tsx[2K[1Gsrc/components/Pagination/Pagination.tsx[2K[1Gsrc/components/Pagination/styles.ts[2K[1Gsrc/components/Pagination/types.ts[2K[1Gsrc/components/ProgressBar/__snapshots__/ProgressBar.test.tsx.snap[2K[1Gsrc/components/ProgressBar/ProgressBar.stories.tsx[2K[1Gsrc/components/ProgressBar/ProgressBar.test.tsx[2K[1Gsrc/components/ProgressBar/ProgressBar.tsx[2K[1Gsrc/components/ProgressBar/styles.ts[2K[1Gsrc/components/Result/__snapshots__/Result.test.tsx.snap[2K[1Gsrc/components/Result/Result.stories.tsx[2K[1Gsrc/components/Result/Result.test.tsx[2K[1Gsrc/components/Result/Result.tsx[2K[1Gsrc/components/Result/styles.ts[2K[1Gsrc/components/Sidebar/__snapshots__/Sidebar.test.tsx.snap[2K[1Gsrc/components/Sidebar/NavHandle.tsx[2K[1Gsrc/components/Sidebar/NavItem.tsx[2K[1Gsrc/components/Sidebar/Sidebar.stories.tsx[2K[1Gsrc/components/Sidebar/Sidebar.test.tsx[2K[1Gsrc/components/Sidebar/Sidebar.tsx[2K[1Gsrc/components/Sidebar/styles.ts[2K[1Gsrc/components/Table/__tests__/__snapshots__/Table.test.tsx.snap[2K[1Gsrc/components/Table/__tests__/Table.test.tsx[2K[1Gsrc/components/Table/components/Body.tsx[2K[1Gsrc/components/Table/components/Cell.tsx[2K[1Gsrc/components/Table/components/DataCells.tsx[2K[1Gsrc/components/Table/components/Header.tsx[2K[1Gsrc/components/Table/components/TableRow.tsx[2K[1Gsrc/components/Table/constants.ts[2K[1Gsrc/components/Table/reducer.ts[2K[1Gsrc/components/Table/styles.ts[2K[1Gsrc/components/Table/Table.stories.tsx[2K[1Gsrc/components/Table/Table.tsx[2K[1Gsrc/components/Table/types.ts[2K[1Gsrc/components/Tabs/__snapshots__/Tabs.test.tsx.snap[2K[1Gsrc/components/Tabs/styles.ts[2K[1Gsrc/components/Tabs/Tabs.stories.tsx[2K[1Gsrc/components/Tabs/Tabs.test.tsx[2K[1Gsrc/components/Tabs/Tabs.tsx[2K[1Gsrc/components/Tabs/TabsContent.tsx[2K[1Gsrc/components/Tabs/TabsNavItem.tsx[2K[1Gsrc/components/Tag/__snapshots__/Tag.test.tsx.snap[2K[1Gsrc/components/Tag/styles.ts[2K[1Gsrc/components/Tag/Tag.stories.tsx[2K[1Gsrc/components/Tag/Tag.test.tsx[2K[1Gsrc/components/Tag/Tag.tsx[2K[1Gsrc/components/Text/__snapshots__/Text.test.tsx.snap[2K[1Gsrc/components/Text/styles.ts[2K[1Gsrc/components/Text/Text.stories.tsx[2K[1Gsrc/components/Text/Text.test.tsx[2K[1Gsrc/components/Text/Text.tsx[2K[1Gsrc/components/ThemeProvider/ThemeProvider.tsx[2K[1Gsrc/components/Tooltip/styles.ts[2K[1Gsrc/components/Tooltip/Tooltip.stories.tsx[2K[1Gsrc/components/Tooltip/Tooltip.test.tsx[2K[1Gsrc/components/Tooltip/Tooltip.tsx[2K[1Gsrc/custom.d.ts[2K[1Gsrc/icons/add_operator.svg[2K[1Gsrc/icons/arrow_down_left.svg[2K[1Gsrc/icons/arrow_down.svg[2K[1Gsrc/icons/arrow_left.svg[2K[1Gsrc/icons/arrow_right_close.svg[2K[1Gsrc/icons/arrow_right.svg[2K[1Gsrc/icons/asterisk.svg[2K[1Gsrc/icons/attachment.svg[2K[1Gsrc/icons/audio.svg[2K[1Gsrc/icons/back_arrow.svg[2K[1Gsrc/icons/back_icon.svg[2K[1Gsrc/icons/badge_bell.svg[2K[1Gsrc/icons/badge_books.svg[2K[1Gsrc/icons/badge_calendar.svg[2K[1Gsrc/icons/badge_certificate.svg[2K[1Gsrc/icons/badge_icon.svg[2K[1Gsrc/icons/badge_no_certificate.svg[2K[1Gsrc/icons/badge_stats.svg[2K[1Gsrc/icons/bell_slash.svg[2K[1Gsrc/icons/bell_solid.svg[2K[1Gsrc/icons/branches-filter.svg[2K[1Gsrc/icons/branches.svg[2K[1Gsrc/icons/calendar.svg[2K[1Gsrc/icons/caret_down.svg[2K[1Gsrc/icons/caret_right_circled.svg[2K[1Gsrc/icons/caret_up.svg[2K[1Gsrc/icons/catalog.svg[2K[1Gsrc/icons/certificate_sm.svg[2K[1Gsrc/icons/certificate.svg[2K[1Gsrc/icons/chat_clouds.svg[2K[1Gsrc/icons/check_circled.svg[2K[1Gsrc/icons/check_regular.svg[2K[1Gsrc/icons/check_solid.svg[2K[1Gsrc/icons/chevron_arrow_down.svg[2K[1Gsrc/icons/chevron_arrow_left.svg[2K[1Gsrc/icons/chevron_arrow_line_left.svg[2K[1Gsrc/icons/chevron_arrow_line_right.svg[2K[1Gsrc/icons/chevron_arrow_right.svg[2K[1Gsrc/icons/close_circled.svg[2K[1Gsrc/icons/close_modal.svg[2K[1Gsrc/icons/close_solid.svg[2K[1Gsrc/icons/close.svg[2K[1Gsrc/icons/cloud_download.svg[2K[1Gsrc/icons/communication.svg[2K[1Gsrc/icons/course_certificate.svg[2K[1Gsrc/icons/course_type.svg[2K[1Gsrc/icons/danger.svg[2K[1Gsrc/icons/download_arrow.svg[2K[1Gsrc/icons/drop_down_arrow.svg[2K[1Gsrc/icons/edit_table.svg[2K[1Gsrc/icons/edit.svg[2K[1Gsrc/icons/ellipsis.svg[2K[1Gsrc/icons/empty_state.svg[2K[1Gsrc/icons/exclamation_circled.svg[2K[1Gsrc/icons/export_data.svg[2K[1Gsrc/icons/favorite_filled.svg[2K[1Gsrc/icons/favorite_outlined.svg[2K[1Gsrc/icons/folder.svg[2K[1Gsrc/icons/forward.svg[2K[1Gsrc/icons/gamepad.svg[2K[1Gsrc/icons/general_content.svg[2K[1Gsrc/icons/globe.svg[2K[1Gsrc/icons/grid.svg[2K[1Gsrc/icons/grip_dots.svg[2K[1Gsrc/icons/grip_lines.svg[2K[1Gsrc/icons/groups-filter.svg[2K[1Gsrc/icons/groups.svg[2K[1Gsrc/icons/hamburger.svg[2K[1Gsrc/icons/help.svg[2K[1Gsrc/icons/home.svg[2K[1Gsrc/icons/icon_caret_right.svg[2K[1Gsrc/icons/icon_chevron_down.svg[2K[1Gsrc/icons/icon_chevron_up.svg[2K[1Gsrc/icons/icon_message.svg[2K[1Gsrc/icons/icon_profile.svg[2K[1Gsrc/icons/icon-filter.svg[2K[1Gsrc/icons/Icons.stories.tsx[2K[1Gsrc/icons/import_data.svg[2K[1Gsrc/icons/index.ts[2K[1Gsrc/icons/info_circled.svg[2K[1Gsrc/icons/info_icon.svg[2K[1Gsrc/icons/info.svg[2K[1Gsrc/icons/leave_portal.svg[2K[1Gsrc/icons/linkedin_icon.svg[2K[1Gsrc/icons/list.svg[2K[1Gsrc/icons/magnifier.svg[2K[1Gsrc/icons/my_courses.svg[2K[1Gsrc/icons/opened_message.svg[2K[1Gsrc/icons/order_arrows.svg[2K[1Gsrc/icons/palette.svg[2K[1Gsrc/icons/play_unit.svg[2K[1Gsrc/icons/play_video.svg[2K[1Gsrc/icons/private.svg[2K[1Gsrc/icons/radio_selected.svg[2K[1Gsrc/icons/replies.svg[2K[1Gsrc/icons/reply_all.svg[2K[1Gsrc/icons/reply.svg[2K[1Gsrc/icons/right-arrow-icon.svg[2K[1Gsrc/icons/scroll_regular.svg[2K[1Gsrc/icons/settings_icon.svg[2K[1Gsrc/icons/show_icon.svg[2K[1Gsrc/icons/show_tour.svg[2K[1Gsrc/icons/slides.svg[2K[1Gsrc/icons/sorting_arrows_ascending.svg[2K[1Gsrc/icons/sorting_arrows_descending.svg[2K[1Gsrc/icons/success.svg[2K[1Gsrc/icons/text.svg[2K[1Gsrc/icons/trash_alt.svg[2K[1Gsrc/icons/unit_assignment.svg[2K[1Gsrc/icons/unit_audio.svg[2K[1Gsrc/icons/unit_clone.svg[2K[1Gsrc/icons/unit_complete.svg[2K[1Gsrc/icons/unit_completion_rules.svg[2K[1Gsrc/icons/unit_failed.svg[2K[1Gsrc/icons/unit_flash.svg[2K[1Gsrc/icons/unit_iframe.svg[2K[1Gsrc/icons/unit_ilt.svg[2K[1Gsrc/icons/unit_link.svg[2K[1Gsrc/icons/unit_not_selected.svg[2K[1Gsrc/icons/unit_pending.svg[2K[1Gsrc/icons/unit_presentation.svg[2K[1Gsrc/icons/unit_scorm.svg[2K[1Gsrc/icons/unit_section.svg[2K[1Gsrc/icons/unit_survey.svg[2K[1Gsrc/icons/unit_test.svg[2K[1Gsrc/icons/unit_type.svg[2K[1Gsrc/icons/unit_video.svg[2K[1Gsrc/icons/unit_web_content.svg[2K[1Gsrc/icons/upload.svg[2K[1Gsrc/icons/user_outlined.svg[2K[1Gsrc/icons/user_type.svg[2K[1Gsrc/icons/user-avatar.svg[2K[1Gsrc/icons/vertical_ellipsis.svg[2K[1Gsrc/icons/video.svg[2K[1Gsrc/icons/warning.svg[2K[1Gsrc/index.ts[2K[1Gsrc/setupTests.ts[2K[1Gsrc/stories/assets/accessibility.png[2K[1Gsrc/stories/assets/accessibility.svg[2K[1Gsrc/stories/assets/addon-library.png[2K[1Gsrc/stories/assets/assets.png[2K[1Gsrc/stories/assets/avif-test-image.avif[2K[1Gsrc/stories/assets/context.png[2K[1Gsrc/stories/assets/discord.svg[2K[1Gsrc/stories/assets/docs.png[2K[1Gsrc/stories/assets/figma-plugin.png[2K[1Gsrc/stories/assets/github.svg[2K[1Gsrc/stories/assets/share.png[2K[1Gsrc/stories/assets/styling.png[2K[1Gsrc/stories/assets/testing.png[2K[1Gsrc/stories/assets/theming.png[2K[1Gsrc/stories/assets/tutorials.svg[2K[1Gsrc/stories/assets/youtube.svg[2K[1Gsrc/stories/button.css[2K[1Gsrc/stories/Button.stories.ts[2K[1Gsrc/stories/Button.tsx[2K[1Gsrc/stories/Configure.mdx[2K[1Gsrc/stories/header.css[2K[1Gsrc/stories/Header.stories.ts[2K[1Gsrc/stories/Header.tsx[2K[1Gsrc/stories/page.css[2K[1Gsrc/stories/Page.stories.ts[2K[1Gsrc/stories/Page.tsx[2K[1Gsrc/test-utils/helpers/windowResize.ts[2K[1Gsrc/test-utils/mocks/cssStub.ts[2K[1Gsrc/test-utils/mocks/svgStub.ts[2K[1Gsrc/test-utils/render.tsx[2K[1Gsrc/theme/default/Colors.stories.tsx[2K[1Gsrc/theme/default/colors.ts[2K[1Gsrc/theme/default/config/alert.ts[2K[1Gsrc/theme/default/config/badge.ts[2K[1Gsrc/theme/default/config/breadcrumb.ts[2K[1Gsrc/theme/default/config/button.ts[2K[1Gsrc/theme/default/config/card.ts[2K[1Gsrc/theme/default/config/chip.ts[2K[1Gsrc/theme/default/config/drawer.ts[2K[1Gsrc/theme/default/config/dropdown.ts[2K[1Gsrc/theme/default/config/formElements.ts[2K[1Gsrc/theme/default/config/index.ts[2K[1Gsrc/theme/default/config/loader.ts[2K[1Gsrc/theme/default/config/modal.ts[2K[1Gsrc/theme/default/config/pagination.ts[2K[1Gsrc/theme/default/config/progressBar.ts[2K[1Gsrc/theme/default/config/result.ts[2K[1Gsrc/theme/default/config/scrollbar.ts[2K[1Gsrc/theme/default/config/sidebar.ts[2K[1Gsrc/theme/default/config/table.ts[2K[1Gsrc/theme/default/config/tabs.ts[2K[1Gsrc/theme/default/config/tag.ts[2K[1Gsrc/theme/default/config/tooltip.ts[2K[1Gsrc/theme/default/defaultTheme.ts[2K[1Gsrc/theme/default/TypeScale.stories.tsx[2K[1Gsrc/theme/default/TypographyDocs.stories.tsx[2K[1Gsrc/theme/utils/breakpoints.ts[2K[1Gsrc/theme/utils/global.ts[2K[1Gsrc/theme/utils/typography.ts[2K[1Gsrc/types/common.ts[2K[1Gsrc/types/emotion.d.ts[2K[1Gsrc/types/index.d.ts[2K[1Gsrc/types/main.d.ts[2K[1Gsrc/types/svg.d.ts[2K[1Gsrc/types/utils.ts[2K[1Gsrc/vite-env.d.ts[2K[1GAll matched files use Prettier code style!
+
+> @repo/gnosis@0.0.0 test
+> vitest run
+
+
+[7m[1m[36m RUN [39m[22m[27m [36mv1.4.0[39m [90m/Users/aantoniadis/Projects/tlms-monorepo/packages/gnosis[39m
+
+[?25l [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [90m·[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [90m·[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [90m·[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [90m·[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [90m·[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [90m·[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [90m·[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [90m·[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [90m·[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [90m·[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [90m·[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [90m·[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [90m·[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [90m·[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [90m·[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [90m·[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [90m·[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [90m·[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [90m·[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [90m·[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [90m·[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [90m·[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [90m·[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [90m·[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [90m·[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [90m·[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [90m·[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [90m·[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [90m·[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [90m·[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [90m·[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [90m·[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [90m·[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [90m·[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [90m·[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [90m·[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [90m·[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [90m·[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [90m·[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [90m·[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [90m·[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [90m·[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [90m·[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [90m·[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [90m·[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [90m·[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [90m·[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [90m·[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [90m·[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [90m·[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [90m·[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [90m·[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [90m·[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [90m·[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+ [90m·[39m [2msrc/components/Loaders/[22mLoader[2m.test.tsx[22m[2m (3)[22m
+[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Loaders/[22mLoader[2m.test.tsx[22m[2m (3)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Loaders/[22mLoader[2m.test.tsx[22m[2m (3)[22m
+[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Loaders/[22mLoader[2m.test.tsx[22m[2m (3)[22m
+ [90m·[39m [2msrc/components/Tooltip/[22mTooltip[2m.test.tsx[22m[2m (1)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Loaders/[22mLoader[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Tooltip/[22mTooltip[2m.test.tsx[22m[2m (1)[22m
+ [90m·[39m [2msrc/components/FormElements/FormError/[22mFormError[2m.test.tsx[22m[2m (2)[22m
+[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Loaders/[22mLoader[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Tooltip/[22mTooltip[2m.test.tsx[22m[2m (1)[22m
+ [32m✓[39m [2msrc/components/FormElements/FormError/[22mFormError[2m.test.tsx[22m[2m (2)[22m
+[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Loaders/[22mLoader[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Tooltip/[22mTooltip[2m.test.tsx[22m[2m (1)[22m
+ [32m✓[39m [2msrc/components/FormElements/FormError/[22mFormError[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/FormElements/InputError/[22mInputError[2m.test.tsx[22m[2m (2)[22m
+[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Loaders/[22mLoader[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Tooltip/[22mTooltip[2m.test.tsx[22m[2m (1)[22m
+ [32m✓[39m [2msrc/components/FormElements/FormError/[22mFormError[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/InputError/[22mInputError[2m.test.tsx[22m[2m (2)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Loaders/[22mLoader[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Tooltip/[22mTooltip[2m.test.tsx[22m[2m (1)[22m
+ [32m✓[39m [2msrc/components/FormElements/FormError/[22mFormError[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/InputError/[22mInputError[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/Heading/[22mHeading[2m.test.tsx[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Loaders/[22mLoader[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Tooltip/[22mTooltip[2m.test.tsx[22m[2m (1)[22m
+ [32m✓[39m [2msrc/components/FormElements/FormError/[22mFormError[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/InputError/[22mInputError[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/Heading/[22mHeading[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/Tag/[22mTag[2m.test.tsx[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Loaders/[22mLoader[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Tooltip/[22mTooltip[2m.test.tsx[22m[2m (1)[22m
+ [32m✓[39m [2msrc/components/FormElements/FormError/[22mFormError[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/InputError/[22mInputError[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Heading/[22mHeading[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/Tag/[22mTag[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/FormElements/Label/[22mLabel[2m.test.tsx[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Loaders/[22mLoader[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Tooltip/[22mTooltip[2m.test.tsx[22m[2m (1)[22m
+ [32m✓[39m [2msrc/components/FormElements/FormError/[22mFormError[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/InputError/[22mInputError[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Heading/[22mHeading[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Tag/[22mTag[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/FormElements/Label/[22mLabel[2m.test.tsx[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Loaders/[22mLoader[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Tooltip/[22mTooltip[2m.test.tsx[22m[2m (1)[22m
+ [32m✓[39m [2msrc/components/FormElements/FormError/[22mFormError[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/InputError/[22mInputError[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Heading/[22mHeading[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Tag/[22mTag[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Label/[22mLabel[2m.test.tsx[22m[2m (2)[22m
+[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Loaders/[22mLoader[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Tooltip/[22mTooltip[2m.test.tsx[22m[2m (1)[22m
+ [32m✓[39m [2msrc/components/FormElements/FormError/[22mFormError[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/InputError/[22mInputError[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Heading/[22mHeading[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Tag/[22mTag[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Label/[22mLabel[2m.test.tsx[22m[2m (2)[22m
+ [90m·[39m [2msrc/components/Text/[22mText[2m.test.tsx[22m[2m (2)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckboxGroup[2m.test.tsx[22m[2m (8)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/CheckboxGroup/__tests__/[22mCheckbox[2m.test.tsx[22m[2m (7)[22m [2m[90m[skipped][39m[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadioGroup[2m.test.tsx[22m[2m (6)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Card/[22mCard[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Breadcrumb/[22mBreadcrumb[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Modal/[22mModal[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Drawer/[22mDrawer[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Button/[22mButton[2m.test.tsx[22m[2m (9)[22m
+ [32m✓[39m [2msrc/components/Pagination/[22mPagination[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Tabs/[22mTabs[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/Input/[22mInput[2m.test.tsx[22m[2m (6)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButtonGroup[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/RadioButtonGroup/__tests__/[22mRadioButton[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/FormElements/Textarea/[22mTextarea[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Avatar/[22mAvatar[2m.test.tsx[22m[2m (5)[22m
+ [2m[90m↓[39m[22m [2msrc/components/FormElements/RadioGroup/__tests__/[22mRadio[2m.test.tsx[22m[2m (5)[22m [2m[90m[skipped][39m[22m
+ [32m✓[39m [2msrc/components/Sidebar/[22mSidebar[2m.test.tsx[22m[2m (5)[22m
+ [32m✓[39m [2msrc/components/Table/__tests__/[22mTable[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Select/[22mSelect[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Alert/[22mAlert[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Badge/[22mBadge[2m.test.tsx[22m[2m (4)[22m
+ [32m✓[39m [2msrc/components/Grid/[22mGrid[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/ProgressBar/[22mProgressBar[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/AspectRatio/[22mAspectRatio[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Dropdown/[22mDropdown[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Result/[22mResult[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Chip/[22mChip[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Loaders/[22mLoader[2m.test.tsx[22m[2m (3)[22m
+ [32m✓[39m [2msrc/components/Tooltip/[22mTooltip[2m.test.tsx[22m[2m (1)[22m
+ [32m✓[39m [2msrc/components/FormElements/FormError/[22mFormError[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/InputError/[22mInputError[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Heading/[22mHeading[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Tag/[22mTag[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/FormElements/Label/[22mLabel[2m.test.tsx[22m[2m (2)[22m
+ [32m✓[39m [2msrc/components/Text/[22mText[2m.test.tsx[22m[2m (2)[22m
+
+[2m Test Files [22m [1m[32m31 passed[39m[22m[2m | [22m[33m4 skipped[39m[90m (35)[39m
+[2m      Tests [22m [1m[32m119 passed[39m[22m[2m | [22m[33m27 skipped[39m[90m (146)[39m
+[2m   Start at [22m 16:45:02
+[2m   Duration [22m 4.70s[2m (transform 4.23s, setup 4.33s, collect 20.19s, tests 2.39s, environment 4.84s, prepare 2.91s)[22m
+
+[?25h[?25h

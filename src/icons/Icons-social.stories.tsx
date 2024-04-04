@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Text } from "../";
-import * as SvgIcons from ".";
+import * as SvgIcons from "./social";
 
 export default {
-  title: "Theme/Icons/General",
+  title: "Theme/Icons/Social",
   parameters: {
     controls: { hideNoControlsWarning: true },
   },

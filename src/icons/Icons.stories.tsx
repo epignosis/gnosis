@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Text } from "../";
 import * as SvgIcons from ".";
+import { CopySolidSVG } from ".";
 
 export default {
   title: "Theme/Icons/General",
@@ -11,13 +12,24 @@ export default {
 
 export const Icons = (): JSX.Element => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [copiedIcon, setCopiedIcon] = useState<string | null>(null);
 
   const icons = Object.values(SvgIcons);
 
   // Filter icons based on search query
-  const filteredIcons = icons.filter((icon) =>
-    icon.name.toLowerCase().includes(searchQuery.toLowerCase()),
-  );
+  const filteredIcons = icons.filter((icon) => {
+    const newName = icon.name.substring(3) + "SVG";
+    return newName.toLowerCase().includes(searchQuery.toLowerCase());
+  });
+
+  // Function to copy icon name to clipboard
+  const copyToClipboard = (iconName: string) => {
+    navigator.clipboard.writeText(iconName);
+    setCopiedIcon(iconName);
+    setTimeout(() => {
+      setCopiedIcon(null);
+    }, 2000); // Reset copiedIcon state after 2 seconds
+  };
 
   return (
     <div>
@@ -49,9 +61,11 @@ export const Icons = (): JSX.Element => {
             <div key={i} style={{ textAlign: "center" }}>
               <div
                 style={{
+                  position: "relative",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
+                  flexDirection: "column",
                   height: 80,
                   width: 80,
                   boxShadow: "0px 0px 10px #00000026",
@@ -61,7 +75,15 @@ export const Icons = (): JSX.Element => {
               >
                 <Icon height={32} color="black" />
               </div>
-              <Text fontSize="2xs">{iconName}</Text>
+              <Text fontSize="2xs">
+                {iconName}{" "}
+                <span
+                  onClick={() => copyToClipboard(iconName)}
+                  style={{ position: "absolute", cursor: "pointer" }}
+                >
+                  {copiedIcon === iconName ? "Copied!" : <CopySolidSVG height={32} />}
+                </span>
+              </Text>
             </div>
           );
         })}

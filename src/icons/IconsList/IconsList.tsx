@@ -27,7 +27,7 @@ const IconsList = ({ svgIcons }: { svgIcons: SVGIcons }): JSX.Element => {
     setCopiedIcon(iconName);
     setTimeout(() => {
       setCopiedIcon(null);
-    }, 2000); // Reset copiedIcon state after 2 seconds
+    }, 1000); // Reset copiedIcon state after 2 seconds
   };
 
   return (

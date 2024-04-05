@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Text } from "../";
-import * as SvgIcons from "./social";
-import { CopySolidSVG } from ".";
+import { Text } from "../../";
+import { CopySolidSVG } from "../";
+import * as SvgIcons from ".";
 
 export default {
   title: "Theme/Icons/Social",

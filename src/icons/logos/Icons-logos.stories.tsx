@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Text } from "../";
-import * as SvgIcons from "./currencies";
-import { CopySolidSVG } from ".";
+import { Text } from "../../";
+import { CopySolidSVG } from "../";
+import * as SvgIcons from ".";
 
 export default {
-  title: "Theme/Icons/Currencies",
+  title: "Theme/Icons/Logos",
   parameters: {
     controls: { hideNoControlsWarning: true },
   },

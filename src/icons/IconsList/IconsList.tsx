@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text } from "../../";
+import { Text, Input } from "../../";
 import { CopySolidSVG } from "../";
 
 type SVGComponent = React.FC<React.SVGProps<SVGSVGElement>>;
@@ -32,22 +32,17 @@ const IconsList = ({ svgIcons }: { svgIcons: SVGIcons }): JSX.Element => {
 
   return (
     <div>
-      <input
+      <Input
+        id="search-icons"
         type="text"
         placeholder="Search icons..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        style={{
-          marginBottom: "1rem",
-          padding: "0.5rem",
-          fontSize: "1rem",
-          width: "100%",
-          boxSizing: "border-box",
-        }}
       />
       <div
         style={{
           display: "grid",
+          marginTop: "1rem",
           gridTemplateColumns: "repeat(auto-fill,150px)",
           columnGap: "2rem",
           rowGap: "2rem",

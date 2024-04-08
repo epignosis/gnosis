@@ -349,6 +349,13 @@ export { default as UploadFileLargeSVG } from "./client/assignments/upload-file-
 export { default as VideoRecordingLargeSVG } from "./client/assignments/video-recording-large.svg";
 export { default as AudioRecordingLargeSVG } from "./client/assignments/audio-recording-large.svg";
 export { default as ScreenRecordingLargeSVG } from "./client/assignments/screen-recording-large.svg";
+export { default as GradebookSVG } from "./client/icon-gradebook.svg";
+export { default as AssignmentPassedAnswer } from "./client/assignments/passed-answer.svg";
+export { default as AssignmentNotPassedAnswer } from "./client/assignments/not-passed-answer.svg";
+export { default as AssignmentPendingAnswer } from "./client/assignments/pending-answer.svg";
+export { default as AssignmentPassedFilter } from "./client/assignments/passed-filter.svg";
+export { default as AssignmentNotPassedFilter } from "./client/assignments/not-passed-filter.svg";
+export { default as AssignmentPendingFilter } from "./client/assignments/pending-filter.svg";
 
 // Currencies Icons
 export { default as AustralianDollarSVG } from "./client/currencies/australian-dollar.svg";

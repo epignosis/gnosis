@@ -35,7 +35,7 @@ const IconsList = ({ svgIcons }: { svgIcons: SVGIcons }): JSX.Element => {
       <Input
         id="search-icons"
         type="text"
-        placeholder="Search icons..."
+        placeholder={`Search icons...(${filteredIcons.length})`}
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />

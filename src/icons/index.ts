@@ -5,7 +5,6 @@ export { default as CatalogSVG } from "./legacy/catalog.svg";
 export { default as CalendarSVG } from "./legacy/calendar.svg";
 export { default as CommunicationSVG } from "./legacy/communication.svg";
 export { default as HelpSVG } from "./legacy/help.svg";
-export { default as BackArrowSVG } from "./legacy/back_arrow.svg";
 export { default as CloseCircledSVG } from "./legacy/close_circled.svg";
 export { default as InfoCircledSVG } from "./legacy/info_circled.svg";
 export { default as EllipsisSVG } from "./legacy/ellipsis.svg";
@@ -15,8 +14,6 @@ export { default as PlayVideoSVG } from "./legacy/play_video.svg";
 export { default as PlayUnitSVG } from "./legacy/play_unit.svg";
 export { default as UnitCompleteSVG } from "./legacy/unit_complete.svg";
 export { default as UnitPendingSVG } from "./legacy/unit_pending.svg";
-export { default as ArrowRightSVG } from "./legacy/arrow_right.svg";
-export { default as ArrowLeftSVG } from "./legacy/arrow_left.svg";
 export { default as UnitAssignmentSVG } from "./legacy/unit_assignment.svg";
 export { default as UnitAudioSVG } from "./legacy/unit_audio.svg";
 export { default as UnitFlashSVG } from "./legacy/unit_flash.svg";
@@ -34,7 +31,6 @@ export { default as CheckSolidSVG } from "./legacy/check_solid.svg";
 export { default as GeneralContentSVG } from "./legacy/general_content.svg";
 export { default as CourseCertificateSVG } from "./legacy/course_certificate.svg";
 export { default as GlobeSVG } from "./legacy/globe.svg";
-export { default as DropDownArrowSVG } from "./legacy/drop_down_arrow.svg";
 export { default as BadgeCertificateSVG } from "./legacy/badge_certificate.svg";
 export { default as UnitCompletionRulesSVG } from "./legacy/unit_completion_rules.svg";
 export { default as MagnifierSVG } from "./legacy/magnifier.svg";
@@ -46,10 +42,8 @@ export { default as CloseSVG } from "./legacy/close.svg";
 export { default as CloseModalSVG } from "./legacy/close_modal.svg";
 export { default as MessageIconSVG } from "./legacy/icon_message.svg";
 export { default as ProfileIconSVG } from "./legacy/icon_profile.svg";
-export { default as CaretDownSVG } from "./legacy/caret_down.svg";
 export { default as CertificateSmSVG } from "./legacy/certificate_sm.svg";
 export { default as CloseSolidSVG } from "./legacy/close_solid.svg";
-export { default as CaretRightCircledSVG } from "./legacy/caret_right_circled.svg";
 export { default as SettingsSVG } from "./legacy/settings_icon.svg";
 export { default as FolderSVG } from "./legacy/folder.svg";
 export { default as CloudDownloadSVG } from "./legacy/cloud_download.svg";
@@ -70,7 +64,6 @@ export { default as BadgeCalendarSVG } from "./legacy/badge_calendar.svg";
 export { default as BadgeStatsSVG } from "./legacy/badge_stats.svg";
 export { default as ShowIconSVG } from "./legacy/show_icon.svg";
 export { default as BadgeIconSVG } from "./legacy/badge_icon.svg";
-export { default as BackIconSVG } from "./legacy/back_icon.svg";
 export { default as FavoriteOutlinedSVG } from "./legacy/favorite_outlined.svg";
 export { default as FavoriteFilledSVG } from "./legacy/favorite_filled.svg";
 export { default as LinkedInSVG } from "./legacy/linkedin_icon.svg";
@@ -81,20 +74,13 @@ export { default as InfoSVG } from "./legacy/info.svg";
 export { default as DangerSVG } from "./legacy/danger.svg";
 export { default as SuccessSVG } from "./legacy/success.svg";
 export { default as WarningSVG } from "./legacy/warning.svg";
-export { default as OrderArrowsSVG } from "./legacy/order_arrows.svg";
-export { default as DropUpArrowSVG } from "./legacy/caret_up.svg";
-export { default as ArrowDownSVG } from "./legacy/arrow_down.svg";
 export { default as HamburgerSVG } from "./legacy/hamburger.svg";
 export { default as OpenedMessageSVG } from "./legacy/opened_message.svg";
 export { default as ChatCloudsSVG } from "./legacy/chat_clouds.svg";
-export { default as DownloadArrowSVG } from "./legacy/download_arrow.svg";
 export { default as ScrollRegularSVG } from "./legacy/scroll_regular.svg";
-export { default as SortingArrowsAscending } from "./legacy/sorting_arrows_ascending.svg";
-export { default as SortingArrowsDescending } from "./legacy/sorting_arrows_descending.svg";
 export { default as HomeSVG } from "./legacy/home.svg";
 export { default as GridSVG } from "./legacy/grid.svg";
 export { default as ListSVG } from "./legacy/list.svg";
-export { default as ArrowRightClose } from "./legacy/arrow_right_close.svg";
 export { default as AudioSVG } from "./legacy/audio.svg";
 export { default as VideoSVG } from "./legacy/video.svg";
 export { default as UploadSVG } from "./legacy/upload.svg";
@@ -115,19 +101,134 @@ export { default as UnitNotSelectedSVG } from "./legacy/unit_not_selected.svg";
 export { default as RadioSelectedSVG } from "./legacy/radio_selected.svg";
 export { default as GripDotsSVG } from "./legacy/grip_dots.svg";
 export { default as TextSVG } from "./legacy/text.svg";
-export { default as ArrowDownLeftSVG } from "./legacy/arrow_down_left.svg";
-export { default as IconChevronDownSVG } from "./legacy/icon_chevron_down.svg";
-export { default as IconChevronUpSVG } from "./legacy/icon_chevron_up.svg";
 export { default as IconEmptyStateSVG } from "./legacy/empty_state.svg";
 export { default as GroupsFilterSVG } from "./legacy/groups-filter.svg";
 export { default as BranchesFilterSVG } from "./legacy/branches-filter.svg";
 export { default as UserFilterSVG } from "./legacy/user-avatar.svg";
-export { default as ChevronArrowLineLeftSVG } from "./legacy/chevron_arrow_line_left.svg";
-export { default as ChevronArrowLineRightSVG } from "./legacy/chevron_arrow_line_right.svg";
-export { default as ChevronArrowLeftSVG } from "./legacy/chevron_arrow_left.svg";
-export { default as ChevronArrowRightSVG } from "./legacy/chevron_arrow_right.svg";
-export { default as ChevronArrowDownSVG } from "./legacy/chevron_arrow_down.svg";
-export { default as CarretArrowRight } from "./legacy/icon_caret_right.svg";
+
+// Arrow Icons
+export { default as BackIconSVG } from "./arrows/back_icon.svg";
+export { default as ArrowUpSVG } from "./arrows/arrow-up.svg";
+export { default as ArrowDownSVG_duplicate } from "./arrows/arrow-down.svg";
+export { default as BackArrowSVG } from "./arrows/back_arrow.svg";
+export { default as ArrowDownLeftSVG } from "./arrows/arrow_down_left.svg";
+export { default as ArrowRightClose } from "./arrows/arrow_right_close.svg";
+export { default as OrderArrowsSVG } from "./arrows/order_arrows.svg";
+export { default as SortingArrowsAscending } from "./arrows/sorting_arrows_ascending.svg";
+export { default as SortingArrowsDescending } from "./arrows/sorting_arrows_descending.svg";
+export { default as ArrowDownSVG } from "./arrows/arrow_down.svg";
+export { default as DownloadArrowSVG } from "./arrows/download_arrow.svg";
+export { default as EnterSVG } from "./arrows/enter.svg";
+
+// Chevron Icons
+export { default as ArrowRightSVG } from "./chevrons/arrow_right.svg";
+export { default as ArrowLeftSVG } from "./chevrons/arrow_left.svg";
+export { default as ArrowChevronRightSVG } from "./chevrons/Icon-Chevron-R.svg";
+export { default as ChevronArrowLineLeftSVG } from "./chevrons/chevron_arrow_line_left.svg";
+export { default as ChevronArrowLineRightSVG } from "./chevrons/chevron_arrow_line_right.svg";
+export { default as ChevronArrowLeftSVG } from "./chevrons/chevron_arrow_left.svg";
+export { default as ChevronArrowRightSVG } from "./chevrons/chevron_arrow_right.svg";
+export { default as ChevronArrowDownSVG } from "./chevrons/chevron_arrow_down.svg";
+export { default as IconChevronDownSVG } from "./chevrons/icon_chevron_down.svg";
+export { default as IconChevronUpSVG } from "./chevrons/icon_chevron_up.svg";
+export { default as ArrowRightChevronSVG } from "./chevrons/arrow-right-chevron.svg";
+export { default as ArrowLeftChevronSVG } from "./chevrons/arrow-left-chevron.svg";
+
+// Caret Icons
+export { default as DropDownArrowSVG } from "./carets/icon-dropdown-caret.svg";
+export { default as CaretRightCircledSVG } from "./carets/caret_right_circled.svg";
+export { default as CaretDownSVG } from "./carets/caret_down.svg";
+export { default as DropUpArrowSVG } from "./carets/caret_up.svg";
+export { default as CarretArrowRight } from "./carets/icon_caret_right.svg";
+export { default as CaretRightSVG } from "./carets/caret-right.svg";
+
+// Logo Icons
+export { default as ApiSVG } from "./logos/api.svg";
+export { default as XApiSVG } from "./logos/xapi.svg";
+export { default as IntercomSVG } from "./logos/intercom.svg";
+export { default as BambooHrSVG } from "./logos/bamboo-hr.svg";
+export { default as PayPalSVG } from "./logos/paypal.svg";
+export { default as StripeSVG } from "./logos/stripe.svg";
+export { default as IntegratedVideoConfSVG } from "./logos/integrated-video-conf.svg";
+export { default as ZoomMeetingSVG } from "./logos/zoom-meeting.svg";
+export { default as ZoomWebinarSVG } from "./logos/zoom-webinar.svg";
+export { default as GotoMeetingSVG } from "./logos/goto-meeting.svg";
+export { default as GotoWebinarSVG } from "./logos/goto-webinar.svg";
+export { default as GotoTrainingSVG } from "./logos/goto-training.svg";
+export { default as MicrosoftTeamsSVG } from "./logos/microsoft-teams.svg";
+export { default as BigBlueButtonSVG } from "./logos/bigbluebutton.svg";
+export { default as ZendeskSVG } from "./logos/zendesk.svg";
+export { default as TalentHrSVG } from "./logos/talent-hr.svg";
+export { default as SageSVG } from "./logos/sage.svg";
+export { default as WordPressSVG } from "./logos/wordpress.svg";
+export { default as ZapierSVG } from "./logos/zapier.svg";
+export { default as SalesforceSVG } from "./logos/salesforce.svg";
+export { default as ShopifySVG } from "./logos/shopify.svg";
+export { default as SlackSVG } from "./logos/slack.svg";
+
+// Social Media Icons
+export { default as GoogleSVG } from "./social/google.svg";
+export { default as FacebookSVG } from "./social/facebook.svg";
+export { default as LinkedinSVG } from "./social/linkedin.svg";
+export { default as FacebookLogoSVG } from "./social/facebook_logo.svg";
+export { default as TwitterLogoSVG } from "./social/twitter_logo.svg";
+export { default as TwitterSVG } from "./social/twitter.svg";
+
+// Currencies Icons
+export { default as AustralianDollarSVG } from "./currencies/australian-dollar.svg";
+export { default as BrazilianRealRSVG } from "./currencies/brazilian-real.svg";
+export { default as CanadianDollarSVG } from "./currencies/canadian-dollar.svg";
+export { default as ChineseRenmenbiSVG } from "./currencies/chinese-renmenbi.svg";
+export { default as CzechKorunaSVG } from "./currencies/czech-koruna.svg";
+export { default as DollarSVG } from "./currencies/dollar.svg";
+export { default as EuroSVG } from "./currencies/euro.svg";
+export { default as HongKongDollarSVG } from "./currencies/hong-kong-dollar.svg";
+export { default as HungarianForintSVG } from "./currencies/hungarian-forint.svg";
+export { default as IsraeliShekelSVG } from "./currencies/israeli-shekel.svg";
+export { default as JapaneseYenSVG } from "./currencies/japanese-yen.svg";
+export { default as KroneSVG } from "./currencies/krone.svg";
+export { default as MalaysianRinggitSVG } from "./currencies/malaysian-ringgit.svg";
+export { default as MexicanPesoSVG } from "./currencies/mexican-peso.svg";
+export { default as NewTaiwanDollarSVG } from "./currencies/new-taiwan-dollar.svg";
+export { default as PhilippinePesoSVG } from "./currencies/philippine-peso.svg";
+export { default as PolishZlotySVG } from "./currencies/polish-zloty.svg";
+export { default as PoundSterlingSVG } from "./currencies/pound-sterling.svg";
+export { default as SingaporeDollarSVG } from "./currencies/singapore-dollar.svg";
+export { default as SwissFrancSVG } from "./currencies/swiss-franc.svg";
+export { default as ThaiBahtSVG } from "./currencies/thai-baht.svg";
+
+// Action Icons
+export { default as AddCourseIconSVG } from "./actions/add_course_icon.svg";
+export { default as AddContentSVG } from "./actions/add-content.svg";
+export { default as AdditionEventSVG } from "./actions/addition_event.svg";
+
+// F E A T U R E  S P E C I F I C  E X P O R T S
+// Units Icons
+export { default as TalentCraftSVG } from "./feature/units/talentcraft-icon.svg";
+export { default as ContentIcon } from "./feature/units/content-icon.svg";
+export { default as LearningActivitiesSVG } from "./feature/units/learning-icon.svg";
+export { default as MoreIconSVG } from "./feature/units/more-icon.svg";
+export { default as NewIconSVG } from "./feature/units/new-icon.svg";
+export { default as LinkedUnitSVG } from "./feature/units/linked-unit-icon.svg";
+export { default as LinkedUnitChipChildSVG } from "./feature/units/linked-unit-chip-child-icon.svg";
+export { default as LinkedUnitChipParentSVG } from "./feature/units/linked-unit-chip-parent-icon.svg";
+export { default as MultiSessionSVG } from "./feature/units/multi-session.svg";
+
+// Questions Icons
+export { default as DragAndDropSVG } from "./feature/questions/drag_and_drop.svg";
+export { default as FreetextSVG } from "./feature/questions/free_text.svg";
+export { default as MultipleChoiceSVG } from "./feature/questions/multiple_choice.svg";
+export { default as OrderingSVG } from "./feature/questions/ordering.svg";
+export { default as FillTheGapSVG } from "./feature/questions/fill_the_gaps.svg";
+export { default as RandomizedSVG } from "./feature/questions/randomized.svg";
+export { default as SquareAddSVG } from "./feature/questions/icon-add-square.svg";
+export { default as LikertSaleSVG } from "./feature/questions/likert-scale.svg";
+
+// Training Matrix Icons
+export { default as EmptyCircleMatrixSVG } from "./feature/training-matrix/empty-circle.svg";
+export { default as QuarterFilledCircleMatrixSVG } from "./feature/training-matrix/quarter-filled-circle.svg";
+export { default as HalfFilledCircleMatrixSVG } from "./feature/training-matrix/half-filled-circle.svg";
+export { default as ThreeQuartersFilledCircleMatrixSVG } from "./feature/training-matrix/three-quarters-filled-circle.svg";
 
 // C L I E N T  E X P O R T S
 // Main Exports
@@ -186,18 +287,10 @@ export { default as PlusIconSVG } from "./client/plus-icon.svg";
 export { default as LockIconSVG } from "./client/icon-lock.svg";
 export { default as GearIconSVG } from "./client/options-gear.svg";
 export { default as UploadCloudIconSVG } from "./client/upload-icon.svg";
-export { default as GoogleSVG } from "./client/google.svg";
-export { default as FacebookSVG } from "./client/facebook.svg";
-export { default as LinkedinSVG } from "./client/linkedin.svg";
 export { default as PendingIconSVG } from "./client/pending-approval.svg";
 export { default as TrashSVG } from "./client/trash.svg";
 export { default as BranchIconSVG } from "./client/branch.svg";
-export { default as FacebookLogoSVG } from "./client/facebook_logo.svg";
-export { default as TwitterLogoSVG } from "./client/twitter_logo.svg";
-export { default as TwitterSVG } from "./client/twitter.svg";
-export { default as AddCourseIconSVG } from "./client/add_course_icon.svg";
 export { default as RemoveCourseIconSVG } from "./client/remove_course_icon.svg";
-export { default as EnterSVG } from "./client/enter.svg";
 export { default as SlideshareSVG } from "./client/slideshare.svg";
 export { default as UploadSVG_duplicate } from "./client/upload.svg"; // Used in the client: unitEdit->UploadOptions.tsx, portal settings->imageSelector.tsx
 export { default as CategoriesSVG } from "./client/icon-categories.svg";
@@ -215,7 +308,6 @@ export { default as UserAvatarSVG } from "./client/icon-user.svg";
 export { default as ResetSVG } from "./client/icon-reset.svg";
 export { default as SynchronizeSVG } from "./client/icon-sync.svg";
 export { default as UpdateExpirationDateSVG } from "./client/icon-update-expiration-date.svg";
-export { default as AddContentSVG } from "./client/add-content.svg";
 export { default as UserTieSVG } from "./client/user-tie-regular.svg";
 export { default as ArrowCircleSVG } from "./client/icon-arrow-circle.svg";
 export { default as PointsSVG } from "./client/points-diamond.svg";
@@ -232,7 +324,6 @@ export { default as IconBranchMinus } from "./client/icon-branch-minus.svg";
 export { default as ReportsSVG } from "./client/reports.svg";
 export { default as UserLevelSVG } from "./client/user_level.svg";
 export { default as CreationSVG } from "./client/creation.svg";
-export { default as AdditionEventSVG } from "./client/addition_event.svg";
 export { default as RemovalEventSVG } from "./client/removal_event.svg";
 export { default as RegistrationEventSVG } from "./client/registration_event.svg";
 export { default as CopySolidSVG } from "./client/copy_solid.svg";
@@ -312,9 +403,7 @@ export { default as BillingSubscriptionIconSVG } from "./client/icon-billing-sub
 export { default as InstructorIconSVG } from "./client/icon-instructor.svg";
 export { default as LearnerIconSVG } from "./client/icon-learner.svg";
 export { default as AdminIconSVG } from "./client/icon-admin-role.svg";
-export { default as ArrowRightChevronSVG } from "./client/arrow-right-chevron.svg";
 export { default as TrainingMatrixSVG } from "./client/training-matrix.svg";
-export { default as ArrowLeftChevronSVG } from "./client/arrow-left-chevron.svg";
 export { default as MyProfileSVG } from "./client/icon-my-profile.svg";
 export { default as MyFilesSVG } from "./client/icon-my-files.svg";
 export { default as MyBadgesSVG } from "./client/icon-my-badges.svg";
@@ -328,21 +417,8 @@ export { default as ReorderSVG } from "./client/grip-icon.svg";
 export { default as FinishSVG } from "./client/finish.svg";
 export { default as MultipleRecipientsSVG } from "./client/multiple_recipients.svg";
 export { default as MyProgressSVG } from "./client/my-progress-icon.svg";
-export { default as DragAndDropSVG } from "./client/drag_and_drop.svg";
-export { default as FreetextSVG } from "./client/free_text.svg";
-export { default as MultipleChoiceSVG } from "./client/multiple_choice.svg";
-export { default as OrderingSVG } from "./client/ordering.svg";
-export { default as FillTheGapSVG } from "./client/fill_the_gaps.svg";
-export { default as RandomizedSVG } from "./client/randomized.svg";
-export { default as SquareAddSVG } from "./client/icon-add-square.svg";
-export { default as LikertSaleSVG } from "./client/likert-scale.svg";
 
 // Exports from folders.
-// Arrow Icons
-export { default as ArrowChevronRightSVG } from "./client/arrows/Icon-Chevron-R.svg";
-export { default as ArrowUpSVG } from "./client/arrows/arrow-up.svg";
-export { default as ArrowDownSVG_duplicate } from "./client/arrows/arrow-down.svg"; // DefaultFooter.tsx
-
 // Assignments Icons
 export { default as TextLargeSVG } from "./client/assignments/text-large.svg";
 export { default as UploadFileLargeSVG } from "./client/assignments/upload-file-large.svg";
@@ -357,29 +433,6 @@ export { default as AssignmentPassedFilter } from "./client/assignments/passed-f
 export { default as AssignmentNotPassedFilter } from "./client/assignments/not-passed-filter.svg";
 export { default as AssignmentPendingFilter } from "./client/assignments/pending-filter.svg";
 
-// Currencies Icons
-export { default as AustralianDollarSVG } from "./client/currencies/australian-dollar.svg";
-export { default as BrazilianRealRSVG } from "./client/currencies/brazilian-real.svg";
-export { default as CanadianDollarSVG } from "./client/currencies/canadian-dollar.svg";
-export { default as ChineseRenmenbiSVG } from "./client/currencies/chinese-renmenbi.svg";
-export { default as CzechKorunaSVG } from "./client/currencies/czech-koruna.svg";
-export { default as DollarSVG } from "./client/currencies/dollar.svg";
-export { default as EuroSVG } from "./client/currencies/euro.svg";
-export { default as HongKongDollarSVG } from "./client/currencies/hong-kong-dollar.svg";
-export { default as HungarianForintSVG } from "./client/currencies/hungarian-forint.svg";
-export { default as IsraeliShekelSVG } from "./client/currencies/israeli-shekel.svg";
-export { default as JapaneseYenSVG } from "./client/currencies/japanese-yen.svg";
-export { default as KroneSVG } from "./client/currencies/krone.svg";
-export { default as MalaysianRinggitSVG } from "./client/currencies/malaysian-ringgit.svg";
-export { default as MexicanPesoSVG } from "./client/currencies/mexican-peso.svg";
-export { default as NewTaiwanDollarSVG } from "./client/currencies/new-taiwan-dollar.svg";
-export { default as PhilippinePesoSVG } from "./client/currencies/philippine-peso.svg";
-export { default as PolishZlotySVG } from "./client/currencies/polish-zloty.svg";
-export { default as PoundSterlingSVG } from "./client/currencies/pound-sterling.svg";
-export { default as SingaporeDollarSVG } from "./client/currencies/singapore-dollar.svg";
-export { default as SwissFrancSVG } from "./client/currencies/swiss-franc.svg";
-export { default as ThaiBahtSVG } from "./client/currencies/thai-baht.svg";
-
 // Custom Home Page Icons
 export { default as BannerSVG } from "./client/custom-homepage/icon-banner.svg";
 export { default as TextSVG_duplicate } from "./client/custom-homepage/icon-text.svg"; // Utils->helpers->view.tsx, customHomePage/constants.tsx
@@ -390,30 +443,6 @@ export { default as ActivateSVG } from "./client/icon-activate.svg";
 export { default as MenuSettingsSVG } from "./client/custom-homepage/icon-menu-settings.svg";
 export { default as IconPreviewSVG } from "./client/custom-homepage/icon-preview.svg";
 export { default as IconBackButton } from "./client/custom-homepage/icon-back-button.svg";
-
-// Integrations Icons
-export { default as ApiSVG } from "./client/integrations/api.svg";
-export { default as XApiSVG } from "./client/integrations/xapi.svg";
-export { default as IntercomSVG } from "./client/integrations/intercom.svg";
-export { default as BambooHrSVG } from "./client/integrations/bamboo-hr.svg";
-export { default as PayPalSVG } from "./client/integrations/paypal.svg";
-export { default as StripeSVG } from "./client/integrations/stripe.svg";
-export { default as IntegratedVideoConfSVG } from "./client/integrations/integrated-video-conf.svg";
-export { default as ZoomMeetingSVG } from "./client/integrations/zoom-meeting.svg";
-export { default as ZoomWebinarSVG } from "./client/integrations/zoom-webinar.svg";
-export { default as GotoMeetingSVG } from "./client/integrations/goto-meeting.svg";
-export { default as GotoWebinarSVG } from "./client/integrations/goto-webinar.svg";
-export { default as GotoTrainingSVG } from "./client/integrations/goto-training.svg";
-export { default as MicrosoftTeamsSVG } from "./client/integrations/microsoft-teams.svg";
-export { default as BigBlueButtonSVG } from "./client/integrations/bigbluebutton.svg";
-export { default as ZendeskSVG } from "./client/integrations/zendesk.svg";
-export { default as TalentHrSVG } from "./client/integrations/talent-hr.svg";
-export { default as SageSVG } from "./client/integrations/sage.svg";
-export { default as WordPressSVG } from "./client/integrations/wordpress.svg";
-export { default as ZapierSVG } from "./client/integrations/zapier.svg";
-export { default as SalesforceSVG } from "./client/integrations/salesforce.svg";
-export { default as ShopifySVG } from "./client/integrations/shopify.svg";
-export { default as SlackSVG } from "./client/integrations/slack.svg";
 
 // Quick Actions Icons
 export { default as QuickActionsUserSVG } from "./client/quick-actions/icon-quick-actions-user.svg";
@@ -432,23 +461,6 @@ export { default as QuickActionsReportsSVG } from "./client/quick-actions/icon-q
 export { default as QuickActionsPortalSVG } from "./client/quick-actions/icon-quick-actions-portal.svg";
 export { default as QuickActionsImportSVG } from "./client/quick-actions/icon-quick-actions-import.svg";
 export { default as QuickActionsAutomationsSVG } from "./client/quick-actions/icon-quick-actions-automations.svg";
-
-// Training Matrix Icons
-export { default as EmptyCircleMatrixSVG } from "./client/training-matrix/empty-circle.svg";
-export { default as QuarterFilledCircleMatrixSVG } from "./client/training-matrix/quarter-filled-circle.svg";
-export { default as HalfFilledCircleMatrixSVG } from "./client/training-matrix/half-filled-circle.svg";
-export { default as ThreeQuartersFilledCircleMatrixSVG } from "./client/training-matrix/three-quarters-filled-circle.svg";
-
-// Units Icons
-export { default as TalentCraftSVG } from "./client/units/talentcraft-icon.svg";
-export { default as ContentIcon } from "./client/units/content-icon.svg";
-export { default as LearningActivitiesSVG } from "./client/units/learning-icon.svg";
-export { default as MoreIconSVG } from "./client/units/more-icon.svg";
-export { default as NewIconSVG } from "./client/units/new-icon.svg";
-export { default as LinkedUnitSVG } from "./client/units/linked-unit-icon.svg";
-export { default as LinkedUnitChipChildSVG } from "./client/units/linked-unit-chip-child-icon.svg";
-export { default as LinkedUnitChipParentSVG } from "./client/units/linked-unit-chip-parent-icon.svg";
-export { default as MultiSessionSVG } from "./client/units/multi-session.svg";
 
 // Widgets Icons - WARNING: These are imported directly in the client.
 export { default as UsersWidgetSVG } from "./client/widgets/users.svg";

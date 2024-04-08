@@ -183,7 +183,6 @@ export { default as DateNeutralSVG } from "./client/icon-date-neutral.svg";
 export { default as PowerOffSVG } from "./client/power-off.svg";
 export { default as CreditCardSVG } from "./client/credit_card.svg";
 export { default as PlusIconSVG } from "./client/plus-icon.svg";
-export { default as FilterSVG_duplicate } from "./client/icon-filter.svg"; // Not used anywhere in the client.
 export { default as LockIconSVG } from "./client/icon-lock.svg";
 export { default as GearIconSVG } from "./client/options-gear.svg";
 export { default as UploadCloudIconSVG } from "./client/upload-icon.svg";
@@ -255,7 +254,6 @@ export { default as UserExitSVG } from "./client/user-exit.svg";
 export { default as PublicViewSVG } from "./client/icon-key-note.svg";
 export { default as PercentageSVG } from "./client/percentage.svg";
 export { default as ChartSVG } from "./client/chart.svg";
-export { default as PrivateSVG_duplicate } from "./client/private.svg";
 export { default as PasswordIconSVG } from "./client/icon-password.svg";
 export { default as RenameSVG } from "./client/rename.svg";
 export { default as AccessSVG } from "./client/access.svg";

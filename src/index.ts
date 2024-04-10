@@ -39,6 +39,7 @@ export { default as RadioGroup } from "./components/FormElements/RadioGroup/Radi
 export { default as Radio } from "./components/FormElements/RadioGroup/Radio";
 export { default as Select } from "./components/FormElements/Select/Select";
 export { default as Textarea } from "./components/FormElements/Textarea/Textarea";
+export { default as ToggleSwitch } from "./components/FormElements/ToggleSwitch/ToggleSwitch";
 
 // Theme
 export type { GnosisTheme } from "./theme/default/defaultTheme";

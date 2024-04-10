@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ToggleSwitch /> Matches snapshot 1`] = `
+<div>
+  <div
+    class="css-130cmdc-ToggleContainer-ToggleContainer"
+    data-checked="false"
+    data-testid="my-toggle"
+  >
+    <div
+      class="switch-container"
+    >
+      <div
+        class="switch-container"
+      >
+        <div
+          class="switch"
+          data-checked="false"
+          data-testid="switch"
+        >
+          <div
+            class="thumb"
+          />
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+`;

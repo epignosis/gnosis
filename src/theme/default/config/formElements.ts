@@ -55,4 +55,14 @@ export default {
     borderColor: colors.red.base,
     background: Color(colors.red.light).alpha(0.15).string(),
   },
+  toggleSwitch: {
+    hoverDisabledColor: Color(colors.primary.lightest).alpha(0.5).string(),
+    backgroundEnabled: colors.primary.base,
+    backgroundInlineEnabled: colors.green.base,
+    backgroundDisabled: colors.secondary.base,
+    backgroundInlineDisabled: Color(colors.primary.lightest).alpha(0.5).string(),
+    disabledBackground: colors.secondary.light,
+    textColor: colors.white,
+    requiredAsteriskColor: colors.red.base,
+  },
 };

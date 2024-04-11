@@ -19,26 +19,22 @@ export type ToggleProps = {
   notSwitchedOff?: boolean;
   subtitle?: string;
   hasInlineText?: boolean;
+  inlineTextTranslations?: {
+    enabled: string;
+    disabled: string;
+  };
   [key: string]: unknown;
   onChange?: () => void;
 };
 
-const labelClassNames = (notSwitchedOff: boolean, isBefore: boolean, isRequired: boolean): string =>
+const labelClassNames = (notSwitchedOff: boolean, isRequired: boolean): string =>
   classNames("label", {
     "binary-bold": notSwitchedOff,
-    "is-before": isBefore,
     required: isRequired,
   });
 
 const switchClassNames = (isMedium: boolean, isSuccess: boolean): string =>
-  classNames("switch", {
-    md: isMedium,
-    success: isSuccess,
-  });
-
-const thumbClassNames = (isMedium: boolean, isSuccess: boolean): string =>
   classNames({
-    thumb: true,
     md: isMedium,
     success: isSuccess,
   });
@@ -52,6 +48,7 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
   isDisabled = false,
   required = false,
   hasInlineText = false,
+  inlineTextTranslations = { enabled: "Enabled", disabled: "Disabled" },
   variant = "primary",
   notSwitchedOff = false,
   size = "sm",
@@ -98,7 +95,7 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
           <div className="label-description-container label-before">
             <Text
               fontSize="sm"
-              className={labelClassNames(notSwitchedOff, true, false)}
+              className={`is-before ${labelClassNames(notSwitchedOff, false)}`}
               onClick={handleToggle}
               weight={hasDescriptionTextWeight}
             >
@@ -119,15 +116,15 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
           <div
             data-testid="switch"
             data-checked={isChecked}
-            className={switchClassNames(isMedium, isSuccess)}
+            className={`switch ${switchClassNames(isMedium, isSuccess)}`}
             onClick={handleToggle}
           >
             {hasInlineText && isMedium && (
               <Text fontSize="sm" className="inline-text">
-                {isChecked ? "enabled" : "disabled"}
+                {isChecked ? inlineTextTranslations.enabled : inlineTextTranslations.disabled}
               </Text>
             )}
-            <div className={thumbClassNames(isMedium, isSuccess)} />
+            <div className={`thumb ${switchClassNames(isMedium, isSuccess)}`} />
           </div>
         </div>
 
@@ -135,7 +132,7 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
           <div className="label-description-container label-after">
             <Text
               fontSize="sm"
-              className={labelClassNames(notSwitchedOff, false, required)}
+              className={labelClassNames(notSwitchedOff, required)}
               onClick={handleToggle}
               as="div"
               weight={hasDescriptionTextWeight}

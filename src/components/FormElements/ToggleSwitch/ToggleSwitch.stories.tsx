@@ -8,6 +8,7 @@ export default {
   args: {
     id: "toggle-switch",
     labelBefore: "Before",
+    inlineTextTranslations: { enabled: "Enabled", disabled: "Disabled" },
   },
   decorators: [
     (Story: Story): JSX.Element => (

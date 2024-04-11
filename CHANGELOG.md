@@ -1,3 +1,10 @@
+# [5.15.0](https://github.com/epignosis/gnosis/compare/v5.14.9...v5.15.0) (2024-04-11)
+
+
+### Features
+
+* **icon:** add an icon for course store ([#322](https://github.com/epignosis/gnosis/issues/322)) ([8cec91b](https://github.com/epignosis/gnosis/commit/8cec91bdc55eabb534d630fc9d789020889cd0a9))
+
 ## [5.14.9](https://github.com/epignosis/gnosis/compare/v5.14.8...v5.14.9) (2024-04-11)
 
 ## [5.14.8](https://github.com/epignosis/gnosis/compare/v5.14.7...v5.14.8) (2024-04-09)

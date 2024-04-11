@@ -419,6 +419,7 @@ export { default as MultipleRecipientsSVG } from "./client/multiple-recipients.s
 export { default as MyProgressSVG } from "./client/my-progress-icon.svg";
 export { default as CustomReportsSVG } from "./client/custom-reports.svg";
 export { default as CirclePlaySolidSVG } from "./client/circle-play-solid.svg";
+export { default as CourseStoreSVG } from "./client/course-store.svg";
 
 // Exports from folders.
 // Assignments Icons

@@ -105,8 +105,6 @@ export { default as IconEmptyStateSVG } from "./legacy/empty-state.svg";
 export { default as GroupsFilterSVG } from "./legacy/groups-filter.svg";
 export { default as BranchesFilterSVG } from "./legacy/branches-filter.svg";
 export { default as UserFilterSVG } from "./legacy/user-avatar.svg";
-export { default as RocketSVG } from "./legacy/rocket.svg";
-export { default as PencilBrushSVG } from "./legacy/pencil-brush.svg";
 
 // Arrow Icons
 export { default as BackIconSVG } from "./arrows/back-icon.svg";
@@ -422,6 +420,8 @@ export { default as MyProgressSVG } from "./client/my-progress-icon.svg";
 export { default as CustomReportsSVG } from "./client/custom-reports.svg";
 export { default as CirclePlaySolidSVG } from "./client/circle-play-solid.svg";
 export { default as CourseStoreSVG } from "./client/course-store.svg";
+export { default as RocketSVG } from "./client/rocket.svg";
+export { default as PencilBrushSVG } from "./client/pencil-brush.svg";
 
 // Exports from folders.
 // Assignments Icons

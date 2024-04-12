@@ -111,14 +111,14 @@ export { default as PencilBrushSVG } from "./legacy/pencil-brush.svg";
 // Arrow Icons
 export { default as BackIconSVG } from "./arrows/back-icon.svg";
 export { default as ArrowUpSVG } from "./arrows/arrow-up.svg";
-export { default as ArrowDownSVG_duplicate } from "./arrows/arrow-down.svg";
+export { default as ArrowDownSVG } from "./arrows/arrow-down.svg";
 export { default as BackArrowSVG } from "./arrows/back-arrow.svg";
 export { default as ArrowDownLeftSVG } from "./arrows/arrow-down-left.svg";
 export { default as ArrowRightClose } from "./arrows/arrow-right-close.svg";
 export { default as OrderArrowsSVG } from "./arrows/order-arrows.svg";
 export { default as SortingArrowsAscending } from "./arrows/sorting-arrows-ascending.svg";
 export { default as SortingArrowsDescending } from "./arrows/sorting-arrows-descending.svg";
-export { default as ArrowDownSVG } from "./arrows/arrow-down.svg";
+export { default as ArrowDownLargeSVG } from "./arrows/arrow-down-large.svg";
 export { default as DownloadArrowSVG } from "./arrows/download-arrow.svg";
 export { default as EnterSVG } from "./arrows/enter.svg";
 

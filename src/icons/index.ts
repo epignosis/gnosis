@@ -109,14 +109,14 @@ export { default as UserFilterSVG } from "./legacy/user-avatar.svg";
 // Arrow Icons
 export { default as BackIconSVG } from "./arrows/back-icon.svg";
 export { default as ArrowUpSVG } from "./arrows/arrow-up.svg";
-export { default as ArrowDownSVG_duplicate } from "./arrows/arrow-down.svg";
+export { default as ArrowDownSVG } from "./arrows/arrow-down.svg";
 export { default as BackArrowSVG } from "./arrows/back-arrow.svg";
 export { default as ArrowDownLeftSVG } from "./arrows/arrow-down-left.svg";
 export { default as ArrowRightClose } from "./arrows/arrow-right-close.svg";
 export { default as OrderArrowsSVG } from "./arrows/order-arrows.svg";
 export { default as SortingArrowsAscending } from "./arrows/sorting-arrows-ascending.svg";
 export { default as SortingArrowsDescending } from "./arrows/sorting-arrows-descending.svg";
-export { default as ArrowDownSVG } from "./arrows/arrow-down.svg";
+export { default as ArrowDownLargeSVG } from "./arrows/arrow-down-large.svg";
 export { default as DownloadArrowSVG } from "./arrows/download-arrow.svg";
 export { default as EnterSVG } from "./arrows/enter.svg";
 
@@ -420,6 +420,8 @@ export { default as MyProgressSVG } from "./client/my-progress-icon.svg";
 export { default as CustomReportsSVG } from "./client/custom-reports.svg";
 export { default as CirclePlaySolidSVG } from "./client/circle-play-solid.svg";
 export { default as CourseStoreSVG } from "./client/course-store.svg";
+export { default as RocketSVG } from "./client/rocket.svg";
+export { default as PencilBrushSVG } from "./client/pencil-brush.svg";
 
 // Exports from folders.
 // Assignments Icons

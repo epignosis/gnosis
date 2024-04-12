@@ -105,6 +105,8 @@ export { default as IconEmptyStateSVG } from "./legacy/empty-state.svg";
 export { default as GroupsFilterSVG } from "./legacy/groups-filter.svg";
 export { default as BranchesFilterSVG } from "./legacy/branches-filter.svg";
 export { default as UserFilterSVG } from "./legacy/user-avatar.svg";
+export { default as RocketSVG } from "./legacy/rocket.svg";
+export { default as PencilBrushSVG } from "./legacy/pencil-brush.svg";
 
 // Arrow Icons
 export { default as BackIconSVG } from "./arrows/back-icon.svg";

@@ -11,7 +11,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       data-testid="pagination-per-page-btn"
     >
       <div
-        class="css-1dqrv36-PaginationSelectorStyles-PaginationSelectorStyles"
+        class="css-178qt42-PaginationSelectorStyles-PaginationSelectorStyles"
       >
         <button
           class="dropdown-button "
@@ -61,7 +61,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         data-testid="pagination-page-selector-btn"
       >
         <div
-          class="css-1dqrv36-PaginationSelectorStyles-PaginationSelectorStyles"
+          class="css-178qt42-PaginationSelectorStyles-PaginationSelectorStyles"
         >
           <button
             class="dropdown-button "

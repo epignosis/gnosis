@@ -52,7 +52,7 @@ export const PaginationSelectorStyles = (
       list-style: none;
       cursor: pointer;
       user-select: none;
-      scrollbar-gutter: stable both-edges;
+      scrollbar-gutter: auto;
 
       ::-webkit-scrollbar {
         width: 0.313rem;

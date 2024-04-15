@@ -1,3 +1,10 @@
+# [5.16.0](https://github.com/epignosis/gnosis/compare/v5.15.3...v5.16.0) (2024-04-15)
+
+
+### Features
+
+* **add toggle switch:** add new toggle switch component ([#320](https://github.com/epignosis/gnosis/issues/320)) ([2301755](https://github.com/epignosis/gnosis/commit/230175539c0cefc864b926e2307658c13d513b80))
+
 ## [5.15.3](https://github.com/epignosis/gnosis/compare/v5.15.2...v5.15.3) (2024-04-15)
 
 ## [5.15.2](https://github.com/epignosis/gnosis/compare/v5.15.1...v5.15.2) (2024-04-12)

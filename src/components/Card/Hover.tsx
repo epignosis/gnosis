@@ -5,6 +5,7 @@ import { hoverContainer } from "./styles";
 
 export type HoverProps = FC<{
   transparent?: boolean;
+  className?: string;
 }>;
 
 const hoverContainerVariants: Variants = {
@@ -25,7 +26,7 @@ const hoverContent: Variants = {
   },
 };
 
-const Hover: HoverProps = ({ transparent = false, children }) => (
+const Hover: HoverProps = ({ transparent = false, className, children }) => (
   <m.div
     transition={{
       duration: 0.15,
@@ -33,6 +34,7 @@ const Hover: HoverProps = ({ transparent = false, children }) => (
     }}
     variants={hoverContainerVariants}
     css={(theme): SerializedStyles => hoverContainer(theme, { transparent })}
+    className={className}
     data-testid="card-hover"
   >
     <m.div className="hover-wrapper" variants={hoverContent}>

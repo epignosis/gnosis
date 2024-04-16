@@ -230,6 +230,12 @@ export { default as QuarterFilledCircleMatrixSVG } from "./feature/training-matr
 export { default as HalfFilledCircleMatrixSVG } from "./feature/training-matrix/half-filled-circle.svg";
 export { default as ThreeQuartersFilledCircleMatrixSVG } from "./feature/training-matrix/three-quarters-filled-circle.svg";
 
+// Rating icons
+export { default as RatingExcellentSVG } from "./feature/rating/rating-excellent.svg";
+export { default as RatingGoodSVG } from "./feature/rating/rating-good.svg";
+export { default as RatingOkaySVG } from "./feature/rating/rating-okay.svg";
+export { default as RatingPoorSVG } from "./feature/rating/rating-poor.svg";
+
 // C L I E N T  E X P O R T S
 // Main Exports
 export { default as ImageDisplaySVG } from "./client/image.svg";

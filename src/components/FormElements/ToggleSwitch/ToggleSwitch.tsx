@@ -90,7 +90,7 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
       data-checked={isChecked}
       {...rest}
     >
-      <div className="switch-container">
+      <div className="main-switch-container">
         {labelBefore && (
           <div className="label-description-container label-before">
             <Text
@@ -112,13 +112,8 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
           </div>
         )}
 
-        <div className="switch-container">
-          <div
-            data-testid="switch"
-            data-checked={isChecked}
-            className={`switch ${switchClassNames(isMedium, isSuccess)}`}
-            onClick={handleToggle}
-          >
+        <div className="inner-switch-container">
+          <div className={`switch ${switchClassNames(isMedium, isSuccess)}`} onClick={handleToggle}>
             {hasInlineText && isMedium && (
               <Text fontSize="sm" className="inline-text">
                 {isChecked ? inlineTextTranslations.enabled : inlineTextTranslations.disabled}

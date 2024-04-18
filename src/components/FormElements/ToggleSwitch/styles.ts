@@ -13,7 +13,7 @@ export const ToggleContainer = (
   flex-direction: column;
   gap: 5px;
 
-  .switch-container {
+  .main-switch-container {
     display: inline-block;
     cursor: ${isDisabled ? "not-allowed" : "pointer"};
     display: flex;
@@ -21,7 +21,7 @@ export const ToggleContainer = (
     align-items: ${hasDescription ? "flex-start" : "center"};
     width: fit-content;
 
-    .switch-container {
+    .inner-switch-container {
       display: flex;
 
       .switch {

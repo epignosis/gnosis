@@ -27,14 +27,18 @@ export type ToggleProps = {
   onChange?: () => void;
 };
 
-const labelClassNames = (notSwitchedOff: boolean, isRequired: boolean): string =>
-  classNames("label", {
+const labelClassNames = (
+  customClassName: string,
+  notSwitchedOff: boolean,
+  isRequired: boolean,
+): string =>
+  classNames(customClassName, {
     "binary-bold": notSwitchedOff,
     required: isRequired,
   });
 
-const switchClassNames = (isMedium: boolean, isSuccess: boolean): string =>
-  classNames({
+const switchClassNames = (customClassName: string, isMedium: boolean, isSuccess: boolean): string =>
+  classNames(customClassName, {
     md: isMedium,
     success: isSuccess,
   });
@@ -95,7 +99,7 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
           <div className="label-description-container label-before">
             <Text
               fontSize="sm"
-              className={`is-before ${labelClassNames(notSwitchedOff, false)}`}
+              className={labelClassNames("label is-before", notSwitchedOff, false)}
               onClick={handleToggle}
               weight={hasDescriptionTextWeight}
             >
@@ -116,7 +120,7 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
           <div
             data-testid="switch"
             data-checked={isChecked}
-            className={`switch ${switchClassNames(isMedium, isSuccess)}`}
+            className={switchClassNames("switch", isMedium, isSuccess)}
             onClick={handleToggle}
           >
             {hasInlineText && isMedium && (
@@ -124,7 +128,7 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
                 {isChecked ? inlineTextTranslations.enabled : inlineTextTranslations.disabled}
               </Text>
             )}
-            <div className={`thumb ${switchClassNames(isMedium, isSuccess)}`} />
+            <div className={switchClassNames("thumb", isMedium, isSuccess)} />
           </div>
         </div>
 
@@ -132,7 +136,7 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
           <div className="label-description-container label-after">
             <Text
               fontSize="sm"
-              className={labelClassNames(notSwitchedOff, required)}
+              className={labelClassNames("label", notSwitchedOff, required)}
               onClick={handleToggle}
               as="div"
               weight={hasDescriptionTextWeight}

@@ -3,20 +3,18 @@
 exports[`<ToggleSwitch /> Matches snapshot 1`] = `
 <div>
   <div
-    class="css-130cmdc-ToggleContainer-ToggleContainer"
+    class="css-e5x2hd-ToggleContainer-ToggleContainer"
     data-checked="false"
     data-testid="my-toggle"
   >
     <div
-      class="switch-container"
+      class="main-switch-container"
     >
       <div
-        class="switch-container"
+        class="inner-switch-container"
       >
         <div
           class="switch "
-          data-checked="false"
-          data-testid="switch"
         >
           <div
             class="thumb "

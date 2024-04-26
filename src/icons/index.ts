@@ -119,6 +119,8 @@ export { default as SortingArrowsDescending } from "./arrows/sorting-arrows-desc
 export { default as ArrowDownLargeSVG } from "./arrows/arrow-down-large.svg";
 export { default as DownloadArrowSVG } from "./arrows/download-arrow.svg";
 export { default as EnterSVG } from "./arrows/enter.svg";
+export { default as CircleArrowUpSVG } from "./arrows/circle-arrow-up.svg";
+export { default as CircleArrowDownSVG } from "./arrows/circle-arrow-down.svg";
 
 // Chevron Icons
 export { default as ArrowRightSVG } from "./chevrons/arrow-right.svg";

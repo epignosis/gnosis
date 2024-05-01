@@ -14,20 +14,24 @@ exports[`<Sidebar/> matches snapshot 1`] = `
         class="nav-handle css-1vueq8q-navHandleContainer-navHandleContainer"
       >
         <div
-          class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
+          class="nav-item css-xi58yv-navItemContainer-navItemContainer"
         >
           <div
-            class="icon-container"
+            class="title-icon-container"
           >
-            <svg-file-stub
-              height="32"
-            />
-          </div>
-          <div
-            class="title"
-            style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
-          >
-            Menu
+            <div
+              class="icon-container"
+            >
+              <svg-file-stub
+                height="32"
+              />
+            </div>
+            <div
+              class="title"
+              style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+            >
+              Menu
+            </div>
           </div>
         </div>
       </button>
@@ -43,20 +47,24 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
+                class="nav-item css-xi58yv-navItemContainer-navItemContainer"
               >
                 <div
-                  class="icon-container"
+                  class="title-icon-container"
                 >
-                  <svg-file-stub
-                    height="32"
-                  />
-                </div>
-                <div
-                  class="title"
-                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
-                >
-                  Home
+                  <div
+                    class="icon-container"
+                  >
+                    <svg-file-stub
+                      height="32"
+                    />
+                  </div>
+                  <div
+                    class="title"
+                    style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                  >
+                    Home
+                  </div>
                 </div>
               </div>
             </a>
@@ -67,20 +75,24 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
+                class="nav-item css-xi58yv-navItemContainer-navItemContainer"
               >
                 <div
-                  class="icon-container"
+                  class="title-icon-container"
                 >
-                  <svg-file-stub
-                    height="32"
-                  />
-                </div>
-                <div
-                  class="title"
-                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
-                >
-                  My courses
+                  <div
+                    class="icon-container"
+                  >
+                    <svg-file-stub
+                      height="32"
+                    />
+                  </div>
+                  <div
+                    class="title"
+                    style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                  >
+                    My courses
+                  </div>
                 </div>
               </div>
             </a>
@@ -91,20 +103,24 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
+                class="nav-item css-xi58yv-navItemContainer-navItemContainer"
               >
                 <div
-                  class="icon-container"
+                  class="title-icon-container"
                 >
-                  <svg-file-stub
-                    height="32"
-                  />
-                </div>
-                <div
-                  class="title"
-                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
-                >
-                  Catalog
+                  <div
+                    class="icon-container"
+                  >
+                    <svg-file-stub
+                      height="32"
+                    />
+                  </div>
+                  <div
+                    class="title"
+                    style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                  >
+                    Catalog
+                  </div>
                 </div>
               </div>
             </a>
@@ -115,20 +131,24 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
+                class="nav-item css-xi58yv-navItemContainer-navItemContainer"
               >
                 <div
-                  class="icon-container"
+                  class="title-icon-container"
                 >
-                  <svg-file-stub
-                    height="32"
-                  />
-                </div>
-                <div
-                  class="title"
-                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
-                >
-                  Calendar
+                  <div
+                    class="icon-container"
+                  >
+                    <svg-file-stub
+                      height="32"
+                    />
+                  </div>
+                  <div
+                    class="title"
+                    style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                  >
+                    Calendar
+                  </div>
                 </div>
               </div>
             </a>
@@ -143,98 +163,149 @@ exports[`<Sidebar/> matches snapshot 1`] = `
               style="display: block;"
             >
               <div
-                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
+                class="nav-item css-xi58yv-navItemContainer-navItemContainer"
               >
                 <div
-                  class="icon-container"
+                  class="title-icon-container"
                 >
-                  <svg-file-stub
-                    height="32"
-                  />
-                </div>
-                <div
-                  class="title"
-                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
-                >
-                  Messages
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a
-              href="www.google.com"
-              style="display: block;"
-            >
-              <div
-                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
-              >
-                <div
-                  class="icon-container"
-                >
-                  <svg-file-stub
-                    height="32"
-                  />
-                </div>
-                <div
-                  class="title"
-                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
-                >
-                  Discussions
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a
-              href="www.google.com"
-              style="display: block;"
-            >
-              <div
-                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
-              >
-                <div
-                  class="icon-container"
-                >
-                  <svg-file-stub
-                    height="32"
-                  />
-                </div>
-                <div
-                  class="title"
-                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
-                >
-                  Show tour
-                </div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a
-              href="www.google.com"
-              style="display: block;"
-            >
-              <div
-                class="nav-item css-ygxgpr-navItemContainer-navItemContainer"
-              >
-                <div
-                  class="icon-container"
-                >
-                  <figure
-                    class="css-1al2x53-avatar-avatar"
+                  <div
+                    class="icon-container"
                   >
-                    <span
-                      data-testid="avatar-children-container"
-                    >
-                      DS
-                    </span>
-                  </figure>
+                    <svg-file-stub
+                      height="32"
+                    />
+                  </div>
+                  <div
+                    class="title"
+                    style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                  >
+                    Messages
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="www.google.com"
+              style="display: block;"
+            >
+              <div
+                class="nav-item css-xi58yv-navItemContainer-navItemContainer"
+              >
+                <div
+                  class="title-icon-container"
+                >
+                  <div
+                    class="icon-container"
+                  >
+                    <svg-file-stub
+                      height="32"
+                    />
+                  </div>
+                  <div
+                    class="title"
+                    style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                  >
+                    Discussions
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="www.google.com"
+              style="display: block;"
+            >
+              <div
+                class="nav-item css-xi58yv-navItemContainer-navItemContainer"
+              >
+                <div
+                  class="title-icon-container"
+                >
+                  <div
+                    class="icon-container"
+                  >
+                    <svg-file-stub
+                      height="32"
+                    />
+                  </div>
+                  <div
+                    class="title"
+                    style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                  >
+                    Show tour
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="www.google.com"
+              style="display: block;"
+            >
+              <div
+                class="nav-item css-xi58yv-navItemContainer-navItemContainer"
+              >
+                <div
+                  class="title-icon-container"
+                >
+                  <div
+                    class="icon-container"
+                  >
+                    <svg-file-stub
+                      height="32"
+                    />
+                  </div>
+                  <div
+                    class="title"
+                    style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                  >
+                    Help Center
+                  </div>
                 </div>
                 <div
-                  class="title"
-                  style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                  class="icon-after-container"
                 >
-                  My profile
+                  <svg-file-stub
+                    height="32"
+                  />
+                </div>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a
+              href="www.google.com"
+              style="display: block;"
+            >
+              <div
+                class="nav-item css-xi58yv-navItemContainer-navItemContainer"
+              >
+                <div
+                  class="title-icon-container"
+                >
+                  <div
+                    class="icon-container"
+                  >
+                    <figure
+                      class="css-1al2x53-avatar-avatar"
+                    >
+                      <span
+                        data-testid="avatar-children-container"
+                      >
+                        DS
+                      </span>
+                    </figure>
+                  </div>
+                  <div
+                    class="title"
+                    style="display: none; opacity: 0; transform: translateX(-10px) translateZ(0);"
+                  >
+                    My profile
+                  </div>
                 </div>
               </div>
             </a>

@@ -59,6 +59,7 @@ const Select: ForwardRefRenderFunction<
     maxWidth = MAX_WIDTH,
     placeholder: outerPlaceholder = OUTER_PLACEHOLDER,
     tooltipContent = "",
+    countOptionsForInnerSearch = 10,
     onChange,
     isInputValid,
     checkIfInputIsSelected,
@@ -85,7 +86,7 @@ const Select: ForwardRefRenderFunction<
   const shouldShowInnerSearch = () => {
     // Force show inner search if the number of options exceeds 10 or certain conditions are met
     const isAsyncType = type === "async";
-    const hasManyOptions = countOptions() > 10;
+    const hasManyOptions = countOptions() > countOptionsForInnerSearch;
 
     return isAsyncType || hasManyOptions || hasInnerSearch;
   };

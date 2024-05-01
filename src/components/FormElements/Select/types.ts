@@ -63,6 +63,7 @@ export type CustomSelectProps<
   isInputValid?: (input: string) => boolean;
   checkIfInputIsSelected?: (inputValue: string) => string;
   tooltipContent?: string | JSX.Element;
+  countOptionsForInnerSearch?: number;
 };
 
 export type CustomMenuListProps<

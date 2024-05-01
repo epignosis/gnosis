@@ -39,8 +39,18 @@ export const navItemContainer = (
   align-items: center;
   color: ${sidebar.color};
   padding: 0.25rem 1.5rem;
+  justify-content: space-between;
+
+  .title-icon-container {
+    display: flex;
+    align-items: center;
+  }
 
   .icon-container {
+    height: 2rem;
+  }
+
+  .icon-after-container {
     height: 2rem;
   }
 

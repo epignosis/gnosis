@@ -2,11 +2,9 @@ import React, { ReactNode } from "react";
 import { Story } from "@storybook/react";
 import { Avatar } from "../../";
 import {
-  ArrowRightChevronSVG,
   CalendarSVG,
   CatalogSVG,
   ChatCloudsSVG,
-  HelpSVG,
   HomeSVG,
   MyCoursesSVG,
   OpenedMessageSVG,
@@ -100,16 +98,6 @@ export const Sidebar: Story<SidebarProps> = (args) => (
               icon={<ShowTourSVG height={32} />}
               label="Show tour"
               isExpanded={!args.isCollapsed}
-            />
-          </a>
-        </li>
-        <li>
-          <a href="www.google.com" style={{ display: "block" }}>
-            <SidebarComponent.Item
-              icon={<HelpSVG height={32} />}
-              label="Help Center"
-              isExpanded={!args.isCollapsed}
-              iconAfter={<ArrowRightChevronSVG height={32} />}
             />
           </a>
         </li>

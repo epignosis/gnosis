@@ -8,7 +8,6 @@ export type NavItemProps = FC<{
   isExpanded: boolean;
   icon: ReactNode;
   label: string | JSX.Element;
-  iconAfter?: ReactNode;
   fontSize?: TypographyLevels;
   isActive?: boolean;
 }>;
@@ -40,14 +39,7 @@ const labelVariants: Variants = {
   }),
 };
 
-const NavItem: NavItemProps = ({
-  isExpanded,
-  label,
-  fontSize = "md",
-  icon,
-  iconAfter,
-  isActive = false,
-}) => {
+const NavItem: NavItemProps = ({ isExpanded, label, fontSize = "md", icon, isActive = false }) => {
   const isReducedMotion = useReducedMotion();
   const containerClassNames = classNames({
     selected: isActive,
@@ -56,25 +48,21 @@ const NavItem: NavItemProps = ({
 
   return (
     <div css={(theme) => navItemContainer(theme, fontSize)} className={containerClassNames}>
-      <div className="title-icon-container">
-        <div className="icon-container">{icon}</div>
-        <AnimatePresence>
-          {isExpanded && (
-            <m.div
-              className="title"
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              variants={labelVariants}
-              custom={{ isReducedMotion }}
-            >
-              {label}
-            </m.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {iconAfter && isExpanded && <div className="icon-after-container">{iconAfter}</div>}
+      <div className="icon-container">{icon}</div>
+      <AnimatePresence>
+        {isExpanded && (
+          <m.div
+            className="title"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={labelVariants}
+            custom={{ isReducedMotion }}
+          >
+            {label}
+          </m.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

@@ -270,15 +270,15 @@ const Dropdown: FC<DropdownProps> = ({
     setFilteredList(filterListByKeyword(list, keyword));
   };
 
-  function handleOnMouseOver() {
+  const handleOnMouseOver = () => {
     if (!hover) return;
-
     setIsListOpen(true);
-  }
-  function handleOnMouseLeave() {
+  };
+
+  const handleOnMouseLeave = () => {
     if (!hover) return;
     setIsListOpen(false);
-  }
+  };
 
   return (
     <div

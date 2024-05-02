@@ -1,3 +1,10 @@
+# [5.17.0](https://github.com/epignosis/gnosis/compare/v5.16.5...v5.17.0) (2024-05-02)
+
+
+### Features
+
+* **select:** add count options for inner search as prop ([#332](https://github.com/epignosis/gnosis/issues/332)) ([31d11e0](https://github.com/epignosis/gnosis/commit/31d11e0f5a5e120dc08fbf8768795213a893e7fe))
+
 ## [5.16.5](https://github.com/epignosis/gnosis/compare/v5.16.4...v5.16.5) (2024-04-26)
 
 ## [5.16.4](https://github.com/epignosis/gnosis/compare/v5.16.3...v5.16.4) (2024-04-26)

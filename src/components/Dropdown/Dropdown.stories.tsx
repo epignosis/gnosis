@@ -136,11 +136,6 @@ export const Default = Template.bind({});
 
 Default.args = {
   list: dropdownList,
-  prependContent: (
-    <div style={{ marginBottom: "10px", textAlign: "center", borderBottom: "1px solid black" }}>
-      Prepended Content
-    </div>
-  ),
 };
 
 export const withExtendedList = Template.bind({});

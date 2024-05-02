@@ -98,7 +98,7 @@ const Template: Story<DropdownProps> = (args) => {
         onClick={toggleDropdown}
         disabled={args.disabled}
       >
-        Click to {show ? "close" : "open"}
+        Click (or hover) to {show ? "close" : "open"}
       </Button>
     </Dropdown>
   );
@@ -136,6 +136,11 @@ export const Default = Template.bind({});
 
 Default.args = {
   list: dropdownList,
+  prependContent: (
+    <div style={{ marginBottom: "10px", textAlign: "center", borderBottom: "1px solid black" }}>
+      Prepended Content
+    </div>
+  ),
 };
 
 export const withExtendedList = Template.bind({});
@@ -183,6 +188,27 @@ withJsxElementLabels.args = {
   list: mockList,
   remainOpenOnSelect: true,
   isSearchable: false,
+};
+
+export const withHover = Template.bind({});
+
+withHover.args = {
+  list: mockList,
+  hover: true,
+  isSearchable: true,
+};
+
+export const withPrependContent = Template.bind({});
+
+withPrependContent.args = {
+  list: mockList,
+  prependContent: (
+    <div style={{ marginBottom: "10px", textAlign: "center", borderBottom: "1px solid black" }}>
+      Prepended Content
+    </div>
+  ),
+  hover: true,
+  isSearchable: true,
 };
 
 const smallDropdownList: DropdownItem[] = [

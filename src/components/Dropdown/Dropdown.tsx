@@ -89,7 +89,7 @@ const Dropdown: FC<DropdownProps> = ({
   }, [disabled, list]);
 
   const toggleList = (): void => {
-    if (disabled) return;
+    if (disabled || hover) return;
 
     // We want to reset the dropdown list every time it opens
     if (!isListOpen) {

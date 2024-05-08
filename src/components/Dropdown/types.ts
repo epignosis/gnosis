@@ -18,6 +18,8 @@ export type DropdownProps = HTMLAttributes<HTMLDivElement> & {
   placement?: PlacementOptions;
   isSearchable?: boolean;
   textSize?: TypographyLevels;
+  prependContent?: ReactNode;
+  hover?: boolean;
   fullWidth?: boolean;
   fixPlacement?: boolean;
   emptyStateText?: string;

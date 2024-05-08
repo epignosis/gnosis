@@ -13,16 +13,7 @@ export const DropdownContainer = (
   position: relative;
   display: inline-block;
 
-  .dropdown-wrapper {
-    position: absolute;
-    z-index: 100;
-    border-radius: 5px;
-    box-shadow: 0 3px 6px ${dropdown.boxShadowColor};
-    background-color: ${dropdown.backgroundColor};
-    padding: ${isSearchable ? "0.75rem" : "0"};
-    width: ${fullWidth ? (isSearchable ? "auto" : "100%") : "auto"};
-    max-width: ${fullWidth ? "50" : "19.5"}rem;
-
+  .dropdown-outer-wrapper {
     &.bottom-start {
       inset-inline-start: 0;
       margin-top: 0.25rem;
@@ -50,6 +41,16 @@ export const DropdownContainer = (
       top: 0;
       margin: 0;
     }
+  }
+  .dropdown-wrapper {
+    position: absolute;
+    z-index: 100;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px ${dropdown.boxShadowColor};
+    background-color: ${dropdown.backgroundColor};
+    padding: ${isSearchable ? "0.75rem" : "0"};
+    width: ${fullWidth ? (isSearchable ? "auto" : "100%") : "auto"};
+    max-width: ${fullWidth ? "50" : "19.5"}rem;
 
     .input-wrapper {
       min-width: 18rem;

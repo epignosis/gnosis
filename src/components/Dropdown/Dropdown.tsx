@@ -9,13 +9,17 @@ import { DropdownItem, DropdownProps, PlacementOptions } from "./types";
 import { filterListByKeyword, getScrollableParent } from "./helpers";
 
 const dropdownWrapperClasses = (placement: PlacementOptions): string =>
-  classNames({
-    "dropdown-wrapper": true,
+  classNames("dropdown-outer-wrapper", {
     "bottom-start": placement === "bottom-start",
     "bottom-end": placement === "bottom-end",
     "top-start": placement === "top-start",
     "top-end": placement === "top-end",
     "end-top": placement === "end-top",
+  });
+
+const dropdownButtonClasses = (isListOpen: boolean): string =>
+  classNames("dropdown-button", {
+    "is-active": isListOpen,
   });
 
 const dropdownItemClasses = (item: DropdownItem): string =>
@@ -41,6 +45,8 @@ const Dropdown: FC<DropdownProps> = ({
   isSearchable,
   textSize = "sm",
   fullWidth = false,
+  prependContent,
+  hover = false,
   fixPlacement = false,
   emptyStateText = "No match found",
   placeholderText = "Search",
@@ -83,7 +89,8 @@ const Dropdown: FC<DropdownProps> = ({
   }, [disabled, list]);
 
   const toggleList = (): void => {
-    if (disabled) return;
+    if (disabled || hover) return;
+
     // We want to reset the dropdown list every time it opens
     if (!isListOpen) {
       setFilteredList(list);
@@ -263,6 +270,16 @@ const Dropdown: FC<DropdownProps> = ({
     setFilteredList(filterListByKeyword(list, keyword));
   };
 
+  const handleOnMouseOver = () => {
+    if (!hover) return;
+    setIsListOpen(true);
+  };
+
+  const handleOnMouseLeave = () => {
+    if (!hover) return;
+    setIsListOpen(false);
+  };
+
   return (
     <div
       css={(theme): SerializedStyles =>
@@ -270,45 +287,52 @@ const Dropdown: FC<DropdownProps> = ({
       }
       className="dropdown"
       ref={wrapperRef}
+      onMouseOver={handleOnMouseOver}
+      onMouseLeave={handleOnMouseLeave}
       {...rest}
     >
-      <div className="dropdown-button" ref={dropdownButtonRef} onClick={toggleList}>
+      <div
+        className={dropdownButtonClasses(isListOpen)}
+        ref={dropdownButtonRef}
+        onClick={toggleList}
+      >
         {children}
       </div>
 
       {isListOpen && (
-        <div
-          className={dropdownWrapperClasses(fixPlacement ? currentPlacement : placement)}
-          ref={dropdownWrapperRef}
-        >
-          {isSearchable && (
-            <SearchInput
-              placeholder={placeholderText}
-              onInputChanged={handleInputChanged}
-              id="dropdown-search"
-              delayBeforeSearch={300}
-              autoFocus={shouldFocus}
-              disabled={disabled}
-            />
-          )}
+        <div className={dropdownWrapperClasses(fixPlacement ? currentPlacement : placement)}>
+          <div className="dropdown-wrapper" ref={dropdownWrapperRef}>
+            {prependContent}
 
-          <ul
-            css={(theme): SerializedStyles =>
-              DropdownList(theme, { fullWidth, isSearchable: Boolean(isSearchable) })
-            }
-            role="list"
-            className="dropdown-list"
-          >
-            {filteredList?.length ? (
-              renderItemsRecursively(filteredList)
-            ) : (
-              <li className="empty-state">
-                <Text fontSize="xs" weight="400">
-                  {emptyStateText}
-                </Text>
-              </li>
+            {isSearchable && (
+              <SearchInput
+                placeholder={placeholderText}
+                onInputChanged={handleInputChanged}
+                id="dropdown-search"
+                delayBeforeSearch={300}
+                autoFocus={shouldFocus}
+                disabled={disabled}
+              />
             )}
-          </ul>
+
+            <ul
+              css={(theme): SerializedStyles =>
+                DropdownList(theme, { fullWidth, isSearchable: Boolean(isSearchable) })
+              }
+              role="list"
+              className="dropdown-list"
+            >
+              {filteredList?.length ? (
+                renderItemsRecursively(filteredList)
+              ) : (
+                <li className="empty-state">
+                  <Text fontSize="xs" weight="400">
+                    {emptyStateText}
+                  </Text>
+                </li>
+              )}
+            </ul>
+          </div>
         </div>
       )}
     </div>

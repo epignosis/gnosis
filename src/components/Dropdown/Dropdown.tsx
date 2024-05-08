@@ -1,7 +1,7 @@
 import React, { FC, Fragment, useEffect, useLayoutEffect, useRef, useState } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
-import { useClickAway, useDebounceFn } from "ahooks";
+import { useClickAway } from "ahooks";
 import Text from "../Text/Text";
 import SearchInput from "../FormElements/Input/SearchInput";
 import { DropdownContainer, DropdownList, DropdownListItem, DropdownTitle } from "./styles";

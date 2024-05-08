@@ -1,3 +1,10 @@
+## [5.18.1](https://github.com/epignosis/gnosis/compare/v5.18.0...v5.18.1) (2024-05-08)
+
+
+### Bug Fixes
+
+* **dropdown:** fix wrapper issues ([#335](https://github.com/epignosis/gnosis/issues/335)) ([2813c4f](https://github.com/epignosis/gnosis/commit/2813c4fb8b4bf189452bcae6d5598d9e4b446f6a))
+
 # [5.18.0](https://github.com/epignosis/gnosis/compare/v5.17.0...v5.18.0) (2024-05-08)
 
 

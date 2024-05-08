@@ -13,11 +13,6 @@ export const DropdownContainer = (
   position: relative;
   display: inline-block;
 
-  // Wrapper is used to create a "hover" bridge between the dropdown and the trigger element.
-  .dropdown-outer-wrapper {
-    min-height: 0.25rem; // Min height is the same as the dropdown's margin distance.
-  }
-
   .dropdown-wrapper {
     position: absolute;
     z-index: 100;

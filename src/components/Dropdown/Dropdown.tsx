@@ -66,6 +66,7 @@ const Dropdown: FC<DropdownProps> = ({
 
   const dir = document.dir;
   const isRtl = dir === "rtl";
+  let hoverTimeOut: NodeJS.Timeout;
 
   useClickAway(() => {
     setIsListOpen(false);
@@ -272,12 +273,18 @@ const Dropdown: FC<DropdownProps> = ({
 
   const handleOnMouseOver = () => {
     if (!hover) return;
+    if (hoverTimeOut) clearTimeout(hoverTimeOut);
+
     setIsListOpen(true);
   };
 
   const handleOnMouseLeave = () => {
     if (!hover) return;
-    setIsListOpen(false);
+
+    // A small debounce to prevent dropdown from closing.
+    hoverTimeOut = setTimeout(() => {
+      setIsListOpen(false);
+    }, 100);
   };
 
   return (
@@ -300,42 +307,40 @@ const Dropdown: FC<DropdownProps> = ({
       </div>
 
       {isListOpen && (
-        <div className="dropdown-outer-wrapper">
-          <div
-            className={dropdownWrapperClasses(fixPlacement ? currentPlacement : placement)}
-            ref={dropdownWrapperRef}
+        <div
+          className={dropdownWrapperClasses(fixPlacement ? currentPlacement : placement)}
+          ref={dropdownWrapperRef}
+        >
+          {prependContent}
+
+          {isSearchable && (
+            <SearchInput
+              placeholder={placeholderText}
+              onInputChanged={handleInputChanged}
+              id="dropdown-search"
+              delayBeforeSearch={300}
+              autoFocus={shouldFocus}
+              disabled={disabled}
+            />
+          )}
+
+          <ul
+            css={(theme): SerializedStyles =>
+              DropdownList(theme, { fullWidth, isSearchable: Boolean(isSearchable) })
+            }
+            role="list"
+            className="dropdown-list"
           >
-            {prependContent}
-
-            {isSearchable && (
-              <SearchInput
-                placeholder={placeholderText}
-                onInputChanged={handleInputChanged}
-                id="dropdown-search"
-                delayBeforeSearch={300}
-                autoFocus={shouldFocus}
-                disabled={disabled}
-              />
+            {filteredList?.length ? (
+              renderItemsRecursively(filteredList)
+            ) : (
+              <li className="empty-state">
+                <Text fontSize="xs" weight="400">
+                  {emptyStateText}
+                </Text>
+              </li>
             )}
-
-            <ul
-              css={(theme): SerializedStyles =>
-                DropdownList(theme, { fullWidth, isSearchable: Boolean(isSearchable) })
-              }
-              role="list"
-              className="dropdown-list"
-            >
-              {filteredList?.length ? (
-                renderItemsRecursively(filteredList)
-              ) : (
-                <li className="empty-state">
-                  <Text fontSize="xs" weight="400">
-                    {emptyStateText}
-                  </Text>
-                </li>
-              )}
-            </ul>
-          </div>
+          </ul>
         </div>
       )}
     </div>

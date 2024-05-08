@@ -1,6 +1,6 @@
 {
   "name": "@epignosis_llc/gnosis",
-  "version": "5.18.1",
+  "version": "5.18.2",
   "description": "Epignosis official react design system.",
   "homepage": "https://github.com/epignosis/gnosis",
   "main": "dist/cjs/index.js",

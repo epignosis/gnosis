@@ -1,3 +1,10 @@
+## [5.18.2](https://github.com/epignosis/gnosis/compare/v5.18.1...v5.18.2) (2024-05-08)
+
+
+### Bug Fixes
+
+* **dropdown:** debounce the hover action ([#336](https://github.com/epignosis/gnosis/issues/336)) ([be4ce46](https://github.com/epignosis/gnosis/commit/be4ce46c9fcbdc2465044dcfb52311bce0094315))
+
 ## [5.18.1](https://github.com/epignosis/gnosis/compare/v5.18.0...v5.18.1) (2024-05-08)
 
 

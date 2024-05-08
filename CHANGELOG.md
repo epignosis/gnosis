@@ -1,3 +1,10 @@
+# [5.18.0](https://github.com/epignosis/gnosis/compare/v5.17.0...v5.18.0) (2024-05-08)
+
+
+### Features
+
+* **dropdown:** add hover and ability to prepend content ([#334](https://github.com/epignosis/gnosis/issues/334)) ([42e2b00](https://github.com/epignosis/gnosis/commit/42e2b00b3f65a75b4460c5a545d40139a3069606))
+
 # [5.17.0](https://github.com/epignosis/gnosis/compare/v5.16.5...v5.17.0) (2024-05-02)
 
 

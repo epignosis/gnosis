@@ -13,7 +13,25 @@ export const DropdownContainer = (
   position: relative;
   display: inline-block;
 
+  // Wrapper is used to create a "hover" bridge between the dropdown and the trigger element.
   .dropdown-outer-wrapper {
+    min-height: 0.25rem; // Min height is the same as the dropdown's margin distance.
+  }
+
+  .dropdown-wrapper {
+    position: absolute;
+    z-index: 100;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px ${dropdown.boxShadowColor};
+    background-color: ${dropdown.backgroundColor};
+    padding: ${isSearchable ? "0.75rem" : "0"};
+    width: ${fullWidth ? (isSearchable ? "auto" : "100%") : "auto"};
+    max-width: ${fullWidth ? "50" : "19.5"}rem;
+
+    .input-wrapper {
+      min-width: 18rem;
+    }
+
     &.bottom-start {
       inset-inline-start: 0;
       margin-top: 0.25rem;
@@ -40,20 +58,6 @@ export const DropdownContainer = (
       inset-inline-start: 100%;
       top: 0;
       margin: 0;
-    }
-  }
-  .dropdown-wrapper {
-    position: absolute;
-    z-index: 100;
-    border-radius: 5px;
-    box-shadow: 0 3px 6px ${dropdown.boxShadowColor};
-    background-color: ${dropdown.backgroundColor};
-    padding: ${isSearchable ? "0.75rem" : "0"};
-    width: ${fullWidth ? (isSearchable ? "auto" : "100%") : "auto"};
-    max-width: ${fullWidth ? "50" : "19.5"}rem;
-
-    .input-wrapper {
-      min-width: 18rem;
     }
   }
 `;

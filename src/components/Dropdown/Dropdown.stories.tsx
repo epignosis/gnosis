@@ -190,6 +190,7 @@ export const withHover = Template.bind({});
 withHover.args = {
   list: mockList,
   hover: true,
+  remainOpenOnSelect: true,
   isSearchable: true,
 };
 
@@ -197,6 +198,7 @@ export const withPrependContent = Template.bind({});
 
 withPrependContent.args = {
   list: mockList,
+  remainOpenOnSelect: true,
   prependContent: (
     <div style={{ marginBottom: "10px", textAlign: "center", borderBottom: "1px solid black" }}>
       Prepended Content

@@ -9,7 +9,7 @@ import { DropdownItem, DropdownProps, PlacementOptions } from "./types";
 import { filterListByKeyword, getScrollableParent } from "./helpers";
 
 const dropdownWrapperClasses = (placement: PlacementOptions): string =>
-  classNames("dropdown-outer-wrapper", {
+  classNames("dropdown-wrapper", {
     "bottom-start": placement === "bottom-start",
     "bottom-end": placement === "bottom-end",
     "top-start": placement === "top-start",
@@ -300,8 +300,11 @@ const Dropdown: FC<DropdownProps> = ({
       </div>
 
       {isListOpen && (
-        <div className={dropdownWrapperClasses(fixPlacement ? currentPlacement : placement)}>
-          <div className="dropdown-wrapper" ref={dropdownWrapperRef}>
+        <div className="dropdown-outer-wrapper">
+          <div
+            className={dropdownWrapperClasses(fixPlacement ? currentPlacement : placement)}
+            ref={dropdownWrapperRef}
+          >
             {prependContent}
 
             {isSearchable && (

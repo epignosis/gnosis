@@ -187,8 +187,15 @@ withJsxElementLabels.args = {
 
 export const withHover = Template.bind({});
 
+const smallDropdownList: DropdownItem[] = [
+  { label: "Option 1", value: "1" },
+  { label: "Option 2", value: "2" },
+  { label: "Option 3", value: "3" },
+  { label: "Option 4", value: "4" },
+];
+
 withHover.args = {
-  list: mockList,
+  list: smallDropdownList,
   hover: true,
   remainOpenOnSelect: true,
   isSearchable: true,
@@ -197,7 +204,7 @@ withHover.args = {
 export const withPrependContent = Template.bind({});
 
 withPrependContent.args = {
-  list: mockList,
+  list: smallDropdownList,
   remainOpenOnSelect: true,
   prependContent: (
     <div style={{ marginBottom: "10px", textAlign: "center", borderBottom: "1px solid black" }}>
@@ -207,13 +214,6 @@ withPrependContent.args = {
   hover: true,
   isSearchable: true,
 };
-
-const smallDropdownList: DropdownItem[] = [
-  { label: "Option 1", value: "1" },
-  { label: "Option 2", value: "2" },
-  { label: "Option 3", value: "3" },
-  { label: "Option 4", value: "4" },
-];
 
 const ScrollableContainer: FC = ({ children }) => (
   <div

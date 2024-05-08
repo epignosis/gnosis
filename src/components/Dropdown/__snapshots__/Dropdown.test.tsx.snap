@@ -3,7 +3,7 @@
 exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
 <div>
   <div
-    class="dropdown css-1h6hv8q-DropdownContainer-DropdownContainer"
+    class="dropdown css-19r261j-DropdownContainer-DropdownContainer"
   >
     <div
       class="dropdown-button is-active"
@@ -19,107 +19,103 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
       </button>
     </div>
     <div
-      class="dropdown-outer-wrapper"
+      class="dropdown-wrapper bottom-start"
     >
-      <div
-        class="dropdown-wrapper bottom-start"
+      <ul
+        class="dropdown-list css-x7r8e2-DropdownList-DropdownList"
+        role="list"
       >
-        <ul
-          class="dropdown-list css-x7r8e2-DropdownList-DropdownList"
-          role="list"
+        <li
+          class="css-1svz8nq-DropdownTitle-DropdownTitle"
         >
-          <li
-            class="css-1svz8nq-DropdownTitle-DropdownTitle"
+          <span
+            class="css-g06jqs-textContainer-textContainer"
+            data-testid="text-component"
           >
-            <span
-              class="css-g06jqs-textContainer-textContainer"
-              data-testid="text-component"
-            >
-              Category 1
-            </span>
-          </li>
-          <li
-            class="1 dropdown-list-item css-3jxyqn-DropdownListItem-DropdownListItem"
+            Category 1
+          </span>
+        </li>
+        <li
+          class="1 dropdown-list-item css-3jxyqn-DropdownListItem-DropdownListItem"
+        >
+          <span
+            class="css-26eo9i-textContainer-textContainer"
+            data-testid="text-component"
           >
-            <span
-              class="css-26eo9i-textContainer-textContainer"
-              data-testid="text-component"
-            >
-              Option 1
-            </span>
-          </li>
-          <li
-            class="css-1rpjd55-DropdownTitle-DropdownTitle"
+            Option 1
+          </span>
+        </li>
+        <li
+          class="css-1rpjd55-DropdownTitle-DropdownTitle"
+        >
+          <span
+            class="css-g06jqs-textContainer-textContainer"
+            data-testid="text-component"
           >
-            <span
-              class="css-g06jqs-textContainer-textContainer"
-              data-testid="text-component"
-            >
-              Category 2
-            </span>
-          </li>
-          <li
-            class="2 dropdown-list-item css-1ppcfed-DropdownListItem-DropdownListItem"
+            Category 2
+          </span>
+        </li>
+        <li
+          class="2 dropdown-list-item css-1ppcfed-DropdownListItem-DropdownListItem"
+        >
+          <span
+            class="css-26eo9i-textContainer-textContainer"
+            data-testid="text-component"
           >
-            <span
-              class="css-26eo9i-textContainer-textContainer"
-              data-testid="text-component"
-            >
-              Option 2
-            </span>
-          </li>
-          <li
-            class="3 dropdown-list-item css-1ppcfed-DropdownListItem-DropdownListItem"
+            Option 2
+          </span>
+        </li>
+        <li
+          class="3 dropdown-list-item css-1ppcfed-DropdownListItem-DropdownListItem"
+        >
+          <span
+            class="css-26eo9i-textContainer-textContainer"
+            data-testid="text-component"
           >
-            <span
-              class="css-26eo9i-textContainer-textContainer"
-              data-testid="text-component"
-            >
-              Option 3
-            </span>
-          </li>
-          <li
-            class="css-1svz8nq-DropdownTitle-DropdownTitle"
+            Option 3
+          </span>
+        </li>
+        <li
+          class="css-1svz8nq-DropdownTitle-DropdownTitle"
+        >
+          <span
+            class="css-g06jqs-textContainer-textContainer"
+            data-testid="text-component"
           >
-            <span
-              class="css-g06jqs-textContainer-textContainer"
-              data-testid="text-component"
-            >
-              Category 15
-            </span>
-          </li>
-          <li
-            class="15 dropdown-list-item css-3jxyqn-DropdownListItem-DropdownListItem"
+            Category 15
+          </span>
+        </li>
+        <li
+          class="15 dropdown-list-item css-3jxyqn-DropdownListItem-DropdownListItem"
+        >
+          <span
+            class="css-26eo9i-textContainer-textContainer"
+            data-testid="text-component"
           >
-            <span
-              class="css-26eo9i-textContainer-textContainer"
-              data-testid="text-component"
-            >
-              Option 15
-            </span>
-          </li>
-          <li
-            class="16 dropdown-list-item css-3jxyqn-DropdownListItem-DropdownListItem"
+            Option 15
+          </span>
+        </li>
+        <li
+          class="16 dropdown-list-item css-3jxyqn-DropdownListItem-DropdownListItem"
+        >
+          <span
+            class="css-26eo9i-textContainer-textContainer"
+            data-testid="text-component"
           >
-            <span
-              class="css-26eo9i-textContainer-textContainer"
-              data-testid="text-component"
-            >
-              Option 16
-            </span>
-          </li>
-          <li
-            class="5 dropdown-list-item css-2cjai3-DropdownListItem-DropdownListItem"
+            Option 16
+          </span>
+        </li>
+        <li
+          class="5 dropdown-list-item css-2cjai3-DropdownListItem-DropdownListItem"
+        >
+          <span
+            class="css-26eo9i-textContainer-textContainer"
+            data-testid="text-component"
           >
-            <span
-              class="css-26eo9i-textContainer-textContainer"
-              data-testid="text-component"
-            >
-              Option 5
-            </span>
-          </li>
-        </ul>
-      </div>
+            Option 5
+          </span>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

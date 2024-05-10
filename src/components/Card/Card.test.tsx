@@ -11,7 +11,7 @@ describe("<Card/>", () => {
     const bodyTxt = faker.lorem.paragraph();
 
     render(
-      <Card>
+      <Card isHoverActive>
         <Card.Header>
           <Card.Thumbnail src={src} alt={alt} />
         </Card.Header>
@@ -32,7 +32,7 @@ describe("<Card/>", () => {
     const hoverTxt = faker.lorem.word();
 
     render(
-      <Card>
+      <Card isHoverActive>
         <Card.Header>
           <Card.Thumbnail src={src} alt={alt} />
           <Card.Hover>{hoverTxt}</Card.Hover>
@@ -62,7 +62,7 @@ describe("<Card/>", () => {
     const overlayTxt = faker.lorem.word();
 
     render(
-      <Card>
+      <Card isHoverActive>
         <Card.Overlay>{overlayTxt}</Card.Overlay>
         <Card.Header>
           <Card.Thumbnail src={src} alt={alt} />
@@ -82,7 +82,7 @@ describe("<Card/>", () => {
     const mockFn = jest.fn();
 
     render(
-      <Card>
+      <Card isHoverActive>
         <Card.Drawer isOpen title={titleTxt} onClose={mockFn} footer={footerTxt}>
           {bodyTxt}
         </Card.Drawer>
@@ -109,7 +109,7 @@ describe("<Card/>", () => {
 
   it("matches snapshot", () => {
     const { container } = render(
-      <Card id="my-card" className="main-card">
+      <Card id="my-card" className="main-card" isHoverActive>
         <Card.Header>
           <Card.Thumbnail
             src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
@@ -128,7 +128,7 @@ describe("<Card/>", () => {
 
   it("matches snapshot with hover", () => {
     const { container } = render(
-      <Card>
+      <Card isHoverActive>
         <Card.Header>
           <Card.Thumbnail
             src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
@@ -144,7 +144,7 @@ describe("<Card/>", () => {
 
   it("matches snapshot with transparent hover", () => {
     const { container } = render(
-      <Card>
+      <Card isHoverActive>
         <Card.Header>
           <Card.Thumbnail
             src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
@@ -160,7 +160,7 @@ describe("<Card/>", () => {
 
   it("matches snapshot with overlay", () => {
     const { container } = render(
-      <Card>
+      <Card isHoverActive>
         <Card.Overlay>Hello Overlay</Card.Overlay>
 
         <Card.Header>
@@ -179,7 +179,7 @@ describe("<Card/>", () => {
     const mockFn = jest.fn();
 
     const { container } = render(
-      <Card>
+      <Card isHoverActive>
         <Card.Drawer isOpen title="Drawer title" onClose={mockFn} footer="Drawer footer">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam labore ratione error
           adipisci dolorem corporis voluptatibus quia nihil quaerat ipsa tempora, in neque facere

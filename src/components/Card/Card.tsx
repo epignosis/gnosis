@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, HTMLAttributes, ReactNode } from "react";
 import { AnimatePresence, domAnimation, LazyMotion, m, MotionProps } from "framer-motion";
 import { cardContainer } from "./styles";
 import Header, { CardHeaderProps } from "./Header";
@@ -8,7 +8,11 @@ import Body, { BodyProps } from "./Body";
 import Overlay, { OverlayProps } from "./Overlay";
 import Drawer, { DrawerProps } from "./Drawer";
 
-export type CardProps = FC<React.HTMLAttributes<HTMLElement> & MotionProps>;
+type CardProps = HTMLAttributes<HTMLElement> &
+  MotionProps & {
+    isHoverActive?: boolean;
+    children?: ReactNode;
+  };
 
 type CardCompoundProps = {
   Header: CardHeaderProps;
@@ -19,10 +23,16 @@ type CardCompoundProps = {
   Drawer: DrawerProps;
 };
 
-const Card: CardProps & CardCompoundProps = ({ children, ...rest }) => (
+const Card: FC<CardProps> & CardCompoundProps = ({ isHoverActive = true, children, ...rest }) => (
   <LazyMotion features={domAnimation}>
     <AnimatePresence>
-      <m.article initial="rest" whileHover="hover" css={cardContainer} data-testid="card" {...rest}>
+      <m.article
+        initial="rest"
+        whileHover={isHoverActive ? "hover" : {}}
+        css={cardContainer}
+        data-testid="card"
+        {...rest}
+      >
         {children}
       </m.article>
     </AnimatePresence>

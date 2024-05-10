@@ -23,7 +23,7 @@ const Template: Story<{ isOverlayShow: boolean; isDrawerOpen: boolean }> = ({
   const [isOpen, toggle] = useReducer((state) => !state, isDrawerOpen);
 
   return (
-    <Card>
+    <Card isHoverActive>
       {isOverlayShow && <Card.Overlay>Hello Overlay</Card.Overlay>}
       <Card.Drawer
         isOpen={isOpen}

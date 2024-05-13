@@ -1,3 +1,10 @@
+## [5.19.1](https://github.com/epignosis/gnosis/compare/v5.19.0...v5.19.1) (2024-05-13)
+
+
+### Bug Fixes
+
+* **toggle switch:** accept internal icon and size fix ([#338](https://github.com/epignosis/gnosis/issues/338)) ([a629280](https://github.com/epignosis/gnosis/commit/a629280b9e04ed6b962cc19fdf2c3123b91e4b62))
+
 # [5.19.0](https://github.com/epignosis/gnosis/compare/v5.18.2...v5.19.0) (2024-05-13)
 
 

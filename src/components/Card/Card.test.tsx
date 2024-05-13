@@ -190,4 +190,26 @@ describe("<Card/>", () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it("does not apply hover effects when disableHover is true", async () => {
+    const hoverTxt = faker.lorem.word();
+    const src = faker.image.imageUrl();
+
+    render(
+      <Card disableHover={true}>
+        <Card.Header>
+          <Card.Thumbnail src={src} alt="No hover" />
+          <Card.Hover>{hoverTxt}</Card.Hover>
+        </Card.Header>
+      </Card>,
+    );
+
+    const card = screen.getByTestId("card");
+    userEvent.hover(card);
+
+    await screen.findByTestId("card");
+    expect(card).not.toHaveStyle({ transform: "scale(1.1)" });
+
+    expect(screen.queryByText(hoverTxt)).not.toBeVisible();
+  });
 });

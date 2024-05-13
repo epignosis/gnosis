@@ -191,12 +191,12 @@ describe("<Card/>", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("does not apply hover effects when isHoverActive is false", async () => {
+  it("does not apply hover effects when disableHover is true", async () => {
     const hoverTxt = faker.lorem.word();
     const src = faker.image.imageUrl();
 
     render(
-      <Card isHoverActive={false}>
+      <Card disableHover={true}>
         <Card.Header>
           <Card.Thumbnail src={src} alt="No hover" />
           <Card.Hover>{hoverTxt}</Card.Hover>

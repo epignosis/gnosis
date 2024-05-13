@@ -10,7 +10,7 @@ import Drawer, { DrawerProps } from "./Drawer";
 
 type CardProps = HTMLAttributes<HTMLElement> &
   MotionProps & {
-    isHoverActive?: boolean;
+    disableHover?: boolean;
     children?: ReactNode;
   };
 
@@ -23,12 +23,12 @@ type CardCompoundProps = {
   Drawer: DrawerProps;
 };
 
-const Card: FC<CardProps> & CardCompoundProps = ({ isHoverActive = true, children, ...rest }) => (
+const Card: FC<CardProps> & CardCompoundProps = ({ disableHover = false, children, ...rest }) => (
   <LazyMotion features={domAnimation}>
     <AnimatePresence>
       <m.article
         initial="rest"
-        whileHover={isHoverActive ? "hover" : {}}
+        whileHover={!disableHover ? "hover" : {}}
         css={cardContainer}
         data-testid="card"
         {...rest}

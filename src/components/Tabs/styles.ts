@@ -34,6 +34,7 @@ export const tabsHeader = (
     width: 100%;
     overflow-x: auto;
     border-bottom: 1px solid ${tabs.headerBorder};
+    align-items: center;
 
     &::-webkit-scrollbar {
       display: none;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { SerializedStyles } from "@emotion/utils";
 import classNames from "classnames";
-import { InfoIconSVG } from "../../../icons";
 import { Text, Tooltip } from "../../../";
+import { InfoIconSVG } from "../../../icons";
 import { ToggleContainer } from "./styles";
 
 export type ToggleProps = {
@@ -24,6 +24,7 @@ export type ToggleProps = {
     disabled: string;
   };
   [key: string]: unknown;
+  InternalIcon?: JSX.Element;
   onChange?: () => void;
 };
 
@@ -58,6 +59,7 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
   size = "sm",
   subtitle = "",
   tooltip,
+  InternalIcon,
   onChange,
   ...rest
 }) => {
@@ -66,6 +68,7 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
   const hasDescriptionTextWeight = hasDescription ? "700" : "400";
   const isMedium = size === "md";
   const isSuccess = variant === "success";
+  const hasIcon = Boolean(InternalIcon);
 
   useEffect(() => {
     setIsChecked(defaultChecked);
@@ -128,6 +131,8 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
                 {isChecked ? inlineTextTranslations.enabled : inlineTextTranslations.disabled}
               </Text>
             )}
+
+            {hasIcon && <div className="internal-icon">{InternalIcon}</div>}
             <div className={switchClassNames("thumb", isMedium, isSuccess)} />
           </div>
         </div>

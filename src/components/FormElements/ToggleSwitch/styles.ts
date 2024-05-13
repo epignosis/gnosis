@@ -39,9 +39,11 @@ export const ToggleContainer = (
         border-radius: 10px;
         transition: background-color 0.3s;
         margin-top: ${hasDescription ? "0.25rem" : "0"};
+        display: flex;
+        align-items: center;
 
         &.md {
-          width: 109px;
+          width: 72px;
           height: 40px;
           border-radius: 32px;
         }
@@ -74,7 +76,7 @@ export const ToggleContainer = (
         &.md {
           top: 4px;
           border-radius: 32px;
-          margin-inline-start: ${isChecked ? "70px" : "5px"};
+          margin-inline-start: ${isChecked ? "33px" : "5px"};
           width: 32px;
           height: 32px;
         }
@@ -84,6 +86,13 @@ export const ToggleContainer = (
         position: absolute;
         top: 9px;
         margin-inline-start: ${isChecked ? "12px" : "42px"};
+        color: ${formElements.toggleSwitch.textColor};
+      }
+
+      .internal-icon {
+        display: flex;
+        justify-content: center;
+        margin-inline-start: ${isChecked ? "2px" : "38px"};
         color: ${formElements.toggleSwitch.textColor};
       }
     }

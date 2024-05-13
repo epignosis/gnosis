@@ -1,3 +1,10 @@
+# [5.19.0](https://github.com/epignosis/gnosis/compare/v5.18.2...v5.19.0) (2024-05-13)
+
+
+### Features
+
+* **card:** ability to manipulate card hover ([#337](https://github.com/epignosis/gnosis/issues/337)) ([65eefc3](https://github.com/epignosis/gnosis/commit/65eefc35e6e581b4872ad873c94247a005b3d85d))
+
 ## [5.18.2](https://github.com/epignosis/gnosis/compare/v5.18.1...v5.18.2) (2024-05-08)
 
 

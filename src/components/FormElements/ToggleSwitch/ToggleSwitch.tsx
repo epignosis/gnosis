@@ -106,7 +106,11 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
               onClick={handleToggle}
               weight={hasDescriptionTextWeight}
             >
-              {tooltip && <Tooltip content={tooltip}>{InternalIcon}</Tooltip>}
+              {tooltip && (
+                <Tooltip content={tooltip}>
+                  <InfoIconSVG height={16} />
+                </Tooltip>
+              )}
               {labelBefore}
             </Text>
             <Text fontSize="sm" as="div" className="description-text">

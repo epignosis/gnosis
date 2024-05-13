@@ -90,8 +90,8 @@ export const ToggleContainer = (
       }
 
       .internal-icon {
-        position: absolute;
-        top: 4px;
+        display: flex;
+        justify-content: center;
         margin-inline-start: ${isChecked ? "2px" : "38px"};
         color: ${formElements.toggleSwitch.textColor};
       }

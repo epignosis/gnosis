@@ -1,5 +1,6 @@
 import React from "react";
 import { Story } from "@storybook/react";
+import { PreviewIconSVG } from "../../../icons";
 import ToggleSwitch, { ToggleProps } from "./ToggleSwitch";
 
 export default {
@@ -22,3 +23,10 @@ export default {
 const Template: Story<ToggleProps> = (args) => <ToggleSwitch {...args} />;
 
 export const Default = Template.bind({});
+
+export const WithInternalIcon = Template.bind({});
+
+WithInternalIcon.args = {
+  size: "md",
+  InternalIcon: <PreviewIconSVG height={32} />,
+};

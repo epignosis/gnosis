@@ -3,7 +3,7 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="css-1scuon3-selectContainer-selectContainer"
+    class="css-1drexhk-selectContainer-selectContainer"
   >
     <div
       class="label-container"
@@ -105,7 +105,7 @@ exports[`<Select /> matches snapshot 1`] = `
             >
               <div
                 aria-disabled="false"
-                class="option-md css-6kc27f-option"
+                class="option-md css-1haxlpt-option"
                 id="react-select-3-option-0"
                 tabindex="-1"
               >
@@ -113,7 +113,7 @@ exports[`<Select /> matches snapshot 1`] = `
               </div>
               <div
                 aria-disabled="false"
-                class="option-md css-1naxi5l-option"
+                class="option-md css-8anid-option"
                 id="react-select-3-option-1"
                 tabindex="-1"
               >
@@ -121,7 +121,7 @@ exports[`<Select /> matches snapshot 1`] = `
               </div>
               <div
                 aria-disabled="false"
-                class="option-md css-1naxi5l-option"
+                class="option-md css-8anid-option"
                 id="react-select-3-option-2"
                 tabindex="-1"
               >

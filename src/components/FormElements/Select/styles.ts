@@ -116,7 +116,6 @@ export const selectContainer = (
 
     .option-${size} {
       padding: 0.3125rem 1rem;
-      cursor: pointer;
       word-break: break-word;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -245,7 +244,11 @@ export const resolveStyles = (
   }),
   option: (
     base: CSSObjectWithLabel,
-    { isSelected, isFocused }: OptionProps<CustomOption, boolean, GroupBase<CustomOption>>,
+    {
+      isSelected,
+      isFocused,
+      isDisabled,
+    }: OptionProps<CustomOption, boolean, GroupBase<CustomOption>>,
   ) => ({
     ...base,
     backgroundColor: isSelected
@@ -253,16 +256,25 @@ export const resolveStyles = (
       : !isFocused
       ? "transparent"
       : formElements.input.hoverColor,
-    color: isSelected ? formElements.input.textColorFocused : "inherit",
+    color: isSelected
+      ? formElements.input.textColorFocused
+      : isDisabled
+      ? formElements.input.disabledColor
+      : "inherit",
     borderRadius: hasInnerSearch ? "5px" : "none",
     "&:hover": {
-      color: isSelected ? formElements.input.textColorFocused : formElements.input.textColor,
+      color: isSelected
+        ? formElements.input.textColorFocused
+        : isDisabled
+        ? formElements.input.disabledColor
+        : formElements.input.textColor,
       backgroundColor: isFocused
         ? !isSelected
           ? formElements.input.hoverColor
           : formElements.input.borderFocus
         : "transparent",
     },
+    cursor: isDisabled ? "default" : "pointer",
   }),
   menuList: (base: CSSObjectWithLabel) => ({
     ...base,

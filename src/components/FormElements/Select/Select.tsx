@@ -180,6 +180,7 @@ const Select: ForwardRefRenderFunction<
     onInputChange: (val: string) => setInputValue(val),
     isValidNewOption: isInputValid,
     noOptionsMessage: () => checkIfInputIsSelected && checkIfInputIsSelected(inputValue),
+    isOptionDisabled: (option: CustomOption): boolean => Boolean(option.disabled),
   };
 
   useClickAway(

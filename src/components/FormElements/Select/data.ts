@@ -6,7 +6,7 @@ export interface ColourOption {
   isDisabled?: boolean;
 }
 
-type OptionType = { label: string; value: string };
+type OptionType = { label: string; value: string; disabled?: boolean };
 
 export const colourOptions: ColourOption[] = [
   { value: "ocean", label: "Ocean", color: "#00B8D9" },
@@ -59,4 +59,5 @@ export const defaultOptions: OptionType[] = [
   { label: "C++", value: "c++" },
   { label: "C#", value: "c#" },
   { label: "Java", value: "java" },
+  { label: "Disabled option", value: "disabled", disabled: true },
 ];

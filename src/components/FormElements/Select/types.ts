@@ -5,6 +5,7 @@ export type Status = "valid" | "error";
 export type CustomOption = {
   label: string;
   value: string;
+  disabled?: boolean;
 };
 
 export type NestedCustomOption = CustomOption & {

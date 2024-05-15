@@ -431,6 +431,7 @@ export { default as CourseStoreSVG } from "./client/course-store.svg";
 export { default as RocketSVG } from "./client/rocket.svg";
 export { default as PencilBrushSVG } from "./client/pencil-brush.svg";
 export { default as SparklesSVG } from "./client/sparkles.svg";
+export { default as CreditsSVG } from "./client/credits.svg";
 
 // Exports from folders.
 // Assignments Icons

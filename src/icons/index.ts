@@ -430,6 +430,7 @@ export { default as CirclePlaySolidSVG } from "./client/circle-play-solid.svg";
 export { default as CourseStoreSVG } from "./client/course-store.svg";
 export { default as RocketSVG } from "./client/rocket.svg";
 export { default as PencilBrushSVG } from "./client/pencil-brush.svg";
+export { default as SparklesSVG } from "./client/sparkles.svg";
 
 // Exports from folders.
 // Assignments Icons

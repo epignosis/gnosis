@@ -202,7 +202,6 @@ export { default as ThaiBahtSVG } from "./currencies/thai-baht.svg";
 // Action Icons
 export { default as AddCourseIconSVG } from "./actions/add-course-icon.svg";
 export { default as AddContentSVG } from "./actions/add-content.svg";
-export { default as AdditionEventSVG } from "./actions/addition-event.svg";
 
 // F E A T U R E  S P E C I F I C  E X P O R T S
 // Units Icons
@@ -215,6 +214,8 @@ export { default as LinkedUnitSVG } from "./feature/units/linked-unit-icon.svg";
 export { default as LinkedUnitChipChildSVG } from "./feature/units/linked-unit-chip-child-icon.svg";
 export { default as LinkedUnitChipParentSVG } from "./feature/units/linked-unit-chip-parent-icon.svg";
 export { default as MultiSessionSVG } from "./feature/units/multi-session.svg";
+export { default as ClassroomLargeSVG } from "./feature/units/classroom-large.svg";
+export { default as OnlineMeetingLargeSVG } from "./feature/units/online-meeting-large.svg";
 
 // Questions Icons
 export { default as DragAndDropSVG } from "./feature/questions/drag-and-drop.svg";
@@ -223,7 +224,6 @@ export { default as MultipleChoiceSVG } from "./feature/questions/multiple-choic
 export { default as OrderingSVG } from "./feature/questions/ordering.svg";
 export { default as FillTheGapSVG } from "./feature/questions/fill-the-gaps.svg";
 export { default as RandomizedSVG } from "./feature/questions/randomized.svg";
-export { default as SquareAddSVG } from "./feature/questions/icon-add-square.svg";
 export { default as LikertSaleSVG } from "./feature/questions/likert-scale.svg";
 
 // Training Matrix Icons
@@ -432,6 +432,7 @@ export { default as RocketSVG } from "./client/rocket.svg";
 export { default as PencilBrushSVG } from "./client/pencil-brush.svg";
 export { default as SparklesSVG } from "./client/sparkles.svg";
 export { default as CreditsSVG } from "./client/credits.svg";
+export { default as SquareAddSVG } from "./client/square-add.svg";
 
 // Exports from folders.
 // Assignments Icons

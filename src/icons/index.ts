@@ -216,7 +216,6 @@ export { default as LinkedUnitChipParentSVG } from "./feature/units/linked-unit-
 export { default as MultiSessionSVG } from "./feature/units/multi-session.svg";
 export { default as ClassroomLargeSVG } from "./feature/units/classroom-large.svg";
 export { default as OnlineMeetingLargeSVG } from "./feature/units/online-meeting-large.svg";
-export { default as TrueFalseSVG } from "./feature/units/true-false.svg";
 
 // Questions Icons
 export { default as DragAndDropSVG } from "./feature/questions/drag-and-drop.svg";
@@ -226,6 +225,7 @@ export { default as OrderingSVG } from "./feature/questions/ordering.svg";
 export { default as FillTheGapSVG } from "./feature/questions/fill-the-gaps.svg";
 export { default as RandomizedSVG } from "./feature/questions/randomized.svg";
 export { default as LikertSaleSVG } from "./feature/questions/likert-scale.svg";
+export { default as TrueFalseSVG } from "./feature/questions/true-false.svg";
 
 // Training Matrix Icons
 export { default as EmptyCircleMatrixSVG } from "./feature/training-matrix/empty-circle.svg";

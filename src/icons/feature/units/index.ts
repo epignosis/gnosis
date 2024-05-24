@@ -10,4 +10,3 @@ export { default as LinkedUnitChipParentSVG } from "./linked-unit-chip-parent-ic
 export { default as MultiSessionSVG } from "./multi-session.svg";
 export { default as ClassroomLargeSVG } from "./classroom-large.svg";
 export { default as OnlineMeetingLargeSVG } from "./online-meeting-large.svg";
-export { default as TrueFalseSVG } from "./true-false.svg";

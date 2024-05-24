@@ -216,6 +216,7 @@ export { default as LinkedUnitChipParentSVG } from "./feature/units/linked-unit-
 export { default as MultiSessionSVG } from "./feature/units/multi-session.svg";
 export { default as ClassroomLargeSVG } from "./feature/units/classroom-large.svg";
 export { default as OnlineMeetingLargeSVG } from "./feature/units/online-meeting-large.svg";
+export { default as TrueFalseSVG } from "./feature/units/true-false.svg";
 
 // Questions Icons
 export { default as DragAndDropSVG } from "./feature/questions/drag-and-drop.svg";

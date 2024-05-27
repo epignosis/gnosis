@@ -225,6 +225,7 @@ export { default as OrderingSVG } from "./feature/questions/ordering.svg";
 export { default as FillTheGapSVG } from "./feature/questions/fill-the-gaps.svg";
 export { default as RandomizedSVG } from "./feature/questions/randomized.svg";
 export { default as LikertSaleSVG } from "./feature/questions/likert-scale.svg";
+export { default as TrueFalseSVG } from "./feature/questions/true-false.svg";
 
 // Training Matrix Icons
 export { default as EmptyCircleMatrixSVG } from "./feature/training-matrix/empty-circle.svg";

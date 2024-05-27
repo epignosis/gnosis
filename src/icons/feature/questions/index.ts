@@ -6,3 +6,4 @@ export { default as OrderingSVG } from "./ordering.svg";
 export { default as FillTheGapSVG } from "./fill-the-gaps.svg";
 export { default as RandomizedSVG } from "./randomized.svg";
 export { default as LikertSaleSVG } from "./likert-scale.svg";
+export { default as TrueFalseSVG } from "./true-false.svg";

@@ -66,7 +66,12 @@ export default {
 };
 
 const Template: Story<CustomSelectProps<CustomOption, boolean>> = (args) => {
-  return <Select {...args} formatOptionLabel={formatOptionLabel} />;
+  return (
+    <div style={{ display: "flex", gap: "5rem", width: "100%" }}>
+      <Select {...args} formatOptionLabel={formatOptionLabel} id="first" />
+      <Select {...args} formatOptionLabel={formatOptionLabel} id="second" />
+    </div>
+  );
 };
 
 export const Default = Template.bind({});

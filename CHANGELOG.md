@@ -1,3 +1,10 @@
+# [5.20.0](https://github.com/epignosis/gnosis/compare/v5.19.5...v5.20.0) (2024-05-28)
+
+
+### Features
+
+* **icon:** add scroll indicator icon ([#343](https://github.com/epignosis/gnosis/issues/343)) ([01cbe3c](https://github.com/epignosis/gnosis/commit/01cbe3c9411b79d076fb179a1b835f23de9878b6))
+
 ## [5.19.5](https://github.com/epignosis/gnosis/compare/v5.19.4...v5.19.5) (2024-05-27)
 
 ## [5.19.4](https://github.com/epignosis/gnosis/compare/v5.19.3...v5.19.4) (2024-05-16)

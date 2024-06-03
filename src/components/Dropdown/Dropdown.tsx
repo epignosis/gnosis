@@ -229,7 +229,7 @@ const Dropdown: FC<DropdownProps> = ({
           <Fragment key={`${index}-${item.value}`}>
             <li css={DropdownTitle({ level, isSearchable: Boolean(isSearchable) })}>
               {typeof item.label === "string" ? (
-                <Text fontSize={textSize} weight="700">
+                <Text fontSize={textSize} weight="700" title={item.label}>
                   {item.label}
                 </Text>
               ) : (
@@ -260,7 +260,9 @@ const Dropdown: FC<DropdownProps> = ({
           }
         >
           {item?.icon}
-          <Text fontSize={textSize}>{item.label}</Text>
+          <Text fontSize={textSize} title={typeof item.label === "string" ? item.label : ""}>
+            {item.label}
+          </Text>
         </li>
       );
     });

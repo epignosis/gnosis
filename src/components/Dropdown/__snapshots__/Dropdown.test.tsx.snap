@@ -31,6 +31,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           <span
             class="css-g06jqs-textContainer-textContainer"
             data-testid="text-component"
+            title="Category 1"
           >
             Category 1
           </span>
@@ -41,6 +42,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           <span
             class="css-26eo9i-textContainer-textContainer"
             data-testid="text-component"
+            title="Option 1"
           >
             Option 1
           </span>
@@ -51,6 +53,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           <span
             class="css-g06jqs-textContainer-textContainer"
             data-testid="text-component"
+            title="Category 2"
           >
             Category 2
           </span>
@@ -61,6 +64,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           <span
             class="css-26eo9i-textContainer-textContainer"
             data-testid="text-component"
+            title="Option 2"
           >
             Option 2
           </span>
@@ -71,6 +75,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           <span
             class="css-26eo9i-textContainer-textContainer"
             data-testid="text-component"
+            title="Option 3"
           >
             Option 3
           </span>
@@ -81,6 +86,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           <span
             class="css-g06jqs-textContainer-textContainer"
             data-testid="text-component"
+            title="Category 15"
           >
             Category 15
           </span>
@@ -91,6 +97,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           <span
             class="css-26eo9i-textContainer-textContainer"
             data-testid="text-component"
+            title="Option 15"
           >
             Option 15
           </span>
@@ -101,6 +108,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           <span
             class="css-26eo9i-textContainer-textContainer"
             data-testid="text-component"
+            title="Option 16"
           >
             Option 16
           </span>
@@ -111,6 +119,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           <span
             class="css-26eo9i-textContainer-textContainer"
             data-testid="text-component"
+            title="Option 5"
           >
             Option 5
           </span>

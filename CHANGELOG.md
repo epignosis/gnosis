@@ -1,3 +1,10 @@
+# [5.21.0](https://github.com/epignosis/gnosis/compare/v5.20.2...v5.21.0) (2024-06-05)
+
+
+### Features
+
+* **icons:** add new feature-lock icon svg ([#346](https://github.com/epignosis/gnosis/issues/346)) ([3591aae](https://github.com/epignosis/gnosis/commit/3591aae4874b1950eef3ecdca10ac0ed3eea3f8d))
+
 ## [5.20.2](https://github.com/epignosis/gnosis/compare/v5.20.1...v5.20.2) (2024-06-03)
 
 ## [5.20.1](https://github.com/epignosis/gnosis/compare/v5.20.0...v5.20.1) (2024-05-28)

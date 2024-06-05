@@ -1,3 +1,10 @@
+# [5.22.0](https://github.com/epignosis/gnosis/compare/v5.21.0...v5.22.0) (2024-06-05)
+
+
+### Features
+
+* **icon:** add submission icon for assignments ([#347](https://github.com/epignosis/gnosis/issues/347)) ([d92db73](https://github.com/epignosis/gnosis/commit/d92db73ce1c2a8bf6db81733247d997b5c9160b7))
+
 # [5.21.0](https://github.com/epignosis/gnosis/compare/v5.20.2...v5.21.0) (2024-06-05)
 
 

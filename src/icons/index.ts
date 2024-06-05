@@ -436,6 +436,7 @@ export { default as CreditsSVG } from "./client/credits.svg";
 export { default as SquareAddSVG } from "./client/square-add.svg";
 export { default as ScrollIndicatorSVG } from "./client/scroll-indicator-icon.svg";
 export { default as BranchesDropdownSVG } from "./client/BranchesDropdown.svg";
+export { default as FeatureLockSVG } from "./client/feature-lock.svg";
 
 // Exports from folders.
 // Assignments Icons

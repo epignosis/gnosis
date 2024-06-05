@@ -452,6 +452,7 @@ export { default as AssignmentPendingAnswer } from "./client/assignments/pending
 export { default as AssignmentPassedFilter } from "./client/assignments/passed-filter.svg";
 export { default as AssignmentNotPassedFilter } from "./client/assignments/not-passed-filter.svg";
 export { default as AssignmentPendingFilter } from "./client/assignments/pending-filter.svg";
+export { default as AssignmentSubmissionSVG } from "./client/assignments/submission.svg";
 
 // Custom Home Page Icons
 export { default as BannerSVG } from "./client/custom-homepage/icon-banner.svg";

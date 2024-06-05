@@ -162,6 +162,11 @@ export const resolveStyles = (
       color: isDisabled ? formElements.input.disabledColor : formElements.input.placeholderColor,
     };
   },
+  groupHeading: (base: CSSObjectWithLabel) => ({
+    ...base,
+    color: formElements.generic.black,
+    fontWeight: 700,
+  }),
   dropdownIndicator: (
     base: CSSObjectWithLabel,
     { selectProps }: DropdownIndicatorProps<CustomOption, boolean, GroupBase<CustomOption>>,

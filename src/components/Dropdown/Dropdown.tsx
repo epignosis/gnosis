@@ -286,6 +286,8 @@ const Dropdown: FC<DropdownProps> = ({
     // A small debounce to prevent dropdown from closing.
     hoverTimeOut = setTimeout(() => {
       setIsListOpen(false);
+      // Force the list to be reset when the dropdown is closed
+      setFilteredList(list);
     }, 100);
   };
 

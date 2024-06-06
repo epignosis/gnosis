@@ -1,3 +1,10 @@
+## [5.22.4](https://github.com/epignosis/gnosis/compare/v5.22.3...v5.22.4) (2024-06-06)
+
+
+### Bug Fixes
+
+* **table:** onMouseEnter ([#350](https://github.com/epignosis/gnosis/issues/350)) ([dbafba6](https://github.com/epignosis/gnosis/commit/dbafba674763235d07ae2276305c0303be7b765f))
+
 ## [5.22.3](https://github.com/epignosis/gnosis/compare/v5.22.2...v5.22.3) (2024-06-06)
 
 

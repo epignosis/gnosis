@@ -1,3 +1,10 @@
+## [5.22.2](https://github.com/epignosis/gnosis/compare/v5.22.1...v5.22.2) (2024-06-06)
+
+
+### Bug Fixes
+
+* **table:** use onMouseMove to potentially fix hover bug ([#349](https://github.com/epignosis/gnosis/issues/349)) ([2bffe94](https://github.com/epignosis/gnosis/commit/2bffe9451dc19994903f6c13bab34c4726745ddb))
+
 ## [5.22.1](https://github.com/epignosis/gnosis/compare/v5.22.0...v5.22.1) (2024-06-06)
 
 # [5.22.0](https://github.com/epignosis/gnosis/compare/v5.21.0...v5.22.0) (2024-06-05)

@@ -1,3 +1,10 @@
+## [5.22.3](https://github.com/epignosis/gnosis/compare/v5.22.2...v5.22.3) (2024-06-06)
+
+
+### Bug Fixes
+
+* **dropdown:** make the dropdown list to reset when mouse leave ([#351](https://github.com/epignosis/gnosis/issues/351)) ([3d77ab3](https://github.com/epignosis/gnosis/commit/3d77ab3fecbebd6743c4f936a421d59fc51258a0))
+
 ## [5.22.2](https://github.com/epignosis/gnosis/compare/v5.22.1...v5.22.2) (2024-06-06)
 
 

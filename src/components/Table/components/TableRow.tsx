@@ -65,7 +65,7 @@ const TableRow: FC<TableRowProps> = ({
     <tr
       key={`entry-${row.id}-select`}
       className={rowClassnames(isSelected, Boolean(onRowClick))}
-      onMouseOver={() => !disabled && onHoveredRowChange(row)}
+      onMouseEnter={() => !disabled && onHoveredRowChange(row)}
       onMouseLeave={() => !disabled && onHoveredRowChange(null)}
     >
       {selectable && (

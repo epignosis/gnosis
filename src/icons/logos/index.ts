@@ -2,7 +2,6 @@ export { default as ApiSVG } from "./api.svg";
 export { default as XApiSVG } from "./xapi.svg";
 export { default as IntercomSVG } from "./intercom.svg";
 export { default as BambooHrSVG } from "./bamboo-hr.svg";
-export { default as PayPalSVG } from "./paypal.svg";
 export { default as PayPalLogoSVG } from "./paypal-logo.svg";
 export { default as StripeSVG } from "./stripe.svg";
 export { default as IntegratedVideoConfSVG } from "./integrated-video-conf.svg";

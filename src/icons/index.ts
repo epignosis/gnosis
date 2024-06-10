@@ -149,7 +149,7 @@ export { default as ApiSVG } from "./logos/api.svg";
 export { default as XApiSVG } from "./logos/xapi.svg";
 export { default as IntercomSVG } from "./logos/intercom.svg";
 export { default as BambooHrSVG } from "./logos/bamboo-hr.svg";
-export { default as PayPalSVG } from "./logos/paypal.svg";
+export { default as PayPalLogoSVG } from "./logos/paypal-logo.svg";
 export { default as StripeSVG } from "./logos/stripe.svg";
 export { default as IntegratedVideoConfSVG } from "./logos/integrated-video-conf.svg";
 export { default as ZoomMeetingSVG } from "./logos/zoom-meeting.svg";

@@ -1,3 +1,5 @@
+## [5.22.5](https://github.com/epignosis/gnosis/compare/v5.22.4...v5.22.5) (2024-06-10)
+
 ## [5.22.4](https://github.com/epignosis/gnosis/compare/v5.22.3...v5.22.4) (2024-06-06)
 
 

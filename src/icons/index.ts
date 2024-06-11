@@ -214,8 +214,6 @@ export { default as LinkedUnitSVG } from "./feature/units/linked-unit-icon.svg";
 export { default as LinkedUnitChipChildSVG } from "./feature/units/linked-unit-chip-child-icon.svg";
 export { default as LinkedUnitChipParentSVG } from "./feature/units/linked-unit-chip-parent-icon.svg";
 export { default as MultiSessionSVG } from "./feature/units/multi-session.svg";
-export { default as ClassroomLargeSVG } from "./feature/units/classroom-large.svg";
-export { default as OnlineMeetingLargeSVG } from "./feature/units/online-meeting-large.svg";
 
 // Questions Icons
 export { default as DragAndDropSVG } from "./feature/questions/drag-and-drop.svg";
@@ -437,6 +435,8 @@ export { default as SquareAddSVG } from "./client/square-add.svg";
 export { default as ScrollIndicatorSVG } from "./client/scroll-indicator-icon.svg";
 export { default as BranchesDropdownSVG } from "./client/BranchesDropdown.svg";
 export { default as FeatureLockSVG } from "./client/feature-lock.svg";
+export { default as HouseUserSVG } from "./client/house-user.svg";
+export { default as CalendarUsersSVG } from "./client/calendar-users.svg";
 
 // Exports from folders.
 // Assignments Icons

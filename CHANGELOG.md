@@ -1,3 +1,10 @@
+# [5.23.0](https://github.com/epignosis/gnosis/compare/v5.22.7...v5.23.0) (2024-06-11)
+
+
+### Features
+
+* **drawer:** close on escape ([#356](https://github.com/epignosis/gnosis/issues/356)) ([4d74643](https://github.com/epignosis/gnosis/commit/4d74643155ee7aaf758173808bbc6a97cd15cb5c))
+
 ## [5.22.7](https://github.com/epignosis/gnosis/compare/v5.22.6...v5.22.7) (2024-06-11)
 
 ## [5.22.6](https://github.com/epignosis/gnosis/compare/v5.22.5...v5.22.6) (2024-06-10)

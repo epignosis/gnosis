@@ -79,6 +79,21 @@ const Drawer: FC<DrawerProps> & DrawerCompoundProps = (props) => {
     "placement-right": placement === "right",
     [dialogClassName ?? ""]: dialogClassName,
   });
+
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && isOpen) {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, [isOpen, onClose]);
+
   const drawer = (
     <LazyMotion features={domAnimation}>
       <AnimatePresence>

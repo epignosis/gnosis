@@ -99,6 +99,7 @@ export { default as GroupsSVG } from "./legacy/groups.svg";
 export { default as PaletteSVG } from "./legacy/palette.svg";
 export { default as UnitNotSelectedSVG } from "./legacy/unit-not-selected.svg";
 export { default as RadioSelectedSVG } from "./legacy/radio-selected.svg";
+export { default as RadioSelectedFilledSVG } from "./legacy/radio-selected-filled.svg";
 export { default as GripDotsSVG } from "./legacy/grip-dots.svg";
 export { default as TextSVG } from "./legacy/text.svg";
 export { default as IconEmptyStateSVG } from "./legacy/empty-state.svg";

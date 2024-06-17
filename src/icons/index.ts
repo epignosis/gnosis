@@ -14,6 +14,7 @@ export { default as PlayVideoSVG } from "./legacy/play-video.svg";
 export { default as PlayUnitSVG } from "./legacy/play-unit.svg";
 export { default as UnitCompleteSVG } from "./legacy/unit-complete.svg";
 export { default as UnitPendingSVG } from "./legacy/unit-pending.svg";
+export { default as UnitPendingFilledSVG } from "./legacy/unit-pending-filled.svg";
 export { default as UnitAssignmentSVG } from "./legacy/unit-assignment.svg";
 export { default as UnitAudioSVG } from "./legacy/unit-audio.svg";
 export { default as UnitFlashSVG } from "./legacy/unit-flash.svg";

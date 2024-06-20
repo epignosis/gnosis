@@ -464,7 +464,6 @@ export { default as ReferralPendingSVG } from "./client/referral/referral-pendin
 export { default as ReferralTimeSVG } from "./client/referral/referral-time.svg";
 export { default as ReferralIconSVG } from "./client/referral/referral.svg";
 
-
 // Custom Home Page Icons
 export { default as BannerSVG } from "./client/custom-homepage/icon-banner.svg";
 export { default as TextSVG_duplicate } from "./client/custom-homepage/icon-text.svg"; // Utils->helpers->view.tsx, customHomePage/constants.tsx

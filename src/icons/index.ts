@@ -456,14 +456,6 @@ export { default as AssignmentNotPassedFilter } from "./client/assignments/not-p
 export { default as AssignmentPendingFilter } from "./client/assignments/pending-filter.svg";
 export { default as AssignmentSubmissionSVG } from "./client/assignments/submission.svg";
 
-// Referral Icons
-export { default as ReferralClaimableSVG } from "./client/referral/referral-claimable.svg";
-export { default as ReferralClaimedSVG } from "./client/referral/referral-claimed.svg";
-export { default as ReferralDanceSVG } from "./client/referral/referral-dance.svg";
-export { default as ReferralPendingSVG } from "./client/referral/referral-pending.svg";
-export { default as ReferralTimeSVG } from "./client/referral/referral-time.svg";
-export { default as ReferralIconSVG } from "./client/referral/referral.svg";
-
 // Custom Home Page Icons
 export { default as BannerSVG } from "./client/custom-homepage/icon-banner.svg";
 export { default as TextSVG_duplicate } from "./client/custom-homepage/icon-text.svg"; // Utils->helpers->view.tsx, customHomePage/constants.tsx

@@ -1,3 +1,10 @@
+## [5.23.5](https://github.com/epignosis/gnosis/compare/v5.23.4...v5.23.5) (2024-06-21)
+
+
+### Reverts
+
+* Revert "chore(icons.tsx) add referral icons (#361)" (#363) ([373e880](https://github.com/epignosis/gnosis/commit/373e88017ff08a4b373549c8ba6ef78ecb99ba80)), closes [#361](https://github.com/epignosis/gnosis/issues/361) [#363](https://github.com/epignosis/gnosis/issues/363)
+
 ## [5.23.4](https://github.com/epignosis/gnosis/compare/v5.23.3...v5.23.4) (2024-06-17)
 
 ## [5.23.3](https://github.com/epignosis/gnosis/compare/v5.23.2...v5.23.3) (2024-06-14)

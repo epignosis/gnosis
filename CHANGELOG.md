@@ -1,3 +1,10 @@
+# [5.24.0](https://github.com/epignosis/gnosis/compare/v5.23.6...v5.24.0) (2024-06-26)
+
+
+### Features
+
+* add ai icon to legacy icons ([#365](https://github.com/epignosis/gnosis/issues/365)) ([85df736](https://github.com/epignosis/gnosis/commit/85df7367c5b0ffdf6c3976d24c396cea8bcb4ccd))
+
 ## [5.23.6](https://github.com/epignosis/gnosis/compare/v5.23.5...v5.23.6) (2024-06-21)
 
 ## [5.23.5](https://github.com/epignosis/gnosis/compare/v5.23.4...v5.23.5) (2024-06-21)

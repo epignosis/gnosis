@@ -3,7 +3,6 @@ import { colors } from "./colors";
 import {
   alert,
   badge,
-  breadcrumb,
   button,
   card,
   chip,
@@ -40,7 +39,6 @@ const defaultTheme = {
   typeScaleSizes,
   alert,
   badge,
-  breadcrumb,
   button,
   card,
   chip,

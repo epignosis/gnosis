@@ -57,3 +57,6 @@ export const generateTypeScaleSizes = (typography: TypeScaleConfig): Readonly<Ty
 
   return typeScale;
 };
+
+// Generate the type scale sizes based on the default configuration.
+export const typeScale = generateTypeScaleSizes(DEFAULT_TYPESCALE_CONFIG);

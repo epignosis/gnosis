@@ -27,6 +27,9 @@ export { default as Dropdown } from "./components/Dropdown/Dropdown";
 export { default as Heading } from "./components/Heading/Heading";
 export { default as Text } from "./components/Text/Text";
 
+// Typography configurations
+export { typeScale } from "./theme/utils/typography";
+
 //  Form elements
 export { default as Label } from "./components/FormElements/Label/Label";
 export { default as Input } from "./components/FormElements/Input/Input";

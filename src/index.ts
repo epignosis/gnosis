@@ -5,7 +5,6 @@ export { default as Loader } from "./components/Loaders/Loader";
 export { default as Chip } from "./components/Chip/Chip";
 export { default as Avatar } from "./components/Avatar/Avatar";
 export { default as Tag } from "./components/Tag/Tag";
-export { default as AspectRatio } from "./components/AspectRatio/AspectRatio";
 export { default as Badge } from "./components/Badge/Badge";
 export { default as Alert } from "./components/Alert/Alert";
 export { default as ProgressBar } from "./components/ProgressBar/ProgressBar";

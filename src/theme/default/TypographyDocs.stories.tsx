@@ -28,7 +28,7 @@ export default {
 
 const fontUsedFor: { [key: string]: string } = {
   "2xs": ["tooltips", "tags", "expiration text on course cards"].join(", "),
-  xs: ["categories on course cards", "breadcrumb", "percentage on progress bar"].join(", "),
+  xs: ["categories on course cards", "percentage on progress bar"].join(", "),
   sm: [
     "default body text",
     "left nav bar",

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import AspectRatio from "../AspectRatio/AspectRatio";
+import AspectRatio from "./AspectRatio/AspectRatio";
 import { courseHeaderContainer } from "./styles";
 
 export type CardHeaderProps = FC<{

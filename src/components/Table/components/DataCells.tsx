@@ -28,6 +28,7 @@ const DataCells: FC<DataCellsProps> = ({
         return (
           <Cell
             key={`entry-${row.id}-${accessor}`}
+            data-testid={`${accessor}-cell`}
             maxWidth={maxWidth}
             windowWidth={windowWidth}
             windowHeight={windowHeight}

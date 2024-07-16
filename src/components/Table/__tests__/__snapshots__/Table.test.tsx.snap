@@ -65,37 +65,23 @@ exports[`<Table> matches snapshot 1`] = `
           class=""
         >
           <td
+            data-testid="header1-cell"
             style="max-width: auto;"
           />
           <td
+            data-testid="header2-cell"
             style="max-width: auto;"
           />
           <td
+            data-testid="header3-cell"
             style="max-width: auto;"
           />
           <td
+            data-testid="header4-cell"
             style="max-width: auto;"
           />
           <td
-            style="max-width: auto;"
-          />
-        </tr>
-        <tr
-          class=""
-        >
-          <td
-            style="max-width: auto;"
-          />
-          <td
-            style="max-width: auto;"
-          />
-          <td
-            style="max-width: auto;"
-          />
-          <td
-            style="max-width: auto;"
-          />
-          <td
+            data-testid="header5-cell"
             style="max-width: auto;"
           />
         </tr>
@@ -103,18 +89,23 @@ exports[`<Table> matches snapshot 1`] = `
           class=""
         >
           <td
+            data-testid="header1-cell"
             style="max-width: auto;"
           />
           <td
+            data-testid="header2-cell"
             style="max-width: auto;"
           />
           <td
+            data-testid="header3-cell"
             style="max-width: auto;"
           />
           <td
+            data-testid="header4-cell"
             style="max-width: auto;"
           />
           <td
+            data-testid="header5-cell"
             style="max-width: auto;"
           />
         </tr>
@@ -122,18 +113,47 @@ exports[`<Table> matches snapshot 1`] = `
           class=""
         >
           <td
+            data-testid="header1-cell"
             style="max-width: auto;"
           />
           <td
+            data-testid="header2-cell"
             style="max-width: auto;"
           />
           <td
+            data-testid="header3-cell"
             style="max-width: auto;"
           />
           <td
+            data-testid="header4-cell"
             style="max-width: auto;"
           />
           <td
+            data-testid="header5-cell"
+            style="max-width: auto;"
+          />
+        </tr>
+        <tr
+          class=""
+        >
+          <td
+            data-testid="header1-cell"
+            style="max-width: auto;"
+          />
+          <td
+            data-testid="header2-cell"
+            style="max-width: auto;"
+          />
+          <td
+            data-testid="header3-cell"
+            style="max-width: auto;"
+          />
+          <td
+            data-testid="header4-cell"
+            style="max-width: auto;"
+          />
+          <td
+            data-testid="header5-cell"
             style="max-width: auto;"
           />
         </tr>

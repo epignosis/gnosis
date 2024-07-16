@@ -60,9 +60,11 @@ const Result: FC<ResultProps> = ({
       {!hideInfo && (
         <div className="body">
           <>
-            <Heading as="h3">{title}</Heading>
+            <Heading as="h3" data-testid="result-header">
+              {title}
+            </Heading>
             {info && (
-              <Text fontSize={size} as="p">
+              <Text fontSize={size} as="p" data-testid="result-info">
                 {info}
               </Text>
             )}

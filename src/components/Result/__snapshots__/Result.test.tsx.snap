@@ -18,12 +18,13 @@ exports[`<Result/> matches snapshot 1`] = `
     >
       <h3
         class="css-6t4vgf-headingContainer-headingContainer"
+        data-testid="result-header"
       >
         My title
       </h3>
       <p
         class="css-1jr9658-textContainer-textContainer"
-        data-testid="text-component"
+        data-testid="result-info"
       >
         My info.
       </p>

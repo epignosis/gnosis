@@ -1,3 +1,10 @@
+# [5.25.0](https://github.com/epignosis/gnosis/compare/v5.24.1...v5.25.0) (2024-07-16)
+
+
+### Features
+
+* add data-testids for table row cells ([#366](https://github.com/epignosis/gnosis/issues/366)) ([b01cb79](https://github.com/epignosis/gnosis/commit/b01cb79f66042035eefd7b01c006b3ac2b20df49))
+
 ## [5.24.1](https://github.com/epignosis/gnosis/compare/v5.24.0...v5.24.1) (2024-07-12)
 
 # [5.24.0](https://github.com/epignosis/gnosis/compare/v5.23.6...v5.24.0) (2024-06-26)

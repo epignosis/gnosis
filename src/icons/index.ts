@@ -90,7 +90,6 @@ export { default as EditTableSVG } from "./legacy/edit-table.svg";
 export { default as EditSVG } from "./legacy/edit.svg";
 export { default as ExportDataSVG } from "./legacy/export-data.svg";
 export { default as GripLinesSVG } from "./legacy/grip-lines.svg";
-export { default as ImportDataSVG } from "./legacy/import-data.svg";
 export { default as ShowTourSVG } from "./legacy/show-tour.svg";
 export { default as LeavePortalSVG } from "./legacy/leave-portal.svg";
 export { default as GamepadSVG } from "./legacy/gamepad.svg";
@@ -440,6 +439,7 @@ export { default as BranchesDropdownSVG } from "./client/BranchesDropdown.svg";
 export { default as FeatureLockSVG } from "./client/feature-lock.svg";
 export { default as HouseUserSVG } from "./client/house-user.svg";
 export { default as CalendarUsersSVG } from "./client/calendar-users.svg";
+export { default as ImportDataSVG } from "./client/import-data.svg";
 
 // Exports from folders.
 // Assignments Icons

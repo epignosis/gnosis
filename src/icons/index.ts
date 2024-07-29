@@ -67,7 +67,6 @@ export { default as ShowIconSVG } from "./legacy/show-icon.svg";
 export { default as BadgeIconSVG } from "./legacy/badge-icon.svg";
 export { default as FavoriteOutlinedSVG } from "./legacy/favorite-outlined.svg";
 export { default as FavoriteFilledSVG } from "./legacy/favorite-filled.svg";
-export { default as LinkedInSVG } from "./legacy/linkedin-icon.svg";
 export { default as UserOutlinedSVG } from "./legacy/user-outlined.svg";
 export { default as CheckCircledSVG } from "./legacy/check-circled.svg";
 export { default as ExclamationCircledSVG } from "./legacy/exclamation-circled.svg";
@@ -174,9 +173,10 @@ export { default as SlackSVG } from "./logos/slack.svg";
 export { default as GoogleSVG } from "./social/google.svg";
 export { default as FacebookSVG } from "./social/facebook.svg";
 export { default as LinkedinSVG } from "./social/linkedin.svg";
+export { default as TwitterSVG } from "./social/twitter.svg";
 export { default as FacebookLogoSVG } from "./social/facebook-logo.svg";
 export { default as TwitterLogoSVG } from "./social/twitter-logo.svg";
-export { default as TwitterSVG } from "./social/twitter.svg";
+export { default as LinkedinLogoSVG } from "./social/linkedin-logo.svg";
 
 // Currencies Icons
 export { default as AustralianDollarSVG } from "./currencies/australian-dollar.svg";

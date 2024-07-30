@@ -64,6 +64,7 @@ const Select: ForwardRefRenderFunction<
     isInputValid,
     checkIfInputIsSelected,
     closeMenuOnSelect,
+    menuMaxWidth,
     ...rest
   } = props;
   const hasLabel = Boolean(label);
@@ -96,7 +97,7 @@ const Select: ForwardRefRenderFunction<
     (tooltipContent && typeof tooltipContent === "string" && tooltipContent !== "") ||
     isValidElement(tooltipContent);
 
-  const styles = resolveStyles(size, hasInnerSearch);
+  const styles = resolveStyles({ size, hasInnerSearch, menuMaxWidth });
 
   const formatCreateLabel = (inputValue: string) => (
     <div>

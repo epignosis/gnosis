@@ -146,14 +146,28 @@ export const customMenuList = ({
   }
 `;
 
-export const resolveStyles = (
-  size: string,
-  hasInnerSearch: boolean,
-): StylesConfig<CustomOption> => ({
+export const resolveStyles = ({
+  size,
+  hasInnerSearch,
+  menuMaxWidth,
+}: {
+  size: string;
+  hasInnerSearch: boolean;
+  menuMaxWidth?: number;
+}): StylesConfig<CustomOption> => ({
   menu: (base: CSSObjectWithLabel) => {
+    const menuMaxWidthStyles = menuMaxWidth
+      ? {
+          width: "fit-content",
+          maxWidth: menuMaxWidth,
+          minWidth: "100%",
+        }
+      : {};
+
     return {
       ...base,
       zIndex: 1060,
+      ...menuMaxWidthStyles,
     };
   },
   placeholder: (

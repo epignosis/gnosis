@@ -65,6 +65,7 @@ export type CustomSelectProps<
   checkIfInputIsSelected?: (inputValue: string) => string;
   tooltipContent?: string | JSX.Element;
   countOptionsForInnerSearch?: number;
+  menuMaxWidth?: number;
 };
 
 export type CustomMenuListProps<

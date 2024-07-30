@@ -168,6 +168,7 @@ export { default as ZapierSVG } from "./logos/zapier.svg";
 export { default as SalesforceSVG } from "./logos/salesforce.svg";
 export { default as ShopifySVG } from "./logos/shopify.svg";
 export { default as SlackSVG } from "./logos/slack.svg";
+export { default as GoogleTagManagerSVG } from "./logos/google-tag-manager.svg";
 
 // Social Media Icons
 export { default as GoogleSVG } from "./social/google.svg";

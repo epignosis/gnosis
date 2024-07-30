@@ -20,3 +20,4 @@ export { default as ZapierSVG } from "./zapier.svg";
 export { default as SalesforceSVG } from "./salesforce.svg";
 export { default as ShopifySVG } from "./shopify.svg";
 export { default as SlackSVG } from "./slack.svg";
+export { default as GoogleTagManagerSVG } from "./google-tag-manager.svg";

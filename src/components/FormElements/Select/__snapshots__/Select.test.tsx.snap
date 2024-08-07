@@ -98,7 +98,7 @@ exports[`<Select /> matches snapshot 1`] = `
           id="react-select-3-listbox"
         >
           <div
-            class="css-ci9plw-customMenuList-customMenuList"
+            class="css-1blbs23-customMenuList-customMenuList"
           >
             <div
               class=" css-mpsorv-MenuList"

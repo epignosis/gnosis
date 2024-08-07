@@ -172,6 +172,7 @@ export const AsyncSelect: Story<CustomSelectProps<CustomOption, boolean>> = (arg
       <Select
         {...args}
         options={options}
+        showMoreButtonText="Show more"
         type="async"
         asyncOptions={{
           onAsyncSearchChange,

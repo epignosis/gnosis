@@ -140,6 +140,10 @@ export const customMenuList = ({
   .text-container {
     margin-top: 1rem;
   }
+
+  .show-more-container {
+    width: 100%;
+  }
 `;
 
 export const resolveStyles = (

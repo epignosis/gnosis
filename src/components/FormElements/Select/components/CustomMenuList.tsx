@@ -6,6 +6,7 @@ import { searchInputContainer } from "../../Input/styles";
 import { customMenuList } from "../styles";
 import { CustomMenuListProps, CustomOption } from "../types";
 import Loader from "../../../Loaders/Loader";
+import Button from "../../../Button/Button";
 
 const { MenuList } = components;
 
@@ -20,12 +21,17 @@ const CustomMenuList: FC<CustomMenuListProps<CustomOption, boolean>> = (customMe
     asyncOptions,
     type,
     menuIsOpen,
+    showMoreButtonText,
+    shouldShowMenuList,
+    handleShowMore,
   } = selectProps;
 
   const { onAsyncSearchChange, status, initialText = "" } = asyncOptions ?? {};
   const isAsync = type === "async";
   const showLoading = isAsync ? Boolean(status?.isLoading) : false;
-  const showMenuList = isAsync ? Boolean(!status?.isLoading && inputValue) : menuIsOpen;
+  const showMenuList = isAsync
+    ? Boolean(!status?.isLoading && inputValue) || shouldShowMenuList
+    : menuIsOpen;
   const showInitialText = isAsync ? Boolean(!status?.isLoading && !inputValue) : false;
   const shouldFocus = Boolean(hasInnerSearch);
 
@@ -92,6 +98,11 @@ const CustomMenuList: FC<CustomMenuListProps<CustomOption, boolean>> = (customMe
       )}
       {showMenuList && <MenuList {...props} selectProps={selectProps} />}
       {showInitialText && <div className="text-container">{initialText}</div>}
+      {Boolean(showMoreButtonText) && (
+        <Button variant="ghost" className="show-more-container" onClick={handleShowMore}>
+          {showMoreButtonText}
+        </Button>
+      )}
     </div>
   );
 };

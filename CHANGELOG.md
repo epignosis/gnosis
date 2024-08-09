@@ -1,3 +1,15 @@
+# [5.26.0](https://github.com/epignosis/gnosis/compare/v5.25.6...v5.26.0) (2024-08-09)
+
+
+### Bug Fixes
+
+* **table:** pass unique id to avoid bug ([#377](https://github.com/epignosis/gnosis/issues/377)) ([8526827](https://github.com/epignosis/gnosis/commit/85268275b4fd16c5a5ae67627e96e23dab0945fe))
+
+
+### Features
+
+* **select:** improvements ([#376](https://github.com/epignosis/gnosis/issues/376)) ([ec6eb96](https://github.com/epignosis/gnosis/commit/ec6eb965c091e16c0de2063088e1ad39b959ca12))
+
 ## [5.25.6](https://github.com/epignosis/gnosis/compare/v5.25.5...v5.25.6) (2024-07-31)
 
 ## [5.25.5](https://github.com/epignosis/gnosis/compare/v5.25.4...v5.25.5) (2024-07-30)

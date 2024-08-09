@@ -29,6 +29,7 @@ const Header: FC<ChildrenProps> = ({
   dispatch,
   onSortingChanged,
   disabled = false,
+  id,
 }) => {
   const { rows, columns, selected, sorting } = state;
   const [columnsSorting, setColumnsSorting] = useState({});
@@ -93,7 +94,8 @@ const Header: FC<ChildrenProps> = ({
         {selectable && (
           <Cell as="th" key={`select-all-${isSelectAllChecked}`} className="selectable-cell">
             <Checkbox
-              id="select-all"
+              key={`select-all-${isSelectAllChecked} - ${id}`}
+              id={`select-all-${isSelectAllChecked} - ${id}`}
               name="select-all"
               value="all"
               onChange={handleToggleSelectAll}

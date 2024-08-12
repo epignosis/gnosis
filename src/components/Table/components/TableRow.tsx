@@ -19,6 +19,7 @@ const checkboxWrapperClassnames = (autohide: boolean): string =>
   });
 
 export type TableRowProps = {
+  rowId: string;
   row: Row;
   columns: Column[];
   windowWidth: number;
@@ -33,6 +34,7 @@ export type TableRowProps = {
 };
 
 const TableRow: FC<TableRowProps> = ({
+  rowId,
   row,
   columns,
   windowWidth,
@@ -74,9 +76,10 @@ const TableRow: FC<TableRowProps> = ({
           className={checkboxWrapperClassnames(Boolean(autohide))}
         >
           <Checkbox
-            id={`entry-${row.id}`}
-            name={`entry-${row.id}`}
-            value={`entry-${row.id}`}
+            id={rowId}
+            key={rowId}
+            name={rowId}
+            value={rowId}
             checked={isSelected}
             onChange={handleRowSelection}
             disabled={disabled}

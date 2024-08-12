@@ -6,6 +6,7 @@ import { ChildrenProps } from "../Table";
 import TableRow from "./TableRow";
 
 const Body: FC<ChildrenProps> = ({
+  id: tableId,
   selectable,
   autohide = false,
   state,
@@ -46,7 +47,8 @@ const Body: FC<ChildrenProps> = ({
 
             return (
               <TableRow
-                key={`entry-${row.id}-select`}
+                rowId={`${tableId}-entry-${row.id}-select`}
+                key={`${tableId}-entry-${row.id}-select`}
                 row={row}
                 columns={columns}
                 windowWidth={windowWidth}

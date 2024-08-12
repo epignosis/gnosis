@@ -1,3 +1,10 @@
+## [5.26.1](https://github.com/epignosis/gnosis/compare/v5.26.0...v5.26.1) (2024-08-12)
+
+
+### Bug Fixes
+
+* **checkbox:** add unique id's ([#378](https://github.com/epignosis/gnosis/issues/378)) ([5511e8a](https://github.com/epignosis/gnosis/commit/5511e8a93dc99435782e5e59a268a71bebc7defc))
+
 # [5.26.0](https://github.com/epignosis/gnosis/compare/v5.25.6...v5.26.0) (2024-08-09)
 
 

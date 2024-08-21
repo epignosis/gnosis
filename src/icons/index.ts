@@ -106,6 +106,8 @@ export { default as GroupsFilterSVG } from "./legacy/groups-filter.svg";
 export { default as BranchesFilterSVG } from "./legacy/branches-filter.svg";
 export { default as UserFilterSVG } from "./legacy/user-avatar.svg";
 export { default as AIIconSVG } from "./legacy/ai-icon.svg";
+export { default as AIAssistantIconSVG } from "./legacy/ai-assistant-icon.svg";
+export { default as AIMessageIconSVG } from "./legacy/ai-message-icon.svg";
 
 // Arrow Icons
 export { default as BackIconSVG } from "./arrows/back-icon.svg";

@@ -1,3 +1,10 @@
+## [5.26.3](https://github.com/epignosis/gnosis/compare/v5.26.2...v5.26.3) (2024-08-21)
+
+
+### Bug Fixes
+
+* **icons:** remove width/height from eve icons ([#380](https://github.com/epignosis/gnosis/issues/380)) ([e729c13](https://github.com/epignosis/gnosis/commit/e729c13ed6407df8d20b13c2a23e3c78304100e9))
+
 ## [5.26.2](https://github.com/epignosis/gnosis/compare/v5.26.1...v5.26.2) (2024-08-21)
 
 ## [5.26.1](https://github.com/epignosis/gnosis/compare/v5.26.0...v5.26.1) (2024-08-12)

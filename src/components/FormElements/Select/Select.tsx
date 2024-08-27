@@ -20,12 +20,13 @@ import {
 } from "react-select";
 import { SerializedStyles } from "@emotion/react";
 import { useClickAway } from "ahooks";
+import { AddOperatorSVG, InfoCircledSVG } from "../../../icons";
 import Label from "../Label/Label";
 import Tooltip from "../../Tooltip/Tooltip";
-import { AddOperatorSVG, InfoCircledSVG } from "../../../icons";
 import CustomValueContainer from "./components/CustomValueContainer";
-import { resolveStyles, selectContainer } from "./styles";
+import CustomOptionComponent from "./components/CustomOption";
 import CustomMenuList from "./components/CustomMenuList";
+import { resolveStyles, selectContainer } from "./styles";
 import { CustomOption, CustomSelectProps } from "./types";
 import {
   MAX_MENU_HEIGHT,
@@ -64,6 +65,7 @@ const Select: ForwardRefRenderFunction<
     isInputValid,
     checkIfInputIsSelected,
     closeMenuOnSelect,
+    menuMaxWidth,
     ...rest
   } = props;
   const hasLabel = Boolean(label);
@@ -96,7 +98,7 @@ const Select: ForwardRefRenderFunction<
     (tooltipContent && typeof tooltipContent === "string" && tooltipContent !== "") ||
     isValidElement(tooltipContent);
 
-  const styles = resolveStyles(size, hasInnerSearch);
+  const styles = resolveStyles({ size, hasInnerSearch, menuMaxWidth });
 
   const formatCreateLabel = (inputValue: string) => (
     <div>
@@ -157,6 +159,7 @@ const Select: ForwardRefRenderFunction<
           ValueContainerProps<CustomOption, boolean, GroupBase<CustomOption>>
         >,
       ) => CustomValueContainer({ ...props, isFocused }),
+      Option: CustomOptionComponent,
     },
     formatCreateLabel,
     isSearchable: false,

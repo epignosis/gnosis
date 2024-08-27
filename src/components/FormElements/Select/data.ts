@@ -61,3 +61,25 @@ export const defaultOptions: OptionType[] = [
   { label: "Java", value: "java" },
   { label: "Disabled option", value: "disabled", disabled: true },
 ];
+
+export const menuMaxWidthOptions: OptionType[] = [
+  {
+    label:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+    value: "lorem",
+  },
+  { label: "JavaScript is the best in the world", value: "js" },
+  { label: "TypeScript", value: "ts" },
+  { label: "GoLang", value: "go" },
+  { label: "Python", value: "python" },
+  { label: "PHP", value: "php" },
+  { label: "C++", value: "c++" },
+  { label: "C#", value: "c#" },
+  { label: "Java", value: "java" },
+  {
+    label:
+      "Disabled Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+    value: "lorem disabled",
+    disabled: true,
+  },
+];

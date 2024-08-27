@@ -21,6 +21,7 @@ const Tooltip: FC<TooltipProps> = ({
 
   return (
     <Tippy
+      aria={{ expanded: false }}
       placement={placement}
       interactive={interactive}
       appendTo={document.body}

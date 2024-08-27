@@ -9,6 +9,7 @@ const CustomOptionComponent: FC<OptionProps<CustomOption>> = (props) => {
 
   const { isDisabled, data } = props;
   const { label } = data;
+  const isTooltipDisabled = isDisabled || !isOverflowActive;
 
   useEffect(() => {
     if (optionRef.current) {
@@ -19,7 +20,7 @@ const CustomOptionComponent: FC<OptionProps<CustomOption>> = (props) => {
 
   return (
     <components.Option {...props}>
-      <Tooltip content={label} disabled={isDisabled || !isOverflowActive}>
+      <Tooltip content={label} disabled={isTooltipDisabled}>
         <div className="custom-option" ref={optionRef}>
           {label}
         </div>

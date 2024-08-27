@@ -21,6 +21,7 @@ exports[`<Chip /> matches snapshot 1`] = `
     </button>
     <div
       aria-expanded="false"
+      role="tooltip"
     >
       <div
         class="has-overflow"

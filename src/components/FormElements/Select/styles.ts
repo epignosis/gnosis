@@ -298,6 +298,12 @@ export const resolveStyles = ({
         : "transparent",
     },
     cursor: isDisabled ? "default" : "pointer",
+    ".custom-option": {
+      wordBreak: "break-word",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap",
+    },
   }),
   menuList: (base: CSSObjectWithLabel) => ({
     ...base,

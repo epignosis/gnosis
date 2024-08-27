@@ -105,27 +105,51 @@ exports[`<Select /> matches snapshot 1`] = `
             >
               <div
                 aria-disabled="false"
-                class="option-md css-1haxlpt-option"
+                class="option-md css-bi1k7u-option"
                 id="react-select-3-option-0"
                 tabindex="-1"
               >
-                name
+                <div
+                  aria-expanded="false"
+                >
+                  <div
+                    class="custom-option"
+                  >
+                    name
+                  </div>
+                </div>
               </div>
               <div
                 aria-disabled="false"
-                class="option-md css-8anid-option"
+                class="option-md css-iovxfg-option"
                 id="react-select-3-option-1"
                 tabindex="-1"
               >
-                surname
+                <div
+                  aria-expanded="false"
+                >
+                  <div
+                    class="custom-option"
+                  >
+                    surname
+                  </div>
+                </div>
               </div>
               <div
                 aria-disabled="false"
-                class="option-md css-8anid-option"
+                class="option-md css-iovxfg-option"
                 id="react-select-3-option-2"
                 tabindex="-1"
               >
-                age
+                <div
+                  aria-expanded="false"
+                >
+                  <div
+                    class="custom-option"
+                  >
+                    age
+                  </div>
+                </div>
               </div>
             </div>
           </div>

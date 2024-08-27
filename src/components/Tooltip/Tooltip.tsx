@@ -4,6 +4,7 @@ import { tooltipContainer } from "./styles";
 
 export type TooltipProps = TippyProps & {
   as?: "div" | "span";
+  parentAriaRole?: string;
   content: TippyProps["content"];
   maxWidth?: number;
 };
@@ -11,6 +12,7 @@ export type TooltipProps = TippyProps & {
 const Tooltip: FC<TooltipProps> = ({
   children,
   content,
+  parentAriaRole,
   as = "div",
   placement = "top",
   maxWidth = 350,
@@ -32,7 +34,7 @@ const Tooltip: FC<TooltipProps> = ({
       )}
       {...rest}
     >
-      <Tag>{children}</Tag>
+      <Tag {...(parentAriaRole ? { role: parentAriaRole } : {})}>{children}</Tag>
     </Tippy>
   );
 };

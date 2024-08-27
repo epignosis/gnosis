@@ -111,6 +111,7 @@ exports[`<Select /> matches snapshot 1`] = `
               >
                 <div
                   aria-expanded="false"
+                  role="tooltip"
                 >
                   <div
                     class="custom-option"
@@ -127,6 +128,7 @@ exports[`<Select /> matches snapshot 1`] = `
               >
                 <div
                   aria-expanded="false"
+                  role="tooltip"
                 >
                   <div
                     class="custom-option"
@@ -143,6 +145,7 @@ exports[`<Select /> matches snapshot 1`] = `
               >
                 <div
                   aria-expanded="false"
+                  role="tooltip"
                 >
                   <div
                     class="custom-option"

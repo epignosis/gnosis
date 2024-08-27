@@ -35,7 +35,7 @@ export type TooltipProps = TippyProps & {
 const Tooltip: FC<TooltipProps> = ({
   children,
   content,
-  parentAriaRole,
+  parentAriaRole = "tooltip",
   as = "div",
   placement = "top",
   maxWidth = 350,

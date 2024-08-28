@@ -10,7 +10,10 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
     data-testid="mask"
     style="opacity: 0;"
   />
-  <div
+  <dialog
+    aria-expanded="true"
+    aria-hidden="false"
+    aria-modal="true"
     class="dialog placement-left"
     id="drawer-dialog"
     style="opacity: 0; transform: none;"
@@ -34,7 +37,7 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
         />
       </button>
     </header>
-  </div>
+  </dialog>
 </div>
 `;
 
@@ -49,7 +52,10 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
     data-testid="mask"
     style="opacity: 0;"
   />
-  <div
+  <dialog
+    aria-expanded="true"
+    aria-hidden="false"
+    aria-modal="true"
     class="dialog placement-left"
     id="drawer-dialog"
     style="opacity: 0; transform: none;"
@@ -76,7 +82,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
     >
       Test footer
     </footer>
-  </div>
+  </dialog>
 </div>
 `;
 
@@ -90,7 +96,10 @@ exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
     data-testid="mask"
     style="opacity: 0;"
   />
-  <div
+  <dialog
+    aria-expanded="true"
+    aria-hidden="false"
+    aria-modal="true"
     class="dialog placement-left"
     id="drawer-dialog"
     style="opacity: 0; transform: none;"
@@ -106,7 +115,7 @@ exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
         Title
       </h2>
     </header>
-  </div>
+  </dialog>
 </div>
 `;
 
@@ -120,7 +129,10 @@ exports[`<Drawer/> matches snapshot with right placement 1`] = `
     data-testid="mask"
     style="opacity: 0;"
   />
-  <div
+  <dialog
+    aria-expanded="true"
+    aria-hidden="false"
+    aria-modal="true"
     class="dialog placement-right"
     id="drawer-dialog"
     style="opacity: 0; transform: translateX(100%) translateZ(0);"
@@ -136,7 +148,7 @@ exports[`<Drawer/> matches snapshot with right placement 1`] = `
         Title
       </h2>
     </header>
-  </div>
+  </dialog>
 </div>
 `;
 
@@ -150,7 +162,10 @@ exports[`<Drawer/> matches snapshot without header and footer 1`] = `
     data-testid="mask"
     style="opacity: 0;"
   />
-  <div
+  <dialog
+    aria-expanded="true"
+    aria-hidden="false"
+    aria-modal="true"
     class="dialog placement-left"
     id="drawer-dialog"
     style="opacity: 0; transform: none;"
@@ -160,6 +175,6 @@ exports[`<Drawer/> matches snapshot without header and footer 1`] = `
     >
       Test body
     </div>
-  </div>
+  </dialog>
 </div>
 `;

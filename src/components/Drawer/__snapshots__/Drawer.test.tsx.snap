@@ -11,9 +11,6 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
     style="opacity: 0;"
   />
   <div
-    aria-expanded="true"
-    aria-hidden="false"
-    aria-modal="true"
     class="dialog placement-left"
     id="drawer-dialog"
     style="opacity: 0; transform: none;"
@@ -53,9 +50,6 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
     style="opacity: 0;"
   />
   <div
-    aria-expanded="true"
-    aria-hidden="false"
-    aria-modal="true"
     class="dialog placement-left"
     id="drawer-dialog"
     style="opacity: 0; transform: none;"
@@ -97,9 +91,6 @@ exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
     style="opacity: 0;"
   />
   <div
-    aria-expanded="true"
-    aria-hidden="false"
-    aria-modal="true"
     class="dialog placement-left"
     id="drawer-dialog"
     style="opacity: 0; transform: none;"
@@ -130,9 +121,6 @@ exports[`<Drawer/> matches snapshot with right placement 1`] = `
     style="opacity: 0;"
   />
   <div
-    aria-expanded="true"
-    aria-hidden="false"
-    aria-modal="true"
     class="dialog placement-right"
     id="drawer-dialog"
     style="opacity: 0; transform: translateX(100%) translateZ(0);"
@@ -163,9 +151,6 @@ exports[`<Drawer/> matches snapshot without header and footer 1`] = `
     style="opacity: 0;"
   />
   <div
-    aria-expanded="true"
-    aria-hidden="false"
-    aria-modal="true"
     class="dialog placement-left"
     id="drawer-dialog"
     style="opacity: 0; transform: none;"

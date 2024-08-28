@@ -108,9 +108,6 @@ const Drawer: FC<DrawerProps> & DrawerCompoundProps = (props) => {
               id="drawer-dialog"
               style={dialogStyles}
               className={dialogClassNames}
-              aria-expanded={isOpen}
-              aria-hidden={!isOpen}
-              aria-modal="true"
               initial="initial"
               animate="expanded"
               exit="initial"

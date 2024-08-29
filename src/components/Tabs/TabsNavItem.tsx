@@ -27,6 +27,7 @@ const TabsNavItem: FC<TabsNavItemProps> = ({ index, title, isActive, id, onSelec
       data-testid={id ? `${id}-tab` : `tab-${index}`}
       aria-controls={`content-${index}`}
       aria-selected={isActive}
+      tabIndex={isActive ? 0 : -1}
       role="tab"
       className={HtmlClasses}
       onClick={onClick}

@@ -9,7 +9,7 @@ type TabsContentProps = {
 
 const TabsContent: FC<TabsContentProps> = ({ index, content, isVisible, style }) => {
   return isVisible ? (
-    <div id={`content-${index}`} role="tabpanel" style={style}>
+    <div id={`content-${index}`} role="tabpanel" style={style} aria-hidden={!isVisible}>
       {content}
     </div>
   ) : null;

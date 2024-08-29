@@ -56,6 +56,7 @@ export const tabNavItem = (
 
     &:hover {
       color: ${tabs.linkHover};
+      cursor: pointer;
     }
   `;
 };

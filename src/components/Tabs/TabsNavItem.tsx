@@ -17,23 +17,22 @@ const TabsNavItem: FC<TabsNavItemProps> = ({ index, title, isActive, id, onSelec
     selected: isActive,
   });
   const onClick = (e: MouseEvent): void => {
-    e.preventDefault();
     onSelectTab(index);
   };
 
   return (
-    <a
+    <div
       css={(theme): SerializedStyles => tabNavItem(theme, { isActive })}
-      href={`#tab-${index}`}
       id={id ?? `tab-${index}`}
       data-testid={id ? `${id}-tab` : `tab-${index}`}
       aria-controls={`content-${index}`}
+      aria-selected={isActive}
       role="tab"
       className={HtmlClasses}
       onClick={onClick}
     >
       {title}
-    </a>
+    </div>
   );
 };
 

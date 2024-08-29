@@ -7,8 +7,10 @@ exports[`<Tabs/> matches snapshot 1`] = `
     id="tab-1"
   >
     <div
+      aria-label="Tabs Navigation"
       class="nav-wrapper"
       role="navigation"
+      tabindex="0"
     >
       <nav
         class="css-sxhcft-tabsHeader-tabsHeader"
@@ -68,8 +70,10 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
     class="css-3ghqkg-container"
   >
     <div
+      aria-label="Tabs Navigation"
       class="nav-wrapper"
       role="navigation"
+      tabindex="0"
     >
       <nav
         class="css-1yfjqbx-tabsHeader-tabsHeader"

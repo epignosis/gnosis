@@ -108,6 +108,7 @@ export { default as UserFilterSVG } from "./legacy/user-avatar.svg";
 export { default as AIIconSVG } from "./legacy/ai-icon.svg";
 export { default as AIAssistantIconSVG } from "./legacy/ai-assistant-icon.svg";
 export { default as AIMessageIconSVG } from "./legacy/ai-message-icon.svg";
+export { default as WandIconSVG } from "./legacy/wand-icon.svg";
 
 // Arrow Icons
 export { default as BackIconSVG } from "./arrows/back-icon.svg";

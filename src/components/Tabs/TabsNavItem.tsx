@@ -16,7 +16,7 @@ const TabsNavItem: FC<TabsNavItemProps> = ({ index, title, isActive, id, onSelec
     "tab-link": true,
     selected: isActive,
   });
-  const onClick = (e: MouseEvent): void => {
+  const onClick = (): void => {
     onSelectTab(index);
   };
 

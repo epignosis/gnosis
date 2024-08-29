@@ -106,7 +106,7 @@ const Tabs: FC<TabsProps> = ({
 
   return (
     <section css={container} {...rest}>
-      <div className="nav-wrapper">
+      <div className="nav-wrapper" role="navigation">
         {showLeftArrow() && (
           <Button
             data-testid="left-arrow"

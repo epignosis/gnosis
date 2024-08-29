@@ -8,6 +8,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
   >
     <div
       class="nav-wrapper"
+      role="navigation"
     >
       <nav
         class="css-sxhcft-tabsHeader-tabsHeader"
@@ -68,6 +69,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
   >
     <div
       class="nav-wrapper"
+      role="navigation"
     >
       <nav
         class="css-1yfjqbx-tabsHeader-tabsHeader"

@@ -1,4 +1,4 @@
-import React, { FC, MouseEvent } from "react";
+import React, { FC } from "react";
 import { SerializedStyles } from "@emotion/react";
 import classNames from "classnames";
 import { tabNavItem } from "./styles";
@@ -16,24 +16,24 @@ const TabsNavItem: FC<TabsNavItemProps> = ({ index, title, isActive, id, onSelec
     "tab-link": true,
     selected: isActive,
   });
-  const onClick = (e: MouseEvent): void => {
-    e.preventDefault();
+  const onClick = (): void => {
     onSelectTab(index);
   };
 
   return (
-    <a
+    <div
       css={(theme): SerializedStyles => tabNavItem(theme, { isActive })}
-      href={`#tab-${index}`}
       id={id ?? `tab-${index}`}
       data-testid={id ? `${id}-tab` : `tab-${index}`}
       aria-controls={`content-${index}`}
+      aria-selected={isActive}
+      tabIndex={isActive ? 0 : -1}
       role="tab"
       className={HtmlClasses}
       onClick={onClick}
     >
       {title}
-    </a>
+    </div>
   );
 };
 

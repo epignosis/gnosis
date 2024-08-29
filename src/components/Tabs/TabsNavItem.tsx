@@ -1,4 +1,4 @@
-import React, { FC, MouseEvent } from "react";
+import React, { FC } from "react";
 import { SerializedStyles } from "@emotion/react";
 import classNames from "classnames";
 import { tabNavItem } from "./styles";

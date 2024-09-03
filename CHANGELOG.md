@@ -1,3 +1,10 @@
+# [5.28.0](https://github.com/epignosis/gnosis/compare/v5.27.7...v5.28.0) (2024-09-03)
+
+
+### Features
+
+* **select:** apply tooltip on selected values ([#394](https://github.com/epignosis/gnosis/issues/394)) ([7a81a7e](https://github.com/epignosis/gnosis/commit/7a81a7efdc53a9fe4e585b609cb1381405d60f16))
+
 ## [5.27.7](https://github.com/epignosis/gnosis/compare/v5.27.6...v5.27.7) (2024-09-03)
 
 ## [5.27.6](https://github.com/epignosis/gnosis/compare/v5.27.5...v5.27.6) (2024-09-03)

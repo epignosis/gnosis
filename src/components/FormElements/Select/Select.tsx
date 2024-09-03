@@ -26,6 +26,8 @@ import Tooltip from "../../Tooltip/Tooltip";
 import CustomValueContainer from "./components/CustomValueContainer";
 import CustomOptionComponent from "./components/CustomOption";
 import CustomMenuList from "./components/CustomMenuList";
+import CustomSingleValue from "./components/CustomSingleValue";
+import CustomMultiValueLabel from "./components/CustomMultiValueLabel";
 import { resolveStyles, selectContainer } from "./styles";
 import { CustomOption, CustomSelectProps } from "./types";
 import {
@@ -160,6 +162,8 @@ const Select: ForwardRefRenderFunction<
         >,
       ) => CustomValueContainer({ ...props, isFocused }),
       Option: CustomOptionComponent,
+      SingleValue: CustomSingleValue,
+      MultiValueLabel: CustomMultiValueLabel,
     },
     formatCreateLabel,
     isSearchable: false,

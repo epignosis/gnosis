@@ -33,7 +33,7 @@ export type TooltipProps = TippyProps & {
 };
 
 const Tooltip: FC<TooltipProps> = ({
-  parentProps = { role: "tooltip" },
+  parentProps,
   children,
   content,
   as = "div",
@@ -43,6 +43,7 @@ const Tooltip: FC<TooltipProps> = ({
   ...rest
 }) => {
   const Tag = as;
+  const tagProps = { role: "tooltip", ...parentProps };
 
   return (
     <Tippy
@@ -57,7 +58,7 @@ const Tooltip: FC<TooltipProps> = ({
       )}
       {...rest}
     >
-      <Tag {...parentProps}>{children}</Tag>
+      <Tag {...tagProps}>{children}</Tag>
     </Tippy>
   );
 };

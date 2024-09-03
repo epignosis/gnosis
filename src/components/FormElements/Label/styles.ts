@@ -15,6 +15,5 @@ export const label = (
     font-weight: 700;
     display: block;
     margin: 0 0 0.5rem;
-    white-space: nowrap;
   `;
 };

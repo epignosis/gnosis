@@ -32,7 +32,8 @@ const CustomMenuList: FC<CustomMenuListProps<CustomOption, boolean>> = (customMe
   const showMenuList = isAsync
     ? Boolean(!status?.isLoading && inputValue) || shouldShowMenuList
     : menuIsOpen;
-  const showInitialText = isAsync ? Boolean(!status?.isLoading && !inputValue) : false;
+  const showInitialText =
+    Boolean(initialText) && (isAsync ? Boolean(!status?.isLoading && !inputValue) : false);
   const shouldFocus = Boolean(hasInnerSearch);
 
   const ariaAttributes = {
@@ -64,7 +65,7 @@ const CustomMenuList: FC<CustomMenuListProps<CustomOption, boolean>> = (customMe
       prevInputValue: inputValue,
     });
 
-    onAsyncSearchChange && onAsyncSearchChange("");
+    onAsyncSearchChange?.("");
   };
 
   return (

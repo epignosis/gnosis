@@ -1,3 +1,4 @@
+import { MouseEvent } from "react";
 import type { GroupBase, MenuListProps, Props, ValueContainerProps } from "react-select";
 
 export type Status = "valid" | "error";
@@ -40,7 +41,7 @@ declare module "react-select/dist/declarations/src/Select" {
     showMoreButtonText?: string;
     shouldShowMenuList?: boolean;
     onMenuInputFocus?: () => void;
-    handleShowMore?: () => void;
+    handleShowMore?: (e: MouseEvent<HTMLButtonElement>) => void;
   }
 }
 

@@ -38,7 +38,7 @@ declare module "react-select/dist/declarations/src/Select" {
     asyncOptions?: AsyncOptions;
     tooltipContent?: string | JSX.Element;
     type?: SelectType;
-    showMoreButtonText?: string;
+    showMoreButton?: JSX.Element;
     shouldShowMenuList?: boolean;
     onMenuInputFocus?: () => void;
     handleShowMore?: (e: MouseEvent<HTMLButtonElement>) => void;

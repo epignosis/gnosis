@@ -28,7 +28,7 @@ const Tabs: FC<TabsProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState(selectedTab);
   const tabsLength = tabs.length - 1;
-  const tabsNavEl = useRef<HTMLElement>(null);
+  const tabsNavEl = useRef<HTMLDivElement>(null);
   const [isOverflowActive, setIsOverflowActive] = useState(false);
   const dir = document.dir;
 
@@ -106,7 +106,7 @@ const Tabs: FC<TabsProps> = ({
 
   return (
     <section css={container} {...rest}>
-      <div className="nav-wrapper">
+      <div className="nav-wrapper" role="navigation" tabIndex={0}>
         {showLeftArrow() && (
           <Button
             data-testid="left-arrow"
@@ -151,7 +151,7 @@ const Tabs: FC<TabsProps> = ({
         )}
       </div>
 
-      <section id="content" aria-live="polite" role="region">
+      <div id="content" aria-live="polite" role="region">
         {tabs
           .filter((tab) => tab.content)
           .map(({ content }, index) => (
@@ -162,7 +162,7 @@ const Tabs: FC<TabsProps> = ({
               isVisible={activeTab === index}
             />
           ))}
-      </section>
+      </div>
     </section>
   );
 };

@@ -8,55 +8,61 @@ exports[`<Tabs/> matches snapshot 1`] = `
   >
     <div
       class="nav-wrapper"
+      role="navigation"
+      tabindex="0"
     >
       <nav
         class="css-sxhcft-tabsHeader-tabsHeader"
         role="tablist"
       >
-        <a
+        <div
           aria-controls="content-0"
-          class="tab-link selected css-xyfmbj-tabNavItem-tabNavItem"
+          aria-selected="true"
+          class="tab-link selected css-1gy7zsk-tabNavItem-tabNavItem"
           data-testid="my-tab-0-tab"
-          href="#tab-0"
           id="my-tab-0"
           role="tab"
+          tabindex="0"
         >
           Tab 1
-        </a>
-        <a
+        </div>
+        <div
           aria-controls="content-1"
-          class="tab-link css-a3wd5z-tabNavItem-tabNavItem"
+          aria-selected="false"
+          class="tab-link css-19gjr6f-tabNavItem-tabNavItem"
           data-testid="my-tab-1-tab"
-          href="#tab-1"
           id="my-tab-1"
           role="tab"
+          tabindex="-1"
         >
           Tab 2
-        </a>
-        <a
+        </div>
+        <div
           aria-controls="content-2"
-          class="tab-link css-a3wd5z-tabNavItem-tabNavItem"
+          aria-selected="false"
+          class="tab-link css-19gjr6f-tabNavItem-tabNavItem"
           data-testid="my-tab-2-tab"
-          href="#tab-2"
           id="my-tab-2"
           role="tab"
+          tabindex="-1"
         >
           Tab 3
-        </a>
+        </div>
       </nav>
     </div>
-    <section
+    <div
       aria-live="polite"
       id="content"
       role="region"
     >
-      <article
+      <div
+        aria-hidden="false"
         id="content-0"
         role="tabpanel"
       >
         Test tab 1
-      </article>
-    </section>
+      </div>
+    </div>
   </section>
 </div>
 `;
@@ -68,55 +74,61 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
   >
     <div
       class="nav-wrapper"
+      role="navigation"
+      tabindex="0"
     >
       <nav
         class="css-1yfjqbx-tabsHeader-tabsHeader"
         role="tablist"
       >
-        <a
+        <div
           aria-controls="content-0"
-          class="tab-link selected css-xyfmbj-tabNavItem-tabNavItem"
+          aria-selected="true"
+          class="tab-link selected css-1gy7zsk-tabNavItem-tabNavItem"
           data-testid="my-tab-0-tab"
-          href="#tab-0"
           id="my-tab-0"
           role="tab"
+          tabindex="0"
         >
           Tab 1
-        </a>
-        <a
+        </div>
+        <div
           aria-controls="content-1"
-          class="tab-link css-a3wd5z-tabNavItem-tabNavItem"
+          aria-selected="false"
+          class="tab-link css-19gjr6f-tabNavItem-tabNavItem"
           data-testid="my-tab-1-tab"
-          href="#tab-1"
           id="my-tab-1"
           role="tab"
+          tabindex="-1"
         >
           Tab 2
-        </a>
-        <a
+        </div>
+        <div
           aria-controls="content-2"
-          class="tab-link css-a3wd5z-tabNavItem-tabNavItem"
+          aria-selected="false"
+          class="tab-link css-19gjr6f-tabNavItem-tabNavItem"
           data-testid="my-tab-2-tab"
-          href="#tab-2"
           id="my-tab-2"
           role="tab"
+          tabindex="-1"
         >
           Tab 3
-        </a>
+        </div>
       </nav>
     </div>
-    <section
+    <div
       aria-live="polite"
       id="content"
       role="region"
     >
-      <article
+      <div
+        aria-hidden="false"
         id="content-0"
         role="tabpanel"
       >
         Test tab 1
-      </article>
-    </section>
+      </div>
+    </div>
   </section>
 </div>
 `;

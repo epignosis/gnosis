@@ -140,10 +140,6 @@ export const customMenuList = ({
   .text-container {
     margin-top: 1rem;
   }
-
-  .show-more-container {
-    width: 100%;
-  }
 `;
 
 export const resolveStyles = ({
@@ -254,8 +250,13 @@ export const resolveStyles = ({
     borderRadius: "0 2px 2px 0",
     paddingRight: "6px",
     paddingLeft: "6px",
+    ".custom-multi-value": {
+      wordBreak: "break-word",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap",
+    },
   }),
-
   multiValueRemove: (base: CSSObjectWithLabel) => ({
     ...base,
     background: formElements.multiSelect.background,
@@ -326,6 +327,15 @@ export const resolveStyles = ({
     ...base,
     // it is important to set the indicator size to the same height as the input to avoid centering issues
     height: `calc(${inputHeight[size]} - 2px)`,
+  }),
+  singleValue: (base) => ({
+    ...base,
+    ".custom-value": {
+      wordBreak: "break-word",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap",
+    },
   }),
 });
 

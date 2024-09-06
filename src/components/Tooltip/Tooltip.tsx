@@ -27,15 +27,15 @@ export type TooltipProps = TippyProps & {
     | "figcaption"
     | "form"
     | "fieldset";
-  parentAriaRole?: string;
+  parentProps?: object;
   content: TippyProps["content"];
   maxWidth?: number;
 };
 
 const Tooltip: FC<TooltipProps> = ({
+  parentProps,
   children,
   content,
-  parentAriaRole = "tooltip",
   as = "div",
   placement = "top",
   maxWidth = 350,
@@ -43,6 +43,7 @@ const Tooltip: FC<TooltipProps> = ({
   ...rest
 }) => {
   const Tag = as;
+  const tagProps = { role: "tooltip", ...parentProps };
 
   return (
     <Tippy
@@ -57,7 +58,7 @@ const Tooltip: FC<TooltipProps> = ({
       )}
       {...rest}
     >
-      <Tag {...(parentAriaRole ? { role: parentAriaRole } : {})}>{children}</Tag>
+      <Tag {...tagProps}>{children}</Tag>
     </Tippy>
   );
 };

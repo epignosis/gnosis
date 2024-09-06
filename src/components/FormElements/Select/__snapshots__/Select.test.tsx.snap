@@ -10,7 +10,7 @@ exports[`<Select /> matches snapshot 1`] = `
     >
       <label
         aria-labelledby="my-select"
-        class=" css-xs6o3g-label-label"
+        class=" css-h803cy-label-label"
         data-testid="my-select-label"
         for="my-select"
       >
@@ -98,7 +98,7 @@ exports[`<Select /> matches snapshot 1`] = `
           id="react-select-3-listbox"
         >
           <div
-            class="css-1blbs23-customMenuList-customMenuList"
+            class="css-ci9plw-customMenuList-customMenuList"
           >
             <div
               class=" css-mpsorv-MenuList"

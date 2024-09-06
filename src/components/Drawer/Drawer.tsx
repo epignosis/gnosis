@@ -104,7 +104,7 @@ const Drawer: FC<DrawerProps> & DrawerCompoundProps = (props) => {
             {...rest}
           >
             {showMask && <Mask onClose={onClose} />}
-            <m.div
+            <m.dialog
               id="drawer-dialog"
               style={dialogStyles}
               className={dialogClassNames}
@@ -118,7 +118,7 @@ const Drawer: FC<DrawerProps> & DrawerCompoundProps = (props) => {
               custom={{ placement, width }}
             >
               {clonedChildren}
-            </m.div>
+            </m.dialog>
           </div>
         )}
       </AnimatePresence>

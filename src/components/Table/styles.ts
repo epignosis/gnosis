@@ -42,7 +42,8 @@ export const tableContainer = ({ table }: Theme) => css`
           }
         }
 
-        th {
+        th,
+        td {
           font-weight: 700;
           padding: 0 1.5rem;
           text-align: start;

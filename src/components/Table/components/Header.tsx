@@ -92,7 +92,7 @@ const Header: FC<ChildrenProps> = ({
     <thead>
       <tr className={rowClassnames(isSelectAllChecked, allRowsSelected, autohide)}>
         {selectable && (
-          <Cell as="th" key={`select-all-${isSelectAllChecked}`} className="selectable-cell">
+          <Cell as="td" key={`select-all-${isSelectAllChecked}`} className="selectable-cell">
             <Checkbox
               key={`select-all-${isSelectAllChecked} - ${id}`}
               id={`select-all-${isSelectAllChecked} - ${id}`}
@@ -117,7 +117,7 @@ const Header: FC<ChildrenProps> = ({
           }) =>
             !hidden && (
               <Cell
-                as="th"
+                as={cell ? "th" : "td"}
                 key={accessor}
                 data-testid={`${accessor}-column`}
                 maxWidth={headerWidth}

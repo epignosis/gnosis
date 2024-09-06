@@ -1,3 +1,10 @@
+## [5.28.3](https://github.com/epignosis/gnosis/compare/v5.28.2...v5.28.3) (2024-09-06)
+
+
+### Bug Fixes
+
+* **select:** memoization in component with tooltip ([#399](https://github.com/epignosis/gnosis/issues/399)) ([8fbf5b0](https://github.com/epignosis/gnosis/commit/8fbf5b0a8e72017ae3a6ee2a5085fff3bfb4b202))
+
 ## [5.28.2](https://github.com/epignosis/gnosis/compare/v5.28.1...v5.28.2) (2024-09-06)
 
 ## [5.28.1](https://github.com/epignosis/gnosis/compare/v5.28.0...v5.28.1) (2024-09-05)

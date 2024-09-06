@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, useEffect, useRef, useState, memo } from "react";
 import { components, OptionProps } from "react-select";
 import { CustomOption } from "../types";
 import Tooltip from "../../../Tooltip/Tooltip";
@@ -16,7 +16,7 @@ const CustomOptionComponent: FC<OptionProps<CustomOption>> = (props) => {
       const hasOverflow = optionRef.current.scrollWidth > optionRef.current.clientWidth;
       setIsOverflowActive(hasOverflow);
     }
-  }, [props.label]);
+  }, [label]);
 
   return (
     <components.Option {...props}>
@@ -29,4 +29,4 @@ const CustomOptionComponent: FC<OptionProps<CustomOption>> = (props) => {
   );
 };
 
-export default CustomOptionComponent;
+export default memo(CustomOptionComponent);

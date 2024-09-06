@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, memo, useEffect, useRef, useState } from "react";
 import { components, SingleValueProps } from "react-select";
 import { CustomOption } from "../types";
 import Tooltip from "../../../Tooltip/Tooltip";
@@ -29,4 +29,4 @@ const CustomSingleValue: FC<SingleValueProps<CustomOption>> = ({ children, ...pr
   );
 };
 
-export default CustomSingleValue;
+export default memo(CustomSingleValue);

@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, useEffect, useRef, useState, memo } from "react";
 import { components, MultiValueGenericProps } from "react-select";
 import { CustomOption } from "../types";
 import Tooltip from "../../../Tooltip/Tooltip";
@@ -30,4 +30,4 @@ const CustomMultiValueLabel: FC<MultiValueGenericProps<CustomOption>> = (props) 
   );
 };
 
-export default CustomMultiValueLabel;
+export default memo(CustomMultiValueLabel);

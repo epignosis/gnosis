@@ -18,7 +18,7 @@ exports[`<Card/> matches snapshot 1`] = `
         >
           <img
             alt="An image"
-            class="css-13ekei5-thumbnailContainer"
+            class="css-1yhpqgg-thumbnailContainer"
             src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
           />
         </section>
@@ -93,7 +93,7 @@ exports[`<Card/> matches snapshot with hover 1`] = `
         >
           <img
             alt="An image"
-            class="css-13ekei5-thumbnailContainer"
+            class="css-1yhpqgg-thumbnailContainer"
             src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
           />
           <div
@@ -137,7 +137,7 @@ exports[`<Card/> matches snapshot with overlay 1`] = `
         >
           <img
             alt="An image"
-            class="css-13ekei5-thumbnailContainer"
+            class="css-1yhpqgg-thumbnailContainer"
             src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
           />
         </section>
@@ -164,7 +164,7 @@ exports[`<Card/> matches snapshot with transparent hover 1`] = `
         >
           <img
             alt="An image"
-            class="css-13ekei5-thumbnailContainer"
+            class="css-1yhpqgg-thumbnailContainer"
             src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
           />
           <div

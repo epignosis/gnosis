@@ -40,7 +40,7 @@ const Template: Story<{ isOverlayShow: boolean; isDrawerOpen: boolean }> = ({
       >
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam labore ratione error
         adipisci dolorem corporis voluptatibus quia nihil quaerat ipsa tempora, in neque facere
-        doloremque aut tempore ullam molestias necessitatibus!
+        doloremque aut tempore ullam molestias necessitatibus !
       </Card.Drawer>
 
       <Card.Header>

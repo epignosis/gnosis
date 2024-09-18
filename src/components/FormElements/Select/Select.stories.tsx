@@ -110,6 +110,13 @@ withInnerSearch.args = {
   hasInnerSearch: true,
 };
 
+export const withOpenMenu = Template.bind({});
+
+withOpenMenu.args = {
+  options: defaultOptions,
+  menuIsOpen: true,
+};
+
 export const withMultipleValues = Template.bind({});
 
 withMultipleValues.args = {

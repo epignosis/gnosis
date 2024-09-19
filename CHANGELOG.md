@@ -1,3 +1,10 @@
+## [5.28.5](https://github.com/epignosis/gnosis/compare/v5.28.4...v5.28.5) (2024-09-19)
+
+
+### Bug Fixes
+
+* mistake on release ([#402](https://github.com/epignosis/gnosis/issues/402)) ([ed874e4](https://github.com/epignosis/gnosis/commit/ed874e410e42911191a76d7bb87c0ae016737526))
+
 ## [5.28.4](https://github.com/epignosis/gnosis/compare/v5.28.3...v5.28.4) (2024-09-12)
 
 ## [5.28.3](https://github.com/epignosis/gnosis/compare/v5.28.2...v5.28.3) (2024-09-06)

@@ -169,7 +169,7 @@ const Select: ForwardRefRenderFunction<
     formatCreateLabel,
     isSearchable: false,
     maxMenuHeight,
-    menuIsOpen: menuIsOpen ?? (isFocused || undefined), // when menuIsOpen is true, dropdown will stay open
+    menuIsOpen: menuIsOpen ?? (isFocused || undefined), // When menuIsOpen is true, dropdown will always stay open
     options,
     placeholder: outerPlaceholder,
     inputValue: inputValue,

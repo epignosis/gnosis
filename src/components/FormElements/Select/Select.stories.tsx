@@ -38,6 +38,11 @@ export default {
         type: "boolean",
       },
     },
+    menuIsOpen: {
+      control: {
+        type: "boolean",
+      },
+    },
     isMulti: {
       control: {
         type: "boolean",

@@ -57,7 +57,7 @@ const Select: ForwardRefRenderFunction<
     isMulti = false,
     creatableTooltip = "Create",
     maxMenuHeight = MAX_MENU_HEIGHT,
-    menuIsOpen = false,
+    menuIsOpen,
     innerPlaceholder = INNER_PLACEHOLDER,
     minWidth = MIN_WIDTH,
     maxWidth = MAX_WIDTH,
@@ -75,7 +75,7 @@ const Select: ForwardRefRenderFunction<
 
   const containerRef = useRef<HTMLInputElement>(null);
 
-  const [isFocused, setIsFocused] = useState(menuIsOpen);
+  const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const labelClassname = classNames({
     required,
@@ -169,7 +169,7 @@ const Select: ForwardRefRenderFunction<
     formatCreateLabel,
     isSearchable: false,
     maxMenuHeight,
-    menuIsOpen: isFocused || undefined,
+    menuIsOpen: menuIsOpen ?? (isFocused || undefined), // when menuIsOpen is true, dropdown will stay open
     options,
     placeholder: outerPlaceholder,
     inputValue: inputValue,

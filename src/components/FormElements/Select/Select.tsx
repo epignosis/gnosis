@@ -57,6 +57,7 @@ const Select: ForwardRefRenderFunction<
     isMulti = false,
     creatableTooltip = "Create",
     maxMenuHeight = MAX_MENU_HEIGHT,
+    menuIsOpen,
     innerPlaceholder = INNER_PLACEHOLDER,
     minWidth = MIN_WIDTH,
     maxWidth = MAX_WIDTH,
@@ -168,7 +169,7 @@ const Select: ForwardRefRenderFunction<
     formatCreateLabel,
     isSearchable: false,
     maxMenuHeight,
-    menuIsOpen: isFocused || undefined,
+    menuIsOpen: menuIsOpen ?? (isFocused || undefined), // when menuIsOpen is true, dropdown will stay open
     options,
     placeholder: outerPlaceholder,
     inputValue: inputValue,

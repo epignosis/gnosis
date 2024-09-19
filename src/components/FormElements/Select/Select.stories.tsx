@@ -38,6 +38,11 @@ export default {
         type: "boolean",
       },
     },
+    menuIsOpen: {
+      control: {
+        type: "boolean",
+      },
+    },
     isMulti: {
       control: {
         type: "boolean",
@@ -108,6 +113,13 @@ export const withInnerSearch = Template.bind({});
 withInnerSearch.args = {
   options: defaultOptions,
   hasInnerSearch: true,
+};
+
+export const withOpenMenu = Template.bind({});
+
+withOpenMenu.args = {
+  options: defaultOptions,
+  menuIsOpen: true,
 };
 
 export const withMultipleValues = Template.bind({});

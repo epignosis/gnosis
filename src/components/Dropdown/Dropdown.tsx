@@ -4,10 +4,10 @@ import { SerializedStyles } from "@emotion/react";
 import { useClickAway } from "ahooks";
 import Text from "../Text/Text";
 import SearchInput from "../FormElements/Input/SearchInput";
+import Tooltip from "../Tooltip/Tooltip";
 import { DropdownContainer, DropdownList, DropdownListItem, DropdownTitle } from "./styles";
 import { DropdownItem, DropdownProps, PlacementOptions } from "./types";
 import { filterListByKeyword, getScrollableParent } from "./helpers";
-import Tooltip from "../Tooltip/Tooltip";
 
 const dropdownWrapperClasses = (placement: PlacementOptions): string =>
   classNames("dropdown-wrapper", {

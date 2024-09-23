@@ -33,7 +33,7 @@ export type InputProps = ExtendableProps<
     containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
     css?: SerializedStyles;
     tooltipContent?: string | JSX.Element;
-    toolTipIcon?: ReactElement;
+    tooltipIcon?: ReactElement;
     showVerticalLine?: boolean;
     isClearable?: boolean;
     autoFocus?: boolean;
@@ -53,7 +53,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     id,
     containerAttrs,
     tooltipContent = "",
-    toolTipIcon,
+    tooltipIcon,
     value,
     isClearable = false,
     showVerticalLine = true,
@@ -127,7 +127,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           {shouldRenderTooltip && (
             <div data-testid={`${id}-tooltip`}>
               <Tooltip content={tooltipContent}>
-                {toolTipIcon || <InfoCircledSVG height={20} />}
+                {tooltipIcon || <InfoCircledSVG height={20} />}
               </Tooltip>
             </div>
           )}

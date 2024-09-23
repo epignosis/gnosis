@@ -1,3 +1,10 @@
+# [5.29.0](https://github.com/epignosis/gnosis/compare/v5.28.6...v5.29.0) (2024-09-23)
+
+
+### Features
+
+* add tooltipIcon to Input and tooltipContent to DropdownItem ([#403](https://github.com/epignosis/gnosis/issues/403)) ([b0debd8](https://github.com/epignosis/gnosis/commit/b0debd88b28d3ea4bbb00afb5274594fb16733c3))
+
 ## [5.28.6](https://github.com/epignosis/gnosis/compare/v5.28.5...v5.28.6) (2024-09-23)
 
 

@@ -48,11 +48,6 @@ export default {
         type: "boolean",
       },
     },
-    hasInnerSearch: {
-      control: {
-        type: "boolean",
-      },
-    },
     status: {
       control: {
         type: "select",
@@ -108,12 +103,12 @@ WithRequired.args = {
   required: true,
 };
 
-export const withInnerSearch = Template.bind({});
+// export const withInnerSearch = Template.bind({});
 
-withInnerSearch.args = {
-  options: defaultOptions,
-  hasInnerSearch: true,
-};
+// withInnerSearch.args = {
+//   options: defaultOptions,
+//   hasInnerSearch: true,
+// };
 
 export const withOpenMenu = Template.bind({});
 
@@ -142,7 +137,6 @@ withValueCreation.args = {
   options: defaultOptions,
   isMulti: true,
   isClearable: true,
-  hasInnerSearch: true,
   type: "creatable",
 };
 
@@ -152,7 +146,6 @@ withValueCreationValidation.args = {
   options: defaultOptions,
   isMulti: true,
   isClearable: true,
-  hasInnerSearch: true,
   type: "creatable",
   isInputValid: (value: string): boolean =>
     /^(?=.*[^\d])(?=.*\S).+$/.test(value) &&

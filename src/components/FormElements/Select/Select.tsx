@@ -1,42 +1,24 @@
-// Inspired by this https://codesandbox.io/embed/m75wlyx3oy
 import React, {
   ForwardRefRenderFunction,
-  PropsWithChildren,
   forwardRef,
   isValidElement,
   useRef,
   useState,
 } from "react";
 import classNames from "classnames";
-import {
-  ActionMeta,
-  DropdownIndicatorProps,
-  GroupBase,
-  MultiValue,
-  SelectInstance,
-  SingleValue,
-  ValueContainerProps,
-  components,
-} from "react-select";
+import { ActionMeta, MultiValue, SelectInstance, SingleValue } from "react-select";
 import { SerializedStyles } from "@emotion/react";
 import { useClickAway } from "ahooks";
 import { AddOperatorSVG, InfoCircledSVG } from "../../../icons";
 import Label from "../Label/Label";
 import Tooltip from "../../Tooltip/Tooltip";
-import CustomValueContainer from "./components/CustomValueContainer";
 import CustomOptionComponent from "./components/CustomOption";
 import CustomMenuList from "./components/CustomMenuList";
 import CustomSingleValue from "./components/CustomSingleValue";
 import CustomMultiValueLabel from "./components/CustomMultiValueLabel";
 import { resolveStyles, selectContainer } from "./styles";
 import { CustomOption, CustomSelectProps } from "./types";
-import {
-  MAX_MENU_HEIGHT,
-  INNER_PLACEHOLDER,
-  MIN_WIDTH,
-  MAX_WIDTH,
-  OUTER_PLACEHOLDER,
-} from "./constants";
+import { MAX_MENU_HEIGHT, MIN_WIDTH, MAX_WIDTH, OUTER_PLACEHOLDER } from "./constants";
 import { containerClassNames, renderSelect } from "./helpers";
 
 const Select: ForwardRefRenderFunction<
@@ -53,15 +35,12 @@ const Select: ForwardRefRenderFunction<
     inline = false,
     status = "valid",
     isInlineFlex = false,
-    hasInnerSearch = false,
     isMulti = false,
     creatableTooltip = "Create",
     maxMenuHeight = MAX_MENU_HEIGHT,
-    menuIsOpen,
-    innerPlaceholder = INNER_PLACEHOLDER,
     minWidth = MIN_WIDTH,
     maxWidth = MAX_WIDTH,
-    placeholder: outerPlaceholder = OUTER_PLACEHOLDER,
+    placeholder = OUTER_PLACEHOLDER,
     tooltipContent = "",
     countOptionsForInnerSearch = 10,
     onChange,
@@ -69,13 +48,13 @@ const Select: ForwardRefRenderFunction<
     checkIfInputIsSelected,
     closeMenuOnSelect,
     menuMaxWidth,
+    forceDisableSearch = false,
     ...rest
   } = props;
   const hasLabel = Boolean(label);
 
   const containerRef = useRef<HTMLInputElement>(null);
 
-  const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const labelClassname = classNames({
     required,
@@ -88,20 +67,23 @@ const Select: ForwardRefRenderFunction<
     }, 0);
   };
 
-  const shouldShowInnerSearch = () => {
-    // Force show inner search if the number of options exceeds 10 or certain conditions are met
+  const isSelectSearchable = () => {
     const isAsyncType = type === "async";
     const hasManyOptions = countOptions() > countOptionsForInnerSearch;
 
-    return isAsyncType || hasManyOptions || hasInnerSearch;
+    if (forceDisableSearch) return false;
+
+    return isAsyncType || hasManyOptions;
   };
 
-  const innerSearchEnabled = shouldShowInnerSearch();
+  const isSearchable = isSelectSearchable();
+
+  // const innerSearchEnabled = shouldShowInnerSearch();
   const shouldRenderTooltip =
     (tooltipContent && typeof tooltipContent === "string" && tooltipContent !== "") ||
     isValidElement(tooltipContent);
 
-  const styles = resolveStyles({ size, hasInnerSearch, menuMaxWidth });
+  const styles = resolveStyles({ size, menuMaxWidth });
 
   const formatCreateLabel = (inputValue: string) => (
     <div>
@@ -116,25 +98,25 @@ const Select: ForwardRefRenderFunction<
     </div>
   );
 
-  const CustomDropdownIndicator: React.FC<DropdownIndicatorProps<CustomOption, boolean>> = (
-    props,
-  ) => {
-    const {
-      selectProps: { menuIsOpen },
-    } = props;
+  // const CustomDropdownIndicator: React.FC<DropdownIndicatorProps<CustomOption, boolean>> = (
+  //   props,
+  // ) => {
+  //   // const {
+  //   //   selectProps: { menuIsOpen },
+  //   // } = props;
 
-    const handleCloseMenu = () => {
-      if (menuIsOpen) {
-        setIsFocused(false);
-      }
-    };
+  //   // const handleCloseMenu = () => {
+  //   //   if (menuIsOpen) {
+  //   //     setIsFocused(false);
+  //   //   }
+  //   // };
 
-    return (
-      <components.DropdownIndicator {...props}>
-        <components.DownChevron onClick={handleCloseMenu} />
-      </components.DropdownIndicator>
-    );
-  };
+  //   return (
+  //     <components.DropdownIndicator {...props}>
+  //       <components.DownChevron onClick={handleCloseMenu} />
+  //     </components.DropdownIndicator>
+  //   );
+  // };
 
   const customSelectProps = {
     ...rest,
@@ -144,46 +126,30 @@ const Select: ForwardRefRenderFunction<
     closeMenuOnSelect: closeMenuOnSelect || !isMulti,
     isMulti,
     classNames: {
-      control: ({ isFocused }: { isFocused: boolean }) =>
-        containerClassNames(status, size, isFocused),
+      control: () => containerClassNames(status, size),
       option: ({ isSelected }: { isSelected: boolean }) =>
         `${isSelected ? "selected" : ""} option-${size}`,
     },
     components: {
       IndicatorSeparator: () => null,
-      DropdownIndicator: (
-        props: PropsWithChildren<
-          DropdownIndicatorProps<CustomOption, boolean, GroupBase<CustomOption>>
-        >,
-      ) => CustomDropdownIndicator(props),
       MenuList: CustomMenuList,
-      ValueContainer: (
-        props: PropsWithChildren<
-          ValueContainerProps<CustomOption, boolean, GroupBase<CustomOption>>
-        >,
-      ) => CustomValueContainer({ ...props, isFocused }),
       Option: CustomOptionComponent,
       SingleValue: CustomSingleValue,
       MultiValueLabel: CustomMultiValueLabel,
     },
     formatCreateLabel,
-    isSearchable: false,
+    isSearchable,
     maxMenuHeight,
-    menuIsOpen: menuIsOpen ?? (isFocused || undefined), // When menuIsOpen is true, dropdown will always stay open
     options,
-    placeholder: outerPlaceholder,
-    inputValue: inputValue,
-    onMenuInputFocus: () => setIsFocused(true),
+    placeholder,
+    inputValue,
     onMouseDown: (e: MouseEvent) => e.stopPropagation(),
-    innerPlaceholder,
-    hasInnerSearch: innerSearchEnabled,
     type,
     onChange: (
       option: MultiValue<CustomOption> | SingleValue<CustomOption>,
       action: ActionMeta<CustomOption>,
     ) => {
-      setIsFocused(false);
-      onChange && onChange(option, action);
+      onChange?.(option, action);
     },
     onInputChange: (val: string) => setInputValue(val),
     isValidNewOption: isInputValid,
@@ -200,7 +166,7 @@ const Select: ForwardRefRenderFunction<
       const isCloseIcon = className === "close-icon";
 
       if (isSvg || isPath || isCloseIcon) return;
-      setIsFocused(false);
+      // setIsFocused(false);
       setInputValue("");
     },
 
@@ -216,7 +182,6 @@ const Select: ForwardRefRenderFunction<
           isInlineFlex,
           minWidth,
           maxWidth,
-          hasInnerSearch,
         })
       }
     >

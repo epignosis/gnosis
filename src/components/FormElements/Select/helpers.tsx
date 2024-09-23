@@ -7,12 +7,11 @@ import { CarretArrowRight } from "../../../icons/";
 import { SelectType, CustomSelectProps, CustomOption } from "./types";
 import { customLabelStyles } from "./styles";
 
-export const containerClassNames = (status: string, size: string, isFocused: boolean) =>
+export const containerClassNames = (status: string, size: string) =>
   classNames({
     [`control-${size}`]: true,
     valid: status === "valid",
     error: status === "error",
-    focused: isFocused,
   });
 
 export const formatOptionLabel = (

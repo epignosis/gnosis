@@ -1,5 +1,5 @@
 import { MouseEvent } from "react";
-import type { GroupBase, MenuListProps, Props, ValueContainerProps } from "react-select";
+import type { GroupBase, MenuListProps, Props } from "react-select";
 
 export type Status = "valid" | "error";
 
@@ -32,7 +32,6 @@ declare module "react-select/dist/declarations/src/Select" {
     Group extends GroupBase<Option> = GroupBase<Option>,
   > {
     innerPlaceholder?: string;
-    hasInnerSearch?: boolean;
     isMulti: IsMulti; // this is required to relieve TS warning
     group?: Group; // this is required to relieve TS warning
     asyncOptions?: AsyncOptions;
@@ -58,18 +57,17 @@ export type CustomSelectProps<
   size?: "sm" | "md" | "lg";
   inline?: boolean;
   status?: "valid" | "error";
-  hasInnerSearch?: boolean;
-  innerPlaceholder?: string;
   isInlineFlex?: boolean;
   minWidth?: string;
   maxWidth?: string;
   creatableTooltip?: string;
   asyncOptions?: AsyncOptions;
-  isInputValid?: (input: string) => boolean;
-  checkIfInputIsSelected?: (inputValue: string) => string;
   tooltipContent?: string | JSX.Element;
   countOptionsForInnerSearch?: number;
   menuMaxWidth?: number;
+  forceDisableSearch?: boolean;
+  isInputValid?: (input: string) => boolean;
+  checkIfInputIsSelected?: (inputValue: string) => string;
 };
 
 export type CustomMenuListProps<
@@ -77,16 +75,6 @@ export type CustomMenuListProps<
   IsMulti extends boolean = false,
   Group extends GroupBase<Option> = GroupBase<Option>,
 > = MenuListProps<Option, IsMulti, Group> & {
-  innerPlaceholder?: string;
-  hasInnerSearch?: boolean;
   asyncOptions?: AsyncOptions;
   tooltipContent?: string | JSX.Element;
-};
-
-export type CustomValueContainerProps<
-  Option extends CustomOption,
-  IsMulti extends boolean = false,
-  Group extends GroupBase<Option> = GroupBase<Option>,
-> = ValueContainerProps<Option, IsMulti, Group> & {
-  isFocused?: boolean;
 };

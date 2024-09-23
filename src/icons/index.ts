@@ -444,6 +444,7 @@ export { default as FeatureLockSVG } from "./client/feature-lock.svg";
 export { default as HouseUserSVG } from "./client/house-user.svg";
 export { default as CalendarUsersSVG } from "./client/calendar-users.svg";
 export { default as ImportDataSVG } from "./client/import-data.svg";
+export { default as HourglassEndSVG } from "./client/hourglass-end.svg";
 
 // Exports from folders.
 // Assignments Icons

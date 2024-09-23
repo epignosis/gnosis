@@ -1,3 +1,10 @@
+## [5.28.6](https://github.com/epignosis/gnosis/compare/v5.28.5...v5.28.6) (2024-09-23)
+
+
+### Bug Fixes
+
+* **a11y fix tooltip and aria label error:** a11y fix tooltip aria label ([#405](https://github.com/epignosis/gnosis/issues/405)) ([02966ee](https://github.com/epignosis/gnosis/commit/02966ee2d345211aba952cb9b1f84712d0e510df))
+
 ## [5.28.5](https://github.com/epignosis/gnosis/compare/v5.28.4...v5.28.5) (2024-09-19)
 
 

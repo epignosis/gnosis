@@ -4,6 +4,7 @@ import { SerializedStyles } from "@emotion/react";
 import { useClickAway } from "ahooks";
 import Text from "../Text/Text";
 import SearchInput from "../FormElements/Input/SearchInput";
+import Tooltip from "../Tooltip/Tooltip";
 import { DropdownContainer, DropdownList, DropdownListItem, DropdownTitle } from "./styles";
 import { DropdownItem, DropdownProps, PlacementOptions } from "./types";
 import { filterListByKeyword, getScrollableParent } from "./helpers";
@@ -241,6 +242,15 @@ const Dropdown: FC<DropdownProps> = ({
         );
       }
 
+      const content = (
+        <>
+          {item?.icon}
+          <Text fontSize={textSize} title={typeof item.label === "string" ? item.label : ""}>
+            {item.label}
+          </Text>
+        </>
+      );
+
       return (
         <li
           className={dropdownItemClasses(item)}
@@ -259,10 +269,13 @@ const Dropdown: FC<DropdownProps> = ({
             })
           }
         >
-          {item?.icon}
-          <Text fontSize={textSize} title={typeof item.label === "string" ? item.label : ""}>
-            {item.label}
-          </Text>
+          {item.tooltipContent ? (
+            <Tooltip content={item.tooltipContent} key={`${index}-${item.value}`}>
+              {content}
+            </Tooltip>
+          ) : (
+            content
+          )}
         </li>
       );
     });

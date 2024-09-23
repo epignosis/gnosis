@@ -1,4 +1,5 @@
 import { HTMLAttributes, ReactNode } from "react";
+import { TippyProps } from "@tippyjs/react";
 import { TypographyLevels } from "@theme/utils/typography";
 
 export type DropdownItem = {
@@ -10,6 +11,7 @@ export type DropdownItem = {
   items?: DropdownItem[];
   category?: string;
   isDisabled?: boolean;
+  tooltipContent?: TippyProps["content"];
 };
 
 export type DropdownProps = HTMLAttributes<HTMLDivElement> & {

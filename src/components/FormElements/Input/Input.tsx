@@ -6,6 +6,7 @@ import React, {
   MouseEvent,
   useEffect,
   isValidElement,
+  ReactElement,
 } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
@@ -32,6 +33,7 @@ export type InputProps = ExtendableProps<
     containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
     css?: SerializedStyles;
     tooltipContent?: string | JSX.Element;
+    tooltipIcon?: ReactElement;
     showVerticalLine?: boolean;
     isClearable?: boolean;
     autoFocus?: boolean;
@@ -51,6 +53,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     id,
     containerAttrs,
     tooltipContent = "",
+    tooltipIcon,
     value,
     isClearable = false,
     showVerticalLine = true,
@@ -124,7 +127,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           {shouldRenderTooltip && (
             <div data-testid={`${id}-tooltip`}>
               <Tooltip content={tooltipContent} parentProps={{ "aria-label": label }}>
-                <InfoCircledSVG height={20} />
+                {tooltipIcon || <InfoCircledSVG height={20} />}
               </Tooltip>
             </div>
           )}

@@ -123,7 +123,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           </Label>
           {shouldRenderTooltip && (
             <div data-testid={`${id}-tooltip`}>
-              <Tooltip content={tooltipContent}>
+              <Tooltip content={tooltipContent} parentProps={{ "aria-label": label }}>
                 <InfoCircledSVG height={20} />
               </Tooltip>
             </div>

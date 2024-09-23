@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import AsyncSelect from "react-select/async";
 import ReactSelect, { FormatOptionLabelContext } from "react-select";
 import CreatableSelect from "react-select/creatable";
 import { SerializedStyles } from "@emotion/react";
@@ -28,7 +29,7 @@ export const formatOptionLabel = (
       {level ? (
         <CarretArrowRight height={10} style={{ transform: `rotate(${rotation}deg)` }} />
       ) : null}
-      <span>{label}</span>
+      <span>{label} wtfffff</span>
     </span>
   );
 };
@@ -37,6 +38,8 @@ export const renderSelect = (
   type: SelectType,
   customSelectProps: CustomSelectProps<CustomOption, boolean>,
 ) => {
+  const { loadOptions } = customSelectProps ?? {};
+
   switch (type) {
     case "creatable":
       return (
@@ -46,6 +49,8 @@ export const renderSelect = (
           formatOptionLabel={formatOptionLabel}
         />
       );
+    case "async":
+      return <AsyncSelect {...customSelectProps} type="async" loadOptions={loadOptions} />;
     default:
       return <ReactSelect {...customSelectProps} formatOptionLabel={formatOptionLabel} />;
   }

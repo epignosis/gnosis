@@ -1,21 +1,11 @@
-import React, {
-  ForwardRefRenderFunction,
-  forwardRef,
-  isValidElement,
-  useRef,
-  useState,
-} from "react";
+import React, { ForwardRefRenderFunction, forwardRef, isValidElement, useRef } from "react";
 import classNames from "classnames";
 import { ActionMeta, MultiValue, SelectInstance, SingleValue } from "react-select";
 import { SerializedStyles } from "@emotion/react";
-import { useClickAway } from "ahooks";
 import { AddOperatorSVG, InfoCircledSVG } from "../../../icons";
 import Label from "../Label/Label";
 import Tooltip from "../../Tooltip/Tooltip";
-import CustomOptionComponent from "./components/CustomOption";
-import CustomMenuList from "./components/CustomMenuList";
-import CustomSingleValue from "./components/CustomSingleValue";
-import CustomMultiValueLabel from "./components/CustomMultiValueLabel";
+// import CustomOptionComponent from "./components/CustomOption";
 import { resolveStyles, selectContainer } from "./styles";
 import { CustomOption, CustomSelectProps } from "./types";
 import { MAX_MENU_HEIGHT, MIN_WIDTH, MAX_WIDTH, OUTER_PLACEHOLDER } from "./constants";
@@ -43,22 +33,23 @@ const Select: ForwardRefRenderFunction<
     placeholder = OUTER_PLACEHOLDER,
     tooltipContent = "",
     countOptionsForInnerSearch = 10,
-    onChange,
     isInputValid,
-    checkIfInputIsSelected,
-    closeMenuOnSelect,
     menuMaxWidth,
     forceDisableSearch = false,
+    onChange,
+    asyncOptions,
     ...rest
   } = props;
+
+  const { onAsyncSearchChange } = asyncOptions ?? {};
+
   const hasLabel = Boolean(label);
-
   const containerRef = useRef<HTMLInputElement>(null);
-
-  const [inputValue, setInputValue] = useState("");
   const labelClassname = classNames({
     required,
   });
+
+  // const [inputValue, setInputValue] = useState("");
 
   const countOptions = () => {
     // Count the number of options, including nested options if exists
@@ -98,32 +89,10 @@ const Select: ForwardRefRenderFunction<
     </div>
   );
 
-  // const CustomDropdownIndicator: React.FC<DropdownIndicatorProps<CustomOption, boolean>> = (
-  //   props,
-  // ) => {
-  //   // const {
-  //   //   selectProps: { menuIsOpen },
-  //   // } = props;
-
-  //   // const handleCloseMenu = () => {
-  //   //   if (menuIsOpen) {
-  //   //     setIsFocused(false);
-  //   //   }
-  //   // };
-
-  //   return (
-  //     <components.DropdownIndicator {...props}>
-  //       <components.DownChevron onClick={handleCloseMenu} />
-  //     </components.DropdownIndicator>
-  //   );
-  // };
-
   const customSelectProps = {
     ...rest,
     ref: forwardedRef,
     styles,
-    blurInputOnSelect: closeMenuOnSelect || !isMulti,
-    closeMenuOnSelect: closeMenuOnSelect || !isMulti,
     isMulti,
     classNames: {
       control: () => containerClassNames(status, size),
@@ -132,46 +101,24 @@ const Select: ForwardRefRenderFunction<
     },
     components: {
       IndicatorSeparator: () => null,
-      MenuList: CustomMenuList,
-      Option: CustomOptionComponent,
-      SingleValue: CustomSingleValue,
-      MultiValueLabel: CustomMultiValueLabel,
     },
     formatCreateLabel,
     isSearchable,
     maxMenuHeight,
     options,
     placeholder,
-    inputValue,
-    onMouseDown: (e: MouseEvent) => e.stopPropagation(),
     type,
+    onMouseDown: (e: MouseEvent) => e.stopPropagation(),
     onChange: (
       option: MultiValue<CustomOption> | SingleValue<CustomOption>,
       action: ActionMeta<CustomOption>,
     ) => {
       onChange?.(option, action);
     },
-    onInputChange: (val: string) => setInputValue(val),
     isValidNewOption: isInputValid,
-    noOptionsMessage: () => checkIfInputIsSelected && checkIfInputIsSelected(inputValue),
     isOptionDisabled: (option: CustomOption): boolean => Boolean(option.disabled),
+    loadOptions: onAsyncSearchChange,
   };
-
-  useClickAway(
-    (e) => {
-      // Ignore clicks on the close icon, can be one of the three following:
-      const { nodeName, className } = e.target as HTMLElement;
-      const isSvg = nodeName === "svg";
-      const isPath = nodeName === "path";
-      const isCloseIcon = className === "close-icon";
-
-      if (isSvg || isPath || isCloseIcon) return;
-      // setIsFocused(false);
-      setInputValue("");
-    },
-
-    [containerRef],
-  );
 
   return (
     <div

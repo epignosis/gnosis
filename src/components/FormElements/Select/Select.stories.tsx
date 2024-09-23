@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Story } from "@storybook/react";
 import { CustomSelectProps, CustomOption } from "./types";
-import { defaultOptions, groupedOptions, menuMaxWidthOptions } from "./data";
+import { defaultOptions, groupedOptions } from "./data";
 import Select from "./Select";
-import { selectOptionsWithLevels } from "./constants";
+// import { selectOptionsWithLevels } from "./constants";
 import { formatOptionLabel } from "./helpers";
 
 export default {
@@ -75,19 +75,11 @@ Default.args = {
   options: defaultOptions,
 };
 
-export const WithMenuMaxWidth = Template.bind({});
+export const searchable = Template.bind({});
 
-WithMenuMaxWidth.args = {
-  options: menuMaxWidthOptions,
-  minWidth: "300px",
-  maxWidth: "300px",
-  menuMaxWidth: 500,
-};
-
-export const WithNestLevels = Template.bind({});
-
-WithNestLevels.args = {
-  options: selectOptionsWithLevels,
+searchable.args = {
+  options: defaultOptions,
+  isSearchable: true,
 };
 
 export const withGroupedOptions = Template.bind({});
@@ -96,39 +88,11 @@ withGroupedOptions.args = {
   options: groupedOptions,
 };
 
-export const WithRequired = Template.bind({});
-
-WithRequired.args = {
-  options: defaultOptions,
-  required: true,
-};
-
-// export const withInnerSearch = Template.bind({});
-
-// withInnerSearch.args = {
-//   options: defaultOptions,
-//   hasInnerSearch: true,
-// };
-
-export const withOpenMenu = Template.bind({});
-
-withOpenMenu.args = {
-  options: defaultOptions,
-  menuIsOpen: true,
-};
-
 export const withMultipleValues = Template.bind({});
 
 withMultipleValues.args = {
   options: defaultOptions,
   isMulti: true,
-};
-
-export const Disabled = Template.bind({ options: defaultOptions, isDisabled: true });
-
-Disabled.args = {
-  options: defaultOptions,
-  isDisabled: true,
 };
 
 export const withValueCreation = Template.bind({});
@@ -150,53 +114,50 @@ withValueCreationValidation.args = {
   isInputValid: (value: string): boolean =>
     /^(?=.*[^\d])(?=.*\S).+$/.test(value) &&
     !defaultOptions.find((option) => option.label === value),
-  checkIfInputIsSelected: (inputValue: string): string => {
-    return defaultOptions.find((option) => option.label === inputValue)
-      ? "Already selected"
-      : "No options";
-  },
+  // checkIfInputIsSelected: (inputValue: string): string => {
+  //   return defaultOptions.find((option) => option.label === inputValue)
+  //     ? "Already selected"
+  //     : "No options";
+  // },
 };
 
 export const AsyncSelect: Story<CustomSelectProps<CustomOption, boolean>> = (args) => {
-  const [options, setOptions] = useState<CustomOption[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const onAsyncSearchChange = (value: string): Promise<void> => {
+  const onAsyncSearchChange = (inputText: string): Promise<CustomOption[]> => {
     setLoading(true);
-    return new Promise<void>((resolve) => {
-      // Simulate an async operation with a setTimeout
+    return new Promise<CustomOption[]>((resolve) => {
+      // Simulating fetched options based on the inputText
+      const simulatedResults = defaultOptions.filter((data) =>
+        data.label.toLowerCase().includes(inputText.toLowerCase()),
+      );
       setTimeout(() => {
-        resolve();
         setLoading(false);
-
-        const foundData = defaultOptions.filter((data) => data.value === value);
-
-        setOptions(foundData?.length > 0 ? foundData : []);
-      }, 3000);
+        resolve(simulatedResults);
+        return simulatedResults;
+      }, 2000);
     });
   };
 
-  return (
-    <>
-      <h2>
-        In order for the search to work corerctly, search on of the following: java, python, ruby,
-        php, c
-      </h2>
+  const customNoOptionsMessage = ({ inputValue }: { inputValue: string }) => {
+    if (!inputValue) {
+      return "Type 3 or more characters";
+    }
+    return `No results found for "${inputValue}"`;
+  };
 
-      <Select
-        {...args}
-        options={options}
-        showMoreButton={<div> Show more </div>}
-        type="async"
-        asyncOptions={{
-          onAsyncSearchChange,
-          initialText: "Type 3 or more characters",
-          status: {
-            isLoading: loading,
-            error: false,
-          },
-        }}
-      />
-    </>
+  return (
+    <Select
+      {...args}
+      type="async"
+      noOptionsMessage={customNoOptionsMessage}
+      asyncOptions={{
+        onAsyncSearchChange,
+        status: {
+          isLoading: loading,
+          error: false,
+        },
+      }}
+    />
   );
 };

@@ -16,7 +16,7 @@ export type NestedCustomOption = CustomOption & {
 export type SelectType = "select" | "creatable" | "async";
 
 type AsyncOptions = {
-  onAsyncSearchChange?: (value: string) => void;
+  onAsyncSearchChange?: (value: string) => Promise<CustomOption[]>;
   initialText?: string | JSX.Element;
   status?: {
     isLoading: boolean;
@@ -67,7 +67,7 @@ export type CustomSelectProps<
   menuMaxWidth?: number;
   forceDisableSearch?: boolean;
   isInputValid?: (input: string) => boolean;
-  checkIfInputIsSelected?: (inputValue: string) => string;
+  loadOptions?: (inputValue: string) => Promise<CustomOption[]>;
 };
 
 export type CustomMenuListProps<

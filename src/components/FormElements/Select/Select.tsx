@@ -10,6 +10,9 @@ import { resolveStyles, selectContainer } from "./styles";
 import { CustomOption, CustomSelectProps } from "./types";
 import { MAX_MENU_HEIGHT, MIN_WIDTH, MAX_WIDTH, PLACEHOLDER } from "./constants";
 import { containerClassNames, renderSelect } from "./helpers";
+import CustomMultiValueLabel from "./components/CustomMultiValueLabel";
+import CustomSingleValue from "./components/CustomSingleValue";
+import CustomOptionComponent from "./components/CustomOptionComponent";
 
 const Select: ForwardRefRenderFunction<
   SelectInstance<CustomOption>,
@@ -99,6 +102,9 @@ const Select: ForwardRefRenderFunction<
     },
     components: {
       IndicatorSeparator: () => null,
+      Option: CustomOptionComponent,
+      SingleValue: CustomSingleValue,
+      MultiValueLabel: CustomMultiValueLabel,
     },
     formatCreateLabel,
     isSearchable: isSelectSearchable(),

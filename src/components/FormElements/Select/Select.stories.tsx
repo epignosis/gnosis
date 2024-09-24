@@ -157,7 +157,6 @@ export const AsyncSelect: Story<CustomSelectProps<CustomOption, boolean>> = (arg
       setTimeout(() => {
         setLoading(false);
         resolve(simulatedResults);
-        return simulatedResults;
       }, 2000);
     });
   };

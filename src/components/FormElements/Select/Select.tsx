@@ -49,8 +49,6 @@ const Select: ForwardRefRenderFunction<
     required,
   });
 
-  // const [inputValue, setInputValue] = useState("");
-
   const countOptions = () => {
     // Count the number of options, including nested options if exists
     return options.reduce((count, option) => {

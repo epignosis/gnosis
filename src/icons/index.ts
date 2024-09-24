@@ -470,6 +470,11 @@ export { default as ReferralPendingSVG } from "./client/referral/referral-pendin
 export { default as ReferralTimeSVG } from "./client/referral/referral-time.svg";
 export { default as ReferralIconSVG } from "./client/referral/referral.svg";
 
+// Reverse Trial Icons
+export { default as ReverseTrialStartSVG } from "./client/reverse-trial/trial-start.svg";
+export { default as ReverseTrialEndSVG } from "./client/reverse-trial/trial-end.svg";
+export { default as ReverseTrialWillEndSVG } from "./client/reverse-trial/trial-ends-in-a-day.svg";
+
 // Consensus Icons
 export { default as CirclePlaySVG } from "./client/circle-play.svg";
 

@@ -1,5 +1,5 @@
 import { MouseEvent } from "react";
-import type { GroupBase, OptionsOrGroups, Props } from "react-select";
+import type { GroupBase, Props } from "react-select";
 
 export type Status = "valid" | "error";
 
@@ -16,10 +16,7 @@ export type NestedCustomOption = CustomOption & {
 export type SelectType = "select" | "creatable" | "async";
 
 type AsyncOptions = {
-  onAsyncSearchChange?: (
-    value: string,
-    callback?: (options: OptionsOrGroups<CustomOption, GroupBase<CustomOption>>) => void,
-  ) => Promise<CustomOption[]>;
+  onAsyncSearchChange?: (value: string) => Promise<CustomOption[]>;
   status?: {
     isLoading: boolean;
     error: boolean;

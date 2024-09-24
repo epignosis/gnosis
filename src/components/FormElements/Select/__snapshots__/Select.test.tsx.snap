@@ -3,7 +3,7 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="css-1drexhk-selectContainer-selectContainer"
+    class="css-k1q6fm-selectContainer-selectContainer"
   >
     <div
       class="label-container"
@@ -44,10 +44,10 @@ exports[`<Select /> matches snapshot 1`] = `
           </span>
         </span>
         <div
-          class="control-md valid focused css-1hos8av-control"
+          class="control-md valid css-1hos8av-control"
         >
           <div
-            class="css-1t0b0vt-CustomContainerStyles"
+            class=" css-1fdsijx-ValueContainer"
           >
             <div
               class=" css-zg71bx-placeholder"
@@ -98,62 +98,31 @@ exports[`<Select /> matches snapshot 1`] = `
           id="react-select-3-listbox"
         >
           <div
-            class="css-ci9plw-customMenuList-customMenuList"
+            class=" css-mpsorv-MenuList"
           >
             <div
-              class=" css-mpsorv-MenuList"
+              aria-disabled="false"
+              class="option-md css-bi1k7u-option"
+              id="react-select-3-option-0"
+              tabindex="-1"
             >
-              <div
-                aria-disabled="false"
-                class="option-md css-bi1k7u-option"
-                id="react-select-3-option-0"
-                tabindex="-1"
-              >
-                <div
-                  aria-expanded="false"
-                  role="tooltip"
-                >
-                  <div
-                    class="custom-option"
-                  >
-                    name
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-disabled="false"
-                class="option-md css-iovxfg-option"
-                id="react-select-3-option-1"
-                tabindex="-1"
-              >
-                <div
-                  aria-expanded="false"
-                  role="tooltip"
-                >
-                  <div
-                    class="custom-option"
-                  >
-                    surname
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-disabled="false"
-                class="option-md css-iovxfg-option"
-                id="react-select-3-option-2"
-                tabindex="-1"
-              >
-                <div
-                  aria-expanded="false"
-                  role="tooltip"
-                >
-                  <div
-                    class="custom-option"
-                  >
-                    age
-                  </div>
-                </div>
-              </div>
+              name
+            </div>
+            <div
+              aria-disabled="false"
+              class="option-md css-iovxfg-option"
+              id="react-select-3-option-1"
+              tabindex="-1"
+            >
+              surname
+            </div>
+            <div
+              aria-disabled="false"
+              class="option-md css-iovxfg-option"
+              id="react-select-3-option-2"
+              tabindex="-1"
+            >
+              age
             </div>
           </div>
         </div>

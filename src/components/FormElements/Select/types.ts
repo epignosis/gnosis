@@ -15,14 +15,6 @@ export type NestedCustomOption = CustomOption & {
 
 export type SelectType = "select" | "creatable" | "async";
 
-type AsyncOptions = {
-  onAsyncSearchChange?: (value: string) => Promise<CustomOption[]>;
-  status?: {
-    isLoading: boolean;
-    error: boolean;
-  };
-};
-
 // Here we are extending the react-select types with DS Select custom types to can access theme inside the react-select components
 declare module "react-select/dist/declarations/src/Select" {
   export interface Props<
@@ -30,10 +22,8 @@ declare module "react-select/dist/declarations/src/Select" {
     IsMulti extends boolean = false,
     Group extends GroupBase<Option> = GroupBase<Option>,
   > {
-    innerPlaceholder?: string;
     isMulti: IsMulti; // this is required to relieve TS warning
     group?: Group; // this is required to relieve TS warning
-    asyncOptions?: AsyncOptions;
     tooltipContent?: string | JSX.Element;
     type?: SelectType;
     showMoreButton?: JSX.Element;
@@ -60,10 +50,9 @@ export type CustomSelectProps<
   minWidth?: string;
   maxWidth?: string;
   creatableTooltip?: string;
-  asyncOptions?: AsyncOptions;
   tooltipContent?: string | JSX.Element;
   minNumberOfOptionsToEnableSearch?: number;
   menuMaxWidth?: number;
-  isInputValid?: (input: string) => boolean;
+  isValidNewOption?: (input: string) => boolean;
   loadOptions?: (inputValue: string) => Promise<CustomOption[]>;
 };

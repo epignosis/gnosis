@@ -5,7 +5,6 @@ import { SerializedStyles } from "@emotion/react";
 import { AddOperatorSVG, InfoCircledSVG } from "../../../icons";
 import Label from "../Label/Label";
 import Tooltip from "../../Tooltip/Tooltip";
-// import CustomOptionComponent from "./components/CustomOption";
 import { resolveStyles, selectContainer } from "./styles";
 import { CustomOption, CustomSelectProps } from "./types";
 import { MAX_MENU_HEIGHT, MIN_WIDTH, MAX_WIDTH, PLACEHOLDER } from "./constants";
@@ -36,15 +35,13 @@ const Select: ForwardRefRenderFunction<
     placeholder = PLACEHOLDER,
     tooltipContent = "",
     minNumberOfOptionsToEnableSearch = 10,
-    isInputValid,
+    isValidNewOption,
     menuMaxWidth,
     onChange,
-    asyncOptions,
+    loadOptions,
     isSearchable,
     ...rest
   } = props;
-
-  const { onAsyncSearchChange } = asyncOptions ?? {};
 
   const hasLabel = Boolean(label);
   const containerRef = useRef<HTMLInputElement>(null);
@@ -112,6 +109,8 @@ const Select: ForwardRefRenderFunction<
     options,
     placeholder,
     type,
+    isValidNewOption,
+    loadOptions,
     onMouseDown: (e: MouseEvent) => e.stopPropagation(),
     onChange: (
       option: MultiValue<CustomOption> | SingleValue<CustomOption>,
@@ -119,9 +118,7 @@ const Select: ForwardRefRenderFunction<
     ) => {
       onChange?.(option, action);
     },
-    isValidNewOption: isInputValid,
     isOptionDisabled: (option: CustomOption): boolean => Boolean(option.disabled),
-    loadOptions: onAsyncSearchChange,
   };
 
   return (

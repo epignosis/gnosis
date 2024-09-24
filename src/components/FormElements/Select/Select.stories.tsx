@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Story } from "@storybook/react";
 import { CustomSelectProps, CustomOption } from "./types";
 import { defaultOptions, groupedOptions, menuMaxWidthOptions } from "./data";
@@ -13,7 +13,7 @@ export default {
     label: "Choose a programming language",
     inline: false,
     id: "programming-language",
-    tooltipContent: "",
+    tooltipContent: "Tooltip placeholder",
   },
   argTypes: {
     size: {
@@ -134,28 +134,19 @@ withValueCreationValidation.args = {
   isMulti: true,
   isClearable: true,
   type: "creatable",
-  isInputValid: (value: string): boolean =>
+  isValidNewOption: (value: string): boolean =>
     /^(?=.*[^\d])(?=.*\S).+$/.test(value) &&
     !defaultOptions.find((option) => option.label === value),
-  // checkIfInputIsSelected: (inputValue: string): string => {
-  //   return defaultOptions.find((option) => option.label === inputValue)
-  //     ? "Already selected"
-  //     : "No options";
-  // },
 };
 
 export const AsyncSelect: Story<CustomSelectProps<CustomOption, boolean>> = (args) => {
-  const [loading, setLoading] = useState(false);
-
   const onAsyncSearchChange = (inputText: string): Promise<CustomOption[]> => {
-    setLoading(true);
     return new Promise<CustomOption[]>((resolve) => {
       // Simulating fetched options based on the inputText
       const simulatedResults = defaultOptions.filter((data) =>
         data.label.toLowerCase().includes(inputText.toLowerCase()),
       );
       setTimeout(() => {
-        setLoading(false);
         resolve(simulatedResults);
       }, 2000);
     });
@@ -173,13 +164,8 @@ export const AsyncSelect: Story<CustomSelectProps<CustomOption, boolean>> = (arg
       {...args}
       type="async"
       noOptionsMessage={customNoOptionsMessage}
-      asyncOptions={{
-        onAsyncSearchChange,
-        status: {
-          isLoading: loading,
-          error: false,
-        },
-      }}
+      loadOptions={onAsyncSearchChange}
+      isClearable
     />
   );
 };

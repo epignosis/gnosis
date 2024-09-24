@@ -38,20 +38,20 @@ export const renderSelect = (
   type: SelectType,
   customSelectProps: CustomSelectProps<CustomOption, boolean>,
 ) => {
-  const { loadOptions } = customSelectProps ?? {};
+  const { loadOptions, ...rest } = customSelectProps;
 
   switch (type) {
     case "creatable":
       return (
         <CreatableSelect
-          {...customSelectProps}
+          {...rest}
           createOptionPosition="first"
           formatOptionLabel={formatOptionLabel}
         />
       );
     case "async":
-      return <AsyncSelect {...customSelectProps} type="async" loadOptions={loadOptions} />;
+      return <AsyncSelect {...rest} type="async" loadOptions={loadOptions} />;
     default:
-      return <ReactSelect {...customSelectProps} formatOptionLabel={formatOptionLabel} />;
+      return <ReactSelect {...rest} formatOptionLabel={formatOptionLabel} />;
   }
 };

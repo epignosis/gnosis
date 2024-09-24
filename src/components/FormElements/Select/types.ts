@@ -17,7 +17,6 @@ export type SelectType = "select" | "creatable" | "async";
 
 type AsyncOptions = {
   onAsyncSearchChange?: (value: string) => Promise<CustomOption[]>;
-  initialText?: string | JSX.Element;
   status?: {
     isLoading: boolean;
     error: boolean;
@@ -63,7 +62,7 @@ export type CustomSelectProps<
   creatableTooltip?: string;
   asyncOptions?: AsyncOptions;
   tooltipContent?: string | JSX.Element;
-  countOptionsForInnerSearch?: number;
+  minNumberOfOptionsToEnableSearch?: number;
   menuMaxWidth?: number;
   forceDisableSearch?: boolean;
   isInputValid?: (input: string) => boolean;

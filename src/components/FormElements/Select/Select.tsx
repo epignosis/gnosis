@@ -32,7 +32,7 @@ const Select: ForwardRefRenderFunction<
     maxWidth = MAX_WIDTH,
     placeholder = OUTER_PLACEHOLDER,
     tooltipContent = "",
-    countOptionsForInnerSearch = 10,
+    minNumberOfOptionsToEnableSearch = 10,
     isInputValid,
     menuMaxWidth,
     forceDisableSearch = false,
@@ -60,7 +60,7 @@ const Select: ForwardRefRenderFunction<
 
   const isSelectSearchable = () => {
     const isAsyncType = type === "async";
-    const hasManyOptions = countOptions() > countOptionsForInnerSearch;
+    const hasManyOptions = countOptions() > minNumberOfOptionsToEnableSearch;
 
     if (forceDisableSearch) return false;
 
@@ -69,7 +69,6 @@ const Select: ForwardRefRenderFunction<
 
   const isSearchable = isSelectSearchable();
 
-  // const innerSearchEnabled = shouldShowInnerSearch();
   const shouldRenderTooltip =
     (tooltipContent && typeof tooltipContent === "string" && tooltipContent !== "") ||
     isValidElement(tooltipContent);

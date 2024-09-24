@@ -118,21 +118,9 @@ export const selectContainer = (
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      padding-inline-end: "1rem";
+      padding-inline-end: 1rem;
       width: auto;
     }
-  }
-`;
-
-export const customMenuList = (): SerializedStyles => css`
-  padding: 0;
-
-  .loader-container {
-    margin-top: 1rem;
-  }
-
-  .text-container {
-    margin-top: 1rem;
   }
 `;
 
@@ -330,14 +318,6 @@ export const resolveStyles = ({
     },
   }),
 });
-
-export const CustomContainerStyles = (): SerializedStyles => {
-  return css`
-    span {
-      padding-left: 0 !important;
-    }
-  `;
-};
 
 export const customLabelStyles = ({ level }: { level: number }): SerializedStyles => {
   return css`

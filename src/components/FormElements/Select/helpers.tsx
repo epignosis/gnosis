@@ -29,7 +29,6 @@ export const formatOptionLabel = (
       {level ? (
         <CarretArrowRight height={10} style={{ transform: `rotate(${rotation}deg)` }} />
       ) : null}
-      <span>{label} wtfffff</span>
     </span>
   );
 };

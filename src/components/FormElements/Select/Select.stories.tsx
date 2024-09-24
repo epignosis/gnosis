@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Story } from "@storybook/react";
 import { CustomSelectProps, CustomOption } from "./types";
-import { defaultOptions, groupedOptions } from "./data";
+import { defaultOptions, groupedOptions, menuMaxWidthOptions } from "./data";
 import Select from "./Select";
-// import { selectOptionsWithLevels } from "./constants";
 import { formatOptionLabel } from "./helpers";
 
 export default {
@@ -73,6 +72,7 @@ export const Default = Template.bind({});
 
 Default.args = {
   options: defaultOptions,
+  isSearchable: false,
 };
 
 export const searchable = Template.bind({});
@@ -80,6 +80,29 @@ export const searchable = Template.bind({});
 searchable.args = {
   options: defaultOptions,
   isSearchable: true,
+};
+
+export const WithRequired = Template.bind({});
+
+WithRequired.args = {
+  options: defaultOptions,
+  required: true,
+};
+
+export const WithMenuMaxWidth = Template.bind({});
+
+WithMenuMaxWidth.args = {
+  options: menuMaxWidthOptions,
+  minWidth: "300px",
+  maxWidth: "300px",
+  menuMaxWidth: 500,
+};
+
+export const withOpenMenu = Template.bind({});
+
+withOpenMenu.args = {
+  options: defaultOptions,
+  menuIsOpen: true,
 };
 
 export const withGroupedOptions = Template.bind({});

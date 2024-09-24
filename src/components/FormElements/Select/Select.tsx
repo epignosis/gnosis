@@ -8,7 +8,7 @@ import Tooltip from "../../Tooltip/Tooltip";
 // import CustomOptionComponent from "./components/CustomOption";
 import { resolveStyles, selectContainer } from "./styles";
 import { CustomOption, CustomSelectProps } from "./types";
-import { MAX_MENU_HEIGHT, MIN_WIDTH, MAX_WIDTH, OUTER_PLACEHOLDER } from "./constants";
+import { MAX_MENU_HEIGHT, MIN_WIDTH, MAX_WIDTH, PLACEHOLDER } from "./constants";
 import { containerClassNames, renderSelect } from "./helpers";
 
 const Select: ForwardRefRenderFunction<
@@ -30,14 +30,14 @@ const Select: ForwardRefRenderFunction<
     maxMenuHeight = MAX_MENU_HEIGHT,
     minWidth = MIN_WIDTH,
     maxWidth = MAX_WIDTH,
-    placeholder = OUTER_PLACEHOLDER,
+    placeholder = PLACEHOLDER,
     tooltipContent = "",
     minNumberOfOptionsToEnableSearch = 10,
     isInputValid,
     menuMaxWidth,
-    forceDisableSearch = false,
     onChange,
     asyncOptions,
+    isSearchable,
     ...rest
   } = props;
 
@@ -59,15 +59,14 @@ const Select: ForwardRefRenderFunction<
   };
 
   const isSelectSearchable = () => {
+    if (isSearchable !== undefined) {
+      return isSearchable;
+    }
+
     const isAsyncType = type === "async";
     const hasManyOptions = countOptions() > minNumberOfOptionsToEnableSearch;
-
-    if (forceDisableSearch) return false;
-
     return isAsyncType || hasManyOptions;
   };
-
-  const isSearchable = isSelectSearchable();
 
   const shouldRenderTooltip =
     (tooltipContent && typeof tooltipContent === "string" && tooltipContent !== "") ||
@@ -102,7 +101,7 @@ const Select: ForwardRefRenderFunction<
       IndicatorSeparator: () => null,
     },
     formatCreateLabel,
-    isSearchable,
+    isSearchable: isSelectSearchable(),
     maxMenuHeight,
     options,
     placeholder,

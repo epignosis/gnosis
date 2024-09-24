@@ -1,5 +1,5 @@
 import { MouseEvent } from "react";
-import type { GroupBase, MenuListProps, Props } from "react-select";
+import type { GroupBase, Props } from "react-select";
 
 export type Status = "valid" | "error";
 
@@ -64,16 +64,6 @@ export type CustomSelectProps<
   tooltipContent?: string | JSX.Element;
   minNumberOfOptionsToEnableSearch?: number;
   menuMaxWidth?: number;
-  forceDisableSearch?: boolean;
   isInputValid?: (input: string) => boolean;
   loadOptions?: (inputValue: string) => Promise<CustomOption[]>;
-};
-
-export type CustomMenuListProps<
-  Option extends CustomOption,
-  IsMulti extends boolean = false,
-  Group extends GroupBase<Option> = GroupBase<Option>,
-> = MenuListProps<Option, IsMulti, Group> & {
-  asyncOptions?: AsyncOptions;
-  tooltipContent?: string | JSX.Element;
 };

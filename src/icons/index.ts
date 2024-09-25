@@ -445,6 +445,7 @@ export { default as HouseUserSVG } from "./client/house-user.svg";
 export { default as CalendarUsersSVG } from "./client/calendar-users.svg";
 export { default as ImportDataSVG } from "./client/import-data.svg";
 export { default as HourglassEndSVG } from "./client/hourglass-end.svg";
+export { default as NumberedListSVG } from "./client/numbered-list.svg";
 
 // Exports from folders.
 // Assignments Icons

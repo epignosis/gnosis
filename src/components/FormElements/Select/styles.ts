@@ -70,16 +70,7 @@ export const selectContainer = (
     justify-content: space-between;
     padding-inline-end: 1rem;
     color: ${formElements.input.borderFocusColor};
-    background-color: ${formElements.input.backgroundFocus};
 
-    /* We do this to remove padding from the parent, this way we change background color */
-    margin: -0.3125rem -1rem;
-    padding: 0.3125rem 1rem;
-    padding-inline-end: 2rem; // to align plus icon with X icon
-
-    &:hover {
-      background-color: ${formElements.input.background};
-    }
     svg {
       color: ${formElements.input.borderFocusColor};
 

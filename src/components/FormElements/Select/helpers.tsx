@@ -49,7 +49,7 @@ export const renderSelect = (
         />
       );
     case "async":
-      return <AsyncSelect {...rest} type="async" loadOptions={loadOptions} />;
+      return <AsyncSelect {...rest} loadOptions={loadOptions} />;
     default:
       return <ReactSelect {...rest} formatOptionLabel={formatOptionLabel} />;
   }

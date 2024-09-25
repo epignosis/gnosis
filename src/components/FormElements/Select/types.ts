@@ -1,4 +1,3 @@
-import { MouseEvent } from "react";
 import type { GroupBase, Props } from "react-select";
 
 export type Status = "valid" | "error";
@@ -14,24 +13,6 @@ export type NestedCustomOption = CustomOption & {
 };
 
 export type SelectType = "select" | "creatable" | "async";
-
-// Here we are extending the react-select types with DS Select custom types to can access theme inside the react-select components
-declare module "react-select/dist/declarations/src/Select" {
-  export interface Props<
-    Option extends CustomOption,
-    IsMulti extends boolean = false,
-    Group extends GroupBase<Option> = GroupBase<Option>,
-  > {
-    isMulti: IsMulti; // this is required to relieve TS warning
-    group?: Group; // this is required to relieve TS warning
-    tooltipContent?: string | JSX.Element;
-    type?: SelectType;
-    showMoreButton?: JSX.Element;
-    shouldShowMenuList?: boolean;
-    onMenuInputFocus?: () => void;
-    handleShowMore?: (e: MouseEvent<HTMLButtonElement>) => void;
-  }
-}
 
 // Here we are adding our custom props to the react-select types
 // These custom types used from the DS Select component
@@ -55,4 +36,6 @@ export type CustomSelectProps<
   menuMaxWidth?: number;
   isValidNewOption?: (input: string) => boolean;
   loadOptions?: (inputValue: string) => Promise<CustomOption[]>;
+  defaultOptions?: boolean;
+  cacheOptions?: boolean;
 };

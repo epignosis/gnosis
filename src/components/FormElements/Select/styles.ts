@@ -23,14 +23,12 @@ export const selectContainer = (
     isInlineFlex,
     minWidth,
     maxWidth,
-    hasInnerSearch,
   }: {
     size: InputSize;
     inline: boolean;
     isInlineFlex: boolean;
     minWidth: string;
     maxWidth: string;
-    hasInnerSearch: boolean;
   },
 ): SerializedStyles => css`
   display: ${isInlineFlex ? "inline-flex" : "flex"};
@@ -120,35 +118,17 @@ export const selectContainer = (
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      padding-inline-end: ${hasInnerSearch ? "0" : "1rem"};
+      padding-inline-end: 1rem;
       width: auto;
     }
   }
 `;
 
-export const customMenuList = ({
-  hasInnerSearch,
-}: {
-  hasInnerSearch: boolean;
-}): SerializedStyles => css`
-  padding: ${hasInnerSearch ? "0.75rem" : "0"};
-
-  .loader-container {
-    margin-top: 1rem;
-  }
-
-  .text-container {
-    margin-top: 1rem;
-  }
-`;
-
 export const resolveStyles = ({
   size,
-  hasInnerSearch,
   menuMaxWidth,
 }: {
   size: string;
-  hasInnerSearch: boolean;
   menuMaxWidth?: number;
 }): StylesConfig<CustomOption> => ({
   menu: (base: CSSObjectWithLabel) => {
@@ -285,7 +265,7 @@ export const resolveStyles = ({
       : isDisabled
       ? formElements.input.disabledColor
       : "inherit",
-    borderRadius: hasInnerSearch ? "5px" : "none",
+    borderRadius: "none",
     "&:hover": {
       color: isSelected
         ? formElements.input.textColorFocused
@@ -309,7 +289,7 @@ export const resolveStyles = ({
   menuList: (base: CSSObjectWithLabel) => ({
     ...base,
     marginTop: "0.5rem",
-    marginBottom: hasInnerSearch ? "0" : "0.5rem",
+    marginBottom: "0.5rem",
     padding: "0",
     "::-webkit-scrollbar": {
       width: "5px",
@@ -338,14 +318,6 @@ export const resolveStyles = ({
     },
   }),
 });
-
-export const CustomContainerStyles = (): SerializedStyles => {
-  return css`
-    span {
-      padding-left: 0 !important;
-    }
-  `;
-};
 
 export const customLabelStyles = ({ level }: { level: number }): SerializedStyles => {
   return css`

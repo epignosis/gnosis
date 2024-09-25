@@ -22,6 +22,7 @@ export const formatOptionLabel = (
   if (!level || context === "value") return <>{label}</>;
 
   const isRtl = document.dir === "rtl";
+
   const rotation = isRtl ? 180 : 0;
 
   return (

@@ -1,3 +1,10 @@
+# [5.30.0](https://github.com/epignosis/gnosis/compare/v5.29.5...v5.30.0) (2024-09-26)
+
+
+### Features
+
+* **select:** props change ([#411](https://github.com/epignosis/gnosis/issues/411)) ([50be079](https://github.com/epignosis/gnosis/commit/50be079f46b07f5a3bda2589a0d4ee16eb902429))
+
 ## [5.29.5](https://github.com/epignosis/gnosis/compare/v5.29.4...v5.29.5) (2024-09-25)
 
 ## [5.29.4](https://github.com/epignosis/gnosis/compare/v5.29.3...v5.29.4) (2024-09-25)

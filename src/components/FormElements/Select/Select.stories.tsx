@@ -166,6 +166,8 @@ export const AsyncSelect: Story<CustomSelectProps<CustomOption, boolean>> = (arg
       noOptionsMessage={customNoOptionsMessage}
       loadOptions={onAsyncSearchChange}
       isClearable
+      defaultOptions
+      cacheOptions
     />
   );
 };

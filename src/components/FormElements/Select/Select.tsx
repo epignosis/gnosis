@@ -73,16 +73,14 @@ const Select: ForwardRefRenderFunction<
   const styles = resolveStyles({ size, menuMaxWidth });
 
   const formatCreateLabel = (inputValue: string) => (
-    <div>
-      <Tooltip content={creatableTooltip}>
-        <div className="select-create-label">
-          <span>{inputValue} </span>
-          <span>
-            <AddOperatorSVG color="black" height={12} />
-          </span>
-        </div>
-      </Tooltip>
-    </div>
+    <Tooltip content={creatableTooltip}>
+      <div className="select-create-label">
+        <span>{inputValue} </span>
+        <span>
+          <AddOperatorSVG color="black" height={12} />
+        </span>
+      </div>
+    </Tooltip>
   );
 
   const customSelectProps = {

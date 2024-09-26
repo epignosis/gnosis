@@ -220,6 +220,7 @@ export { default as LinkedUnitSVG } from "./feature/units/linked-unit-icon.svg";
 export { default as LinkedUnitChipChildSVG } from "./feature/units/linked-unit-chip-child-icon.svg";
 export { default as LinkedUnitChipParentSVG } from "./feature/units/linked-unit-chip-parent-icon.svg";
 export { default as MultiSessionSVG } from "./feature/units/multi-session.svg";
+export { default as MoreIconNoViewboxSVG } from "./feature/units/more-icon-no-viewbox.svg";
 
 // Questions Icons
 export { default as DragAndDropSVG } from "./feature/questions/drag-and-drop.svg";

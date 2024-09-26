@@ -1,3 +1,5 @@
+## [5.30.1](https://github.com/epignosis/gnosis/compare/v5.30.0...v5.30.1) (2024-09-26)
+
 # [5.30.0](https://github.com/epignosis/gnosis/compare/v5.29.5...v5.30.0) (2024-09-26)
 
 

@@ -80,6 +80,7 @@ const TableRow: FC<TableRowProps> = ({
             key={rowId}
             name={rowId}
             value={rowId}
+            aria-label={`Checkbox for row ${rowId}`}
             checked={isSelected}
             onChange={handleRowSelection}
             disabled={disabled}

@@ -98,6 +98,7 @@ const Header: FC<ChildrenProps> = ({
               id={`select-all-${isSelectAllChecked} - ${id}`}
               name="select-all"
               value="all"
+              aria-label={`Select all checkbox`}
               onChange={handleToggleSelectAll}
               checked={isSelectAllChecked}
               isPartiallySelected={!allRowsSelected}

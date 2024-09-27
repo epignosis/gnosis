@@ -30,3 +30,9 @@ WithInternalIcon.args = {
   size: "md",
   InternalIcon: <PreviewIconSVG height={32} />,
 };
+
+export const WithSubtitle = Template.bind({});
+
+WithSubtitle.args = {
+  subtitle: "This is a subtitle for the toggle",
+};

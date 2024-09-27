@@ -146,6 +146,6 @@ export const ToggleContainer = (
   }
 
   .subtitle-text {
-    color: ${formElements.toggleSwitch.backgroundDisabled};
+    color: ${formElements.toggleSwitch.subtitleDescription};
   }
 `;

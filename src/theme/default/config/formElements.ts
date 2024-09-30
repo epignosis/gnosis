@@ -65,5 +65,6 @@ export default {
     disabledBackground: colors.secondary.light,
     textColor: colors.white,
     requiredAsteriskColor: colors.red.base,
+    subtitleDescription: colors.secondary.darker,
   },
 };

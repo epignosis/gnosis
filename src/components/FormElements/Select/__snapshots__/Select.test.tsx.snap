@@ -23,6 +23,7 @@ exports[`<Select /> matches snapshot 1`] = `
     >
       <div
         class=" css-b62m3t-container"
+        id="my-select"
       >
         <span
           class="css-1f43avz-a11yText-A11yText"
@@ -61,6 +62,7 @@ exports[`<Select /> matches snapshot 1`] = `
               aria-describedby="react-select-3-placeholder"
               aria-expanded="true"
               aria-haspopup="true"
+              aria-label="my-select"
               aria-owns="react-select-3-listbox"
               aria-readonly="true"
               class="css-mohuvp-dummyInput-DummyInput"

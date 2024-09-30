@@ -1,3 +1,10 @@
+## [5.30.3](https://github.com/epignosis/gnosis/compare/v5.30.2...v5.30.3) (2024-09-30)
+
+
+### Bug Fixes
+
+* **a11y toggle description color:** description color changes ([#415](https://github.com/epignosis/gnosis/issues/415)) ([1531c0c](https://github.com/epignosis/gnosis/commit/1531c0c22c5461d8644eb21bd6e2b8082743aa3a))
+
 ## [5.30.2](https://github.com/epignosis/gnosis/compare/v5.30.1...v5.30.2) (2024-09-26)
 
 ## [5.30.1](https://github.com/epignosis/gnosis/compare/v5.30.0...v5.30.1) (2024-09-26)

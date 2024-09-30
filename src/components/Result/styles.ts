@@ -15,15 +15,15 @@ export const container = (
     padding: ${hasBorder ? "1.5rem 0.5rem" : "1rem 0"};
     ${hasBorder &&
     `
-      border-radius: 5px; 
-      box-shadow: 0px 3px 6px 0px ${result.shadowColor};
+      border-radius: .3125rem; 
+      box-shadow: 0 .1875rem .375rem 0 ${result.shadowColor};
     `}
 
     .body {
       text-align: center;
       margin-top: 2rem;
 
-      h3 {
+      .result-header {
         line-height: 1;
         color: ${result.titleColor};
         margin-bottom: 1rem;

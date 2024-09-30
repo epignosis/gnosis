@@ -6,12 +6,14 @@ import Text from "../Text/Text";
 import { container } from "./styles";
 import { IconType } from "types/common";
 
+type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 export type Size = "md" | "lg";
 
 export type ResultProps = React.HTMLAttributes<HTMLElement> & {
   icon?: IconType | string;
   title: string;
   info?: string;
+  heading?: Heading;
   size?: Size;
   footer?: ReactNode;
   hideInfo?: boolean;
@@ -32,6 +34,7 @@ const Result: FC<ResultProps> = ({
   icon,
   title,
   info,
+  heading = "h2",
   size = "lg",
   footer,
   hideInfo = false,
@@ -60,7 +63,7 @@ const Result: FC<ResultProps> = ({
       {!hideInfo && (
         <div className="body">
           <>
-            <Heading as="h3" data-testid="result-header">
+            <Heading as={heading} className="result-header" data-testid="result-header">
               {title}
             </Heading>
             {info && (

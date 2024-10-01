@@ -73,7 +73,7 @@ const Select: ForwardRefRenderFunction<
   const styles = resolveStyles({ size, menuMaxWidth });
 
   const formatCreateLabel = (inputValue: string) => (
-    <Tooltip content={creatableTooltip}>
+    <Tooltip content={creatableTooltip} parentProps={{ "aria-label": inputValue }}>
       <div className="select-create-label">
         <span>{inputValue} </span>
         <span>
@@ -85,6 +85,8 @@ const Select: ForwardRefRenderFunction<
 
   const customSelectProps = {
     ...rest,
+    id: id,
+    "aria-label": id,
     ref: forwardedRef,
     styles,
     isMulti,
@@ -141,7 +143,7 @@ const Select: ForwardRefRenderFunction<
           </Label>
           {shouldRenderTooltip && (
             <div data-testid={`${id}-tooltip`}>
-              <Tooltip content={tooltipContent}>
+              <Tooltip content={tooltipContent} parentProps={{ "aria-label": label }}>
                 <InfoCircledSVG height={20} />
               </Tooltip>
             </div>

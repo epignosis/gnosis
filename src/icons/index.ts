@@ -109,6 +109,12 @@ export { default as AIIconSVG } from "./legacy/ai-icon.svg";
 export { default as AIAssistantIconSVG } from "./legacy/ai-assistant-icon.svg";
 export { default as AIMessageIconSVG } from "./legacy/ai-message-icon.svg";
 export { default as WandIconSVG } from "./legacy/wand-icon.svg";
+export { default as ContinueSentenceSVG } from "./legacy/continue-sentence.svg";
+export { default as FixGrammarSVG } from "./legacy/fix-grammar.svg";
+export { default as LongTextSVG } from "./legacy/long-text.svg";
+export { default as ShortTextSVG } from "./legacy/short-text.svg";
+export { default as TranslateSVG } from "./legacy/translate.svg";
+export { default as WriteAISVG } from "./legacy/write-ai.svg";
 
 // Arrow Icons
 export { default as BackIconSVG } from "./arrows/back-icon.svg";

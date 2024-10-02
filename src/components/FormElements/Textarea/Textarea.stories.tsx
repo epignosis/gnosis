@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { Story } from "@storybook/react-webpack5";
 import TextareaComponent, { TextareaProps } from "./Textarea";
 
 export default {

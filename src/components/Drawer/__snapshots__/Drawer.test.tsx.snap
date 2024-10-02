@@ -2,7 +2,7 @@
 
 exports[`<Drawer/> matches snapshot with close button 1`] = `
 <div
-  class="css-p8mw6w-drawerContainer-drawerContainer"
+  class="css-3mduin-drawerContainer-drawerContainer"
   data-testid="drawer"
 >
   <div
@@ -19,12 +19,12 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
     style="opacity: 0; transform: none;"
   >
     <header
-      class="css-11wb1nr-drawerHeader-drawerHeader"
+      class="css-hrrfoi-drawerHeader-drawerHeader"
       data-testid="drawer-header"
       id="drawer-title"
     >
       <h2
-        class="css-1r6ji88-headingContainer-headingContainer"
+        class="css-12cc67n-headingContainer-headingContainer"
       >
         Title
       </h2>
@@ -43,7 +43,7 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
 
 exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
 <div
-  class="drawer css-p8mw6w-drawerContainer-drawerContainer"
+  class="drawer css-3mduin-drawerContainer-drawerContainer"
   data-testid="drawer"
   id="main-drawer"
 >
@@ -61,12 +61,12 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
     style="opacity: 0; transform: none;"
   >
     <header
-      class="css-11wb1nr-drawerHeader-drawerHeader"
+      class="css-hrrfoi-drawerHeader-drawerHeader"
       data-testid="drawer-header"
       id="drawer-title"
     >
       <h2
-        class="css-1r6ji88-headingContainer-headingContainer"
+        class="css-12cc67n-headingContainer-headingContainer"
       >
         Test header
       </h2>
@@ -77,7 +77,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
       Test body
     </div>
     <footer
-      class="css-1ppo1yc-footerContainer-footerContainer"
+      class="css-siatoy-footerContainer-footerContainer"
       data-testid="drawer-footer"
     >
       Test footer
@@ -88,7 +88,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
 
 exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
 <div
-  class="css-p8mw6w-drawerContainer-drawerContainer"
+  class="css-3mduin-drawerContainer-drawerContainer"
   data-testid="drawer"
 >
   <div
@@ -105,12 +105,12 @@ exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
     style="opacity: 0; transform: none;"
   >
     <header
-      class="css-gtw3cv-drawerHeader-drawerHeader"
+      class="css-qrd1bq-drawerHeader-drawerHeader"
       data-testid="drawer-header"
       id="drawer-title"
     >
       <h2
-        class="css-1r6ji88-headingContainer-headingContainer"
+        class="css-12cc67n-headingContainer-headingContainer"
       >
         Title
       </h2>
@@ -121,7 +121,7 @@ exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
 
 exports[`<Drawer/> matches snapshot with right placement 1`] = `
 <div
-  class="css-p8mw6w-drawerContainer-drawerContainer"
+  class="css-3mduin-drawerContainer-drawerContainer"
   data-testid="drawer"
 >
   <div
@@ -138,12 +138,12 @@ exports[`<Drawer/> matches snapshot with right placement 1`] = `
     style="opacity: 0; transform: translateX(100%) translateZ(0);"
   >
     <header
-      class="css-11wb1nr-drawerHeader-drawerHeader"
+      class="css-hrrfoi-drawerHeader-drawerHeader"
       data-testid="drawer-header"
       id="drawer-title"
     >
       <h2
-        class="css-1r6ji88-headingContainer-headingContainer"
+        class="css-12cc67n-headingContainer-headingContainer"
       >
         Title
       </h2>
@@ -154,7 +154,7 @@ exports[`<Drawer/> matches snapshot with right placement 1`] = `
 
 exports[`<Drawer/> matches snapshot without header and footer 1`] = `
 <div
-  class="css-p8mw6w-drawerContainer-drawerContainer"
+  class="css-3mduin-drawerContainer-drawerContainer"
   data-testid="drawer"
 >
   <div

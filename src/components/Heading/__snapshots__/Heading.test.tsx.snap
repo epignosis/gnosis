@@ -3,7 +3,7 @@
 exports[`<Heading> snapshot 1`] = `
 <div>
   <h2
-    class="heading css-1iyd91n-headingContainer-headingContainer"
+    class="heading css-3lqpyc-headingContainer-headingContainer"
     id="my-heading"
   >
     My title

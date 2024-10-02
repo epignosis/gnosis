@@ -3,7 +3,7 @@
 exports[`<Chip /> matches snapshot 1`] = `
 <div>
   <div
-    class="my-class css-1tzvaze-chip-chip"
+    class="my-class css-1yc5co4-chip-chip"
     id="my-id"
     style="background-color: purple; color: white;"
   >

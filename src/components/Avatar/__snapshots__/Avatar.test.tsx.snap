@@ -3,7 +3,7 @@
 exports[`<Avatar /> matches children avatar snapshot 1`] = `
 <div>
   <figure
-    class="my-avatar css-5magjm-avatar-avatar"
+    class="my-avatar css-19mp9e9-avatar-avatar"
     id="my-id"
   >
     <span
@@ -18,7 +18,7 @@ exports[`<Avatar /> matches children avatar snapshot 1`] = `
 exports[`<Avatar /> matches image avatar snapshot 1`] = `
 <div>
   <figure
-    class="my-image-avatar css-dwkfre-avatar-avatar"
+    class="my-image-avatar css-z2c8x2-avatar-avatar"
   >
     <img
       alt="My avatar"

@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import Loader, { LoaderProps } from "./Loader";
 
 export default {
@@ -25,7 +25,7 @@ export default {
   },
 };
 
-const Template: Story<LoaderProps> = ({ ...args }): JSX.Element => <Loader {...args} />;
+const Template: StoryFn<LoaderProps> = ({ ...args }): JSX.Element => <Loader {...args} />;
 
 export const PulseLoader = Template.bind({});
 

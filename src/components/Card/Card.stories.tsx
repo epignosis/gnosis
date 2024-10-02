@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { Button, Heading, Text, ProgressBar } from "../../";
 import { PlayUnitSVG } from "../../icons/";
 import Card from "./Card";
@@ -8,7 +8,7 @@ export default {
   title: "components/Card",
   component: Card,
   decorators: [
-    (Story: Story): JSX.Element => (
+    (Story: StoryFn): JSX.Element => (
       <div style={{ maxWidth: 300 }}>
         <Story />
       </div>
@@ -16,7 +16,7 @@ export default {
   ],
 };
 
-const Template: Story<{ isOverlayShow: boolean; isDrawerOpen: boolean }> = ({
+const Template: StoryFn<{ isOverlayShow: boolean; isDrawerOpen: boolean }> = ({
   isOverlayShow,
   isDrawerOpen,
 }) => {

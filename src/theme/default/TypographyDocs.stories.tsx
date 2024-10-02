@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react/types-6-0";
+import { StoryFn } from "@storybook/react";
 import { Heading } from "../../";
 import {
   generateTypeScaleSizes,
@@ -18,7 +18,7 @@ export default {
     },
   },
   decorators: [
-    (Story: Story): JSX.Element => (
+    (Story: StoryFn): JSX.Element => (
       <div style={{ maxWidth: "50vw", minWidth: 600, margin: "0 auto", paddingBottom: 16 }}>
         <Story />
       </div>
@@ -57,7 +57,7 @@ const fontUsedFor: { [key: string]: string } = {
   "4xl": "Nowhere",
 };
 
-export const TypographyDocumentation: Story<TypeScaleConfig & { baseSize: number }> = (args) => {
+export const TypographyDocumentation: StoryFn<TypeScaleConfig & { baseSize: number }> = (args) => {
   const typeScale = generateTypeScaleSizes({ ...DEFAULT_TYPESCALE_CONFIG, ...args });
   const usedFor = Object.keys(typeScale).reduce(
     (acc, key) => Object.assign({ [key]: fontUsedFor[key] }, acc),

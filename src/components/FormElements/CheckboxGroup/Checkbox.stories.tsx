@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import CheckboxComponent, { CheckboxProps } from "./Checkbox";
 
 export default {
@@ -69,7 +69,7 @@ const jsxOptions = [
 
 type CheckboxStoryProps = Omit<CheckboxProps, "label" | "value" | "name" | "id">;
 
-export const Checkbox: Story<CheckboxStoryProps> = (args) => {
+export const Checkbox: StoryFn<CheckboxStoryProps> = (args) => {
   return (
     <>
       {options.map((option) => (
@@ -91,7 +91,7 @@ WithRequired.args = {
   required: true,
 };
 
-export const CheckboxWithJSXLabel: Story<CheckboxStoryProps> = (args) => {
+export const CheckboxWithJSXLabel: StoryFn<CheckboxStoryProps> = (args) => {
   return (
     <>
       {jsxOptions.map((option) => (

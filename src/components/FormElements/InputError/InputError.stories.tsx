@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import InputErrorComponent, { InputErrorProps } from "./InputError";
 
 export default {
@@ -7,7 +7,7 @@ export default {
   component: InputErrorComponent,
 };
 
-export const InputError: Story<InputErrorProps> = (args) => <InputErrorComponent {...args} />;
+export const InputError: StoryFn<InputErrorProps> = (args) => <InputErrorComponent {...args} />;
 
 InputError.args = {
   children: "Incorrect field! Try adding a number...",

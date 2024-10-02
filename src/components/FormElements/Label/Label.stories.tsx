@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import LabelComponent, { LabelProps } from "./Label";
 
 export default {
@@ -15,7 +15,7 @@ export default {
   },
 };
 
-export const Label: Story<LabelProps> = (args) => <LabelComponent {...args} />;
+export const Label: StoryFn<LabelProps> = (args) => <LabelComponent {...args} />;
 
 Label.args = {
   size: "md",

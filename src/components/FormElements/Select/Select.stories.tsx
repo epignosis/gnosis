@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { CustomSelectProps, CustomOption } from "./types";
 import { defaultOptions, groupedOptions, menuMaxWidthOptions } from "./data";
 import Select from "./Select";
@@ -62,7 +62,7 @@ export default {
     onChange: { action: "value changed" },
   },
   decorators: [
-    (Story: Story): JSX.Element => (
+    (Story: StoryFn): JSX.Element => (
       <div>
         <Story />
       </div>
@@ -70,7 +70,7 @@ export default {
   ],
 };
 
-const Template: Story<CustomSelectProps<CustomOption, boolean>> = (args) => {
+const Template: StoryFn<CustomSelectProps<CustomOption, boolean>> = (args) => {
   return <Select {...args} formatOptionLabel={formatOptionLabel} />;
 };
 
@@ -164,7 +164,7 @@ withValueCreationValidation.args = {
   },
 };
 
-export const AsyncSelect: Story<CustomSelectProps<CustomOption, boolean>> = (args) => {
+export const AsyncSelect: StoryFn<CustomSelectProps<CustomOption, boolean>> = (args) => {
   const [options, setOptions] = useState<CustomOption[]>([]);
   const [loading, setLoading] = useState(false);
 

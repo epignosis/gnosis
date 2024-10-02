@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import React, { useRef, useState } from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { IconEmptyStateSVG } from "../../icons/";
 import Text from "../Text/Text";
 import Button from "../Button/Button";
@@ -62,7 +62,7 @@ export default {
   },
 };
 
-const Template: Story<Props> = (args) => {
+const Template: StoryFn<Props> = (args) => {
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
   const { selectable, autohide } = args;
   const showUncheckBtn = selectable && !autohide;

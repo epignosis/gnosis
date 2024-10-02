@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { CalendarSVG } from "../../../icons/";
 import InputComponent, { InputProps } from "./Input";
 import SearchInput from "./SearchInput";
@@ -40,7 +40,7 @@ export default {
     disabled: false,
   },
   decorators: [
-    (Story: Story): JSX.Element => (
+    (Story: StoryFn): JSX.Element => (
       <div style={{ maxWidth: 400 }}>
         <Story />
       </div>
@@ -48,7 +48,7 @@ export default {
   ],
 };
 
-const InputTemplate: Story<InputProps> = (args) => {
+const InputTemplate: StoryFn<InputProps> = (args) => {
   const [state, setState] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -62,7 +62,7 @@ const InputTemplate: Story<InputProps> = (args) => {
   return <InputComponent {...args} value={state} onChange={handleChange} onClear={onClear} />;
 };
 
-const SearchTemplate: Story<InputProps> = (args) => {
+const SearchTemplate: StoryFn<InputProps> = (args) => {
   return (
     <SearchInput
       {...args}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { CertificateSVG } from "../../icons/";
 import Avatar, { AvatarBaseProps, AvatarProps } from "./Avatar";
 import { colors } from "@theme/default/colors";
@@ -21,7 +21,7 @@ export default {
   },
 };
 
-const Template: Story<AvatarBaseProps & AvatarProps> = (args) => <Avatar {...args} />;
+const Template: StoryFn<AvatarBaseProps & AvatarProps> = (args) => <Avatar {...args} />;
 
 export const AvatarImage = Template.bind({});
 

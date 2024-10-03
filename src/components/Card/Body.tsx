@@ -1,7 +1,8 @@
-import React, { FC } from "react";
+import React from "react";
 import { cardBody } from "./styles";
+import { FCWithChildren } from "types/common";
 
-export type BodyProps = FC;
+export type BodyProps = FCWithChildren;
 
 const Body: BodyProps = ({ children }) => (
   <section css={cardBody} className="card-body-container">

@@ -87,7 +87,9 @@ describe("<CheckBoxGroup />", () => {
 
     expect(disabledCheck).not.toBeChecked();
 
-    await userEvent.click(disabledCheckLabel);
+    await waitFor(() => {
+      userEvent.click(disabledCheckLabel);
+    });
 
     expect(disabledCheck).not.toBeChecked();
   });

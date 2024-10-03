@@ -259,10 +259,12 @@ const Dropdown: FC<DropdownProps> = ({
             })
           }
         >
-          {item?.icon}
-          <Text fontSize={textSize} title={typeof item.label === "string" ? item.label : ""}>
-            {item.label}
-          </Text>
+          <>
+            {item?.icon}
+            <Text fontSize={textSize} title={typeof item.label === "string" ? item.label : ""}>
+              {item.label}
+            </Text>
+          </>
         </li>
       );
     });

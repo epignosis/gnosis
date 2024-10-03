@@ -1,9 +1,10 @@
-import React, { FC } from "react";
+import React from "react";
 import { m, Variants } from "framer-motion";
 import { SerializedStyles } from "@emotion/react";
 import { hoverContainer } from "./styles";
+import { FCWithChildren } from "types/common";
 
-export type HoverProps = FC<{
+export type HoverProps = FCWithChildren<{
   transparent?: boolean;
   className?: string;
 }>;

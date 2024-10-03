@@ -1,10 +1,11 @@
-import React, { FC, useState } from "react";
+import React, { useState } from "react";
 import { StoryFn } from "@storybook/react";
 import Button from "../Button/Button";
 import Radio from "../FormElements/RadioGroup/Radio";
 import Checkbox from "../FormElements/CheckboxGroup/Checkbox";
 import Dropdown from "./Dropdown";
 import { DropdownItem, DropdownProps } from "./types";
+import { FCWithChildren } from "types/common";
 
 const dropdownList: DropdownItem[] = [
   {
@@ -215,7 +216,7 @@ withPrependContent.args = {
   isSearchable: true,
 };
 
-const ScrollableContainer: FC = ({ children }) => (
+const ScrollableContainer: FCWithChildren = ({ children }) => (
   <div
     id="scrollable-container"
     style={{

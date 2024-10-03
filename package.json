@@ -35,8 +35,8 @@
     "component library"
   ],
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.7",
@@ -64,13 +64,13 @@
     "@storybook/react-webpack5": "^8.3.4",
     "@svgr/rollup": "^5.5.0",
     "@svgr/webpack": "^5.5.0",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^12.1.5",
-    "@testing-library/user-event": "^13.5.0",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^16.0.1",
+    "@testing-library/user-event": "^14.5.2",
     "@types/color": "^3.0.6",
     "@types/jest": "^27.5.2",
-    "@types/react": "^17.0.52",
-    "@types/react-dom": "^17.0.18",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
     "@types/react-modal": "^3.16.3",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@typescript-eslint/parser": "^5.43.0",
@@ -89,8 +89,8 @@
     "jest": "^27.5.1",
     "postcss": "^8.4.47",
     "prettier": "^2.7.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.79.1",
     "rollup-plugin-postcss": "^4.0.2",

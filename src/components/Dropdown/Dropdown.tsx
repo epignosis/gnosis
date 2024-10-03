@@ -273,12 +273,14 @@ const Dropdown: FC<DropdownProps> = ({
         </li>
       );
 
-      return item.tooltipContent ? (
-        <Tooltip content={item.tooltipContent} key={`${index}-${item.value}`}>
+      return (
+        <Tooltip
+          key={`${index}-${item.value}`}
+          disabled={!item.tooltipContent}
+          content={item.tooltipContent}
+        >
           {liElement}
         </Tooltip>
-      ) : (
-        liElement
       );
     });
   };

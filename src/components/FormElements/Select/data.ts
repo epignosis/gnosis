@@ -1,3 +1,5 @@
+import { CustomOption } from "./types";
+
 export interface ColourOption {
   value: string;
   label: string;
@@ -5,8 +7,6 @@ export interface ColourOption {
   isFixed?: boolean;
   isDisabled?: boolean;
 }
-
-type OptionType = { label: string; value: string; disabled?: boolean };
 
 export const colourOptions: ColourOption[] = [
   { value: "ocean", label: "Ocean", color: "#00B8D9" },
@@ -49,7 +49,7 @@ export const groupedOptions: GroupedOption[] = [
   },
 ];
 
-export const defaultOptions: OptionType[] = [
+export const defaultOptions: CustomOption[] = [
   { label: "Rust", value: "rs" },
   { label: "JavaScript is the best in the world", value: "js" },
   { label: "TypeScript", value: "ts" },
@@ -59,10 +59,19 @@ export const defaultOptions: OptionType[] = [
   { label: "C++", value: "c++" },
   { label: "C#", value: "c#" },
   { label: "Java", value: "java" },
+  { label: "Krust", value: "Krust" },
+  { label: "DontGo", value: "DontGo" },
+  { label: "Cobol", value: "Cobol" },
+  { label: "Haskell", value: "Haskell" },
+  { label: "Erlang", value: "Erlang" },
+  { label: "Perl", value: "Perl" },
+  { label: "Ruby", value: "Ruby" },
+  { label: "Scala", value: "Scala" },
+  { label: "Kotlin", value: "Kotlin" },
   { label: "Disabled option", value: "disabled", disabled: true },
 ];
 
-export const menuMaxWidthOptions: OptionType[] = [
+export const menuMaxWidthOptions: CustomOption[] = [
   {
     label:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",

@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+import AsyncSelect from "react-select/async";
 import ReactSelect, { FormatOptionLabelContext } from "react-select";
 import CreatableSelect from "react-select/creatable";
 import { SerializedStyles } from "@emotion/react";
@@ -7,12 +8,11 @@ import { CarretArrowRight } from "../../../icons/";
 import { SelectType, CustomSelectProps, CustomOption } from "./types";
 import { customLabelStyles } from "./styles";
 
-export const containerClassNames = (status: string, size: string, isFocused: boolean) =>
+export const containerClassNames = (status: string, size: string) =>
   classNames({
     [`control-${size}`]: true,
     valid: status === "valid",
     error: status === "error",
-    focused: isFocused,
   });
 
 export const formatOptionLabel = (
@@ -29,7 +29,6 @@ export const formatOptionLabel = (
       {level ? (
         <CarretArrowRight height={10} style={{ transform: `rotate(${rotation}deg)` }} />
       ) : null}
-      <span>{label}</span>
     </span>
   );
 };
@@ -38,16 +37,20 @@ export const renderSelect = (
   type: SelectType,
   customSelectProps: CustomSelectProps<CustomOption, boolean>,
 ) => {
+  const { loadOptions, ...rest } = customSelectProps;
+
   switch (type) {
     case "creatable":
       return (
         <CreatableSelect
-          {...customSelectProps}
+          {...rest}
           createOptionPosition="first"
           formatOptionLabel={formatOptionLabel}
         />
       );
+    case "async":
+      return <AsyncSelect {...rest} loadOptions={loadOptions} />;
     default:
-      return <ReactSelect {...customSelectProps} formatOptionLabel={formatOptionLabel} />;
+      return <ReactSelect {...rest} formatOptionLabel={formatOptionLabel} />;
   }
 };

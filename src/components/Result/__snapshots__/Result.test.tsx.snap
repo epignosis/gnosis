@@ -3,7 +3,7 @@
 exports[`<Result/> matches snapshot 1`] = `
 <div>
   <article
-    class="my result css-1cybf93-container-container"
+    class="my result css-1lq96hl-container-container"
     data-testid="empty-state-container"
     id="my-id"
   >
@@ -16,12 +16,12 @@ exports[`<Result/> matches snapshot 1`] = `
     <div
       class="body"
     >
-      <h3
-        class="css-e0fupy-headingContainer-headingContainer"
+      <h2
+        class="result-header css-12cc67n-headingContainer-headingContainer"
         data-testid="result-header"
       >
         My title
-      </h3>
+      </h2>
       <p
         class="css-f1rw6v-textContainer-textContainer"
         data-testid="result-info"

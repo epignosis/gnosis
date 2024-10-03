@@ -8,3 +8,4 @@ export { default as LinkedUnitSVG } from "./linked-unit-icon.svg";
 export { default as LinkedUnitChipChildSVG } from "./linked-unit-chip-child-icon.svg";
 export { default as LinkedUnitChipParentSVG } from "./linked-unit-chip-parent-icon.svg";
 export { default as MultiSessionSVG } from "./multi-session.svg";
+export { default as MoreIconNoViewboxSVG } from "./more-icon-no-viewbox.svg";

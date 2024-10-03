@@ -220,6 +220,7 @@ export { default as LinkedUnitSVG } from "./feature/units/linked-unit-icon.svg";
 export { default as LinkedUnitChipChildSVG } from "./feature/units/linked-unit-chip-child-icon.svg";
 export { default as LinkedUnitChipParentSVG } from "./feature/units/linked-unit-chip-parent-icon.svg";
 export { default as MultiSessionSVG } from "./feature/units/multi-session.svg";
+export { default as MoreIconNoViewboxSVG } from "./feature/units/more-icon-no-viewbox.svg";
 
 // Questions Icons
 export { default as DragAndDropSVG } from "./feature/questions/drag-and-drop.svg";
@@ -445,6 +446,7 @@ export { default as HouseUserSVG } from "./client/house-user.svg";
 export { default as CalendarUsersSVG } from "./client/calendar-users.svg";
 export { default as ImportDataSVG } from "./client/import-data.svg";
 export { default as HourglassEndSVG } from "./client/hourglass-end.svg";
+export { default as NumberedListSVG } from "./client/numbered-list.svg";
 
 // Exports from folders.
 // Assignments Icons
@@ -469,6 +471,11 @@ export { default as ReferralDanceSVG } from "./client/referral/referral-dance.sv
 export { default as ReferralPendingSVG } from "./client/referral/referral-pending.svg";
 export { default as ReferralTimeSVG } from "./client/referral/referral-time.svg";
 export { default as ReferralIconSVG } from "./client/referral/referral.svg";
+
+// Reverse Trial Icons
+export { default as ReverseTrialStartSVG } from "./client/reverse-trial/reverse-trial-start.svg";
+export { default as ReverseTrialEndSVG } from "./client/reverse-trial/reverse-trial-end.svg";
+export { default as ReverseTrialEndsInADaySVG } from "./client/reverse-trial/reverse-trial-ends-in-a-day.svg";
 
 // Consensus Icons
 export { default as CirclePlaySVG } from "./client/circle-play.svg";

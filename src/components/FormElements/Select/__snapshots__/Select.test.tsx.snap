@@ -3,7 +3,7 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="css-1crx5af-selectContainer-selectContainer"
+    class="css-ties8d-selectContainer-selectContainer"
   >
     <div
       class="label-container"
@@ -23,6 +23,7 @@ exports[`<Select /> matches snapshot 1`] = `
     >
       <div
         class="css-b62m3t-container"
+        id="my-select"
       >
         <span
           class="css-1f43avz-a11yText-A11yText"
@@ -53,10 +54,10 @@ exports[`<Select /> matches snapshot 1`] = `
           </span>
         </span>
         <div
-          class="control-md valid focused css-1hos8av-control"
+          class="control-md valid css-1hos8av-control"
         >
           <div
-            class="css-1t0b0vt-CustomContainerStyles"
+            class="css-hlgwow"
           >
             <div
               class="css-zg71bx-placeholder"
@@ -71,6 +72,7 @@ exports[`<Select /> matches snapshot 1`] = `
               aria-describedby="react-select-3-placeholder"
               aria-expanded="true"
               aria-haspopup="true"
+              aria-label="my-select"
               aria-readonly="true"
               class="css-1czm0f-dummyInput-DummyInput"
               id="react-select-3-input"
@@ -106,69 +108,65 @@ exports[`<Select /> matches snapshot 1`] = `
           class="css-5v3ri6-menu"
         >
           <div
-            class="css-15859a4-customMenuList-customMenuList"
+            aria-multiselectable="false"
+            class="css-hdhzfk"
+            id="react-select-3-listbox"
+            role="listbox"
           >
             <div
-              aria-multiselectable="false"
-              class="css-hdhzfk"
-              id="react-select-3-listbox"
-              role="listbox"
+              aria-disabled="false"
+              aria-selected="false"
+              class="option-md css-bi1k7u-option"
+              id="react-select-3-option-0"
+              role="option"
+              tabindex="-1"
             >
               <div
-                aria-disabled="false"
-                aria-selected="false"
-                class="option-md css-bi1k7u-option"
-                id="react-select-3-option-0"
-                role="option"
-                tabindex="-1"
+                aria-expanded="false"
+                role="tooltip"
               >
                 <div
-                  aria-expanded="false"
-                  role="tooltip"
+                  class="custom-option"
                 >
-                  <div
-                    class="custom-option"
-                  >
-                    name
-                  </div>
+                  name
                 </div>
               </div>
+            </div>
+            <div
+              aria-disabled="false"
+              aria-selected="false"
+              class="option-md css-iovxfg-option"
+              id="react-select-3-option-1"
+              role="option"
+              tabindex="-1"
+            >
               <div
-                aria-disabled="false"
-                aria-selected="false"
-                class="option-md css-iovxfg-option"
-                id="react-select-3-option-1"
-                role="option"
-                tabindex="-1"
+                aria-expanded="false"
+                role="tooltip"
               >
                 <div
-                  aria-expanded="false"
-                  role="tooltip"
+                  class="custom-option"
                 >
-                  <div
-                    class="custom-option"
-                  >
-                    surname
-                  </div>
+                  surname
                 </div>
               </div>
+            </div>
+            <div
+              aria-disabled="false"
+              aria-selected="false"
+              class="option-md css-iovxfg-option"
+              id="react-select-3-option-2"
+              role="option"
+              tabindex="-1"
+            >
               <div
-                aria-disabled="false"
-                aria-selected="false"
-                class="option-md css-iovxfg-option"
-                id="react-select-3-option-2"
-                role="option"
-                tabindex="-1"
+                aria-expanded="false"
+                role="tooltip"
               >
                 <div
-                  aria-expanded="false"
-                  role="tooltip"
+                  class="custom-option"
                 >
-                  <div
-                    class="custom-option"
-                  >
-                    age
-                  </div>
+                  age
                 </div>
               </div>
             </div>

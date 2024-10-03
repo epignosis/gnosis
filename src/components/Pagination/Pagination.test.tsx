@@ -1,5 +1,5 @@
 import React from "react";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from "@testing-library/user-event";
 import Pagination from "./Pagination";
 import { PaginationDropDownOptions } from "./types";
 import { render, screen } from "@test-utils/render";

@@ -1,5 +1,5 @@
 import React from "react";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from "@testing-library/user-event";
 import { faker } from "@faker-js/faker";
 import Checkbox from "../Checkbox";
 import { render, screen, waitFor } from "@test-utils/render";

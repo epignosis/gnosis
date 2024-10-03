@@ -1,6 +1,6 @@
 import React from "react";
 import { faker } from "@faker-js/faker";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from "@testing-library/user-event";
 import Tooltip from "./Tooltip";
 import { screen, render } from "@test-utils/render";
 

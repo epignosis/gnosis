@@ -1,5 +1,5 @@
 import React from "react";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { faker } from "@faker-js/faker";
 import RadioGroup from "../RadioGroup";
 import { screen, render } from "@test-utils/render";
@@ -53,7 +53,7 @@ describe("<RadioGroup />", () => {
     expect(thirdOption).toBeChecked();
   });
 
-  it("changes selected value", () => {
+  it("changes selected value", async () => {
     const mockFn = jest.fn();
 
     render(
@@ -67,18 +67,18 @@ describe("<RadioGroup />", () => {
 
     const radios = screen.getAllByRole("radio");
 
-    userEvent.click(radios[0]);
+    await userEvent.click(radios[0]);
 
     expect(radios[0]).toBeChecked();
 
-    userEvent.click(radios[2]);
+    await userEvent.click(radios[2]);
 
     expect(radios[0]).not.toBeChecked();
     expect(radios[2]).toBeChecked();
     expect(mockFn).toHaveBeenCalledTimes(3);
   });
 
-  it("doesn't select a disabled option", () => {
+  it("doesn't select a disabled option", async () => {
     render(
       <RadioGroup
         id={faker.hacker.abbreviation()}
@@ -92,7 +92,7 @@ describe("<RadioGroup />", () => {
 
     expect(firstOption).not.toBeChecked();
 
-    userEvent.click(firstOptionLabel);
+    await userEvent.click(firstOptionLabel);
 
     expect(firstOption).not.toBeChecked();
   });

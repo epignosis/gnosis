@@ -1,13 +1,13 @@
 import React from "react";
 import { faker } from "@faker-js/faker";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { Heading } from "../../";
 import { ScrollRegularSVG } from "../../icons/";
 import Alert from "./Alert";
 import { render, screen } from "@test-utils/render";
 
 describe("<Alert>", () => {
-  it("renders correctly", () => {
+  it("renders correctly", async () => {
     const heading = faker.lorem.word();
     const paragraphTxt = faker.lorem.paragraph();
     const mockedOnClose = jest.fn();
@@ -27,7 +27,7 @@ describe("<Alert>", () => {
     expect(title).toHaveTextContent(heading);
     expect(paragraph).toHaveTextContent(paragraphTxt);
     expect(icon).toBeInTheDocument();
-    userEvent.click(closeLink);
+    await userEvent.click(closeLink);
     expect(mockedOnClose).toHaveBeenCalledTimes(1);
   });
 

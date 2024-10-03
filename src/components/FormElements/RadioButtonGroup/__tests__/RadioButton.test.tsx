@@ -1,5 +1,5 @@
 import React from "react";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { faker } from "@faker-js/faker";
 import RadioButton from "../RadioButton";
 import { screen, render } from "@test-utils/render";
@@ -23,7 +23,7 @@ describe("<RadioButton />", () => {
     expect(button).toHaveTextContent(labelTxt);
   });
 
-  it("fires the onClick handler", () => {
+  it("fires the onClick handler", async () => {
     const mockOnClick = jest.fn();
     const labelTxt = faker.lorem.words();
     const value = faker.random.alphaNumeric();
@@ -40,7 +40,7 @@ describe("<RadioButton />", () => {
 
     const button = screen.getByText(labelTxt);
 
-    userEvent.click(button);
+    await userEvent.click(button);
 
     expect(mockOnClick).toHaveBeenCalledTimes(1);
     expect(mockOnClick).toHaveBeenLastCalledWith(value);

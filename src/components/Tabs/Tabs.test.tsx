@@ -1,5 +1,5 @@
 import React from "react";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { faker } from "@faker-js/faker";
 import Tabs, { TabObject } from "./Tabs";
 import { screen, render } from "@test-utils/render";
@@ -62,7 +62,7 @@ describe("<Tabs/>", () => {
     expect(tab1Title).toHaveTextContent(tab1TitleTxt);
   });
 
-  it("changes tabs correctly", () => {
+  it("changes tabs correctly", async () => {
     const { tab1Txt, tab2Txt, tab1TitleTxt, tab2TitleTxt, tab1Id, tab2Id } = getTabsProps();
     const tabs: TabObject[] = [
       {
@@ -80,7 +80,7 @@ describe("<Tabs/>", () => {
 
     const tab2 = screen.getByText(tab2TitleTxt);
 
-    userEvent.click(tab2);
+    await userEvent.click(tab2);
 
     const tab2Content = screen.getByText(tab2Txt);
 
@@ -126,7 +126,7 @@ describe("<Tabs/>", () => {
     expect(tab2Content).toHaveTextContent(tab2Txt);
   });
 
-  it("to get tab index with `onChangeTab` callback", () => {
+  it("to get tab index with `onChangeTab` callback", async () => {
     const mockFn = jest.fn();
     const {
       tab1Txt,
@@ -162,12 +162,12 @@ describe("<Tabs/>", () => {
     const tab2 = screen.getByText(tab2TitleTxt);
     const tab3 = screen.getByText(tab3TitleTxt);
 
-    userEvent.click(tab2);
+    await userEvent.click(tab2);
 
     expect(mockFn).toHaveBeenCalledTimes(1);
     expect(mockFn).toHaveBeenCalledWith(1);
 
-    userEvent.click(tab3);
+    await userEvent.click(tab3);
 
     expect(mockFn).toHaveBeenCalledTimes(2);
     expect(mockFn).toHaveBeenCalledWith(2);

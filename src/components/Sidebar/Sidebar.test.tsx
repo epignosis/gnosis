@@ -1,5 +1,5 @@
 import React from "react";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { Sidebar } from "./Sidebar.stories";
 import { render, screen } from "@test-utils/render";
 
@@ -58,15 +58,15 @@ describe("<Sidebar/>", () => {
     expect(items[7]).not.toHaveTextContent("My profile");
   });
 
-  it("fires the onToggle handler", () => {
+  it("fires the onToggle handler", async () => {
     const mockToggle = jest.fn();
     render(<Sidebar onToggle={mockToggle} />);
 
     const handle = screen.getByRole("button");
 
-    userEvent.click(handle);
-    userEvent.click(handle);
-    userEvent.click(handle);
+    for (let i = 0; i < 3; i++) {
+      await userEvent.click(handle);
+    }
 
     expect(mockToggle).toHaveBeenCalledTimes(3);
   });

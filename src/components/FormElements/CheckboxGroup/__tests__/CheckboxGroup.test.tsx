@@ -1,8 +1,8 @@
 import React from "react";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { faker } from "@faker-js/faker";
 import CheckBoxGroup from "../CheckboxGroup";
-import { render, screen } from "@test-utils/render";
+import { render, screen, waitFor } from "@test-utils/render";
 
 const OPTIONS = [
   {
@@ -62,7 +62,7 @@ describe("<CheckBoxGroup />", () => {
     expect(thirdValue).not.toBeChecked();
   });
 
-  it("renders with a disabled checkbox", () => {
+  it("renders with a disabled checkbox", async () => {
     const disabledCheckbox = {
       label: faker.helpers.unique(faker.lorem.words),
       value: faker.helpers.unique(faker.lorem.word),
@@ -87,7 +87,7 @@ describe("<CheckBoxGroup />", () => {
 
     expect(disabledCheck).not.toBeChecked();
 
-    userEvent.click(disabledCheckLabel);
+    await userEvent.click(disabledCheckLabel);
 
     expect(disabledCheck).not.toBeChecked();
   });
@@ -115,7 +115,7 @@ describe("<CheckBoxGroup />", () => {
     expect(thirdInput).not.toBeChecked();
   });
 
-  it("checks one input and then un-checks it", () => {
+  it("checks one input and then un-checks it", async () => {
     const groupname = faker.lorem.slug();
     render(
       <CheckBoxGroup
@@ -132,14 +132,14 @@ describe("<CheckBoxGroup />", () => {
     expect(legendCheck).toHaveAttribute("aria-checked", "false");
     expect(firstInput).not.toBeChecked();
 
-    userEvent.click(firstInput);
+    await userEvent.click(firstInput);
 
     expect(legendCheck).toBeChecked();
     expect(legendCheck).toHaveAttribute("aria-checked", "mixed");
     expect(firstInput).toBeChecked();
   });
 
-  it("checks all inputs at once and then un-checks them", () => {
+  it("checks all inputs at once and then un-checks them", async () => {
     const groupname = faker.helpers.unique(faker.lorem.word);
     render(
       <CheckBoxGroup id={faker.hacker.abbreviation()} groupname={groupname} options={OPTIONS} />,
@@ -150,7 +150,7 @@ describe("<CheckBoxGroup />", () => {
 
     expect(legendCheck).not.toBeChecked();
 
-    userEvent.click(legendCheck);
+    await userEvent.click(legendCheck);
 
     expect(legendCheck).toBeChecked();
     expect(legendCheck).toHaveAttribute("aria-checked", "true");
@@ -158,7 +158,7 @@ describe("<CheckBoxGroup />", () => {
     expect(inputs[2]).toBeChecked();
     expect(inputs[3]).toBeChecked();
 
-    userEvent.click(legendCheck);
+    await userEvent.click(legendCheck);
 
     expect(legendCheck).not.toBeChecked();
     expect(legendCheck).toHaveAttribute("aria-checked", "false");

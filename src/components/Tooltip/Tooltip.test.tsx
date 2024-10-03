@@ -1,8 +1,8 @@
 import React from "react";
 import { faker } from "@faker-js/faker";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import Tooltip from "./Tooltip";
-import { screen, render, act } from "@test-utils/render";
+import { screen, render } from "@test-utils/render";
 
 describe("<Tooltip/>", () => {
   it("renders correctly", async () => {
@@ -15,9 +15,7 @@ describe("<Tooltip/>", () => {
     );
     const button = screen.getByText("Hover me");
 
-    await act(async () => {
-      userEvent.hover(button);
-    });
+    await userEvent.hover(button);
 
     const content = screen.getByText(contentTxt);
     const arrow = screen.getByTestId("tooltip-arrow");

@@ -1,6 +1,6 @@
 import React from "react";
 import { faker } from "@faker-js/faker";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import Card from "./Card";
 import { screen, render, waitFor } from "@test-utils/render";
 
@@ -47,7 +47,7 @@ describe("<Card/>", () => {
 
     screen.debug(card);
 
-    userEvent.hover(card);
+    await userEvent.hover(card);
 
     screen.debug(card);
 
@@ -75,7 +75,7 @@ describe("<Card/>", () => {
     expect(overlay).toHaveTextContent(overlayTxt);
   });
 
-  it("has drawer", () => {
+  it("has drawer", async () => {
     const bodyTxt = faker.lorem.paragraph();
     const titleTxt = faker.lorem.word();
     const footerTxt = faker.lorem.words();
@@ -98,11 +98,11 @@ describe("<Card/>", () => {
     expect(body).toHaveTextContent(bodyTxt);
     expect(footer).toHaveTextContent(footerTxt);
 
-    userEvent.click(closeBtn);
+    await userEvent.click(closeBtn);
 
     expect(mockFn).toHaveBeenCalledTimes(1);
 
-    userEvent.click(document.body);
+    await userEvent.click(document.body);
 
     expect(mockFn).toHaveBeenCalledTimes(2);
   });
@@ -205,7 +205,7 @@ describe("<Card/>", () => {
     );
 
     const card = screen.getByTestId("card");
-    userEvent.hover(card);
+    await userEvent.hover(card);
 
     await screen.findByTestId("card");
     expect(card).not.toHaveStyle({ transform: "scale(1.1)" });

@@ -1,8 +1,8 @@
 import React from "react";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { faker } from "@faker-js/faker";
 import Drawer from "./Drawer";
-import { screen, render, cleanup } from "@test-utils/render";
+import { screen, render, cleanup, waitFor } from "@test-utils/render";
 
 describe("<Drawer/>", () => {
   beforeEach(() => {
@@ -15,7 +15,7 @@ describe("<Drawer/>", () => {
     cleanup();
   });
 
-  it("renders correctly", () => {
+  it("renders correctly", async () => {
     const headerTxt = faker.helpers.unique(faker.lorem.sentence);
     const bodyTxt = faker.helpers.unique(faker.lorem.sentence);
     const footerTxt = faker.helpers.unique(faker.lorem.sentence);
@@ -34,7 +34,7 @@ describe("<Drawer/>", () => {
     const footer = screen.getByText(footerTxt);
     const mask = screen.getByTestId("mask");
 
-    userEvent.click(mask);
+    await userEvent.click(mask);
 
     expect(header).toHaveTextContent(headerTxt);
     expect(body).toHaveTextContent(bodyTxt);
@@ -61,7 +61,7 @@ describe("<Drawer/>", () => {
     expect(footer).not.toBeInTheDocument();
   });
 
-  it("renders correctly with close button", () => {
+  it("renders correctly with close button", async () => {
     const headerTxt = faker.lorem.word();
     const mockFn = jest.fn();
 
@@ -74,7 +74,7 @@ describe("<Drawer/>", () => {
     const header = screen.getByText(headerTxt);
     const closeBtn = screen.getByRole("button");
 
-    userEvent.click(closeBtn);
+    await userEvent.click(closeBtn);
 
     expect(header).toHaveTextContent(headerTxt);
     expect(closeBtn).toBeInTheDocument();
@@ -86,7 +86,12 @@ describe("<Drawer/>", () => {
       </Drawer>,
     );
 
-    expect(header).not.toBeVisible();
+    await waitFor(() => {
+      const headerAfterClose = screen.queryByText(headerTxt);
+      expect(headerAfterClose).not.toBeVisible();
+    });
+
+    // expect(header).not.toBeVisible();
   });
 
   it("Header renders with JSX content", () => {

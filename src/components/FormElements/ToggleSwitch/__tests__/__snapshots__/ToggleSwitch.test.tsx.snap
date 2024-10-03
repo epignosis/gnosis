@@ -24,7 +24,6 @@ exports[`<ToggleSwitch /> Matches snapshot 1`] = `
         </div>
       </div>
     </div>
-    
   </div>
 </div>
 `;

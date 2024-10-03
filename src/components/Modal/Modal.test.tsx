@@ -1,5 +1,5 @@
 import React from "react";
-import userEvent from "@testing-library/user-event";
+import { userEvent } from "@testing-library/user-event";
 import { faker } from "@faker-js/faker";
 import Modal from "./Modal";
 import { render, screen } from "@test-utils/render";
@@ -62,7 +62,7 @@ describe("<Modal>", () => {
     expect(footer).not.toBeInTheDocument();
   });
 
-  it("Header renders correctly with close btn", () => {
+  it("Header renders correctly with close btn", async () => {
     const { headerTxt } = getModalProps();
     const mockedOnClose = jest.fn();
 
@@ -73,7 +73,7 @@ describe("<Modal>", () => {
     );
     const closeBtn = screen.getByRole("button");
 
-    userEvent.click(closeBtn);
+    await userEvent.click(closeBtn);
 
     expect(mockedOnClose).toHaveBeenCalledTimes(1);
   });

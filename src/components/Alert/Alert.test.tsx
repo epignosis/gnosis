@@ -1,6 +1,6 @@
 import React from "react";
 import { faker } from "@faker-js/faker";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from "@testing-library/user-event";
 import { Heading } from "../../";
 import { ScrollRegularSVG } from "../../icons/";
 import Alert from "./Alert";

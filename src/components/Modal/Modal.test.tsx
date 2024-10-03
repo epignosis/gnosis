@@ -1,5 +1,5 @@
 import React from "react";
-import { userEvent } from "@testing-library/user-event";
+import userEvent from "@testing-library/user-event";
 import { faker } from "@faker-js/faker";
 import Modal from "./Modal";
 import { render, screen } from "@test-utils/render";

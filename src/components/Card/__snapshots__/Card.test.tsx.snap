@@ -46,7 +46,7 @@ exports[`<Card/> matches snapshot with drawer 1`] = `
   >
     <section
       class="css-1hiy4vk-drawerContainer-drawerContainer"
-      style="width: 0%; overflow-y: hidden;"
+      style="overflow-y: hidden; width: 0%;"
     >
       <div
         class="content-wrapper"

@@ -29,8 +29,8 @@ const drawerContainerVariants: Variants = {
     },
   },
   closed: {
-    width: "0%",
     overflowY: "hidden",
+    width: "0%",
     transition: {
       ...transition,
       when: "afterChildren",

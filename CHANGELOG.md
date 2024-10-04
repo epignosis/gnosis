@@ -1,3 +1,10 @@
+# [5.33.0](https://github.com/epignosis/gnosis/compare/v5.32.0...v5.33.0) (2024-10-04)
+
+
+### Features
+
+* **videoplayer:** remove lazy import ([#423](https://github.com/epignosis/gnosis/issues/423)) ([142ceb3](https://github.com/epignosis/gnosis/commit/142ceb32be14af84040f7c4cb9200e16efad3ec5))
+
 # [5.32.0](https://github.com/epignosis/gnosis/compare/v5.31.0...v5.32.0) (2024-10-04)
 
 

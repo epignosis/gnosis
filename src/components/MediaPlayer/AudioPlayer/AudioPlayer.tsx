@@ -1,10 +1,8 @@
 import React, { FC } from "react";
-import ReactPlayer from "react-player/lazy";
-import { PlayerProps } from "../MediaPlayer";
+import ReactPlayer from "react-player";
+import { PlayerProps } from "../VideoPlayer/types";
 
-export type AudioPlayerProps = PlayerProps;
-
-const AudioPlayer: FC<AudioPlayerProps> = ({ src, controls = true, containerAttrs, ...rest }) => {
+const AudioPlayer: FC<PlayerProps> = ({ src, controls = true, containerAttrs, ...rest }) => {
   return (
     <div {...containerAttrs}>
       <ReactPlayer

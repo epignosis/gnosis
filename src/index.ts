@@ -10,7 +10,6 @@ export { default as Alert } from "./components/Alert/Alert";
 export { default as ProgressBar } from "./components/ProgressBar/ProgressBar";
 export { default as Tooltip } from "./components/Tooltip/Tooltip";
 export { default as Modal } from "./components/Modal/Modal";
-export { default as MediaPlayer } from "./components/MediaPlayer/MediaPlayer";
 export { default as Pagination } from "./components/Pagination/Pagination";
 export { default as Tabs } from "./components/Tabs/Tabs";
 export { default as Result } from "./components/Result/Result";

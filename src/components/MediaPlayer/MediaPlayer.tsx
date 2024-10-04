@@ -1,12 +1,7 @@
 import React, { FC } from "react";
-import { ReactPlayerProps } from "react-player/lazy";
 import VideoPlayer from "./VideoPlayer/VideoPlayer";
 import AudioPlayer from "./AudioPlayer/AudioPlayer";
-
-export type PlayerProps = Omit<ReactPlayerProps, "url"> & {
-  src: ReactPlayerProps["url"];
-  containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
-};
+import { PlayerProps } from "./VideoPlayer/types";
 
 export type MediaPlayerProps = PlayerProps & {
   type: "video" | "audio";

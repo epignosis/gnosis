@@ -48,6 +48,7 @@ const drawerContentVariants: Variants = {
 };
 
 const Drawer: DrawerProps = ({ isOpen, onClose, title, footer, children }) => {
+  
   const containerRef = useRef<HTMLBaseElement>(null);
 
   useClickAway(() => {

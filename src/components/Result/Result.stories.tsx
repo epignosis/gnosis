@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { Button } from "../../";
 import { WarningSVG } from "../../icons/";
 import Result, { ResultProps } from "./Result";
@@ -17,7 +17,7 @@ export default {
   },
 };
 
-const Template: Story<ResultProps> = (args) => <Result {...args} />;
+const Template: StoryFn<ResultProps> = (args) => <Result {...args} />;
 
 export const Default = Template.bind({});
 

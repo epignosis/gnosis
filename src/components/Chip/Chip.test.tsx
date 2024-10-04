@@ -14,7 +14,7 @@ describe("<Chip />", () => {
     expect(tag).toHaveTextContent(chipTxt);
   });
 
-  it("renders with close button", () => {
+  it("renders with close button", async () => {
     const chipTxt = faker.lorem.word();
     const mockFn = jest.fn();
 
@@ -23,7 +23,7 @@ describe("<Chip />", () => {
     const tag = screen.getByText(chipTxt);
     const closeBtn = screen.getByLabelText(`Remove ${chipTxt}`);
 
-    userEvent.click(closeBtn);
+    await userEvent.click(closeBtn);
 
     expect(tag).toHaveTextContent(chipTxt);
     expect(mockFn).toHaveBeenCalledTimes(1);

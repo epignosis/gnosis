@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import Heading, { HeadingProps, SIZES } from "./Heading";
 
 export default {
@@ -24,7 +24,7 @@ export default {
   },
 };
 
-const Template: Story<HeadingProps> = (args) => <Heading {...args} />;
+const Template: StoryFn<HeadingProps> = (args) => <Heading {...args} />;
 
 export const H1 = Template.bind({});
 

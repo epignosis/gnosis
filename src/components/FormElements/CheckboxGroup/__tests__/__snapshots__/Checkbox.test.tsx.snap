@@ -3,7 +3,7 @@
 exports[`<Checkbox /> matches snapshot with \`inline\` = true 1`] = `
 <div>
   <div
-    class="css-1spx69f-checkboxContainer-checkboxContainer"
+    class="css-ice4uj-checkboxContainer-checkboxContainer"
   >
     <input
       id="testId"
@@ -29,7 +29,7 @@ exports[`<Checkbox /> matches snapshot with \`inline\` = true 1`] = `
 exports[`<Checkbox /> matches snapshot with \`lg\` size 1`] = `
 <div>
   <div
-    class="css-1nwvm8c-checkboxContainer-checkboxContainer"
+    class="css-hz9aa2-checkboxContainer-checkboxContainer"
   >
     <input
       id="testId"
@@ -55,7 +55,7 @@ exports[`<Checkbox /> matches snapshot with \`lg\` size 1`] = `
 exports[`<Checkbox /> matches snapshot with \`md\` size 1`] = `
 <div>
   <div
-    class="container-class css-ezt2uz-checkboxContainer-checkboxContainer"
+    class="container-class css-a0fnzo-checkboxContainer-checkboxContainer"
     id="my-container-id"
   >
     <input

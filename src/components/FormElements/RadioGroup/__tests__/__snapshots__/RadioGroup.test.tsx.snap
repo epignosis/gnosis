@@ -3,11 +3,11 @@
 exports[`<RadioGroup /> matches snapshot 1`] = `
 <div>
   <fieldset
-    class="css-amgjt9-container-container"
+    class="css-1uomuaf-container-container"
     id="testRadioGroup"
   >
     <div
-      class="css-cm09c4-radioButtonContainer-radioButtonContainer"
+      class="css-1a5cc66-radioButtonContainer-radioButtonContainer"
     >
       <input
         id="Test groupname-testOptionValue"
@@ -28,11 +28,11 @@ exports[`<RadioGroup /> matches snapshot 1`] = `
 exports[`<RadioGroup /> matches snapshot with \`inline = true\` 1`] = `
 <div>
   <fieldset
-    class="my-radio-group css-jgs0pf-container-container"
+    class="my-radio-group css-1htw42g-container-container"
     id="my-id"
   >
     <div
-      class="css-cm09c4-radioButtonContainer-radioButtonContainer"
+      class="css-1a5cc66-radioButtonContainer-radioButtonContainer"
     >
       <input
         id="Test groupname-testOptionValue"

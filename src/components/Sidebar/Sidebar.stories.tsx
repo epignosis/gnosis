@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { Avatar } from "../../";
 import {
   CalendarSVG,
@@ -29,7 +29,7 @@ export default {
   },
 };
 
-export const Sidebar: Story<SidebarProps> = (args) => (
+export const Sidebar: StoryFn<SidebarProps> = (args) => (
   <SidebarComponent {...args}>
     <div
       style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", flex: 1 }}

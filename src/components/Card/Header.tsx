@@ -1,8 +1,9 @@
-import React, { FC } from "react";
+import React from "react";
 import AspectRatio from "./AspectRatio/AspectRatio";
 import { courseHeaderContainer } from "./styles";
+import { FCWithChildren } from "types/common";
 
-export type CardHeaderProps = FC<{
+export type CardHeaderProps = FCWithChildren<{
   ratio?: [number, number];
 }>;
 

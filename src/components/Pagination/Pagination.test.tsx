@@ -90,7 +90,7 @@ describe("<Pagination />", () => {
     expect(nextBtn).toBeDisabled();
   });
 
-  it("onChange get correct page number", () => {
+  it("onChange get correct page number", async () => {
     const mockFn = jest.fn();
     render(
       <Pagination
@@ -113,10 +113,10 @@ describe("<Pagination />", () => {
     const nextBtn = screen.getByTestId("next-page-btn");
     const previousBtn = screen.getByTestId("previous-page-btn");
 
-    userEvent.click(nextBtn);
+    await userEvent.click(nextBtn);
     expect(mockFn.mock.calls[0][0]).toBe(4);
 
-    userEvent.click(previousBtn);
+    await userEvent.click(previousBtn);
     expect(mockFn.mock.calls[1][0]).toBe(2);
 
     expect(mockFn).toHaveBeenCalledTimes(2);
@@ -176,7 +176,7 @@ describe("<Pagination />", () => {
     const onPageChangeMock = jest.fn();
     const nextBtn = screen.getByTestId("next-page-btn");
 
-    userEvent.click(nextBtn);
+    await userEvent.click(nextBtn);
     expect(onPageChangeMock).not.toHaveBeenCalled();
   });
 });

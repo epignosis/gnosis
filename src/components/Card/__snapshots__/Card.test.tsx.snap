@@ -3,12 +3,12 @@
 exports[`<Card/> matches snapshot 1`] = `
 <div>
   <article
-    class="main-card css-1evx1p0-cardContainer-cardContainer"
+    class="main-card css-1t80nz0-cardContainer-cardContainer"
     data-testid="card"
     id="my-card"
   >
     <div
-      class="css-14dee1b-aspectRatioContainer-aspectRatioContainer"
+      class="css-2whgcf-aspectRatioContainer-aspectRatioContainer"
     >
       <div
         class="aspect-ratio-wrapper"
@@ -41,11 +41,11 @@ exports[`<Card/> matches snapshot 1`] = `
 exports[`<Card/> matches snapshot with drawer 1`] = `
 <div>
   <article
-    class="css-1evx1p0-cardContainer-cardContainer"
+    class="css-1t80nz0-cardContainer-cardContainer"
     data-testid="card"
   >
     <section
-      class="css-1siuu8c-drawerContainer-drawerContainer"
+      class="css-1hiy4vk-drawerContainer-drawerContainer"
       style="width: 0%; overflow-y: hidden;"
     >
       <div
@@ -79,11 +79,11 @@ exports[`<Card/> matches snapshot with drawer 1`] = `
 exports[`<Card/> matches snapshot with hover 1`] = `
 <div>
   <article
-    class="css-1evx1p0-cardContainer-cardContainer"
+    class="css-1t80nz0-cardContainer-cardContainer"
     data-testid="card"
   >
     <div
-      class="css-14dee1b-aspectRatioContainer-aspectRatioContainer"
+      class="css-2whgcf-aspectRatioContainer-aspectRatioContainer"
     >
       <div
         class="aspect-ratio-wrapper"
@@ -97,7 +97,7 @@ exports[`<Card/> matches snapshot with hover 1`] = `
             src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
           />
           <div
-            class="css-179biop-hoverContainer-hoverContainer"
+            class="css-odhnq5-hoverContainer-hoverContainer"
             data-testid="card-hover"
             style="opacity: 0;"
           >
@@ -118,16 +118,16 @@ exports[`<Card/> matches snapshot with hover 1`] = `
 exports[`<Card/> matches snapshot with overlay 1`] = `
 <div>
   <article
-    class="css-1evx1p0-cardContainer-cardContainer"
+    class="css-1t80nz0-cardContainer-cardContainer"
     data-testid="card"
   >
     <div
-      class="css-11p750j-overlayContainer-overlayContainer"
+      class="css-ryx41r-overlayContainer-overlayContainer"
     >
       Hello Overlay
     </div>
     <div
-      class="css-14dee1b-aspectRatioContainer-aspectRatioContainer"
+      class="css-2whgcf-aspectRatioContainer-aspectRatioContainer"
     >
       <div
         class="aspect-ratio-wrapper"
@@ -150,11 +150,11 @@ exports[`<Card/> matches snapshot with overlay 1`] = `
 exports[`<Card/> matches snapshot with transparent hover 1`] = `
 <div>
   <article
-    class="css-1evx1p0-cardContainer-cardContainer"
+    class="css-1t80nz0-cardContainer-cardContainer"
     data-testid="card"
   >
     <div
-      class="css-14dee1b-aspectRatioContainer-aspectRatioContainer"
+      class="css-2whgcf-aspectRatioContainer-aspectRatioContainer"
     >
       <div
         class="aspect-ratio-wrapper"
@@ -168,7 +168,7 @@ exports[`<Card/> matches snapshot with transparent hover 1`] = `
             src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
           />
           <div
-            class="css-qtcg2f-hoverContainer-hoverContainer"
+            class="css-1zkyyo-hoverContainer-hoverContainer"
             data-testid="card-hover"
             style="opacity: 0;"
           >

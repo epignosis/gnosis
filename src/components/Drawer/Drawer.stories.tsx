@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { Button } from "../../";
 import DrawerComponent, { DrawerProps } from "./Drawer";
 
@@ -15,7 +15,7 @@ export default {
     },
   },
   decorators: [
-    (Story: Story): JSX.Element => (
+    (Story: StoryFn): JSX.Element => (
       <div
         style={{
           width: "100%",
@@ -36,7 +36,7 @@ type DrawerArgs = Pick<DrawerProps, "placement" | "showMask"> & {
   headerCloseBtn: boolean;
 };
 
-export const Default: Story<DrawerArgs> = (args) => {
+export const Default: StoryFn<DrawerArgs> = (args) => {
   const { headerCloseBtn, ...rest } = args;
   const [isOpen, setIsOpen] = useState(false);
 

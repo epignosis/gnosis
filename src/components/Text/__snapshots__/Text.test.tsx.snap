@@ -3,7 +3,7 @@
 exports[`<Text> snapshot 1`] = `
 <div>
   <span
-    class="my-class css-1jr9658-textContainer-textContainer"
+    class="my-class css-f1rw6v-textContainer-textContainer"
     data-testid="text-component"
     id="my-id"
   >

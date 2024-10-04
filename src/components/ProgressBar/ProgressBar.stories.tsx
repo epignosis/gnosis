@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import ProgressBar, { ProgressBarProps } from "./ProgressBar";
 
 export default {
@@ -32,7 +32,7 @@ export default {
   ],
 };
 
-const Template: Story<ProgressBarProps> = (args) => <ProgressBar {...args} />;
+const Template: StoryFn<ProgressBarProps> = (args) => <ProgressBar {...args} />;
 
 export const Default = Template.bind({});
 
@@ -78,7 +78,7 @@ WithLabelAfter.args = {
   labelAfter: "Completed 75%",
 };
 
-export const White: Story<ProgressBarProps> = (args) => (
+export const White: StoryFn<ProgressBarProps> = (args) => (
   <div style={{ background: "#103E6B", padding: "2rem" }}>
     <ProgressBar {...args} />
   </div>

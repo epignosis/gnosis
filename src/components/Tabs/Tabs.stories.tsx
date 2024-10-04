@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import Heading from "../Heading/Heading";
 import Tabs from "./Tabs";
 
@@ -56,7 +56,7 @@ const tabs = [
   },
 ];
 
-const Template: Story = (args) => {
+const Template: StoryFn = (args) => {
   return <Tabs {...args} tabs={tabs} />;
 };
 
@@ -91,7 +91,7 @@ OnChangeTab.args = {
   },
 };
 
-const ResponsiveTemplate: Story = (args) => (
+const ResponsiveTemplate: StoryFn = (args) => (
   <div style={{ maxWidth: "500px", border: "1px solid red" }}>
     <Tabs {...args} tabs={tabs} />
   </div>

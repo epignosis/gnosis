@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import ErrorComponent from "./FormError";
 
 export default {
@@ -7,7 +7,7 @@ export default {
   component: ErrorComponent,
 };
 
-export const FormError: Story = (args) => <ErrorComponent {...args} />;
+export const FormError: StoryFn = (args) => <ErrorComponent {...args} />;
 
 FormError.args = {
   children: "You entered an incorrect email! Try again or contact your administrator",

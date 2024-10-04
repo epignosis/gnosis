@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import Button from "../Button/Button";
 import { MessageIconSVG } from "../../icons/";
 import Badge, { BadgeProps } from "./Badge";
@@ -16,7 +16,7 @@ export default {
   },
 };
 
-const Template: Story<BadgeProps> = (args) => (
+const Template: StoryFn<BadgeProps> = (args) => (
   <div style={{ display: "flex", alignItems: "center" }}>
     <div style={{ marginRight: 48 }}>
       <Badge {...args} offset={{ top: "2px", right: "-22px" }} />

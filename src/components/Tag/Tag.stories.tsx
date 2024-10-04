@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import Tag, { TagProps } from "./Tag";
 import { colors } from "@theme/default/colors";
 
@@ -8,7 +8,7 @@ export default {
   title: "Components/Tag",
 };
 
-const Template: Story<TagProps> = (args) => <Tag {...args} />;
+const Template: StoryFn<TagProps> = (args) => <Tag {...args} />;
 
 export const Default = Template.bind({});
 

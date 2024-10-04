@@ -3,35 +3,35 @@
 exports[`<Grid /> matches snapshot 1`] = `
 <div>
   <div
-    class="container css-yqr4i5-gridContainer-gridContainer"
+    class="container css-13ss8y9-gridContainer-gridContainer"
     id="grid-container-1"
   >
     <div
-      class="grid-item css-1is4t0f-gridItem-gridItem"
+      class="grid-item css-10tnefq-gridItem-gridItem"
       id="grid-item-1"
     >
       Test element
     </div>
     <div
-      class="grid-item css-1is4t0f-gridItem-gridItem"
+      class="grid-item css-10tnefq-gridItem-gridItem"
       id="grid-item-2"
     >
       Test element
     </div>
     <div
-      class="grid-item css-1is4t0f-gridItem-gridItem"
+      class="grid-item css-10tnefq-gridItem-gridItem"
       id="grid-item-3"
     >
       Test element
     </div>
     <div
-      class="grid-item css-1is4t0f-gridItem-gridItem"
+      class="grid-item css-10tnefq-gridItem-gridItem"
       id="grid-item-4"
     >
       Test element
     </div>
     <div
-      class="grid-item css-1is4t0f-gridItem-gridItem"
+      class="grid-item css-10tnefq-gridItem-gridItem"
       id="grid-item-5"
     >
       Test element

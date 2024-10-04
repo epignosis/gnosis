@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { CalendarSVG } from "../../icons/";
 import Button, { ButtonProps } from "./Button";
 import { colors } from "@theme/default/colors";
@@ -26,7 +26,7 @@ export default {
   },
 };
 
-const Template: Story<ButtonProps<"button">> = ({ style, ...args }) => (
+const Template: StoryFn<ButtonProps<"button">> = ({ style, ...args }) => (
   <div style={style}>
     <div style={{ marginBottom: 16 }}>
       <Button size="sm" {...args} />

@@ -4,6 +4,7 @@ import ReactModal, { Props } from "react-modal";
 import Heading from "../Heading/Heading";
 import { CloseModalSVG } from "../../icons/";
 import { modalContent, modalFooter, modalHeader, portalStyles } from "./styles";
+import { FCWithChildren } from "types/common";
 
 export type HeaderProps = React.HTMLAttributes<HTMLElement> & {
   onClose?: () => void;
@@ -67,7 +68,7 @@ export type ReactModalProps = Pick<Props, "isOpen"> & {
   style?: ReactModal.Styles;
 };
 
-const Modal: FC<ReactModalProps> & ModalCompoundProps = ({
+const Modal: FCWithChildren<ReactModalProps> & ModalCompoundProps = ({
   children,
   isOpen,
   onClose,

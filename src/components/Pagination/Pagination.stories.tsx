@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import Pagination from "./Pagination";
 import { PaginationProps, PaginationDropDownOptions } from "./types";
 
@@ -41,7 +41,7 @@ export default {
   },
 };
 
-const Template: Story<PaginationProps> = (args) => {
+const Template: StoryFn<PaginationProps> = (args) => {
   const [page, setPage] = useState(args.page);
   const [, setPageSize] = useState(args.pageSize);
 

@@ -3,7 +3,7 @@
 exports[`<Pagination /> matches snapshot with on page 1`] = `
 <div>
   <div
-    class=" css-13509ik-container-container"
+    class="css-p6dc8m-container-container"
     id="my-id"
   >
     <div
@@ -11,14 +11,14 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       data-testid="pagination-per-page-btn"
     >
       <div
-        class="css-178qt42-PaginationSelectorStyles-PaginationSelectorStyles"
+        class="css-1g7na2r-PaginationSelectorStyles-PaginationSelectorStyles"
       >
         <button
           class="dropdown-button "
           title="20"
         >
           <span
-            class="css-g06jqs-textContainer-textContainer"
+            class="css-mproha-textContainer-textContainer"
             data-testid="text-component"
           >
             20
@@ -34,7 +34,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       class="pagination"
     >
       <button
-        class="pagination-btn ghost css-1svz13a-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        class="pagination-btn ghost css-qahk9i-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="first-page-btn"
         title="First page"
       >
@@ -45,7 +45,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         </span>
       </button>
       <button
-        class="pagination-btn ghost css-1svz13a-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        class="pagination-btn ghost css-qahk9i-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="previous-page-btn"
         name="Previous page"
         title="Previous page"
@@ -61,14 +61,14 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         data-testid="pagination-page-selector-btn"
       >
         <div
-          class="css-178qt42-PaginationSelectorStyles-PaginationSelectorStyles"
+          class="css-1g7na2r-PaginationSelectorStyles-PaginationSelectorStyles"
         >
           <button
             class="dropdown-button "
             title="3"
           >
             <span
-              class="css-g06jqs-textContainer-textContainer"
+              class="css-mproha-textContainer-textContainer"
               data-testid="text-component"
             >
               3
@@ -83,7 +83,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         </span>
       </div>
       <button
-        class="pagination-btn ghost css-1svz13a-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        class="pagination-btn ghost css-qahk9i-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="next-page-btn"
         name="Next page"
         title="Next page"
@@ -95,7 +95,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         </span>
       </button>
       <button
-        class="pagination-btn ghost css-1svz13a-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        class="pagination-btn ghost css-qahk9i-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="last-page-btn"
         name="Last page"
         title="Last page"

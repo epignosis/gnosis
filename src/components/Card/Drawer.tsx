@@ -1,10 +1,11 @@
-import React, { FC, ReactNode, useRef } from "react";
+import React, { ReactNode, useRef } from "react";
 import { m, AnimatePresence, Variants, Transition } from "framer-motion";
 import { useClickAway } from "ahooks";
 import { CloseSVG } from "../../icons/";
 import { drawerContainer } from "./styles";
+import { FCWithChildren } from "types/common";
 
-export type DrawerProps = FC<{
+export type DrawerProps = FCWithChildren<{
   isOpen: boolean;
   onClose: () => void;
   title?: ReactNode;

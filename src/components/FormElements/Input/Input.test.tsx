@@ -29,16 +29,16 @@ describe("<Input />", () => {
     expect(input).toHaveValue("test");
   });
 
-  it("changes the input's value", () => {
+  it("changes the input's value", async () => {
     const labelTxt = faker.lorem.word();
     render(<Input id="test-input" name="test-input" label={labelTxt} />);
     const input = screen.getByLabelText(labelTxt);
 
-    userEvent.type(input, "new value");
+    await userEvent.type(input, "new value");
 
     expect(input).toHaveValue("new value");
 
-    userEvent.clear(input);
+    await userEvent.clear(input);
 
     expect(input).toHaveValue("");
   });
@@ -61,7 +61,7 @@ describe("<Input />", () => {
     expect(iconAfter).toBeInTheDocument();
   });
 
-  it("renders disabled", () => {
+  it("renders disabled", async () => {
     const mockFn = jest.fn();
     const labelTxt = faker.lorem.word();
 
@@ -71,7 +71,7 @@ describe("<Input />", () => {
 
     expect(input).toBeDisabled();
 
-    userEvent.click(input);
+    await userEvent.click(input);
 
     expect(mockFn).not.toHaveBeenCalled();
   });

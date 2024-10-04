@@ -1,10 +1,11 @@
-import React, { FC, useState } from "react";
-import { Story } from "@storybook/react";
+import React, { useState } from "react";
+import { StoryFn } from "@storybook/react";
 import Button from "../Button/Button";
 import Radio from "../FormElements/RadioGroup/Radio";
 import Checkbox from "../FormElements/CheckboxGroup/Checkbox";
 import Dropdown from "./Dropdown";
 import { DropdownItem, DropdownProps } from "./types";
+import { FCWithChildren } from "types/common";
 
 const dropdownList: DropdownItem[] = [
   {
@@ -64,7 +65,7 @@ export default {
     disabled: false,
   },
   decorators: [
-    (Story: Story): JSX.Element => (
+    (Story: StoryFn): JSX.Element => (
       <div
         style={{
           width: "100%",
@@ -80,7 +81,7 @@ export default {
   ],
 };
 
-const Template: Story<DropdownProps> = (args) => {
+const Template: StoryFn<DropdownProps> = (args) => {
   const [show, toggle] = useState(false);
 
   const toggleDropdown = () => {
@@ -215,7 +216,7 @@ withPrependContent.args = {
   isSearchable: true,
 };
 
-const ScrollableContainer: FC = ({ children }) => (
+const ScrollableContainer: FCWithChildren = ({ children }) => (
   <div
     id="scrollable-container"
     style={{
@@ -231,7 +232,7 @@ const ScrollableContainer: FC = ({ children }) => (
   </div>
 );
 
-const ScrollableTemplate: Story<DropdownProps & React.CSSProperties> = ({
+const ScrollableTemplate: StoryFn<DropdownProps & React.CSSProperties> = ({
   position,
   top,
   marginInlineStart,

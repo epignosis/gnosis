@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, FC, ReactElement, useEffect } from "react";
+import React, { Children, cloneElement, ReactElement, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { SerializedStyles } from "@emotion/react";
 import { AnimatePresence, m, Variants, MotionStyle, domAnimation, LazyMotion } from "framer-motion";
@@ -8,6 +8,7 @@ import Header, { HeaderProps } from "./components/Header";
 import Body from "./components/Body";
 import Mask from "./components/Mask";
 import Footer from "./components/Footer";
+import { FCWithChildren } from "types/common";
 
 type DialogVariants = {
   placement: "left" | "right";
@@ -33,7 +34,7 @@ const dialogVariants: Variants = {
 
 const DRAWER_ROOT = "drawerRoot";
 
-const DrawerRoot: FC = () => <div id={DRAWER_ROOT} />;
+const DrawerRoot: FCWithChildren = () => <div id={DRAWER_ROOT} />;
 
 export type DrawerProps = React.HTMLAttributes<HTMLDivElement> & {
   isOpen: boolean;
@@ -46,13 +47,13 @@ export type DrawerProps = React.HTMLAttributes<HTMLDivElement> & {
 };
 
 type DrawerCompoundProps = {
-  Header: FC<Omit<HeaderProps, "onClose"> & { closable?: boolean }>;
-  Body: FC;
-  Footer: FC;
-  Root: FC;
+  Header: FCWithChildren<Omit<HeaderProps, "onClose"> & { closable?: boolean }>;
+  Body: FCWithChildren;
+  Footer: FCWithChildren;
+  Root: FCWithChildren;
 };
 
-const Drawer: FC<DrawerProps> & DrawerCompoundProps = (props) => {
+const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
   const {
     isOpen,
     onClose,

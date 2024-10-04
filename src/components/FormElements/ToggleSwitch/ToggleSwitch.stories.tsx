@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { PreviewIconSVG } from "../../../icons";
 import ToggleSwitch, { ToggleProps } from "./ToggleSwitch";
 
@@ -12,7 +12,7 @@ export default {
     inlineTextTranslations: { enabled: "Enabled", disabled: "Disabled" },
   },
   decorators: [
-    (Story: Story): JSX.Element => (
+    (Story: StoryFn): JSX.Element => (
       <div style={{ maxWidth: 500 }}>
         <Story />
       </div>
@@ -20,7 +20,7 @@ export default {
   ],
 };
 
-const Template: Story<ToggleProps> = (args) => <ToggleSwitch {...args} />;
+const Template: StoryFn<ToggleProps> = (args) => <ToggleSwitch {...args} />;
 
 export const Default = Template.bind({});
 

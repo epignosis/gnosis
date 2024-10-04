@@ -90,8 +90,6 @@ describe("<Drawer/>", () => {
       const headerAfterClose = screen.queryByText(headerTxt);
       expect(headerAfterClose).not.toBeVisible();
     });
-
-    // expect(header).not.toBeVisible();
   });
 
   it("Header renders with JSX content", () => {

@@ -29,8 +29,8 @@ const drawerContainerVariants: Variants = {
     },
   },
   closed: {
-    width: "0%",
     overflowY: "hidden",
+    width: "0%",
     transition: {
       ...transition,
       when: "afterChildren",
@@ -48,7 +48,6 @@ const drawerContentVariants: Variants = {
 };
 
 const Drawer: DrawerProps = ({ isOpen, onClose, title, footer, children }) => {
-  
   const containerRef = useRef<HTMLBaseElement>(null);
 
   useClickAway(() => {

@@ -1,3 +1,10 @@
+# [5.31.0](https://github.com/epignosis/gnosis/compare/v5.30.5...v5.31.0) (2024-10-04)
+
+
+### Features
+
+* upgrade react version ([#421](https://github.com/epignosis/gnosis/issues/421)) ([790a9a5](https://github.com/epignosis/gnosis/commit/790a9a54c08e25ff3857a2b16235ee5a3d05f736))
+
 ## [5.30.5](https://github.com/epignosis/gnosis/compare/v5.30.4...v5.30.5) (2024-10-04)
 
 ## [5.30.4](https://github.com/epignosis/gnosis/compare/v5.30.3...v5.30.4) (2024-09-30)

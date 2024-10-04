@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { Button } from "../../";
 import Tooltip, { TooltipProps } from "./Tooltip";
 
@@ -27,7 +27,7 @@ export default {
   ],
 };
 
-export const Default: Story<TooltipProps> = (args) => (
+export const Default: StoryFn<TooltipProps> = (args) => (
   <div>
     <Tooltip {...args}>
       <Button>Hover me</Button>

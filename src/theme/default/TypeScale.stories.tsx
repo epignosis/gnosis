@@ -1,11 +1,11 @@
 import React from "react";
-import { Story } from "@storybook/react/types-6-0";
+import { StoryFn } from "@storybook/react";
 import Heading, { HeadingTag, SIZES, HeadingProps } from "../../components/Heading/Heading";
 
 export default {
   title: "Theme/Type Scale",
   decorators: [
-    (Story: Story): JSX.Element => (
+    (Story: StoryFn): JSX.Element => (
       <div style={{ width: "100%", maxWidth: 680 }}>
         <Story />
       </div>
@@ -13,7 +13,7 @@ export default {
   ],
 };
 
-const Template: Story<HeadingProps> = ({ as, size }) => (
+const Template: StoryFn<HeadingProps> = ({ as, size }) => (
   <>
     <section style={{ marginBottom: 24 }}>
       <Heading as={as}>The quick brown fox jumps over the lazy dog ({size})</Heading>
@@ -71,7 +71,7 @@ const Template: Story<HeadingProps> = ({ as, size }) => (
   </>
 );
 
-export const TypeScale: Story<{ baseFontSize: number }> = () => {
+export const TypeScale: StoryFn<{ baseFontSize: number }> = () => {
   return (
     <article>
       {Object.keys(SIZES).map((key) => (

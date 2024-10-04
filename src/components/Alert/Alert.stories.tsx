@@ -1,43 +1,52 @@
-// import React from "react";
-// import { Story } from "@storybook/react";
-// import Alert, { AlertProps } from "./Alert";
+import React from "react";
+import { Meta, StoryFn } from "@storybook/react";
+import Alert, { AlertProps } from "./Alert";
 
-// export default {
-//   component: Alert,
-//   title: "Components/Alert",
-//   parameters: {
-//     docs: {
-//       description: {
-//         component:
-//           "THIS COMPONENT'S VARIATIONS AND STYLES IS BEING OVERWITTEN BY PLUS. - THIS DESIGN IS OBSOLETE.",
-//       },
-//     },
-//   },
-//   argTypes: {
-//     type: {
-//       control: {
-//         type: "select",
-//         options: ["info", "danger", "success", "warning"],
-//       },
-//     },
-//     icon: {
-//       control: false,
-//     },
-//   },
-//   args: {
-//     type: "info",
-//     children: "Hi I am an Alert component!",
-//   },
-// };
+// Meta configuration for Storybook
+export default {
+  title: "Components/Alert", // Folder structure in Storybook
+  component: Alert,
+  argTypes: {
+    type: {
+      control: {
+        type: "select",
+        options: ["info", "danger", "success", "warning"],
+      },
+    },
+    onClose: { action: "closed" },
+  },
+} as Meta;
 
-// const Template: Story<AlertProps> = (args) => <Alert {...args} />;
+// Template for generating stories
+const Template: StoryFn<AlertProps> = (args) => <Alert {...args}>This is an alert!</Alert>;
 
-// export const Default = Template.bind({});
+// Story for Info Alert
+export const Info = Template.bind({});
+Info.args = {
+  type: "info",
+};
 
-// export const WithCloseBtn = Template.bind({});
+// Story for Danger Alert
+export const Danger = Template.bind({});
+Danger.args = {
+  type: "danger",
+};
 
-// WithCloseBtn.argTypes = {
-//   onClose: { action: "onClose" },
-// };
+// Story for Success Alert
+export const Success = Template.bind({});
+Success.args = {
+  type: "success",
+};
 
-export {};
+// Story for Warning Alert
+export const Warning = Template.bind({});
+Warning.args = {
+  type: "warning",
+};
+
+// Story with Close Button
+export const WithCloseBtn = Template.bind({});
+WithCloseBtn.args = {
+  type: "info", // Alert type (can be info, danger, success, or warning)
+  onClose: () => alert("Alert closed!"), // Close button action
+};

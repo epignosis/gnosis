@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import Text, { TextProps } from "./Text";
 
 export default {
@@ -27,7 +27,7 @@ export default {
   },
 };
 
-const Template: Story<TextProps> = (args) => <Text {...args} />;
+const Template: StoryFn<TextProps> = (args) => <Text {...args} />;
 
 export const Default = Template.bind({});
 

@@ -1,6 +1,7 @@
-import React, { FC } from "react";
+import React from "react";
 import { drawerBody } from "./styles";
+import { FCWithChildren } from "types/common";
 
-const Body: FC = ({ children }) => <div css={drawerBody}>{children}</div>;
+const Body: FCWithChildren = ({ children }) => <div css={drawerBody}>{children}</div>;
 
 export default Body;

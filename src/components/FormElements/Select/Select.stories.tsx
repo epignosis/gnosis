@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { CustomSelectProps, CustomOption } from "./types";
 import { defaultOptions, groupedOptions, menuMaxWidthOptions } from "./data";
 import Select from "./Select";
@@ -56,7 +56,7 @@ export default {
     onChange: { action: "value changed" },
   },
   decorators: [
-    (Story: Story): JSX.Element => (
+    (Story: StoryFn): JSX.Element => (
       <div>
         <Story />
       </div>
@@ -64,7 +64,7 @@ export default {
   ],
 };
 
-const Template: Story<CustomSelectProps<CustomOption, boolean>> = (args) => {
+const Template: StoryFn<CustomSelectProps<CustomOption, boolean>> = (args) => {
   return <Select {...args} formatOptionLabel={formatOptionLabel} />;
 };
 
@@ -139,7 +139,7 @@ withValueCreationValidation.args = {
     !defaultOptions.find((option) => option.label === value),
 };
 
-export const AsyncSelect: Story<CustomSelectProps<CustomOption, boolean>> = (args) => {
+export const AsyncSelect: StoryFn<CustomSelectProps<CustomOption, boolean>> = (args) => {
   const onAsyncSearchChange = (inputText: string): Promise<CustomOption[]> => {
     return new Promise<CustomOption[]>((resolve) => {
       // Simulating fetched options based on the inputText

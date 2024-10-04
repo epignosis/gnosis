@@ -3,13 +3,13 @@
 exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
 <div>
   <div
-    class="dropdown css-19r261j-DropdownContainer-DropdownContainer"
+    class="dropdown css-ps5aa-DropdownContainer-DropdownContainer"
   >
     <div
       class="dropdown-button is-active"
     >
       <button
-        class="solid css-r9asid-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        class="solid css-z4fqld-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       >
         <span
           class="btn-text"
@@ -22,138 +22,108 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
       class="dropdown-wrapper bottom-start"
     >
       <ul
-        class="dropdown-list css-x7r8e2-DropdownList-DropdownList"
+        class="dropdown-list css-1a2bu8a-DropdownList-DropdownList"
         role="list"
       >
         <li
-          class="css-1svz8nq-DropdownTitle-DropdownTitle"
+          class="css-9lzpa9-DropdownTitle-DropdownTitle"
         >
           <span
-            class="css-g06jqs-textContainer-textContainer"
+            class="css-mproha-textContainer-textContainer"
             data-testid="text-component"
             title="Category 1"
           >
             Category 1
           </span>
         </li>
-        <div
-          aria-expanded="false"
-          role="tooltip"
-        >
-          <li
-            class="1 dropdown-list-item css-3jxyqn-DropdownListItem-DropdownListItem"
-          >
-            <span
-              class="css-26eo9i-textContainer-textContainer"
-              data-testid="text-component"
-              title="Option 1"
-            >
-              Option 1
-            </span>
-          </li>
-        </div>
         <li
-          class="css-1rpjd55-DropdownTitle-DropdownTitle"
+          class="1 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
         >
           <span
-            class="css-g06jqs-textContainer-textContainer"
+            class="css-1by32j1-textContainer-textContainer"
+            data-testid="text-component"
+            title="Option 1"
+          >
+            Option 1
+          </span>
+        </li>
+        <li
+          class="css-4jt7v9-DropdownTitle-DropdownTitle"
+        >
+          <span
+            class="css-mproha-textContainer-textContainer"
             data-testid="text-component"
             title="Category 2"
           >
             Category 2
           </span>
         </li>
-        <div
-          aria-expanded="false"
-          role="tooltip"
-        >
-          <li
-            class="2 dropdown-list-item css-1ppcfed-DropdownListItem-DropdownListItem"
-          >
-            <span
-              class="css-26eo9i-textContainer-textContainer"
-              data-testid="text-component"
-              title="Option 2"
-            >
-              Option 2
-            </span>
-          </li>
-        </div>
-        <div
-          aria-expanded="false"
-          role="tooltip"
-        >
-          <li
-            class="3 dropdown-list-item css-1ppcfed-DropdownListItem-DropdownListItem"
-          >
-            <span
-              class="css-26eo9i-textContainer-textContainer"
-              data-testid="text-component"
-              title="Option 3"
-            >
-              Option 3
-            </span>
-          </li>
-        </div>
         <li
-          class="css-1svz8nq-DropdownTitle-DropdownTitle"
+          class="2 dropdown-list-item css-1ihjpef-DropdownListItem-DropdownListItem"
         >
           <span
-            class="css-g06jqs-textContainer-textContainer"
+            class="css-1by32j1-textContainer-textContainer"
+            data-testid="text-component"
+            title="Option 2"
+          >
+            Option 2
+          </span>
+        </li>
+        <li
+          class="3 dropdown-list-item css-1ihjpef-DropdownListItem-DropdownListItem"
+        >
+          <span
+            class="css-1by32j1-textContainer-textContainer"
+            data-testid="text-component"
+            title="Option 3"
+          >
+            Option 3
+          </span>
+        </li>
+        <li
+          class="css-9lzpa9-DropdownTitle-DropdownTitle"
+        >
+          <span
+            class="css-mproha-textContainer-textContainer"
             data-testid="text-component"
             title="Category 15"
           >
             Category 15
           </span>
         </li>
-        <div
-          aria-expanded="false"
-          role="tooltip"
+        <li
+          class="15 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
         >
-          <li
-            class="15 dropdown-list-item css-3jxyqn-DropdownListItem-DropdownListItem"
+          <span
+            class="css-1by32j1-textContainer-textContainer"
+            data-testid="text-component"
+            title="Option 15"
           >
-            <span
-              class="css-26eo9i-textContainer-textContainer"
-              data-testid="text-component"
-              title="Option 15"
-            >
-              Option 15
-            </span>
-          </li>
-        </div>
-        <div
-          aria-expanded="false"
-          role="tooltip"
+            Option 15
+          </span>
+        </li>
+        <li
+          class="16 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
         >
-          <li
-            class="16 dropdown-list-item css-3jxyqn-DropdownListItem-DropdownListItem"
+          <span
+            class="css-1by32j1-textContainer-textContainer"
+            data-testid="text-component"
+            title="Option 16"
           >
-            <span
-              class="css-26eo9i-textContainer-textContainer"
-              data-testid="text-component"
-              title="Option 16"
-            >
-              Option 16
-            </span>
-          </li>
-        </div>
-        <div
-          aria-expanded="false"
-          role="tooltip"
+            Option 16
+          </span>
+        </li>
+        <li
+          class="5 dropdown-list-item css-el37et-DropdownListItem-DropdownListItem"
         >
-          <li
-            class="5 dropdown-list-item css-2cjai3-DropdownListItem-DropdownListItem"
+          <span
+            class="css-1by32j1-textContainer-textContainer"
+            data-testid="text-component"
+            title="Option 5"
           >
-            <span
-              class="css-26eo9i-textContainer-textContainer"
-              data-testid="text-component"
-              title="Option 5"
-            >
-              Option 5
-            </span>
-          </li>
-        </div>
+            Option 5
+          </span>
+        </li>
       </ul>
     </div>
   </div>

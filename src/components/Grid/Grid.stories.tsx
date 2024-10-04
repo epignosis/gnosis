@@ -1,4 +1,4 @@
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import React from "react";
 import Grid, { GridProps } from "./Grid";
 
@@ -23,7 +23,7 @@ export default {
   },
 };
 
-export const Simple: Story<GridProps> = (args) => (
+export const Simple: StoryFn<GridProps> = (args) => (
   <Grid {...args}>
     <div style={{ backgroundColor: "whitesmoke", height: "100%" }}>Item 1</div>
     <div style={{ backgroundColor: "whitesmoke", height: "100%" }}>Item 2</div>
@@ -36,7 +36,7 @@ export const Simple: Story<GridProps> = (args) => (
   </Grid>
 );
 
-export const WithCustomGridItems: Story<GridProps> = (args) => (
+export const WithCustomGridItems: StoryFn<GridProps> = (args) => (
   <Grid {...args}>
     <Grid.Item colSpan={[1, 2, 1]}>
       <div style={{ backgroundColor: "whitesmoke", height: "100%" }}>Item 1</div>

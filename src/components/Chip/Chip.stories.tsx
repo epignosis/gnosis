@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { BranchesFilterSVG } from "../../icons";
 import Chip, { ChipProps } from "./Chip";
 import { colors } from "@theme/default/colors";
@@ -18,7 +18,7 @@ export default {
   },
 };
 
-const Template: Story<ChipProps> = (args) => <Chip {...args} />;
+const Template: StoryFn<ChipProps> = (args) => <Chip {...args} />;
 
 export const Default = Template.bind({});
 

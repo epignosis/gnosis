@@ -20,7 +20,7 @@ describe("<Textarea />", () => {
     expect(textarea).toBeInTheDocument();
   });
 
-  it("renders disabled", () => {
+  it("renders disabled", async () => {
     const mockFn = jest.fn();
     const labelTxt = faker.random.words();
     render(
@@ -36,12 +36,12 @@ describe("<Textarea />", () => {
 
     expect(textarea).toBeDisabled();
 
-    userEvent.click(textarea);
+    await userEvent.click(textarea);
 
     expect(mockFn).not.toHaveBeenCalled();
   });
 
-  it("changes value", () => {
+  it("changes value", async () => {
     const labelTxt = faker.random.words();
     render(
       <Textarea
@@ -56,7 +56,7 @@ describe("<Textarea />", () => {
     expect(textarea).toHaveValue("");
 
     const newValue = faker.lorem.paragraph();
-    userEvent.type(textarea, newValue);
+    await userEvent.type(textarea, newValue);
 
     expect(textarea).toHaveValue(newValue);
   });

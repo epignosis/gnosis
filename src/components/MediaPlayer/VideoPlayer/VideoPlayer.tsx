@@ -1,10 +1,8 @@
 import React, { FC } from "react";
-import ReactPlayer from "react-player/lazy";
-import { PlayerProps } from "../MediaPlayer";
+import ReactPlayer from "react-player";
+import { PlayerProps } from "./types";
 
-export type VideoPlayerProps = PlayerProps;
-
-const VideoPlayer: FC<VideoPlayerProps> = ({ src, controls = true, containerAttrs, ...rest }) => {
+const VideoPlayer: FC<PlayerProps> = ({ src, controls = true, containerAttrs, ...rest }) => {
   return (
     <div {...containerAttrs}>
       <ReactPlayer

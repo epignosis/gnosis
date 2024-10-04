@@ -62,7 +62,7 @@ describe("<Modal>", () => {
     expect(footer).not.toBeInTheDocument();
   });
 
-  it("Header renders correctly with close btn", () => {
+  it("Header renders correctly with close btn", async () => {
     const { headerTxt } = getModalProps();
     const mockedOnClose = jest.fn();
 
@@ -73,7 +73,7 @@ describe("<Modal>", () => {
     );
     const closeBtn = screen.getByRole("button");
 
-    userEvent.click(closeBtn);
+    await userEvent.click(closeBtn);
 
     expect(mockedOnClose).toHaveBeenCalledTimes(1);
   });

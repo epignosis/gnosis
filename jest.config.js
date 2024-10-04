@@ -15,7 +15,7 @@ module.exports = {
   transform: {
     "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
   },
-  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
+  setupFilesAfterEnv: ["@testing-library/jest-dom"],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   moduleNameMapper: {
     "^types(.*)$": "<rootDir>/src/types$1",

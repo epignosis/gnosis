@@ -27,7 +27,7 @@ describe("<Radio />", () => {
     expect(radio).toBeDisabled();
   });
 
-  it("gets checked", () => {
+  it("gets checked", async () => {
     const labelTxt = faker.random.words();
     const value = faker.random.alphaNumeric();
     render(<Radio id={value} label={labelTxt} value={value} />);
@@ -36,7 +36,7 @@ describe("<Radio />", () => {
 
     expect(radio).not.toBeChecked();
 
-    userEvent.click(radio);
+    await userEvent.click(radio);
 
     expect(radio).toBeChecked();
   });

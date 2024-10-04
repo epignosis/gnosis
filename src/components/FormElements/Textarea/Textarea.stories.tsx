@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import TextareaComponent, { TextareaProps } from "./Textarea";
 
 export default {
@@ -28,7 +28,7 @@ export default {
     },
   },
   decorators: [
-    (Story: Story): JSX.Element => (
+    (Story: StoryFn): JSX.Element => (
       <div style={{ maxWidth: 500 }}>
         <Story />
       </div>
@@ -36,7 +36,7 @@ export default {
   ],
 };
 
-const Template: Story<TextareaProps> = (args) => <TextareaComponent {...args} />;
+const Template: StoryFn<TextareaProps> = (args) => <TextareaComponent {...args} />;
 
 export const Default = Template.bind({});
 

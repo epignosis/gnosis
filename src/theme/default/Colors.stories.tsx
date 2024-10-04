@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { Label } from "../../";
 import { palletGenerator, THEME_COLOURS as defaultTheme } from "./colors";
 
@@ -75,7 +75,7 @@ type StoryColors = {
   colors: typeof defaultTheme;
 };
 
-const Template: Story<StoryColors> = ({ colors }) => {
+const Template: StoryFn<StoryColors> = ({ colors }) => {
   const names = Object.keys(colors);
 
   return (

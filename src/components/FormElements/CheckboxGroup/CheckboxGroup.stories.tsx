@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import CheckboxGroup, { CheckboxGroupProps } from "./CheckboxGroup";
 
 export default {
@@ -66,4 +66,4 @@ export default {
   },
 };
 
-export const Group: Story<CheckboxGroupProps> = (args) => <CheckboxGroup {...args} />;
+export const Group: StoryFn<CheckboxGroupProps> = (args) => <CheckboxGroup {...args} />;

@@ -7,7 +7,17 @@ module.exports = {
     "@storybook/addon-essentials",
     "storybook-addon-rtl",
     "@storybook/addon-a11y",
+    "@storybook/addon-webpack5-compiler-babel",
+    "@chromatic-com/storybook",
   ],
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {},
+  },
+  docs: {},
+  typescript: {
+    reactDocgen: "react-docgen-typescript",
+  },
   webpackFinal: (config) => {
     // Rules
     const fileLoaderRule = config.module.rules.find((rule) => rule.test && rule.test.test(".svg"));

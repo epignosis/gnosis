@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import RadioButtonGroupComponent, { RadioGroupProps } from "./RadioButtonGroup";
 
 export default {
@@ -38,7 +38,7 @@ export default {
   },
 };
 
-export const RadioButtonGroup: Story<RadioGroupProps> = (args) => {
+export const RadioButtonGroup: StoryFn<RadioGroupProps> = (args) => {
   const [value, setValue] = useState("");
   const updateValue = (val: string) => {
     setValue(val);

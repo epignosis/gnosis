@@ -16,19 +16,19 @@ describe("<Button />", () => {
     expect(button).not.toBeDisabled();
   });
 
-  it("calls the onClick callback", () => {
+  it("calls the onClick callback", async () => {
     const mockFn = jest.fn();
     render(<Button onClick={mockFn}>{faker.lorem.word()}</Button>);
     const button = screen.getByRole("button");
 
     expect(button).not.toBeDisabled();
 
-    userEvent.click(button);
+    await userEvent.click(button);
 
     expect(mockFn).toHaveBeenCalledTimes(1);
   });
 
-  it("disabled button", () => {
+  it("disabled button", async () => {
     const mockFn = jest.fn();
     render(
       <Button disabled onClick={mockFn}>
@@ -39,12 +39,12 @@ describe("<Button />", () => {
 
     expect(button).toBeDisabled();
 
-    userEvent.click(button);
+    await userEvent.click(button);
 
     expect(mockFn).not.toHaveBeenCalled();
   });
 
-  it("is loading button", () => {
+  it("is loading button", async () => {
     const mockFn = jest.fn();
     render(
       <Button isLoading onClick={mockFn}>
@@ -57,7 +57,7 @@ describe("<Button />", () => {
     expect(loadingIcon).toBeInTheDocument();
     expect(button).toBeDisabled();
 
-    userEvent.click(button);
+    await userEvent.click(button);
 
     expect(mockFn).not.toHaveBeenCalled();
   });

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { Button, Input } from "../../";
 import Modal, { ReactModalProps } from "./Modal";
 
@@ -22,7 +22,7 @@ export default {
   },
 };
 
-export const Default: Story<ReactModalProps> = (args) => {
+export const Default: StoryFn<ReactModalProps> = (args) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -37,7 +37,7 @@ export const Default: Story<ReactModalProps> = (args) => {
   );
 };
 
-export const ModalWithNoHeader: Story<ReactModalProps> = (args) => {
+export const ModalWithNoHeader: StoryFn<ReactModalProps> = (args) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -62,7 +62,7 @@ export const ModalWithNoHeader: Story<ReactModalProps> = (args) => {
   );
 };
 
-export const ModalWithCotent: Story<ReactModalProps> = (args) => {
+export const ModalWithCotent: StoryFn<ReactModalProps> = (args) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -94,7 +94,7 @@ export const ModalWithCotent: Story<ReactModalProps> = (args) => {
   );
 };
 
-export const ModalNotCloseOnOutsideClick: Story<ReactModalProps> = (args) => {
+export const ModalNotCloseOnOutsideClick: StoryFn<ReactModalProps> = (args) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -131,7 +131,7 @@ export const ModalNotCloseOnOutsideClick: Story<ReactModalProps> = (args) => {
   );
 };
 
-export const ModalWithCustomStyles: Story<ReactModalProps> = (args) => {
+export const ModalWithCustomStyles: StoryFn<ReactModalProps> = (args) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -171,7 +171,7 @@ export const ModalWithCustomStyles: Story<ReactModalProps> = (args) => {
   );
 };
 
-export const ModalWithNoCloseButton: Story<ReactModalProps> = (args) => {
+export const ModalWithNoCloseButton: StoryFn<ReactModalProps> = (args) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (

@@ -1,4 +1,4 @@
-import { HTMLAttributes, ReactNode } from "react";
+import { HTMLAttributes, ReactElement, ReactNode } from "react";
 import { TippyProps } from "@tippyjs/react";
 import { TypographyLevels } from "@theme/utils/typography";
 
@@ -6,7 +6,7 @@ export type DropdownItem = {
   label: string | JSX.Element;
   value?: string;
   id?: string;
-  icon?: JSX.Element | SVGAElement;
+  icon?: JSX.Element | SVGAElement | ReactElement;
   className?: string;
   items?: DropdownItem[];
   category?: string;

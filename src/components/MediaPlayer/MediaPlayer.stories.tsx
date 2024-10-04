@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import MediaPlayer, { MediaPlayerProps } from "./MediaPlayer";
 
 export default {
@@ -12,7 +12,7 @@ export default {
   },
 };
 
-const Template: Story<MediaPlayerProps> = (args) => <MediaPlayer {...args} />;
+const Template: StoryFn<MediaPlayerProps> = (args) => <MediaPlayer {...args} />;
 
 export const Video = Template.bind({});
 

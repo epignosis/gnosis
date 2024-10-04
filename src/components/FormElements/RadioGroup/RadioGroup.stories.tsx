@@ -1,5 +1,5 @@
 import React from "react";
-import { Story } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import RadioGroupComponent, { RadioGroupProps } from "./RadioGroup";
 
 export default {
@@ -47,7 +47,7 @@ export default {
   },
 };
 
-const Template: Story<RadioGroupProps> = (args) => <RadioGroupComponent {...args} />;
+const Template: StoryFn<RadioGroupProps> = (args) => <RadioGroupComponent {...args} />;
 
 export const Default = Template.bind({});
 

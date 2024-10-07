@@ -1,3 +1,10 @@
+## [5.33.2](https://github.com/epignosis/gnosis/compare/v5.33.1...v5.33.2) (2024-10-07)
+
+
+### Bug Fixes
+
+* remove media player from storybook ([#424](https://github.com/epignosis/gnosis/issues/424)) ([8682ff5](https://github.com/epignosis/gnosis/commit/8682ff5cf88b5ffaeddb39ffc2ee0896a9982e1f))
+
 ## [5.33.1](https://github.com/epignosis/gnosis/compare/v5.33.0...v5.33.1) (2024-10-07)
 
 # [5.33.0](https://github.com/epignosis/gnosis/compare/v5.32.0...v5.33.0) (2024-10-04)

@@ -36,17 +36,22 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             Category 1
           </span>
         </li>
-        <li
-          class="1 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
+        <div
+          aria-expanded="false"
+          role="tooltip"
         >
-          <span
-            class="css-1by32j1-textContainer-textContainer"
-            data-testid="text-component"
-            title="Option 1"
+          <li
+            class="1 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
           >
-            Option 1
-          </span>
-        </li>
+            <span
+              class="css-1by32j1-textContainer-textContainer"
+              data-testid="text-component"
+              title="Option 1"
+            >
+              Option 1
+            </span>
+          </li>
+        </div>
         <li
           class="css-4jt7v9-DropdownTitle-DropdownTitle"
         >
@@ -58,28 +63,38 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             Category 2
           </span>
         </li>
-        <li
-          class="2 dropdown-list-item css-1ihjpef-DropdownListItem-DropdownListItem"
+        <div
+          aria-expanded="false"
+          role="tooltip"
         >
-          <span
-            class="css-1by32j1-textContainer-textContainer"
-            data-testid="text-component"
-            title="Option 2"
+          <li
+            class="2 dropdown-list-item css-1ihjpef-DropdownListItem-DropdownListItem"
           >
-            Option 2
-          </span>
-        </li>
-        <li
-          class="3 dropdown-list-item css-1ihjpef-DropdownListItem-DropdownListItem"
+            <span
+              class="css-1by32j1-textContainer-textContainer"
+              data-testid="text-component"
+              title="Option 2"
+            >
+              Option 2
+            </span>
+          </li>
+        </div>
+        <div
+          aria-expanded="false"
+          role="tooltip"
         >
-          <span
-            class="css-1by32j1-textContainer-textContainer"
-            data-testid="text-component"
-            title="Option 3"
+          <li
+            class="3 dropdown-list-item css-1ihjpef-DropdownListItem-DropdownListItem"
           >
-            Option 3
-          </span>
-        </li>
+            <span
+              class="css-1by32j1-textContainer-textContainer"
+              data-testid="text-component"
+              title="Option 3"
+            >
+              Option 3
+            </span>
+          </li>
+        </div>
         <li
           class="css-9lzpa9-DropdownTitle-DropdownTitle"
         >
@@ -91,39 +106,54 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             Category 15
           </span>
         </li>
-        <li
-          class="15 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
+        <div
+          aria-expanded="false"
+          role="tooltip"
         >
-          <span
-            class="css-1by32j1-textContainer-textContainer"
-            data-testid="text-component"
-            title="Option 15"
+          <li
+            class="15 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
           >
-            Option 15
-          </span>
-        </li>
-        <li
-          class="16 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
+            <span
+              class="css-1by32j1-textContainer-textContainer"
+              data-testid="text-component"
+              title="Option 15"
+            >
+              Option 15
+            </span>
+          </li>
+        </div>
+        <div
+          aria-expanded="false"
+          role="tooltip"
         >
-          <span
-            class="css-1by32j1-textContainer-textContainer"
-            data-testid="text-component"
-            title="Option 16"
+          <li
+            class="16 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
           >
-            Option 16
-          </span>
-        </li>
-        <li
-          class="5 dropdown-list-item css-el37et-DropdownListItem-DropdownListItem"
+            <span
+              class="css-1by32j1-textContainer-textContainer"
+              data-testid="text-component"
+              title="Option 16"
+            >
+              Option 16
+            </span>
+          </li>
+        </div>
+        <div
+          aria-expanded="false"
+          role="tooltip"
         >
-          <span
-            class="css-1by32j1-textContainer-textContainer"
-            data-testid="text-component"
-            title="Option 5"
+          <li
+            class="5 dropdown-list-item css-el37et-DropdownListItem-DropdownListItem"
           >
-            Option 5
-          </span>
-        </li>
+            <span
+              class="css-1by32j1-textContainer-textContainer"
+              data-testid="text-component"
+              title="Option 5"
+            >
+              Option 5
+            </span>
+          </li>
+        </div>
       </ul>
     </div>
   </div>

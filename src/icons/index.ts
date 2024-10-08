@@ -453,6 +453,8 @@ export { default as CalendarUsersSVG } from "./client/calendar-users.svg";
 export { default as ImportDataSVG } from "./client/import-data.svg";
 export { default as HourglassEndSVG } from "./client/hourglass-end.svg";
 export { default as NumberedListSVG } from "./client/numbered-list.svg";
+export { default as PassportSVG } from "./client/passport.svg";
+export { default as MicrochipAISVG } from "./client/microchip-ai.svg";
 
 // Exports from folders.
 // Assignments Icons

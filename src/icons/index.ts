@@ -455,6 +455,7 @@ export { default as HourglassEndSVG } from "./client/hourglass-end.svg";
 export { default as NumberedListSVG } from "./client/numbered-list.svg";
 export { default as PassportSVG } from "./client/passport.svg";
 export { default as MicrochipAISVG } from "./client/microchip-ai.svg";
+export { default as TextBoxSVG } from "./client/text-box.svg";
 
 // Exports from folders.
 // Assignments Icons

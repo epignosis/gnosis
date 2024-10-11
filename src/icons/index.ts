@@ -536,3 +536,10 @@ export { default as TrainingTimeSVG } from "./client/widgets/training-time.svg";
 export { default as EnviromentalImpactSVG } from "./client/widgets/environmental-impact.svg";
 export { default as CompletedAssignmentsSVG } from "./client/widgets/completed-assignments.svg";
 export { default as SubmittedCommentsSVG } from "./client/widgets/submitted-comments.svg";
+
+// Skills Icons
+export { default as BrainSVG } from "./client/skills/brain.svg";
+export { default as DeactivateSVG } from "./client/skills/deactivate.svg";
+export { default as AiChipSVG } from "./client/skills/ai_chip.svg";
+export { default as ExitAssessmentSVG } from "./client/skills/exit_assessment.svg";
+export { default as UserCheckSVG } from "./client/skills/user_check.svg";

@@ -1,3 +1,10 @@
+## [5.33.4](https://github.com/epignosis/gnosis/compare/v5.33.3...v5.33.4) (2024-10-11)
+
+
+### Bug Fixes
+
+* **dropdown:** fixing miss aligned icons on dropdown items due to tooltip ([#425](https://github.com/epignosis/gnosis/issues/425)) ([c1114a4](https://github.com/epignosis/gnosis/commit/c1114a4ce1046e4b61878f9401b5c3c4546543f0))
+
 ## [5.33.3](https://github.com/epignosis/gnosis/compare/v5.33.2...v5.33.3) (2024-10-10)
 
 ## [5.33.2](https://github.com/epignosis/gnosis/compare/v5.33.1...v5.33.2) (2024-10-07)

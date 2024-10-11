@@ -19,6 +19,7 @@ export { default as Card } from "./components/Card/Card";
 export { default as Grid } from "./components/Grid/Grid";
 export { default as Table } from "./components/Table/Table";
 export { default as Dropdown } from "./components/Dropdown/Dropdown";
+export { default as StatusTag } from "./components/StatusTag/StatusTag";
 
 //  Typography
 export { default as Heading } from "./components/Heading/Heading";

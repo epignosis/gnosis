@@ -25,6 +25,7 @@ export enum statusTagSizes {
 export type StatusTagProps = {
   text: string;
   showIcon?: boolean;
+  showText?: boolean;
   size?: statusTagSizes;
   icon?: IconType;
   color?: statusTagColors;
@@ -36,10 +37,11 @@ const StatusTag: FC<StatusTagProps> = ({
   size = statusTagSizes.LG,
   color = statusTagColors.NEUTRAL,
   showIcon,
+  showText = true,
 }) => {
   return (
     <span
-      css={(theme): SerializedStyles => statusTagStyles(theme, size)}
+      css={(theme): SerializedStyles => statusTagStyles(theme, size, showText)}
       data-testid="status-tag"
       className={classNames("statusTag", `statusTag--${size}`, `statusTag--${color}`)}
       role="status"
@@ -50,7 +52,7 @@ const StatusTag: FC<StatusTagProps> = ({
           <Icon height={16} />
         </span>
       )}
-      <span className="statusTag__text">{text}</span>
+      {showText && <span className="statusTag__text">{text}</span>}
     </span>
   );
 };

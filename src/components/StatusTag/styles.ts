@@ -8,6 +8,7 @@ export const statusTagStyles = (
     typeScaleSizes,
   }: { statusTag: Theme["statusTag"]; typeScaleSizes: Theme["typeScaleSizes"] },
   size: statusTagSizes,
+  showText: boolean,
 ) => {
   return css`
     display: inline-flex;
@@ -19,6 +20,11 @@ export const statusTagStyles = (
     font-size: ${size === "lg" ? typeScaleSizes.sm : typeScaleSizes.xs};
     font-weight: ${size === "md" ? "700" : "400"};
     line-height: 1;
+
+    /* If text is hidden, remove the gap */
+    ${!showText} {
+      gap: none;
+    }
 
     /* Define Colors Schemes*/
     &.statusTag--neutral {

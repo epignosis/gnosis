@@ -49,3 +49,13 @@ WithIcon.args = {
   showIcon: true,
   icon: InfoIconSVG,
 };
+
+export const WithOnlyIcon = Template.bind({});
+
+WithOnlyIcon.args = {
+  size: statusTagSizes.LG,
+  text: "",
+  showIcon: true,
+  showText: false,
+  icon: InfoIconSVG,
+};

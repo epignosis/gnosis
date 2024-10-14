@@ -34,7 +34,7 @@ const Template: StoryFn<StatusTagProps> = (args) => <StatusTag {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  size: statusTagSizes.LG,
+  size: statusTagSizes.MD,
   text: "English",
   icon: InfoIconSVG,
 };
@@ -42,7 +42,7 @@ Default.args = {
 export const WithIcon = Template.bind({});
 
 WithIcon.args = {
-  size: statusTagSizes.LG,
+  size: statusTagSizes.MD,
   text: "English",
   icon: InfoIconSVG,
 };
@@ -50,7 +50,7 @@ WithIcon.args = {
 export const WithOnlyIcon = Template.bind({});
 
 WithOnlyIcon.args = {
-  size: statusTagSizes.LG,
+  size: statusTagSizes.MD,
   text: "",
   icon: InfoIconSVG,
 };

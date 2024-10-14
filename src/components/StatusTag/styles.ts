@@ -11,13 +11,13 @@ export const statusTagStyles = (
 ) => {
   return css`
     display: inline-flex;
-    height: ${size === "lg" ? "2rem" : "1.25rem"};
+    height: ${size === statusTagSizes.MD ? "2rem" : "1.25rem"};
+    padding: ${size === statusTagSizes.MD ? "0.5rem" : "0.125rem 0.25rem"};
     align-items: center;
-    gap: ${size === "lg" ? "0.625rem" : "0.25rem"};
+    gap: ${size === statusTagSizes.MD ? "0.625rem" : "0.25rem"};
+    font-size: ${size === statusTagSizes.MD ? typeScaleSizes.sm : typeScaleSizes.xs};
+    font-weight: ${size === statusTagSizes.SM ? "700" : "400"};
     border-radius: 5px;
-    padding: ${size === "lg" ? "0.5rem" : "0.125rem 0.25rem"};
-    font-size: ${size === "lg" ? typeScaleSizes.sm : typeScaleSizes.xs};
-    font-weight: ${size === "md" ? "700" : "400"};
     line-height: 1;
 
     /* Define Colors Schemes*/

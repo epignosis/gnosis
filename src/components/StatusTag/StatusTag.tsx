@@ -17,8 +17,8 @@ export enum statusTagVariants {
 }
 
 export enum statusTagSizes {
-  MD = "md",
-  LG = "lg",
+  MD = "lg",
+  SM = "sm",
 }
 
 export type StatusTagProps = {
@@ -33,7 +33,7 @@ const StatusTag: FC<StatusTagProps> = ({
   testId,
   text,
   icon: Icon,
-  size = statusTagSizes.LG,
+  size = statusTagSizes.MD,
   variant = statusTagVariants.NEUTRAL,
 }) => {
   const dataTestId = testId ? testId : `status-tag-${text}`;

@@ -1,3 +1,10 @@
+# [5.34.0](https://github.com/epignosis/gnosis/compare/v5.33.6...v5.34.0) (2024-10-14)
+
+
+### Features
+
+* **tabs.tsx:** added inline end component functionality ([#431](https://github.com/epignosis/gnosis/issues/431)) ([f5ec09d](https://github.com/epignosis/gnosis/commit/f5ec09d6b42ade560696005014e9c8bc4ea451ad))
+
 ## [5.33.6](https://github.com/epignosis/gnosis/compare/v5.33.5...v5.33.6) (2024-10-11)
 
 ## [5.33.5](https://github.com/epignosis/gnosis/compare/v5.33.4...v5.33.5) (2024-10-11)

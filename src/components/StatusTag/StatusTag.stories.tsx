@@ -36,7 +36,6 @@ export const Default = Template.bind({});
 Default.args = {
   size: statusTagSizes.LG,
   text: "English",
-  showIcon: false,
   icon: InfoIconSVG,
 };
 
@@ -45,7 +44,6 @@ export const WithIcon = Template.bind({});
 WithIcon.args = {
   size: statusTagSizes.LG,
   text: "English",
-  showIcon: true,
   icon: InfoIconSVG,
 };
 
@@ -54,7 +52,5 @@ export const WithOnlyIcon = Template.bind({});
 WithOnlyIcon.args = {
   size: statusTagSizes.LG,
   text: "",
-  showIcon: true,
-  showText: false,
   icon: InfoIconSVG,
 };

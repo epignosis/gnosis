@@ -23,9 +23,7 @@ export enum statusTagSizes {
 
 export type StatusTagProps = {
   testId?: string;
-  text: string;
-  showIcon?: boolean;
-  showText?: boolean;
+  text?: string;
   size?: statusTagSizes;
   icon?: IconType;
   color?: statusTagColors;
@@ -37,25 +35,24 @@ const StatusTag: FC<StatusTagProps> = ({
   icon: Icon,
   size = statusTagSizes.LG,
   color = statusTagColors.NEUTRAL,
-  showIcon,
-  showText = true,
 }) => {
   const dataTestId = testId ? testId : `status-tag-${text}`;
+  const hasText = Boolean(text);
 
   return (
     <span
-      css={(theme): SerializedStyles => statusTagStyles(theme, size, showText)}
+      css={(theme): SerializedStyles => statusTagStyles(theme, size, hasText)}
       data-testid={dataTestId}
       className={classNames("statusTag", `statusTag--${size}`, `statusTag--${color}`)}
       role="status"
       aria-label={text}
     >
-      {showIcon && Icon && (
+      {Icon && (
         <span className="statusTag__icon" aria-hidden="true">
           <Icon height={16} />
         </span>
       )}
-      {showText && <span className="statusTag__text">{text}</span>}
+      {text && <span className="statusTag__text">{text}</span>}
     </span>
   );
 };

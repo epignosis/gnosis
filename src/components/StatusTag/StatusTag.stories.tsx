@@ -20,7 +20,6 @@ export default {
           "warning",
           "promo",
           "pale",
-          "pending",
           "grey",
           "red",
         ],

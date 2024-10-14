@@ -62,11 +62,6 @@ export const statusTagStyles = (
       background-color: ${statusTag.pale};
     }
 
-    &.statusTag--pending {
-      color: ${colors.black};
-      background-color: ${statusTag.pending};
-    }
-
     &.statusTag--grey {
       color: ${colors.black};
       background-color: ${statusTag.grey};

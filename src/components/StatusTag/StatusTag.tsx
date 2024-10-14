@@ -12,7 +12,6 @@ export enum statusTagColors {
   WARNING = "warning",
   PROMO = "promo",
   PALE = "pale",
-  PENDING = "pending",
   GREY = "grey",
   RED = "red",
 }

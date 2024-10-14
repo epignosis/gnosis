@@ -9,7 +9,6 @@ export default {
   warning: Color(colors.orange.base).alpha(0.15).string(),
   promo: colors.primary.base,
   pale: Color(colors.primary.lightest).alpha(0.25).string(),
-  pending: Color(colors.orange.base).alpha(0.15).string(),
   grey: colors.secondary.lighter,
   red: colors.red.base,
 };

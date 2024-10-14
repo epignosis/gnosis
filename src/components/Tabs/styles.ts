@@ -39,6 +39,10 @@ export const tabsHeader = (
     &::-webkit-scrollbar {
       display: none;
     }
+
+    .inline-end-component {
+      margin-inline-start: auto;
+    }
   `;
 };
 

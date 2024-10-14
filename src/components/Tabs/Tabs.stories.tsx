@@ -109,3 +109,10 @@ SelectedTab.args = {
   ...commonProps,
   selectedTab: 0,
 };
+
+export const WithInlineEndComponent = Template.bind({});
+
+WithInlineEndComponent.args = {
+  ...commonProps,
+  inlineEndComponent: <a aria-label="How the course store works">How the course store works</a>,
+};

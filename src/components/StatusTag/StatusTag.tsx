@@ -37,11 +37,10 @@ const StatusTag: FC<StatusTagProps> = ({
   color = statusTagColors.NEUTRAL,
 }) => {
   const dataTestId = testId ? testId : `status-tag-${text}`;
-  const hasText = Boolean(text);
 
   return (
     <span
-      css={(theme): SerializedStyles => statusTagStyles(theme, size, hasText)}
+      css={(theme): SerializedStyles => statusTagStyles(theme, size)}
       data-testid={dataTestId}
       className={classNames("statusTag", `statusTag--${size}`, `statusTag--${color}`)}
       role="status"

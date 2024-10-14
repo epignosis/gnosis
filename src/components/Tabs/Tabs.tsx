@@ -17,6 +17,7 @@ type TabsProps = React.HTMLAttributes<HTMLElement> & {
   selectedTab?: number;
   onChangeTab?: (index: number) => void;
   tabs: TabObject[];
+  inlineEndComponent?: JSX.Element;
 };
 
 const Tabs: FC<TabsProps> = ({
@@ -24,6 +25,7 @@ const Tabs: FC<TabsProps> = ({
   stickyHeader = false,
   selectedTab = 0,
   onChangeTab,
+  inlineEndComponent,
   ...rest
 }) => {
   const [activeTab, setActiveTab] = useState(selectedTab);
@@ -136,6 +138,7 @@ const Tabs: FC<TabsProps> = ({
                 onSelectTab={onSelectTab}
               />
             ))}
+          {inlineEndComponent && <div className="inline-end-component">{inlineEndComponent}</div>}
         </nav>
 
         {showRightArrow() && (

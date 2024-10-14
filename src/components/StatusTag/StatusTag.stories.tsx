@@ -9,7 +9,7 @@ export default {
   argTypes: {
     text: "Completed",
     size: "md",
-    color: {
+    variant: {
       control: {
         type: "select",
         options: [

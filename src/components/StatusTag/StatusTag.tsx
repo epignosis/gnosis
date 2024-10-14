@@ -4,7 +4,7 @@ import { SerializedStyles } from "@emotion/react";
 import { statusTagStyles } from "./styles";
 import { IconType } from "types/common";
 
-export enum statusTagColors {
+export enum statusTagVariants {
   NEUTRAL = "neutral",
   POSITIVE = "positive",
   NEGATIVE = "negative",
@@ -26,7 +26,7 @@ export type StatusTagProps = {
   text?: string;
   size?: statusTagSizes;
   icon?: IconType;
-  color?: statusTagColors;
+  variant?: statusTagVariants;
 };
 
 const StatusTag: FC<StatusTagProps> = ({
@@ -34,7 +34,7 @@ const StatusTag: FC<StatusTagProps> = ({
   text,
   icon: Icon,
   size = statusTagSizes.LG,
-  color = statusTagColors.NEUTRAL,
+  variant = statusTagVariants.NEUTRAL,
 }) => {
   const dataTestId = testId ? testId : `status-tag-${text}`;
 
@@ -42,7 +42,7 @@ const StatusTag: FC<StatusTagProps> = ({
     <span
       css={(theme): SerializedStyles => statusTagStyles(theme, size)}
       data-testid={dataTestId}
-      className={classNames("statusTag", `statusTag--${size}`, `statusTag--${color}`)}
+      className={classNames("statusTag", `statusTag--${size}`, `statusTag--${variant}`)}
       role="status"
       aria-label={text}
     >

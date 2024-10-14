@@ -485,6 +485,7 @@ export { default as ReferralIconSVG } from "./client/referral/referral.svg";
 export { default as ReverseTrialStartSVG } from "./client/reverse-trial/reverse-trial-start.svg";
 export { default as ReverseTrialEndSVG } from "./client/reverse-trial/reverse-trial-end.svg";
 export { default as ReverseTrialEndsInADaySVG } from "./client/reverse-trial/reverse-trial-ends-in-a-day.svg";
+export { default as DashboardImgSVG } from "./client/reverse-trial/dashboard-img.svg";
 
 // Consensus Icons
 export { default as CirclePlaySVG } from "./client/circle-play.svg";

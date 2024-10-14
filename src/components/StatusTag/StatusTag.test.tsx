@@ -25,11 +25,11 @@ describe("StatusTag component", () => {
 
   it("renders the StatusTag with a custom size and variant", () => {
     render(
-      <StatusTag {...defaultProps} size={statusTagSizes.MD} variant={statusTagVariants.POSITIVE} />,
+      <StatusTag {...defaultProps} size={statusTagSizes.SM} variant={statusTagVariants.POSITIVE} />,
     );
     const tagElement = screen.getByTestId("status-tag-Active");
 
-    expect(tagElement).toHaveClass("statusTag--md", "statusTag--positive");
+    expect(tagElement).toHaveClass("statusTag--sm", "statusTag--positive");
   });
 
   it("renders the StatusTag without text when text is not provided", () => {

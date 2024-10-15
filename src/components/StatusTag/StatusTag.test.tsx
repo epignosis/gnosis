@@ -12,7 +12,7 @@ describe("StatusTag component", () => {
     render(<StatusTag {...defaultProps} />);
     const tagElement = screen.getByTestId("status-tag-Active");
 
-    expect(tagElement).toHaveClass("statusTag", "statusTag--lg", "statusTag--neutral");
+    expect(tagElement).toHaveClass("statusTag", "statusTag--md", "statusTag--neutral");
     expect(tagElement).toHaveTextContent("Active");
   });
 

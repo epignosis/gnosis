@@ -1,6 +1,6 @@
 import React from "react";
 import { InfoIconSVG as MockIcon } from "../../icons";
-import StatusTag, { statusTagSizes, statusTagVariants, StatusTagProps } from "./StatusTag";
+import StatusTag, { statusTagSizes, statusTagColors, StatusTagProps } from "./StatusTag";
 import { render, screen } from "@test-utils/render";
 
 describe("StatusTag component", () => {
@@ -25,7 +25,7 @@ describe("StatusTag component", () => {
 
   it("renders the StatusTag with a custom size and variant", () => {
     render(
-      <StatusTag {...defaultProps} size={statusTagSizes.SM} variant={statusTagVariants.POSITIVE} />,
+      <StatusTag {...defaultProps} size={statusTagSizes.SM} color={statusTagColors.POSITIVE} />,
     );
     const tagElement = screen.getByTestId("status-tag-Active");
 
@@ -33,7 +33,7 @@ describe("StatusTag component", () => {
   });
 
   it("renders the StatusTag without text when text is not provided", () => {
-    render(<StatusTag size={statusTagSizes.MD} variant={statusTagVariants.POSITIVE} />);
+    render(<StatusTag size={statusTagSizes.MD} color={statusTagColors.POSITIVE} />);
     const tagElement = screen.getByTestId("status-tag-undefined");
     const textElement = tagElement.querySelector(".statusTag__text");
 

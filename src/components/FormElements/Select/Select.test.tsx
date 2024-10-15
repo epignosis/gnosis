@@ -41,6 +41,7 @@ describe("<Select />", () => {
     const { container, queryByTestId } = render(
       <Select
         id="my-select"
+        aria-label="My Select"
         label="Test select input"
         options={[
           {

@@ -14,6 +14,7 @@ export default {
     inline: false,
     id: "programming-language",
     tooltipContent: "Tooltip placeholder",
+    "aria-label": "Programming Language",
   },
   argTypes: {
     size: {

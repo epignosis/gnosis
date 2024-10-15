@@ -1,3 +1,10 @@
+# [5.35.0](https://github.com/epignosis/gnosis/compare/v5.34.1...v5.35.0) (2024-10-15)
+
+
+### Features
+
+* **statustag:** introduced a new status tag component ([#429](https://github.com/epignosis/gnosis/issues/429)) ([1a26a65](https://github.com/epignosis/gnosis/commit/1a26a656200d5e28f025f926503e26b8c96c3ad9))
+
 ## [5.34.1](https://github.com/epignosis/gnosis/compare/v5.34.0...v5.34.1) (2024-10-14)
 
 # [5.34.0](https://github.com/epignosis/gnosis/compare/v5.33.6...v5.34.0) (2024-10-14)

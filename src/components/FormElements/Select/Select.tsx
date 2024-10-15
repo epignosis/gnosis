@@ -86,7 +86,7 @@ const Select: ForwardRefRenderFunction<
   const customSelectProps = {
     ...rest,
     id: id,
-    "aria-label": id,
+    "aria-label": rest["aria-label"],
     ref: forwardedRef,
     styles,
     isMulti,

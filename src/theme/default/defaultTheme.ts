@@ -20,6 +20,7 @@ import {
   pagination,
   dropdown,
   scrollbar,
+  statusTag,
 } from "./config";
 
 const typeScaleSizes = generateTypeScaleSizes(DEFAULT_TYPESCALE_CONFIG);
@@ -56,6 +57,7 @@ const defaultTheme = {
   pagination,
   dropdown,
   scrollbar,
+  statusTag,
 };
 
 export type GnosisTheme = typeof defaultTheme;

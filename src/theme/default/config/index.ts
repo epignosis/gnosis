@@ -17,3 +17,4 @@ export { default as tag } from "./tag";
 export { default as tooltip } from "./tooltip";
 export { default as pagination } from "./pagination";
 export { default as scrollbar } from "./scrollbar";
+export { default as statusTag } from "./statusTag";

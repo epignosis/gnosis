@@ -21,7 +21,7 @@ const CustomMultiValueLabel: FC<MultiValueGenericProps<CustomOption>> = (props) 
 
   return (
     <components.MultiValueLabel {...props}>
-      <Tooltip content={label} disabled={isTooltipDisabled}>
+      <Tooltip content={label} disabled={isTooltipDisabled} parentProps={{ "aria-label": label }}>
         <div className="custom-multi-value" ref={labelRef}>
           {label}
         </div>

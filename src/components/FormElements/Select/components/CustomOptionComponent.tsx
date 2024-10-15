@@ -20,7 +20,7 @@ const CustomOptionComponent: FC<OptionProps<CustomOption>> = (props) => {
 
   return (
     <components.Option {...props}>
-      <Tooltip content={label} disabled={isTooltipDisabled}>
+      <Tooltip content={label} disabled={isTooltipDisabled} parentProps={{ "aria-label": label }}>
         <div className="custom-option" ref={optionRef}>
           {label}
         </div>

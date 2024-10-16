@@ -10,5 +10,5 @@ export default {
   promo: colors.primary.base,
   pale: Color(colors.primary.lightest).alpha(0.25).string(),
   grey: colors.secondary.lighter,
-  red: colors.red.base,
+  red: colors.red.dark,
 };

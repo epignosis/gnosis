@@ -32,23 +32,20 @@ describe("Breadcrumbs Component", () => {
     expect(courseReportsLink).toHaveAttribute("href", "/course");
   });
 
-  it("renders the current item without a link", () => {
-    const { getByText } = render(<Breadcrumbs items={items} />);
+  it("highlights the current item when highlightActivePage is true", () => {
+    const { getByText } = render(<Breadcrumbs items={items} highlightActivePage={true} />);
 
     const currentItem = getByText("Introduction to TLMS+");
     expect(currentItem).toHaveAttribute("aria-current", "page");
-    expect(currentItem.closest("a")).toBeNull(); // Ensure it's not a link
+    expect(currentItem.closest("li")).toHaveClass("breadcrumbs__item--current");
   });
 
   it("renders the separator between items", () => {
-    const { container } = render(<Breadcrumbs items={items} />);
+    const { getByTestId } = render(<Breadcrumbs items={items} />);
 
     // Check for the arrow icons in the separators
-    const separatorIcons = container.querySelectorAll(".breadcrumbs__separator");
-    expect(separatorIcons.length).toBe(2); // There should be two separators
-
-    // Check for the presence of the SVG using the test ID
-    expect(container.querySelectorAll("[data-testid='arrow-icon']").length).toBe(2);
+    const arrowIcons = getByTestId("breadcrumbs").querySelectorAll("[data-testid='arrow-icon']");
+    expect(arrowIcons.length).toBe(2); // There should be two separators
   });
 
   it("uses the default aria-label for the nav element", () => {

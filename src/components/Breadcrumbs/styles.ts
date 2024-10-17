@@ -3,7 +3,7 @@ import { css, Theme } from "@emotion/react";
 export const breadcrumbsStyles = ({ breadcrumbs }: { breadcrumbs: Theme["breadcrumbs"] }) => css`
   display: flex;
   align-items: center;
-  font-size: 1.125rem;
+  font-size: 0.875rem;
 
   &.breadcrumbs__list {
     display: flex;
@@ -21,19 +21,10 @@ export const breadcrumbsStyles = ({ breadcrumbs }: { breadcrumbs: Theme["breadcr
     text-decoration: none;
     color: ${breadcrumbs.link};
 
-    &[href=""] {
+    &.breadcrumbs__link--current {
       color: ${breadcrumbs.currentPath};
       pointer-events: none;
-      cursor: default;
     }
-  }
-
-  & .breadcrumbs__item--current {
-    color: ${breadcrumbs.currentPath};
-    font-size: 1.375rem;
-    font-weight: 700;
-    pointer-events: none;
-    cursor: default;
   }
 
   & .breadcrumbs__separator {

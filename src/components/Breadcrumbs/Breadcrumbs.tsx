@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import { ArrowRightChevronSVG } from "../../icons";
 import { breadcrumbsStyles } from "./styles";
@@ -11,12 +12,14 @@ export type BreadcrumbItem = {
 
 export type BreadcrumbsProps = {
   items: BreadcrumbItem[];
+  highlightActivePage?: boolean;
   navAriaLabel?: string;
   linkAriaLabel?: (label: string) => string;
 };
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   items,
+  highlightActivePage = false,
   navAriaLabel = "Breadcrumb navigation",
   linkAriaLabel = (label) => `Breadcrumb link to ${label}`,
 }) => {
@@ -31,25 +34,24 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
           const isLast = index === items.length - 1;
 
           return (
-            <li key={item.label} className="breadcrumbs__item" data-testid="breadcrumb-item">
-              {!isLast ? (
-                <a
-                  aria-label={linkAriaLabel(item.label)}
-                  href={item.href}
-                  onClick={item.onClick}
-                  className="breadcrumbs__link"
-                >
-                  {item.label}
-                </a>
-              ) : (
-                <span
-                  aria-current="page"
-                  className="breadcrumbs__item--current"
-                  data-testid="breadcrumb-current-page"
-                >
-                  {item.label}
-                </span>
-              )}
+            <li
+              key={item.label}
+              data-testid="breadcrumb-item"
+              className={classNames("breadcrumbs__item", {
+                "breadcrumbs__item--current": highlightActivePage && isLast,
+              })}
+            >
+              <a
+                aria-label={linkAriaLabel(item.label)}
+                aria-current={highlightActivePage && isLast ? "page" : undefined}
+                href={item.href}
+                onClick={item.onClick}
+                className={classNames("breadcrumbs__link", {
+                  "breadcrumbs__link--current": highlightActivePage && isLast,
+                })}
+              >
+                {item.label}
+              </a>
 
               {!isLast && (
                 <span aria-hidden="true" className="breadcrumbs__separator">

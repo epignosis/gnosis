@@ -11,6 +11,9 @@ export default {
       { label: "Course Reports", href: "/reports/course" },
       { label: "Introduction to TLMS+", href: "" },
     ],
+    highlightActivePage: { control: "boolean" },
+    navAriaLabel: { control: "text" },
+    linkAriaLabel: { control: "none" },
   },
 };
 
@@ -24,14 +27,6 @@ Default.args = {
     { label: "Course Reports", href: "/reports/course" },
     { label: "Introduction to TLMS+", href: "" },
   ],
-};
-
-export const WithEmptyLinks = Template.bind({});
-
-WithEmptyLinks.args = {
-  items: [
-    { label: "Reports", href: "" },
-    { label: "Course Reports", href: "" },
-    { label: "Introduction to TLMS+", href: "" },
-  ],
+  navAriaLabel: "Breadcrumb navigation",
+  highlightActivePage: false,
 };

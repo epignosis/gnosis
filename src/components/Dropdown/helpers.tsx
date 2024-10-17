@@ -2,7 +2,7 @@ import { DropdownItem } from "./types";
 
 export const filterListByKeyword = (list: DropdownItem[], keyword: string): DropdownItem[] => {
   return list.reduce((arr, item): DropdownItem[] => {
-    const { items, label } = item;
+    const { items, label, originalText } = item;
 
     if (items && items.length > 0) {
       const filteredItems = filterListByKeyword(items, keyword);
@@ -15,6 +15,10 @@ export const filterListByKeyword = (list: DropdownItem[], keyword: string): Drop
 
     if (typeof label === "string") {
       if (label.toLowerCase().includes(keyword.toLowerCase())) {
+        arr.push(item);
+      }
+    } else if (originalText) {
+      if (originalText.toLowerCase().includes(keyword.toLowerCase())) {
         arr.push(item);
       }
     }

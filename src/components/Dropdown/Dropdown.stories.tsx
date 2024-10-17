@@ -312,3 +312,22 @@ WithInfoOnListOpen.args = {
     alert(isListOpen);
   },
 };
+
+export const SearchableWithJSXLabel = Template.bind({});
+
+SearchableWithJSXLabel.args = {
+  list: [
+    { label: <div style={{ color: "red" }}>Option 1</div>, value: "1", originalText: "Option 1" },
+    { label: <div style={{ color: "blue" }}>Option 2</div>, value: "2", originalText: "Option 2" },
+    {
+      label: <button>Option 3</button>,
+      value: "3",
+      originalText: "Option 3",
+    },
+    {
+      label: <a style={{ fontWeight: "700" }}>Option 4</a>,
+      value: "4",
+      originalText: "Option 4",
+    },
+  ],
+};

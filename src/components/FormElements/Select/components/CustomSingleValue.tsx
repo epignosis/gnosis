@@ -20,7 +20,7 @@ const CustomSingleValue: FC<SingleValueProps<CustomOption>> = ({ children, ...pr
 
   return (
     <components.SingleValue {...props}>
-      <Tooltip content={label} disabled={isTooltipDisabled}>
+      <Tooltip content={label} disabled={isTooltipDisabled} parentProps={{ "aria-label": label }}>
         <div className="custom-value" ref={valueRef}>
           {children}
         </div>

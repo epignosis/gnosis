@@ -4,6 +4,7 @@ import { TypographyLevels } from "@theme/utils/typography";
 
 export type DropdownItem = {
   label: string | JSX.Element;
+  originalText?: string; // Can be used when the label is JSX.Element and the dropdown is searchable
   value?: string;
   id?: string;
   icon?: JSX.Element | SVGAElement | ReactElement;

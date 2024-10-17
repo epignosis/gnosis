@@ -6,14 +6,19 @@ export default {
   component: Breadcrumbs,
   title: "Components/Breadcrumbs",
   argTypes: {
-    items: [
-      { label: "Reports", href: "/" },
-      { label: "Course Reports", href: "/reports/course" },
-      { label: "Introduction to TLMS+", href: "" },
-    ],
-    highlightActivePage: { control: "boolean" },
-    navAriaLabel: { control: "text" },
-    linkAriaLabel: { control: "none" },
+    items: {
+      control: "object",
+      description: "List of all breadcrumb items",
+    },
+    highlightActivePage: {
+      control: "boolean",
+      description: "Last item gets inactive and highlighted (black color)",
+    },
+    navAriaLabel: {
+      control: "text",
+      description: "Aria label for the nav element",
+    },
+    linkAriaLabel: { control: "none", description: "Aria label for the link element" },
   },
 };
 

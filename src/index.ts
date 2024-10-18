@@ -51,3 +51,4 @@ export type { Props as TableProps } from "./components/Table/Table";
 export type { Column, Row } from "./components/Table/types";
 export type { DropdownProps, DropdownItem } from "./components/Dropdown/types";
 export type { TableHandlers } from "./components/Table/types";
+export type { StatusTagColors } from "./components/StatusTag/StatusTag";

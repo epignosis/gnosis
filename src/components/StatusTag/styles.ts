@@ -11,12 +11,12 @@ export const statusTagStyles = (
 ) => {
   return css`
     display: inline-flex;
-    height: ${size === statusTagSizes.MD ? "2rem" : "1.25rem"};
-    padding: ${size === statusTagSizes.MD ? "0.5rem" : "0.125rem 0.25rem"};
+    height: ${size === "md" ? "2rem" : "1.25rem"};
+    padding: ${size === "md" ? "0.5rem" : "0.125rem 0.25rem"};
     align-items: center;
-    gap: ${size === statusTagSizes.MD ? "0.625rem" : "0.25rem"};
-    font-size: ${size === statusTagSizes.MD ? typeScaleSizes.sm : typeScaleSizes.xs};
-    font-weight: ${size === statusTagSizes.SM ? "700" : "400"};
+    gap: ${size === "md" ? "0.625rem" : "0.25rem"};
+    font-size: ${size === "md" ? typeScaleSizes.sm : typeScaleSizes.xs};
+    font-weight: ${size === "sm" ? "700" : "400"};
     border-radius: 5px;
     line-height: 1;
 

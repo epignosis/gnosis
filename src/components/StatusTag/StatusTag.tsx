@@ -4,37 +4,32 @@ import { SerializedStyles } from "@emotion/react";
 import { statusTagStyles } from "./styles";
 import { IconType } from "types/common";
 
-export enum statusTagColors {
-  NEUTRAL = "neutral",
-  POSITIVE = "positive",
-  NEGATIVE = "negative",
-  INACTIVE = "inactive",
-  WARNING = "warning",
-  PROMO = "promo",
-  PALE = "pale",
-  GREY = "grey",
-  RED = "red",
-}
-
-export enum statusTagSizes {
-  MD = "md",
-  SM = "sm",
-}
+export type statusTagSizes = "sm" | "md";
+export type statusTagColors =
+  | "neutral"
+  | "positive"
+  | "negative"
+  | "inactive"
+  | "warning"
+  | "promo"
+  | "pale"
+  | "grey"
+  | "red";
 
 export type StatusTagProps = {
   testId?: string;
   text?: string;
   size?: statusTagSizes;
   icon?: IconType;
-  color?: `${statusTagColors}`; // This template literal converts statusTagColors to union types.
+  color?: statusTagColors;
 };
 
 const StatusTag: FC<StatusTagProps> = ({
   testId,
   text,
   icon: Icon,
-  size = statusTagSizes.MD,
-  color = statusTagColors.NEUTRAL,
+  size = "md",
+  color = "neutral",
 }) => {
   const dataTestId = testId ? testId : `status-tag-${text}`;
 

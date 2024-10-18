@@ -315,6 +315,7 @@ export { default as RemoveCourseIconSVG } from "./client/remove-course-icon.svg"
 export { default as SlideshareSVG } from "./client/slideshare.svg";
 export { default as UploadSVG_duplicate } from "./client/upload.svg"; // Used in the client: unitEdit->UploadOptions.tsx, portal settings->imageSelector.tsx
 export { default as CategoriesSVG } from "./client/icon-categories.svg";
+export { default as CategoriesNoViewboxSVG } from "./client/icon-categories-no-viewbox.svg";
 export { default as UserUnenrollSVG } from "./client/user-unenroll.svg";
 export { default as SSOIconSVG } from "./client/icon-sso.svg";
 export { default as CredentialsSVG } from "./client/icon-credentials.svg";

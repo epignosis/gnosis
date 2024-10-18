@@ -9,7 +9,14 @@ export const inputContainer = (
     hasIconAfter,
     isClearable,
     showVerticalLine,
-  }: { size: InputSize; hasIconAfter: boolean; isClearable: boolean; showVerticalLine: boolean },
+    hasOnIconClick,
+  }: {
+    size: InputSize;
+    hasIconAfter: boolean;
+    isClearable: boolean;
+    showVerticalLine: boolean;
+    hasOnIconClick: boolean;
+  },
 ): SerializedStyles => {
   const calculatePaddingWithSuffixIcon = () => {
     switch (true) {
@@ -153,6 +160,7 @@ export const inputContainer = (
       .prefix-icon {
         margin: 0 0.75rem;
         color: ${formElements.input.iconColor};
+        cursor: ${hasOnIconClick ? "pointer" : "normal"};
       }
 
       .suffix-icon {
@@ -161,6 +169,7 @@ export const inputContainer = (
         width: 3rem;
         display: flex;
         justify-content: center;
+        cursor: ${hasOnIconClick ? "pointer" : "normal"};
       }
 
       .close-icon {

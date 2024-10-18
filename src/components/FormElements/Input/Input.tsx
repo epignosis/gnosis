@@ -37,6 +37,7 @@ export type InputProps = ExtendableProps<
     showVerticalLine?: boolean;
     isClearable?: boolean;
     autoFocus?: boolean;
+    onIconClick?: () => void;
     onClear?: (e?: MouseEvent<HTMLDivElement>) => void;
   }
 >;
@@ -60,6 +61,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     onClear,
     autoFocus = false,
     type,
+    onIconClick,
     ...rest
   },
   forwardedRef,
@@ -106,6 +108,8 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     (tooltipContent && typeof tooltipContent === "string" && tooltipContent !== "") ||
     isValidElement(tooltipContent);
 
+  const hasOnIconClick = Boolean(onIconClick);
+
   return (
     <div
       css={(theme): SerializedStyles =>
@@ -114,6 +118,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           hasIconAfter: Boolean(iconAfter),
           isClearable,
           showVerticalLine,
+          hasOnIconClick,
         })
       }
       className={containerClasses}
@@ -136,7 +141,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
       <div className="input-wrapper">
         {IconBefore && (
           <span className="prefix-icon" data-testid="input-icon-before">
-            <IconBefore height={iconHeight} />
+            <IconBefore height={iconHeight} onClick={onIconClick} />
           </span>
         )}
         <input
@@ -152,7 +157,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           <>
             {showVerticalLine && <div className="vertical-line" />}
             <span className="suffix-icon" data-testid="input-icon-after" onClick={setFocus}>
-              <IconAfter height={iconHeight} />
+              <IconAfter height={iconHeight} onClick={onIconClick} />
             </span>
           </>
         )}

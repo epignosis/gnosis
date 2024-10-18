@@ -26,7 +26,7 @@ export type StatusTagProps = {
   text?: string;
   size?: statusTagSizes;
   icon?: IconType;
-  color?: statusTagColors;
+  color?: `${statusTagColors}`; // This template literal converts statusTagColors to union types.
 };
 
 const StatusTag: FC<StatusTagProps> = ({

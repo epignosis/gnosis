@@ -1,5 +1,5 @@
 import { css, Theme } from "@emotion/react";
-import { statusTagSizes } from "./StatusTag";
+import { StatusTagSizes } from "./StatusTag";
 import { colors } from "@theme/default/colors";
 
 export const statusTagStyles = (
@@ -7,7 +7,7 @@ export const statusTagStyles = (
     statusTag,
     typeScaleSizes,
   }: { statusTag: Theme["statusTag"]; typeScaleSizes: Theme["typeScaleSizes"] },
-  size: statusTagSizes,
+  size: StatusTagSizes,
 ) => {
   return css`
     display: inline-flex;

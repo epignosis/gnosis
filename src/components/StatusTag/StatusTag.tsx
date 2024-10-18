@@ -4,8 +4,8 @@ import { SerializedStyles } from "@emotion/react";
 import { statusTagStyles } from "./styles";
 import { IconType } from "types/common";
 
-export type statusTagSizes = "sm" | "md";
-export type statusTagColors =
+export type StatusTagSizes = "sm" | "md";
+export type StatusTagColors =
   | "neutral"
   | "positive"
   | "negative"
@@ -19,9 +19,9 @@ export type statusTagColors =
 export type StatusTagProps = {
   testId?: string;
   text?: string;
-  size?: statusTagSizes;
+  size?: StatusTagSizes;
   icon?: IconType;
-  color?: statusTagColors;
+  color?: StatusTagColors;
 };
 
 const StatusTag: FC<StatusTagProps> = ({

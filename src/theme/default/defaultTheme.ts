@@ -21,6 +21,7 @@ import {
   dropdown,
   scrollbar,
   statusTag,
+  breadcrumbs,
 } from "./config";
 
 const typeScaleSizes = generateTypeScaleSizes(DEFAULT_TYPESCALE_CONFIG);
@@ -58,6 +59,7 @@ const defaultTheme = {
   dropdown,
   scrollbar,
   statusTag,
+  breadcrumbs,
 };
 
 export type GnosisTheme = typeof defaultTheme;

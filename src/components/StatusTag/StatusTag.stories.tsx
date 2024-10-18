@@ -1,7 +1,7 @@
 import React from "react";
 import { StoryFn } from "@storybook/react";
 import { InfoIconSVG } from "../../icons";
-import StatusTag, { StatusTagProps, statusTagSizes } from "./StatusTag";
+import StatusTag, { StatusTagProps } from "./StatusTag";
 
 export default {
   component: StatusTag,
@@ -34,7 +34,7 @@ const Template: StoryFn<StatusTagProps> = (args) => <StatusTag {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  size: statusTagSizes.MD,
+  size: "md",
   text: "English",
   icon: InfoIconSVG,
 };
@@ -42,7 +42,7 @@ Default.args = {
 export const WithIcon = Template.bind({});
 
 WithIcon.args = {
-  size: statusTagSizes.MD,
+  size: "md",
   text: "English",
   icon: InfoIconSVG,
 };
@@ -50,7 +50,7 @@ WithIcon.args = {
 export const WithOnlyIcon = Template.bind({});
 
 WithOnlyIcon.args = {
-  size: statusTagSizes.MD,
+  size: "md",
   text: "",
   icon: InfoIconSVG,
 };

@@ -26,7 +26,7 @@ export type StatusTagProps = {
   text?: string;
   size?: statusTagSizes;
   icon?: IconType;
-  color?: statusTagColors;
+  color?: `${statusTagColors}`;
 };
 
 const StatusTag: FC<StatusTagProps> = ({

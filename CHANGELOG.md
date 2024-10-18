@@ -1,3 +1,10 @@
+# [5.36.0](https://github.com/epignosis/gnosis/compare/v5.35.3...v5.36.0) (2024-10-18)
+
+
+### Features
+
+* **dropdown.tsx:** Add originalText prop on Dropdown component ([#437](https://github.com/epignosis/gnosis/issues/437)) ([7c52136](https://github.com/epignosis/gnosis/commit/7c521368eacf63bff3d7ada4b215672088d6555d))
+
 ## [5.35.3](https://github.com/epignosis/gnosis/compare/v5.35.2...v5.35.3) (2024-10-17)
 
 ## [5.35.2](https://github.com/epignosis/gnosis/compare/v5.35.1...v5.35.2) (2024-10-16)

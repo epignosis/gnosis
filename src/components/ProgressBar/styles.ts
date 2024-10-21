@@ -12,10 +12,11 @@ export const container = (
   { progressBar }: Theme,
   {
     percent,
+    showPercentage,
     size,
     rounded,
     color,
-  }: { percent: number; size: Size; rounded: boolean; color: Color },
+  }: { percent: number; showPercentage: boolean; size: Size; rounded: boolean; color: Color },
 ): SerializedStyles => {
   return css`
     display: flex;
@@ -40,7 +41,7 @@ export const container = (
         top: 0;
         inset-inline-start: 0;
         height: 100%;
-        min-width: ${percent ? "20%" : "0%"};
+        min-width: ${showPercentage && percent ? "20%" : "0%"};
         width: ${percent}%;
         background-color: ${progressBar[color].progressBackground};
       }

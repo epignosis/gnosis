@@ -133,6 +133,7 @@ export { default as DownloadArrowSVG } from "./arrows/download-arrow.svg";
 export { default as EnterSVG } from "./arrows/enter.svg";
 export { default as CircleArrowUpSVG } from "./arrows/circle-arrow-up.svg";
 export { default as CircleArrowDownSVG } from "./arrows/circle-arrow-down.svg";
+export { default as ArrowRightIconSVG } from "./arrows/arrow-right-icon.svg";
 
 // Chevron Icons
 export { default as ArrowRightSVG } from "./chevrons/arrow-right.svg";
@@ -461,6 +462,8 @@ export { default as NumberedListSVG } from "./client/numbered-list.svg";
 export { default as PassportSVG } from "./client/passport.svg";
 export { default as MicrochipAISVG } from "./client/microchip-ai.svg";
 export { default as TextBoxSVG } from "./client/text-box.svg";
+export { default as AlarmSVG } from "./client/alarm.svg";
+export { default as AlarmExclamationSVG } from "./client/alarm-exclamation.svg";
 
 // Exports from folders.
 // Assignments Icons

@@ -306,6 +306,7 @@ ScrollableContainerBottomEnd.args = {
 
 export const WithInfoOnListOpen = Template.bind({});
 
+// TODO: this causes the alert to pop-up everytime you visit the story.
 WithInfoOnListOpen.args = {
   list: smallDropdownList,
   onToggleList(isListOpen) {

@@ -251,7 +251,17 @@ const Dropdown: FC<DropdownProps> = ({
         </>
       );
 
-      const liElement = (
+      const tooltipElement = (
+        <Tooltip
+          key={`${index}-${item.value}`}
+          disabled={!item.tooltipContent}
+          content={item.tooltipContent}
+        >
+          {content}
+        </Tooltip>
+      );
+
+      return (
         <li
           className={dropdownItemClasses(item)}
           key={`item-${index}-${item.value}`}
@@ -269,18 +279,8 @@ const Dropdown: FC<DropdownProps> = ({
             })
           }
         >
-          {content}
+          {tooltipElement}
         </li>
-      );
-
-      return (
-        <Tooltip
-          key={`${index}-${item.value}`}
-          disabled={!item.tooltipContent}
-          content={item.tooltipContent}
-        >
-          {liElement}
-        </Tooltip>
       );
     });
   };

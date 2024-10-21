@@ -36,12 +36,12 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             Category 1
           </span>
         </li>
-        <div
-          aria-expanded="false"
-          role="tooltip"
+        <li
+          class="1 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
         >
-          <li
-            class="1 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
+          <div
+            aria-expanded="false"
+            role="tooltip"
           >
             <span
               class="css-1by32j1-textContainer-textContainer"
@@ -50,8 +50,8 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             >
               Option 1
             </span>
-          </li>
-        </div>
+          </div>
+        </li>
         <li
           class="css-4jt7v9-DropdownTitle-DropdownTitle"
         >
@@ -63,12 +63,12 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             Category 2
           </span>
         </li>
-        <div
-          aria-expanded="false"
-          role="tooltip"
+        <li
+          class="2 dropdown-list-item css-1ihjpef-DropdownListItem-DropdownListItem"
         >
-          <li
-            class="2 dropdown-list-item css-1ihjpef-DropdownListItem-DropdownListItem"
+          <div
+            aria-expanded="false"
+            role="tooltip"
           >
             <span
               class="css-1by32j1-textContainer-textContainer"
@@ -77,14 +77,14 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             >
               Option 2
             </span>
-          </li>
-        </div>
-        <div
-          aria-expanded="false"
-          role="tooltip"
+          </div>
+        </li>
+        <li
+          class="3 dropdown-list-item css-1ihjpef-DropdownListItem-DropdownListItem"
         >
-          <li
-            class="3 dropdown-list-item css-1ihjpef-DropdownListItem-DropdownListItem"
+          <div
+            aria-expanded="false"
+            role="tooltip"
           >
             <span
               class="css-1by32j1-textContainer-textContainer"
@@ -93,8 +93,8 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             >
               Option 3
             </span>
-          </li>
-        </div>
+          </div>
+        </li>
         <li
           class="css-9lzpa9-DropdownTitle-DropdownTitle"
         >
@@ -106,12 +106,12 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             Category 15
           </span>
         </li>
-        <div
-          aria-expanded="false"
-          role="tooltip"
+        <li
+          class="15 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
         >
-          <li
-            class="15 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
+          <div
+            aria-expanded="false"
+            role="tooltip"
           >
             <span
               class="css-1by32j1-textContainer-textContainer"
@@ -120,14 +120,14 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             >
               Option 15
             </span>
-          </li>
-        </div>
-        <div
-          aria-expanded="false"
-          role="tooltip"
+          </div>
+        </li>
+        <li
+          class="16 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
         >
-          <li
-            class="16 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
+          <div
+            aria-expanded="false"
+            role="tooltip"
           >
             <span
               class="css-1by32j1-textContainer-textContainer"
@@ -136,14 +136,14 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             >
               Option 16
             </span>
-          </li>
-        </div>
-        <div
-          aria-expanded="false"
-          role="tooltip"
+          </div>
+        </li>
+        <li
+          class="5 dropdown-list-item css-el37et-DropdownListItem-DropdownListItem"
         >
-          <li
-            class="5 dropdown-list-item css-el37et-DropdownListItem-DropdownListItem"
+          <div
+            aria-expanded="false"
+            role="tooltip"
           >
             <span
               class="css-1by32j1-textContainer-textContainer"
@@ -152,8 +152,8 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             >
               Option 5
             </span>
-          </li>
-        </div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>

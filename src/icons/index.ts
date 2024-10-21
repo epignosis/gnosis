@@ -133,7 +133,7 @@ export { default as DownloadArrowSVG } from "./arrows/download-arrow.svg";
 export { default as EnterSVG } from "./arrows/enter.svg";
 export { default as CircleArrowUpSVG } from "./arrows/circle-arrow-up.svg";
 export { default as CircleArrowDownSVG } from "./arrows/circle-arrow-down.svg";
-export { default as ArrowRightIconSVG } from "./arrows/arrow-right.svg";
+export { default as ArrowRightIconSVG } from "./arrows/arrow-right-icon.svg";
 
 // Chevron Icons
 export { default as ArrowRightSVG } from "./chevrons/arrow-right.svg";

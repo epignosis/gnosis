@@ -13,4 +13,4 @@ export { default as DownloadArrowSVG } from "./download-arrow.svg";
 export { default as EnterSVG } from "./enter.svg";
 export { default as CircleArrowUpSVG } from "./circle-arrow-up.svg";
 export { default as CircleArrowDownSVG } from "./circle-arrow-down.svg";
-export { default as ArrowRightSVG } from "./arrow-right-icon.svg";
+export { default as ArrowRightIconSVG } from "./arrow-right-icon.svg";

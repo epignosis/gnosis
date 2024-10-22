@@ -1,3 +1,10 @@
+## [5.36.7](https://github.com/epignosis/gnosis/compare/v5.36.6...v5.36.7) (2024-10-22)
+
+
+### Bug Fixes
+
+* **progressbar:** do not enforce min progress if label should not be … ([#446](https://github.com/epignosis/gnosis/issues/446)) ([0262381](https://github.com/epignosis/gnosis/commit/026238191e812ac093d65d7de3999a47fad156d6))
+
 ## [5.36.6](https://github.com/epignosis/gnosis/compare/v5.36.5...v5.36.6) (2024-10-21)
 
 ## [5.36.5](https://github.com/epignosis/gnosis/compare/v5.36.4...v5.36.5) (2024-10-21)

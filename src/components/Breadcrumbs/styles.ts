@@ -1,9 +1,15 @@
 import { css, Theme } from "@emotion/react";
 
-export const breadcrumbsStyles = ({ breadcrumbs }: { breadcrumbs: Theme["breadcrumbs"] }) => css`
+export const breadcrumbsStyles = ({
+  breadcrumbs,
+  typeScaleSizes,
+}: {
+  breadcrumbs: Theme["breadcrumbs"];
+  typeScaleSizes: Theme["typeScaleSizes"];
+}) => css`
   display: flex;
   align-items: center;
-  font-size: 0.875rem;
+  font-size: ${typeScaleSizes["sm"]};
 
   &.breadcrumbs__list {
     display: flex;

@@ -28,7 +28,9 @@ const ProgressBar: FC<ProgressBarProps> = ({
 
   return (
     <div
-      css={(theme): SerializedStyles => container(theme, { percent, size, rounded, color })}
+      css={(theme): SerializedStyles =>
+        container(theme, { percent, showPercentage, size, rounded, color })
+      }
       {...rest}
     >
       {labelBefore && (

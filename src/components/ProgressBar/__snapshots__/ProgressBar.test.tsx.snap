@@ -3,7 +3,7 @@
 exports[`<ProgressBar /> matches snapshot 1`] = `
 <div>
   <div
-    class="progress css-woeb0y-container-container"
+    class="progress css-fwaz2v-container-container"
     id="my-progress-1"
   >
     <div
@@ -22,7 +22,7 @@ exports[`<ProgressBar /> matches snapshot 1`] = `
 exports[`<ProgressBar /> matches snapshot with zero percent 1`] = `
 <div>
   <div
-    class="css-pvvi2x-container-container"
+    class="css-b78sl-container-container"
   >
     <div
       class="percentage-container"

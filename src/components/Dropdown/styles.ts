@@ -127,9 +127,11 @@ export const DropdownListItem = (
   align-items: center;
   max-height: 2rem;
 
-  div[role="tooltip"] > *:first-of-type {
-    display: flex;
-    align-items: center;
+  div[role="tooltip"] {
+    &:first-of-type {
+      display: flex;
+      align-items: center;
+    }
   }
 
   margin-inline-end: ${isSearchable ? "0.5rem" : "0"};

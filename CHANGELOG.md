@@ -1,3 +1,10 @@
+# [5.38.0](https://github.com/epignosis/gnosis/compare/v5.37.0...v5.38.0) (2024-10-23)
+
+
+### Features
+
+* **input:** add onIconClick to handle cases where we need to click the icon before or after ([#441](https://github.com/epignosis/gnosis/issues/441)) ([822093d](https://github.com/epignosis/gnosis/commit/822093da49a16da36063b834751fc6fae31feeaf))
+
 # [5.37.0](https://github.com/epignosis/gnosis/compare/v5.36.7...v5.37.0) (2024-10-23)
 
 

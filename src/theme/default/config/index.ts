@@ -1,6 +1,7 @@
 export { default as alert } from "./alert";
 export { default as badge } from "./badge";
 export { default as button } from "./button";
+export { default as breadcrumbs } from "./breadcrumbs";
 export { default as card } from "./card";
 export { default as chip } from "./chip";
 export { default as drawer } from "./drawer";

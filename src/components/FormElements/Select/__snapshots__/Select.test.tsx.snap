@@ -27,7 +27,7 @@ exports[`<Select /> matches snapshot 1`] = `
       >
         <span
           class="css-1f43avz-a11yText-A11yText"
-          id="react-select-3-live-region"
+          id="react-select-2-live-region"
         />
         <span
           aria-atomic="false"
@@ -61,21 +61,21 @@ exports[`<Select /> matches snapshot 1`] = `
           >
             <div
               class="css-zg71bx-placeholder"
-              id="react-select-3-placeholder"
+              id="react-select-2-placeholder"
             >
               Select...
             </div>
             <input
-              aria-activedescendant="react-select-3-option-0"
+              aria-activedescendant="react-select-2-option-0"
               aria-autocomplete="list"
-              aria-controls="react-select-3-listbox"
-              aria-describedby="react-select-3-placeholder"
+              aria-controls="react-select-2-listbox"
+              aria-describedby="react-select-2-placeholder"
               aria-expanded="true"
               aria-haspopup="true"
               aria-label="My Select"
               aria-readonly="true"
               class="css-1czm0f-dummyInput-DummyInput"
-              id="react-select-3-input"
+              id="react-select-2-input"
               inputmode="none"
               role="combobox"
               tabindex="0"
@@ -88,6 +88,7 @@ exports[`<Select /> matches snapshot 1`] = `
             <div
               aria-hidden="true"
               class="css-15wc35w-indicatorContainer"
+              data-testid="custom-dropdown-indicator"
             >
               <svg
                 aria-hidden="true"
@@ -106,18 +107,20 @@ exports[`<Select /> matches snapshot 1`] = `
         </div>
         <div
           class="css-5v3ri6-menu"
+          data-testid="custom-menu-container"
         >
           <div
             aria-multiselectable="false"
             class="css-hdhzfk"
-            id="react-select-3-listbox"
+            id="react-select-2-listbox"
             role="listbox"
           >
             <div
               aria-disabled="false"
               aria-selected="false"
               class="option-md css-bi1k7u-option"
-              id="react-select-3-option-0"
+              data-testid="name-select-item"
+              id="react-select-2-option-0"
               role="option"
               tabindex="-1"
             >
@@ -137,7 +140,8 @@ exports[`<Select /> matches snapshot 1`] = `
               aria-disabled="false"
               aria-selected="false"
               class="option-md css-iovxfg-option"
-              id="react-select-3-option-1"
+              data-testid="surname-select-item"
+              id="react-select-2-option-1"
               role="option"
               tabindex="-1"
             >
@@ -157,7 +161,8 @@ exports[`<Select /> matches snapshot 1`] = `
               aria-disabled="false"
               aria-selected="false"
               class="option-md css-iovxfg-option"
-              id="react-select-3-option-2"
+              data-testid="age-select-item"
+              id="react-select-2-option-2"
               role="option"
               tabindex="-1"
             >

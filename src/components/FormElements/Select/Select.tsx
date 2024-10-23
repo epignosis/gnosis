@@ -12,6 +12,9 @@ import { containerClassNames, renderSelect } from "./helpers";
 import CustomMultiValueLabel from "./components/CustomMultiValueLabel";
 import CustomSingleValue from "./components/CustomSingleValue";
 import CustomOptionComponent from "./components/CustomOptionComponent";
+import CustomMenuContainer from "./components/CustomMenuContainer";
+import CustomDropdownIndicator from "./components/CustomDropdownIndicator";
+import CustomClearIndicator from "./components/CustomClearIndicator";
 
 const Select: ForwardRefRenderFunction<
   SelectInstance<CustomOption>,
@@ -96,10 +99,13 @@ const Select: ForwardRefRenderFunction<
         `${isSelected ? "selected" : ""} option-${size}`,
     },
     components: {
+      DropdownIndicator: CustomDropdownIndicator,
       IndicatorSeparator: () => null,
       Option: CustomOptionComponent,
       SingleValue: CustomSingleValue,
       MultiValueLabel: CustomMultiValueLabel,
+      Menu: CustomMenuContainer,
+      ClearIndicator: CustomClearIndicator,
     },
     formatCreateLabel,
     isSearchable: isSelectSearchable(),

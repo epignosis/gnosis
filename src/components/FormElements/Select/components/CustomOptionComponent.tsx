@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useRef, useState, memo } from "react";
 import { components, OptionProps } from "react-select";
-import { CustomOption } from "../types";
+import { CustomDivProps, CustomOption } from "../types";
 import Tooltip from "../../../Tooltip/Tooltip";
 
 const CustomOptionComponent: FC<OptionProps<CustomOption>> = (props) => {
@@ -8,7 +8,7 @@ const CustomOptionComponent: FC<OptionProps<CustomOption>> = (props) => {
   const optionRef = useRef<HTMLDivElement>(null);
 
   const { isDisabled, data } = props;
-  const { label } = data;
+  const { label, testId } = data;
   const isTooltipDisabled = isDisabled || !isOverflowActive;
 
   useEffect(() => {
@@ -19,7 +19,10 @@ const CustomOptionComponent: FC<OptionProps<CustomOption>> = (props) => {
   }, [label]);
 
   return (
-    <components.Option {...props}>
+    <components.Option
+      {...props}
+      innerProps={{ ...props.innerProps, "data-testid": `${testId}-select-item` } as CustomDivProps}
+    >
       <Tooltip content={label} disabled={isTooltipDisabled} parentProps={{ "aria-label": label }}>
         <div className="custom-option" ref={optionRef}>
           {label}

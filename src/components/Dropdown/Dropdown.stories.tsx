@@ -3,6 +3,7 @@ import { StoryFn } from "@storybook/react";
 import Button from "../Button/Button";
 import Radio from "../FormElements/RadioGroup/Radio";
 import Checkbox from "../FormElements/CheckboxGroup/Checkbox";
+import { WarningSVG } from "../../icons/";
 import Dropdown from "./Dropdown";
 import { DropdownItem, DropdownProps } from "./types";
 import { FCWithChildren } from "types/common";
@@ -329,6 +330,33 @@ SearchableWithJSXLabel.args = {
       label: <a style={{ fontWeight: "700" }}>Option 4</a>,
       value: "4",
       originalText: "Option 4",
+    },
+  ],
+};
+
+export const WithListOptionsElements = Template.bind({});
+
+WithListOptionsElements.args = {
+  list: [
+    {
+      label: "Google",
+      value: "google",
+      icon: <WarningSVG height={32} />,
+    },
+    {
+      label: "iCal",
+      value: "ical",
+      icon: <WarningSVG height={32} />,
+    },
+    {
+      label: "Outlook",
+      value: "outlookcom",
+      icon: <WarningSVG height={32} />,
+    },
+    {
+      label: "Yahoo",
+      value: "yahoo",
+      icon: <WarningSVG height={32} />,
     },
   ],
 };

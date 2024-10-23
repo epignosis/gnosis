@@ -3,7 +3,7 @@
 exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
 <div>
   <div
-    class="dropdown css-ps5aa-DropdownContainer-DropdownContainer"
+    class="dropdown css-xg21nw-DropdownContainer-DropdownContainer"
   >
     <div
       class="dropdown-button is-active"
@@ -22,11 +22,11 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
       class="dropdown-wrapper bottom-start"
     >
       <ul
-        class="dropdown-list css-1a2bu8a-DropdownList-DropdownList"
+        class="dropdown-list css-1fs5wnk-DropdownList-DropdownList"
         role="list"
       >
         <li
-          class="css-9lzpa9-DropdownTitle-DropdownTitle"
+          class="css-b6iyol-DropdownTitle-DropdownTitle"
         >
           <span
             class="css-mproha-textContainer-textContainer"
@@ -37,7 +37,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </span>
         </li>
         <li
-          class="1 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
+          class="1 dropdown-list-item css-8ajwq2-DropdownListItem-DropdownListItem"
         >
           <div
             aria-expanded="false"
@@ -53,7 +53,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </div>
         </li>
         <li
-          class="css-4jt7v9-DropdownTitle-DropdownTitle"
+          class="css-1r2236f-DropdownTitle-DropdownTitle"
         >
           <span
             class="css-mproha-textContainer-textContainer"
@@ -64,7 +64,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </span>
         </li>
         <li
-          class="2 dropdown-list-item css-1ihjpef-DropdownListItem-DropdownListItem"
+          class="2 dropdown-list-item css-z3qqpy-DropdownListItem-DropdownListItem"
         >
           <div
             aria-expanded="false"
@@ -80,7 +80,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </div>
         </li>
         <li
-          class="3 dropdown-list-item css-1ihjpef-DropdownListItem-DropdownListItem"
+          class="3 dropdown-list-item css-z3qqpy-DropdownListItem-DropdownListItem"
         >
           <div
             aria-expanded="false"
@@ -96,7 +96,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </div>
         </li>
         <li
-          class="css-9lzpa9-DropdownTitle-DropdownTitle"
+          class="css-b6iyol-DropdownTitle-DropdownTitle"
         >
           <span
             class="css-mproha-textContainer-textContainer"
@@ -107,7 +107,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </span>
         </li>
         <li
-          class="15 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
+          class="15 dropdown-list-item css-8ajwq2-DropdownListItem-DropdownListItem"
         >
           <div
             aria-expanded="false"
@@ -123,7 +123,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </div>
         </li>
         <li
-          class="16 dropdown-list-item css-kbk7d-DropdownListItem-DropdownListItem"
+          class="16 dropdown-list-item css-8ajwq2-DropdownListItem-DropdownListItem"
         >
           <div
             aria-expanded="false"
@@ -139,7 +139,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </div>
         </li>
         <li
-          class="5 dropdown-list-item css-el37et-DropdownListItem-DropdownListItem"
+          class="5 dropdown-list-item css-p3lpfl-DropdownListItem-DropdownListItem"
         >
           <div
             aria-expanded="false"

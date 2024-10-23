@@ -23,7 +23,7 @@ const Template: StoryFn<{ isOverlayShow: boolean; isDrawerOpen: boolean }> = ({
   const [isOpen, toggle] = useReducer((state) => !state, isDrawerOpen);
 
   return (
-    <Card hasBorder>
+    <Card>
       {isOverlayShow && <Card.Overlay>Hello Overlay</Card.Overlay>}
       <Card.Drawer
         isOpen={isOpen}

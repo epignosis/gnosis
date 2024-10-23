@@ -1,22 +1,29 @@
 import { css, Theme, SerializedStyles } from "@emotion/react";
 
-export const cardContainer = ({ card }: Theme): SerializedStyles => css`
+export const cardContainer = (
+  { card }: Theme,
+  { hasBorder, hasBoxShadow }: { hasBorder: boolean; hasBoxShadow: boolean },
+): SerializedStyles => css`
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   background-color: ${card.background};
-  box-shadow: 0px 0px 10px ${card.shadow};
+  box-shadow: ${hasBoxShadow ? `0px 0px 10px ${card.shadow}` : "none"};
   border-radius: 5px;
   overflow: hidden;
   transition-duration: 0.2s;
   transition-property: background-color, color, box-shadow 0.1s ease-in-out;
+  border: ${hasBorder ? `1px solid ${card.border}` : "none"};
 
-  :hover {
-    box-shadow: 0px 4px 20px ${card.shadow};
-    transition: all 0.2s ease;
-  }
+  ${hasBoxShadow &&
+  `
+    :hover {
+      box-shadow: 0px 4px 20px ${card.shadow};
+      transition: all 0.2s ease;
+    }
+  `}
 `;
 
 export const courseHeaderContainer = css`

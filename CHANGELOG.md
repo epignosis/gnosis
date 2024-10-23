@@ -1,3 +1,10 @@
+# [5.37.0](https://github.com/epignosis/gnosis/compare/v5.36.7...v5.37.0) (2024-10-23)
+
+
+### Features
+
+* **breadcrumbs:** add new breadcrumbs implementation ([#436](https://github.com/epignosis/gnosis/issues/436)) ([4d87ded](https://github.com/epignosis/gnosis/commit/4d87dedb31011032107ff9950dff4a1a8926c0c9))
+
 ## [5.36.7](https://github.com/epignosis/gnosis/compare/v5.36.6...v5.36.7) (2024-10-22)
 
 

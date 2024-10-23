@@ -10,7 +10,7 @@ export const cardContainer = (
   justify-content: space-between;
   height: 100%;
   background-color: ${card.background};
-  box-shadow: ${hasBoxShadow ? `0px 0px 10px ${card.shadow}` : "none"};
+  box-shadow: ${hasBoxShadow ? `0 0 0.625rem ${card.shadow}` : "none"};
   border-radius: 5px;
   overflow: hidden;
   transition-duration: 0.2s;
@@ -20,7 +20,7 @@ export const cardContainer = (
   ${hasBoxShadow &&
   `
     :hover {
-      box-shadow: 0px 4px 20px ${card.shadow};
+      box-shadow: 0 0.25rem 1.25rem ${card.shadow};
       transition: all 0.2s ease;
     }
   `}

@@ -30,7 +30,11 @@ describe("<Dropdown />", () => {
     fireEvent.click(getByText("Toggle"));
     fireEvent.click(getByText("Option 2"));
 
-    expect(mockOnListItemSelect).toHaveBeenCalledWith({ label: "Option 2", value: "2" });
+    expect(mockOnListItemSelect).toHaveBeenCalledWith({
+      id: "option-2",
+      label: "Option 2",
+      value: "2",
+    });
   });
 });
 
@@ -55,24 +59,29 @@ it("disabled dropdown does not call onToggleList when clicked", () => {
 
 const mockList: DropdownItem[] = [
   {
+    id: "category-1",
+    value: "category-1",
     label: "Category 1",
     items: [
-      { label: "Option 1", value: "1" },
+      { id: "option-1", label: "Option 1", value: "1" },
       {
+        id: "category-2",
         label: "Category 2",
         items: [
-          { label: "Option 2", value: "2" },
-          { label: "Option 3", value: "3" },
+          { id: "option-2", label: "Option 2", value: "2" },
+          { id: "option-3", label: "Option 3", value: "3" },
         ],
       },
     ],
   },
   {
+    id: "category-15",
+    value: "category-15",
     label: "Category 15",
     items: [
-      { label: "Option 15", value: "15" },
-      { label: "Option 16", value: "16" },
+      { id: "option-15", label: "Option 15", value: "15" },
+      { id: "option-16", label: "Option 16", value: "16" },
     ],
   },
-  { label: "Option 5", value: "5" },
+  { id: "option-5", label: "Option 5", value: "5" },
 ];

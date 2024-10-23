@@ -10,26 +10,29 @@ import { FCWithChildren } from "types/common";
 
 const dropdownList: DropdownItem[] = [
   {
+    id: "category-1",
     label: "Category 1",
     items: [
-      { label: "Option 1", value: "1" },
+      { id: "option-1", label: "Option 1", value: "1" },
       {
+        id: "category-3",
         label: "Category 3",
         items: [
-          { label: "Option 5", value: "5" },
-          { label: "Option 6", value: "6", isDisabled: true },
+          { id: "option-5", label: "Option 5", value: "5" },
+          { id: "option-6", label: "Option 6", value: "6", isDisabled: true },
         ],
       },
     ],
   },
   {
+    id: "category-2",
     label: "Category 2",
     items: [
-      { label: "Option 3", value: "3" },
-      { label: "Option 4", value: "4" },
+      { id: "option-3", label: "Option 3", value: "3" },
+      { id: "option-4", label: "Option 4", value: "4" },
     ],
   },
-  { label: "Option 5", value: "5" },
+  { id: "option-5", label: "Option 5", value: "5" },
 ];
 
 export default {
@@ -108,30 +111,33 @@ const Template: StoryFn<DropdownProps> = (args) => {
 
 const extendedDropdownList: DropdownItem[] = [
   {
+    id: "category-1",
     label: "Category 1",
     items: [
-      { label: "Option 1", value: "1" },
+      { id: "option-1", label: "Option 1", value: "1" },
       {
+        id: "category-3",
         label: "Category 3",
         items: [
-          { label: "Option 5", value: "5" },
-          { label: "Option 6", value: "6" },
+          { id: "option-5", label: "Option 5", value: "5" },
+          { id: "option-6", label: "Option 6", value: "6" },
         ],
       },
     ],
   },
   {
+    id: "category-2",
     label: "Category 2",
     items: [
-      { label: "Option 3", value: "3" },
-      { label: "Option 4", value: "4" },
-      { label: "Option 5", value: "3" },
-      { label: "Option 6", value: "4" },
-      { label: "Option 7", value: "3" },
-      { label: "Option 8", value: "4" },
+      { id: "option-3", label: "Option 3", value: "3" },
+      { id: "option-4", label: "Option 4", value: "4" },
+      { id: "option-5", label: "Option 5", value: "5" },
+      { id: "option-6", label: "Option 6", value: "6" },
+      { id: "option-7", label: "Option 7", value: "7" },
+      { id: "option-8", label: "Option 8", value: "8" },
     ],
   },
-  { label: "Option 5", value: "5" },
+  { id: "option-5", label: "Option 5", value: "5" },
 ];
 
 export const Default = Template.bind({});
@@ -149,6 +155,7 @@ withExtendedList.args = {
 const mockList = [
   {
     id: "options",
+    value: "options",
     label: "Options",
     items: [
       {
@@ -167,7 +174,7 @@ const mockList = [
   },
   {
     id: "focus",
-    value: "",
+    value: "focus",
     label: "Focus",
     items: [
       {
@@ -190,10 +197,10 @@ withJsxElementLabels.args = {
 export const withHover = Template.bind({});
 
 const smallDropdownList: DropdownItem[] = [
-  { label: "Option 1", value: "1" },
-  { label: "Option 2", value: "2" },
-  { label: "Option 3", value: "3" },
-  { label: "Option 4", value: "4" },
+  { id: "option-1", label: "Option 1", value: "1" },
+  { id: "option-2", label: "Option 2", value: "2" },
+  { id: "option-3", label: "Option 3", value: "3" },
+  { id: "option-4", label: "Option 4", value: "4" },
 ];
 
 withHover.args = {
@@ -319,14 +326,26 @@ export const SearchableWithJSXLabel = Template.bind({});
 
 SearchableWithJSXLabel.args = {
   list: [
-    { label: <div style={{ color: "red" }}>Option 1</div>, value: "1", originalText: "Option 1" },
-    { label: <div style={{ color: "blue" }}>Option 2</div>, value: "2", originalText: "Option 2" },
     {
+      id: "option-1",
+      label: <div style={{ color: "red" }}>Option 1</div>,
+      value: "1",
+      originalText: "Option 1",
+    },
+    {
+      id: "option-2",
+      label: <div style={{ color: "blue" }}>Option 2</div>,
+      value: "2",
+      originalText: "Option 2",
+    },
+    {
+      id: "option-3",
       label: <button>Option 3</button>,
       value: "3",
       originalText: "Option 3",
     },
     {
+      id: "option-4",
       label: <a style={{ fontWeight: "700" }}>Option 4</a>,
       value: "4",
       originalText: "Option 4",
@@ -339,21 +358,25 @@ export const WithListOptionsElements = Template.bind({});
 WithListOptionsElements.args = {
   list: [
     {
+      id: "google",
       label: "Google",
       value: "google",
       icon: <WarningSVG height={32} />,
     },
     {
+      id: "ical",
       label: "iCal",
       value: "ical",
       icon: <WarningSVG height={32} />,
     },
     {
+      id: "outlook",
       label: "Outlook",
       value: "outlookcom",
       icon: <WarningSVG height={32} />,
     },
     {
+      id: "yahoo",
       label: "Yahoo",
       value: "yahoo",
       icon: <WarningSVG height={32} />,

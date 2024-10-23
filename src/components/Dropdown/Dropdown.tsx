@@ -228,7 +228,10 @@ const Dropdown: FC<DropdownProps> = ({
       if (item.items) {
         return (
           <Fragment key={`${index}-${item.value}`}>
-            <li css={DropdownTitle({ level, isSearchable: Boolean(isSearchable) })}>
+            <li
+              css={DropdownTitle({ level, isSearchable: Boolean(isSearchable) })}
+              data-testid={`${item.id}-dropdown-title`}
+            >
               {typeof item.label === "string" ? (
                 <Text fontSize={textSize} weight="700" title={item.label}>
                   {item.label}
@@ -266,7 +269,7 @@ const Dropdown: FC<DropdownProps> = ({
         <li
           className={dropdownItemClasses(item)}
           key={`item-${index}-${item.value}`}
-          data-testid={item.id}
+          data-testid={`${item.id}-dropdown-item`}
           onClick={(): void => {
             if (!isDisabled) {
               handleListItemSelect(item);
@@ -352,6 +355,7 @@ const Dropdown: FC<DropdownProps> = ({
             }
             role="list"
             className="dropdown-list"
+            data-testid="dropdown-list"
           >
             {filteredList?.length ? (
               renderItemsRecursively(filteredList)

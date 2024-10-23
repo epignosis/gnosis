@@ -256,6 +256,7 @@ const Dropdown: FC<DropdownProps> = ({
           key={`${index}-${item.value}`}
           disabled={!item.tooltipContent}
           content={item.tooltipContent}
+          parentProps={{ className: "tooltip-content-wrapper" }}
         >
           {content}
         </Tooltip>

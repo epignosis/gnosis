@@ -1,5 +1,6 @@
 import React, { FC, HTMLAttributes, ReactNode } from "react";
 import { AnimatePresence, domAnimation, LazyMotion, m, MotionProps } from "framer-motion";
+import { SerializedStyles } from "@emotion/react";
 import { cardContainer } from "./styles";
 import Header, { CardHeaderProps } from "./Header";
 import Thumbnail, { ThumbnailProps } from "./Thumbnail";
@@ -11,6 +12,8 @@ import Drawer, { DrawerProps } from "./Drawer";
 type CardProps = HTMLAttributes<HTMLElement> &
   MotionProps & {
     disableHover?: boolean;
+    hasBorder?: boolean;
+    hasBoxShadow?: boolean;
     children?: ReactNode;
   };
 
@@ -23,13 +26,19 @@ type CardCompoundProps = {
   Drawer: DrawerProps;
 };
 
-const Card: FC<CardProps> & CardCompoundProps = ({ disableHover = false, children, ...rest }) => (
+const Card: FC<CardProps> & CardCompoundProps = ({
+  disableHover = false,
+  hasBorder = false,
+  hasBoxShadow = true,
+  children,
+  ...rest
+}) => (
   <LazyMotion features={domAnimation}>
     <AnimatePresence>
       <m.article
         initial="rest"
         whileHover={!disableHover ? "hover" : {}}
-        css={cardContainer}
+        css={(theme): SerializedStyles => cardContainer(theme, { hasBorder, hasBoxShadow })}
         data-testid="card"
         {...rest}
       >

@@ -28,11 +28,7 @@ export const breadcrumbsStyles = ({
     text-decoration: none;
     color: ${breadcrumbs.link};
 
-    &.breadcrumbs__link--current {
-      color: ${breadcrumbs.black};
-      pointer-events: none;
-    }
-
+    &.breadcrumbs__link--current,
     &.breadcrumbs__link--empty:not(.breadcrumbs__link--current) {
       color: ${breadcrumbs.black};
       pointer-events: none;

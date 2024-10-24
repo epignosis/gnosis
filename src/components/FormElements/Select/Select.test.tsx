@@ -47,14 +47,17 @@ describe("<Select />", () => {
           {
             label: "name",
             value: "name",
+            testId: "name",
           },
           {
             label: "surname",
             value: "surname",
+            testId: "surname",
           },
           {
             label: "age",
             value: "age",
+            testId: "age",
           },
         ]}
       />,

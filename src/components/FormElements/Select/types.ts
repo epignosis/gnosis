@@ -1,4 +1,5 @@
 import type { GroupBase, Props } from "react-select";
+import { HTMLAttributes } from "react";
 
 export type Status = "valid" | "error";
 
@@ -6,6 +7,11 @@ export type CustomOption = {
   label: string;
   value: string;
   disabled?: boolean;
+  testId?: string;
+};
+
+export type CustomDivProps = HTMLAttributes<HTMLDivElement> & {
+  "data-testid"?: string;
 };
 
 export type NestedCustomOption = CustomOption & {

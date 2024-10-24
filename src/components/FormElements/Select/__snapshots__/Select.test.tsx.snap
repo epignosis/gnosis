@@ -88,6 +88,7 @@ exports[`<Select /> matches snapshot 1`] = `
             <div
               aria-hidden="true"
               class="css-15wc35w-indicatorContainer"
+              data-testid="custom-dropdown-indicator"
             >
               <svg
                 aria-hidden="true"
@@ -106,6 +107,7 @@ exports[`<Select /> matches snapshot 1`] = `
         </div>
         <div
           class="css-5v3ri6-menu"
+          data-testid="custom-menu-container"
         >
           <div
             aria-multiselectable="false"
@@ -117,6 +119,7 @@ exports[`<Select /> matches snapshot 1`] = `
               aria-disabled="false"
               aria-selected="false"
               class="option-md css-bi1k7u-option"
+              data-testid="name-select-item"
               id="react-select-3-option-0"
               role="option"
               tabindex="-1"
@@ -137,6 +140,7 @@ exports[`<Select /> matches snapshot 1`] = `
               aria-disabled="false"
               aria-selected="false"
               class="option-md css-iovxfg-option"
+              data-testid="surname-select-item"
               id="react-select-3-option-1"
               role="option"
               tabindex="-1"
@@ -157,6 +161,7 @@ exports[`<Select /> matches snapshot 1`] = `
               aria-disabled="false"
               aria-selected="false"
               class="option-md css-iovxfg-option"
+              data-testid="age-select-item"
               id="react-select-3-option-2"
               role="option"
               tabindex="-1"

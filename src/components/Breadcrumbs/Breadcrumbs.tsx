@@ -48,6 +48,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
                 onClick={item.onClick}
                 className={classNames("breadcrumbs__link", {
                   "breadcrumbs__link--current": highlightActivePage && isLast,
+                  "breadcrumbs__link--empty": !item.href,
                 })}
               >
                 {item.label}

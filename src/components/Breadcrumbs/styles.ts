@@ -10,6 +10,7 @@ export const breadcrumbsStyles = ({
   display: flex;
   align-items: center;
   font-size: ${typeScaleSizes["sm"]};
+  font-weight: 700;
 
   &.breadcrumbs__list {
     display: flex;
@@ -28,7 +29,12 @@ export const breadcrumbsStyles = ({
     color: ${breadcrumbs.link};
 
     &.breadcrumbs__link--current {
-      color: ${breadcrumbs.currentPath};
+      color: ${breadcrumbs.black};
+      pointer-events: none;
+    }
+
+    &.breadcrumbs__link--empty:not(.breadcrumbs__link--current) {
+      color: ${breadcrumbs.black};
       pointer-events: none;
     }
   }

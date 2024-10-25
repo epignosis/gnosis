@@ -1,3 +1,10 @@
+## [5.38.3](https://github.com/epignosis/gnosis/compare/v5.38.2...v5.38.3) (2024-10-25)
+
+
+### Bug Fixes
+
+* **breadcrumbs:** fix arrows on RTL dirction ([#450](https://github.com/epignosis/gnosis/issues/450)) ([231d079](https://github.com/epignosis/gnosis/commit/231d079ddd8827591f281cd380a3675a1f405d8e))
+
 ## [5.38.2](https://github.com/epignosis/gnosis/compare/v5.38.1...v5.38.2) (2024-10-24)
 
 ## [5.38.1](https://github.com/epignosis/gnosis/compare/v5.38.0...v5.38.1) (2024-10-23)

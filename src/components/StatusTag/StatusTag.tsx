@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, HTMLAttributes } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import { statusTagStyles } from "./styles";
@@ -16,13 +16,12 @@ export type StatusTagColors =
   | "grey"
   | "red";
 
-export type StatusTagProps = {
+export type StatusTagProps = HTMLAttributes<HTMLSpanElement> & {
   testId?: string;
   text?: string;
   size?: StatusTagSizes;
   icon?: IconType;
   color?: StatusTagColors;
-  onClick?: () => void;
 };
 
 const StatusTag: FC<StatusTagProps> = ({

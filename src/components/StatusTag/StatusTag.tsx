@@ -22,6 +22,7 @@ export type StatusTagProps = {
   size?: StatusTagSizes;
   icon?: IconType;
   color?: StatusTagColors;
+  onClick?: () => void;
 };
 
 const StatusTag: FC<StatusTagProps> = ({
@@ -30,6 +31,7 @@ const StatusTag: FC<StatusTagProps> = ({
   icon: Icon,
   size = "md",
   color = "neutral",
+  onClick,
 }) => {
   const dataTestId = testId ? testId : `status-tag-${text}`;
 
@@ -40,6 +42,7 @@ const StatusTag: FC<StatusTagProps> = ({
       className={classNames("statusTag", `statusTag--${size}`, `statusTag--${color}`)}
       role="status"
       aria-label={text}
+      onClick={onClick}
     >
       {Icon && (
         <span className="statusTag__icon" aria-hidden="true">

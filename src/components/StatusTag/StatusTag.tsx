@@ -30,7 +30,7 @@ const StatusTag: FC<StatusTagProps> = ({
   icon: Icon,
   size = "md",
   color = "neutral",
-  onClick,
+  ...rest
 }) => {
   const dataTestId = testId ? testId : `status-tag-${text}`;
 
@@ -41,7 +41,7 @@ const StatusTag: FC<StatusTagProps> = ({
       className={classNames("statusTag", `statusTag--${size}`, `statusTag--${color}`)}
       role="status"
       aria-label={text}
-      onClick={onClick}
+      {...rest}
     >
       {Icon && (
         <span className="statusTag__icon" aria-hidden="true">

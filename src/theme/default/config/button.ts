@@ -99,8 +99,8 @@ export default {
   },
   success: {
     default: {
-      background: colors.green.base,
-      borderColor: colors.green.base,
+      background: colors.green.dark,
+      borderColor: colors.green.dark,
       color: colors.white,
     },
     hover: {
@@ -109,21 +109,21 @@ export default {
       color: colors.white,
     },
     active: {
-      background: colors.green.base,
-      borderColor: colors.green.base,
+      background: colors.green.dark,
+      borderColor: colors.green.dark,
       color: colors.white,
     },
     ghost: {
-      color: colors.green.base,
+      color: colors.green.dark,
       background: colors.green.light,
       hoverColor: colors.white,
     },
     outline: {
-      color: colors.green.base,
-      borderColor: colors.green.base,
+      color: colors.green.dark,
+      borderColor: colors.green.dark,
     },
     link: {
-      color: colors.green.base,
+      color: colors.green.dark,
       hoverColor: colors.green.lightest,
     },
   },

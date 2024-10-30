@@ -1,3 +1,10 @@
+## [5.38.6](https://github.com/epignosis/gnosis/compare/v5.38.5...v5.38.6) (2024-10-30)
+
+
+### Bug Fixes
+
+* status tag args ([#454](https://github.com/epignosis/gnosis/issues/454)) ([c5084da](https://github.com/epignosis/gnosis/commit/c5084dac8bf8f7db0b6b54979b21be502ceed0d0))
+
 ## [5.38.5](https://github.com/epignosis/gnosis/compare/v5.38.4...v5.38.5) (2024-10-30)
 
 ## [5.38.4](https://github.com/epignosis/gnosis/compare/v5.38.3...v5.38.4) (2024-10-30)

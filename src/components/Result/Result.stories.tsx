@@ -2,6 +2,7 @@ import React from "react";
 import { StoryFn } from "@storybook/react";
 import { Button } from "../../";
 import { WarningSVG } from "../../icons/";
+import Text from "../Text/Text";
 import Result, { ResultProps } from "./Result";
 
 export default {
@@ -47,4 +48,25 @@ export const WithBorder = Template.bind({});
 WithBorder.args = {
   ...Default.args,
   hasBorder: true,
+};
+
+export const InfoAsString = Template.bind({});
+InfoAsString.args = {
+  ...Default.args,
+  info: "This is a simple info string",
+};
+
+export const InfoAsJSX = Template.bind({});
+InfoAsJSX.args = {
+  ...Default.args,
+  info: (
+    <>
+      <Text as="p" fontSize="sm">
+        This is a JSX element used as info.
+      </Text>
+      <Text as="p" fontSize="sm">
+        This is a second JSX element used as info.
+      </Text>
+    </>
+  ),
 };

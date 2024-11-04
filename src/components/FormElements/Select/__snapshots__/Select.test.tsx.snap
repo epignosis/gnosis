@@ -3,7 +3,7 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="css-ties8d-selectContainer-selectContainer"
+    class="css-1x6a6zi-selectContainer-selectContainer"
   >
     <div
       class="label-container"
@@ -116,7 +116,7 @@ exports[`<Select /> matches snapshot 1`] = `
             <div
               aria-disabled="false"
               aria-selected="false"
-              class="option-md css-bi1k7u-option"
+              class="option-md css-1v8sgao-option"
               id="react-select-3-option-0"
               role="option"
               tabindex="-1"
@@ -129,14 +129,18 @@ exports[`<Select /> matches snapshot 1`] = `
                 <div
                   class="custom-option"
                 >
-                  name
+                  <span
+                    class="label-text"
+                  >
+                    name
+                  </span>
                 </div>
               </div>
             </div>
             <div
               aria-disabled="false"
               aria-selected="false"
-              class="option-md css-iovxfg-option"
+              class="option-md css-llutyd-option"
               id="react-select-3-option-1"
               role="option"
               tabindex="-1"
@@ -149,14 +153,18 @@ exports[`<Select /> matches snapshot 1`] = `
                 <div
                   class="custom-option"
                 >
-                  surname
+                  <span
+                    class="label-text"
+                  >
+                    surname
+                  </span>
                 </div>
               </div>
             </div>
             <div
               aria-disabled="false"
               aria-selected="false"
-              class="option-md css-iovxfg-option"
+              class="option-md css-llutyd-option"
               id="react-select-3-option-2"
               role="option"
               tabindex="-1"
@@ -169,7 +177,11 @@ exports[`<Select /> matches snapshot 1`] = `
                 <div
                   class="custom-option"
                 >
-                  age
+                  <span
+                    class="label-text"
+                  >
+                    age
+                  </span>
                 </div>
               </div>
             </div>

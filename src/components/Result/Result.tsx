@@ -66,14 +66,11 @@ const Result: FC<ResultProps> = ({
             <Heading as={heading} className="result-header" data-testid="result-header">
               {title}
             </Heading>
-            {info &&
-              (typeof info === "string" ? (
-                <Text fontSize={size} as="p" data-testid="result-info">
-                  {info}
-                </Text>
-              ) : (
-                info
-              ))}
+            {info && (
+              <Text fontSize={size} as="p" data-testid="result-info">
+                {info}
+              </Text>
+            )}
           </>
         </div>
       )}

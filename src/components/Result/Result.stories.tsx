@@ -2,7 +2,6 @@ import React from "react";
 import { StoryFn } from "@storybook/react";
 import { Button } from "../../";
 import { WarningSVG } from "../../icons/";
-import Text from "../Text/Text";
 import Result, { ResultProps } from "./Result";
 
 export default {
@@ -61,12 +60,8 @@ InfoAsJSX.args = {
   ...Default.args,
   info: (
     <>
-      <Text as="p" fontSize="sm">
-        This is a JSX element used as info.
-      </Text>
-      <Text as="p" fontSize="sm">
-        This is a second JSX element used as info.
-      </Text>
+      <div>This is a JSX element used as info.</div>
+      <div>This is a second JSX element used as info.</div>
     </>
   ),
 };

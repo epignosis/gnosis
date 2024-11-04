@@ -9,23 +9,21 @@ export default {
   argTypes: {
     text: "Completed",
     size: "md",
-    variant: {
-      control: {
-        type: "select",
-        options: [
-          "neutral",
-          "positive",
-          "negative",
-          "inactive",
-          "warning",
-          "promo",
-          "pale",
-          "grey",
-          "red",
-        ],
-      },
+    icon: InfoIconSVG,
+    color: {
+      type: "select",
+      options: [
+        "neutral",
+        "positive",
+        "negative",
+        "inactive",
+        "warning",
+        "promo",
+        "pale",
+        "grey",
+        "red",
+      ],
     },
-    showIcon: false,
   },
 };
 

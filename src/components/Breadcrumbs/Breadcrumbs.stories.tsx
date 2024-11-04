@@ -30,7 +30,7 @@ Default.args = {
   items: [
     { label: "Reports", href: "/" },
     { label: "Course Reports", href: "/reports/course" },
-    { label: "Introduction to TLMS+", href: "" },
+    { label: "Introduction to TLMS+", href: "/intro" },
   ],
   navAriaLabel: "Breadcrumb navigation",
   highlightActivePage: false,

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, HTMLAttributes } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import { statusTagStyles } from "./styles";
@@ -16,7 +16,7 @@ export type StatusTagColors =
   | "grey"
   | "red";
 
-export type StatusTagProps = {
+export type StatusTagProps = HTMLAttributes<HTMLSpanElement> & {
   testId?: string;
   text?: string;
   size?: StatusTagSizes;
@@ -30,6 +30,7 @@ const StatusTag: FC<StatusTagProps> = ({
   icon: Icon,
   size = "md",
   color = "neutral",
+  ...rest
 }) => {
   const dataTestId = testId ? testId : `status-tag-${text}`;
 
@@ -40,6 +41,7 @@ const StatusTag: FC<StatusTagProps> = ({
       className={classNames("statusTag", `statusTag--${size}`, `statusTag--${color}`)}
       role="status"
       aria-label={text}
+      {...rest}
     >
       {Icon && (
         <span className="statusTag__icon" aria-hidden="true">

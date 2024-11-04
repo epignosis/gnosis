@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
-import { ArrowRightChevronSVG } from "../../icons";
+import { ArrowRightChevronSVG, ArrowLeftChevronSVG } from "../../icons";
 import { breadcrumbsStyles } from "./styles";
 
 export type BreadcrumbItem = {
@@ -23,6 +23,10 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
   navAriaLabel = "Breadcrumb navigation",
   linkAriaLabel = (label) => `Breadcrumb link to ${label}`,
 }) => {
+  const dir = document.dir;
+  const isRtl = dir === "rtl";
+  const Icon = isRtl ? ArrowLeftChevronSVG : ArrowRightChevronSVG;
+
   return (
     <nav aria-label={navAriaLabel}>
       <ul
@@ -48,6 +52,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
                 onClick={item.onClick}
                 className={classNames("breadcrumbs__link", {
                   "breadcrumbs__link--current": highlightActivePage && isLast,
+                  "breadcrumbs__link--empty": !item.href,
                 })}
               >
                 {item.label}
@@ -55,7 +60,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
 
               {!isLast && (
                 <span aria-hidden="true" className="breadcrumbs__separator">
-                  <ArrowRightChevronSVG height="32" data-testid="arrow-icon" />
+                  <Icon height="32" data-testid="arrow-icon" />
                 </span>
               )}
             </li>

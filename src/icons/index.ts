@@ -464,6 +464,9 @@ export { default as MicrochipAISVG } from "./client/microchip-ai.svg";
 export { default as TextBoxSVG } from "./client/text-box.svg";
 export { default as AlarmSVG } from "./client/alarm.svg";
 export { default as AlarmExclamationSVG } from "./client/alarm-exclamation.svg";
+export { default as StartArrowFilledSVG } from "./client/start-arrow-filled.svg";
+export { default as CanceledFilledSVG } from "./client/canceled-filled.svg";
+export { default as PartyHornSVG } from "./client/party-horn.svg";
 
 // Exports from folders.
 // Assignments Icons

@@ -1,3 +1,25 @@
+## [5.38.7](https://github.com/epignosis/gnosis/compare/v5.38.6...v5.38.7) (2024-11-01)
+
+## [5.38.6](https://github.com/epignosis/gnosis/compare/v5.38.5...v5.38.6) (2024-10-30)
+
+
+### Bug Fixes
+
+* status tag args ([#454](https://github.com/epignosis/gnosis/issues/454)) ([c5084da](https://github.com/epignosis/gnosis/commit/c5084dac8bf8f7db0b6b54979b21be502ceed0d0))
+
+## [5.38.5](https://github.com/epignosis/gnosis/compare/v5.38.4...v5.38.5) (2024-10-30)
+
+## [5.38.4](https://github.com/epignosis/gnosis/compare/v5.38.3...v5.38.4) (2024-10-30)
+
+## [5.38.3](https://github.com/epignosis/gnosis/compare/v5.38.2...v5.38.3) (2024-10-25)
+
+
+### Bug Fixes
+
+* **breadcrumbs:** fix arrows on RTL dirction ([#450](https://github.com/epignosis/gnosis/issues/450)) ([231d079](https://github.com/epignosis/gnosis/commit/231d079ddd8827591f281cd380a3675a1f405d8e))
+
+## [5.38.2](https://github.com/epignosis/gnosis/compare/v5.38.1...v5.38.2) (2024-10-24)
+
 ## [5.38.1](https://github.com/epignosis/gnosis/compare/v5.38.0...v5.38.1) (2024-10-23)
 
 # [5.38.0](https://github.com/epignosis/gnosis/compare/v5.37.0...v5.38.0) (2024-10-23)

@@ -6,6 +6,7 @@ export type CustomOption = {
   label: string;
   value: string;
   disabled?: boolean;
+  hint?: string;
 };
 
 export type NestedCustomOption = CustomOption & {

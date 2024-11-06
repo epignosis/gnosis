@@ -271,10 +271,27 @@ export const resolveStyles = ({
     },
     cursor: isDisabled ? "default" : "pointer",
     ".custom-option": {
-      wordBreak: "break-word",
+      wordBreak: "keep-all",
       overflow: "hidden",
       textOverflow: "ellipsis",
       whiteSpace: "nowrap",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+    ".label-text": {
+      flex: 3,
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+    },
+    ".hint-text": {
+      flex: 1,
+      color: formElements.input.disabledColor,
+      marginLeft: "5px",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap",
+      textAlign: "right",
     },
   }),
   menuList: (base: CSSObjectWithLabel) => ({

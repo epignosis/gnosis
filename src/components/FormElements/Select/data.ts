@@ -60,7 +60,7 @@ export const defaultOptions: CustomOption[] = [
   { label: "C#", value: "c#" },
   { label: "Java", value: "java" },
   { label: "Krust", value: "Krust" },
-  { label: "DontGo", value: "DontGo", hint: "Contact Us" },
+  { label: "DontGo", value: "DontGo", hint: "Contact us" },
   { label: "Cobol", value: "Cobol" },
   { label: "Haskell", value: "Haskell" },
   { label: "Erlang", value: "Erlang" },

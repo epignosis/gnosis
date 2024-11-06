@@ -1,3 +1,10 @@
+# [5.39.0](https://github.com/epignosis/gnosis/compare/v5.38.8...v5.39.0) (2024-11-06)
+
+
+### Features
+
+* **select:** add hint capability for select option ([#458](https://github.com/epignosis/gnosis/issues/458)) ([ccc3ed6](https://github.com/epignosis/gnosis/commit/ccc3ed66ba71734fda07165cd844cd7d3932e86c))
+
 ## [5.38.8](https://github.com/epignosis/gnosis/compare/v5.38.7...v5.38.8) (2024-11-04)
 
 ## [5.38.7](https://github.com/epignosis/gnosis/compare/v5.38.6...v5.38.7) (2024-11-01)

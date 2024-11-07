@@ -27,7 +27,7 @@ exports[`<Select /> matches snapshot 1`] = `
       >
         <span
           class="css-1f43avz-a11yText-A11yText"
-          id="react-select-2-live-region"
+          id="react-select-3-live-region"
         />
         <span
           aria-atomic="false"
@@ -61,21 +61,21 @@ exports[`<Select /> matches snapshot 1`] = `
           >
             <div
               class="css-zg71bx-placeholder"
-              id="react-select-2-placeholder"
+              id="react-select-3-placeholder"
             >
               Select...
             </div>
             <input
-              aria-activedescendant="react-select-2-option-0"
+              aria-activedescendant="react-select-3-option-0"
               aria-autocomplete="list"
-              aria-controls="react-select-2-listbox"
-              aria-describedby="react-select-2-placeholder"
+              aria-controls="react-select-3-listbox"
+              aria-describedby="react-select-3-placeholder"
               aria-expanded="true"
               aria-haspopup="true"
               aria-label="My Select"
               aria-readonly="true"
               class="css-1czm0f-dummyInput-DummyInput"
-              id="react-select-2-input"
+              id="react-select-3-input"
               inputmode="none"
               role="combobox"
               tabindex="0"
@@ -112,14 +112,14 @@ exports[`<Select /> matches snapshot 1`] = `
           <div
             aria-multiselectable="false"
             class="css-hdhzfk"
-            id="react-select-2-listbox"
+            id="react-select-3-listbox"
             role="listbox"
           >
             <div
               aria-disabled="false"
               aria-selected="false"
               class="option-md css-1v8sgao-option"
-              id="react-select-2-option-0"
+              id="react-select-3-option-0"
               role="option"
               tabindex="-1"
             >
@@ -143,7 +143,7 @@ exports[`<Select /> matches snapshot 1`] = `
               aria-disabled="false"
               aria-selected="false"
               class="option-md css-llutyd-option"
-              id="react-select-2-option-1"
+              id="react-select-3-option-1"
               role="option"
               tabindex="-1"
             >
@@ -167,7 +167,7 @@ exports[`<Select /> matches snapshot 1`] = `
               aria-disabled="false"
               aria-selected="false"
               class="option-md css-llutyd-option"
-              id="react-select-2-option-2"
+              id="react-select-3-option-2"
               role="option"
               tabindex="-1"
             >

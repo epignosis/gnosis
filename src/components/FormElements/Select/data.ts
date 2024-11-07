@@ -24,14 +24,13 @@ export const colourOptions: ColourOption[] = [
 export interface FlavourOption {
   value: string;
   label: string;
-  testId?: string;
 }
 
 export const flavourOptions: FlavourOption[] = [
-  { value: "vanilla", label: "Vanilla", testId: "vanilla" },
-  { value: "chocolate", label: "Chocolate", testId: "chocolate" },
-  { value: "strawberry", label: "Strawberry", testId: "strawberry" },
-  { value: "salted-caramel", label: "Salted Caramel", testId: "salted-caramel" },
+  { value: "vanilla", label: "Vanilla" },
+  { value: "chocolate", label: "Chocolate" },
+  { value: "strawberry", label: "Strawberry" },
+  { value: "salted-caramel", label: "Salted Caramel" },
 ];
 
 export interface GroupedOption {

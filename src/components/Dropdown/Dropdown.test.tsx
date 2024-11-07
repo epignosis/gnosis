@@ -59,13 +59,11 @@ it("disabled dropdown does not call onToggleList when clicked", () => {
 
 const mockList: DropdownItem[] = [
   {
-    id: "category-1",
     value: "category-1",
     label: "Category 1",
     items: [
       { id: "option-1", label: "Option 1", value: "1" },
       {
-        id: "category-2",
         label: "Category 2",
         items: [
           { id: "option-2", label: "Option 2", value: "2" },
@@ -75,7 +73,6 @@ const mockList: DropdownItem[] = [
     ],
   },
   {
-    id: "category-15",
     value: "category-15",
     label: "Category 15",
     items: [

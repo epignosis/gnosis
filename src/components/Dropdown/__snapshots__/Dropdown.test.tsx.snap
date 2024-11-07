@@ -28,7 +28,6 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
       >
         <li
           class="css-rndanj-DropdownTitle-DropdownTitle"
-          data-testid="category-1-dropdown-title"
         >
           <span
             class="css-mproha-textContainer-textContainer"
@@ -58,7 +57,6 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
         </li>
         <li
           class="css-1mnx8ve-DropdownTitle-DropdownTitle"
-          data-testid="category-2-dropdown-title"
         >
           <span
             class="css-mproha-textContainer-textContainer"
@@ -106,7 +104,6 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
         </li>
         <li
           class="css-rndanj-DropdownTitle-DropdownTitle"
-          data-testid="category-15-dropdown-title"
         >
           <span
             class="css-mproha-textContainer-textContainer"

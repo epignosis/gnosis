@@ -228,10 +228,7 @@ const Dropdown: FC<DropdownProps> = ({
       if (item.items) {
         return (
           <Fragment key={`${index}-${item.value}`}>
-            <li
-              css={DropdownTitle({ level, isSearchable: Boolean(isSearchable) })}
-              data-testid={`${item.id}-dropdown-title`}
-            >
+            <li css={DropdownTitle({ level, isSearchable: Boolean(isSearchable) })}>
               {typeof item.label === "string" ? (
                 <Text fontSize={textSize} weight="700" title={item.label}>
                   {item.label}

@@ -10,7 +10,6 @@ import { FCWithChildren } from "types/common";
 
 const dropdownList: DropdownItem[] = [
   {
-    id: "category-1",
     label: "Category 1",
     items: [
       { id: "option-1", label: "Option 1", value: "1" },
@@ -25,7 +24,6 @@ const dropdownList: DropdownItem[] = [
     ],
   },
   {
-    id: "category-2",
     label: "Category 2",
     items: [
       { id: "option-3", label: "Option 3", value: "3" },
@@ -111,12 +109,10 @@ const Template: StoryFn<DropdownProps> = (args) => {
 
 const extendedDropdownList: DropdownItem[] = [
   {
-    id: "category-1",
     label: "Category 1",
     items: [
       { id: "option-1", label: "Option 1", value: "1" },
       {
-        id: "category-3",
         label: "Category 3",
         items: [
           { id: "option-5", label: "Option 5", value: "5" },
@@ -126,7 +122,6 @@ const extendedDropdownList: DropdownItem[] = [
     ],
   },
   {
-    id: "category-2",
     label: "Category 2",
     items: [
       { id: "option-3", label: "Option 3", value: "3" },

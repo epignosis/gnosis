@@ -48,3 +48,20 @@ WithBorder.args = {
   ...Default.args,
   hasBorder: true,
 };
+
+export const InfoAsString = Template.bind({});
+InfoAsString.args = {
+  ...Default.args,
+  info: "This is a simple info string",
+};
+
+export const InfoAsJSX = Template.bind({});
+InfoAsJSX.args = {
+  ...Default.args,
+  info: (
+    <>
+      <div>This is a JSX element used as info.</div>
+      <div>This is a second JSX element used as info.</div>
+    </>
+  ),
+};

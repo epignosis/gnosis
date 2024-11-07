@@ -7,6 +7,7 @@ export type CustomOption = {
   label: string;
   value: string;
   disabled?: boolean;
+  hint?: string;
   testId?: string;
 };
 

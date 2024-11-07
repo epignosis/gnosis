@@ -12,7 +12,7 @@ export type Size = "md" | "lg";
 export type ResultProps = React.HTMLAttributes<HTMLElement> & {
   icon?: IconType | string;
   title: string;
-  info?: string;
+  info?: string | JSX.Element;
   heading?: Heading;
   size?: Size;
   footer?: ReactNode;

@@ -1,3 +1,10 @@
+## [5.39.1](https://github.com/epignosis/gnosis/compare/v5.39.0...v5.39.1) (2024-11-07)
+
+
+### Bug Fixes
+
+* **select:** adjust the ratio of label:hint inside a Select option to be 1:1 ([#459](https://github.com/epignosis/gnosis/issues/459)) ([127f5fd](https://github.com/epignosis/gnosis/commit/127f5fd437abbf7242588bb2d54c4e652cc7bd88))
+
 # [5.39.0](https://github.com/epignosis/gnosis/compare/v5.38.8...v5.39.0) (2024-11-06)
 
 

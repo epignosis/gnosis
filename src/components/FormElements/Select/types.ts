@@ -8,7 +8,6 @@ export type CustomOption = {
   value: string;
   disabled?: boolean;
   hint?: string;
-  testId?: string;
 };
 
 export type CustomDivProps = HTMLAttributes<HTMLDivElement> & {

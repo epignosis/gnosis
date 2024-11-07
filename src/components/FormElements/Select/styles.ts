@@ -280,7 +280,7 @@ export const resolveStyles = ({
       alignItems: "center",
     },
     ".label-text": {
-      flex: 3,
+      flex: 1,
       overflow: "hidden",
       textOverflow: "ellipsis",
     },

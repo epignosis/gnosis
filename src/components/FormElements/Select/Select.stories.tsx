@@ -4,6 +4,7 @@ import { CustomSelectProps, CustomOption } from "./types";
 import { defaultOptions, groupedOptions, menuMaxWidthOptions } from "./data";
 import Select from "./Select";
 import { formatOptionLabel } from "./helpers";
+import { selectOptionsWithLevels } from "./constants";
 
 export default {
   title: "components/Form Elements/Select",
@@ -171,4 +172,10 @@ export const AsyncSelect: StoryFn<CustomSelectProps<CustomOption, boolean>> = (a
       cacheOptions
     />
   );
+};
+
+export const WithNestLevels = Template.bind({});
+
+WithNestLevels.args = {
+  options: selectOptionsWithLevels,
 };

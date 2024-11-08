@@ -27,7 +27,7 @@ type CardCompoundProps = {
 
 const Card: FC<CardProps> & CardCompoundProps = ({
   disableHover = false,
-  hasBorder = false,
+  hasBorder = true,
   children,
   ...rest
 }) => (

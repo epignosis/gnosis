@@ -554,3 +554,8 @@ export { default as DeactivateSVG } from "./client/skills/deactivate.svg";
 export { default as AiChipSVG } from "./client/skills/ai_chip.svg";
 export { default as ExitAssessmentSVG } from "./client/skills/exit_assessment.svg";
 export { default as UserCheckSVG } from "./client/skills/user_check.svg";
+
+// AI Icons
+export { default as AILoaderSVG } from "./feature/ai/ai-loader.svg";
+export { default as SparklesSolidSVG } from "./feature/ai/sparkles-solid.svg";
+export { default as CoinsSVG } from "./feature/ai/coins.svg";

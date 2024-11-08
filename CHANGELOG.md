@@ -1,3 +1,10 @@
+## [5.39.2](https://github.com/epignosis/gnosis/compare/v5.39.1...v5.39.2) (2024-11-08)
+
+
+### Bug Fixes
+
+* **select.tsx:** fix select nested options ([#460](https://github.com/epignosis/gnosis/issues/460)) ([bb4184a](https://github.com/epignosis/gnosis/commit/bb4184a40fe903f2cc1ebcd543913fb90febd1d4))
+
 ## [5.39.1](https://github.com/epignosis/gnosis/compare/v5.39.0...v5.39.1) (2024-11-07)
 
 

@@ -1,22 +1,22 @@
-<svg width="66" height="66" viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <rect width="66" height="66" fill="url(#pattern0)"/>
 <g clip-path="url(#clip0_2000_5177)">
-<path opacity="0.05" d="M53.5 33C53.5 29.1099 52.3932 25.3001 50.3087 22.0156C48.2243 18.731 45.2484 16.1074 41.7285 14.4511" stroke="#1B68B3" stroke-width="3" stroke-linecap="round"/>
-<path opacity="0.1" d="M53.5 33C53.5 27.7859 51.5132 22.7677 47.9439 18.9668" stroke="#1B68B3" stroke-width="3" stroke-linecap="round"/>
-<path opacity="0.3" d="M53.5 33C53.5 30.4162 53.0116 27.8558 52.0604 25.4535" stroke="#1B68B3" stroke-width="3" stroke-linecap="round"/>
-<path d="M52 33C52 32.9602 51.9999 32.9204 51.9996 32.8806" stroke="#1B68B3" stroke-width="6" stroke-linecap="round"/>
+<path opacity="0.05" d="M53.5 33C53.5 29.1099 52.3932 25.3001 50.3087 22.0156C48.2243 18.731 45.2484 16.1074 41.7285 14.4511" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+<path opacity="0.1" d="M53.5 33C53.5 27.7859 51.5132 22.7677 47.9439 18.9668" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+<path opacity="0.3" d="M53.5 33C53.5 30.4162 53.0116 27.8558 52.0604 25.4535" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+<path d="M52 33C52 32.9602 51.9999 32.9204 51.9996 32.8806" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
 </g>
 <g clip-path="url(#clip1_2000_5177)">
-<path opacity="0.05" d="M22.7502 15.2466C19.3812 17.1917 16.6353 20.0552 14.833 23.5026C13.0307 26.95 12.2466 30.8391 12.5721 34.7156" stroke="#1B68B3" stroke-width="3" stroke-linecap="round"/>
-<path opacity="0.1" d="M22.7502 15.2466C18.2346 17.8537 14.8822 22.0834 13.3751 27.075" stroke="#1B68B3" stroke-width="3" stroke-linecap="round"/>
-<path opacity="0.3" d="M22.7502 15.2466C20.5126 16.5385 18.5394 18.2418 16.9345 20.2666" stroke="#1B68B3" stroke-width="3" stroke-linecap="round"/>
-<path d="M23.5002 16.5457C23.4657 16.5656 23.4313 16.5856 23.397 16.6057" stroke="#1B68B3" stroke-width="6" stroke-linecap="round"/>
+<path opacity="0.05" d="M22.7502 15.2466C19.3812 17.1917 16.6353 20.0552 14.833 23.5026C13.0307 26.95 12.2466 30.8391 12.5721 34.7156" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+<path opacity="0.1" d="M22.7502 15.2466C18.2346 17.8537 14.8822 22.0834 13.3751 27.075" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+<path opacity="0.3" d="M22.7502 15.2466C20.5126 16.5385 18.5394 18.2418 16.9345 20.2666" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+<path d="M23.5002 16.5457C23.4657 16.5656 23.4313 16.5856 23.397 16.6057" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
 </g>
 <g clip-path="url(#clip2_2000_5177)">
-<path opacity="0.05" d="M22.7498 50.7533C26.1187 52.6984 29.9716 53.6447 33.8583 53.4818C37.745 53.3189 41.5051 52.0535 44.6994 49.8334" stroke="#1B68B3" stroke-width="3" stroke-linecap="round"/>
-<path opacity="0.1" d="M22.7498 50.7533C27.2654 53.3604 32.6047 54.1488 37.681 52.9582" stroke="#1B68B3" stroke-width="3" stroke-linecap="round"/>
-<path opacity="0.3" d="M22.7498 50.7533C24.9874 52.0452 27.4491 52.9025 30.0051 53.2799" stroke="#1B68B3" stroke-width="3" stroke-linecap="round"/>
-<path d="M23.4998 49.4543C23.5343 49.4742 23.5688 49.494 23.6034 49.5137" stroke="#1B68B3" stroke-width="6" stroke-linecap="round"/>
+<path opacity="0.05" d="M22.7498 50.7533C26.1187 52.6984 29.9716 53.6447 33.8583 53.4818C37.745 53.3189 41.5051 52.0535 44.6994 49.8334" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+<path opacity="0.1" d="M22.7498 50.7533C27.2654 53.3604 32.6047 54.1488 37.681 52.9582" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+<path opacity="0.3" d="M22.7498 50.7533C24.9874 52.0452 27.4491 52.9025 30.0051 53.2799" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+<path d="M23.4998 49.4543C23.5343 49.4742 23.5688 49.494 23.6034 49.5137" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
 </g>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">

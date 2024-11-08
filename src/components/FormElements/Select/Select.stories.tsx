@@ -178,5 +178,4 @@ export const WithNestLevels = Template.bind({});
 
 WithNestLevels.args = {
   options: selectOptionsWithLevels,
-  menuIsOpen: true,
 };

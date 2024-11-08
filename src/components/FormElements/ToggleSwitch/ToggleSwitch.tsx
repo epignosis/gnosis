@@ -107,7 +107,7 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
               weight={hasDescriptionTextWeight}
             >
               {tooltip && (
-                <Tooltip content={tooltip}>
+                <Tooltip content={tooltip} parentProps={{ "aria-label": tooltip }}>
                   <InfoIconSVG height={16} />
                 </Tooltip>
               )}
@@ -148,7 +148,7 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
             >
               {labelAfter}
               {tooltip && (
-                <Tooltip content={tooltip}>
+                <Tooltip content={tooltip} parentProps={{ "aria-label": tooltip }}>
                   <InfoIconSVG height={16} />
                 </Tooltip>
               )}

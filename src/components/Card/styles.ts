@@ -2,7 +2,7 @@ import { css, Theme, SerializedStyles } from "@emotion/react";
 
 export const cardContainer = (
   { card }: Theme,
-  { hasBorder, hasBoxShadow }: { hasBorder: boolean; hasBoxShadow: boolean },
+  { hasBorder }: { hasBorder: boolean },
 ): SerializedStyles => css`
   position: relative;
   display: flex;

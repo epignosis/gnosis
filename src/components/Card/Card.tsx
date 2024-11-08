@@ -13,7 +13,6 @@ type CardProps = HTMLAttributes<HTMLElement> &
   MotionProps & {
     disableHover?: boolean;
     hasBorder?: boolean;
-    hasBoxShadow?: boolean;
     children?: ReactNode;
   };
 
@@ -29,7 +28,6 @@ type CardCompoundProps = {
 const Card: FC<CardProps> & CardCompoundProps = ({
   disableHover = false,
   hasBorder = false,
-  hasBoxShadow = true,
   children,
   ...rest
 }) => (
@@ -38,7 +36,7 @@ const Card: FC<CardProps> & CardCompoundProps = ({
       <m.article
         initial="rest"
         whileHover={!disableHover ? "hover" : {}}
-        css={(theme): SerializedStyles => cardContainer(theme, { hasBorder, hasBoxShadow })}
+        css={(theme): SerializedStyles => cardContainer(theme, { hasBorder })}
         data-testid="card"
         {...rest}
       >

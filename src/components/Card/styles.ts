@@ -10,20 +10,11 @@ export const cardContainer = (
   justify-content: space-between;
   height: 100%;
   background-color: ${card.background};
-  box-shadow: ${hasBoxShadow ? `0 0 0.625rem ${card.shadow}` : "none"};
   border-radius: 5px;
   overflow: hidden;
   transition-duration: 0.2s;
   transition-property: background-color, color, box-shadow 0.1s ease-in-out;
   border: ${hasBorder ? `1px solid ${card.border}` : "none"};
-
-  ${hasBoxShadow &&
-  `
-    :hover {
-      box-shadow: 0 0.25rem 1.25rem ${card.shadow};
-      transition: all 0.2s ease;
-    }
-  `}
 `;
 
 export const courseHeaderContainer = css`

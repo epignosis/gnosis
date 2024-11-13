@@ -51,6 +51,7 @@ export const tabNavItem = (
   { isActive }: { isActive: boolean },
 ): SerializedStyles => {
   return css`
+    outline: none;
     font-weight: ${isActive ? "700" : "400"};
     margin-inline: 0 1rem;
     margin-block: 0;

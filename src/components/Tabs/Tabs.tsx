@@ -106,11 +106,17 @@ const Tabs: FC<TabsProps> = ({
     tabOffset && tablist.scrollTo(tabOffset > 0 ? tabOffset - 16 : 0, 0);
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === "ArrowRight" && activeTab < tabsLength - 1) {
-      onSelectTab(activeTab + 1);
-    } else if (e.key === "ArrowLeft" && activeTab > 0) {
-      onSelectTab(activeTab - 1);
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>, index: number) => {
+    if (e.key === "ArrowRight" && index + 1 < tabsLength) {
+      // Check if the next tab has content
+      if (tabs[index + 1]?.content) {
+        onSelectTab(index + 1);
+      }
+    } else if (e.key === "ArrowLeft" && index - 1 >= 0) {
+      // Check if the previous tab has content
+      if (tabs[index - 1]?.content) {
+        onSelectTab(index - 1);
+      }
     }
   };
 
@@ -144,7 +150,7 @@ const Tabs: FC<TabsProps> = ({
                 title={title}
                 isActive={activeTab === index}
                 onSelectTab={onSelectTab}
-                onKeyDown={(e) => handleKeyDown(e)}
+                onKeyDown={(e) => handleKeyDown(e, index)}
               />
             ))}
           {inlineEndComponent && <div className="inline-end-component">{inlineEndComponent}</div>}

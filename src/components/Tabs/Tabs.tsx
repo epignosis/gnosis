@@ -107,14 +107,14 @@ const Tabs: FC<TabsProps> = ({
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>, index: number) => {
-    if (e.key === "ArrowRight" && index + 1 < tabsLength) {
-      // Check if the next tab has content
-      if (tabs[index + 1]?.content) {
+    if (e.key === "ArrowRight" && index < tabsLength) {
+      // If next tab is undefined, do nothing
+      if (tabs[index + 1].content) {
         onSelectTab(index + 1);
       }
-    } else if (e.key === "ArrowLeft" && index - 1 >= 0) {
-      // Check if the previous tab has content
-      if (tabs[index - 1]?.content) {
+    } else if (e.key === "ArrowLeft" && index > 0) {
+      // If prev tab is undefined, do nothing
+      if (tabs[index - 1].content) {
         onSelectTab(index - 1);
       }
     }

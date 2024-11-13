@@ -9,7 +9,7 @@ type TabsNavItemProps = {
   isActive: boolean;
   id?: string;
   onSelectTab: (i: number) => void;
-  onKeyDown: (event: React.KeyboardEvent<HTMLDivElement>) => void;
+  onKeyDown: (e: React.KeyboardEvent<HTMLDivElement>) => void;
 };
 
 const TabsNavItem: FC<TabsNavItemProps> = ({

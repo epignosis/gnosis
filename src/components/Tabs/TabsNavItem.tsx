@@ -9,7 +9,7 @@ type TabsNavItemProps = {
   isActive: boolean;
   id?: string;
   onSelectTab: (i: number) => void;
-  onKeyDown: (e: React.KeyboardEvent<HTMLDivElement>) => void;
+  onKeyDown: (e: React.KeyboardEvent<HTMLDivElement>, index: number) => void;
 };
 
 const TabsNavItem: FC<TabsNavItemProps> = ({
@@ -24,6 +24,7 @@ const TabsNavItem: FC<TabsNavItemProps> = ({
     "tab-link": true,
     selected: isActive,
   });
+
   const onClick = (): void => {
     onSelectTab(index);
   };
@@ -39,7 +40,7 @@ const TabsNavItem: FC<TabsNavItemProps> = ({
       role="tab"
       className={HtmlClasses}
       onClick={onClick}
-      onKeyDown={(e) => onKeyDown(e)}
+      onKeyDown={(e) => onKeyDown(e, index)}
       ref={(el) => {
         if (isActive && el) {
           el.focus();

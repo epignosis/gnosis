@@ -112,7 +112,7 @@ const Tabs: FC<TabsProps> = ({
       if (!tabs[index + 1].content) return;
       onSelectTab(index + 1);
     } else if (e.key === "ArrowLeft" && index > 0) {
-      // If next tab is undefined, do nothing
+      // If prev tab is undefined, do nothing
       if (!tabs[index - 1].content) return;
       onSelectTab(index - 1);
     }

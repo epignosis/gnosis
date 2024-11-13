@@ -12,13 +12,13 @@ exports[`<Tabs/> matches snapshot 1`] = `
       tabindex="0"
     >
       <nav
-        class="css-1bw8769-tabsHeader-tabsHeader"
+        class="css-1k44ct3-tabsHeader-tabsHeader"
         role="tablist"
       >
         <div
           aria-controls="content-0"
           aria-selected="true"
-          class="tab-link selected css-t0vep7-tabNavItem-tabNavItem"
+          class="tab-link selected css-rb6ltd-tabNavItem-tabNavItem"
           data-testid="my-tab-0-tab"
           id="my-tab-0"
           role="tab"
@@ -29,7 +29,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
         <div
           aria-controls="content-1"
           aria-selected="false"
-          class="tab-link css-ox2qt3-tabNavItem-tabNavItem"
+          class="tab-link css-6r0alc-tabNavItem-tabNavItem"
           data-testid="my-tab-1-tab"
           id="my-tab-1"
           role="tab"
@@ -40,7 +40,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
         <div
           aria-controls="content-2"
           aria-selected="false"
-          class="tab-link css-ox2qt3-tabNavItem-tabNavItem"
+          class="tab-link css-6r0alc-tabNavItem-tabNavItem"
           data-testid="my-tab-2-tab"
           id="my-tab-2"
           role="tab"
@@ -78,13 +78,13 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
       tabindex="0"
     >
       <nav
-        class="css-1jik7z7-tabsHeader-tabsHeader"
+        class="css-89rnsn-tabsHeader-tabsHeader"
         role="tablist"
       >
         <div
           aria-controls="content-0"
           aria-selected="true"
-          class="tab-link selected css-t0vep7-tabNavItem-tabNavItem"
+          class="tab-link selected css-rb6ltd-tabNavItem-tabNavItem"
           data-testid="my-tab-0-tab"
           id="my-tab-0"
           role="tab"
@@ -95,7 +95,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
         <div
           aria-controls="content-1"
           aria-selected="false"
-          class="tab-link css-ox2qt3-tabNavItem-tabNavItem"
+          class="tab-link css-6r0alc-tabNavItem-tabNavItem"
           data-testid="my-tab-1-tab"
           id="my-tab-1"
           role="tab"
@@ -106,7 +106,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
         <div
           aria-controls="content-2"
           aria-selected="false"
-          class="tab-link css-ox2qt3-tabNavItem-tabNavItem"
+          class="tab-link css-6r0alc-tabNavItem-tabNavItem"
           data-testid="my-tab-2-tab"
           id="my-tab-2"
           role="tab"

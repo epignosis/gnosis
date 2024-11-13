@@ -106,6 +106,14 @@ const Tabs: FC<TabsProps> = ({
     tabOffset && tablist.scrollTo(tabOffset > 0 ? tabOffset - 16 : 0, 0);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "ArrowRight" && activeTab < tabsLength - 1) {
+      onSelectTab(activeTab + 1);
+    } else if (e.key === "ArrowLeft" && activeTab > 0) {
+      onSelectTab(activeTab - 1);
+    }
+  };
+
   return (
     <section css={container} {...rest}>
       <div className="nav-wrapper" role="navigation" tabIndex={0}>
@@ -136,6 +144,7 @@ const Tabs: FC<TabsProps> = ({
                 title={title}
                 isActive={activeTab === index}
                 onSelectTab={onSelectTab}
+                onKeyDown={(e) => handleKeyDown(e)}
               />
             ))}
           {inlineEndComponent && <div className="inline-end-component">{inlineEndComponent}</div>}

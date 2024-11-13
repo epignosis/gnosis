@@ -9,9 +9,17 @@ type TabsNavItemProps = {
   isActive: boolean;
   id?: string;
   onSelectTab: (i: number) => void;
+  onKeyDown: (e: React.KeyboardEvent<HTMLDivElement>) => void;
 };
 
-const TabsNavItem: FC<TabsNavItemProps> = ({ index, title, isActive, id, onSelectTab }) => {
+const TabsNavItem: FC<TabsNavItemProps> = ({
+  index,
+  title,
+  isActive,
+  id,
+  onSelectTab,
+  onKeyDown,
+}) => {
   const HtmlClasses = classNames({
     "tab-link": true,
     selected: isActive,
@@ -31,6 +39,12 @@ const TabsNavItem: FC<TabsNavItemProps> = ({ index, title, isActive, id, onSelec
       role="tab"
       className={HtmlClasses}
       onClick={onClick}
+      onKeyDown={(e) => onKeyDown(e)}
+      ref={(el) => {
+        if (isActive && el) {
+          el.focus();
+        }
+      }}
     >
       {title}
     </div>

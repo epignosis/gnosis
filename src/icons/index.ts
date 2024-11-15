@@ -117,6 +117,7 @@ export { default as TranslateSVG } from "./legacy/translate.svg";
 export { default as WriteAISVG } from "./legacy/write-ai.svg";
 export { default as ChangeToneSVG } from "./legacy/change-tone.svg";
 export { default as MagicWandSVG } from "./legacy/magic-wand.svg";
+export { default as PageSVG } from "./legacy/page.svg";
 
 // Arrow Icons
 export { default as BackIconSVG } from "./arrows/back-icon.svg";

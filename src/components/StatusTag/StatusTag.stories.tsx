@@ -34,7 +34,6 @@ export const Default = Template.bind({});
 Default.args = {
   size: "md",
   text: "English",
-  icon: InfoIconSVG,
 };
 
 export const WithIcon = Template.bind({});

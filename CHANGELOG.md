@@ -1,3 +1,10 @@
+## [5.39.11](https://github.com/epignosis/gnosis/compare/v5.39.10...v5.39.11) (2024-11-20)
+
+
+### Bug Fixes
+
+* **icons:** fix size of ai icons ([#469](https://github.com/epignosis/gnosis/issues/469)) ([cb9efcc](https://github.com/epignosis/gnosis/commit/cb9efcc56c8ac1c22d5e3c5036099853cee892db))
+
 ## [5.39.10](https://github.com/epignosis/gnosis/compare/v5.39.9...v5.39.10) (2024-11-18)
 
 ## [5.39.9](https://github.com/epignosis/gnosis/compare/v5.39.8...v5.39.9) (2024-11-15)

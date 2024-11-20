@@ -109,14 +109,6 @@ export { default as AIIconSVG } from "./legacy/ai-icon.svg";
 export { default as AIAssistantIconSVG } from "./legacy/ai-assistant-icon.svg";
 export { default as AIMessageIconSVG } from "./legacy/ai-message-icon.svg";
 export { default as WandIconSVG } from "./legacy/wand-icon.svg";
-export { default as ContinueSentenceSVG } from "./legacy/continue-sentence.svg";
-export { default as FixGrammarSVG } from "./legacy/fix-grammar.svg";
-export { default as LongTextSVG } from "./legacy/long-text.svg";
-export { default as ShortTextSVG } from "./legacy/short-text.svg";
-export { default as TranslateSVG } from "./legacy/translate.svg";
-export { default as WriteAISVG } from "./legacy/write-ai.svg";
-export { default as ChangeToneSVG } from "./legacy/change-tone.svg";
-export { default as MagicWandSVG } from "./legacy/magic-wand.svg";
 export { default as PageSVG } from "./legacy/page.svg";
 
 // Arrow Icons
@@ -560,3 +552,13 @@ export { default as UserCheckSVG } from "./client/skills/user_check.svg";
 export { default as AILoaderSVG } from "./feature/ai/ai-loader.svg";
 export { default as SparklesSolidSVG } from "./feature/ai/sparkles-solid.svg";
 export { default as CoinsSVG } from "./feature/ai/coins.svg";
+
+// AI Editor Icons
+export { default as ContinueSentenceSVG } from "./client/editor/continue-sentence.svg";
+export { default as FixGrammarSVG } from "./client/editor/fix-grammar.svg";
+export { default as LongTextSVG } from "./client/editor/long-text.svg";
+export { default as ShortTextSVG } from "./client/editor/short-text.svg";
+export { default as TranslateSVG } from "./client/editor/translate.svg";
+export { default as WriteAISVG } from "./client/editor/write-ai.svg";
+export { default as ChangeToneSVG } from "./client/editor/change-tone.svg";
+export { default as MagicWandSVG } from "./client/editor/magic-wand.svg";

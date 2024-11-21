@@ -255,6 +255,7 @@ export { default as RotateRightSVG } from "./client/rotate-right.svg";
 export { default as FlipSVG } from "./client/flip.svg";
 export { default as StarSVG } from "./client/star.svg";
 export { default as HalfStarSVG } from "./client/half-star.svg";
+export { default as StarNoViewboxSVG } from "./client/star-no-viewbox.svg";
 export { default as CameraSVG } from "./client/camera.svg";
 export { default as CameraRegularSVG } from "./client/camera-regular.svg";
 export { default as UnitAnsweredSVG } from "./client/radio-selected.svg";

@@ -49,6 +49,15 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
   }, [rows]);
 
   useEffect(() => {
+    const newSorting = {
+      column: sorting?.column,
+      isDescending: sorting?.isDescending,
+    };
+
+    dispatch({ type: Actions.sortingChanged, payload: newSorting });
+  }, [sorting]);
+
+  useEffect(() => {
     onRowSelect && onRowSelect(selected);
   }, [selected]);
 

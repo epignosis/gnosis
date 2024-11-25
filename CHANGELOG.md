@@ -1,3 +1,10 @@
+## [5.39.14](https://github.com/epignosis/gnosis/compare/v5.39.13...v5.39.14) (2024-11-25)
+
+
+### Bug Fixes
+
+* **table:** fix inability to update sorting props externally ([#472](https://github.com/epignosis/gnosis/issues/472)) ([d6f520a](https://github.com/epignosis/gnosis/commit/d6f520a1fe55d9c1adb5784503372e67f1b3f0f8))
+
 ## [5.39.13](https://github.com/epignosis/gnosis/compare/v5.39.12...v5.39.13) (2024-11-21)
 
 ## [5.39.12](https://github.com/epignosis/gnosis/compare/v5.39.11...v5.39.12) (2024-11-21)

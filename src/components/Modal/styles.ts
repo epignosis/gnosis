@@ -4,7 +4,8 @@ import { mq } from "@theme/utils/breakpoints";
 import { modal } from "@theme/default/config";
 
 const widthDimensions = {
-  md: "32rem",
+  sm: "32rem",
+  md: "48rem",
   lg: "64rem",
   fullscreen: "100%",
 };

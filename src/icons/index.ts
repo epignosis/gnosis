@@ -463,6 +463,8 @@ export { default as StartArrowFilledSVG } from "./client/start-arrow-filled.svg"
 export { default as CanceledFilledSVG } from "./client/canceled-filled.svg";
 export { default as PartyHornSVG } from "./client/party-horn.svg";
 export { default as GroupViewSVG } from "./client/group-view.svg";
+export { default as SavingsSVG } from "./client/savings.svg";
+export { default as GamepadModernSVG } from "./client/gamepad-modern.svg";
 
 // Exports from folders.
 // Assignments Icons

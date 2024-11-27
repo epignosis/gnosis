@@ -1,3 +1,10 @@
+# [5.40.0](https://github.com/epignosis/gnosis/compare/v5.39.15...v5.40.0) (2024-11-27)
+
+
+### Features
+
+* **modal:** add modal sizes ([#473](https://github.com/epignosis/gnosis/issues/473)) ([b9cd07a](https://github.com/epignosis/gnosis/commit/b9cd07a4fe6f6c3defc29961550d33fda425c766))
+
 ## [5.39.15](https://github.com/epignosis/gnosis/compare/v5.39.14...v5.39.15) (2024-11-27)
 
 ## [5.39.14](https://github.com/epignosis/gnosis/compare/v5.39.13...v5.39.14) (2024-11-25)

@@ -56,7 +56,7 @@ type ModalCompoundProps = {
   Footer: FC<FooterProps>;
 };
 
-export type Size = "md" | "lg" | "fullscreen";
+export type Size = "sm" | "md" | "lg" | "fullscreen";
 
 //opacity is set 0.7 default
 
@@ -72,7 +72,7 @@ const Modal: FCWithChildren<ReactModalProps> & ModalCompoundProps = ({
   children,
   isOpen,
   onClose,
-  size = "md",
+  size = "sm",
   rootElementSelector = "#app",
   closeOnOutsideClick = true,
   style,

@@ -122,7 +122,7 @@ describe("<Modal>", () => {
     expect(modal).toMatchSnapshot();
   });
 
-  it("matches snapshot with cutom HTML classes", () => {
+  it("matches snapshot with custom HTML classes", () => {
     const modalContainer = document.createElement("div");
     modalContainer.setAttribute("id", "app");
     document.body.appendChild(modalContainer);

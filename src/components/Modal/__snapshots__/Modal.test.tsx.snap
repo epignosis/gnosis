@@ -44,7 +44,7 @@ exports[`<Modal> matches snapshot with all props 1`] = `
   tabindex="-1"
 >
   <header
-    class="css-11pbick-modalHeader-modalHeader"
+    class="css-ityk00-modalHeader-modalHeader"
     data-testid="modal-header"
   >
     <div>
@@ -81,7 +81,7 @@ exports[`<Modal> matches snapshot with all props 1`] = `
     />
   </article>
   <footer
-    class="css-fioxl6-modalFooter-modalFooter"
+    class="css-1ivdtwx-modalFooter-modalFooter"
     data-testid="modal-footer"
     style="border: 2px solid purple; text-align: right;"
   >

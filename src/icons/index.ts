@@ -465,6 +465,7 @@ export { default as PartyHornSVG } from "./client/party-horn.svg";
 export { default as GroupViewSVG } from "./client/group-view.svg";
 export { default as SavingsSVG } from "./client/savings.svg";
 export { default as GamepadModernSVG } from "./client/gamepad-modern.svg";
+export { default as PaypalCardSVG } from "./client/paypal-card.svg";
 
 // Exports from folders.
 // Assignments Icons

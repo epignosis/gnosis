@@ -42,8 +42,8 @@ const TabsNavItem: FC<TabsNavItemProps> = ({
       onClick={onClick}
       onKeyDown={(e) => onKeyDown(e, index)}
       ref={(el) => {
-        if (isActive && el) {
-          el.focus();
+        if (isActive && index !== 0 && el) {
+          el.focus({ preventScroll: true });
         }
       }}
     >

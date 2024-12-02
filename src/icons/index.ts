@@ -175,6 +175,7 @@ export { default as SalesforceSVG } from "./logos/salesforce.svg";
 export { default as ShopifySVG } from "./logos/shopify.svg";
 export { default as SlackSVG } from "./logos/slack.svg";
 export { default as GoogleTagManagerSVG } from "./logos/google-tag-manager.svg";
+export { default as OpenSesameLogoSVG } from "./logos/open-sesame.svg";
 
 // Social Media Icons
 export { default as GoogleSVG } from "./social/google.svg";

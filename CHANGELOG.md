@@ -1,3 +1,10 @@
+## [5.40.2](https://github.com/epignosis/gnosis/compare/v5.40.1...v5.40.2) (2024-12-02)
+
+
+### Bug Fixes
+
+* **tabs:** fix tabs issue auto focusing and causing page scroll ([#476](https://github.com/epignosis/gnosis/issues/476)) ([124a9ae](https://github.com/epignosis/gnosis/commit/124a9ae2557fbc37ff6d242fad8d799f6acf9f70))
+
 ## [5.40.1](https://github.com/epignosis/gnosis/compare/v5.40.0...v5.40.1) (2024-11-29)
 
 # [5.40.0](https://github.com/epignosis/gnosis/compare/v5.39.15...v5.40.0) (2024-11-27)

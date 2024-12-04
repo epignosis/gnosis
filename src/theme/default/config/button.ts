@@ -59,8 +59,8 @@ export default {
       hoverColor: colors.black,
     },
     outline: {
-      color: colors.secondary.base,
-      borderColor: colors.secondary.base,
+      color: colors.secondary.darker,
+      borderColor: colors.secondary.dark,
     },
     link: {
       color: colors.black,
@@ -181,6 +181,36 @@ export default {
     outline: {
       color: colors.primary.darker,
       borderColor: colors.primary.darker,
+    },
+    link: {
+      color: colors.primary.darker,
+      hoverColor: colors.primary.base,
+    },
+  },
+  white: {
+    default: {
+      background: colors.white,
+      borderColor: colors.white,
+      color: colors.primary.darker,
+    },
+    hover: {
+      background: colors.white,
+      borderColor: colors.white,
+      color: colors.primary.base,
+    },
+    active: {
+      background: colors.white,
+      borderColor: colors.white,
+      color: colors.primary.base,
+    },
+    ghost: {
+      color: colors.primary.darker,
+      background: colors.white,
+      hoverColor: colors.primary.base,
+    },
+    outline: {
+      color: colors.primary.darker,
+      borderColor: colors.white,
     },
     link: {
       color: colors.primary.darker,

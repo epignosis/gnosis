@@ -101,6 +101,52 @@ PrimaryDarker.args = {
   children: "Primary darker",
 };
 
+const WhiteTemplate: StoryFn<ButtonProps<"button">> = ({ style, ...args }) => (
+  <>
+    <div style={{ marginBottom: 16 }}>
+      <div style={style}>
+        <Button size="sm" {...args} />
+      </div>
+      <span style={{ marginRight: 16 }} />
+      <Button size="sm" {...args} variant="outline" />
+      <span style={{ marginRight: 16 }} />
+      <Button size="sm" {...args} variant="ghost" />
+      <span style={{ marginRight: 16 }} />
+      <Button size="sm" {...args} variant="link" />
+    </div>
+    <div style={{ marginBottom: 16 }}>
+      <div style={style}>
+        <Button {...args} />
+      </div>
+      <span style={{ marginRight: 16 }} />
+      <Button {...args} variant="outline" />
+      <span style={{ marginRight: 16 }} />
+      <Button {...args} variant="ghost" />
+      <span style={{ marginRight: 16 }} />
+      <Button {...args} variant="link" />
+    </div>
+    <div style={{ marginBottom: 16 }}>
+      <div style={style}>
+        <Button size="lg" {...args} />
+      </div>
+      <span style={{ marginRight: 16 }} />
+      <Button size="lg" {...args} variant="outline" />
+      <span style={{ marginRight: 16 }} />
+      <Button size="lg" {...args} variant="ghost" />
+      <span style={{ marginRight: 16 }} />
+      <Button size="lg" {...args} variant="link" />
+    </div>
+  </>
+);
+
+export const White = WhiteTemplate.bind({});
+
+White.args = {
+  color: "white",
+  children: "White",
+  style: { background: colors.primary.darker, padding: "0.75rem", display: "inline-block" },
+};
+
 export const WithIconBefore = Template.bind({});
 
 WithIconBefore.args = {

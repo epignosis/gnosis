@@ -1,9 +1,10 @@
 import React, { ReactElement, ReactNode, ElementType } from "react";
 import { SerializedStyles } from "@emotion/react";
-import { LazyMotion, domAnimation, m, AnimatePresence, Variants } from "framer-motion";
+import { LazyMotion, domAnimation, m, AnimatePresence } from "framer-motion";
 import classNames from "classnames";
 import Loader from "../Loaders/Loader";
 import { btnContainer } from "./styles";
+import { iconSizes, spinnerWrapperVariants } from "./constants";
 import { IconType, PolymorphicComponentProps } from "types/common";
 
 export type Color =
@@ -12,7 +13,9 @@ export type Color =
   | "danger"
   | "success"
   | "primaryLight"
-  | "primaryDarker";
+  | "primaryDarker"
+  | "white";
+
 export type Size = "sm" | "md" | "lg";
 
 export type Props = {
@@ -32,29 +35,6 @@ export type Props = {
 };
 
 export type ButtonProps<C extends ElementType> = PolymorphicComponentProps<C, Props>;
-
-const iconSizes = {
-  sm: 28,
-  md: 30,
-  lg: 32,
-};
-
-const spinnerWrapperVariants: Variants = {
-  hidden: {
-    opacity: 0,
-    marginInlineEnd: 6,
-    transition: {
-      duration: 0.1,
-    },
-  },
-  visible: {
-    opacity: 1,
-    marginInlineEnd: 6,
-    transition: {
-      duration: 0.1,
-    },
-  },
-};
 
 const Button = <C extends ElementType = "button">(props: ButtonProps<C>): ReactElement => {
   const {

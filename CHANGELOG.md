@@ -1,3 +1,10 @@
+# [5.41.0](https://github.com/epignosis/gnosis/compare/v5.40.4...v5.41.0) (2024-12-04)
+
+
+### Features
+
+* **button:** implement white color button ([#479](https://github.com/epignosis/gnosis/issues/479)) ([6d9cb6d](https://github.com/epignosis/gnosis/commit/6d9cb6d2e679dce6cd9abef62b5b6bbbf0cd1380))
+
 ## [5.40.4](https://github.com/epignosis/gnosis/compare/v5.40.3...v5.40.4) (2024-12-03)
 
 ## [5.40.3](https://github.com/epignosis/gnosis/compare/v5.40.2...v5.40.3) (2024-12-03)

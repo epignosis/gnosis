@@ -1,4 +1,12 @@
-import React, { FC, Fragment, useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, {
+  FC,
+  Fragment,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  MouseEvent,
+} from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
 import { useClickAway } from "ahooks";
@@ -90,7 +98,8 @@ const Dropdown: FC<DropdownProps> = ({
     }
   }, [disabled, list]);
 
-  const toggleList = (): void => {
+  const toggleList = (e: MouseEvent<HTMLDivElement>): void => {
+    e.stopPropagation();
     if (disabled || hover) return;
 
     // We want to reset the dropdown list every time it opens

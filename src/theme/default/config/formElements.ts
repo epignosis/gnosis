@@ -61,7 +61,7 @@ export default {
     backgroundEnabled: colors.primary.base,
     backgroundInlineEnabled: colors.green.base,
     backgroundDisabled: colors.secondary.base,
-    backgroundInlineDisabled: Color(colors.primary.lightest).alpha(0.5).string(),
+    backgroundInlineDisabled: Color(colors.primary.lightest).alpha(0.25).string(),
     disabledBackground: colors.secondary.light,
     textColor: colors.white,
     requiredAsteriskColor: colors.red.base,

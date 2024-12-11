@@ -1,3 +1,10 @@
+## [5.41.3](https://github.com/epignosis/gnosis/compare/v5.41.2...v5.41.3) (2024-12-11)
+
+
+### Bug Fixes
+
+* open sesame logo view ([#482](https://github.com/epignosis/gnosis/issues/482)) ([f9cd11e](https://github.com/epignosis/gnosis/commit/f9cd11e7ee679cf24806dc4e6dc5f5aebf2e3d19))
+
 ## [5.41.2](https://github.com/epignosis/gnosis/compare/v5.41.1...v5.41.2) (2024-12-09)
 
 ## [5.41.1](https://github.com/epignosis/gnosis/compare/v5.41.0...v5.41.1) (2024-12-09)

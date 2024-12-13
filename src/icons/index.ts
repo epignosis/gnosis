@@ -473,6 +473,9 @@ export { default as BooksPlusSVG } from "./client/books-plus.svg";
 export { default as SeedlingSVG } from "./client/seedling.svg";
 export { default as UserSleepingSVG } from "./client/user-sleeping.svg";
 export { default as UsersRectangleSVG } from "./client/users-rectangle.svg";
+export { default as HourglassClockSVG } from "./client/hourglass-clock.svg";
+export { default as BarcodeSVG } from "./client/barcode.svg";
+export { default as ClockFiveSVG } from "./client/clock-five.svg";
 
 // Exports from folders.
 // Assignments Icons

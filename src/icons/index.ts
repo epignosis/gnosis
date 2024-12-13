@@ -128,6 +128,7 @@ export { default as EnterSVG } from "./arrows/enter.svg";
 export { default as CircleArrowUpSVG } from "./arrows/circle-arrow-up.svg";
 export { default as CircleArrowDownSVG } from "./arrows/circle-arrow-down.svg";
 export { default as ArrowRightIconSVG } from "./arrows/arrow-right-icon.svg";
+export { default as ArrowsTurnToDotsSVG } from "./arrows/arrows-turn-to-dots.svg";
 
 // Chevron Icons
 export { default as ArrowRightSVG } from "./chevrons/arrow-right.svg";
@@ -467,6 +468,13 @@ export { default as GroupViewSVG } from "./client/group-view.svg";
 export { default as SavingsSVG } from "./client/savings.svg";
 export { default as GamepadModernSVG } from "./client/gamepad-modern.svg";
 export { default as PaypalCardSVG } from "./client/paypal-card.svg";
+export { default as BarsProgressSVG } from "./client/bars-progress.svg";
+export { default as SeedlingSVG } from "./client/seedling.svg";
+export { default as UserSleepingSVG } from "./client/user-sleeping.svg";
+export { default as UsersRectangleSVG } from "./client/users-rectangle.svg";
+export { default as HourglassClockSVG } from "./client/hourglass-clock.svg";
+export { default as BarcodeSVG } from "./client/barcode.svg";
+export { default as ClockFiveSVG } from "./client/clock-five.svg";
 
 // Exports from folders.
 // Assignments Icons

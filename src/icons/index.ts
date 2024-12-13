@@ -469,7 +469,6 @@ export { default as SavingsSVG } from "./client/savings.svg";
 export { default as GamepadModernSVG } from "./client/gamepad-modern.svg";
 export { default as PaypalCardSVG } from "./client/paypal-card.svg";
 export { default as BarsProgressSVG } from "./client/bars-progress.svg";
-export { default as BooksPlusSVG } from "./client/books-plus.svg";
 export { default as SeedlingSVG } from "./client/seedling.svg";
 export { default as UserSleepingSVG } from "./client/user-sleeping.svg";
 export { default as UsersRectangleSVG } from "./client/users-rectangle.svg";

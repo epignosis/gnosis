@@ -476,6 +476,7 @@ export { default as UsersRectangleSVG } from "./client/users-rectangle.svg";
 export { default as HourglassClockSVG } from "./client/hourglass-clock.svg";
 export { default as BarcodeSVG } from "./client/barcode.svg";
 export { default as ClockFiveSVG } from "./client/clock-five.svg";
+export { default as FolderOpenSVG } from "./client/folder-open.svg";
 
 // Exports from folders.
 // Assignments Icons

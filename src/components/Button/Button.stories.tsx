@@ -101,6 +101,13 @@ PrimaryDarker.args = {
   children: "Primary darker",
 };
 
+export const Orange = Template.bind({});
+
+Orange.args = {
+  color: "orange",
+  children: "Orange",
+};
+
 const WhiteTemplate: StoryFn<ButtonProps<"button">> = ({ style, ...args }) => (
   <>
     <div style={{ marginBottom: 16 }}>

@@ -53,3 +53,4 @@ export type { Column, Row } from "./components/Table/types";
 export type { DropdownProps, DropdownItem } from "./components/Dropdown/types";
 export type { TableHandlers } from "./components/Table/types";
 export type { StatusTagColors } from "./components/StatusTag/StatusTag";
+export type { Color } from "./components/Button/Button";

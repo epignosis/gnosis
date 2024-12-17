@@ -14,7 +14,8 @@ export type Color =
   | "success"
   | "primaryLight"
   | "primaryDarker"
-  | "white";
+  | "white"
+  | "orange";
 
 export type Size = "sm" | "md" | "lg";
 

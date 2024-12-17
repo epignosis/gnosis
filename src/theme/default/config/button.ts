@@ -217,4 +217,34 @@ export default {
       hoverColor: colors.primary.base,
     },
   },
+  orange: {
+    default: {
+      background: colors.orange.base,
+      borderColor: colors.orange.base,
+      color: colors.black,
+    },
+    hover: {
+      background: colors.orange.light,
+      borderColor: colors.orange.light,
+      color: colors.black,
+    },
+    active: {
+      background: colors.orange.base,
+      borderColor: colors.orange.base,
+      color: colors.black,
+    },
+    ghost: {
+      color: colors.orange.base,
+      background: colors.orange.light,
+      hoverColor: colors.black,
+    },
+    outline: {
+      color: colors.black,
+      borderColor: colors.orange.light,
+    },
+    link: {
+      color: colors.orange.base,
+      hoverColor: colors.primary.base,
+    },
+  },
 };

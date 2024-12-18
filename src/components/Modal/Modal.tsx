@@ -60,7 +60,7 @@ export type Size = "sm" | "md" | "lg" | "fullscreen";
 
 //opacity is set 0.7 default
 
-export type ReactModalProps = Pick<Props, "isOpen"> & {
+export type ReactModalProps = Pick<Props, "isOpen" | "onAfterOpen"> & {
   onClose?: () => void;
   size?: Size;
   rootElementSelector?: string;
@@ -76,6 +76,7 @@ const Modal: FCWithChildren<ReactModalProps> & ModalCompoundProps = ({
   rootElementSelector = "#app",
   closeOnOutsideClick = true,
   style,
+  onAfterOpen,
 }) => {
   const rootElement = document.querySelector(rootElementSelector) as HTMLElement;
   const clonedChildren = Children.map(children, (child) =>
@@ -91,6 +92,7 @@ const Modal: FCWithChildren<ReactModalProps> & ModalCompoundProps = ({
           isOpen={isOpen}
           appElement={rootElement}
           onRequestClose={onClose}
+          onAfterOpen={onAfterOpen}
           contentLabel="modal"
           overlayClassName={{
             base: "overlay-base",

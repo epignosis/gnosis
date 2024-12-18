@@ -60,13 +60,12 @@ export type Size = "sm" | "md" | "lg" | "fullscreen";
 
 //opacity is set 0.7 default
 
-export type ReactModalProps = Pick<Props, "isOpen"> & {
+export type ReactModalProps = Pick<Props, "isOpen" | "onAfterOpen"> & {
   onClose?: () => void;
   size?: Size;
   rootElementSelector?: string;
   closeOnOutsideClick?: boolean;
   style?: ReactModal.Styles;
-  onAfterOpen?: ReactModal.OnAfterOpenCallback;
 };
 
 const Modal: FCWithChildren<ReactModalProps> & ModalCompoundProps = ({

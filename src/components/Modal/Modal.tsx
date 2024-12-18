@@ -66,6 +66,7 @@ export type ReactModalProps = Pick<Props, "isOpen"> & {
   rootElementSelector?: string;
   closeOnOutsideClick?: boolean;
   style?: ReactModal.Styles;
+  onAfterOpen?: ReactModal.OnAfterOpenCallback;
 };
 
 const Modal: FCWithChildren<ReactModalProps> & ModalCompoundProps = ({
@@ -76,6 +77,7 @@ const Modal: FCWithChildren<ReactModalProps> & ModalCompoundProps = ({
   rootElementSelector = "#app",
   closeOnOutsideClick = true,
   style,
+  onAfterOpen,
 }) => {
   const rootElement = document.querySelector(rootElementSelector) as HTMLElement;
   const clonedChildren = Children.map(children, (child) =>
@@ -91,6 +93,7 @@ const Modal: FCWithChildren<ReactModalProps> & ModalCompoundProps = ({
           isOpen={isOpen}
           appElement={rootElement}
           onRequestClose={onClose}
+          onAfterOpen={onAfterOpen}
           contentLabel="modal"
           overlayClassName={{
             base: "overlay-base",

@@ -54,3 +54,4 @@ export type { DropdownProps, DropdownItem } from "./components/Dropdown/types";
 export type { TableHandlers } from "./components/Table/types";
 export type { StatusTagColors } from "./components/StatusTag/StatusTag";
 export type { Color } from "./components/Button/Button";
+export type { ReactModalProps as ModalProps } from "./components/Modal/Modal";

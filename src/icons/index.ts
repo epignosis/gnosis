@@ -251,6 +251,7 @@ export { default as RatingPoorSVG } from "./feature/rating/rating-poor.svg";
 
 // C L I E N T  E X P O R T S
 // Main Exports
+export { default as OpenSesameCourseChangesSVG } from "./client/open-sesame-course-changes.svg";
 export { default as ImageDisplaySVG } from "./client/image.svg";
 export { default as RotateLeftSVG } from "./client/rotate-left.svg";
 export { default as RotateRightSVG } from "./client/rotate-right.svg";

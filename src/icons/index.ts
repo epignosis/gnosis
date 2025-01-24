@@ -478,6 +478,8 @@ export { default as HourglassClockSVG } from "./client/hourglass-clock.svg";
 export { default as BarcodeSVG } from "./client/barcode.svg";
 export { default as ClockFiveSVG } from "./client/clock-five.svg";
 export { default as FolderOpenSVG } from "./client/folder-open.svg";
+export { default as CircleDashedSVG } from "./client/circle-dashed.svg";
+export { default as CircleStopSVG } from "./client/circle-stop.svg";
 
 // Exports from folders.
 // Assignments Icons

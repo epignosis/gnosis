@@ -129,6 +129,7 @@ export { default as CircleArrowUpSVG } from "./arrows/circle-arrow-up.svg";
 export { default as CircleArrowDownSVG } from "./arrows/circle-arrow-down.svg";
 export { default as ArrowRightIconSVG } from "./arrows/arrow-right-icon.svg";
 export { default as ArrowsTurnToDotsSVG } from "./arrows/arrows-turn-to-dots.svg";
+export { default as SolidCircleArrowRightSVG } from "./arrows/solid-circle-arrow-right.svg";
 
 // Chevron Icons
 export { default as ArrowRightSVG } from "./chevrons/arrow-right.svg";

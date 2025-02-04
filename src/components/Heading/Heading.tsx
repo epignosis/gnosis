@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { forwardRef, ForwardRefRenderFunction } from "react";
 import { headingContainer } from "./styles";
 import { TypographyLevels } from "@theme/utils/typography";
 
@@ -18,15 +18,22 @@ export const SIZES = {
   h6: "sm",
 } as const;
 
-const Heading: FC<HeadingProps> = ({ size, as = "h2", children, ...rest }) => {
+const Heading: ForwardRefRenderFunction<HTMLHeadingElement, HeadingProps> = (
+  { size, as = "h2", children, ...rest },
+  forwardedRef,
+) => {
   const HeadingTag = as;
   const selectedSize = size || SIZES[as];
 
   return (
-    <HeadingTag css={(theme) => headingContainer(theme, { size: selectedSize })} {...rest}>
+    <HeadingTag
+      css={(theme) => headingContainer(theme, { size: selectedSize })}
+      {...rest}
+      ref={forwardedRef}
+    >
       {children}
     </HeadingTag>
   );
 };
 
-export default Heading;
+export default forwardRef(Heading);

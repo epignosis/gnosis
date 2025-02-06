@@ -16,6 +16,7 @@ const Pagination: FC<PaginationProps> = ({
   pageSize,
   page,
   translations,
+  a11yTranslations,
   totalPages,
   rowsPerPageOptions,
   dir = "ltr",
@@ -52,6 +53,7 @@ const Pagination: FC<PaginationProps> = ({
           items={options}
           selected={pageSize}
           listPlacement={listPlacement}
+          ariaLabel={a11yTranslations.perPage}
           onClickItemHandler={handlePageSize}
           disabled={disabled}
         />
@@ -66,6 +68,7 @@ const Pagination: FC<PaginationProps> = ({
           variant="ghost"
           noGutters
           disabled={isPrevBtnDisabled || disabled}
+          aria-label={a11yTranslations.firstPage}
         >
           <ChevronArrowLineLeftSVG />
         </Button>
@@ -79,6 +82,7 @@ const Pagination: FC<PaginationProps> = ({
           variant="ghost"
           noGutters
           disabled={isPrevBtnDisabled || disabled}
+          aria-label={a11yTranslations.previousPage}
         >
           <ChevronArrowLeftSVG />
         </Button>
@@ -88,6 +92,7 @@ const Pagination: FC<PaginationProps> = ({
             items={optionItems}
             selected={page}
             listPlacement={listPlacement}
+            ariaLabel={a11yTranslations.ofPages}
             onClickItemHandler={handlePageChange}
             disabled={disabled}
           />
@@ -107,6 +112,7 @@ const Pagination: FC<PaginationProps> = ({
           variant="ghost"
           noGutters
           disabled={isNextBtnDisabled || disabled}
+          aria-label={a11yTranslations.nextPage}
         >
           <ChevronArrowRightSVG />
         </Button>
@@ -120,6 +126,7 @@ const Pagination: FC<PaginationProps> = ({
           variant="ghost"
           noGutters
           disabled={isNextBtnDisabled || disabled}
+          aria-label={a11yTranslations.lastPage}
         >
           <ChevronArrowLineRightSVG />
         </Button>

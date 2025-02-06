@@ -20,6 +20,15 @@ const translations = {
   ofPages: "of",
 };
 
+const a11yTranslations = {
+  perPage: "20 results per page",
+  nextPage: "Go to the next page",
+  previousPage: "Go to the previous page",
+  firstPage: "Go to first page",
+  lastPage: "Go to the last page",
+  ofPages: "Page 1 of 6 pages",
+};
+
 export default {
   component: Pagination,
   title: "Components/Pagination",
@@ -34,6 +43,7 @@ export default {
   args: {
     page: 1,
     translations,
+    a11yTranslations,
     pageSize: 20,
     totalPages: 6,
     rowsPerPageOptions,

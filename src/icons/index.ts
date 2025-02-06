@@ -227,6 +227,11 @@ export { default as LinkedUnitChipChildSVG } from "./feature/units/linked-unit-c
 export { default as LinkedUnitChipParentSVG } from "./feature/units/linked-unit-chip-parent-icon.svg";
 export { default as MultiSessionSVG } from "./feature/units/multi-session.svg";
 export { default as MoreIconNoViewboxSVG } from "./feature/units/more-icon-no-viewbox.svg";
+export { default as UnitsGroupsSVG } from "./feature/units/groups.svg";
+export { default as ChatTickSVG } from "./feature/units/chat-tick.svg";
+export { default as FileLinesRegularSVG } from "./feature/units/file-lines-regular.svg";
+export { default as BoxRegularSVG } from "./feature/units/box-regular.svg";
+export { default as PenSVG } from "./feature/units/pen.svg";
 
 // Questions Icons
 export { default as DragAndDropSVG } from "./feature/questions/drag-and-drop.svg";
@@ -561,6 +566,7 @@ export { default as TrainingTimeSVG } from "./client/widgets/training-time.svg";
 export { default as EnviromentalImpactSVG } from "./client/widgets/environmental-impact.svg";
 export { default as CompletedAssignmentsSVG } from "./client/widgets/completed-assignments.svg";
 export { default as SubmittedCommentsSVG } from "./client/widgets/submitted-comments.svg";
+export { default as ChartLineUpSVG } from "./client/widgets/chart-line-up.svg";
 
 // Skills Icons
 export { default as BrainSVG } from "./client/skills/brain.svg";

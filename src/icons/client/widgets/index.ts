@@ -15,3 +15,4 @@ export { default as TrainingTimeSVG } from "./training-time.svg";
 export { default as EnviromentalImpactSVG } from "./environmental-impact.svg";
 export { default as CompletedAssignmentsSVG } from "./completed-assignments.svg";
 export { default as SubmittedCommentsSVG } from "./submitted-comments.svg";
+export { default as ChartLineUpSVG } from "./chart-line-up.svg";

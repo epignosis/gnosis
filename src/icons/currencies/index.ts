@@ -20,4 +20,3 @@ export { default as PoundSterlingSVG } from "./pound-sterling.svg";
 export { default as SingaporeDollarSVG } from "./singapore-dollar.svg";
 export { default as SwissFrancSVG } from "./swiss-franc.svg";
 export { default as ThaiBahtSVG } from "./thai-baht.svg";
-export { default as ChartLineUp } from "./chart-line-up.svg";

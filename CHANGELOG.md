@@ -1,3 +1,10 @@
+## [5.41.14](https://github.com/epignosis/gnosis/compare/v5.41.13...v5.41.14) (2025-02-06)
+
+
+### Bug Fixes
+
+* **patch version:** a short, imperative tense description of the change ([#496](https://github.com/epignosis/gnosis/issues/496)) ([a583079](https://github.com/epignosis/gnosis/commit/a583079f8e10027eee47c56c11111ca5eb7a7f55))
+
 ## [5.41.13](https://github.com/epignosis/gnosis/compare/v5.41.12...v5.41.13) (2025-02-06)
 
 ## [5.41.12](https://github.com/epignosis/gnosis/compare/v5.41.11...v5.41.12) (2025-02-04)

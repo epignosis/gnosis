@@ -14,9 +14,12 @@ exports[`<ToggleSwitch /> Matches snapshot 1`] = `
         class="switch-container"
       >
         <div
+          aria-labelledby="my-toggle"
+          aria-selected="false"
           class="switch"
           data-checked="false"
           data-testid="switch"
+          role="button"
         >
           <div
             class="thumb"

@@ -6,7 +6,7 @@ import { InfoIconSVG } from "../../../icons";
 import { ToggleContainer } from "./styles";
 
 export type ToggleProps = {
-  id?: string;
+  id: string;
   labelBefore?: string;
   labelAfter?: string;
   defaultChecked?: boolean;
@@ -45,7 +45,7 @@ const switchClassNames = (customClassName: string, isMedium: boolean, isSuccess:
   });
 
 const ToggleSwitch: React.FC<ToggleProps> = ({
-  id = "toggle-switch",
+  id,
   labelBefore,
   labelAfter,
   description,
@@ -125,6 +125,9 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
             data-checked={isChecked}
             className={switchClassNames("switch", isMedium, isSuccess)}
             onClick={handleToggle}
+            role="button"
+            aria-selected={isChecked}
+            aria-labelledby={id}
           >
             {hasInlineText && isMedium && (
               <Text fontSize="sm" className="inline-text">

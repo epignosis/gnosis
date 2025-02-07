@@ -1,5 +1,6 @@
 import React, { Children, cloneElement, ReactElement, useEffect } from "react";
 import { createPortal } from "react-dom";
+import ReactFocusLock from "react-focus-lock";
 import { SerializedStyles } from "@emotion/react";
 import { AnimatePresence, m, Variants, MotionStyle, domAnimation, LazyMotion } from "framer-motion";
 import classNames from "classnames";
@@ -105,21 +106,23 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
             {...rest}
           >
             {showMask && <Mask onClose={onClose} />}
-            <m.dialog
-              id="drawer-dialog"
-              style={dialogStyles}
-              className={dialogClassNames}
-              aria-expanded={isOpen}
-              aria-hidden={!isOpen}
-              aria-modal="true"
-              initial="initial"
-              animate="expanded"
-              exit="initial"
-              variants={dialogVariants}
-              custom={{ placement, width }}
-            >
-              {clonedChildren}
-            </m.dialog>
+            <ReactFocusLock returnFocus>
+              <m.dialog
+                id="drawer-dialog"
+                style={dialogStyles}
+                className={dialogClassNames}
+                aria-expanded={isOpen}
+                aria-hidden={!isOpen}
+                aria-modal="true"
+                initial="initial"
+                animate="expanded"
+                exit="initial"
+                variants={dialogVariants}
+                custom={{ placement, width }}
+              >
+                {clonedChildren}
+              </m.dialog>
+            </ReactFocusLock>
           </div>
         )}
       </AnimatePresence>

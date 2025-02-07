@@ -109,6 +109,7 @@
     "core-js": "^3.38.1",
     "deepmerge": "^4.3.1",
     "framer-motion": "^6.5.1",
+    "react-focus-lock": "^2.13.5",
     "react-modal": "^3.16.1",
     "react-select": "^5.8.1",
     "react-spinners": "^0.13.6",

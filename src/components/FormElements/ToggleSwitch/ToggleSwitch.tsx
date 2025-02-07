@@ -74,7 +74,9 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
     setIsChecked(defaultChecked);
   }, [defaultChecked]);
 
-  const handleToggle = (e: React.MouseEvent<HTMLDivElement>): void => {
+  const handleToggle = (
+    e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>,
+  ): void => {
     e.stopPropagation();
 
     if (!isDisabled) {
@@ -85,6 +87,8 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
 
   return (
     <div
+      tabIndex={0}
+      onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => e.key === "Enter" && handleToggle(e)}
       css={(theme): SerializedStyles =>
         ToggleContainer(theme, {
           isChecked,
@@ -95,6 +99,7 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
       }
       data-testid={id}
       data-checked={isChecked}
+      aria-label={tooltip}
       {...rest}
     >
       <div className="switch-container">

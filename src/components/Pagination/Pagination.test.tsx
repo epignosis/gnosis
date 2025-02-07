@@ -10,6 +10,15 @@ const rowsPerPageOptions: PaginationDropDownOptions[] = [
   { value: 30, label: "30 rows" },
 ];
 
+const a11yTranslations = {
+  perPage: "20 results per page",
+  nextPage: "Go to the next page",
+  previousPage: "Go to the previous page",
+  firstPage: "Go to first page",
+  lastPage: "Go to the last page",
+  ofPages: "Page 1 of 6 pages",
+};
+
 describe("<Pagination />", () => {
   it("renders correctly", () => {
     render(
@@ -25,6 +34,7 @@ describe("<Pagination />", () => {
           lastPage: "Last page",
           ofPages: "of",
         }}
+        a11yTranslations={a11yTranslations}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}
         onPageChange={jest.fn()}
@@ -52,6 +62,7 @@ describe("<Pagination />", () => {
           lastPage: "Last page",
           ofPages: "of",
         }}
+        a11yTranslations={a11yTranslations}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}
         onPageChange={jest.fn()}
@@ -78,6 +89,7 @@ describe("<Pagination />", () => {
           lastPage: "Last page",
           ofPages: "of",
         }}
+        a11yTranslations={a11yTranslations}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}
         onPageChange={jest.fn()}
@@ -105,6 +117,7 @@ describe("<Pagination />", () => {
           lastPage: "Last page",
           ofPages: "of",
         }}
+        a11yTranslations={a11yTranslations}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}
         onPageChange={mockFn}
@@ -136,6 +149,7 @@ describe("<Pagination />", () => {
           lastPage: "Last page",
           ofPages: "of",
         }}
+        a11yTranslations={a11yTranslations}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}
         onPageChange={jest.fn()}
@@ -161,6 +175,7 @@ describe("<Pagination />", () => {
           lastPage: "Last page",
           ofPages: "of",
         }}
+        a11yTranslations={a11yTranslations}
         rowsPerPageOptions={rowsPerPageOptions}
         onPageSizeChange={jest.fn()}
         onPageChange={jest.fn()}

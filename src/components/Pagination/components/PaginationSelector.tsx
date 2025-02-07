@@ -22,6 +22,7 @@ const SelectedOptionClasses = (isSelected: boolean): string =>
 type PaginationSelectorProps = {
   items: PaginationDropDownOptions[];
   selected: number;
+  ariaLabel: string;
   listPlacement?: ListPlacement;
   disabled?: boolean;
   onClickItemHandler: (item: number) => void;
@@ -30,6 +31,7 @@ type PaginationSelectorProps = {
 const PaginationSelector: FC<PaginationSelectorProps> = ({
   items,
   selected,
+  ariaLabel,
   listPlacement = "top",
   disabled = false,
   onClickItemHandler,
@@ -76,6 +78,7 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
         disabled={!hasItems || disabled}
         onClick={toggleList}
         title={`${selectedListItem}`}
+        aria-label={ariaLabel}
       >
         <Text fontSize="sm" weight="700">
           {selectedListItem}

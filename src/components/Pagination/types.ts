@@ -5,8 +5,8 @@ export type PaginationProps = ExtendableProps<
   {
     page: number;
     pageSize: number;
-    translations: TranslationsType;
-    a11yTranslations: TranslationsType;
+    translations: PaginationTranslations;
+    a11yTranslations: PaginationA11yTranslations;
     totalPages: number;
     disabled?: boolean;
     rowsPerPageOptions: PaginationDropDownOptions[];
@@ -16,7 +16,7 @@ export type PaginationProps = ExtendableProps<
   }
 >;
 
-type TranslationsType = {
+type PaginationTranslations = {
   perPage: string;
   nextPage: string;
   previousPage: string;
@@ -24,6 +24,8 @@ type TranslationsType = {
   lastPage: string;
   ofPages: string;
 };
+
+type PaginationA11yTranslations = PaginationTranslations;
 
 export type PaginationDropDownOptions = {
   value: number;

@@ -29,7 +29,7 @@ const Tabs: FC<TabsProps> = ({
   ...rest
 }) => {
   const [activeTab, setActiveTab] = useState(selectedTab);
-  const [baseTitle, setBaseTitle] = useState("");
+  const baseTitleRef = useRef(document.title);
   const tabsLength = tabs.length - 1;
   const tabsNavEl = useRef<HTMLDivElement>(null);
   const [isOverflowActive, setIsOverflowActive] = useState(false);
@@ -121,13 +121,19 @@ const Tabs: FC<TabsProps> = ({
     }
   };
 
+  // Restore original title on unmount
+  useEffect(() => {
+    return () => {
+      document.title = baseTitleRef.current;
+    };
+  }, []);
+
   // Update document title with the selected tab title for a11y purposes
   useEffect(() => {
-    const tempBaseTitle = document.title;
-    if (!baseTitle) setBaseTitle(tempBaseTitle);
-    const selectedTab = tabs[activeTab];
-    const tabTitle = typeof selectedTab?.title === "string" ? selectedTab.title : "";
-    document.title = tabTitle ? `${baseTitle} | ${tabTitle}` : baseTitle;
+    const selected = tabs[activeTab];
+    const tabTitle = typeof selected?.title === "string" ? selected.title : "";
+    const newTitle = tabTitle ? `${baseTitleRef.current} | ${tabTitle}` : baseTitleRef.current;
+    if (document.title !== newTitle) document.title = newTitle;
   }, [activeTab, tabs]);
 
   return (

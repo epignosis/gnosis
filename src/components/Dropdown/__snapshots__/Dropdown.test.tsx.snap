@@ -27,7 +27,9 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
         role="list"
       >
         <li
+          aria-disabled="true"
           class="css-rndanj-DropdownTitle-DropdownTitle"
+          tabindex="-1"
         >
           <span
             class="css-mproha-textContainer-textContainer"
@@ -56,7 +58,9 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="true"
           class="css-1mnx8ve-DropdownTitle-DropdownTitle"
+          tabindex="-1"
         >
           <span
             class="css-mproha-textContainer-textContainer"
@@ -103,7 +107,9 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           </div>
         </li>
         <li
+          aria-disabled="true"
           class="css-rndanj-DropdownTitle-DropdownTitle"
+          tabindex="-1"
         >
           <span
             class="css-mproha-textContainer-textContainer"

@@ -6,6 +6,7 @@ import React, {
   useRef,
   useState,
   MouseEvent,
+  KeyboardEvent,
 } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
@@ -318,6 +319,12 @@ const Dropdown: FC<DropdownProps> = ({
     }, 100);
   };
 
+  const handleOnKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
+    if (e.key === "Enter" || e.key === "Space") {
+      setIsListOpen((prevState) => !prevState);
+    }
+  };
+
   return (
     <div
       css={(theme): SerializedStyles =>
@@ -325,6 +332,8 @@ const Dropdown: FC<DropdownProps> = ({
       }
       className="dropdown"
       ref={wrapperRef}
+      tabIndex={0}
+      onKeyDown={handleOnKeyDown}
       onMouseOver={handleOnMouseOver}
       onMouseLeave={handleOnMouseLeave}
       {...rest}

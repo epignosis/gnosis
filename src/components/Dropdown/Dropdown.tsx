@@ -328,7 +328,7 @@ const Dropdown: FC<DropdownProps> = ({
   };
 
   const handleOnKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
-    if (e.key === "Enter" || e.key === "Space") {
+    if (e.key === "Enter") {
       setIsListOpen((prevState) => !prevState);
     }
   };

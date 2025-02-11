@@ -4,6 +4,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
 <div>
   <div
     class="dropdown css-s6eb27-DropdownContainer-DropdownContainer"
+    tabindex="0"
   >
     <div
       class="dropdown-button is-active"
@@ -38,6 +39,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
         </li>
         <li
           class="1 dropdown-list-item css-12omqks-DropdownListItem-DropdownListItem"
+          tabindex="0"
         >
           <div
             aria-expanded="false"
@@ -66,6 +68,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
         </li>
         <li
           class="2 dropdown-list-item css-mrayhu-DropdownListItem-DropdownListItem"
+          tabindex="0"
         >
           <div
             aria-expanded="false"
@@ -83,6 +86,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
         </li>
         <li
           class="3 dropdown-list-item css-mrayhu-DropdownListItem-DropdownListItem"
+          tabindex="0"
         >
           <div
             aria-expanded="false"
@@ -111,6 +115,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
         </li>
         <li
           class="15 dropdown-list-item css-12omqks-DropdownListItem-DropdownListItem"
+          tabindex="0"
         >
           <div
             aria-expanded="false"
@@ -128,6 +133,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
         </li>
         <li
           class="16 dropdown-list-item css-12omqks-DropdownListItem-DropdownListItem"
+          tabindex="0"
         >
           <div
             aria-expanded="false"
@@ -145,6 +151,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
         </li>
         <li
           class="5 dropdown-list-item css-1hv1td9-DropdownListItem-DropdownListItem"
+          tabindex="0"
         >
           <div
             aria-expanded="false"

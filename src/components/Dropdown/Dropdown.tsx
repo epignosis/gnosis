@@ -225,10 +225,16 @@ const Dropdown: FC<DropdownProps> = ({
     }
   }, [isListOpen]);
 
-  const handleListItemSelect = (item: DropdownItem): void => {
-    if (isListOpen) {
+  const handleOnClickListItem = (item: DropdownItem): void => {
+    if (isListOpen && !disabled) {
       onListItemSelect && onListItemSelect(item);
       !remainOpenOnSelect && setIsListOpen(false);
+    }
+  };
+
+  const handleOnKeyDownListItem = (e: KeyboardEvent<HTMLLIElement>, item: DropdownItem): void => {
+    if (e.key === "Enter" || e.key === " ") {
+      handleOnClickListItem(item);
     }
   };
 
@@ -275,13 +281,11 @@ const Dropdown: FC<DropdownProps> = ({
       return (
         <li
           className={dropdownItemClasses(item)}
+          tabIndex={0}
           key={`item-${index}-${item.value}`}
           data-testid={item.id}
-          onClick={(): void => {
-            if (!isDisabled) {
-              handleListItemSelect(item);
-            }
-          }}
+          onClick={(): void => handleOnClickListItem(item)}
+          onKeyDown={(e): void => handleOnKeyDownListItem(e, item)}
           css={(theme): SerializedStyles =>
             DropdownListItem(theme, {
               isSearchable: Boolean(isSearchable),

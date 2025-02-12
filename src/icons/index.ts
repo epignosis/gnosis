@@ -217,31 +217,10 @@ export { default as AddContentSVG } from "./actions/add-content.svg";
 
 // F E A T U R E  S P E C I F I C  E X P O R T S
 // Units Icons
-export { default as TalentCraftSVG } from "./feature/units/talentcraft-icon.svg";
-export { default as ContentIcon } from "./feature/units/content-icon.svg";
-export { default as LearningActivitiesSVG } from "./feature/units/learning-icon.svg";
-export { default as MoreIconSVG } from "./feature/units/more-icon.svg";
-export { default as NewIconSVG } from "./feature/units/new-icon.svg";
-export { default as LinkedUnitSVG } from "./feature/units/linked-unit-icon.svg";
-export { default as LinkedUnitChipChildSVG } from "./feature/units/linked-unit-chip-child-icon.svg";
-export { default as LinkedUnitChipParentSVG } from "./feature/units/linked-unit-chip-parent-icon.svg";
-export { default as MultiSessionSVG } from "./feature/units/multi-session.svg";
-export { default as MoreIconNoViewboxSVG } from "./feature/units/more-icon-no-viewbox.svg";
-export { default as UnitsGroupsSVG } from "./feature/units/unit-groups.svg";
-export { default as ChatTickSVG } from "./feature/units/chat-tick.svg";
-export { default as FileLinesRegularSVG } from "./feature/units/file-lines-regular.svg";
-export { default as BoxRegularSVG } from "./feature/units/box-regular.svg";
-export { default as PenSVG } from "./feature/units/pen.svg";
+export * from "./feature/units";
 
 // Questions Icons
-export { default as DragAndDropSVG } from "./feature/questions/drag-and-drop.svg";
-export { default as FreetextSVG } from "./feature/questions/free-text.svg";
-export { default as MultipleChoiceSVG } from "./feature/questions/multiple-choice.svg";
-export { default as OrderingSVG } from "./feature/questions/ordering.svg";
-export { default as FillTheGapSVG } from "./feature/questions/fill-the-gaps.svg";
-export { default as RandomizedSVG } from "./feature/questions/randomized.svg";
-export { default as LikertSaleSVG } from "./feature/questions/likert-scale.svg";
-export { default as TrueFalseSVG } from "./feature/questions/true-false.svg";
+export * from "./feature/questions";
 
 // Training Matrix Icons
 export { default as EmptyCircleMatrixSVG } from "./feature/training-matrix/empty-circle.svg";
@@ -549,24 +528,10 @@ export { default as QuickActionsImportSVG } from "./client/quick-actions/icon-qu
 export { default as QuickActionsAutomationsSVG } from "./client/quick-actions/icon-quick-actions-automations.svg";
 
 // Widgets Icons
-export { default as UsersWidgetSVG } from "./client/widgets/users.svg";
-export { default as AdministratorsWidgetSVG } from "./client/widgets/administrators.svg";
-export { default as LearnersWidgetSVG } from "./client/widgets/learners.svg";
-export { default as InstuctorsWidgetSVG } from "./client/widgets/instructors.svg";
-export { default as ActiveUsersSVG } from "./client/widgets/active-users.svg";
-export { default as AssignedCoursesSVG } from "./client/widgets/assigned-courses.svg";
-export { default as AssignedLearnersSVG } from "./client/widgets/assigned-learners.svg";
-export { default as CompletionRateSVG } from "./client/widgets/completion-rate.svg";
-export { default as CoursesSVG } from "./client/widgets/courses.svg";
-export { default as EngagementSVG } from "./client/widgets/engagement.svg";
-export { default as ParticipationSVG } from "./client/widgets/participation.svg";
-export { default as ProgressSVG } from "./client/widgets/progress.svg";
-export { default as TrainingSavingSVG } from "./client/widgets/training-savings.svg";
-export { default as TrainingTimeSVG } from "./client/widgets/training-time.svg";
-export { default as EnviromentalImpactSVG } from "./client/widgets/environmental-impact.svg";
-export { default as CompletedAssignmentsSVG } from "./client/widgets/completed-assignments.svg";
-export { default as SubmittedCommentsSVG } from "./client/widgets/submitted-comments.svg";
-export { default as ChartLineUpSVG } from "./client/widgets/chart-line-up.svg";
+export * from "./client/widgets";
+
+// Reports Icons
+export * from "./client/reports";
 
 // Skills Icons
 export { default as BrainSVG } from "./client/skills/brain.svg";

@@ -16,3 +16,9 @@ export { default as EnviromentalImpactSVG } from "./environmental-impact.svg";
 export { default as CompletedAssignmentsSVG } from "./completed-assignments.svg";
 export { default as SubmittedCommentsSVG } from "./submitted-comments.svg";
 export { default as ChartLineUpSVG } from "./chart-line-up.svg";
+
+// Learning structure widget
+export { default as SquareListSVG } from "./square-list.svg";
+export { default as LayerGroupSVG } from "./layer-group.svg";
+export { default as UserGroupsSVG } from "./user-groups.svg";
+export { default as DiagramSubTaskSVG } from "./diagram-subtask.svg";

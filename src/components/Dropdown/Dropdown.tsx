@@ -6,6 +6,7 @@ import React, {
   useRef,
   useState,
   MouseEvent,
+  KeyboardEvent,
 } from "react";
 import classNames from "classnames";
 import { SerializedStyles } from "@emotion/react";
@@ -224,10 +225,16 @@ const Dropdown: FC<DropdownProps> = ({
     }
   }, [isListOpen]);
 
-  const handleListItemSelect = (item: DropdownItem): void => {
-    if (isListOpen) {
+  const handleOnClickListItem = (item: DropdownItem): void => {
+    if (isListOpen && !disabled) {
       onListItemSelect && onListItemSelect(item);
       !remainOpenOnSelect && setIsListOpen(false);
+    }
+  };
+
+  const handleOnKeyDownListItem = (e: KeyboardEvent<HTMLLIElement>, item: DropdownItem): void => {
+    if (e.key === "Enter" || e.key === " ") {
+      handleOnClickListItem(item);
     }
   };
 
@@ -237,7 +244,11 @@ const Dropdown: FC<DropdownProps> = ({
       if (item.items) {
         return (
           <Fragment key={`${index}-${item.value}`}>
-            <li css={DropdownTitle({ level, isSearchable: Boolean(isSearchable) })}>
+            <li
+              aria-disabled="true"
+              tabIndex={-1}
+              css={DropdownTitle({ level, isSearchable: Boolean(isSearchable) })}
+            >
               {typeof item.label === "string" ? (
                 <Text fontSize={textSize} weight="700" title={item.label}>
                   {item.label}
@@ -274,13 +285,11 @@ const Dropdown: FC<DropdownProps> = ({
       return (
         <li
           className={dropdownItemClasses(item)}
+          tabIndex={0}
           key={`item-${index}-${item.value}`}
           data-testid={item.id}
-          onClick={(): void => {
-            if (!isDisabled) {
-              handleListItemSelect(item);
-            }
-          }}
+          onClick={(): void => handleOnClickListItem(item)}
+          onKeyDown={(e): void => handleOnKeyDownListItem(e, item)}
           css={(theme): SerializedStyles =>
             DropdownListItem(theme, {
               isSearchable: Boolean(isSearchable),
@@ -318,6 +327,12 @@ const Dropdown: FC<DropdownProps> = ({
     }, 100);
   };
 
+  const handleOnKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
+    if (e.key === "Enter") {
+      setIsListOpen((prevState) => !prevState);
+    }
+  };
+
   return (
     <div
       css={(theme): SerializedStyles =>
@@ -325,6 +340,8 @@ const Dropdown: FC<DropdownProps> = ({
       }
       className="dropdown"
       ref={wrapperRef}
+      tabIndex={0}
+      onKeyDown={handleOnKeyDown}
       onMouseOver={handleOnMouseOver}
       onMouseLeave={handleOnMouseLeave}
       {...rest}

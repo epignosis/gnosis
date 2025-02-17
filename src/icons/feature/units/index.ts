@@ -9,8 +9,3 @@ export { default as LinkedUnitChipChildSVG } from "./linked-unit-chip-child-icon
 export { default as LinkedUnitChipParentSVG } from "./linked-unit-chip-parent-icon.svg";
 export { default as MultiSessionSVG } from "./multi-session.svg";
 export { default as MoreIconNoViewboxSVG } from "./more-icon-no-viewbox.svg";
-export { default as UnitsGroupsSVG } from "./unit-groups.svg";
-export { default as ChatTickSVG } from "./chat-tick.svg";
-export { default as FileLinesRegularSVG } from "./file-lines-regular.svg";
-export { default as BoxRegularSVG } from "./box-regular.svg";
-export { default as PenSVG } from "./pen.svg";

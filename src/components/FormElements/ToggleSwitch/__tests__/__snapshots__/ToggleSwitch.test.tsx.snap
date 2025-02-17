@@ -6,6 +6,7 @@ exports[`<ToggleSwitch /> Matches snapshot 1`] = `
     class="css-v27xm3-ToggleContainer-ToggleContainer"
     data-checked="false"
     data-testid="my-toggle"
+    tabindex="0"
   >
     <div
       class="switch-container"

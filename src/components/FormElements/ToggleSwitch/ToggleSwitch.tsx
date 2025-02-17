@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useImperativeHandle, forwardRef } from "react";
 import { SerializedStyles } from "@emotion/utils";
 import classNames from "classnames";
 import { Text, Tooltip } from "../../../";
@@ -17,6 +17,7 @@ export type ToggleProps = {
   variant?: "primary" | "success";
   size?: "sm" | "md";
   notSwitchedOff?: boolean;
+  preventToggle?: boolean;
   subtitle?: string;
   hasInlineText?: boolean;
   inlineTextTranslations?: {
@@ -25,7 +26,11 @@ export type ToggleProps = {
   };
   [key: string]: unknown;
   InternalIcon?: JSX.Element;
-  onChange?: () => void;
+  onChange?: (isChecked: boolean) => void;
+};
+
+export type ToggleSwitchHandlers = {
+  toggle: () => void;
 };
 
 const labelClassNames = (
@@ -44,25 +49,29 @@ const switchClassNames = (customClassName: string, isMedium: boolean, isSuccess:
     success: isSuccess,
   });
 
-const ToggleSwitch: React.FC<ToggleProps> = ({
-  id,
-  labelBefore,
-  labelAfter,
-  description,
-  defaultChecked = false,
-  isDisabled = false,
-  required = false,
-  hasInlineText = false,
-  inlineTextTranslations = { enabled: "Enabled", disabled: "Disabled" },
-  variant = "primary",
-  notSwitchedOff = false,
-  size = "sm",
-  subtitle = "",
-  tooltip,
-  InternalIcon,
-  onChange,
-  ...rest
-}) => {
+const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleProps> = (
+  {
+    id,
+    labelBefore,
+    labelAfter,
+    description,
+    defaultChecked = false,
+    preventToggle = false,
+    isDisabled = false,
+    required = false,
+    hasInlineText = false,
+    inlineTextTranslations = { enabled: "Enabled", disabled: "Disabled" },
+    variant = "primary",
+    notSwitchedOff = false,
+    size = "sm",
+    subtitle = "",
+    tooltip,
+    InternalIcon,
+    onChange,
+    ...rest
+  },
+  ref,
+) => {
   const [isChecked, setIsChecked] = useState(defaultChecked);
   const hasDescription = Boolean(description);
   const hasDescriptionTextWeight = hasDescription ? "700" : "400";
@@ -74,17 +83,26 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
     setIsChecked(defaultChecked);
   }, [defaultChecked]);
 
-  const handleToggle = (e: React.MouseEvent<HTMLDivElement>): void => {
+  const handleToggle = (
+    e: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>,
+  ): void => {
     e.stopPropagation();
 
-    if (!isDisabled) {
-      setIsChecked((prev) => !prev);
-      if (onChange) onChange();
-    }
+    if (isDisabled) return;
+
+    if (!preventToggle) setIsChecked((prev) => !prev);
+
+    onChange?.(isChecked);
   };
+
+  useImperativeHandle(ref, () => ({
+    toggle: () => setIsChecked((prev) => !prev),
+  }));
 
   return (
     <div
+      tabIndex={0}
+      onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => e.key === "Enter" && handleToggle(e)}
       css={(theme): SerializedStyles =>
         ToggleContainer(theme, {
           isChecked,
@@ -95,6 +113,7 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
       }
       data-testid={id}
       data-checked={isChecked}
+      aria-label={tooltip}
       {...rest}
     >
       <div className="switch-container">
@@ -173,4 +192,4 @@ const ToggleSwitch: React.FC<ToggleProps> = ({
   );
 };
 
-export default ToggleSwitch;
+export default forwardRef(ToggleSwitch);

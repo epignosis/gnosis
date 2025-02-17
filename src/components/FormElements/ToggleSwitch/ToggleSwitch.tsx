@@ -5,7 +5,7 @@ import { Text, Tooltip } from "../../../";
 import { InfoIconSVG } from "../../../icons";
 import { ToggleContainer } from "./styles";
 
-export type ToggleProps = {
+type ToggleSpecificProps = {
   id: string;
   labelBefore?: string;
   labelAfter?: string;
@@ -24,10 +24,13 @@ export type ToggleProps = {
     enabled: string;
     disabled: string;
   };
-  [key: string]: unknown;
   InternalIcon?: JSX.Element;
   onChange?: (isChecked: boolean) => void;
 };
+
+type InputHTMLProps = Omit<React.ComponentPropsWithoutRef<"input">, keyof ToggleSpecificProps>;
+
+export type ToggleProps = ToggleSpecificProps & InputHTMLProps;
 
 export type ToggleSwitchHandlers = {
   toggle: () => void;

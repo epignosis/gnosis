@@ -51,7 +51,12 @@ const Tooltip: FC<TooltipProps> = ({
       interactive={interactive}
       appendTo={document.body}
       render={(attrs): ReactNode => (
-        <div className="tooltip" css={(theme) => tooltipContainer(maxWidth, theme)} {...attrs}>
+        <div
+          className="tooltip"
+          role="alert"
+          css={(theme) => tooltipContainer(maxWidth, theme)}
+          {...attrs}
+        >
           {content}
           <div id="arrow" data-testid="tooltip-arrow" data-popper-arrow />
         </div>

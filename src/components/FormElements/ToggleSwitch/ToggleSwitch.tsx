@@ -5,8 +5,8 @@ import { Text, Tooltip } from "../../../";
 import { InfoIconSVG } from "../../../icons";
 import { ToggleContainer } from "./styles";
 
-export type ToggleProps = {
-  id?: string;
+type ToggleSpecificProps = {
+  id: string;
   labelBefore?: string;
   labelAfter?: string;
   defaultChecked?: boolean;
@@ -24,10 +24,13 @@ export type ToggleProps = {
     enabled: string;
     disabled: string;
   };
-  [key: string]: unknown;
   InternalIcon?: JSX.Element;
   onChange?: (isChecked: boolean) => void;
 };
+
+type InputHTMLProps = Omit<React.ComponentPropsWithoutRef<"input">, keyof ToggleSpecificProps>;
+
+export type ToggleProps = ToggleSpecificProps & InputHTMLProps;
 
 export type ToggleSwitchHandlers = {
   toggle: () => void;
@@ -51,7 +54,7 @@ const switchClassNames = (customClassName: string, isMedium: boolean, isSuccess:
 
 const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleProps> = (
   {
-    id = "toggle-switch",
+    id,
     labelBefore,
     labelAfter,
     description,
@@ -144,6 +147,9 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
             data-checked={isChecked}
             className={switchClassNames("switch", isMedium, isSuccess)}
             onClick={handleToggle}
+            role="button"
+            aria-selected={isChecked}
+            aria-labelledby={id}
           >
             {hasInlineText && isMedium && (
               <Text fontSize="sm" className="inline-text">

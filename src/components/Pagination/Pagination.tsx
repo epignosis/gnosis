@@ -27,8 +27,9 @@ const Pagination: FC<PaginationProps> = ({
   ...rest
 }) => {
   const isRtl = dir === "rtl";
-  const isPrevBtnDisabled = page === 1;
-  const isNextBtnDisabled = page === totalPages || totalPages === 0;
+
+  const isPrevBtnDisabled = page === (isRtl ? totalPages : 1);
+  const isNextBtnDisabled = page === (isRtl ? 1 : totalPages);
 
   const handlePageSize = (item: number): void => {
     onPageSizeChange(item);
@@ -45,6 +46,15 @@ const Pagination: FC<PaginationProps> = ({
     .map((_, i) => ({ value: i + 1, label: `${i + 1}` }));
 
   const rtlClass = classNames({ isRtl });
+
+  const paginationDirectionFactor = isRtl ? -1 : 1;
+
+  const pageDirection = {
+    firstPage: isRtl ? totalPages : 1,
+    lastPage: isRtl ? 1 : totalPages,
+    nextPage: page + paginationDirectionFactor,
+    previousPage: page - paginationDirectionFactor,
+  };
 
   return (
     <div css={(theme): SerializedStyles => container(theme)} {...rest} className={rtlClass}>
@@ -64,7 +74,7 @@ const Pagination: FC<PaginationProps> = ({
           className="pagination-btn"
           data-testid="first-page-btn"
           title={translations.firstPage}
-          onClick={(): void => onPageChange(1)}
+          onClick={(): void => onPageChange(pageDirection.firstPage)}
           variant="ghost"
           noGutters
           disabled={isPrevBtnDisabled || disabled}
@@ -78,7 +88,7 @@ const Pagination: FC<PaginationProps> = ({
           data-testid="previous-page-btn"
           name="Previous page"
           title={translations.previousPage}
-          onClick={(): void => onPageChange(page - 1)}
+          onClick={(): void => onPageChange(pageDirection.previousPage)}
           variant="ghost"
           noGutters
           disabled={isPrevBtnDisabled || disabled}
@@ -108,7 +118,7 @@ const Pagination: FC<PaginationProps> = ({
           data-testid="next-page-btn"
           name="Next page"
           title={translations.nextPage}
-          onClick={(): void => onPageChange(page + 1)}
+          onClick={(): void => onPageChange(pageDirection.nextPage)}
           variant="ghost"
           noGutters
           disabled={isNextBtnDisabled || disabled}
@@ -122,7 +132,7 @@ const Pagination: FC<PaginationProps> = ({
           data-testid="last-page-btn"
           name="Last page"
           title={translations.lastPage}
-          onClick={(): void => onPageChange(totalPages)}
+          onClick={(): void => onPageChange(pageDirection.lastPage)}
           variant="ghost"
           noGutters
           disabled={isNextBtnDisabled || disabled}

@@ -29,7 +29,7 @@ const Pagination: FC<PaginationProps> = ({
   const isRtl = dir === "rtl";
 
   const isPrevBtnDisabled = page === (isRtl ? totalPages : 1);
-  const isNextBtnDisabled = page === (isRtl ? 1 : totalPages);
+  const isNextBtnDisabled = page === (isRtl ? 1 : totalPages) || totalPages === 0;
 
   const handlePageSize = (item: number): void => {
     onPageSizeChange(item);

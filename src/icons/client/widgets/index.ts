@@ -22,3 +22,7 @@ export { default as SquareListSVG } from "./square-list.svg";
 export { default as LayerGroupSVG } from "./layer-group.svg";
 export { default as UserGroupsSVG } from "./user-groups.svg";
 export { default as DiagramSubTaskSVG } from "./diagram-subtask.svg";
+
+// Overview widget
+export { default as BooksPlusSVG } from "./books-plus.svg";
+export { default as UserCheckMarkSVG } from "./user-check-mark.svg";

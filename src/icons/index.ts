@@ -276,7 +276,6 @@ export { default as ListCheckRegularSVG } from "./client/list-check-regular.svg"
 export { default as BulletListSVG } from "./client/icon-collapsed-left-nav-bar.svg";
 export { default as CartIconSVG } from "./client/icon-cart.svg";
 export { default as ChartIconSVG } from "./client/icon-chart.svg";
-export { default as CopyIconSVG } from "./client/icon-dublicate.svg";
 export { default as EditIconSVG } from "./client/icon-edit.svg";
 export { default as PreviewIconSVG } from "./client/icon-preview-small.svg";
 export { default as LoginSVG } from "./client/login.svg";

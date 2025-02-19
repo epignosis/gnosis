@@ -16,7 +16,7 @@ const Header: FC<HeaderProps> = ({ children, onClose, ...rest }) => {
     <header css={modalHeader} data-testid="modal-header" {...rest}>
       <div>{title}</div>
       {onClose && (
-        <a
+        <button
           role="button"
           className="close-btn"
           aria-label="Close button"
@@ -24,7 +24,7 @@ const Header: FC<HeaderProps> = ({ children, onClose, ...rest }) => {
           onClick={onClose}
         >
           <CloseModalSVG height={32} />
-        </a>
+        </button>
       )}
     </header>
   );

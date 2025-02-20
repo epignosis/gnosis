@@ -104,6 +104,7 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
 
   return (
     <div
+      id={id}
       tabIndex={0}
       onKeyDown={(e: React.KeyboardEvent<HTMLDivElement>) => e.key === "Enter" && handleToggle(e)}
       css={(theme): SerializedStyles =>
@@ -147,8 +148,8 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
             data-checked={isChecked}
             className={switchClassNames("switch", isMedium, isSuccess)}
             onClick={handleToggle}
-            role="button"
-            aria-selected={isChecked}
+            role="switch"
+            aria-checked={isChecked}
             aria-labelledby={id}
           >
             {hasInlineText && isMedium && (

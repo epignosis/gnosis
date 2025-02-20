@@ -1,3 +1,10 @@
+## [5.41.23](https://github.com/epignosis/gnosis/compare/v5.41.22...v5.41.23) (2025-02-20)
+
+
+### Bug Fixes
+
+* **remove fill from svg:** remove fill from svg ([#507](https://github.com/epignosis/gnosis/issues/507)) ([d0d1d37](https://github.com/epignosis/gnosis/commit/d0d1d379c91569270f33618db135e87c2e134b47))
+
 ## [5.41.22](https://github.com/epignosis/gnosis/compare/v5.41.21...v5.41.22) (2025-02-19)
 
 ## [5.41.21](https://github.com/epignosis/gnosis/compare/v5.41.20...v5.41.21) (2025-02-19)

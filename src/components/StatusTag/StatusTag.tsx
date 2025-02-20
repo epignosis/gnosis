@@ -22,6 +22,7 @@ export type StatusTagProps = HTMLAttributes<HTMLSpanElement> & {
   size?: StatusTagSizes;
   icon?: IconType;
   color?: StatusTagColors;
+  ariaLabel?: string;
 };
 
 const StatusTag: FC<StatusTagProps> = ({
@@ -30,6 +31,7 @@ const StatusTag: FC<StatusTagProps> = ({
   icon: Icon,
   size = "md",
   color = "neutral",
+  ariaLabel,
   ...rest
 }) => {
   const dataTestId = testId ? testId : `status-tag-${text}`;
@@ -40,7 +42,7 @@ const StatusTag: FC<StatusTagProps> = ({
       data-testid={dataTestId}
       className={classNames("statusTag", `statusTag--${size}`, `statusTag--${color}`)}
       role="status"
-      aria-label={text}
+      aria-label={ariaLabel ?? text}
       {...rest}
     >
       {Icon && (

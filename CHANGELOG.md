@@ -1,3 +1,10 @@
+## [5.41.28](https://github.com/epignosis/gnosis/compare/v5.41.27...v5.41.28) (2025-02-24)
+
+
+### Bug Fixes
+
+* **a11y:** fix issues from the a11y report ([#498](https://github.com/epignosis/gnosis/issues/498)) ([4a16c37](https://github.com/epignosis/gnosis/commit/4a16c377153f45c54b17bfdaa7cbb533fc3225d8))
+
 ## [5.41.27](https://github.com/epignosis/gnosis/compare/v5.41.26...v5.41.27) (2025-02-24)
 
 ## [5.41.26](https://github.com/epignosis/gnosis/compare/v5.41.25...v5.41.26) (2025-02-21)

@@ -23,3 +23,4 @@ export { default as SlackSVG } from "./slack.svg";
 export { default as GoogleTagManagerSVG } from "./google-tag-manager.svg";
 export { default as OpenSesameLogoSVG } from "./open-sesame.svg";
 export { default as LtiSVG } from "./lti.svg";
+export { default as LtiTollSVG } from "./lti-tool.svg";

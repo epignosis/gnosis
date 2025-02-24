@@ -179,7 +179,7 @@ export { default as SlackSVG } from "./logos/slack.svg";
 export { default as GoogleTagManagerSVG } from "./logos/google-tag-manager.svg";
 export { default as OpenSesameLogoSVG } from "./logos/open-sesame.svg";
 export { default as LtiSVG } from "./logos/lti.svg";
-export { default as LtiTollSVG } from "./logos/lti-tool.svg";
+export { default as LtiToolSVG } from "./logos/lti-tool.svg";
 
 // Social Media Icons
 export { default as GoogleSVG } from "./social/google.svg";

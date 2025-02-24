@@ -66,6 +66,7 @@ export const WithMiddleStep = () => {
         </Modal.Footer>
       </Modal>
       <ToggleSwitch
+        id="toggle-switch"
         ref={toggleSwitchRef}
         onChange={handleToggle}
         labelBefore="With Middle Step"

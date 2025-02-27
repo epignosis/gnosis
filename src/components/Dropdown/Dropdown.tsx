@@ -271,25 +271,25 @@ const Dropdown: FC<DropdownProps> = ({
 
   const renderItemsRecursively = (items: DropdownItem[], level = 0): JSX.Element[] => {
     return items.map((item, index) => {
-      const { label } = item;
+      const { label, value, items: childrenItems = [] } = item;
 
-      if (item.items) {
+      if (childrenItems.length > 0) {
         return (
-          <Fragment key={`${index}-${item.value}`}>
+          <Fragment key={`${index}-${value}`}>
             <DropdownListItemTitle
               label={label}
               level={level}
               isSearchable={isSearchable}
               textSize={textSize}
             />
-            {renderItemsRecursively(item.items, level + 1)}
+            {renderItemsRecursively(childrenItems, level + 1)}
           </Fragment>
         );
       }
 
       return (
         <DropdownListItem
-          key={`item-${index}-${item.value}`}
+          key={`item-${index}-${value}`}
           index={index}
           item={item}
           isSearchable={isSearchable}

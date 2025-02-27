@@ -7,21 +7,21 @@ import Input from "./Input";
 type SearchInputProps = React.HTMLAttributes<HTMLInputElement> & {
   id: string;
   placeholder: string;
-  onInputChanged: (inputValue: string) => void;
   delayBeforeSearch?: number;
   resetInput?: boolean;
   autoFocus?: boolean;
   disabled?: boolean;
+  onInputChanged: (inputValue: string) => void;
 };
 
 const SearchInput: FC<SearchInputProps> = ({
   id,
   placeholder,
-  onInputChanged,
   delayBeforeSearch = 500,
   resetInput = false,
   autoFocus = false,
   disabled = false,
+  onInputChanged,
   ...rest
 }) => {
   const [searchValue, setSearchValue] = useState("");

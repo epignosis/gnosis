@@ -1,11 +1,5 @@
 import { Theme, css } from "@emotion/react";
 
-const getInlinePaddingStart = (level: number, isSearchable: boolean) => {
-  const initialPadding = isSearchable ? 0.25 : 1;
-
-  return initialPadding + level * 0.75;
-};
-
 export const DropdownContainer = (
   { dropdown }: Theme,
   { isSearchable, fullWidth }: { isSearchable: boolean; fullWidth: boolean },
@@ -99,63 +93,5 @@ export const DropdownList = (
     display: flex;
     align-items: center;
     height: 2rem;
-  }
-`;
-
-export const DropdownTitle = ({
-  level,
-  isSearchable,
-}: {
-  level: number;
-  isSearchable: boolean;
-}) => css`
-  padding-inline: ${getInlinePaddingStart(level, isSearchable)}rem 1rem;
-  padding-block: 0.25rem;
-`;
-
-export const DropdownListItem = (
-  { dropdown }: Theme,
-  {
-    isSearchable,
-    level,
-    isDisabled,
-  }: { isSearchable: boolean; level: number; isDisabled: boolean },
-) => css`
-  padding-inline: ${getInlinePaddingStart(level, isSearchable)}rem 1rem;
-  padding-block: 0.5rem;
-  display: flex;
-  align-items: center;
-  max-height: 2rem;
-
-  .tooltip-content-wrapper {
-    display: flex;
-    align-items: center;
-  }
-
-  margin-inline-end: ${isSearchable ? "0.5rem" : "0"};
-  cursor: ${isDisabled ? "default" : "pointer"};
-  color: ${isDisabled ? dropdown.disabledColor : dropdown.textColor};
-
-  &.separator {
-    border-bottom: 1px solid ${dropdown.borderBottomColor};
-  }
-
-  span {
-    word-break: break-word;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: inline-block;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-  }
-
-  svg {
-    width: 32px;
-    margin-inline-end: 0.5rem;
-  }
-
-  &:hover {
-    background-color: ${isDisabled ? "inherit" : dropdown.hoverBackgroundColor};
-    border-radius: ${isSearchable ? "5px" : "0"};
   }
 `;

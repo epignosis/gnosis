@@ -7,11 +7,14 @@ import { DropdownItem } from "../types";
 import { DropdownListItemStyles } from "./styles";
 import { TypographyLevels } from "@theme/utils/typography";
 
-const dropdownItemClasses = (item: DropdownItem): string =>
+const dropdownItemClasses = (
+  value: DropdownItem["value"],
+  className: DropdownItem["className"],
+): string =>
   classNames({
     "dropdown-list-item": true,
-    [`${item.value}`]: true,
-    [`${item.className}`]: Boolean(item.className),
+    [`${value}`]: true,
+    [`${className}`]: Boolean(className),
   });
 
 type DropdownListItemProps = {
@@ -33,7 +36,7 @@ const DropdownListItem: FC<DropdownListItemProps> = ({
   onClick,
   onKeyDown,
 }) => {
-  const { isDisabled = false } = item;
+  const { id, isDisabled = false, label, icon, value, tooltipContent, className } = item;
 
   const handleOnClickListItem = (e: MouseEvent<HTMLLIElement>): void => {
     e.stopPropagation();
@@ -47,18 +50,18 @@ const DropdownListItem: FC<DropdownListItemProps> = ({
 
   const content = (
     <>
-      {item?.icon}
-      <Text fontSize={textSize} title={typeof item.label === "string" ? item.label : ""}>
-        {item.label}
+      {icon}
+      <Text fontSize={textSize} title={typeof label === "string" ? label : ""}>
+        {label}
       </Text>
     </>
   );
 
   const tooltipElement = (
     <Tooltip
-      key={`${index}-${item.value}`}
-      disabled={!item.tooltipContent}
-      content={item.tooltipContent}
+      key={`${index}-${value}`}
+      disabled={!tooltipContent}
+      content={tooltipContent}
       parentProps={{ className: "tooltip-content-wrapper" }}
     >
       {content}
@@ -67,9 +70,9 @@ const DropdownListItem: FC<DropdownListItemProps> = ({
 
   return (
     <li
-      className={dropdownItemClasses(item)}
+      className={dropdownItemClasses(value, className)}
       tabIndex={0}
-      data-testid={item.id}
+      data-testid={id}
       css={(theme): SerializedStyles =>
         DropdownListItemStyles(theme, { isSearchable, level, isDisabled })
       }

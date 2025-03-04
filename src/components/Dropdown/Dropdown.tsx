@@ -13,8 +13,9 @@ import { SerializedStyles } from "@emotion/react";
 import { useClickAway } from "ahooks";
 import Text from "../Text/Text";
 import SearchInput from "../FormElements/Input/SearchInput";
-import Tooltip from "../Tooltip/Tooltip";
-import { DropdownContainer, DropdownList, DropdownListItem, DropdownTitle } from "./styles";
+import DropdownListItem from "./components/DropdownListItem";
+import DropdownListItemTitle from "./components/DropdownListItemTitle";
+import { DropdownContainer, DropdownList } from "./styles";
 import { DropdownItem, DropdownProps, PlacementOptions } from "./types";
 import { filterListByKeyword, getScrollableParent } from "./helpers";
 
@@ -32,13 +33,6 @@ const dropdownButtonClasses = (isListOpen: boolean): string =>
     "is-active": isListOpen,
   });
 
-const dropdownItemClasses = (item: DropdownItem): string =>
-  classNames({
-    "dropdown-list-item": true,
-    [`${item.value}`]: true,
-    [`${item.className}`]: Boolean(item.className),
-  });
-
 const RTLMapping: Record<PlacementOptions, PlacementOptions> = {
   "bottom-start": "bottom-end",
   "bottom-end": "bottom-start",
@@ -52,7 +46,7 @@ const Dropdown: FC<DropdownProps> = ({
   children,
   placement = "bottom-start",
   onListItemSelect,
-  isSearchable,
+  isSearchable = false,
   textSize = "sm",
   fullWidth = false,
   prependContent,
@@ -99,16 +93,11 @@ const Dropdown: FC<DropdownProps> = ({
     }
   }, [disabled, list]);
 
-  const toggleList = (e: MouseEvent<HTMLDivElement>): void => {
-    e.stopPropagation();
-    if (disabled || hover) return;
-
-    // We want to reset the dropdown list every time it opens
-    if (!isListOpen) {
-      setFilteredList(list);
+  useLayoutEffect(() => {
+    if (isListOpen) {
+      fixPlacement && fixDropdownPlacement();
     }
-    setIsListOpen((prevState) => !prevState);
-  };
+  }, [isListOpen]);
 
   const fixDropdownPlacement = (): void => {
     if (!dropdownButtonRef.current || !dropdownWrapperRef.current || !wrapperRef.current) return;
@@ -219,94 +208,12 @@ const Dropdown: FC<DropdownProps> = ({
     setCurrentPlacement(res);
   };
 
-  useLayoutEffect(() => {
-    if (isListOpen) {
-      fixPlacement && fixDropdownPlacement();
+  // Container methods
+
+  const handleOnKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
+    if (e.key === "Enter") {
+      setIsListOpen((prevState) => !prevState);
     }
-  }, [isListOpen]);
-
-  const handleOnClickListItem = (item: DropdownItem): void => {
-    if (isListOpen && !disabled) {
-      onListItemSelect && onListItemSelect(item);
-      !remainOpenOnSelect && setIsListOpen(false);
-    }
-  };
-
-  const handleOnKeyDownListItem = (e: KeyboardEvent<HTMLLIElement>, item: DropdownItem): void => {
-    if (e.key === "Enter" || e.key === " ") {
-      handleOnClickListItem(item);
-    }
-  };
-
-  const renderItemsRecursively = (items: DropdownItem[], level = 0): JSX.Element[] => {
-    return items.map((item, index) => {
-      const { isDisabled = false } = item;
-      if (item.items) {
-        return (
-          <Fragment key={`${index}-${item.value}`}>
-            <li
-              aria-disabled="true"
-              tabIndex={-1}
-              css={DropdownTitle({ level, isSearchable: Boolean(isSearchable) })}
-            >
-              {typeof item.label === "string" ? (
-                <Text fontSize={textSize} weight="700" title={item.label}>
-                  {item.label}
-                </Text>
-              ) : (
-                item.label
-              )}
-            </li>
-            {renderItemsRecursively(item.items, level + 1)}
-          </Fragment>
-        );
-      }
-
-      const content = (
-        <>
-          {item?.icon}
-          <Text fontSize={textSize} title={typeof item.label === "string" ? item.label : ""}>
-            {item.label}
-          </Text>
-        </>
-      );
-
-      const tooltipElement = (
-        <Tooltip
-          key={`${index}-${item.value}`}
-          disabled={!item.tooltipContent}
-          content={item.tooltipContent}
-          parentProps={{ className: "tooltip-content-wrapper" }}
-        >
-          {content}
-        </Tooltip>
-      );
-
-      return (
-        <li
-          className={dropdownItemClasses(item)}
-          tabIndex={0}
-          key={`item-${index}-${item.value}`}
-          data-testid={item.id}
-          onClick={(): void => handleOnClickListItem(item)}
-          onKeyDown={(e): void => handleOnKeyDownListItem(e, item)}
-          css={(theme): SerializedStyles =>
-            DropdownListItem(theme, {
-              isSearchable: Boolean(isSearchable),
-              level,
-              isDisabled,
-            })
-          }
-        >
-          {tooltipElement}
-        </li>
-      );
-    });
-  };
-
-  const handleInputChanged = (keyword: string): void => {
-    if (!keyword) setFilteredList(list);
-    setFilteredList(filterListByKeyword(list, keyword));
   };
 
   const handleOnMouseOver = () => {
@@ -327,10 +234,72 @@ const Dropdown: FC<DropdownProps> = ({
     }, 100);
   };
 
-  const handleOnKeyDown = (e: KeyboardEvent<HTMLDivElement>): void => {
-    if (e.key === "Enter") {
-      setIsListOpen((prevState) => !prevState);
+  // List toggle element methods
+
+  const toggleList = (e: MouseEvent<HTMLDivElement>): void => {
+    e.stopPropagation();
+    if (disabled || hover) return;
+
+    // We want to reset the dropdown list every time it opens
+    if (!isListOpen) {
+      setFilteredList(list);
     }
+    setIsListOpen((prevState) => !prevState);
+  };
+
+  // Search element methods
+
+  const handleInputChanged = (keyword: string): void => {
+    if (!keyword) setFilteredList(list);
+    setFilteredList(filterListByKeyword(list, keyword));
+  };
+
+  // List item methods
+
+  const handleOnClickListItem = (item: DropdownItem): void => {
+    if (isListOpen && !disabled) {
+      onListItemSelect && onListItemSelect(item);
+      !remainOpenOnSelect && setIsListOpen(false);
+    }
+  };
+
+  const handleOnKeyDownListItem = (e: KeyboardEvent<HTMLLIElement>, item: DropdownItem): void => {
+    if (e.key === "Enter" || e.key === " ") {
+      handleOnClickListItem(item);
+    }
+  };
+
+  const renderItemsRecursively = (items: DropdownItem[], level = 0): JSX.Element[] => {
+    return items.map((item, index) => {
+      const { label, value, items: childrenItems = [] } = item;
+
+      if (childrenItems.length > 0) {
+        return (
+          <Fragment key={`${index}-${value}`}>
+            <DropdownListItemTitle
+              label={label}
+              level={level}
+              isSearchable={isSearchable}
+              textSize={textSize}
+            />
+            {renderItemsRecursively(childrenItems, level + 1)}
+          </Fragment>
+        );
+      }
+
+      return (
+        <DropdownListItem
+          key={`item-${index}-${value}`}
+          index={index}
+          item={item}
+          isSearchable={isSearchable}
+          level={level}
+          textSize={textSize}
+          onClick={handleOnClickListItem}
+          onKeyDown={handleOnKeyDownListItem}
+        />
+      );
+    });
   };
 
   return (
@@ -363,12 +332,12 @@ const Dropdown: FC<DropdownProps> = ({
 
           {isSearchable && (
             <SearchInput
-              placeholder={placeholderText}
-              onInputChanged={handleInputChanged}
               id="dropdown-search"
+              placeholder={placeholderText}
               delayBeforeSearch={300}
               autoFocus={shouldFocus}
               disabled={disabled}
+              onInputChanged={handleInputChanged}
             />
           )}
 

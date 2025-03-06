@@ -216,6 +216,8 @@ export { default as ThaiBahtSVG } from "./currencies/thai-baht.svg";
 // Action Icons
 export { default as AddCourseIconSVG } from "./actions/add-course-icon.svg";
 export { default as AddContentSVG } from "./actions/add-content.svg";
+export { default as ClipboardCheckSVG } from "./actions/clipboard-check.svg";
+export { default as ClipboardCrossSVG } from "./actions/clipboard-cross.svg";
 
 // F E A T U R E  S P E C I F I C  E X P O R T S
 // Units Icons

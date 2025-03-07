@@ -2,7 +2,7 @@ export const preventNonNumericalInput = (
   e: React.KeyboardEvent<HTMLInputElement>,
   isNumberType: boolean,
 ): void => {
-  const allowedChars = ["Backspace", ".", ",", "ArrowUp", "ArrowDown"];
+  const allowedChars = ["Backspace", "Tab", ".", ",", "ArrowUp", "ArrowDown"];
   const numberPattern = /[0-9]/;
 
   const isCharacterNumber = numberPattern.test(e.key);

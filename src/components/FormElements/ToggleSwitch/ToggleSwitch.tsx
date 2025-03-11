@@ -152,7 +152,7 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
             onClick={handleToggle}
             role="switch"
             aria-checked={isChecked}
-            aria-labelledby={labelledById}
+            {...(labelledById && { "aria-labelledby": labelledById })}
           >
             {hasInlineText && isMedium && (
               <Text fontSize="sm" className="inline-text">

@@ -11,6 +11,7 @@ type ToggleSpecificProps = {
   labelAfter?: string;
   defaultChecked?: boolean;
   description?: string;
+  labelledById?: string;
   isDisabled?: boolean;
   required?: boolean;
   tooltip?: string;
@@ -58,6 +59,7 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
     labelBefore,
     labelAfter,
     description,
+    labelledById,
     defaultChecked = false,
     preventToggle = false,
     isDisabled = false,
@@ -150,7 +152,7 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
             onClick={handleToggle}
             role="switch"
             aria-checked={isChecked}
-            aria-labelledby={id}
+            aria-labelledby={labelledById}
           >
             {hasInlineText && isMedium && (
               <Text fontSize="sm" className="inline-text">

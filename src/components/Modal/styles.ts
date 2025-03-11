@@ -24,6 +24,11 @@ export const modalHeader = ({ modal }: Theme): SerializedStyles => {
 
     .close-btn {
       height: 32px;
+      background: transparent;
+      border: 0;
+      margin: 0;
+      padding: 0;
+
       svg {
         color: ${modal.color};
 

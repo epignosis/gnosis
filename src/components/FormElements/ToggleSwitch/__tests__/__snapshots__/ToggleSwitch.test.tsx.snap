@@ -17,7 +17,7 @@ exports[`<ToggleSwitch /> Matches snapshot 1`] = `
       >
         <div
           aria-checked="false"
-          aria-labelledby="my-toggle"
+          aria-labelledby="text-id"
           class="switch"
           data-checked="false"
           data-testid="switch"

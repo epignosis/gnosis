@@ -11,6 +11,8 @@ const widthDimensions = {
 };
 
 export const modalContent = css`
+  max-height: calc(90vh - 150px);
+  overflow-y: auto;
   padding: 1.5rem;
 `;
 

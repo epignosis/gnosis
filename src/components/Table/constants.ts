@@ -6,4 +6,5 @@ export enum Actions {
   rowsChanged = "ROWS_CHANGED",
   resetSelectedRows = "RESET",
   setDisabled = "SET_DISABLED",
+  toggleMany = "TOGGLE_MANY",
 }

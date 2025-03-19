@@ -1,3 +1,10 @@
+# [5.42.0](https://github.com/epignosis/gnosis/compare/v5.41.36...v5.42.0) (2025-03-19)
+
+
+### Features
+
+* **new teams icon:** just a new icon for the main menu ([#522](https://github.com/epignosis/gnosis/issues/522)) ([25f83d1](https://github.com/epignosis/gnosis/commit/25f83d1d79fd097da3c6c3358ce0b5c2e8ff8ea7))
+
 ## [5.41.36](https://github.com/epignosis/gnosis/compare/v5.41.35...v5.41.36) (2025-03-13)
 
 ## [5.41.35](https://github.com/epignosis/gnosis/compare/v5.41.34...v5.41.35) (2025-03-11)

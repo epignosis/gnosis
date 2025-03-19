@@ -324,3 +324,6 @@ export { default as TranslateSVG } from "./client/editor/translate.svg";
 export { default as WriteAISVG } from "./client/editor/write-ai.svg";
 export { default as ChangeToneSVG } from "./client/editor/change-tone.svg";
 export { default as MagicWandSVG } from "./client/editor/magic-wand.svg";
+
+// Main Menu Icons
+export { default as TeamsSVG } from "./client/teams.svg";

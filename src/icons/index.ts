@@ -327,3 +327,11 @@ export { default as MagicWandSVG } from "./client/editor/magic-wand.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./client/teams.svg";
+
+// Vertical Stepper Icons
+export { default as CompleteDot } from "./feature/verticalStepper/complete-dot.svg";
+export { default as IncompleteDot } from "./feature/verticalStepper/incomplete-dot.svg";
+export { default as CompleteStep } from "./feature/verticalStepper/complete-step.svg";
+export { default as CompleteStepWithGradient } from "./feature/verticalStepper/complete-step-with-gradient.svg";
+export { default as IncompleteStep } from "./feature/verticalStepper/incomplete-step.svg";
+export { default as PartialStep } from "./feature/verticalStepper/partial-step.svg";

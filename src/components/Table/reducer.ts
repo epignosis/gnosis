@@ -25,6 +25,13 @@ export const reducer = (state: TableState, action: ActionType): TableState => {
         return { ...state, selected: [...state.selected, action.payload] };
       }
     }
+    case Actions.selectMany: {
+      const uniqueSelected = [...new Set(action.payload)];
+
+      const selectedRows = state.rows.filter((row) => uniqueSelected.includes(Number(row.id)));
+
+      return { ...state, selected: [...state.selected, ...selectedRows] };
+    }
     case Actions.sortingChanged: {
       return { ...state, sorting: action.payload };
     }

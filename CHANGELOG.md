@@ -1,3 +1,10 @@
+# [5.43.0](https://github.com/epignosis/gnosis/compare/v5.42.0...v5.43.0) (2025-03-20)
+
+
+### Features
+
+* **table:** add option to toggle multiple rows ([#521](https://github.com/epignosis/gnosis/issues/521)) ([f303a54](https://github.com/epignosis/gnosis/commit/f303a546b112fab595c2a4ad2a651351ce75ac6e))
+
 # [5.42.0](https://github.com/epignosis/gnosis/compare/v5.41.36...v5.42.0) (2025-03-19)
 
 

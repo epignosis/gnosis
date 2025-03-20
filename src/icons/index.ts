@@ -324,3 +324,11 @@ export { default as TranslateSVG } from "./client/editor/translate.svg";
 export { default as WriteAISVG } from "./client/editor/write-ai.svg";
 export { default as ChangeToneSVG } from "./client/editor/change-tone.svg";
 export { default as MagicWandSVG } from "./client/editor/magic-wand.svg";
+
+// Vertical Stepper Icons
+export { default as CompleteDot } from "./feature/verticalStepper/complete-dot.svg";
+export { default as IncompleteDot } from "./feature/verticalStepper/incomplete-dot.svg";
+export { default as CompleteStep } from "./feature/verticalStepper/complete-step.svg";
+export { default as CompleteStepWithGradient } from "./feature/verticalStepper/complete-step-with-gradient.svg";
+export { default as IncompleteStep } from "./feature/verticalStepper/incomplete-step.svg";
+export { default as PartialStep } from "./feature/verticalStepper/partial-step.svg";

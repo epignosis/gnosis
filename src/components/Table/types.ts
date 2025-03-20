@@ -59,7 +59,7 @@ export type TableState = {
 export type ActionType =
   | { type: Actions.toggleAll; payload: null }
   | { type: Actions.toggle; payload: Row }
-  | { type: Actions.toggleMany; payload: number[] }
+  | { type: Actions.selectMany; payload: number[] }
   | { type: Actions.sortingChanged; payload: Sorting }
   | { type: Actions.columnsChanged; payload: Column[] }
   | { type: Actions.rowsChanged; payload: Row[] }
@@ -67,6 +67,6 @@ export type ActionType =
   | { type: Actions.setDisabled; payload: boolean };
 
 export type TableHandlers = {
-  toggleMany: (rowIds: number[]) => void;
+  selectRowsById: (rowIds: number[]) => void;
   resetSelected: () => void;
 };

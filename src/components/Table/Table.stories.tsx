@@ -71,7 +71,7 @@ const Template: StoryFn<Props> = (args) => {
   const handleClick = (e: MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault();
     if (tableRef.current) {
-      tableRef.current?.toggleMany([1, 2, 5, 6]);
+      tableRef.current?.selectRowsById([1, 2, 5, 6]);
     }
   };
 

@@ -325,6 +325,9 @@ export { default as WriteAISVG } from "./client/editor/write-ai.svg";
 export { default as ChangeToneSVG } from "./client/editor/change-tone.svg";
 export { default as MagicWandSVG } from "./client/editor/magic-wand.svg";
 
+// Main Menu Icons
+export { default as TeamsSVG } from "./client/teams.svg";
+
 // Vertical Stepper Icons
 export { default as CompleteDot } from "./feature/verticalStepper/complete-dot.svg";
 export { default as IncompleteDot } from "./feature/verticalStepper/incomplete-dot.svg";

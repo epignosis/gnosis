@@ -12,6 +12,7 @@ exports[`<CheckBoxGroup /> matches snapshot 1`] = `
       >
         <input
           aria-checked="false"
+          aria-label="Test groupname"
           id="Test groupname-container"
           name="Test groupname"
           type="checkbox"
@@ -36,6 +37,7 @@ exports[`<CheckBoxGroup /> matches snapshot 1`] = `
           class="css-1uti2s-checkboxContainer-checkboxContainer"
         >
           <input
+            aria-label="Test label"
             id="Test groupname-testValue"
             name="testName"
             type="checkbox"
@@ -71,6 +73,7 @@ exports[`<CheckBoxGroup /> matches snapshot with \`inline = true\` 1`] = `
       >
         <input
           aria-checked="false"
+          aria-label="Test groupname"
           id="Test groupname-container"
           name="Test groupname"
           type="checkbox"
@@ -95,6 +98,7 @@ exports[`<CheckBoxGroup /> matches snapshot with \`inline = true\` 1`] = `
           class="css-1uti2s-checkboxContainer-checkboxContainer"
         >
           <input
+            aria-label="Test label"
             id="Test groupname-testValue"
             name="testName"
             type="checkbox"

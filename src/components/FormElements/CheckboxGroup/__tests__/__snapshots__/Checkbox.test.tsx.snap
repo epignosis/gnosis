@@ -6,6 +6,7 @@ exports[`<Checkbox /> matches snapshot with \`inline\` = true 1`] = `
     class="css-1uti2s-checkboxContainer-checkboxContainer"
   >
     <input
+      aria-label="Test label"
       id="testId"
       name="testName"
       type="checkbox"
@@ -32,6 +33,7 @@ exports[`<Checkbox /> matches snapshot with \`lg\` size 1`] = `
     class="css-az5b0r-checkboxContainer-checkboxContainer"
   >
     <input
+      aria-label="Test label"
       id="testId"
       name="testName"
       type="checkbox"
@@ -59,6 +61,7 @@ exports[`<Checkbox /> matches snapshot with \`md\` size 1`] = `
     id="my-container-id"
   >
     <input
+      aria-label="Test label"
       class="checkbox"
       id="my-id"
       name="testName"

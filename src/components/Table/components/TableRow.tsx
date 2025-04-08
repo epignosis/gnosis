@@ -76,7 +76,6 @@ const TableRow: FC<TableRowProps> = ({
             key={rowId}
             name={rowId}
             value={rowId}
-            tabIndex={0}
             checked={isSelected}
             onChange={handleRowSelection}
             disabled={disabled}

@@ -5,6 +5,7 @@ import { IconType } from "types/common";
 export type Column = {
   accessor: string;
   isDefaultSort?: boolean;
+  isDefaultAccessor?: boolean;
   cell: string | ((arg?: unknown) => JSX.Element | null);
   hidden?: boolean;
   classNames?: string[];

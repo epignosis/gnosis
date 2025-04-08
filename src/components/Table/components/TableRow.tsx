@@ -4,6 +4,7 @@ import { Column, Row } from "../types";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
 import { Dispatch } from "../reducer";
 import { Actions } from "../constants";
+import { getDefaultAccessor, getVisibleAccessors } from "../helpers";
 import Cell from "./Cell";
 import DataCells from "./DataCells";
 
@@ -47,7 +48,8 @@ const TableRow: FC<TableRowProps> = ({
   onRowClick,
   onHoveredRowChange,
 }) => {
-  const accessors = columns.filter((column) => !column.hidden).map((column) => column.accessor);
+  const accessors = getVisibleAccessors(columns);
+  const defaultAccessor = getDefaultAccessor(columns);
 
   const handleRowClick = useCallback((): void => {
     if (disabled) return;
@@ -78,6 +80,7 @@ const TableRow: FC<TableRowProps> = ({
             checked={isSelected}
             onChange={handleRowSelection}
             disabled={disabled}
+            aria-labelledby={`entry-${row.id}-${defaultAccessor}`}
           />
         </Cell>
       )}

@@ -25,23 +25,6 @@ export const tableContainer = ({ table }: Theme) => css`
         height: 54px;
         white-space: nowrap;
 
-        &.autohide-cell:hover,
-        &.selected {
-          .selectable-cell {
-            > div {
-              visibility: visible !important;
-            }
-          }
-        }
-
-        &.autohide-cell {
-          .selectable-cell {
-            > div {
-              visibility: hidden;
-            }
-          }
-        }
-
         th,
         td {
           font-weight: 700;
@@ -108,18 +91,30 @@ export const tableContainer = ({ table }: Theme) => css`
           background-color: ${table.rowHoverColor};
         }
 
+        .selectable-cell:focus-within {
+          > div {
+            opacity: 1;
+          }
+        }
+
         &:hover,
         &.selected {
           .autohide-cell {
             > div {
-              display: flex;
+              opacity: 1;
             }
+          }
+        }
+
+        .autohide-cell:focus-within {
+          > div {
+            opacity: 1;
           }
         }
 
         .autohide-cell {
           > div {
-            display: none;
+            opacity: 0;
           }
         }
 

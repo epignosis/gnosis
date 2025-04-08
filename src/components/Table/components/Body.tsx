@@ -6,7 +6,7 @@ import { ChildrenProps } from "../Table";
 import TableRow from "./TableRow";
 
 const Body: FC<ChildrenProps> = ({
-  id: tableId,
+  id: tableId = "table",
   selectable,
   autohide = false,
   state,

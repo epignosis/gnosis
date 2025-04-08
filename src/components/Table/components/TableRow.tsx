@@ -54,14 +54,11 @@ const TableRow: FC<TableRowProps> = ({
     onRowClick && onRowClick(row);
   }, [row.id, disabled]);
 
-  const handleRowSelection = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>): void => {
-      if (disabled) return;
-      e.preventDefault();
-      dispatch({ type: Actions.toggle, payload: row });
-    },
-    [dispatch, disabled],
-  );
+  const handleRowSelection = useCallback((): void => {
+    if (disabled) return;
+
+    dispatch({ type: Actions.toggle, payload: row });
+  }, [dispatch, disabled]);
 
   return (
     <tr
@@ -71,15 +68,13 @@ const TableRow: FC<TableRowProps> = ({
       onMouseLeave={() => !disabled && onHoveredRowChange(null)}
     >
       {selectable && (
-        <Cell
-          key={`${row.id}-${isSelected ? "selected" : "not-selected"}`}
-          className={checkboxWrapperClassnames(Boolean(autohide))}
-        >
+        <Cell key={rowId} className={checkboxWrapperClassnames(Boolean(autohide))}>
           <Checkbox
             id={rowId}
             key={rowId}
             name={rowId}
             value={rowId}
+            tabIndex={0}
             checked={isSelected}
             onChange={handleRowSelection}
             disabled={disabled}

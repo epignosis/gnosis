@@ -91,12 +91,6 @@ export const tableContainer = ({ table }: Theme) => css`
           background-color: ${table.rowHoverColor};
         }
 
-        .selectable-cell:focus-within {
-          > div {
-            opacity: 1;
-          }
-        }
-
         &:hover,
         &.selected {
           .autohide-cell {

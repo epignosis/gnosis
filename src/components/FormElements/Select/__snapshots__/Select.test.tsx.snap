@@ -3,7 +3,7 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="css-zomftj-selectContainer-selectContainer"
+    class="css-is68w0-selectContainer-selectContainer"
   >
     <div
       class="label-container"

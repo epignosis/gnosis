@@ -255,6 +255,9 @@ export { default as AssignmentNotPassedFilter } from "./client/assignments/not-p
 export { default as AssignmentPendingFilter } from "./client/assignments/pending-filter.svg";
 export { default as AssignmentSubmissionSVG } from "./client/assignments/submission.svg";
 
+//ProductFruits Icons
+export { default as TrophySVG } from "./client/product-fruits/trophy.svg";
+
 // Referral Icons
 export { default as ReferralClaimableSVG } from "./client/referral/referral-claimable.svg";
 export { default as ReferralClaimedSVG } from "./client/referral/referral-claimed.svg";

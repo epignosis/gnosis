@@ -119,7 +119,7 @@ export const resolveStyles = ({
   size,
   menuMaxWidth,
 }: {
-  size: string;
+  size: InputSize;
   menuMaxWidth?: number;
 }): StylesConfig<CustomOption> => ({
   menu: (base: CSSObjectWithLabel) => {
@@ -137,6 +137,9 @@ export const resolveStyles = ({
       ...menuMaxWidthStyles,
     };
   },
+  // Modal overlays use a z-index of 9998
+  // To ensure the menu appears on top, set its z-index to at least 9999
+  menuPortal: (base) => ({ ...base, zIndex: 9999 }),
   placeholder: (
     base: CSSObjectWithLabel,
     { isDisabled }: PlaceholderProps<CustomOption, boolean, GroupBase<CustomOption>>,

@@ -1,3 +1,10 @@
+## [5.43.5](https://github.com/epignosis/gnosis/compare/v5.43.4...v5.43.5) (2025-04-11)
+
+
+### Bug Fixes
+
+* **select:** increase z-index at selects with portaling enabled ([#529](https://github.com/epignosis/gnosis/issues/529)) ([cca6fc0](https://github.com/epignosis/gnosis/commit/cca6fc05e998397966f03a102598896854d69e2d))
+
 ## [5.43.4](https://github.com/epignosis/gnosis/compare/v5.43.3...v5.43.4) (2025-04-10)
 
 ## [5.43.3](https://github.com/epignosis/gnosis/compare/v5.43.2...v5.43.3) (2025-04-09)

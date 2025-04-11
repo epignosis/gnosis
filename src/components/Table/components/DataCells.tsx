@@ -24,10 +24,12 @@ const DataCells: FC<DataCellsProps> = ({
       {accessors.map((accessor) => {
         const rowObj = row[accessor];
         const { maxWidth } = columns.find((column) => column.accessor === accessor) ?? {};
+        const cellId = `entry-${row.id}-${accessor}`;
 
         return (
           <Cell
-            key={`entry-${row.id}-${accessor}`}
+            key={cellId}
+            id={cellId}
             data-testid={`${accessor}-cell`}
             maxWidth={maxWidth}
             windowWidth={windowWidth}

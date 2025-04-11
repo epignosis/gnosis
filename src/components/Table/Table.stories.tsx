@@ -35,7 +35,13 @@ export default {
   },
   args: {
     columns: [
-      { accessor: "id", cell: "Code", classNames: ["id"], sortOrder: "asc" },
+      {
+        accessor: "id",
+        cell: "Code",
+        classNames: ["id"],
+        sortOrder: "asc",
+        isDefaultAccessor: true,
+      },
       {
         accessor: "description",
         cell: "Description",

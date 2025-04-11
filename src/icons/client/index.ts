@@ -38,7 +38,6 @@ export { default as ListCheckRegularSVG } from "./list-check-regular.svg";
 export { default as BulletListSVG } from "./icon-collapsed-left-nav-bar.svg";
 export { default as CartIconSVG } from "./icon-cart.svg";
 export { default as ChartIconSVG } from "./icon-chart.svg";
-export { default as CopyIconSVG } from "./icon-dublicate.svg";
 export { default as EditIconSVG } from "./icon-edit.svg";
 export { default as PreviewIconSVG } from "./icon-preview-small.svg";
 export { default as LoginSVG } from "./login.svg";

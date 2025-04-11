@@ -50,4 +50,5 @@ WithOnlyIcon.args = {
   size: "md",
   text: "",
   icon: InfoIconSVG,
+  ariaLabel: "Tag only with icon",
 };

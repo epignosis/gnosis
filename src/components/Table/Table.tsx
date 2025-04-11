@@ -49,26 +49,26 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
   }, [rows]);
 
   useEffect(() => {
-    const newSorting = {
-      column: sorting?.column,
-      isDescending: sorting?.isDescending,
-    };
+    if (!sorting) return;
 
-    dispatch({ type: Actions.sortingChanged, payload: newSorting });
+    dispatch({
+      type: Actions.sortingChanged,
+      payload: sorting,
+    });
   }, [sorting]);
 
   useEffect(() => {
-    onRowSelect && onRowSelect(selected);
+    onRowSelect?.(selected);
   }, [selected]);
 
   useImperativeHandle(ref, () => ({
-    toggleSelected: () => dispatch({ type: Actions.toggleAll, payload: null }),
+    selectRowsById: (rowIds: number[]) => dispatch({ type: Actions.selectMany, payload: rowIds }),
     resetSelected: () => dispatch({ type: Actions.resetSelectedRows, payload: null }),
   }));
 
   const containerClassNames = classNames({
     [className]: Boolean(className),
-    disabled: disabled,
+    disabled,
   });
 
   return (

@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": "./",
-    "target": "es5",
+    "target": "es2015",
     "module": "esnext",
     "lib": ["es6", "dom", "esnext"],
     "types": ["node", "jest", "@testing-library/jest-dom", "@emotion/react/types/css-prop"],

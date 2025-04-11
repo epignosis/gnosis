@@ -3,7 +3,7 @@
 exports[`<Table> matches snapshot 1`] = `
 <div>
   <div
-    class="css-1srvkma-tableContainer-tableContainer"
+    class="css-1o541gi-tableContainer-tableContainer"
     data-testid="table-1"
   >
     <table
@@ -21,14 +21,6 @@ exports[`<Table> matches snapshot 1`] = `
             <span>
               Header1
             </span>
-            <span
-              class="sorting-icon"
-              data-testid="header1-sorting"
-            >
-              <svg-file-stub
-                height="20"
-              />
-            </span>
           </th>
           <th
             class="header-cell header2 "
@@ -37,14 +29,6 @@ exports[`<Table> matches snapshot 1`] = `
           >
             <span>
               Header2
-            </span>
-            <span
-              class="sorting-icon"
-              data-testid="header2-sorting"
-            >
-              <svg-file-stub
-                height="20"
-              />
             </span>
           </th>
           <th
@@ -55,14 +39,6 @@ exports[`<Table> matches snapshot 1`] = `
             <span>
               Header3
             </span>
-            <span
-              class="sorting-icon"
-              data-testid="header3-sorting"
-            >
-              <svg-file-stub
-                height="20"
-              />
-            </span>
           </th>
           <th
             class="header-cell header4 "
@@ -71,14 +47,6 @@ exports[`<Table> matches snapshot 1`] = `
           >
             <span>
               Header4
-            </span>
-            <span
-              class="sorting-icon"
-              data-testid="header4-sorting"
-            >
-              <svg-file-stub
-                height="20"
-              />
             </span>
           </th>
           <th
@@ -89,14 +57,6 @@ exports[`<Table> matches snapshot 1`] = `
             <span>
               Header5
             </span>
-            <span
-              class="sorting-icon"
-              data-testid="header5-sorting"
-            >
-              <svg-file-stub
-                height="20"
-              />
-            </span>
           </th>
         </tr>
       </thead>
@@ -106,22 +66,27 @@ exports[`<Table> matches snapshot 1`] = `
         >
           <td
             data-testid="header1-cell"
+            id="entry-id1-header1"
             style="max-width: auto;"
           />
           <td
             data-testid="header2-cell"
+            id="entry-id1-header2"
             style="max-width: auto;"
           />
           <td
             data-testid="header3-cell"
+            id="entry-id1-header3"
             style="max-width: auto;"
           />
           <td
             data-testid="header4-cell"
+            id="entry-id1-header4"
             style="max-width: auto;"
           />
           <td
             data-testid="header5-cell"
+            id="entry-id1-header5"
             style="max-width: auto;"
           />
         </tr>
@@ -130,22 +95,27 @@ exports[`<Table> matches snapshot 1`] = `
         >
           <td
             data-testid="header1-cell"
+            id="entry-id2-header1"
             style="max-width: auto;"
           />
           <td
             data-testid="header2-cell"
+            id="entry-id2-header2"
             style="max-width: auto;"
           />
           <td
             data-testid="header3-cell"
+            id="entry-id2-header3"
             style="max-width: auto;"
           />
           <td
             data-testid="header4-cell"
+            id="entry-id2-header4"
             style="max-width: auto;"
           />
           <td
             data-testid="header5-cell"
+            id="entry-id2-header5"
             style="max-width: auto;"
           />
         </tr>
@@ -154,22 +124,27 @@ exports[`<Table> matches snapshot 1`] = `
         >
           <td
             data-testid="header1-cell"
+            id="entry-id3-header1"
             style="max-width: auto;"
           />
           <td
             data-testid="header2-cell"
+            id="entry-id3-header2"
             style="max-width: auto;"
           />
           <td
             data-testid="header3-cell"
+            id="entry-id3-header3"
             style="max-width: auto;"
           />
           <td
             data-testid="header4-cell"
+            id="entry-id3-header4"
             style="max-width: auto;"
           />
           <td
             data-testid="header5-cell"
+            id="entry-id3-header5"
             style="max-width: auto;"
           />
         </tr>
@@ -178,22 +153,27 @@ exports[`<Table> matches snapshot 1`] = `
         >
           <td
             data-testid="header1-cell"
+            id="entry-id4-header1"
             style="max-width: auto;"
           />
           <td
             data-testid="header2-cell"
+            id="entry-id4-header2"
             style="max-width: auto;"
           />
           <td
             data-testid="header3-cell"
+            id="entry-id4-header3"
             style="max-width: auto;"
           />
           <td
             data-testid="header4-cell"
+            id="entry-id4-header4"
             style="max-width: auto;"
           />
           <td
             data-testid="header5-cell"
+            id="entry-id4-header5"
             style="max-width: auto;"
           />
         </tr>

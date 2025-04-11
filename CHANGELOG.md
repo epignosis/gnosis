@@ -1,3 +1,65 @@
+## [5.43.4](https://github.com/epignosis/gnosis/compare/v5.43.3...v5.43.4) (2025-04-10)
+
+## [5.43.3](https://github.com/epignosis/gnosis/compare/v5.43.2...v5.43.3) (2025-04-09)
+
+## [5.43.2](https://github.com/epignosis/gnosis/compare/v5.43.1...v5.43.2) (2025-04-02)
+
+## [5.43.1](https://github.com/epignosis/gnosis/compare/v5.43.0...v5.43.1) (2025-03-28)
+
+# [5.43.0](https://github.com/epignosis/gnosis/compare/v5.42.0...v5.43.0) (2025-03-20)
+
+
+### Features
+
+* **table:** add option to toggle multiple rows ([#521](https://github.com/epignosis/gnosis/issues/521)) ([f303a54](https://github.com/epignosis/gnosis/commit/f303a546b112fab595c2a4ad2a651351ce75ac6e))
+
+# [5.42.0](https://github.com/epignosis/gnosis/compare/v5.41.36...v5.42.0) (2025-03-19)
+
+
+### Features
+
+* **new teams icon:** just a new icon for the main menu ([#522](https://github.com/epignosis/gnosis/issues/522)) ([25f83d1](https://github.com/epignosis/gnosis/commit/25f83d1d79fd097da3c6c3358ce0b5c2e8ff8ea7))
+
+## [5.41.36](https://github.com/epignosis/gnosis/compare/v5.41.35...v5.41.36) (2025-03-13)
+
+## [5.41.35](https://github.com/epignosis/gnosis/compare/v5.41.34...v5.41.35) (2025-03-11)
+
+## [5.41.34](https://github.com/epignosis/gnosis/compare/v5.41.33...v5.41.34) (2025-03-11)
+
+## [5.41.33](https://github.com/epignosis/gnosis/compare/v5.41.32...v5.41.33) (2025-03-07)
+
+## [5.41.32](https://github.com/epignosis/gnosis/compare/v5.41.31...v5.41.32) (2025-03-07)
+
+## [5.41.31](https://github.com/epignosis/gnosis/compare/v5.41.30...v5.41.31) (2025-03-04)
+
+## [5.41.30](https://github.com/epignosis/gnosis/compare/v5.41.29...v5.41.30) (2025-02-28)
+
+## [5.41.29](https://github.com/epignosis/gnosis/compare/v5.41.28...v5.41.29) (2025-02-26)
+
+## [5.41.28](https://github.com/epignosis/gnosis/compare/v5.41.27...v5.41.28) (2025-02-24)
+
+
+### Bug Fixes
+
+* **a11y:** fix issues from the a11y report ([#498](https://github.com/epignosis/gnosis/issues/498)) ([4a16c37](https://github.com/epignosis/gnosis/commit/4a16c377153f45c54b17bfdaa7cbb533fc3225d8))
+
+## [5.41.27](https://github.com/epignosis/gnosis/compare/v5.41.26...v5.41.27) (2025-02-24)
+
+## [5.41.26](https://github.com/epignosis/gnosis/compare/v5.41.25...v5.41.26) (2025-02-21)
+
+## [5.41.25](https://github.com/epignosis/gnosis/compare/v5.41.24...v5.41.25) (2025-02-20)
+
+## [5.41.24](https://github.com/epignosis/gnosis/compare/v5.41.23...v5.41.24) (2025-02-20)
+
+## [5.41.23](https://github.com/epignosis/gnosis/compare/v5.41.22...v5.41.23) (2025-02-20)
+
+
+### Bug Fixes
+
+* **remove fill from svg:** remove fill from svg ([#507](https://github.com/epignosis/gnosis/issues/507)) ([d0d1d37](https://github.com/epignosis/gnosis/commit/d0d1d379c91569270f33618db135e87c2e134b47))
+
+## [5.41.22](https://github.com/epignosis/gnosis/compare/v5.41.21...v5.41.22) (2025-02-19)
+
 ## [5.41.21](https://github.com/epignosis/gnosis/compare/v5.41.20...v5.41.21) (2025-02-19)
 
 ## [5.41.20](https://github.com/epignosis/gnosis/compare/v5.41.19...v5.41.20) (2025-02-19)

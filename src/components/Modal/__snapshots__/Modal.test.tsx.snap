@@ -9,7 +9,7 @@ exports[`<Modal> matches snapshot 1`] = `
   tabindex="-1"
 >
   <header
-    class="css-ityk00-modalHeader-modalHeader"
+    class="css-1qvmmn3-modalHeader-modalHeader"
     data-testid="modal-header"
   >
     <div>
@@ -21,12 +21,12 @@ exports[`<Modal> matches snapshot 1`] = `
     </div>
   </header>
   <article
-    class="css-18mo2pj-modalContent"
+    class="css-1v47goe-modalContent"
   >
     Test body
   </article>
   <footer
-    class="css-1ivdtwx-modalFooter-modalFooter"
+    class="css-xu94ia-modalFooter-modalFooter"
     data-testid="modal-footer"
   >
     Test footer
@@ -44,7 +44,7 @@ exports[`<Modal> matches snapshot with all props 1`] = `
   tabindex="-1"
 >
   <header
-    class="css-ityk00-modalHeader-modalHeader"
+    class="css-1qvmmn3-modalHeader-modalHeader"
     data-testid="modal-header"
   >
     <div>
@@ -56,7 +56,7 @@ exports[`<Modal> matches snapshot with all props 1`] = `
     </div>
   </header>
   <article
-    class="css-18mo2pj-modalContent"
+    class="css-1v47goe-modalContent"
     style="border: 2px solid green;"
   >
     <div
@@ -81,7 +81,7 @@ exports[`<Modal> matches snapshot with all props 1`] = `
     />
   </article>
   <footer
-    class="css-1ivdtwx-modalFooter-modalFooter"
+    class="css-xu94ia-modalFooter-modalFooter"
     data-testid="modal-footer"
     style="border: 2px solid purple; text-align: right;"
   >
@@ -106,7 +106,7 @@ exports[`<Modal> matches snapshot with custom HTML classes 1`] = `
   tabindex="-1"
 >
   <header
-    class="css-ityk00-modalHeader-modalHeader"
+    class="css-1qvmmn3-modalHeader-modalHeader"
     data-testid="modal-header"
   >
     <div>
@@ -118,12 +118,12 @@ exports[`<Modal> matches snapshot with custom HTML classes 1`] = `
     </div>
   </header>
   <article
-    class="css-18mo2pj-modalContent"
+    class="css-1v47goe-modalContent"
   >
     Test body
   </article>
   <footer
-    class="css-1ivdtwx-modalFooter-modalFooter"
+    class="css-xu94ia-modalFooter-modalFooter"
     data-testid="modal-footer"
   >
     Test footer

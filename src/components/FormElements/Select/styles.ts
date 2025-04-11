@@ -15,6 +15,8 @@ import { inputHeight } from "../styles";
 import { CustomOption } from "./types";
 import { formElements, scrollbar } from "@theme/default/config";
 
+const portalSelectZIndex = 9999;
+
 export const selectContainer = (
   { formElements }: Theme,
   {
@@ -119,7 +121,7 @@ export const resolveStyles = ({
   size,
   menuMaxWidth,
 }: {
-  size: string;
+  size: InputSize;
   menuMaxWidth?: number;
 }): StylesConfig<CustomOption> => ({
   menu: (base: CSSObjectWithLabel) => {
@@ -137,6 +139,9 @@ export const resolveStyles = ({
       ...menuMaxWidthStyles,
     };
   },
+  // Modal overlays use a z-index of 9998
+  // To ensure the menu appears on top, set its z-index to at least 9999
+  menuPortal: (base) => ({ ...base, zIndex: portalSelectZIndex }),
   placeholder: (
     base: CSSObjectWithLabel,
     { isDisabled }: PlaceholderProps<CustomOption, boolean, GroupBase<CustomOption>>,

@@ -4,7 +4,7 @@ import { render, fireEvent, screen } from "@test-utils/render";
 
 describe("<ToggleSwitch />", () => {
   it("Matches snapshot", () => {
-    const { container } = render(<ToggleSwitch id="my-toggle" />);
+    const { container } = render(<ToggleSwitch id="my-toggle" labelledById="text-id" />);
     expect(container).toMatchSnapshot();
   });
 

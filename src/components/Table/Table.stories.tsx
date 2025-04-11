@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useRef, useState } from "react";
+import React, { MouseEvent, useCallback, useRef, useState } from "react";
 import { StoryFn } from "@storybook/react";
 import { IconEmptyStateSVG } from "../../icons/";
 import Text from "../Text/Text";
@@ -35,7 +35,13 @@ export default {
   },
   args: {
     columns: [
-      { accessor: "id", cell: "Code", classNames: ["id"], sortOrder: "asc" },
+      {
+        accessor: "id",
+        cell: "Code",
+        classNames: ["id"],
+        sortOrder: "asc",
+        isDefaultAccessor: true,
+      },
       {
         accessor: "description",
         cell: "Description",
@@ -63,28 +69,28 @@ export default {
 };
 
 const Template: StoryFn<Props> = (args) => {
-  const [selectedRows, setSelectedRows] = useState<number[]>([]);
+  const [, setSelectedRows] = useState<number[]>([]);
   const { selectable, autohide } = args;
   const showUncheckBtn = selectable && !autohide;
   const tableRef = useRef<TableHandlers>(null);
 
-  const handleClick = (): void => {
-    if (tableRef.current && selectedRows.length > 0) {
-      tableRef.current?.toggleSelected();
+  const handleClick = (e: MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
+    if (tableRef.current) {
+      tableRef.current?.selectRowsById([1, 2, 5, 6]);
     }
   };
 
-  const handleRowSelect = (selectedRows: Row[]): void => {
+  const handleRowSelect = useCallback((selectedRows: Row[]): void => {
     const selectedRowIds = selectedRows.map((row) => Number(row.id));
-    console.log("selectedRowIds", selectedRowIds);
     setSelectedRows(selectedRowIds);
-  };
+  }, []);
 
   return (
     <>
       {showUncheckBtn && (
         <Button onClick={handleClick} style={{ marginBottom: "1rem" }}>
-          Uncheck rows
+          Toggle rows 1, 2, 5, 6
         </Button>
       )}
       <Table {...args} ref={tableRef} onRowSelect={handleRowSelect} />

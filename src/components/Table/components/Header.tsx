@@ -92,11 +92,11 @@ const Header: FC<ChildrenProps> = ({
     <thead>
       <tr className={rowClassnames(isSelectAllChecked, allRowsSelected, autohide)}>
         {selectable && (
-          <Cell as="td" key={`select-all-${isSelectAllChecked}`} className="selectable-cell">
+          <Cell as="td" className="selectable-cell">
             <Checkbox
-              key={`select-all-${isSelectAllChecked} - ${id}`}
               id={`select-all-${isSelectAllChecked} - ${id}`}
               name="select-all"
+              aria-label="Select all rows"
               value="all"
               onChange={handleToggleSelectAll}
               checked={isSelectAllChecked}

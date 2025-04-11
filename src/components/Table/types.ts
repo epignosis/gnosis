@@ -5,6 +5,7 @@ import { IconType } from "types/common";
 export type Column = {
   accessor: string;
   isDefaultSort?: boolean;
+  isDefaultAccessor?: boolean;
   cell: string | ((arg?: unknown) => JSX.Element | null);
   hidden?: boolean;
   classNames?: string[];
@@ -59,6 +60,7 @@ export type TableState = {
 export type ActionType =
   | { type: Actions.toggleAll; payload: null }
   | { type: Actions.toggle; payload: Row }
+  | { type: Actions.selectMany; payload: number[] }
   | { type: Actions.sortingChanged; payload: Sorting }
   | { type: Actions.columnsChanged; payload: Column[] }
   | { type: Actions.rowsChanged; payload: Row[] }
@@ -66,6 +68,6 @@ export type ActionType =
   | { type: Actions.setDisabled; payload: boolean };
 
 export type TableHandlers = {
-  toggleSelected: () => void;
+  selectRowsById: (rowIds: number[]) => void;
   resetSelected: () => void;
 };

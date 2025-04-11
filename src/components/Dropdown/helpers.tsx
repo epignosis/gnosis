@@ -41,3 +41,9 @@ export const getScrollableParent = (node: ParentNode | null): ParentNode | null 
 
   return getScrollableParent(node.parentNode) || null;
 };
+
+export const getInlinePaddingStart = (level: number, isSearchable: boolean) => {
+  const initialPadding = isSearchable ? 0.25 : 1;
+
+  return initialPadding + level * 0.75;
+};

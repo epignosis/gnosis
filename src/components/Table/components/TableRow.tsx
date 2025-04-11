@@ -4,6 +4,7 @@ import { Column, Row } from "../types";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
 import { Dispatch } from "../reducer";
 import { Actions } from "../constants";
+import { getDefaultAccessor, getVisibleAccessors } from "../helpers";
 import Cell from "./Cell";
 import DataCells from "./DataCells";
 
@@ -47,21 +48,19 @@ const TableRow: FC<TableRowProps> = ({
   onRowClick,
   onHoveredRowChange,
 }) => {
-  const accessors = columns.filter((column) => !column.hidden).map((column) => column.accessor);
+  const accessors = getVisibleAccessors(columns);
+  const defaultAccessor = getDefaultAccessor(columns);
 
   const handleRowClick = useCallback((): void => {
     if (disabled) return;
     onRowClick && onRowClick(row);
   }, [row.id, disabled]);
 
-  const handleRowSelection = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>): void => {
-      if (disabled) return;
-      e.preventDefault();
-      dispatch({ type: Actions.toggle, payload: row });
-    },
-    [dispatch, disabled],
-  );
+  const handleRowSelection = useCallback((): void => {
+    if (disabled) return;
+
+    dispatch({ type: Actions.toggle, payload: row });
+  }, [dispatch, disabled]);
 
   return (
     <tr
@@ -71,10 +70,7 @@ const TableRow: FC<TableRowProps> = ({
       onMouseLeave={() => !disabled && onHoveredRowChange(null)}
     >
       {selectable && (
-        <Cell
-          key={`${row.id}-${isSelected ? "selected" : "not-selected"}`}
-          className={checkboxWrapperClassnames(Boolean(autohide))}
-        >
+        <Cell key={rowId} className={checkboxWrapperClassnames(Boolean(autohide))}>
           <Checkbox
             id={rowId}
             key={rowId}
@@ -83,6 +79,7 @@ const TableRow: FC<TableRowProps> = ({
             checked={isSelected}
             onChange={handleRowSelection}
             disabled={disabled}
+            aria-labelledby={`entry-${row.id}-${defaultAccessor}`}
           />
         </Cell>
       )}

@@ -18,6 +18,10 @@ type TabsProps = React.HTMLAttributes<HTMLElement> & {
   onChangeTab?: (index: number) => void;
   tabs: TabObject[];
   inlineEndComponent?: JSX.Element;
+  testIds?: {
+    nav?: string;
+    content?: string;
+  };
 };
 
 const Tabs: FC<TabsProps> = ({
@@ -26,9 +30,11 @@ const Tabs: FC<TabsProps> = ({
   selectedTab = 0,
   onChangeTab,
   inlineEndComponent,
+  testIds,
   ...rest
 }) => {
   const [activeTab, setActiveTab] = useState(selectedTab);
+  const baseTitleRef = useRef(document.title);
   const tabsLength = tabs.length - 1;
   const tabsNavEl = useRef<HTMLDivElement>(null);
   const [isOverflowActive, setIsOverflowActive] = useState(false);
@@ -120,6 +126,21 @@ const Tabs: FC<TabsProps> = ({
     }
   };
 
+  // Restore original title on unmount
+  useEffect(() => {
+    return () => {
+      document.title = baseTitleRef.current;
+    };
+  }, []);
+
+  // Update document title with the selected tab title for a11y purposes
+  useEffect(() => {
+    const selected = tabs[activeTab];
+    const tabTitle = typeof selected?.title === "string" ? selected.title : "";
+    const newTitle = tabTitle ? `${baseTitleRef.current} | ${tabTitle}` : baseTitleRef.current;
+    if (document.title !== newTitle) document.title = newTitle;
+  }, [activeTab, tabs]);
+
   return (
     <section css={container} {...rest}>
       <div className="nav-wrapper" role="navigation" tabIndex={0}>
@@ -139,6 +160,7 @@ const Tabs: FC<TabsProps> = ({
           css={(theme): SerializedStyles => tabsHeader(theme, { stickyHeader })}
           role="tablist"
           ref={tabsNavEl}
+          {...(testIds?.nav && { "data-testid": testIds.nav })}
         >
           {tabs
             .filter((tab) => tab.content)
@@ -169,7 +191,12 @@ const Tabs: FC<TabsProps> = ({
         )}
       </div>
 
-      <div id="content" aria-live="polite" role="region">
+      <div
+        id="content"
+        aria-live="polite"
+        role="region"
+        {...(testIds?.content && { "data-testid": testIds.content })}
+      >
         {tabs
           .filter((tab) => tab.content)
           .map(({ content }, index) => (

@@ -1,4 +1,5 @@
 import type { GroupBase, Props } from "react-select";
+import { InputSize } from "../Input/Input";
 
 export type Status = "valid" | "error";
 
@@ -25,7 +26,7 @@ export type CustomSelectProps<
   type?: SelectType;
   required?: boolean;
   label?: string;
-  size?: "sm" | "md" | "lg";
+  size?: InputSize;
   inline?: boolean;
   status?: "valid" | "error";
   isInlineFlex?: boolean;

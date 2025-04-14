@@ -13,6 +13,7 @@ export type ChipProps = React.HTMLAttributes<HTMLDivElement> & {
   size?: Size;
   icon?: IconType;
   children: ReactNode | string;
+  closeButtonAriaLabel?: string;
   maxWidth?: number;
 };
 
@@ -22,6 +23,7 @@ const Chip: FC<ChipProps> = ({
   children,
   icon: Icon,
   style,
+  closeButtonAriaLabel,
   maxWidth,
   ...rest
 }) => {
@@ -38,7 +40,7 @@ const Chip: FC<ChipProps> = ({
       {...rest}
     >
       {onClose && (
-        <button onClick={onClose} aria-label={`Remove ${children}`} style={{ color: style?.color }}>
+        <button onClick={onClose} aria-label={closeButtonAriaLabel} style={{ color: style?.color }}>
           {Icon && <Icon className="icon" data-testid="icon" />}
           <span className="close-icon">
             <CloseSVG height={16} />

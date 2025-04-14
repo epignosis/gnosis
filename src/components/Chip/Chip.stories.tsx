@@ -45,4 +45,5 @@ Filters.args = {
   children: "Filter",
   icon: BranchesFilterSVG,
   maxWidth: 100,
+  closeButtonAriaLabel: "Remove filter",
 };

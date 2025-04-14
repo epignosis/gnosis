@@ -8,7 +8,7 @@ exports[`<Chip /> matches snapshot 1`] = `
     style="background-color: purple; color: white;"
   >
     <button
-      aria-label="Remove This is a chip"
+      data-testid="close-filter"
       style="color: white;"
     >
       <span

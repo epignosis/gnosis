@@ -40,7 +40,12 @@ const Chip: FC<ChipProps> = ({
       {...rest}
     >
       {onClose && (
-        <button onClick={onClose} aria-label={closeButtonAriaLabel} style={{ color: style?.color }}>
+        <button
+          data-testid="close-filter"
+          onClick={onClose}
+          aria-label={closeButtonAriaLabel}
+          style={{ color: style?.color }}
+        >
           {Icon && <Icon className="icon" data-testid="icon" />}
           <span className="close-icon">
             <CloseSVG height={16} />

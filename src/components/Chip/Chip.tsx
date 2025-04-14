@@ -23,7 +23,7 @@ const Chip: FC<ChipProps> = ({
   children,
   icon: Icon,
   style,
-  closeButtonAriaLabel,
+  closeButtonAriaLabel = "Close filter",
   maxWidth,
   ...rest
 }) => {

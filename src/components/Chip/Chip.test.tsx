@@ -21,7 +21,7 @@ describe("<Chip />", () => {
     render(<Chip onClose={mockFn}>{chipTxt}</Chip>);
 
     const tag = screen.getByText(chipTxt);
-    const closeBtn = screen.getByLabelText(`Remove ${chipTxt}`);
+    const closeBtn = screen.getByTestId("close-filter");
 
     await userEvent.click(closeBtn);
 

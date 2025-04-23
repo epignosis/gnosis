@@ -126,6 +126,7 @@ export { default as AccountSettingsSVG } from "./icon-account-settings.svg";
 export { default as EcommerceSVG } from "./icon-ecommerce.svg";
 export { default as EventsEngineSVG } from "./icon-events-engine.svg";
 export { default as ConferenceSVG } from "./icon-conference.svg";
+export { default as LearningPathPrerequisiteSVG } from "./learning-path-prerequisite.svg";
 export { default as LearningPathSVG } from "./learning-path.svg";
 export { default as UpdateSVG } from "./update.svg";
 export { default as InstructorSVG } from "./icon-instructors.svg";

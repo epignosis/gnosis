@@ -11,6 +11,7 @@ describe("<Alert>", () => {
     const heading = faker.lorem.word();
     const paragraphTxt = faker.lorem.paragraph();
     const mockedOnClose = jest.fn();
+
     render(
       <Alert type="info" onClose={mockedOnClose}>
         <Heading as="h3" size="md">

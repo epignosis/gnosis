@@ -26,3 +26,9 @@ export { default as DiagramSubTaskSVG } from "./diagram-subtask.svg";
 // Overview widget
 export { default as BooksPlusSVG } from "./books-plus.svg";
 export { default as UserCheckMarkSVG } from "./user-check-mark.svg";
+
+// Analytics users widget
+export { default as UsersGearSVG } from "./user-gear.svg";
+export { default as ChalkboardUserSVG } from "./chalkboard-user.svg";
+export { default as UserGraduateSVG } from "./user-graduate.svg";
+export { default as UsersStartSVG } from "./users-star.svg";

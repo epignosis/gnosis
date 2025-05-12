@@ -16,7 +16,7 @@ type ToggleSpecificProps = {
   required?: boolean;
   tooltip?: string;
   variant?: "primary" | "success";
-  shouldOutline?: boolean;
+  showOutlineBorder?: boolean;
   size?: "sm" | "md";
   notSwitchedOff?: boolean;
   preventToggle?: boolean;
@@ -68,7 +68,7 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
     hasInlineText = false,
     inlineTextTranslations = { enabled: "Enabled", disabled: "Disabled" },
     variant = "primary",
-    shouldOutline = false,
+    showOutlineBorder = false,
     notSwitchedOff = false,
     size = "sm",
     subtitle = "",
@@ -117,7 +117,7 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
           isDisabled,
           hasDescription,
           notSwitchedOff,
-          shouldOutline,
+          showOutlineBorder,
         })
       }
       data-testid={id}

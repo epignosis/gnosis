@@ -68,7 +68,7 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
     hasInlineText = false,
     inlineTextTranslations = { enabled: "Enabled", disabled: "Disabled" },
     variant = "primary",
-    shouldOutline = true,
+    shouldOutline = false,
     notSwitchedOff = false,
     size = "sm",
     subtitle = "",

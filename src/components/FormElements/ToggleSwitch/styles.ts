@@ -7,7 +7,8 @@ export const ToggleContainer = (
     isDisabled,
     hasDescription,
     notSwitchedOff,
-  }: { isChecked: boolean; isDisabled: boolean; hasDescription: boolean; notSwitchedOff: boolean },
+    shouldOutline
+  }: { isChecked: boolean; isDisabled: boolean; hasDescription: boolean; notSwitchedOff: boolean, shouldOutline: boolean },
 ): SerializedStyles => css`
   display: flex;
   flex-direction: column;
@@ -23,6 +24,13 @@ export const ToggleContainer = (
 
     .switch-container {
       display: flex;
+
+      ${shouldOutline &&
+      `
+        border: 1px solid ${formElements.toggleSwitch.textColor};
+        border-radius: 10px;
+        border-color: ${formElements.toggleSwitch.textColor};
+      `}
 
       .switch {
         position: relative;

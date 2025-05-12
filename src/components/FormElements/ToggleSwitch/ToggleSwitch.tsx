@@ -117,7 +117,7 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
           isDisabled,
           hasDescription,
           notSwitchedOff,
-          shouldOutline
+          shouldOutline,
         })
       }
       data-testid={id}

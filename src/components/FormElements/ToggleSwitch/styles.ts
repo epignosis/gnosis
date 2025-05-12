@@ -7,8 +7,14 @@ export const ToggleContainer = (
     isDisabled,
     hasDescription,
     notSwitchedOff,
-    shouldOutline
-  }: { isChecked: boolean; isDisabled: boolean; hasDescription: boolean; notSwitchedOff: boolean, shouldOutline: boolean },
+    shouldOutline,
+  }: {
+    isChecked: boolean;
+    isDisabled: boolean;
+    hasDescription: boolean;
+    notSwitchedOff: boolean;
+    shouldOutline: boolean;
+  },
 ): SerializedStyles => css`
   display: flex;
   flex-direction: column;

@@ -34,7 +34,7 @@ export const ToggleContainer = (
       ${showOutlineBorder &&
       `
         border: 1px solid ${formElements.toggleSwitch.textColor};
-        border-radius: 0.625px;
+        border-radius: 0.625rem;
         border-color: ${formElements.toggleSwitch.textColor};
       `}
 

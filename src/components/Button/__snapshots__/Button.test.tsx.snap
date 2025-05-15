@@ -3,7 +3,7 @@
 exports[`<Button /> matches snapshot 1`] = `
 <div>
   <button
-    class="solid css-z4fqld-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+    class="gnosis-button solid css-z4fqld-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
   >
     <span
       class="btn-text"
@@ -17,7 +17,7 @@ exports[`<Button /> matches snapshot 1`] = `
 exports[`<Button /> matches snapshot with all props 1`] = `
 <div>
   <button
-    class="my-class rounded solid css-1asnn11-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+    class="gnosis-button my-class rounded solid css-1asnn11-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
     id="my-button"
   >
     <span

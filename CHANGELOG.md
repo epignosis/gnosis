@@ -1,3 +1,10 @@
+# [5.44.0](https://github.com/epignosis/gnosis/compare/v5.43.9...v5.44.0) (2025-05-15)
+
+
+### Features
+
+* **button:** add class to distinguish gnosis button ([#536](https://github.com/epignosis/gnosis/issues/536)) ([e1f3f29](https://github.com/epignosis/gnosis/commit/e1f3f2994290b57c3717ef26a172d320f5a36493))
+
 ## [5.43.9](https://github.com/epignosis/gnosis/compare/v5.43.8...v5.43.9) (2025-05-05)
 
 ## [5.43.8](https://github.com/epignosis/gnosis/compare/v5.43.7...v5.43.8) (2025-04-23)

@@ -36,7 +36,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
     >
       <button
         aria-label="Go to first page"
-        class="gnosis-button pagination-btn ghost css-qahk9i-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        class="pagination-btn ghost css-1ufldi9-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="first-page-btn"
         title="First page"
       >
@@ -48,7 +48,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       </button>
       <button
         aria-label="Go to the previous page"
-        class="gnosis-button pagination-btn ghost css-qahk9i-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        class="pagination-btn ghost css-1ufldi9-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="previous-page-btn"
         name="Previous page"
         title="Previous page"
@@ -88,7 +88,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       </div>
       <button
         aria-label="Go to the next page"
-        class="gnosis-button pagination-btn ghost css-qahk9i-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        class="pagination-btn ghost css-1ufldi9-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="next-page-btn"
         name="Next page"
         title="Next page"
@@ -101,7 +101,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       </button>
       <button
         aria-label="Go to the last page"
-        class="gnosis-button pagination-btn ghost css-qahk9i-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        class="pagination-btn ghost css-1ufldi9-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
         data-testid="last-page-btn"
         name="Last page"
         title="Last page"

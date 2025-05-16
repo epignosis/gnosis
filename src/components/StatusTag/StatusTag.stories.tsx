@@ -24,6 +24,10 @@ export default {
         "red",
       ],
     },
+    fontWeight: {
+      type: "select",
+      options: ["400", "700"],
+    },
   },
 };
 

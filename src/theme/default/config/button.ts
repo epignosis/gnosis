@@ -12,6 +12,7 @@ export default {
       background: colors.primary.base,
       borderColor: colors.primary.base,
       color: colors.white,
+      borderRadius: "5px",
     },
     hover: {
       background: colors.primary.light,

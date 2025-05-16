@@ -7,7 +7,13 @@ export const statusTagStyles = (
     statusTag,
     typeScaleSizes,
   }: { statusTag: Theme["statusTag"]; typeScaleSizes: Theme["typeScaleSizes"] },
-  size: StatusTagSizes,
+  {
+    size,
+    fontWeight,
+  }: {
+    size: StatusTagSizes;
+    fontWeight: "400" | "700";
+  },
 ) => {
   return css`
     display: inline-flex;
@@ -16,7 +22,7 @@ export const statusTagStyles = (
     align-items: center;
     gap: ${size === "md" ? "0.625rem" : "0.25rem"};
     font-size: ${size === "md" ? typeScaleSizes.sm : typeScaleSizes.xs};
-    font-weight: ${size === "sm" ? "700" : "400"};
+    font-weight: ${fontWeight};
     border-radius: 5px;
     line-height: 1;
 

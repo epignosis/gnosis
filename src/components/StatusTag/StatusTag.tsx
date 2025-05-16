@@ -23,6 +23,7 @@ export type StatusTagProps = HTMLAttributes<HTMLSpanElement> & {
   icon?: IconType;
   color?: StatusTagColors;
   ariaLabel?: string;
+  fontWeight?: "700" | "400";
 };
 
 const StatusTag: FC<StatusTagProps> = ({
@@ -32,13 +33,17 @@ const StatusTag: FC<StatusTagProps> = ({
   size = "md",
   color = "neutral",
   ariaLabel,
+  fontWeight,
   ...rest
 }) => {
   const dataTestId = testId ? testId : `status-tag-${text}`;
+  const defaultFontWeight = size === "sm" ? "700" : "400";
 
   return (
     <span
-      css={(theme): SerializedStyles => statusTagStyles(theme, size)}
+      css={(theme): SerializedStyles =>
+        statusTagStyles(theme, { size, fontWeight: fontWeight ?? defaultFontWeight })
+      }
       data-testid={dataTestId}
       className={classNames("statusTag", `statusTag--${size}`, `statusTag--${color}`)}
       role="status"

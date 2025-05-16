@@ -230,3 +230,4 @@ export { default as CircleStopSVG } from "./circle-stop.svg";
 export { default as ChartLinesSVG } from "./chart-lines.svg";
 export { default as CirclePlaySVG } from "./circle-play.svg";
 export { default as StarCircleSVG } from "./star-circle.svg";
+export { default as MessagePenSVG } from "./message-pen.svg";

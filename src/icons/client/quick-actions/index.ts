@@ -1,0 +1,16 @@
+export { default as QuickActionsUserSVG } from "./icon-quick-actions-user.svg";
+export { default as QuickActionsGroupSVG } from "./icon-quick-actions-group.svg";
+export { default as QuickActionsCourseSVG } from "./icon-quick-actions-course.svg";
+export { default as QuickActionsCategorySVG } from "./icon-quick-actions-category.svg";
+export { default as QuickActionsSubscriptionSVG } from "./icon-quick-actions-subscription.svg";
+export { default as QuickActionsNotificationSVG } from "./icon-quick-actions-notification.svg";
+export { default as QuickActionsSettingsSVG } from "./icon-quick-actions-settings.svg";
+export { default as QuickActionsConferenceSVG } from "./icon-quick-actions-conference.svg";
+export { default as QuickActionsDiscussionSVG } from "./icon-quick-actions-discussion.svg";
+export { default as QuickActionsEventSVG } from "./icon-quick-actions-event.svg";
+export { default as QuickActionsBranchSVG } from "./icon-quick-actions-branch.svg";
+export { default as QuickActionsEcommerceSVG } from "./icon-quick-actions-ecommerce.svg";
+export { default as QuickActionsReportsSVG } from "./icon-quick-actions-reports.svg";
+export { default as QuickActionsPortalSVG } from "./icon-quick-actions-portal.svg";
+export { default as QuickActionsImportSVG } from "./icon-quick-actions-import.svg";
+export { default as QuickActionsAutomationsSVG } from "./icon-quick-actions-automations.svg";

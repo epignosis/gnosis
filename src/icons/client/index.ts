@@ -232,3 +232,19 @@ export { default as ChartLinesSVG } from "./chart-lines.svg";
 export { default as CirclePlaySVG } from "./circle-play.svg";
 export { default as StarCircleSVG } from "./star-circle.svg";
 export { default as MessagePenSVG } from "./message-pen.svg";
+export { default as ActivateSVG } from "./icon-activate.svg";
+export { default as GradebookSVG } from "./icon-gradebook.svg";
+
+// Main Menu Icons
+export { default as TeamsSVG } from "./teams.svg";
+
+export * from "./assignments";
+export * from "./custom-homepage";
+export * from "./editor";
+export * from "./product-fruits";
+export * from "./quick-actions";
+export * from "./referral";
+export * from "./reports";
+export * from "./reverse-trial";
+export * from "./skills";
+export * from "./widgets";

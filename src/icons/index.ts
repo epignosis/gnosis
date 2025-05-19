@@ -220,20 +220,7 @@ export { default as ClipboardCheckSVG } from "./actions/clipboard-check.svg";
 export { default as ClipboardCrossSVG } from "./actions/clipboard-cross.svg";
 
 // F E A T U R E  S P E C I F I C  E X P O R T S
-// Units Icons
-export * from "./feature/units";
-
-// Questions Icons
-export * from "./feature/questions";
-
-// Training Matrix Icons
-export { default as EmptyCircleMatrixSVG } from "./feature/training-matrix/empty-circle.svg";
-export { default as QuarterFilledCircleMatrixSVG } from "./feature/training-matrix/quarter-filled-circle.svg";
-export { default as HalfFilledCircleMatrixSVG } from "./feature/training-matrix/half-filled-circle.svg";
-export { default as ThreeQuartersFilledCircleMatrixSVG } from "./feature/training-matrix/three-quarters-filled-circle.svg";
-
-// Rating icons
-export * from "./feature/rating";
+export * from "./feature";
 
 // C L I E N T  E X P O R T S
 // Main Exports
@@ -313,11 +300,6 @@ export { default as AiChipSVG } from "./client/skills/ai_chip.svg";
 export { default as ExitAssessmentSVG } from "./client/skills/exit_assessment.svg";
 export { default as UserCheckSVG } from "./client/skills/user_check.svg";
 
-// AI Icons
-export { default as AILoaderSVG } from "./feature/ai/ai-loader.svg";
-export { default as SparklesSolidSVG } from "./feature/ai/sparkles-solid.svg";
-export { default as CoinsSVG } from "./feature/ai/coins.svg";
-
 // AI Editor Icons
 export { default as ContinueSentenceSVG } from "./client/editor/continue-sentence.svg";
 export { default as FixGrammarSVG } from "./client/editor/fix-grammar.svg";
@@ -330,11 +312,3 @@ export { default as MagicWandSVG } from "./client/editor/magic-wand.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./client/teams.svg";
-
-// Vertical Stepper Icons
-export { default as CompleteDot } from "./feature/verticalStepper/complete-dot.svg";
-export { default as IncompleteDot } from "./feature/verticalStepper/incomplete-dot.svg";
-export { default as CompleteStep } from "./feature/verticalStepper/complete-step.svg";
-export { default as CompleteStepWithGradient } from "./feature/verticalStepper/complete-step-with-gradient.svg";
-export { default as IncompleteStep } from "./feature/verticalStepper/incomplete-step.svg";
-export { default as PartialStep } from "./feature/verticalStepper/partial-step.svg";

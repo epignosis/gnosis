@@ -111,6 +111,7 @@ export { default as AIMessageIconSVG } from "./legacy/ai-message-icon.svg";
 export { default as WandIconSVG } from "./legacy/wand-icon.svg";
 export { default as PageSVG } from "./legacy/page.svg";
 export { default as CourseViewSVG } from "./legacy/course-view.svg";
+export { default as RectangleWide } from "./legacy/rectangle-wide.svg";
 
 // Arrow Icons
 export { default as BackIconSVG } from "./arrows/back-icon.svg";

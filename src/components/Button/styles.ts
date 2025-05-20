@@ -15,7 +15,7 @@ const roundDimensions = {
 };
 
 const baseButton = (
-  { typeScaleSizes }: { typeScaleSizes: Theme["typeScaleSizes"] },
+  { typeScaleSizes, button }: Theme,
   { size, block, noGutters }: Omit<ButtonAttrs, "color">,
 ): SerializedStyles => {
   const fontSizes = {
@@ -44,7 +44,7 @@ const baseButton = (
     align-items: center;
     justify-content: center;
     padding: ${noGutters ? "0 0.25rem" : btnPadding[size]};
-    border-radius: 5px;
+    border-radius: ${button["primary"].default?.borderRadius};
     line-height: 1.125rem;
     cursor: pointer;
     transition: background-color 0.2s ease-in, color 0.2s ease-in, border-color 0.2s ease-in,
@@ -159,6 +159,7 @@ const linkButton = (button: Theme["button"], color: Color): SerializedStyles => 
 
 const iconBeforeButton = (size: Size, noGutters: boolean): SerializedStyles => {
   const btnPadding = {
+    sm: undefined,
     md: "1.25rem 1.75rem",
     lg: "1.875rem 3rem",
   };
@@ -175,6 +176,7 @@ const iconBeforeButton = (size: Size, noGutters: boolean): SerializedStyles => {
 
 const iconAfterButton = (size: Size, noGutters: boolean): SerializedStyles => {
   const btnPadding = {
+    sm: undefined,
     md: "1.75rem 1.25rem",
     lg: "3rem 1.875rem",
   };
@@ -190,11 +192,13 @@ const iconAfterButton = (size: Size, noGutters: boolean): SerializedStyles => {
 };
 
 export const btnContainer = (
-  { typeScaleSizes, button }: Theme,
+  theme: Theme,
   { color, size, noGutters, ...attrs }: ButtonAttrs,
 ): SerializedStyles => {
+  const { button } = theme;
+
   return css`
-    ${baseButton({ typeScaleSizes }, { size, noGutters, ...attrs })};
+    ${baseButton(theme, { size, noGutters, ...attrs })};
 
     &.solid {
       ${solidButton(button, color)};

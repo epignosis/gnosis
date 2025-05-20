@@ -1,4 +1,3 @@
-// Currencies Icons
 export { default as AustralianDollarSVG } from "./australian-dollar.svg";
 export { default as BrazilianRealRSVG } from "./brazilian-real.svg";
 export { default as CanadianDollarSVG } from "./canadian-dollar.svg";

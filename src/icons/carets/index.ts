@@ -1,4 +1,3 @@
-// Caret Icons
 export { default as DropDownArrowSVG } from "./icon-dropdown-caret.svg";
 export { default as CaretRightCircledSVG } from "./caret-right-circled.svg";
 export { default as CaretDownSVG } from "./caret-down.svg";

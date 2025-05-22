@@ -234,6 +234,8 @@ export { default as StarCircleSVG } from "./star-circle.svg";
 export { default as MessagePenSVG } from "./message-pen.svg";
 export { default as ActivateSVG } from "./icon-activate.svg";
 export { default as GradebookSVG } from "./icon-gradebook.svg";
+export { default as CircleXmarkSVG } from "./circle-xmark.svg";
+export { default as CircleSolidSVG } from "./circle-solid.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./teams.svg";

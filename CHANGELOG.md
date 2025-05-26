@@ -1,3 +1,10 @@
+# [5.45.0](https://github.com/epignosis/gnosis/compare/v5.44.3...v5.45.0) (2025-05-26)
+
+
+### Features
+
+* **button.tsx:** add theming support ([#537](https://github.com/epignosis/gnosis/issues/537)) ([84db709](https://github.com/epignosis/gnosis/commit/84db70973295945cbf7f6e704e3215427ebaeef9))
+
 ## [5.44.3](https://github.com/epignosis/gnosis/compare/v5.44.2...v5.44.3) (2025-05-22)
 
 ## [5.44.2](https://github.com/epignosis/gnosis/compare/v5.44.1...v5.44.2) (2025-05-20)

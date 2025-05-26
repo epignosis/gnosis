@@ -60,7 +60,6 @@ const Button = <C extends ElementType = "button">(props: ButtonProps<C>): ReactE
   const PrefixIcon = iconBefore;
   const SuffixIcon = iconAfter;
   const containerClassNames = classNames({
-    "gnosis-button": true,
     [className]: Boolean(className),
     disabled: disabled || isLoading,
     rounded,

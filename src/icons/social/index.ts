@@ -1,4 +1,3 @@
-// Social Media Icons
 export { default as GoogleSVG } from "./google.svg";
 export { default as FacebookSVG } from "./facebook.svg";
 export { default as LinkedinSVG } from "./linkedin.svg";

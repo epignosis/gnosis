@@ -1,4 +1,3 @@
-// Arrow Icons
 export { default as BackIconSVG } from "./back-icon.svg";
 export { default as ArrowUpSVG } from "./arrow-up.svg";
 export { default as ArrowDownSVG } from "./arrow-down.svg";

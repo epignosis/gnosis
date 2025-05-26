@@ -1,0 +1,12 @@
+export { default as TextLargeSVG } from "./text-large.svg";
+export { default as UploadFileLargeSVG } from "./upload-file-large.svg";
+export { default as VideoRecordingLargeSVG } from "./video-recording-large.svg";
+export { default as AudioRecordingLargeSVG } from "./audio-recording-large.svg";
+export { default as ScreenRecordingLargeSVG } from "./screen-recording-large.svg";
+export { default as AssignmentPassedAnswer } from "./passed-answer.svg";
+export { default as AssignmentNotPassedAnswer } from "./not-passed-answer.svg";
+export { default as AssignmentPendingAnswer } from "./pending-answer.svg";
+export { default as AssignmentPassedFilter } from "./passed-filter.svg";
+export { default as AssignmentNotPassedFilter } from "./not-passed-filter.svg";
+export { default as AssignmentPendingFilter } from "./pending-filter.svg";
+export { default as AssignmentSubmissionSVG } from "./submission.svg";

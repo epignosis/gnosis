@@ -198,7 +198,8 @@ export { default as CreditsSVG } from "./credits.svg";
 export { default as SquareAddSVG } from "./square-add.svg";
 export { default as ScrollIndicatorSVG } from "./scroll-indicator-icon.svg";
 export { default as BranchesDropdownSVG } from "./BranchesDropdown.svg";
-export { default as FeatureLockSVG } from "./feature-lock.svg";
+export { default as CircleLockSVG } from "./circle-lock.svg";
+export { default as CircleUnlockSVG } from "./circle-unlock.svg";
 export { default as HouseUserSVG } from "./house-user.svg";
 export { default as CalendarUsersSVG } from "./calendar-users.svg";
 export { default as ImportDataSVG } from "./import-data.svg";
@@ -230,3 +231,22 @@ export { default as CircleStopSVG } from "./circle-stop.svg";
 export { default as ChartLinesSVG } from "./chart-lines.svg";
 export { default as CirclePlaySVG } from "./circle-play.svg";
 export { default as StarCircleSVG } from "./star-circle.svg";
+export { default as MessagePenSVG } from "./message-pen.svg";
+export { default as ActivateSVG } from "./icon-activate.svg";
+export { default as GradebookSVG } from "./icon-gradebook.svg";
+export { default as CircleXmarkSVG } from "./circle-xmark.svg";
+export { default as CircleSolidSVG } from "./circle-solid.svg";
+
+// Main Menu Icons
+export { default as TeamsSVG } from "./teams.svg";
+
+export * from "./assignments";
+export * from "./custom-homepage";
+export * from "./editor";
+export * from "./product-fruits";
+export * from "./quick-actions";
+export * from "./referral";
+export * from "./reports";
+export * from "./reverse-trial";
+export * from "./skills";
+export * from "./widgets";

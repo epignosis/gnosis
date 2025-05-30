@@ -239,7 +239,6 @@ export { default as CircleSolidSVG } from "./circle-solid.svg";
 export { default as BracketsSVG } from "./brackets.svg";
 export { default as EarthSVG } from "./earth.svg";
 export { default as LinesSVG } from "./lines.svg";
-export { default as MicrophoneSVG } from "./microphone.svg";
 export { default as MortarboardSVG } from "./mortarboard.svg";
 export { default as PaletteSVG } from "./palette.svg";
 

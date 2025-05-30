@@ -1,3 +1,10 @@
+## [5.45.2](https://github.com/epignosis/gnosis/compare/v5.45.1...v5.45.2) (2025-05-30)
+
+
+### Reverts
+
+* Revert "chore(icons): add icons for course clone-and-translate feature" ([c649dae](https://github.com/epignosis/gnosis/commit/c649dae92ccaa6cb06094190a6866d05ec35c9fa))
+
 ## [5.45.1](https://github.com/epignosis/gnosis/compare/v5.45.0...v5.45.1) (2025-05-27)
 
 # [5.45.0](https://github.com/epignosis/gnosis/compare/v5.44.3...v5.45.0) (2025-05-26)

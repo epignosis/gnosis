@@ -93,7 +93,6 @@ export { default as GamepadSVG } from "./gamepad.svg";
 export { default as SlidesSVG } from "./slides.svg";
 export { default as BranchesSVG } from "./branches.svg";
 export { default as GroupsSVG } from "./groups.svg";
-export { default as PaletteSVG } from "./palette.svg";
 export { default as UnitNotSelectedSVG } from "./unit-not-selected.svg";
 export { default as RadioSelectedSVG } from "./radio-selected.svg";
 export { default as RadioSelectedFilledSVG } from "./radio-selected-filled.svg";

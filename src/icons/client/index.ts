@@ -236,12 +236,6 @@ export { default as ActivateSVG } from "./icon-activate.svg";
 export { default as GradebookSVG } from "./icon-gradebook.svg";
 export { default as CircleXmarkSVG } from "./circle-xmark.svg";
 export { default as CircleSolidSVG } from "./circle-solid.svg";
-export { default as BracketsSVG } from "./brackets.svg";
-export { default as EarthSVG } from "./earth.svg";
-export { default as LinesSVG } from "./lines.svg";
-export { default as MicrophoneSVG } from "./microphone.svg";
-export { default as MortarboardSVG } from "./mortarboard.svg";
-export { default as PaletteSVG } from "./palette.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./teams.svg";

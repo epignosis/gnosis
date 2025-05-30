@@ -32,3 +32,9 @@ export { default as UsersGearSVG } from "./user-gear.svg";
 export { default as ChalkboardUserSVG } from "./chalkboard-user.svg";
 export { default as UserGraduateSVG } from "./user-graduate.svg";
 export { default as UsersStartSVG } from "./users-star.svg";
+
+// Analytics courses content widget
+export { default as MessageCheckSVG } from "./message-check.svg";
+export { default as PencilSVG } from "./pencil.svg";
+export { default as RightLeftSVG } from "./right-left.svg";
+export { default as UsersLineSVG } from "./users-line.svg";

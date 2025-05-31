@@ -38,3 +38,8 @@ export { default as MessageCheckSVG } from "./message-check.svg";
 export { default as PencilSVG } from "./pencil.svg";
 export { default as RightLeftSVG } from "./right-left.svg";
 export { default as UsersLineSVG } from "./users-line.svg";
+
+// Analytics library widget
+export { default as BoxSVG } from "./box.svg";
+export { default as BracketsCurlySVG } from "./brackets-curly.svg";
+export { default as VideoSVG } from "./video.svg";

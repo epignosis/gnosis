@@ -42,4 +42,4 @@ export { default as UsersLineSVG } from "./users-line.svg";
 // Analytics library widget
 export { default as BoxSVG } from "./box.svg";
 export { default as BracketsCurlySVG } from "./brackets-curly.svg";
-export { default as VideoSVG } from "./video.svg";
+export { default as VideoViewboxSVG } from "./video.svg";

@@ -95,7 +95,7 @@ export const inputContainer = (
       svg {
         color: ${formElements.input.infoTooltipColor};
         &:hover {
-          cursor: help;
+          cursor: pointer;
         }
       }
     }

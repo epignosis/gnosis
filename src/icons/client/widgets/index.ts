@@ -43,3 +43,7 @@ export { default as UsersLineSVG } from "./users-line.svg";
 export { default as BoxSVG } from "./box.svg";
 export { default as BracketsCurlySVG } from "./brackets-curly.svg";
 export { default as VideoViewboxSVG } from "./video.svg";
+
+// analytics courses overview widget
+export { default as GaugeSVG } from "./gauge.svg";
+export { default as HeadSideGearSVG } from "./head-side-gear.svg";

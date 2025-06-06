@@ -241,6 +241,7 @@ export { default as LinesSVG } from "./lines.svg";
 export { default as MortarboardSVG } from "./mortarboard.svg";
 export { default as PaletteSVG } from "./palette.svg";
 export { default as PenFieldSVG } from "./pen-field.svg";
+export { default as PaperPlaneTopSolidSVG } from "./paper-plane-top-solid.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./teams.svg";

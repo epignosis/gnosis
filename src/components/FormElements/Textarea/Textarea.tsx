@@ -17,6 +17,7 @@ export type TextareaProps = ExtendableProps<
     resize?: TextareaResize;
     status?: "valid" | "error";
     containerAttrs?: React.HTMLAttributes<HTMLDivElement>;
+    rows?: number;
   }
 >;
 const Textarea: ForwardRefRenderFunction<HTMLTextAreaElement, TextareaProps> = (
@@ -31,6 +32,7 @@ const Textarea: ForwardRefRenderFunction<HTMLTextAreaElement, TextareaProps> = (
     resize = "none",
     status = "valid",
     containerAttrs,
+    rows,
     ...rest
   } = props;
   const hasLabel = Boolean(label);
@@ -42,10 +44,11 @@ const Textarea: ForwardRefRenderFunction<HTMLTextAreaElement, TextareaProps> = (
   });
 
   const labelClassNames = classNames({ required });
+  const hasRows = !!rows && rows > 0;
 
   return (
     <div
-      css={(theme): SerializedStyles => textareaContainer(theme, { resize })}
+      css={(theme): SerializedStyles => textareaContainer(theme, { resize, hasRows })}
       {...containerAttrs}
       className={containerClassNames}
     >
@@ -54,7 +57,7 @@ const Textarea: ForwardRefRenderFunction<HTMLTextAreaElement, TextareaProps> = (
           {label}
         </Label>
       )}
-      <textarea id={id} ref={forwardedRef} {...rest} />
+      <textarea id={id} ref={forwardedRef} rows={rows} {...rest} />
     </div>
   );
 };

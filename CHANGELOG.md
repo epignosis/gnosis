@@ -1,3 +1,10 @@
+## [5.45.12](https://github.com/epignosis/gnosis/compare/v5.45.11...v5.45.12) (2025-06-23)
+
+
+### Bug Fixes
+
+* **textarea:** add rows prop to Textarea component ([#552](https://github.com/epignosis/gnosis/issues/552)) ([414ed67](https://github.com/epignosis/gnosis/commit/414ed6706d7636f4b804b47fa63b758923448a91))
+
 ## [5.45.11](https://github.com/epignosis/gnosis/compare/v5.45.10...v5.45.11) (2025-06-20)
 
 ## [5.45.10](https://github.com/epignosis/gnosis/compare/v5.45.9...v5.45.10) (2025-06-12)

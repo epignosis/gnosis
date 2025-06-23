@@ -1,3 +1,10 @@
+## [5.45.13](https://github.com/epignosis/gnosis/compare/v5.45.12...v5.45.13) (2025-06-23)
+
+
+### Bug Fixes
+
+* **drawer:** prop to disable focus trap ([#553](https://github.com/epignosis/gnosis/issues/553)) ([3d95961](https://github.com/epignosis/gnosis/commit/3d95961f1cb2328b3f215defcd33648636773733))
+
 ## [5.45.12](https://github.com/epignosis/gnosis/compare/v5.45.11...v5.45.12) (2025-06-23)
 
 

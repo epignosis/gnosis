@@ -51,3 +51,9 @@ export const WithRequired = Template.bind({});
 WithRequired.args = {
   required: true,
 };
+
+export const WithRows = Template.bind({});
+
+WithRows.args = {
+  rows: 3,
+};

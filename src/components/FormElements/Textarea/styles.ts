@@ -4,7 +4,7 @@ import { TextareaResize } from "./Textarea";
 
 export const textareaContainer = (
   { formElements }: Theme,
-  { resize }: { resize: TextareaResize },
+  { resize, hasRows }: { resize: TextareaResize; hasRows: boolean },
 ): SerializedStyles => css`
   ${inputContainerBaseStyles({ block: true })};
 
@@ -29,7 +29,7 @@ export const textareaContainer = (
 
   textarea {
     ${inputBaseStyles(formElements, { block: true })};
-    min-height: 10rem;
+    min-height: ${hasRows ? "0" : "10rem"};
     padding: 0.75rem;
     resize: ${resize};
   }

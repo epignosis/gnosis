@@ -39,12 +39,13 @@ const DrawerRoot: FCWithChildren = () => <div id={DRAWER_ROOT} />;
 
 export type DrawerProps = React.HTMLAttributes<HTMLDivElement> & {
   isOpen: boolean;
-  onClose: () => void;
   showMask?: boolean;
   placement?: "left" | "right";
   width?: string;
   dialogStyles?: MotionStyle;
   dialogClassName?: string;
+  disableFocusLock?: boolean;
+  onClose: () => void;
 };
 
 type DrawerCompoundProps = {
@@ -57,13 +58,14 @@ type DrawerCompoundProps = {
 const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
   const {
     isOpen,
-    onClose,
     placement = "left",
     showMask = true,
     width = "31.5rem",
     dialogStyles,
     dialogClassName,
+    disableFocusLock = false,
     children,
+    onClose,
     ...rest
   } = props;
   const clonedChildren = Children.map(children, (child) => {
@@ -106,7 +108,7 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
             {...rest}
           >
             {showMask && <Mask onClose={onClose} />}
-            <ReactFocusLock returnFocus>
+            <ReactFocusLock returnFocus disabled={!isOpen || disableFocusLock}>
               <m.dialog
                 id="drawer-dialog"
                 style={dialogStyles}

@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, ReactElement, useEffect } from "react";
+import React, { Children, cloneElement, ReactElement, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import ReactFocusLock from "react-focus-lock";
 import { SerializedStyles } from "@emotion/react";
@@ -39,6 +39,7 @@ const DrawerRoot: FCWithChildren = () => <div id={DRAWER_ROOT} />;
 
 export type DrawerProps = React.HTMLAttributes<HTMLDivElement> & {
   isOpen: boolean;
+  closeOnOutsideClick?: boolean;
   showMask?: boolean;
   placement?: "left" | "right";
   width?: string;
@@ -59,6 +60,7 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
   const {
     isOpen,
     placement = "left",
+    closeOnOutsideClick = true,
     showMask = true,
     width = "31.5rem",
     dialogStyles,
@@ -83,18 +85,34 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
     "placement-right": placement === "right",
     [dialogClassName ?? ""]: dialogClassName,
   });
+  const drawerRef = useRef<HTMLDivElement>(null);
+
+  const handleCloseOnOutsideClick = () => {
+    if (!closeOnOutsideClick) return;
+    onClose();
+  };
 
   useEffect(() => {
+    if (!isOpen) return;
+
     const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape" && isOpen) {
-        onClose();
+      if (event.key === "Escape") {
+        handleCloseOnOutsideClick();
+      }
+    };
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (drawerRef.current && !drawerRef.current.contains(event.target as Node)) {
+        handleCloseOnOutsideClick();
       }
     };
 
     document.addEventListener("keydown", handleEscape);
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
       document.removeEventListener("keydown", handleEscape);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpen, onClose]);
 
@@ -107,8 +125,8 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
             data-testid="drawer"
             {...rest}
           >
-            {showMask && <Mask onClose={onClose} />}
-            <ReactFocusLock returnFocus disabled={!isOpen || disableFocusLock}>
+            {showMask && <Mask onClose={handleCloseOnOutsideClick} />}
+            <ReactFocusLock returnFocus disabled={!isOpen || disableFocusLock} ref={drawerRef}>
               <m.dialog
                 id="drawer-dialog"
                 style={dialogStyles}

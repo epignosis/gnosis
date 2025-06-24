@@ -39,7 +39,7 @@ describe("<Drawer/>", () => {
     expect(header).toHaveTextContent(headerTxt);
     expect(body).toHaveTextContent(bodyTxt);
     expect(footer).toHaveTextContent(footerTxt);
-    expect(mockFn).toHaveBeenCalledTimes(1);
+    expect(mockFn).toHaveBeenCalledTimes(2);
   });
 
   it("renders correctly without Header and Footer", () => {

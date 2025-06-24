@@ -25,3 +25,4 @@ export { default as OpenSesameLogoSVG } from "./open-sesame.svg";
 export { default as LtiSVG } from "./lti.svg";
 export { default as LtiToolSVG } from "./lti-tool.svg";
 export { default as HubSpotSVG } from "./hubspot.svg";
+export { default as LinkedInIntegrationSVG } from "./linked-in-integration.svg";

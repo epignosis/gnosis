@@ -1,10 +1,7 @@
-import { css, SerializedStyles, Theme } from "@emotion/react";
+import { css, SerializedStyles } from "@emotion/react";
 import { mq } from "@theme/utils/breakpoints";
 
-export const drawerHeader = (
-  { drawer, typeScaleSizes }: Theme,
-  { noGutters }: { noGutters: boolean },
-): SerializedStyles => {
+export const drawerHeader = ({ noGutters }: { noGutters: boolean }): SerializedStyles => {
   return css`
     display: flex;
     justify-content: space-between;
@@ -16,21 +13,6 @@ export const drawerHeader = (
 
     ${mq["sm"]} {
       padding: ${noGutters ? 0 : "1rem 2rem"};
-    }
-
-    button {
-      font-size: ${typeScaleSizes.md}rem;
-      display: inline-flex;
-      background-color: transparent;
-      color: ${drawer.closeBtnColor.base};
-      padding: 0 1rem;
-      border: 0;
-      cursor: pointer;
-
-      &:hover,
-      &:focus {
-        color: ${drawer.closeBtnColor.hover};
-      }
     }
   `;
 };

@@ -27,7 +27,7 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
       style="opacity: 0; transform: none;"
     >
       <header
-        class="css-hrrfoi-drawerHeader-drawerHeader"
+        class="css-zc36g1-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -38,11 +38,16 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
         </h2>
         <button
           aria-label="Close drawer"
+          class="linkButton css-1sz4zs3-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
           type="button"
         >
-          <svg-file-stub
-            height="24"
-          />
+          <span
+            class="btn-text"
+          >
+            <svg-file-stub
+              height="24"
+            />
+          </span>
         </button>
       </header>
     </dialog>
@@ -83,7 +88,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
       style="opacity: 0; transform: none;"
     >
       <header
-        class="css-hrrfoi-drawerHeader-drawerHeader"
+        class="css-zc36g1-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -99,7 +104,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
         Test body
       </div>
       <footer
-        class="css-siatoy-footerContainer-footerContainer"
+        class="css-123pp4v-footerContainer-footerContainer"
         data-testid="drawer-footer"
       >
         Test footer
@@ -141,7 +146,7 @@ exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
       style="opacity: 0; transform: none;"
     >
       <header
-        class="css-qrd1bq-drawerHeader-drawerHeader"
+        class="css-wmpb2t-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -188,7 +193,7 @@ exports[`<Drawer/> matches snapshot with right placement 1`] = `
       style="opacity: 0; transform: translateX(100%) translateZ(0);"
     >
       <header
-        class="css-hrrfoi-drawerHeader-drawerHeader"
+        class="css-zc36g1-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >

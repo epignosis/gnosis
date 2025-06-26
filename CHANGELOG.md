@@ -1,3 +1,10 @@
+## [5.45.15](https://github.com/epignosis/gnosis/compare/v5.45.14...v5.45.15) (2025-06-26)
+
+
+### Bug Fixes
+
+* **drawer:** replace sustom close button with Gnosis button ([#555](https://github.com/epignosis/gnosis/issues/555)) ([f4f3088](https://github.com/epignosis/gnosis/commit/f4f308829bc7ec32e902e33fdde68178d73c0a6a))
+
 ## [5.45.14](https://github.com/epignosis/gnosis/compare/v5.45.13...v5.45.14) (2025-06-24)
 
 ## [5.45.13](https://github.com/epignosis/gnosis/compare/v5.45.12...v5.45.13) (2025-06-23)

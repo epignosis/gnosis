@@ -127,7 +127,7 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
             ref={drawerRef}
             {...rest}
           >
-            {showMask && <Mask onClose={(e: MouseEvent) => handleCloseOnOutsideClick(e)} />}
+            {showMask && <Mask onClose={handleCloseOnOutsideClick} />}
             <ReactFocusLock returnFocus disabled={!isOpen || disableFocusLock}>
               <m.dialog
                 id="drawer-dialog"

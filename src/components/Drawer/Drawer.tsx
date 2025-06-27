@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, ReactElement, useEffect, useRef } from "react";
+import React, { Children, cloneElement, MouseEvent, ReactElement, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import ReactFocusLock from "react-focus-lock";
 import { SerializedStyles } from "@emotion/react";
@@ -87,8 +87,9 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
   });
   const drawerRef = useRef<HTMLDivElement>(null);
 
-  const handleCloseOnOutsideClick = () => {
+  const handleCloseOnOutsideClick = (e: MouseEvent) => {
     if (!closeOnOutsideClick) return;
+    e.nativeEvent.stopImmediatePropagation();
     onClose();
   };
 
@@ -97,13 +98,13 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
 
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        handleCloseOnOutsideClick();
+        onClose();
       }
     };
 
-    const handleClickOutside = (event: MouseEvent) => {
-      if (drawerRef.current && !drawerRef.current.contains(event.target as Node)) {
-        handleCloseOnOutsideClick();
+    const handleClickOutside = (e: Event) => {
+      if (drawerRef.current && !drawerRef.current.contains(e.target as Node)) {
+        handleCloseOnOutsideClick(e as unknown as MouseEvent);
       }
     };
 
@@ -123,10 +124,11 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
           <div
             css={(theme): SerializedStyles => drawerContainer(theme, width)}
             data-testid="drawer"
+            ref={drawerRef}
             {...rest}
           >
             {showMask && <Mask onClose={handleCloseOnOutsideClick} />}
-            <ReactFocusLock returnFocus disabled={!isOpen || disableFocusLock} ref={drawerRef}>
+            <ReactFocusLock returnFocus disabled={!isOpen || disableFocusLock}>
               <m.dialog
                 id="drawer-dialog"
                 style={dialogStyles}

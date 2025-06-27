@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, MouseEvent } from "react";
 import { m, Variants } from "framer-motion";
 import { maskContainer } from "./styles";
 
@@ -12,7 +12,7 @@ const maskVariants: Variants = {
 };
 
 export type MaskProps = {
-  onClose: () => void;
+  onClose: (e: MouseEvent) => void;
 };
 
 const Mask: FC<MaskProps> = ({ onClose }) => (

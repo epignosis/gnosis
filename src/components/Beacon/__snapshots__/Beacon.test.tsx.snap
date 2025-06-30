@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Beacon /> matches snapshot 1`] = `
+<div>
+  <div
+    class="css-tt1vh5-beaconContainer-beaconContainer"
+  >
+    <span
+      class="beacon-content"
+    >
+      <span>
+        Snapshot Child
+      </span>
+      <span
+        class="beacon"
+      />
+    </span>
+  </div>
+</div>
+`;

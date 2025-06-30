@@ -1,5 +1,6 @@
 export { default as alert } from "./alert";
 export { default as badge } from "./badge";
+export { default as beacon } from "./beacon";
 export { default as button } from "./button";
 export { default as breadcrumbs } from "./breadcrumbs";
 export { default as card } from "./card";

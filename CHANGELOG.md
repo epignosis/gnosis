@@ -1,3 +1,10 @@
+## [5.45.17](https://github.com/epignosis/gnosis/compare/v5.45.16...v5.45.17) (2025-06-27)
+
+
+### Bug Fixes
+
+* **drawer.tsx:** issue about click a drawer on top of drawer ([#557](https://github.com/epignosis/gnosis/issues/557)) ([f796d28](https://github.com/epignosis/gnosis/commit/f796d285ab8879ee7901d959d8f4e9770a4306f5))
+
 ## [5.45.16](https://github.com/epignosis/gnosis/compare/v5.45.15...v5.45.16) (2025-06-26)
 
 ## [5.45.15](https://github.com/epignosis/gnosis/compare/v5.45.14...v5.45.15) (2025-06-26)

@@ -3,7 +3,7 @@
 exports[`<Label /> matches snapshot 1`] = `
 <div>
   <label
-    class="horizontal-label css-1x7de1m-label-label"
+    class="horizontal-label css-rg614s-label-label"
     id="my-label"
   >
     Test label

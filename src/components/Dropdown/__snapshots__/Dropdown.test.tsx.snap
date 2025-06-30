@@ -10,7 +10,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
       class="dropdown-button is-active"
     >
       <button
-        class="solid css-1hszy8h-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        class="solid css-k2dvss-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       >
         <span
           class="btn-text"
@@ -32,7 +32,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           tabindex="-1"
         >
           <span
-            class="css-mproha-textContainer-textContainer"
+            class="css-fxdiie-textContainer-textContainer"
             data-testid="text-component"
             title="Category 1"
           >
@@ -49,7 +49,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             role="tooltip"
           >
             <span
-              class="css-1by32j1-textContainer-textContainer"
+              class="css-mzb2zy-textContainer-textContainer"
               data-testid="text-component"
               title="Option 1"
             >
@@ -63,7 +63,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           tabindex="-1"
         >
           <span
-            class="css-mproha-textContainer-textContainer"
+            class="css-fxdiie-textContainer-textContainer"
             data-testid="text-component"
             title="Category 2"
           >
@@ -80,7 +80,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             role="tooltip"
           >
             <span
-              class="css-1by32j1-textContainer-textContainer"
+              class="css-mzb2zy-textContainer-textContainer"
               data-testid="text-component"
               title="Option 2"
             >
@@ -98,7 +98,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             role="tooltip"
           >
             <span
-              class="css-1by32j1-textContainer-textContainer"
+              class="css-mzb2zy-textContainer-textContainer"
               data-testid="text-component"
               title="Option 3"
             >
@@ -112,7 +112,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
           tabindex="-1"
         >
           <span
-            class="css-mproha-textContainer-textContainer"
+            class="css-fxdiie-textContainer-textContainer"
             data-testid="text-component"
             title="Category 15"
           >
@@ -129,7 +129,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             role="tooltip"
           >
             <span
-              class="css-1by32j1-textContainer-textContainer"
+              class="css-mzb2zy-textContainer-textContainer"
               data-testid="text-component"
               title="Option 15"
             >
@@ -147,7 +147,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             role="tooltip"
           >
             <span
-              class="css-1by32j1-textContainer-textContainer"
+              class="css-mzb2zy-textContainer-textContainer"
               data-testid="text-component"
               title="Option 16"
             >
@@ -165,7 +165,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
             role="tooltip"
           >
             <span
-              class="css-1by32j1-textContainer-textContainer"
+              class="css-mzb2zy-textContainer-textContainer"
               data-testid="text-component"
               title="Option 5"
             >

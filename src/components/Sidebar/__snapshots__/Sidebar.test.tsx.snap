@@ -221,7 +221,7 @@ exports[`<Sidebar/> matches snapshot 1`] = `
                   class="icon-container"
                 >
                   <figure
-                    class="css-13m264r-avatar-avatar"
+                    class="css-1ytc12r-avatar-avatar"
                   >
                     <span
                       data-testid="avatar-children-container"

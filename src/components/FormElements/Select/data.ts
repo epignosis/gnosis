@@ -51,7 +51,12 @@ export const groupedOptions: GroupedOption[] = [
 
 export const defaultOptions: CustomOption[] = [
   { label: "Rust", value: "rs" },
-  { label: "JavaScript is the best in the world", value: "js" },
+  {
+    label:
+      "JavaScript, often abbreviated as JS, is a programming language and core technology of the World Wide Web, alongside HTML and CSS.",
+    value: "js",
+    hint: "Javascript",
+  },
   { label: "TypeScript", value: "ts" },
   { label: "GoLang", value: "go" },
   { label: "Python", value: "python" },
@@ -67,8 +72,7 @@ export const defaultOptions: CustomOption[] = [
   { label: "Perl", value: "Perl" },
   { label: "Ruby", value: "Ruby" },
   { label: "Scala", value: "Scala" },
-  { label: "Kotlin", value: "Kotlin" },
-  { label: "Disabled option", value: "disabled", disabled: true },
+  { label: "Kotlin", value: "Kotlin", disabled: true },
 ];
 
 export const menuMaxWidthOptions: CustomOption[] = [

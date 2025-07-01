@@ -49,6 +49,11 @@ export default {
         type: "boolean",
       },
     },
+    allowTextWrap: {
+      control: {
+        type: "boolean",
+      },
+    },
     status: {
       control: {
         type: "select",

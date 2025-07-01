@@ -120,9 +120,11 @@ export const selectContainer = (
 export const resolveStyles = ({
   size,
   menuMaxWidth,
+  allowTextWrap = false,
 }: {
   size: InputSize;
   menuMaxWidth?: number;
+  allowTextWrap?: boolean;
 }): StylesConfig<CustomOption> => ({
   menu: (base: CSSObjectWithLabel) => {
     const menuMaxWidthStyles = menuMaxWidth
@@ -203,7 +205,6 @@ export const resolveStyles = ({
       color: !isDisabled ? base.color : formElements.input.disabledColor,
       cursor: !isDisabled ? "pointer" : "not-allowed",
       pointerEvents: "auto",
-
       "&:hover": {
         borderColor: isDisabled
           ? formElements.input.disabledBorder
@@ -276,27 +277,29 @@ export const resolveStyles = ({
     },
     cursor: isDisabled ? "default" : "pointer",
     ".custom-option": {
-      wordBreak: "keep-all",
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap",
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
+      overflow: allowTextWrap ? "visible" : "hidden",
+      textOverflow: allowTextWrap ? "unset" : "ellipsis",
+      wordBreak: allowTextWrap ? "break-word" : "keep-all",
+      whiteSpace: allowTextWrap ? "normal" : "nowrap",
     },
     ".label-text": {
       flex: 1,
-      overflow: "hidden",
-      textOverflow: "ellipsis",
+      overflow: allowTextWrap ? "visible" : "hidden",
+      textOverflow: allowTextWrap ? "unset" : "ellipsis",
+      wordBreak: allowTextWrap ? "break-word" : "keep-all",
+      whiteSpace: allowTextWrap ? "normal" : "nowrap",
     },
     ".hint-text": {
-      flex: 1,
       color: formElements.input.disabledColor,
       marginLeft: "5px",
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap",
       textAlign: "right",
+      overflow: allowTextWrap ? "visible" : "hidden",
+      textOverflow: allowTextWrap ? "unset" : "ellipsis",
+      wordBreak: allowTextWrap ? "break-word" : "keep-all",
+      whiteSpace: allowTextWrap ? "normal" : "nowrap",
     },
   }),
   menuList: (base: CSSObjectWithLabel) => ({

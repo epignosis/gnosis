@@ -1,3 +1,10 @@
+# [5.46.0](https://github.com/epignosis/gnosis/compare/v5.45.18...v5.46.0) (2025-07-01)
+
+
+### Features
+
+* **select:** allow wrap options text ([#561](https://github.com/epignosis/gnosis/issues/561)) ([8ee9da9](https://github.com/epignosis/gnosis/commit/8ee9da929bbc6dccd6a674e0b4c861cb2621e6f5))
+
 ## [5.45.18](https://github.com/epignosis/gnosis/compare/v5.45.17...v5.45.18) (2025-06-30)
 
 ## [5.45.17](https://github.com/epignosis/gnosis/compare/v5.45.16...v5.45.17) (2025-06-27)

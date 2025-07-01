@@ -40,4 +40,5 @@ export type CustomSelectProps<
   loadOptions?: (inputValue: string) => Promise<CustomOption[]>;
   defaultOptions?: boolean;
   cacheOptions?: boolean;
+  allowTextWrap?: boolean;
 };

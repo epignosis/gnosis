@@ -120,9 +120,11 @@ export const selectContainer = (
 export const resolveStyles = ({
   size,
   menuMaxWidth,
+  allowTextWrap = false,
 }: {
   size: InputSize;
   menuMaxWidth?: number;
+  allowTextWrap?: boolean;
 }): StylesConfig<CustomOption> => ({
   menu: (base: CSSObjectWithLabel) => {
     const menuMaxWidthStyles = menuMaxWidth
@@ -203,7 +205,6 @@ export const resolveStyles = ({
       color: !isDisabled ? base.color : formElements.input.disabledColor,
       cursor: !isDisabled ? "pointer" : "not-allowed",
       pointerEvents: "auto",
-
       "&:hover": {
         borderColor: isDisabled
           ? formElements.input.disabledBorder
@@ -249,56 +250,58 @@ export const resolveStyles = ({
       isFocused,
       isDisabled,
     }: OptionProps<CustomOption, boolean, GroupBase<CustomOption>>,
-  ) => ({
-    ...base,
-    backgroundColor: isSelected
-      ? formElements.input.borderFocus
-      : !isFocused
-      ? "transparent"
-      : formElements.input.hoverColor,
-    color: isSelected
-      ? formElements.input.textColorFocused
-      : isDisabled
-      ? formElements.input.disabledColor
-      : "inherit",
-    borderRadius: "none",
-    "&:hover": {
+  ) => {
+    const commonStyles: CSSObjectWithLabel = {
+      overflow: allowTextWrap ? "visible" : "hidden",
+      textOverflow: allowTextWrap ? "unset" : "ellipsis",
+      wordBreak: allowTextWrap ? "break-word" : "keep-all",
+      whiteSpace: allowTextWrap ? "normal" : "nowrap",
+    };
+
+    return {
+      ...base,
+      backgroundColor: isSelected
+        ? formElements.input.borderFocus
+        : !isFocused
+        ? "transparent"
+        : formElements.input.hoverColor,
       color: isSelected
         ? formElements.input.textColorFocused
         : isDisabled
         ? formElements.input.disabledColor
-        : formElements.input.textColor,
-      backgroundColor: isFocused
-        ? !isSelected
-          ? formElements.input.hoverColor
-          : formElements.input.borderFocus
-        : "transparent",
-    },
-    cursor: isDisabled ? "default" : "pointer",
-    ".custom-option": {
-      wordBreak: "keep-all",
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap",
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-    },
-    ".label-text": {
-      flex: 1,
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-    },
-    ".hint-text": {
-      flex: 1,
-      color: formElements.input.disabledColor,
-      marginLeft: "5px",
-      overflow: "hidden",
-      textOverflow: "ellipsis",
-      whiteSpace: "nowrap",
-      textAlign: "right",
-    },
-  }),
+        : "inherit",
+      borderRadius: "none",
+      "&:hover": {
+        color: isSelected
+          ? formElements.input.textColorFocused
+          : isDisabled
+          ? formElements.input.disabledColor
+          : formElements.input.textColor,
+        backgroundColor: isFocused
+          ? !isSelected
+            ? formElements.input.hoverColor
+            : formElements.input.borderFocus
+          : "transparent",
+      },
+      cursor: isDisabled ? "default" : "pointer",
+      ".custom-option": {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        ...commonStyles,
+      },
+      ".label-text": {
+        flex: 1,
+        ...commonStyles,
+      },
+      ".hint-text": {
+        color: formElements.input.disabledColor,
+        marginLeft: "5px",
+        textAlign: "right",
+        ...commonStyles,
+      },
+    };
+  },
   menuList: (base: CSSObjectWithLabel) => ({
     ...base,
     marginTop: "0.5rem",

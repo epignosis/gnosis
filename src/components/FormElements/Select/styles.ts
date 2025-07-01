@@ -250,58 +250,58 @@ export const resolveStyles = ({
       isFocused,
       isDisabled,
     }: OptionProps<CustomOption, boolean, GroupBase<CustomOption>>,
-  ) => ({
-    ...base,
-    backgroundColor: isSelected
-      ? formElements.input.borderFocus
-      : !isFocused
-      ? "transparent"
-      : formElements.input.hoverColor,
-    color: isSelected
-      ? formElements.input.textColorFocused
-      : isDisabled
-      ? formElements.input.disabledColor
-      : "inherit",
-    borderRadius: "none",
-    "&:hover": {
+  ) => {
+    const commonStyles: CSSObjectWithLabel = {
+      overflow: allowTextWrap ? "visible" : "hidden",
+      textOverflow: allowTextWrap ? "unset" : "ellipsis",
+      wordBreak: allowTextWrap ? "break-word" : "keep-all",
+      whiteSpace: allowTextWrap ? "normal" : "nowrap",
+    };
+
+    return {
+      ...base,
+      backgroundColor: isSelected
+        ? formElements.input.borderFocus
+        : !isFocused
+        ? "transparent"
+        : formElements.input.hoverColor,
       color: isSelected
         ? formElements.input.textColorFocused
         : isDisabled
         ? formElements.input.disabledColor
-        : formElements.input.textColor,
-      backgroundColor: isFocused
-        ? !isSelected
-          ? formElements.input.hoverColor
-          : formElements.input.borderFocus
-        : "transparent",
-    },
-    cursor: isDisabled ? "default" : "pointer",
-    ".custom-option": {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      overflow: allowTextWrap ? "visible" : "hidden",
-      textOverflow: allowTextWrap ? "unset" : "ellipsis",
-      wordBreak: allowTextWrap ? "break-word" : "keep-all",
-      whiteSpace: allowTextWrap ? "normal" : "nowrap",
-    },
-    ".label-text": {
-      flex: 1,
-      overflow: allowTextWrap ? "visible" : "hidden",
-      textOverflow: allowTextWrap ? "unset" : "ellipsis",
-      wordBreak: allowTextWrap ? "break-word" : "keep-all",
-      whiteSpace: allowTextWrap ? "normal" : "nowrap",
-    },
-    ".hint-text": {
-      color: formElements.input.disabledColor,
-      marginLeft: "5px",
-      textAlign: "right",
-      overflow: allowTextWrap ? "visible" : "hidden",
-      textOverflow: allowTextWrap ? "unset" : "ellipsis",
-      wordBreak: allowTextWrap ? "break-word" : "keep-all",
-      whiteSpace: allowTextWrap ? "normal" : "nowrap",
-    },
-  }),
+        : "inherit",
+      borderRadius: "none",
+      "&:hover": {
+        color: isSelected
+          ? formElements.input.textColorFocused
+          : isDisabled
+          ? formElements.input.disabledColor
+          : formElements.input.textColor,
+        backgroundColor: isFocused
+          ? !isSelected
+            ? formElements.input.hoverColor
+            : formElements.input.borderFocus
+          : "transparent",
+      },
+      cursor: isDisabled ? "default" : "pointer",
+      ".custom-option": {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        ...commonStyles,
+      },
+      ".label-text": {
+        flex: 1,
+        ...commonStyles,
+      },
+      ".hint-text": {
+        color: formElements.input.disabledColor,
+        marginLeft: "5px",
+        textAlign: "right",
+        ...commonStyles,
+      },
+    };
+  },
   menuList: (base: CSSObjectWithLabel) => ({
     ...base,
     marginTop: "0.5rem",

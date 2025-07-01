@@ -1,7 +1,7 @@
 import React from "react";
 import { StoryFn } from "@storybook/react";
 import { CustomSelectProps, CustomOption } from "./types";
-import { defaultOptions, groupedOptions, menuMaxWidthOptions } from "./data";
+import { defaultOptions, groupedOptions, menuMinWidthOptions } from "./data";
 import Select from "./Select";
 import { formatOptionLabel } from "./helpers";
 import { selectOptionsWithLevels } from "./constants";
@@ -96,13 +96,13 @@ WithRequired.args = {
   required: true,
 };
 
-export const WithMenuMaxWidth = Template.bind({});
+export const WithMenuMinWidth = Template.bind({});
 
-WithMenuMaxWidth.args = {
-  options: menuMaxWidthOptions,
+WithMenuMinWidth.args = {
+  options: menuMinWidthOptions,
   minWidth: "300px",
   maxWidth: "300px",
-  menuMaxWidth: 500,
+  menuMinWidth: 500,
 };
 
 export const withOpenMenu = Template.bind({});

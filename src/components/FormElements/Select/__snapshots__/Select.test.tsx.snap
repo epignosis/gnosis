@@ -3,7 +3,7 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="css-kw3ic6-selectContainer-selectContainer"
+    class="css-140v9d5-selectContainer-selectContainer"
   >
     <div
       class="label-container"
@@ -105,7 +105,7 @@ exports[`<Select /> matches snapshot 1`] = `
           </div>
         </div>
         <div
-          class="css-5v3ri6-menu"
+          class="css-1m5fab1-menu"
         >
           <div
             aria-multiselectable="false"

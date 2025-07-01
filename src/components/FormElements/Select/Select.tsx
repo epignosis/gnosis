@@ -36,7 +36,7 @@ const Select: ForwardRefRenderFunction<
     tooltipContent = "",
     minNumberOfOptionsToEnableSearch = 10,
     isValidNewOption,
-    menuMaxWidth,
+    menuMinWidth,
     loadOptions,
     isSearchable,
     allowTextWrap,
@@ -71,7 +71,7 @@ const Select: ForwardRefRenderFunction<
     (tooltipContent && typeof tooltipContent === "string" && tooltipContent !== "") ||
     isValidElement(tooltipContent);
 
-  const styles = resolveStyles({ size, menuMaxWidth, allowTextWrap });
+  const styles = resolveStyles({ size, menuMinWidth, allowTextWrap });
 
   const formatCreateLabel = (inputValue: string) => (
     <Tooltip content={creatableTooltip} parentProps={{ "aria-label": inputValue }}>

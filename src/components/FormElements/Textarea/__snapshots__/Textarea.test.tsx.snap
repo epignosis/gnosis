@@ -7,7 +7,7 @@ exports[`<Textarea /> matches snapshot 1`] = `
     id="textarea-container-id"
   >
     <label
-      class="css-1x7de1m-label-label"
+      class="css-rg614s-label-label"
       data-testid="textarea-label-my-textarea-id"
       for="my-textarea-id"
     >

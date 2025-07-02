@@ -10,7 +10,7 @@ exports[`<Select /> matches snapshot 1`] = `
     >
       <label
         aria-labelledby="my-select"
-        class="css-1x7de1m-label-label"
+        class="css-rg614s-label-label"
         data-testid="my-select-label"
         for="my-select"
       >

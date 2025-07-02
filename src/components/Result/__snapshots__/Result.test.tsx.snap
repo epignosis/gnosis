@@ -17,7 +17,7 @@ exports[`<Result/> matches snapshot 1`] = `
       class="body"
     >
       <h2
-        class="result-header css-12cc67n-headingContainer-headingContainer"
+        class="result-header css-1ibrhk6-headingContainer-headingContainer"
         data-testid="result-header"
       >
         My title

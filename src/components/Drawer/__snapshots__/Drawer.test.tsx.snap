@@ -32,13 +32,13 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
         id="drawer-title"
       >
         <h2
-          class="css-12cc67n-headingContainer-headingContainer"
+          class="css-1ibrhk6-headingContainer-headingContainer"
         >
           Title
         </h2>
         <button
           aria-label="Close drawer"
-          class="linkButton css-1sz4zs3-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+          class="linkButton css-5ruphf-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
           type="button"
         >
           <span
@@ -93,7 +93,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
         id="drawer-title"
       >
         <h2
-          class="css-12cc67n-headingContainer-headingContainer"
+          class="css-1ibrhk6-headingContainer-headingContainer"
         >
           Test header
         </h2>
@@ -151,7 +151,7 @@ exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
         id="drawer-title"
       >
         <h2
-          class="css-12cc67n-headingContainer-headingContainer"
+          class="css-1ibrhk6-headingContainer-headingContainer"
         >
           Title
         </h2>
@@ -198,7 +198,7 @@ exports[`<Drawer/> matches snapshot with right placement 1`] = `
         id="drawer-title"
       >
         <h2
-          class="css-12cc67n-headingContainer-headingContainer"
+          class="css-1ibrhk6-headingContainer-headingContainer"
         >
           Title
         </h2>

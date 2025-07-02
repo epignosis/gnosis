@@ -5,6 +5,7 @@ import {
   generateTypeScaleSizes,
   TypeScaleConfig,
   DEFAULT_TYPESCALE_CONFIG,
+  TypeScaleSizes,
 } from "@theme/utils/typography";
 
 export default {
@@ -26,7 +27,7 @@ export default {
   ],
 };
 
-const fontUsedFor: { [key: string]: string } = {
+const fontUsedFor: { [K in keyof TypeScaleSizes]: string } = {
   "2xs": ["tooltips", "tags", "expiration text on course cards"].join(", "),
   xs: ["categories on course cards", "percentage on progress bar"].join(", "),
   sm: [
@@ -59,10 +60,7 @@ const fontUsedFor: { [key: string]: string } = {
 
 export const TypographyDocumentation: StoryFn<TypeScaleConfig & { baseSize: number }> = (args) => {
   const typeScale = generateTypeScaleSizes({ ...DEFAULT_TYPESCALE_CONFIG, ...args });
-  const usedFor = Object.keys(typeScale).reduce(
-    (acc, key) => Object.assign({ [key]: fontUsedFor[key] }, acc),
-    {},
-  );
+  const typeScalesArray = Object.keys(typeScale) as Array<keyof TypeScaleSizes>;
 
   return (
     <>
@@ -115,18 +113,43 @@ export const TypographyDocumentation: StoryFn<TypeScaleConfig & { baseSize: numb
             </tr>
           </thead>
           <tbody>
-            {Object.keys(typeScale).map((key) => (
-              <tr key={key} style={{ borderBottom: "1px solid lightgray" }}>
-                <td style={{ borderRight: "1px solid lightgray", padding: "8px 16px" }}>{key}</td>
-                <td style={{ borderRight: "1px solid lightgray", padding: "8px 16px" }}>
-                  {typeScale[key]}
-                </td>
-                <td style={{ borderRight: "1px solid lightgray", padding: "8px 16px" }}>
-                  {Number(typeScale[key].slice(0, typeScale[key].length - 3)) * args.baseSize}px
-                </td>
-                <td style={{ padding: "8px 16px" }}>{usedFor[key]}</td>
-              </tr>
-            ))}
+            {typeScalesArray.map((key) => {
+              const valueInRem = typeScale[key].toString();
+              const valueInPx = Number(valueInRem.slice(0, valueInRem.length - 3)) * args.baseSize;
+
+              return (
+                <tr key={key} style={{ borderBottom: "1px solid lightgray" }}>
+                  <td
+                    style={{
+                      borderRight: "1px solid lightgray",
+                      padding: "8px 16px",
+                      fontSize: valueInRem,
+                    }}
+                  >
+                    {key}
+                  </td>
+                  <td
+                    style={{
+                      borderRight: "1px solid lightgray",
+                      padding: "8px 16px",
+                      fontSize: valueInRem,
+                    }}
+                  >
+                    {valueInRem}
+                  </td>
+                  <td
+                    style={{
+                      borderRight: "1px solid lightgray",
+                      padding: "8px 16px",
+                      fontSize: valueInRem,
+                    }}
+                  >
+                    {valueInPx}px
+                  </td>
+                  <td style={{ padding: "8px 16px" }}>{fontUsedFor[key]}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
         <p />

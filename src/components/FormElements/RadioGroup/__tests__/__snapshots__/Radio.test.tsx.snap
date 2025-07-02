@@ -3,7 +3,7 @@
 exports[`<Radio /> matches snapshot 1`] = `
 <div>
   <div
-    class="container-class css-17p3ait-radioButtonContainer-radioButtonContainer"
+    class="container-class css-1ysts3j-radioButtonContainer-radioButtonContainer"
     id="container-id"
   >
     <input
@@ -24,7 +24,7 @@ exports[`<Radio /> matches snapshot 1`] = `
 exports[`<Radio /> matches snapshot with \`inline = true\` 1`] = `
 <div>
   <div
-    class="css-1a5cc66-radioButtonContainer-radioButtonContainer"
+    class="css-v4nbt1-radioButtonContainer-radioButtonContainer"
   >
     <input
       id="testId"

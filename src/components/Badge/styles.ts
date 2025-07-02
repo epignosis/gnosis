@@ -69,6 +69,7 @@ export const container = (
       overflow: visible;
       position: absolute;
     }
+
     .content-container.pulse::before {
       content: "";
       position: absolute;

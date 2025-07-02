@@ -1,3 +1,18 @@
+# [6.0.0](https://github.com/epignosis/gnosis/compare/v5.46.0...v6.0.0) (2025-07-02)
+
+
+### Features
+
+* **typography:** change type scale sizes to produce rounded values in pixels ([#559](https://github.com/epignosis/gnosis/issues/559)) ([b2521f4](https://github.com/epignosis/gnosis/commit/b2521f4de01429eb25efda33edbedfce532f88ac))
+
+
+### BREAKING CHANGES
+
+* **typography:** This change will change the font size of the Text component and all other texts
+using the typeScale font sizes
+
+Co-authored-by: Thrasos Kafasis <thrasoskafasis@Epignosis-M170.lan>
+
 # [5.46.0](https://github.com/epignosis/gnosis/compare/v5.45.18...v5.46.0) (2025-07-01)
 
 

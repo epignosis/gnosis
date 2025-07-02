@@ -56,3 +56,11 @@ WithoutBadgeContent.args = {
   children: "Notifications",
   size: "md",
 };
+
+export const NoContentWithPulse = Template.bind({});
+NoContentWithPulse.args = {
+  children: "Notifications",
+  size: "lg",
+  withPulse: true,
+};
+NoContentWithPulse.storyName = "Without Badge Content With Pulse";

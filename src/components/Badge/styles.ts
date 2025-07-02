@@ -1,9 +1,29 @@
-import { css, Theme, SerializedStyles } from "@emotion/react";
+import { css, Theme, SerializedStyles, keyframes } from "@emotion/react";
 import { Offset, Size } from "./Badge";
 
 const sizes = {
   md: "0.5rem",
+  lg: "0.75rem",
 };
+
+const grow = keyframes`
+  0% { transform: scale(.1); }
+  100% { transform: scale(1); }
+`;
+
+const active = keyframes`
+  0% {
+    transform: scale(.1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+`;
 
 export const container = (
   { badge }: Theme,
@@ -42,6 +62,22 @@ export const container = (
       inset-block-start: ${offset.top};
       inset-inline-end: ${offset.right};
       z-index: 1;
+    }
+
+    .content-container.pulse {
+      animation: ${grow} 0.4s 1 linear;
+      overflow: visible;
+      position: absolute;
+    }
+    .content-container.pulse::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: 0 0 2px 2px ${badge.background};
+      animation: ${active} 2s infinite linear;
+      z-index: -1;
     }
   `;
 };

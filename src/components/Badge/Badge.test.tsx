@@ -49,4 +49,20 @@ describe("<Badge />", () => {
 
     expect(container).toMatchSnapshot();
   });
+
+  it("matches snapshot with pulse animation", () => {
+    const { container } = render(
+      <Badge
+        id="my-id"
+        className="my-class"
+        size="md"
+        offset={{ top: "10px", right: "10px" }}
+        badgeContent="5"
+        withPulse
+      >
+        Messages
+      </Badge>,
+    );
+    expect(container).toMatchSnapshot();
+  });
 });

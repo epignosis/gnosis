@@ -3,7 +3,6 @@ import { colors } from "./colors";
 import {
   alert,
   badge,
-  beacon,
   button,
   card,
   chip,
@@ -42,7 +41,6 @@ const defaultTheme = {
   typeScaleSizes,
   alert,
   badge,
-  beacon,
   button,
   card,
   chip,

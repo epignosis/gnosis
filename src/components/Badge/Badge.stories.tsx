@@ -10,9 +10,16 @@ export default {
     size: {
       control: {
         type: "select",
-        options: ["md"],
+        options: ["md", "lg"],
       },
     },
+    withPulse: {
+      control: "boolean",
+    },
+  },
+  args: {
+    size: "lg",
+    withPulse: false,
   },
 };
 

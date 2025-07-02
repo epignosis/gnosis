@@ -35,7 +35,7 @@ export type CustomSelectProps<
   creatableTooltip?: string;
   tooltipContent?: string | JSX.Element;
   minNumberOfOptionsToEnableSearch?: number;
-  menuMaxWidth?: number;
+  menuMinWidth?: number;
   isValidNewOption?: (input: string) => boolean;
   loadOptions?: (inputValue: string) => Promise<CustomOption[]>;
   defaultOptions?: boolean;

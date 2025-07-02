@@ -119,26 +119,18 @@ export const selectContainer = (
 
 export const resolveStyles = ({
   size,
-  menuMaxWidth,
+  menuMinWidth,
   allowTextWrap = false,
 }: {
   size: InputSize;
-  menuMaxWidth?: number;
+  menuMinWidth?: number;
   allowTextWrap?: boolean;
 }): StylesConfig<CustomOption> => ({
   menu: (base: CSSObjectWithLabel) => {
-    const menuMaxWidthStyles = menuMaxWidth
-      ? {
-          width: "fit-content",
-          maxWidth: menuMaxWidth,
-          minWidth: "100%",
-        }
-      : {};
-
     return {
       ...base,
       zIndex: 1060,
-      ...menuMaxWidthStyles,
+      minWidth: menuMinWidth ?? "auto",
     };
   },
   // Modal overlays use a z-index of 9998

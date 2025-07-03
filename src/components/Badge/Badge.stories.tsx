@@ -10,15 +10,14 @@ export default {
     size: {
       control: {
         type: "select",
-        options: ["md", "lg"],
       },
+      options: ["md", "lg"],
     },
     withPulse: {
       control: "boolean",
     },
   },
   args: {
-    size: "lg",
     withPulse: false,
   },
 };

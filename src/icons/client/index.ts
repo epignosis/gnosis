@@ -243,6 +243,7 @@ export { default as PaletteSVG } from "./palette.svg";
 export { default as PenFieldSVG } from "./pen-field.svg";
 export { default as PaperPlaneTopSolidSVG } from "./paper-plane-top-solid.svg";
 export { default as CourseNoViewboxSVG } from "./course-no-viewbox.svg";
+export { default as LinkedinCircleSVG } from "./linkedin-circle.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./teams.svg";

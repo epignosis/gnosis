@@ -10,9 +10,15 @@ export default {
     size: {
       control: {
         type: "select",
-        options: ["md"],
       },
+      options: ["md", "lg"],
     },
+    withPulse: {
+      control: "boolean",
+    },
+  },
+  args: {
+    withPulse: false,
   },
 };
 
@@ -56,3 +62,11 @@ WithoutBadgeContent.args = {
   children: "Notifications",
   size: "md",
 };
+
+export const NoContentWithPulse = Template.bind({});
+NoContentWithPulse.args = {
+  children: "Notifications",
+  size: "lg",
+  withPulse: true,
+};
+NoContentWithPulse.storyName = "Without Badge Content With Pulse";

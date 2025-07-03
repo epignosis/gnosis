@@ -3,7 +3,23 @@
 exports[`<Badge /> matches snapshot with badge content 1`] = `
 <div>
   <div
-    class="has-content css-1ku19ua-container-container"
+    class="has-content css-57ddo3-container-container"
+  >
+    <span
+      class="my-class"
+      id="my-id"
+    >
+      5
+    </span>
+    Messages
+  </div>
+</div>
+`;
+
+exports[`<Badge /> matches snapshot with pulse animation 1`] = `
+<div>
+  <div
+    class="has-content css-57ddo3-container-container"
   >
     <span
       class="my-class"
@@ -19,7 +35,7 @@ exports[`<Badge /> matches snapshot with badge content 1`] = `
 exports[`<Badge /> matches snapshot without badge content 1`] = `
 <div>
   <div
-    class="css-1ku19ua-container-container"
+    class="css-57ddo3-container-container"
   >
     <span
       class="my-class"

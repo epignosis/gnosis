@@ -62,23 +62,23 @@ export const container = (
       inset-block-start: ${offset.top};
       inset-inline-end: ${offset.right};
       z-index: 1;
-    }
 
-    .content-container.pulse {
-      animation: ${grow} 0.4s 1 linear;
-      overflow: visible;
-      position: absolute;
-    }
+      &.pulse {
+        animation: ${grow} 0.4s 1 linear;
+        overflow: visible;
+        position: absolute;
 
-    .content-container.pulse::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      box-shadow: 0 0 2px 2px ${badge.background};
-      animation: ${active} 2s infinite linear;
-      z-index: -1;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          box-shadow: 0 0 2px 2px ${badge.background};
+          animation: ${active} 2s infinite linear;
+          z-index: -1;
+        }
+      }
     }
   `;
 };

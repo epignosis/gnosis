@@ -1,3 +1,10 @@
+# [6.1.0](https://github.com/epignosis/gnosis/compare/v6.0.2...v6.1.0) (2025-07-03)
+
+
+### Features
+
+* **beacon:** enriching badge with pulse ([#558](https://github.com/epignosis/gnosis/issues/558)) ([9e89c62](https://github.com/epignosis/gnosis/commit/9e89c6242eb54b3892340ab3ca326d49ec9f1160))
+
 ## [6.0.2](https://github.com/epignosis/gnosis/compare/v6.0.1...v6.0.2) (2025-07-03)
 
 ## [6.0.1](https://github.com/epignosis/gnosis/compare/v6.0.0...v6.0.1) (2025-07-02)

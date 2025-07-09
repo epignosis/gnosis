@@ -7,7 +7,7 @@ export const drawerContainer = ({ drawer }: Theme, width: string): SerializedSty
     left: 0;
     height: 100%;
     width: 100%;
-    z-index: 1000;
+    z-index: 1001;
 
     .dialog {
       position: absolute;

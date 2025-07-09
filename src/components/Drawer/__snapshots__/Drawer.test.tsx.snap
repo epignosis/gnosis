@@ -2,7 +2,7 @@
 
 exports[`<Drawer/> matches snapshot with close button 1`] = `
 <div
-  class="css-3mduin-drawerContainer-drawerContainer"
+  class="css-1r9ut7f-drawerContainer-drawerContainer"
   data-testid="drawer"
 >
   <div
@@ -62,7 +62,7 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
 
 exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
 <div
-  class="drawer css-3mduin-drawerContainer-drawerContainer"
+  class="drawer css-1r9ut7f-drawerContainer-drawerContainer"
   data-testid="drawer"
   id="main-drawer"
 >
@@ -121,7 +121,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
 
 exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
 <div
-  class="css-3mduin-drawerContainer-drawerContainer"
+  class="css-1r9ut7f-drawerContainer-drawerContainer"
   data-testid="drawer"
 >
   <div
@@ -168,7 +168,7 @@ exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
 
 exports[`<Drawer/> matches snapshot with right placement 1`] = `
 <div
-  class="css-3mduin-drawerContainer-drawerContainer"
+  class="css-1r9ut7f-drawerContainer-drawerContainer"
   data-testid="drawer"
 >
   <div
@@ -215,7 +215,7 @@ exports[`<Drawer/> matches snapshot with right placement 1`] = `
 
 exports[`<Drawer/> matches snapshot without header and footer 1`] = `
 <div
-  class="css-3mduin-drawerContainer-drawerContainer"
+  class="css-1r9ut7f-drawerContainer-drawerContainer"
   data-testid="drawer"
 >
   <div

@@ -30,6 +30,7 @@ export type TableRowProps = {
   autohide?: boolean;
   disabled?: boolean;
   dispatch: Dispatch;
+  onRowSelect?: (row: number) => void;
   onRowClick?: (row: Row) => void;
   onHoveredRowChange: (row: Row | null) => void;
 };
@@ -45,6 +46,7 @@ const TableRow: FC<TableRowProps> = ({
   autohide,
   disabled = false,
   dispatch,
+  onRowSelect,
   onRowClick,
   onHoveredRowChange,
 }) => {
@@ -53,21 +55,27 @@ const TableRow: FC<TableRowProps> = ({
 
   const handleRowClick = useCallback((): void => {
     if (disabled) return;
-    onRowClick && onRowClick(row);
+    onRowClick?.(row);
   }, [row.id, disabled]);
 
-  const handleRowSelection = useCallback((): void => {
+  const handleRowSelection = (): void => {
     if (disabled) return;
 
     dispatch({ type: Actions.toggle, payload: row });
-  }, [dispatch, disabled]);
+
+    onRowSelect?.(Number(row.id));
+  };
 
   return (
     <tr
       key={`entry-${row.id}-select`}
       className={rowClassnames(isSelected, Boolean(onRowClick))}
-      onMouseEnter={() => !disabled && onHoveredRowChange(row)}
-      onMouseLeave={() => !disabled && onHoveredRowChange(null)}
+      onMouseEnter={(): void => {
+        !disabled && onHoveredRowChange(row);
+      }}
+      onMouseLeave={(): void => {
+        !disabled && onHoveredRowChange(null);
+      }}
     >
       {selectable && (
         <Cell key={rowId} className={checkboxWrapperClassnames(Boolean(autohide))}>

@@ -23,7 +23,6 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
     columns,
     rows,
     emptyState,
-    onRowSelect,
     sorting,
     id = "table",
     disabled = false,
@@ -37,8 +36,6 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
     sorting,
     selected: [],
   });
-
-  const { selected } = state;
 
   useEffect(() => {
     dispatch({ type: Actions.columnsChanged, payload: columns });
@@ -56,10 +53,6 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
       payload: sorting,
     });
   }, [sorting]);
-
-  useEffect(() => {
-    onRowSelect?.(selected);
-  }, [selected]);
 
   useImperativeHandle(ref, () => ({
     selectRowsById: (rowIds: number[]) => dispatch({ type: Actions.selectMany, payload: rowIds }),

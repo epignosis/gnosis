@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import classNames from "classnames";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
 import { IconChevronDownSVG, IconChevronUpSVG } from "../../../icons/index";
@@ -30,9 +30,12 @@ const Header: FC<ChildrenProps> = ({
   onSortingChanged,
   disabled = false,
   id,
+  onRowSelect,
 }) => {
   const { rows, columns, selected, sorting } = state;
-  const [columnsSorting, setColumnsSorting] = useState({});
+  const [columnsSorting, setColumnsSorting] = useState<
+    Record<string, { column: string; isDescending: boolean }>
+  >({});
   const selectedIds = selected.map((entry) => entry.id);
   const rowIds = rows.map((row) => row.id);
   const isSelectAllChecked = selected.length > 0;
@@ -40,11 +43,13 @@ const Header: FC<ChildrenProps> = ({
   const hasSorting = Object.keys(sorting || {}).length > 0;
 
   useEffect(() => {
-    const sortingPerColumn = columns.reduce((acc, column) => {
+    const sortingPerColumn = columns.reduce<
+      Record<string, { column: string; isDescending: boolean }>
+    >((acc, column) => {
       const isDefault = sorting?.column === column.accessor;
       acc[column.accessor] = {
         column: column.accessor,
-        isDescending: isDefault ? sorting.isDescending : column.sortOrder === "desc",
+        isDescending: isDefault ? sorting?.isDescending ?? false : column.sortOrder === "desc",
       };
 
       return acc;
@@ -53,14 +58,19 @@ const Header: FC<ChildrenProps> = ({
     setColumnsSorting(sortingPerColumn);
   }, [sorting]);
 
-  const handleToggleSelectAll = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>): void => {
-      if (disabled) return;
-      e.preventDefault();
-      dispatch({ type: Actions.toggleAll, payload: null });
-    },
-    [dispatch, disabled],
-  );
+  const handleToggleSelectAll = (): void => {
+    if (disabled) return;
+    dispatch({ type: Actions.toggleAll, payload: null });
+
+    const hasSelected = state.selected.length > 0;
+    const selectedRowsFromCurrentPage = state.selected.filter((row) => rowIds.includes(row.id));
+    const allRowsFromCurrentPage = [...state.rows];
+    const newSelected = hasSelected ? selectedRowsFromCurrentPage : allRowsFromCurrentPage;
+
+    const uniqueRowIds = [...new Set(newSelected.map((row) => row.id))];
+
+    uniqueRowIds.forEach((id) => onRowSelect?.(Number(id)));
+  };
 
   const handleSortingChange = (accessor: string, sortOrder: Column["sortOrder"]): void => {
     if (disabled) return;
@@ -94,7 +104,7 @@ const Header: FC<ChildrenProps> = ({
         {selectable && (
           <Cell as="td" className="selectable-cell">
             <Checkbox
-              id={`select-all-${isSelectAllChecked} - ${id}`}
+              id={`select-all-${isSelectAllChecked} - ${allRowsSelected} - ${id}`}
               name="select-all"
               aria-label="Select all rows"
               value="all"

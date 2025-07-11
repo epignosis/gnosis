@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { MouseEvent, useCallback, useRef, useState } from "react";
+import React, { MouseEvent, useRef, useState } from "react";
 import { StoryFn } from "@storybook/react";
 import { IconEmptyStateSVG } from "../../icons/";
 import Text from "../Text/Text";
@@ -81,10 +81,9 @@ const Template: StoryFn<Props> = (args) => {
     }
   };
 
-  const handleRowSelect = useCallback((selectedRows: Row[]): void => {
-    const selectedRowIds = selectedRows.map((row) => Number(row.id));
-    setSelectedRows(selectedRowIds);
-  }, []);
+  const handleRowSelect = (rowId: number): void => {
+    setSelectedRows((rows) => [...rows, rowId]);
+  };
 
   return (
     <>
@@ -111,7 +110,7 @@ export const WithRowSelection = Template.bind({});
 
 WithRowSelection.args = {
   selectable: true,
-  onRowSelect: (selectedRows: Row[]) => console.log(selectedRows),
+  onRowSelect: (rowId: number) => console.log(rowId),
   onRowClick: (row: Row) => console.log(row),
 };
 
@@ -120,7 +119,7 @@ export const WithAutoHideRowSelection = Template.bind({});
 WithAutoHideRowSelection.args = {
   selectable: true,
   autohide: true,
-  onRowSelect: (selectedRows: Row[]) => console.log(selectedRows),
+  onRowSelect: (rowId: number) => console.log(rowId),
   onRowClick: (row: Row) => console.log(row),
 };
 

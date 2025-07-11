@@ -58,9 +58,8 @@ const Header: FC<ChildrenProps> = ({
     setColumnsSorting(sortingPerColumn);
   }, [sorting]);
 
-  const handleToggleSelectAll = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleToggleSelectAll = (): void => {
     if (disabled) return;
-    e.preventDefault();
     dispatch({ type: Actions.toggleAll, payload: null });
 
     const hasSelected = state.selected.length > 0;
@@ -105,7 +104,7 @@ const Header: FC<ChildrenProps> = ({
         {selectable && (
           <Cell as="td" className="selectable-cell">
             <Checkbox
-              id={`select-all-${isSelectAllChecked} - ${id}`}
+              id={`select-all-${isSelectAllChecked} - ${allRowsSelected} - ${id}`}
               name="select-all"
               aria-label="Select all rows"
               value="all"

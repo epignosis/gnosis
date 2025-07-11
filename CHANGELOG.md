@@ -1,3 +1,10 @@
+# [6.2.0](https://github.com/epignosis/gnosis/compare/v6.1.1...v6.2.0) (2025-07-11)
+
+
+### Features
+
+* **table:** add support for row persistence ([#565](https://github.com/epignosis/gnosis/issues/565)) ([8061c05](https://github.com/epignosis/gnosis/commit/8061c0583a6e647cacc6a91ad89bc958bb7c3dc1))
+
 ## [6.1.1](https://github.com/epignosis/gnosis/compare/v6.1.0...v6.1.1) (2025-07-09)
 
 # [6.1.0](https://github.com/epignosis/gnosis/compare/v6.0.2...v6.1.0) (2025-07-03)

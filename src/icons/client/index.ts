@@ -244,6 +244,10 @@ export { default as PenFieldSVG } from "./pen-field.svg";
 export { default as PaperPlaneTopSolidSVG } from "./paper-plane-top-solid.svg";
 export { default as CourseNoViewboxSVG } from "./course-no-viewbox.svg";
 export { default as LinkedinCircleSVG } from "./linkedin-circle.svg";
+export { default as BackpackSVG } from "./backpack.svg";
+export { default as HandshakeAngleSVG } from "./handshake-angle.svg";
+export { default as StampSVG } from "./stamp.svg";
+export { default as OpenSesameRegularSVG } from "./open-sesame-regular.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./teams.svg";

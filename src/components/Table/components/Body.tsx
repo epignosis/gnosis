@@ -12,6 +12,7 @@ const Body: FC<ChildrenProps> = ({
   state,
   dispatch,
   onRowClick,
+  onRowSelect,
   onHoveredRowChange,
   disabled = false,
 }) => {
@@ -58,6 +59,7 @@ const Body: FC<ChildrenProps> = ({
                 autohide={autohide}
                 dispatch={dispatch}
                 onRowClick={onRowClick}
+                onRowSelect={onRowSelect}
                 onHoveredRowChange={handleRowHover}
                 disabled={disabled}
               />

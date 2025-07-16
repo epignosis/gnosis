@@ -1,3 +1,10 @@
+## [6.2.3](https://github.com/epignosis/gnosis/compare/v6.2.2...v6.2.3) (2025-07-16)
+
+
+### Performance Improvements
+
+* **table:** prevent unnecessary rerendering due to rows or collumns … ([#568](https://github.com/epignosis/gnosis/issues/568)) ([82b74a3](https://github.com/epignosis/gnosis/commit/82b74a3baf06d1e038935ced3d1b71dab3a52b30))
+
 ## [6.2.2](https://github.com/epignosis/gnosis/compare/v6.2.1...v6.2.2) (2025-07-14)
 
 ## [6.2.1](https://github.com/epignosis/gnosis/compare/v6.2.0...v6.2.1) (2025-07-14)

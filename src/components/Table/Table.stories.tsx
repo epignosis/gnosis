@@ -81,8 +81,8 @@ const Template: StoryFn<Props> = (args) => {
     }
   };
 
-  const handleRowSelect = (rowId: number): void => {
-    setSelectedRows((rows) => [...rows, rowId]);
+  const handleRowSelect = (rowIds: number[]): void => {
+    setSelectedRows((rows) => [...rows, ...rowIds]);
   };
 
   return (
@@ -110,7 +110,7 @@ export const WithRowSelection = Template.bind({});
 
 WithRowSelection.args = {
   selectable: true,
-  onRowSelect: (rowId: number) => console.log(rowId),
+  onRowSelect: (rowIds: number[]) => console.log(rowIds),
   onRowClick: (row: Row) => console.log(row),
 };
 
@@ -119,7 +119,7 @@ export const WithAutoHideRowSelection = Template.bind({});
 WithAutoHideRowSelection.args = {
   selectable: true,
   autohide: true,
-  onRowSelect: (rowId: number) => console.log(rowId),
+  onRowSelect: (rowIds: number[]) => console.log(rowIds),
   onRowClick: (row: Row) => console.log(row),
 };
 

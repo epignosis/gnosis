@@ -45,7 +45,7 @@ export type TableProps = {
   onSortingChanged?: (sorting: Sorting) => void;
   onRowClick?: (row: Row) => void;
   onHoveredRowChange?: (hoveredRow: Row | null) => void;
-  onRowSelect?: (selectedRows: number) => void;
+  onRowSelect?: (ids: number[]) => void;
 };
 
 export type TableState = {

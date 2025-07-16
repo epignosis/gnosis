@@ -39,7 +39,7 @@ export const reducer = (state: TableState, action: ActionType): TableState => {
       return { ...state, columns: action.payload };
     }
     case Actions.rowsChanged: {
-      return { ...state, rows: action.payload };
+      return { ...state, rows: action.payload, selected: [] };
     }
     case Actions.resetSelectedRows: {
       return { ...state, selected: [] };

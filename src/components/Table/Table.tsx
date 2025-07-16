@@ -38,12 +38,30 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
   });
 
   useEffect(() => {
+    const currentColumnIds = new Set(state.columns.map((column) => column.accessor));
+    const newColumnIds = new Set(columns.map((column) => column.accessor));
+
+    if (
+      currentColumnIds.size === newColumnIds.size &&
+      [...currentColumnIds].every((id) => newColumnIds.has(id))
+    ) {
+      return;
+    }
     dispatch({ type: Actions.columnsChanged, payload: columns });
-  }, [columns]);
+  }, [columns, state.columns]);
 
   useEffect(() => {
+    const currentRowIds = new Set(state.rows.map((row) => row.id.toString()));
+    const newRowIds = new Set(rows.map((row) => row.id.toString()));
+
+    if (
+      currentRowIds.size === newRowIds.size &&
+      [...currentRowIds].every((id) => newRowIds.has(id))
+    ) {
+      return;
+    }
     dispatch({ type: Actions.rowsChanged, payload: rows });
-  }, [rows]);
+  }, [rows, state.rows]);
 
   useEffect(() => {
     if (!sorting) return;

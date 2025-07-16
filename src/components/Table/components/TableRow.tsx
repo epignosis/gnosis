@@ -30,7 +30,7 @@ export type TableRowProps = {
   autohide?: boolean;
   disabled?: boolean;
   dispatch: Dispatch;
-  onRowSelect?: (row: number) => void;
+  onRowSelect?: (rowIds: number[]) => void;
   onRowClick?: (row: Row) => void;
   onHoveredRowChange: (row: Row | null) => void;
 };
@@ -60,10 +60,9 @@ const TableRow: FC<TableRowProps> = ({
 
   const handleRowSelection = (): void => {
     if (disabled) return;
-
     dispatch({ type: Actions.toggle, payload: row });
 
-    onRowSelect?.(Number(row.id));
+    onRowSelect?.([Number(row.id)]);
   };
 
   return (

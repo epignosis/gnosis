@@ -62,14 +62,10 @@ const Header: FC<ChildrenProps> = ({
     if (disabled) return;
     dispatch({ type: Actions.toggleAll, payload: null });
 
-    const hasSelected = state.selected.length > 0;
-    const selectedRowsFromCurrentPage = state.selected.filter((row) => rowIds.includes(row.id));
-    const allRowsFromCurrentPage = [...state.rows];
-    const newSelected = hasSelected ? selectedRowsFromCurrentPage : allRowsFromCurrentPage;
-
+    const newSelected = state.selected.length > 0 ? state.selected : [...state.rows];
     const uniqueRowIds = [...new Set(newSelected.map((row) => row.id))];
 
-    uniqueRowIds.forEach((id) => onRowSelect?.(Number(id)));
+    onRowSelect?.(uniqueRowIds.map(Number));
   };
 
   const handleSortingChange = (accessor: string, sortOrder: Column["sortOrder"]): void => {

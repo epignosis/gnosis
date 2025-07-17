@@ -1,3 +1,10 @@
+## [6.2.5](https://github.com/epignosis/gnosis/compare/v6.2.4...v6.2.5) (2025-07-17)
+
+
+### Bug Fixes
+
+* **table:** fix hover issue ([#570](https://github.com/epignosis/gnosis/issues/570)) ([54e385c](https://github.com/epignosis/gnosis/commit/54e385c4a9cb704b5dbf5aa112559f69c6983cd7))
+
 ## [6.2.4](https://github.com/epignosis/gnosis/compare/v6.2.3...v6.2.4) (2025-07-16)
 
 ## [6.2.3](https://github.com/epignosis/gnosis/compare/v6.2.2...v6.2.3) (2025-07-16)

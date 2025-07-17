@@ -5,7 +5,6 @@ import React, {
   useLayoutEffect,
   useRef,
   useState,
-  MouseEvent,
   KeyboardEvent,
 } from "react";
 import classNames from "classnames";
@@ -236,8 +235,7 @@ const Dropdown: FC<DropdownProps> = ({
 
   // List toggle element methods
 
-  const toggleList = (e: MouseEvent<HTMLDivElement>): void => {
-    e.stopPropagation();
+  const toggleList = (): void => {
     if (disabled || hover) return;
 
     // We want to reset the dropdown list every time it opens

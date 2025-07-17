@@ -51,16 +51,11 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
   }, [columns, state.columns]);
 
   useEffect(() => {
-    const currentRowIds = new Set(state.rows.map((row) => row.id.toString()));
-    const newRowIds = new Set(rows.map((row) => row.id.toString()));
-
-    if (
-      currentRowIds.size === newRowIds.size &&
-      [...currentRowIds].every((id) => newRowIds.has(id))
-    ) {
-      return;
-    }
     dispatch({ type: Actions.rowsChanged, payload: rows });
+
+    if (state.rows[0]?.paginationNumber !== rows[0]?.paginationNumber) {
+      dispatch({ type: Actions.resetSelectedRows, payload: null });
+    }
   }, [rows, state.rows]);
 
   useEffect(() => {

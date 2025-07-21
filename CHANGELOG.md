@@ -1,3 +1,10 @@
+## [6.2.6](https://github.com/epignosis/gnosis/compare/v6.2.5...v6.2.6) (2025-07-21)
+
+
+### Bug Fixes
+
+* **dropdown:** force dropdown to close when you click on another dropdown as well ([#571](https://github.com/epignosis/gnosis/issues/571)) ([563ba36](https://github.com/epignosis/gnosis/commit/563ba365a92cc94a4a6008bf3ca95e80ac3f8869))
+
 ## [6.2.5](https://github.com/epignosis/gnosis/compare/v6.2.4...v6.2.5) (2025-07-17)
 
 

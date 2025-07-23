@@ -98,9 +98,18 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
 
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        // This code will not work as expected when closeOnOutsideClick is disabled and the user presses the ESC key after clicking outside the drawer
-        if (drawerRef.current?.contains(document.activeElement)) {
-          onClose();
+        const dialogs = document.querySelectorAll('.dialog[aria-modal="true"]');
+        const dialogCount = dialogs.length;
+
+        if (dialogCount > 0) {
+          const currentDialog = drawerRef.current?.querySelector(".dialog");
+          const topMostDialog = dialogs[dialogCount - 1];
+          const isTopMostDialog = currentDialog === topMostDialog;
+
+          if (isTopMostDialog) {
+            event.stopPropagation();
+            onClose();
+          }
         }
       }
     };

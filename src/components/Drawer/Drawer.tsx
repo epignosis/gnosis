@@ -1,4 +1,4 @@
-import React, { Children, cloneElement, MouseEvent, ReactElement, useEffect, useRef } from "react";
+import React, { Children, cloneElement, ReactElement, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import ReactFocusLock from "react-focus-lock";
 import { SerializedStyles } from "@emotion/react";
@@ -87,9 +87,9 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
   });
   const drawerRef = useRef<HTMLDivElement>(null);
 
-  const handleCloseOnOutsideClick = (e: MouseEvent) => {
-    if (!closeOnOutsideClick) return;
-    e.nativeEvent.stopImmediatePropagation();
+  const handleClose = () => {
+    if (!isOpen || !closeOnOutsideClick) return;
+
     onClose();
   };
 
@@ -98,24 +98,33 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
 
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        onClose();
-      }
-    };
-
-    const handleClickOutside = (e: Event) => {
-      if (drawerRef.current && !drawerRef.current.contains(e.target as Node)) {
-        handleCloseOnOutsideClick(e as unknown as MouseEvent);
+        // This code will not work as expected when closeOnOutsideClick is disabled and the user presses the ESC key after clicking outside the drawer
+        if (drawerRef.current?.contains(document.activeElement)) {
+          onClose();
+        }
       }
     };
 
     document.addEventListener("keydown", handleEscape);
-    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
       document.removeEventListener("keydown", handleEscape);
-      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isOpen, onClose]);
+
+  useEffect(() => {
+    if (isOpen) {
+      (document.querySelector("body") as HTMLBodyElement).style.overflow = "hidden";
+    } else {
+      (document.querySelector("body") as HTMLBodyElement).style.overflow = "";
+    }
+  }, [isOpen]);
+
+  useEffect(() => {
+    return () => {
+      (document.querySelector("body") as HTMLBodyElement).style.overflow = "";
+    };
+  }, []);
 
   const drawer = (
     <LazyMotion features={domAnimation}>
@@ -127,7 +136,7 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
             ref={drawerRef}
             {...rest}
           >
-            {showMask && <Mask onClose={handleCloseOnOutsideClick} />}
+            {showMask && <Mask onClose={handleClose} />}
             <ReactFocusLock returnFocus disabled={!isOpen || disableFocusLock}>
               <m.dialog
                 id="drawer-dialog"
@@ -150,20 +159,6 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
       </AnimatePresence>
     </LazyMotion>
   );
-
-  useEffect(() => {
-    if (isOpen) {
-      (document.querySelector("body") as HTMLBodyElement).style.overflow = "hidden";
-    } else {
-      (document.querySelector("body") as HTMLBodyElement).style.overflow = "";
-    }
-  }, [isOpen]);
-
-  useEffect(() => {
-    return () => {
-      (document.querySelector("body") as HTMLBodyElement).style.overflow = "";
-    };
-  }, []);
 
   return drawerEl && createPortal(drawer, drawerEl);
 };

@@ -1,3 +1,10 @@
+## [6.2.7](https://github.com/epignosis/gnosis/compare/v6.2.6...v6.2.7) (2025-07-25)
+
+
+### Bug Fixes
+
+* **drawer:** fixing undefined is not an object error ([#572](https://github.com/epignosis/gnosis/issues/572)) ([2ceb39a](https://github.com/epignosis/gnosis/commit/2ceb39a1be27bd4627d29b72909918045399d59b))
+
 ## [6.2.6](https://github.com/epignosis/gnosis/compare/v6.2.5...v6.2.6) (2025-07-21)
 
 

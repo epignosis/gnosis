@@ -50,7 +50,7 @@ const Tooltip: FC<TooltipProps> = ({
       placement={placement}
       interactive={interactive}
       appendTo={document.body}
-      // This is to prevent touch devices to open tooltip on tap of a button (instead of triggering the element's onClick event)
+      // @touch prop is to prevent touch devices to open tooltip on tap of a button (instead of triggering the element's onClick event)
       // With the below setting, the tooltip will only open if the user holds the button for 300ms
       touch={["hold", 300]}
       render={(attrs): ReactNode => (

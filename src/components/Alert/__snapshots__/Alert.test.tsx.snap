@@ -3,7 +3,7 @@
 exports[`<Alert> matches snapshot 1`] = `
 <div>
   <div
-    class="my-class css-1lrp5hn-container-container"
+    class="my-class css-1p2eck0-container-container"
     id="alert"
   >
     <div
@@ -31,7 +31,7 @@ exports[`<Alert> matches snapshot 1`] = `
 exports[`<Alert> matches snapshot with custom icon 1`] = `
 <div>
   <div
-    class="css-1lrp5hn-container-container"
+    class="css-1p2eck0-container-container"
   >
     <svg-file-stub
       classname="icon"

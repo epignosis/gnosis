@@ -249,6 +249,7 @@ export { default as HandshakeAngleSVG } from "./handshake-angle.svg";
 export { default as StampSVG } from "./stamp.svg";
 export { default as OpenSesameRegularSVG } from "./open-sesame-regular.svg";
 export { default as MessageHeartSVG } from "./message-heart.svg";
+export { default as ShapesSVG } from "./shapes.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./teams.svg";

@@ -10,6 +10,7 @@ export { default as CameraSVG } from "./camera.svg";
 export { default as CameraRegularSVG } from "./camera-regular.svg";
 export { default as UnitAnsweredSVG } from "./radio-selected.svg";
 export { default as MessageReadSVG } from "./message-read.svg";
+export { default as MessagePlusSVG } from "./message-plus.svg";
 export { default as MessageUnreadSVG } from "./message-unread.svg";
 export { default as CircleOutlinedSVG } from "./circle-outlined.svg";
 export { default as DragHandleSVG } from "./grip-dots-regular.svg";
@@ -250,6 +251,7 @@ export { default as StampSVG } from "./stamp.svg";
 export { default as OpenSesameRegularSVG } from "./open-sesame-regular.svg";
 export { default as MessageHeartSVG } from "./message-heart.svg";
 export { default as ShapesSVG } from "./shapes.svg";
+export { default as RobotFaceSVG } from "./robot-face.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./teams.svg";

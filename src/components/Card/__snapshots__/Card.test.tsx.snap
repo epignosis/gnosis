@@ -97,7 +97,7 @@ exports[`<Card/> matches snapshot with hover 1`] = `
             src="https://talentlms-prod-frontend-static.s3.us-east-1.amazonaws.com/images/default-course.png"
           />
           <div
-            class="css-15fih3o-hoverContainer-hoverContainer"
+            class="css-18knnyy-hoverContainer-hoverContainer"
             data-testid="card-hover"
             style="opacity: 0;"
           >
@@ -122,7 +122,7 @@ exports[`<Card/> matches snapshot with overlay 1`] = `
     data-testid="card"
   >
     <div
-      class="css-1ng6sgj-overlayContainer-overlayContainer"
+      class="css-nliv3s-overlayContainer-overlayContainer"
     >
       Hello Overlay
     </div>

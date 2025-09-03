@@ -8,7 +8,7 @@ exports[`<RadioButtonGroup /> matches snapshot 1`] = `
   >
     <button
       aria-selected="false"
-      class="css-h2n421-radioButton-radioButton"
+      class="css-1072yx1-radioButton-radioButton"
       id="radio-0"
     >
       Test label
@@ -24,7 +24,7 @@ exports[`<RadioButtonGroup /> matches snapshot with selected value 1`] = `
   >
     <button
       aria-selected="true"
-      class="is-selected css-h2n421-radioButton-radioButton"
+      class="is-selected css-1072yx1-radioButton-radioButton"
       id="radio-0"
     >
       Test label

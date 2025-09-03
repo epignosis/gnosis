@@ -3,7 +3,7 @@
 exports[`<ToggleSwitch /> Matches snapshot 1`] = `
 <div>
   <div
-    class="css-jpnwjc-ToggleContainer-ToggleContainer"
+    class="css-ngwnoa-ToggleContainer-ToggleContainer"
     data-checked="false"
     data-testid="my-toggle"
     id="my-toggle"

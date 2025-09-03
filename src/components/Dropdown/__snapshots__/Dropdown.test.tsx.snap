@@ -10,7 +10,7 @@ exports[`<Dropdown /> opens the dropdown and matches snapshot 1`] = `
       class="dropdown-button is-active"
     >
       <button
-        class="solid css-k2dvss-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+        class="solid css-mb5s1a-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       >
         <span
           class="btn-text"

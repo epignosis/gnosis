@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useImperativeHandle, forwardRef } from "react";
 import { SerializedStyles } from "@emotion/utils";
-import classNames from "classnames";
-import { Text, Tooltip } from "../../../";
-import { InfoIconSVG } from "../../../icons";
+import { Text } from "../../../";
+import ToggleLabel from "./ToggleLabel";
+import ToggleSwitchCore from "./ToggleSwitchCore";
 import { ToggleContainer } from "./styles";
 
 type ToggleSpecificProps = {
@@ -38,22 +38,6 @@ export type ToggleSwitchHandlers = {
   toggle: () => void;
 };
 
-const labelClassNames = (
-  customClassName: string,
-  notSwitchedOff: boolean,
-  isRequired: boolean,
-): string =>
-  classNames(customClassName, {
-    "binary-bold": notSwitchedOff,
-    required: isRequired,
-  });
-
-const switchClassNames = (customClassName: string, isMedium: boolean, isSuccess: boolean): string =>
-  classNames(customClassName, {
-    md: isMedium,
-    success: isSuccess,
-  });
-
 const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleProps> = (
   {
     id,
@@ -81,10 +65,6 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
 ) => {
   const [isChecked, setIsChecked] = useState(defaultChecked);
   const hasDescription = Boolean(description);
-  const hasDescriptionTextWeight = hasDescription ? "700" : "400";
-  const isMedium = size === "md";
-  const isSuccess = variant === "success";
-  const hasIcon = Boolean(InternalIcon);
 
   useEffect(() => {
     setIsChecked(defaultChecked);
@@ -97,9 +77,15 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
 
     if (isDisabled) return;
 
-    if (!preventToggle) setIsChecked((prev) => !prev);
-
-    onChange?.(isChecked);
+    if (!preventToggle) {
+      setIsChecked((prev) => {
+        const newValue = !prev;
+        onChange?.(newValue);
+        return newValue;
+      });
+    } else {
+      onChange?.(isChecked);
+    }
   };
 
   useImperativeHandle(ref, () => ({
@@ -118,6 +104,8 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
           hasDescription,
           notSwitchedOff,
           showOutlineBorder,
+          variant,
+          size,
         })
       }
       data-testid={id}
@@ -127,74 +115,45 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
     >
       <div className="switch-container">
         {labelBefore && (
-          <div className="label-description-container label-before">
-            <Text
-              fontSize="sm"
-              className={labelClassNames("label is-before", notSwitchedOff, false)}
-              onClick={handleToggle}
-              weight={hasDescriptionTextWeight}
-            >
-              {tooltip && (
-                <Tooltip content={tooltip} parentProps={{ "aria-label": tooltip }}>
-                  <InfoIconSVG height={16} />
-                </Tooltip>
-              )}
-              {labelBefore}
-            </Text>
-            <Text fontSize="sm" as="div" className="description-text">
-              {description}
-            </Text>
-          </div>
+          <ToggleLabel
+            label={labelBefore}
+            position="before"
+            description={description}
+            tooltip={tooltip}
+            notSwitchedOff={notSwitchedOff}
+            hasDescription={hasDescription}
+            onClick={handleToggle}
+          />
         )}
 
-        <div className="switch-container">
-          <div
-            data-testid="switch"
-            data-checked={isChecked}
-            className={switchClassNames("switch", isMedium, isSuccess)}
-            onClick={handleToggle}
-            role="switch"
-            aria-checked={isChecked}
-            aria-labelledby={labelledById}
-          >
-            {hasInlineText && isMedium && (
-              <Text fontSize="sm" className="inline-text">
-                {isChecked ? inlineTextTranslations.enabled : inlineTextTranslations.disabled}
-              </Text>
-            )}
-
-            {hasIcon && <div className="internal-icon">{InternalIcon}</div>}
-            <div className={switchClassNames("thumb", isMedium, isSuccess)} />
-          </div>
-        </div>
+        <ToggleSwitchCore
+          isChecked={isChecked}
+          variant={variant}
+          size={size}
+          hasInlineText={hasInlineText}
+          inlineTextTranslations={inlineTextTranslations}
+          InternalIcon={InternalIcon}
+          labelledById={labelledById}
+          onClick={handleToggle}
+        />
 
         {labelAfter && (
-          <div className="label-description-container label-after">
-            <Text
-              fontSize="sm"
-              className={labelClassNames("label", notSwitchedOff, required)}
-              onClick={handleToggle}
-              as="div"
-              weight={hasDescriptionTextWeight}
-            >
-              {labelAfter}
-              {tooltip && (
-                <Tooltip content={tooltip} parentProps={{ "aria-label": tooltip }}>
-                  <InfoIconSVG height={16} />
-                </Tooltip>
-              )}
-            </Text>
-            {description && (
-              <Text fontSize="sm" as="div" className="description-text">
-                {description}
-              </Text>
-            )}
-          </div>
+          <ToggleLabel
+            label={labelAfter}
+            position="after"
+            description={description}
+            tooltip={tooltip}
+            required={required}
+            notSwitchedOff={notSwitchedOff}
+            hasDescription={hasDescription}
+            onClick={handleToggle}
+          />
         )}
       </div>
+
       {subtitle && (
         <div className="subtitle-text">
-          <Text fontSize={"sm"}>{subtitle}</Text>
+          <Text fontSize="sm">{subtitle}</Text>
         </div>
       )}
     </div>

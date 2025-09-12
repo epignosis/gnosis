@@ -1,33 +1,106 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<ToggleSwitch /> Matches snapshot 1`] = `
+exports[`<ToggleSwitch /> Snapshot matches snapshot with all props 1`] = `
 <div>
   <div
-    class="css-jpnwjc-ToggleContainer-ToggleContainer"
-    data-checked="false"
-    data-testid="my-toggle"
-    id="my-toggle"
+    aria-label="Test tooltip"
+    class="css-b9eny6-ToggleContainer-ToggleContainer"
+    data-checked="true"
+    data-testid="snapshot-toggle"
+    id="snapshot-toggle"
     tabindex="0"
   >
     <div
       class="switch-container"
     >
       <div
-        class="switch-container"
+        class="label-description-container label-before"
       >
         <div
-          aria-checked="false"
-          aria-labelledby="text-id"
-          class="switch"
-          data-checked="false"
+          class="label is-before css-fxdiie-textContainer-textContainer"
+          data-testid="text-component"
+        >
+          <div
+            aria-expanded="false"
+            aria-label="Test tooltip"
+            role="tooltip"
+          >
+            <svg-file-stub
+              height="16"
+            />
+          </div>
+          Before Label
+        </div>
+        <div
+          class="description-text css-mzb2zy-textContainer-textContainer"
+          data-testid="text-component"
+        >
+          Test description
+        </div>
+      </div>
+      <div
+        class="switch-wrapper"
+      >
+        <div
+          aria-checked="true"
+          class="switch md success"
+          data-checked="true"
           data-testid="switch"
           role="switch"
         >
+          <span
+            class="inline-text css-mzb2zy-textContainer-textContainer"
+            data-testid="text-component"
+          >
+            Enabled
+          </span>
           <div
-            class="thumb"
+            class="internal-icon"
+          >
+            <span>
+              ✓
+            </span>
+          </div>
+          <div
+            class="thumb md success"
           />
         </div>
       </div>
+      <div
+        class="label-description-container label-after"
+      >
+        <div
+          class="label required css-fxdiie-textContainer-textContainer"
+          data-testid="text-component"
+        >
+          After Label
+          <div
+            aria-expanded="false"
+            aria-label="Test tooltip"
+            role="tooltip"
+          >
+            <svg-file-stub
+              height="16"
+            />
+          </div>
+        </div>
+        <div
+          class="description-text css-mzb2zy-textContainer-textContainer"
+          data-testid="text-component"
+        >
+          Test description
+        </div>
+      </div>
+    </div>
+    <div
+      class="subtitle-text"
+    >
+      <span
+        class="css-mzb2zy-textContainer-textContainer"
+        data-testid="text-component"
+      >
+        Test subtitle
+      </span>
     </div>
   </div>
 </div>

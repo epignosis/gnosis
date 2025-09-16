@@ -18,7 +18,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
         <div
           aria-controls="content-0"
           aria-selected="true"
-          class="tab-link selected css-rb6ltd-tabNavItem-tabNavItem"
+          class="tab-link selected css-uyj8pu-tabNavItem-tabNavItem"
           data-testid="my-tab-0-tab"
           id="my-tab-0"
           role="tab"
@@ -29,7 +29,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
         <div
           aria-controls="content-1"
           aria-selected="false"
-          class="tab-link css-6r0alc-tabNavItem-tabNavItem"
+          class="tab-link css-3qosbn-tabNavItem-tabNavItem"
           data-testid="my-tab-1-tab"
           id="my-tab-1"
           role="tab"
@@ -40,7 +40,7 @@ exports[`<Tabs/> matches snapshot 1`] = `
         <div
           aria-controls="content-2"
           aria-selected="false"
-          class="tab-link css-6r0alc-tabNavItem-tabNavItem"
+          class="tab-link css-3qosbn-tabNavItem-tabNavItem"
           data-testid="my-tab-2-tab"
           id="my-tab-2"
           role="tab"
@@ -84,7 +84,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
         <div
           aria-controls="content-0"
           aria-selected="true"
-          class="tab-link selected css-rb6ltd-tabNavItem-tabNavItem"
+          class="tab-link selected css-uyj8pu-tabNavItem-tabNavItem"
           data-testid="my-tab-0-tab"
           id="my-tab-0"
           role="tab"
@@ -95,7 +95,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
         <div
           aria-controls="content-1"
           aria-selected="false"
-          class="tab-link css-6r0alc-tabNavItem-tabNavItem"
+          class="tab-link css-3qosbn-tabNavItem-tabNavItem"
           data-testid="my-tab-1-tab"
           id="my-tab-1"
           role="tab"
@@ -106,7 +106,7 @@ exports[`<Tabs/> matches snapshot with stickyHeader 1`] = `
         <div
           aria-controls="content-2"
           aria-selected="false"
-          class="tab-link css-6r0alc-tabNavItem-tabNavItem"
+          class="tab-link css-3qosbn-tabNavItem-tabNavItem"
           data-testid="my-tab-2-tab"
           id="my-tab-2"
           role="tab"

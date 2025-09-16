@@ -260,7 +260,6 @@ export * from "./product-fruits";
 export * from "./quick-actions";
 export * from "./referral";
 export * from "./reports";
-export * from "./reverse-trial";
 export * from "./skills";
 export * from "./widgets";
 export * from "./empty-state-icons";

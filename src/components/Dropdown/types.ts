@@ -13,6 +13,7 @@ export type DropdownItem = {
   category?: string;
   isDisabled?: boolean;
   tooltipContent?: TippyProps["content"];
+  divider?: boolean;
 };
 
 export type DropdownProps = HTMLAttributes<HTMLDivElement> & {

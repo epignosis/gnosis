@@ -17,7 +17,11 @@ const dropdownList: DropdownItem[] = [
         label: "Category 3",
         items: [
           { label: "Option 5", value: "5" },
-          { label: "Option 6", value: "6", isDisabled: true },
+          { label: "Option 6", value: "6", isDisabled: true, divider: true },
+          { label: "Option 7", value: "7" },
+          { label: "Option 8", value: "8", divider: true },
+          { label: "Option 9", value: "9" },
+          { label: "Option 10", value: "10" },
         ],
       },
     ],

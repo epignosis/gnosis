@@ -36,7 +36,16 @@ const DropdownListItem: FC<DropdownListItemProps> = ({
   onClick,
   onKeyDown,
 }) => {
-  const { id, isDisabled = false, label, icon, value, tooltipContent, className } = item;
+  const {
+    id,
+    label,
+    icon,
+    value,
+    tooltipContent,
+    className,
+    isDisabled = false,
+    divider = false,
+  } = item;
 
   const handleOnClickListItem = (e: MouseEvent<HTMLLIElement>): void => {
     e.stopPropagation();
@@ -69,18 +78,21 @@ const DropdownListItem: FC<DropdownListItemProps> = ({
   );
 
   return (
-    <li
-      className={dropdownItemClasses(value, className)}
-      tabIndex={0}
-      data-testid={id}
-      css={(theme): SerializedStyles =>
-        DropdownListItemStyles(theme, { isSearchable, level, isDisabled })
-      }
-      onClick={handleOnClickListItem}
-      onKeyDown={handleOnKeyDownListItem}
-    >
-      {tooltipElement}
-    </li>
+    <>
+      <li
+        className={dropdownItemClasses(value, className)}
+        tabIndex={0}
+        data-testid={id}
+        css={(theme): SerializedStyles =>
+          DropdownListItemStyles(theme, { isSearchable, level, isDisabled })
+        }
+        onClick={handleOnClickListItem}
+        onKeyDown={handleOnKeyDownListItem}
+      >
+        {tooltipElement}
+      </li>
+      {divider && <div className="divider" />}
+    </>
   );
 };
 

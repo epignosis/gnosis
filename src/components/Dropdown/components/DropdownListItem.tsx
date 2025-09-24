@@ -10,13 +10,11 @@ import { TypographyLevels } from "@theme/utils/typography";
 const dropdownItemClasses = (
   value: DropdownItem["value"],
   className: DropdownItem["className"],
-  divider: DropdownItem["divider"],
 ): string =>
   classNames({
     "dropdown-list-item": true,
     [`${value}`]: true,
     [`${className}`]: Boolean(className),
-    separator: Boolean(divider),
   });
 
 type DropdownListItemProps = {
@@ -80,18 +78,21 @@ const DropdownListItem: FC<DropdownListItemProps> = ({
   );
 
   return (
-    <li
-      className={dropdownItemClasses(value, className, divider)}
-      tabIndex={0}
-      data-testid={id}
-      css={(theme): SerializedStyles =>
-        DropdownListItemStyles(theme, { isSearchable, level, isDisabled })
-      }
-      onClick={handleOnClickListItem}
-      onKeyDown={handleOnKeyDownListItem}
-    >
-      {tooltipElement}
-    </li>
+    <>
+      <li
+        className={dropdownItemClasses(value, className)}
+        tabIndex={0}
+        data-testid={id}
+        css={(theme): SerializedStyles =>
+          DropdownListItemStyles(theme, { isSearchable, level, isDisabled })
+        }
+        onClick={handleOnClickListItem}
+        onKeyDown={handleOnKeyDownListItem}
+      >
+        {tooltipElement}
+      </li>
+      {divider && <div className="divider" />}
+    </>
   );
 };
 

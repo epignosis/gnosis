@@ -73,7 +73,7 @@ it("disabled dropdown item does not call onListItemSelect when clicked", () => {
   expect(mockOnListItemSelect).not.toHaveBeenCalled();
 });
 
-it("dropdown item with divider has correct CSS class", () => {
+it("dropdown item with divider renders divider element", () => {
   const listWithDividerItem: DropdownItem[] = [
     { label: "Option 1", value: "1" },
     { label: "Option 2", value: "2", divider: true },
@@ -88,9 +88,9 @@ it("dropdown item with divider has correct CSS class", () => {
 
   fireEvent.click(getByText("Toggle"));
 
-  const dividerItem = container.querySelector(".separator");
-  expect(dividerItem).toBeInTheDocument();
-  expect(dividerItem).toHaveClass("separator");
+  const dividerElement = container.querySelector(".divider");
+  expect(dividerElement).toBeInTheDocument();
+  expect(dividerElement).toHaveClass("divider");
 });
 
 const mockList: DropdownItem[] = [

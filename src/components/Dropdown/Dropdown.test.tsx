@@ -53,6 +53,46 @@ it("disabled dropdown does not call onToggleList when clicked", () => {
   expect(mockOnToggleList).not.toHaveBeenCalled();
 });
 
+it("disabled dropdown item does not call onListItemSelect when clicked", () => {
+  const mockOnListItemSelect = jest.fn();
+  const listWithDisabledItem: DropdownItem[] = [
+    { label: "Option 1", value: "1" },
+    { label: "Option 2", value: "2", isDisabled: true },
+    { label: "Option 3", value: "3" },
+  ];
+
+  const { getByText } = render(
+    <Dropdown list={listWithDisabledItem} onListItemSelect={mockOnListItemSelect}>
+      <Button color="primary">Toggle</Button>
+    </Dropdown>,
+  );
+
+  fireEvent.click(getByText("Toggle"));
+  fireEvent.click(getByText("Option 2"));
+
+  expect(mockOnListItemSelect).not.toHaveBeenCalled();
+});
+
+it("dropdown item with divider has correct CSS class", () => {
+  const listWithDividerItem: DropdownItem[] = [
+    { label: "Option 1", value: "1" },
+    { label: "Option 2", value: "2", divider: true },
+    { label: "Option 3", value: "3" },
+  ];
+
+  const { getByText, container } = render(
+    <Dropdown list={listWithDividerItem}>
+      <Button color="primary">Toggle</Button>
+    </Dropdown>,
+  );
+
+  fireEvent.click(getByText("Toggle"));
+
+  const dividerItem = container.querySelector(".separator");
+  expect(dividerItem).toBeInTheDocument();
+  expect(dividerItem).toHaveClass("separator");
+});
+
 const mockList: DropdownItem[] = [
   {
     label: "Category 1",

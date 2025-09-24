@@ -26,6 +26,8 @@ export const DropdownListItemStyles = (
 
   &.separator {
     border-bottom: 1px solid ${dropdown.borderBottomColor};
+    padding-block: 0;
+    margin-block: 0.25rem;
   }
 
   span {

@@ -8,56 +8,74 @@ const progressBarSize = {
   lg: "40px",
 };
 
-export const container = (
+export const progressBarStyles = (
   { progressBar }: Theme,
   {
     percent,
     showPercentage,
     size,
-    rounded,
     color,
-  }: { percent: number; showPercentage: boolean; size: Size; rounded: boolean; color: Color },
+    percentageAfter,
+    borderRadius,
+  }: {
+    percent: number;
+    showPercentage: boolean;
+    size: Size;
+    color: Color;
+    percentageAfter: boolean;
+    borderRadius?: string;
+  },
 ): SerializedStyles => {
-  return css`
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
+  const radius = borderRadius === "rounded" ? "5px" : borderRadius;
 
+  return css`
     .label {
       color: ${progressBar[color].textColor};
     }
 
-    .percentage-container {
-      position: relative;
-      height: ${progressBarSize[size]};
-      width: 100%;
-      background-color: ${progressBar[color].background};
-      ${rounded && "border-radius: 5px"};
-      overflow: hidden;
+    .percentage-after {
+      color: ${progressBar[color].textColor};
+    }
 
-      &::after {
-        content: " ";
-        position: absolute;
-        top: 0;
-        inset-inline-start: 0;
-        height: 100%;
-        min-width: ${showPercentage && percent ? "20%" : "0%"};
-        width: ${percent}%;
-        background-color: ${progressBar[color].progressBackground};
-      }
+    .progress-bar-container {
+      display: flex;
+      flex-direction: ${percentageAfter ? "row" : "column"};
+      width: ${percentageAfter ? `${percent}%` : "100%"};
+      align-items: ${percentageAfter ? "center" : "flex-start"};
+      gap: 0.5em;
 
-      div {
-        position: absolute;
-        z-index: 1;
-        height: 100%;
-        width: ${percent - 5}%;
-        max-width: 95%;
-        min-width: ${percent ? "13%" : "0%"};
-        display: flex;
-        padding-inline-start: 1rem;
-        justify-content: flex-end;
-        align-items: center;
-        color: ${progressBar[color].percentColor};
+      .percentage-container {
+        position: relative;
+        height: ${typeof size === "number" ? `${size}px` : progressBarSize[size]};
+        width: 100%;
+        background-color: ${percentageAfter ? "transparent" : progressBar[color].background};
+        ${borderRadius && `border-radius: ${radius}`};
+        overflow: hidden;
+
+        &::after {
+          content: " ";
+          position: absolute;
+          top: 0;
+          inset-inline-start: 0;
+          height: 100%;
+          min-width: ${showPercentage && percent ? "20%" : "0%"};
+          width: ${percentageAfter ? "100%" : `${percent}%`};
+          background-color: ${progressBar[color].progressBackground};
+        }
+
+        div {
+          position: absolute;
+          z-index: 1;
+          height: 100%;
+          width: ${percent - 5}%;
+          max-width: 95%;
+          min-width: ${percent ? "13%" : "0%"};
+          display: flex;
+          padding-inline-start: 1rem;
+          justify-content: flex-end;
+          align-items: center;
+          color: ${progressBar[color].percentColor};
+        }
       }
     }
   `;

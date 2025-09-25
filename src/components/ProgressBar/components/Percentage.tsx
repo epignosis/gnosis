@@ -8,8 +8,8 @@ type PercentageProps = {
 };
 
 export const Percentage = ({ percent, percentageAfter, customText }: PercentageProps) => {
-  const percentageClassNames = classNames("percentage-after", {
-    "percentage-after-after": percentageAfter,
+  const percentageClassNames = classNames({
+    "percentage-after": percentageAfter,
   });
 
   return (

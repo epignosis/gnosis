@@ -53,7 +53,7 @@ export const CustomSize = Template.bind({});
 
 CustomSize.args = {
   percent: 40,
-  size: 0,
+  size: 15,
 };
 
 export const CustomText = Template.bind({});

@@ -2,10 +2,8 @@ import React, { FC } from "react";
 import { SerializedStyles } from "@emotion/react";
 import Text from "../Text/Text";
 import { progressBarStyles } from "./styles";
-import { Percentage } from "./components/Percentage";
-
-export type Size = "md" | "lg" | "sm" | "xs" | number;
-export type Color = "primary" | "success" | "white" | "darkgreen";
+import { Percentage } from "./components/Percentage/Percentage";
+import { Color, Size } from "./types";
 
 export type ProgressBarProps = React.HTMLAttributes<HTMLDivElement> & {
   percent: number;
@@ -22,7 +20,7 @@ const ProgressBar: FC<ProgressBarProps> = ({
   percent,
   customText,
   size = "md",
-  borderRadius = "rounded",
+  borderRadius = "5px",
   color = "success",
   percentageAfter = false,
   labelBefore,
@@ -58,13 +56,19 @@ const ProgressBar: FC<ProgressBarProps> = ({
           {showPercentageInside && (
             <Percentage
               percent={percent}
+              color={color}
               customText={customText}
               percentageAfter={percentageAfter}
             />
           )}
         </div>
         {showPercentageAfter && (
-          <Percentage percent={percent} customText={customText} percentageAfter={percentageAfter} />
+          <Percentage
+            percent={percent}
+            color={color}
+            customText={customText}
+            percentageAfter={percentageAfter}
+          />
         )}
       </div>
       {labelAfter && (

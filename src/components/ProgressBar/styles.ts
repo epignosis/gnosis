@@ -1,5 +1,5 @@
 import { css, Theme, SerializedStyles } from "@emotion/react";
-import { Color, Size } from "./ProgressBar";
+import { Color, Size } from "./types";
 
 const progressBarSize = {
   xs: "3px",
@@ -26,14 +26,8 @@ export const progressBarStyles = (
     borderRadius?: string;
   },
 ): SerializedStyles => {
-  const radius = borderRadius === "rounded" ? "5px" : borderRadius;
-
   return css`
     .label {
-      color: ${progressBar[color].textColor};
-    }
-
-    .percentage-after {
       color: ${progressBar[color].textColor};
     }
 
@@ -49,7 +43,7 @@ export const progressBarStyles = (
         height: ${typeof size === "number" ? `${size}px` : progressBarSize[size]};
         width: 100%;
         background-color: ${percentageAfter ? "transparent" : progressBar[color].background};
-        ${borderRadius && `border-radius: ${radius}`};
+        ${borderRadius && `border-radius: ${borderRadius}`};
         overflow: hidden;
 
         &::after {

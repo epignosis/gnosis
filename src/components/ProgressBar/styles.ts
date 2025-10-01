@@ -1,5 +1,5 @@
 import { css, Theme, SerializedStyles } from "@emotion/react";
-import { Color, Size } from "./types";
+import { BorderRadius, Color, Size } from "./types";
 
 const progressBarSize = {
   xs: "3px",
@@ -24,10 +24,20 @@ export const progressBarStyles = (
     size: Size;
     color: Color;
     percentageAfter: boolean;
-    borderRadius?: string;
+    borderRadius?: number | BorderRadius;
     isRtl?: boolean;
   },
 ): SerializedStyles => {
+  const borderRadiusNumber = typeof borderRadius === "number" && `border-radius: ${borderRadius}px`;
+  const borderRadiusObject =
+    typeof borderRadius === "object" &&
+    `
+   border-start-start-radius: ${borderRadius.borderStartStartRadius}px;
+   border-start-end-radius: ${borderRadius.borderStartEndRadius}px;
+   border-end-end-radius: ${borderRadius.borderEndEndRadius}px;
+   border-end-start-radius: ${borderRadius.borderEndStartRadius}px;
+   `;
+
   return css`
     direction: ${isRtl ? "rtl" : "ltr"};
     .label {
@@ -46,14 +56,15 @@ export const progressBarStyles = (
         height: ${typeof size === "number" ? `${size}px` : progressBarSize[size]};
         width: 100%;
         background-color: ${percentageAfter ? "transparent" : progressBar[color].background};
-        ${borderRadius && `border-radius: ${borderRadius}`};
+        ${borderRadiusNumber};
+        ${borderRadiusObject};
         overflow: hidden;
 
         &::after {
           content: " ";
           position: absolute;
           top: 0;
-          ${isRtl ? "right: 0; left: auto;" : "left: 0; right: auto;"}
+          inset-inline-start: 0;
           height: 100%;
           min-width: ${showPercentage && percent ? "20%" : "0%"};
           width: ${percentageAfter ? "100%" : `${percent}%`};

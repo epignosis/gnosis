@@ -3,13 +3,13 @@ import { SerializedStyles } from "@emotion/react";
 import Text from "../Text/Text";
 import { progressBarStyles } from "./styles";
 import { Percentage } from "./components/Percentage/Percentage";
-import { Color, Size } from "./types";
+import { Color, Size, BorderRadius } from "./types";
 
 export type ProgressBarProps = React.HTMLAttributes<HTMLDivElement> & {
   percent: number;
   customText?: string;
   size?: Size;
-  borderRadius?: string;
+  borderRadius?: number | BorderRadius;
   color?: Color;
   percentageAfter?: boolean;
   labelBefore?: string;
@@ -20,7 +20,7 @@ const ProgressBar: FC<ProgressBarProps> = ({
   percent,
   customText,
   size = "md",
-  borderRadius = "5px",
+  borderRadius = 5,
   color = "success",
   percentageAfter = false,
   labelBefore,

@@ -46,7 +46,12 @@ export const CustomRadius = Template.bind({});
 CustomRadius.args = {
   size: "md",
   percent: 40,
-  borderRadius: "0 6px 6px 0",
+  borderRadius: {
+    borderStartStartRadius: 0,
+    borderStartEndRadius: 6,
+    borderEndEndRadius: 6,
+    borderEndStartRadius: 0,
+  },
 };
 
 export const CustomSize = Template.bind({});
@@ -134,19 +139,11 @@ CourseCardProgress.args = {
   size: 10,
   percent: 75,
   color: "darkgreen",
-  borderRadius: "0 6px 6px 0",
+  borderRadius: {
+    borderStartStartRadius: 0,
+    borderStartEndRadius: 6,
+    borderEndEndRadius: 6,
+    borderEndStartRadius: 0,
+  },
   percentageAfter: true,
-};
-
-export const RTLPercentageAfter: StoryFn<ProgressBarProps> = (args) => {
-  document.dir = "rtl";
-
-  return <ProgressBar {...args} />;
-};
-
-RTLPercentageAfter.args = {
-  size: "md",
-  percent: 60,
-  labelBefore: "התקדמות", // 'Progress' in Hebrew
-  labelAfter: "הושלם", // 'Completed' in Hebrew
 };

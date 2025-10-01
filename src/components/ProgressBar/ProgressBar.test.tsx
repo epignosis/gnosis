@@ -30,7 +30,17 @@ describe("<ProgressBar />", () => {
   });
 
   it("renders correctly with custom radius", () => {
-    const { container } = render(<ProgressBar percent={75} borderRadius="0 6px 6px 0" />);
+    const { container } = render(
+      <ProgressBar
+        percent={75}
+        borderRadius={{
+          borderStartStartRadius: 0,
+          borderStartEndRadius: 6,
+          borderEndEndRadius: 6,
+          borderEndStartRadius: 0,
+        }}
+      />,
+    );
 
     expect(container).toMatchSnapshot();
   });

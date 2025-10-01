@@ -17,6 +17,7 @@ export const progressBarStyles = (
     color,
     percentageAfter,
     borderRadius,
+    isRtl = false,
   }: {
     percent: number;
     showPercentage: boolean;
@@ -24,9 +25,11 @@ export const progressBarStyles = (
     color: Color;
     percentageAfter: boolean;
     borderRadius?: string;
+    isRtl?: boolean;
   },
 ): SerializedStyles => {
   return css`
+    direction: ${isRtl ? "rtl" : "ltr"};
     .label {
       color: ${progressBar[color].textColor};
     }
@@ -50,11 +53,12 @@ export const progressBarStyles = (
           content: " ";
           position: absolute;
           top: 0;
-          inset-inline-start: 0;
+          ${isRtl ? "right: 0; left: auto;" : "left: 0; right: auto;"}
           height: 100%;
           min-width: ${showPercentage && percent ? "20%" : "0%"};
           width: ${percentageAfter ? "100%" : `${percent}%`};
           background-color: ${progressBar[color].progressBackground};
+          transition: width 0.3s;
         }
 
         div {
@@ -65,8 +69,8 @@ export const progressBarStyles = (
           max-width: 95%;
           min-width: ${percent ? "13%" : "0%"};
           display: flex;
-          padding-inline-start: 1rem;
           justify-content: flex-end;
+          padding-inline-start: 1rem;
           align-items: center;
           color: ${progressBar[color].percentColor};
         }

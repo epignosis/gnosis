@@ -27,6 +27,8 @@ const ProgressBar: FC<ProgressBarProps> = ({
   labelAfter,
   ...rest
 }) => {
+  const dir = document.dir;
+  const isRtl = dir === "rtl";
   const showPercentage =
     percent >= 0 && percent <= 100 && size !== "sm" && size !== "xs" && typeof size !== "number";
   const showPercentageInside = showPercentage && !percentageAfter;
@@ -42,6 +44,7 @@ const ProgressBar: FC<ProgressBarProps> = ({
           color,
           percentageAfter,
           borderRadius,
+          isRtl,
         })
       }
       {...rest}

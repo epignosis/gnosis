@@ -3,7 +3,7 @@
 exports[`<ProgressBar /> matches snapshot 1`] = `
 <div>
   <div
-    class="progress css-1gurv8p-progressBarStyles-progressBarStyles"
+    class="progress css-52ir5y-progressBarStyles-progressBarStyles"
     id="my-progress-1"
   >
     <div
@@ -27,7 +27,7 @@ exports[`<ProgressBar /> matches snapshot 1`] = `
 exports[`<ProgressBar /> matches snapshot with zero percent 1`] = `
 <div>
   <div
-    class="css-n9tnpu-progressBarStyles-progressBarStyles"
+    class="css-r7ie7l-progressBarStyles-progressBarStyles"
   >
     <div
       class="progress-bar-container"
@@ -50,7 +50,7 @@ exports[`<ProgressBar /> matches snapshot with zero percent 1`] = `
 exports[`<ProgressBar /> renders correctly with custom radius 1`] = `
 <div>
   <div
-    class="css-rtftkg-progressBarStyles-progressBarStyles"
+    class="css-1rv0rhn-progressBarStyles-progressBarStyles"
   >
     <div
       class="progress-bar-container"

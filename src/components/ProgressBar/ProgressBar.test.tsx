@@ -34,10 +34,10 @@ describe("<ProgressBar />", () => {
       <ProgressBar
         percent={75}
         borderRadius={{
-          borderStartStartRadius: 0,
-          borderStartEndRadius: 6,
-          borderEndEndRadius: 6,
-          borderEndStartRadius: 0,
+          startStartRadius: 0,
+          startEndRadius: 6,
+          endEndRadius: 6,
+          endStartRadius: 0,
         }}
       />,
     );

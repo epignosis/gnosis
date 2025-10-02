@@ -17,7 +17,7 @@ export type DropdownItem = {
 };
 
 export type DropdownProps = HTMLAttributes<HTMLDivElement> & {
-  list: DropdownItem[];
+  list: DropdownItem[] | DropdownItem[][];
   children: ReactNode;
   placement?: PlacementOptions;
   isSearchable?: boolean;

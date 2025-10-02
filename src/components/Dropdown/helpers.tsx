@@ -1,5 +1,38 @@
 import { DropdownItem } from "./types";
 
+// Type guard to check if value is an array of DropdownItem
+function isDropdownItemArray(items: unknown): items is DropdownItem[] {
+  return (
+    Array.isArray(items) &&
+    items.every((item) => typeof item === "object" && item !== null && "label" in item)
+  );
+}
+
+export function buildDropdownMenu(items: DropdownItem[] | DropdownItem[][]): DropdownItem[] {
+  const isGroupedItems = !isDropdownItemArray(items);
+
+  if (!isGroupedItems) return items;
+
+  const filteredGroups = items.filter((groupItems) => groupItems.length > 0);
+
+  if (filteredGroups.length === 0) {
+    return [];
+  }
+
+  return filteredGroups.reduce<DropdownItem[]>((result, group, groupIndex) => {
+    const isLastGroup = groupIndex === filteredGroups.length - 1;
+    const newGroup = [...group];
+
+    // Add divider to the last item of the group (except for the last group)
+    if (!isLastGroup && newGroup.length > 0) {
+      const lastItemIndex = newGroup.length - 1;
+      newGroup[lastItemIndex] = { ...newGroup[lastItemIndex], divider: true };
+    }
+    
+    return result.concat(newGroup);
+  }, []);
+}
+
 export const filterListByKeyword = (list: DropdownItem[], keyword: string): DropdownItem[] => {
   return list.reduce((arr, item): DropdownItem[] => {
     const { items, label, originalText } = item;

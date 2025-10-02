@@ -16,7 +16,7 @@ import DropdownListItem from "./components/DropdownListItem";
 import DropdownListItemTitle from "./components/DropdownListItemTitle";
 import { DropdownContainer, DropdownList } from "./styles";
 import { DropdownItem, DropdownProps, PlacementOptions } from "./types";
-import { filterListByKeyword, getScrollableParent } from "./helpers";
+import { buildDropdownMenu, filterListByKeyword, getScrollableParent } from "./helpers";
 
 const dropdownWrapperClasses = (placement: PlacementOptions): string =>
   classNames("dropdown-wrapper", {
@@ -60,7 +60,7 @@ const Dropdown: FC<DropdownProps> = ({
 }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [currentPlacement, setCurrentPlacement] = useState(placement);
-  const [filteredList, setFilteredList] = useState<DropdownItem[]>(() => list);
+  const [filteredList, setFilteredList] = useState<DropdownItem[]>(() => buildDropdownMenu(list));
   const shouldFocus = Boolean(isSearchable);
 
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -76,7 +76,7 @@ const Dropdown: FC<DropdownProps> = ({
   }, wrapperRef);
 
   useEffect(() => {
-    setFilteredList(list);
+    setFilteredList(buildDropdownMenu(list));
   }, [list]);
 
   useEffect(() => {
@@ -88,7 +88,7 @@ const Dropdown: FC<DropdownProps> = ({
   useEffect(() => {
     if (disabled) {
       setIsListOpen(false);
-      setFilteredList(list);
+      setFilteredList(buildDropdownMenu(list));
     }
   }, [disabled, list]);
 
@@ -229,7 +229,7 @@ const Dropdown: FC<DropdownProps> = ({
     hoverTimeOut = setTimeout(() => {
       setIsListOpen(false);
       // Force the list to be reset when the dropdown is closed
-      setFilteredList(list);
+      setFilteredList(buildDropdownMenu(list));
     }, 100);
   };
 
@@ -240,7 +240,7 @@ const Dropdown: FC<DropdownProps> = ({
 
     // We want to reset the dropdown list every time it opens
     if (!isListOpen) {
-      setFilteredList(list);
+      setFilteredList(buildDropdownMenu(list));
     }
     setIsListOpen((prevState) => !prevState);
   };
@@ -248,8 +248,9 @@ const Dropdown: FC<DropdownProps> = ({
   // Search element methods
 
   const handleInputChanged = (keyword: string): void => {
-    if (!keyword) setFilteredList(list);
-    setFilteredList(filterListByKeyword(list, keyword));
+    const normalizedList = buildDropdownMenu(list);
+    if (!keyword) setFilteredList(normalizedList);
+    setFilteredList(filterListByKeyword(normalizedList, keyword));
   };
 
   // List item methods

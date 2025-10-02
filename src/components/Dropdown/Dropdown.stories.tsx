@@ -364,3 +364,80 @@ WithListOptionsElements.args = {
     },
   ],
 };
+
+// Grouped list items story using DropdownItem[][] format
+export const WithGroupedListItems = Template.bind({});
+
+WithGroupedListItems.args = {
+  list: [
+    [
+      {
+        label: "JavaScript",
+        value: "javascript",
+      },
+      {
+        label: "TypeScript",
+        value: "typescript",
+      },
+      {
+        label: "Python",
+        value: "python",
+      },
+      {
+        label: "Java",
+        value: "java",
+      },
+      {
+        label: "Go",
+        value: "go",
+      },
+      {
+        label: "Rust",
+        value: "rust",
+      },
+    ],
+    [
+      {
+        label: "React",
+        value: "react",
+      },
+      {
+        label: "Vue.js",
+        value: "vue",
+      },
+      {
+        label: "Angular",
+        value: "angular",
+      },
+      {
+        label: "Node.js",
+        value: "nodejs",
+      },
+      {
+        label: "Express",
+        value: "express",
+      },
+    ],
+    // Fifth group - Databases
+    [
+      {
+        label: "PostgreSQL",
+        value: "postgresql",
+      },
+      {
+        label: "MongoDB",
+        value: "mongodb",
+      },
+      {
+        label: "Redis",
+        value: "redis",
+      },
+      {
+        label: "MySQL",
+        value: "mysql",
+      },
+    ],
+  ],
+  isSearchable: true,
+  remainOpenOnSelect: true,
+};

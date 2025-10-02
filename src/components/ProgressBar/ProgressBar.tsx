@@ -1,35 +1,48 @@
 import React, { FC } from "react";
 import { SerializedStyles } from "@emotion/react";
 import Text from "../Text/Text";
-import { container } from "./styles";
-
-export type Size = "md" | "lg" | "sm" | "xs";
-export type Color = "primary" | "success" | "white";
+import { progressBarStyles } from "./styles";
+import { Percentage } from "./components/Percentage/Percentage";
+import { Color, Size, BorderRadius } from "./types";
 
 export type ProgressBarProps = React.HTMLAttributes<HTMLDivElement> & {
   percent: number;
+  customText?: string;
   size?: Size;
+  borderRadius?: number | BorderRadius;
   color?: Color;
-  rounded?: boolean;
+  percentageAfter?: boolean;
   labelBefore?: string;
   labelAfter?: string;
 };
 
 const ProgressBar: FC<ProgressBarProps> = ({
   percent,
+  customText,
   size = "md",
+  borderRadius = 5,
   color = "success",
-  rounded = true,
+  percentageAfter = false,
   labelBefore,
   labelAfter,
   ...rest
 }) => {
-  const showPercentage = percent >= 0 && percent <= 100 && size !== "sm" && size !== "xs";
+  const showPercentage =
+    percent >= 0 && percent <= 100 && size !== "sm" && size !== "xs" && typeof size !== "number";
+  const showPercentageInside = showPercentage && !percentageAfter;
+  const showPercentageAfter = percent >= 0 && percent <= 100 && percentageAfter;
 
   return (
     <div
       css={(theme): SerializedStyles =>
-        container(theme, { percent, showPercentage, size, rounded, color })
+        progressBarStyles(theme, {
+          percent,
+          showPercentage,
+          size,
+          color,
+          percentageAfter,
+          borderRadius,
+        })
       }
       {...rest}
     >
@@ -38,14 +51,24 @@ const ProgressBar: FC<ProgressBarProps> = ({
           {labelBefore}
         </Text>
       )}
-      <div className="percentage-container">
-        {showPercentage && (
-          <div
-            data-testid="percentage"
-            dangerouslySetInnerHTML={{
-              __html: `${percent}&rlm;%`,
-            }}
-          ></div>
+      <div className="progress-bar-container">
+        <div className="percentage-container">
+          {showPercentageInside && (
+            <Percentage
+              percent={percent}
+              color={color}
+              customText={customText}
+              percentageAfter={percentageAfter}
+            />
+          )}
+        </div>
+        {showPercentageAfter && (
+          <Percentage
+            percent={percent}
+            color={color}
+            customText={customText}
+            percentageAfter={percentageAfter}
+          />
         )}
       </div>
       {labelAfter && (

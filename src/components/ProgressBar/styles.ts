@@ -1,5 +1,6 @@
 import { css, Theme, SerializedStyles } from "@emotion/react";
 import { BorderRadius, Color, Size } from "./types";
+import { getBorderRadiusCss } from "./helpers";
 
 const progressBarSize = {
   xs: "3px",
@@ -17,7 +18,6 @@ export const progressBarStyles = (
     color,
     percentageAfter,
     borderRadius,
-    isRtl = false,
   }: {
     percent: number;
     showPercentage: boolean;
@@ -25,21 +25,11 @@ export const progressBarStyles = (
     color: Color;
     percentageAfter: boolean;
     borderRadius?: number | BorderRadius;
-    isRtl?: boolean;
   },
 ): SerializedStyles => {
-  const borderRadiusNumber = typeof borderRadius === "number" && `border-radius: ${borderRadius}px`;
-  const borderRadiusObject =
-    typeof borderRadius === "object" &&
-    `
-   border-start-start-radius: ${borderRadius.borderStartStartRadius}px;
-   border-start-end-radius: ${borderRadius.borderStartEndRadius}px;
-   border-end-end-radius: ${borderRadius.borderEndEndRadius}px;
-   border-end-start-radius: ${borderRadius.borderEndStartRadius}px;
-   `;
+  const borderRadiusCss = getBorderRadiusCss(borderRadius);
 
   return css`
-    direction: ${isRtl ? "rtl" : "ltr"};
     .label {
       color: ${progressBar[color].textColor};
     }
@@ -56,8 +46,7 @@ export const progressBarStyles = (
         height: ${typeof size === "number" ? `${size}px` : progressBarSize[size]};
         width: 100%;
         background-color: ${percentageAfter ? "transparent" : progressBar[color].background};
-        ${borderRadiusNumber};
-        ${borderRadiusObject};
+        ${borderRadiusCss}
         overflow: hidden;
 
         &::after {

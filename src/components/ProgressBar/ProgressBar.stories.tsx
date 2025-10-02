@@ -47,10 +47,10 @@ CustomRadius.args = {
   size: "md",
   percent: 40,
   borderRadius: {
-    borderStartStartRadius: 0,
-    borderStartEndRadius: 6,
-    borderEndEndRadius: 6,
-    borderEndStartRadius: 0,
+    startStartRadius: 0,
+    startEndRadius: 6,
+    endEndRadius: 6,
+    endStartRadius: 0,
   },
 };
 
@@ -140,10 +140,10 @@ CourseCardProgress.args = {
   percent: 75,
   color: "darkgreen",
   borderRadius: {
-    borderStartStartRadius: 0,
-    borderStartEndRadius: 6,
-    borderEndEndRadius: 6,
-    borderEndStartRadius: 0,
+    startStartRadius: 0,
+    startEndRadius: 6,
+    endEndRadius: 6,
+    endStartRadius: 0,
   },
   percentageAfter: true,
 };

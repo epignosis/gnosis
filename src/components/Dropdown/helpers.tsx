@@ -47,3 +47,37 @@ export const getInlinePaddingStart = (level: number, isSearchable: boolean) => {
 
   return initialPadding + level * 0.75;
 };
+
+export const buildDropdownMenu = (list: DropdownItem[]): DropdownItem[] => {
+  // Check if the list contains nested items (groups)
+  const hasNestedItems = list.some((item) => item.items && item.items.length > 0);
+
+  if (!hasNestedItems) {
+    return list;
+  }
+
+  // Filter out empty groups
+  const filteredGroups = list.filter((groupItem) => {
+    if (groupItem.items && groupItem.items.length > 0) {
+      return true;
+    }
+    return false;
+  });
+
+  if (filteredGroups.length === 0) {
+    return [];
+  }
+
+  return filteredGroups.reduce<DropdownItem[]>((result, groupItem, groupIndex) => {
+    const isLastGroup = groupIndex === filteredGroups.length - 1;
+    const groupItems = groupItem.items || [];
+    const newGroup = [...groupItems];
+
+    // Add divider to the last item of the group (except for the last group)
+    if (!isLastGroup && newGroup.length > 0) {
+      const lastItemIndex = newGroup.length - 1;
+      newGroup[lastItemIndex] = { ...newGroup[lastItemIndex], divider: true };
+    }
+    return result.concat(newGroup);
+  }, []);
+};

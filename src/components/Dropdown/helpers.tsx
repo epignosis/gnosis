@@ -49,24 +49,12 @@ export const getInlinePaddingStart = (level: number, isSearchable: boolean) => {
 };
 
 export const buildDropdownMenu = (list: DropdownItem[]): DropdownItem[] => {
-  // Check if the list contains nested items (groups)
   const hasNestedItems = list.some((item) => item.items && item.items.length > 0);
 
-  if (!hasNestedItems) {
-    return list;
-  }
+  if (!hasNestedItems) return list;
 
-  // Filter out empty groups
-  const filteredGroups = list.filter((groupItem) => {
-    if (groupItem.items && groupItem.items.length > 0) {
-      return true;
-    }
-    return false;
-  });
-
-  if (filteredGroups.length === 0) {
-    return [];
-  }
+  const filteredGroups = list.filter((groupItem) => groupItem.items && groupItem.items.length > 0);
+  if (filteredGroups.length === 0) return [];
 
   return filteredGroups.reduce<DropdownItem[]>((result, groupItem, groupIndex) => {
     const isLastGroup = groupIndex === filteredGroups.length - 1;

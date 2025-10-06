@@ -77,10 +77,6 @@ const Dropdown: FC<DropdownProps> = ({
   }, wrapperRef);
 
   useEffect(() => {
-    setFilteredList(isGroupedList ? buildDropdownMenu(list) : list);
-  }, [list, isGroupedList]);
-
-  useEffect(() => {
     if (!disabled && onToggleList) {
       onToggleList(isListOpen);
     }
@@ -89,8 +85,8 @@ const Dropdown: FC<DropdownProps> = ({
   useEffect(() => {
     if (disabled) {
       setIsListOpen(false);
-      setFilteredList(isGroupedList ? buildDropdownMenu(list) : list);
     }
+    setFilteredList(isGroupedList ? buildDropdownMenu(list) : list);
   }, [disabled, list, isGroupedList]);
 
   useLayoutEffect(() => {

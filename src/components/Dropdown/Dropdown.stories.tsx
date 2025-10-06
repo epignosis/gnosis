@@ -364,3 +364,33 @@ WithListOptionsElements.args = {
     },
   ],
 };
+
+const groupedList: DropdownItem[] = [
+  {
+    label: "File Group",
+    items: [
+      { label: "File", value: "file" },
+      { label: "Edit", value: "edit" },
+      { label: "View", value: "view" },
+    ],
+  },
+  {
+    label: "Save Group",
+    items: [
+      { label: "Save", value: "save" },
+      { label: "Save As", value: "save-as" },
+      { label: "Export", value: "export" },
+    ],
+  },
+  {
+    label: "Exit Group",
+    items: [{ label: "Exit", value: "exit" }],
+  },
+];
+
+export const GroupedList = Template.bind({});
+
+GroupedList.args = {
+  list: groupedList,
+  isGroupedList: true,
+};

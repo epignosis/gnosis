@@ -61,9 +61,7 @@ const Dropdown: FC<DropdownProps> = ({
 }) => {
   const [isListOpen, setIsListOpen] = useState(false);
   const [currentPlacement, setCurrentPlacement] = useState(placement);
-  const [filteredList, setFilteredList] = useState<DropdownItem[]>(() =>
-    isGroupedList ? buildDropdownMenu(list) : list,
-  );
+  const [filteredList, setFilteredList] = useState<DropdownItem[]>(() => list);
   const shouldFocus = Boolean(isSearchable);
 
   const wrapperRef = useRef<HTMLDivElement | null>(null);

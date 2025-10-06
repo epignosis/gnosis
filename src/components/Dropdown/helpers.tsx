@@ -54,7 +54,6 @@ export const buildDropdownMenu = (list: DropdownItem[]): DropdownItem[] => {
   if (!hasNestedItems) return list;
 
   const filteredGroups = list.filter((groupItem) => groupItem.items && groupItem.items.length > 0);
-  if (filteredGroups.length === 0) return [];
 
   return filteredGroups.reduce<DropdownItem[]>((result, groupItem, groupIndex) => {
     const isLastGroup = groupIndex === filteredGroups.length - 1;

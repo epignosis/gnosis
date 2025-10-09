@@ -1,3 +1,10 @@
+## [6.2.17](https://github.com/epignosis/gnosis/compare/v6.2.16...v6.2.17) (2025-10-09)
+
+
+### Bug Fixes
+
+* **tabs:** revert tabs appending active tab to page title ([#587](https://github.com/epignosis/gnosis/issues/587)) ([cc82757](https://github.com/epignosis/gnosis/commit/cc82757632e952faa3b6f3c1e3e1df98eed80336))
+
 ## [6.2.16](https://github.com/epignosis/gnosis/compare/v6.2.15...v6.2.16) (2025-10-09)
 
 

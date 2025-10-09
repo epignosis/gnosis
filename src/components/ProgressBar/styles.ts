@@ -37,14 +37,13 @@ export const progressBarStyles = (
     .progress-bar-container {
       display: flex;
       flex-direction: ${percentageAfter ? "row" : "column"};
-      width: ${percentageAfter ? `${percent}%` : "100%"};
       align-items: ${percentageAfter ? "center" : "flex-start"};
       gap: 0.5em;
 
       .percentage-container {
         position: relative;
         height: ${typeof size === "number" ? `${size}px` : progressBarSize[size]};
-        width: 100%;
+        width: ${percentageAfter ? `${percent}%` : "100%"};
         background-color: ${percentageAfter ? "transparent" : progressBar[color].background};
         ${borderRadiusCss}
         overflow: hidden;

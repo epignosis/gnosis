@@ -4,6 +4,7 @@ import Text from "../Text/Text";
 import { progressBarStyles } from "./styles";
 import { Percentage } from "./components/Percentage/Percentage";
 import { Color, Size, BorderRadius } from "./types";
+import { TypographyLevels } from "@theme/utils/typography";
 
 export type ProgressBarProps = React.HTMLAttributes<HTMLDivElement> & {
   percent: number;
@@ -14,6 +15,7 @@ export type ProgressBarProps = React.HTMLAttributes<HTMLDivElement> & {
   percentageAfter?: boolean;
   labelBefore?: string;
   labelAfter?: string;
+  fontSize?: TypographyLevels;
 };
 
 const ProgressBar: FC<ProgressBarProps> = ({
@@ -23,6 +25,7 @@ const ProgressBar: FC<ProgressBarProps> = ({
   borderRadius = 5,
   color = "success",
   percentageAfter = false,
+  fontSize = "sm",
   labelBefore,
   labelAfter,
   ...rest
@@ -59,6 +62,7 @@ const ProgressBar: FC<ProgressBarProps> = ({
               color={color}
               customText={customText}
               percentageAfter={percentageAfter}
+              fontSize={fontSize}
             />
           )}
         </div>
@@ -68,6 +72,7 @@ const ProgressBar: FC<ProgressBarProps> = ({
             color={color}
             customText={customText}
             percentageAfter={percentageAfter}
+            fontSize={fontSize}
           />
         )}
       </div>

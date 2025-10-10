@@ -14,13 +14,15 @@ export type StatusTagColors =
   | "promo"
   | "pale"
   | "grey"
-  | "red";
+  | "red"
+  | "transparent";
 
 export type StatusTagProps = HTMLAttributes<HTMLSpanElement> & {
   testId?: string;
   text?: string;
   size?: StatusTagSizes;
   icon?: IconType;
+  iconSize?: number;
   color?: StatusTagColors;
   ariaLabel?: string;
   fontWeight?: "700" | "400";
@@ -32,6 +34,7 @@ const StatusTag: FC<StatusTagProps> = ({
   icon: Icon,
   size = "md",
   color = "neutral",
+  iconSize = 16,
   ariaLabel,
   fontWeight,
   ...rest
@@ -52,7 +55,7 @@ const StatusTag: FC<StatusTagProps> = ({
     >
       {Icon && (
         <span className="statusTag__icon" aria-hidden="true">
-          <Icon height={16} />
+          <Icon height={iconSize} />
         </span>
       )}
       {text && <span className="statusTag__text">{text}</span>}

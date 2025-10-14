@@ -16,7 +16,7 @@ import DropdownListItem from "./components/DropdownListItem";
 import DropdownListItemTitle from "./components/DropdownListItemTitle";
 import { DropdownContainer, DropdownList } from "./styles";
 import { DropdownItem, DropdownProps, PlacementOptions } from "./types";
-import { filterListByKeyword, getScrollableParent } from "./helpers";
+import { filterListByKeyword, getScrollableParent, buildDropdownMenu } from "./helpers";
 
 const dropdownWrapperClasses = (placement: PlacementOptions): string =>
   classNames("dropdown-wrapper", {
@@ -56,6 +56,7 @@ const Dropdown: FC<DropdownProps> = ({
   remainOpenOnSelect = false,
   onToggleList,
   disabled = false,
+  isGroupedList = false,
   ...rest
 }) => {
   const [isListOpen, setIsListOpen] = useState(false);
@@ -76,10 +77,6 @@ const Dropdown: FC<DropdownProps> = ({
   }, wrapperRef);
 
   useEffect(() => {
-    setFilteredList(list);
-  }, [list]);
-
-  useEffect(() => {
     if (!disabled && onToggleList) {
       onToggleList(isListOpen);
     }
@@ -88,9 +85,9 @@ const Dropdown: FC<DropdownProps> = ({
   useEffect(() => {
     if (disabled) {
       setIsListOpen(false);
-      setFilteredList(list);
     }
-  }, [disabled, list]);
+    setFilteredList(isGroupedList ? buildDropdownMenu(list) : list);
+  }, [disabled, list, isGroupedList]);
 
   useLayoutEffect(() => {
     if (isListOpen) {
@@ -229,7 +226,7 @@ const Dropdown: FC<DropdownProps> = ({
     hoverTimeOut = setTimeout(() => {
       setIsListOpen(false);
       // Force the list to be reset when the dropdown is closed
-      setFilteredList(list);
+      setFilteredList(isGroupedList ? buildDropdownMenu(list) : list);
     }, 100);
   };
 
@@ -240,7 +237,7 @@ const Dropdown: FC<DropdownProps> = ({
 
     // We want to reset the dropdown list every time it opens
     if (!isListOpen) {
-      setFilteredList(list);
+      setFilteredList(isGroupedList ? buildDropdownMenu(list) : list);
     }
     setIsListOpen((prevState) => !prevState);
   };
@@ -248,8 +245,12 @@ const Dropdown: FC<DropdownProps> = ({
   // Search element methods
 
   const handleInputChanged = (keyword: string): void => {
-    if (!keyword) setFilteredList(list);
-    setFilteredList(filterListByKeyword(list, keyword));
+    const sourceList = isGroupedList ? buildDropdownMenu(list) : list;
+    if (!keyword) {
+      setFilteredList(sourceList);
+    } else {
+      setFilteredList(filterListByKeyword(sourceList, keyword));
+    }
   };
 
   // List item methods

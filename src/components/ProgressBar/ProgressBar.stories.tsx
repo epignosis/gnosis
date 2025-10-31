@@ -139,6 +139,7 @@ CourseCardProgress.args = {
   size: 10,
   percent: 75,
   color: "darkgreen",
+  fontSize: "xs",
   borderRadius: {
     startStartRadius: 0,
     startEndRadius: 6,

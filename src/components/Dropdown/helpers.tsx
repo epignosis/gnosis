@@ -48,7 +48,7 @@ export const getInlinePaddingStart = (level: number, isSearchable: boolean) => {
   return initialPadding + level * 0.75;
 };
 
-export const buildDropdownMenu = (list: DropdownItem[]): DropdownItem[] => {
+export const buildGroupedDropdownMenu = (list: DropdownItem[]): DropdownItem[] => {
   const hasNestedItems = list.some((item) => item.items && item.items.length > 0);
 
   if (!hasNestedItems) return list;

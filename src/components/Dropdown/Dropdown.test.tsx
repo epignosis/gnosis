@@ -246,6 +246,49 @@ describe("Grouped List functionality", () => {
     const dividerElements = container.querySelectorAll(".divider");
     expect(dividerElements).toHaveLength(0);
   });
+
+  it("handles mixed structure with grouped items and standalone items", () => {
+    const mixedList: DropdownItem[] = [
+      {
+        label: "File Group",
+        items: [
+          { label: "File", value: "file" },
+          { label: "Edit", value: "edit" },
+        ],
+      },
+      {
+        label: "Save Group",
+        items: [
+          { label: "Save", value: "save" },
+          { label: "Save As", value: "save-as" },
+        ],
+      },
+      { label: "Standalone Option 1", value: "standalone1" },
+      { label: "Standalone Option 2", value: "standalone2" },
+    ];
+
+    const { getByText, container } = render(
+      <Dropdown list={mixedList} isGroupedList={true}>
+        <Button color="primary">Toggle</Button>
+      </Dropdown>,
+    );
+
+    fireEvent.click(getByText("Toggle"));
+
+    // Check that all grouped items are rendered
+    expect(getByText("File")).toBeInTheDocument();
+    expect(getByText("Edit")).toBeInTheDocument();
+    expect(getByText("Save")).toBeInTheDocument();
+    expect(getByText("Save As")).toBeInTheDocument();
+
+    // Check that standalone items are also rendered
+    expect(getByText("Standalone Option 1")).toBeInTheDocument();
+    expect(getByText("Standalone Option 2")).toBeInTheDocument();
+
+    // Should have 2 dividers: one after each group (including one before standalone items)
+    const dividerElements = container.querySelectorAll(".divider");
+    expect(dividerElements).toHaveLength(2);
+  });
 });
 
 const mockList: DropdownItem[] = [

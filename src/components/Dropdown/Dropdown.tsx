@@ -3,6 +3,7 @@ import React, {
   Fragment,
   useEffect,
   useLayoutEffect,
+  useMemo,
   useRef,
   useState,
   KeyboardEvent,
@@ -16,7 +17,7 @@ import DropdownListItem from "./components/DropdownListItem";
 import DropdownListItemTitle from "./components/DropdownListItemTitle";
 import { DropdownContainer, DropdownList } from "./styles";
 import { DropdownItem, DropdownProps, PlacementOptions } from "./types";
-import { filterListByKeyword, getScrollableParent, buildDropdownMenu } from "./helpers";
+import { filterListByKeyword, getScrollableParent, buildGroupedDropdownMenu } from "./helpers";
 
 const dropdownWrapperClasses = (placement: PlacementOptions): string =>
   classNames("dropdown-wrapper", {
@@ -59,9 +60,14 @@ const Dropdown: FC<DropdownProps> = ({
   isGroupedList = false,
   ...rest
 }) => {
+  const optionsList = useMemo(
+    () => (isGroupedList ? buildGroupedDropdownMenu(list) : list),
+    [list, isGroupedList],
+  );
+
   const [isListOpen, setIsListOpen] = useState(false);
   const [currentPlacement, setCurrentPlacement] = useState(placement);
-  const [filteredList, setFilteredList] = useState<DropdownItem[]>(() => list);
+  const [filteredList, setFilteredList] = useState<DropdownItem[]>(() => optionsList);
   const shouldFocus = Boolean(isSearchable);
 
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -86,8 +92,8 @@ const Dropdown: FC<DropdownProps> = ({
     if (disabled) {
       setIsListOpen(false);
     }
-    setFilteredList(isGroupedList ? buildDropdownMenu(list) : list);
-  }, [disabled, list, isGroupedList]);
+    setFilteredList(optionsList);
+  }, [disabled, optionsList]);
 
   useLayoutEffect(() => {
     if (isListOpen) {
@@ -226,7 +232,7 @@ const Dropdown: FC<DropdownProps> = ({
     hoverTimeOut = setTimeout(() => {
       setIsListOpen(false);
       // Force the list to be reset when the dropdown is closed
-      setFilteredList(isGroupedList ? buildDropdownMenu(list) : list);
+      setFilteredList(optionsList);
     }, 100);
   };
 
@@ -237,20 +243,22 @@ const Dropdown: FC<DropdownProps> = ({
 
     // We want to reset the dropdown list every time it opens
     if (!isListOpen) {
-      setFilteredList(isGroupedList ? buildDropdownMenu(list) : list);
+      setFilteredList(optionsList);
     }
     setIsListOpen((prevState) => !prevState);
   };
 
   // Search element methods
 
+  const getFilteredList = (keyword: string): DropdownItem[] => {
+    if (!keyword) return optionsList;
+
+    const filtered = filterListByKeyword(list, keyword);
+    return isGroupedList ? buildGroupedDropdownMenu(filtered) : filtered;
+  };
+
   const handleInputChanged = (keyword: string): void => {
-    const sourceList = isGroupedList ? buildDropdownMenu(list) : list;
-    if (!keyword) {
-      setFilteredList(sourceList);
-    } else {
-      setFilteredList(filterListByKeyword(sourceList, keyword));
-    }
+    setFilteredList(getFilteredList(keyword));
   };
 
   // List item methods

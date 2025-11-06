@@ -171,7 +171,6 @@ export { default as IntegrationsIconSVG } from "./icon-integrations.svg";
 export { default as SecurityIconSVG } from "./icon-security.svg";
 export { default as ImportExportIconSVG } from "./icon-import-export.svg";
 export { default as BillingSubscriptionIconSVG } from "./icon-billing-subscription.svg";
-export { default as InstructorIconSVG } from "./icon-instructor.svg";
 export { default as LearnerIconSVG } from "./icon-learner.svg";
 export { default as AdminIconSVG } from "./icon-admin-role.svg";
 export { default as TrainingMatrixSVG } from "./training-matrix.svg";
@@ -252,6 +251,7 @@ export { default as OpenSesameRegularSVG } from "./open-sesame-regular.svg";
 export { default as MessageHeartSVG } from "./message-heart.svg";
 export { default as ShapesSVG } from "./shapes.svg";
 export { default as RobotFaceSVG } from "./robot-face.svg";
+export { default as InstructorLockSVG } from "./instructor-lock.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./teams.svg";

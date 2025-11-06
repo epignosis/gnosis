@@ -17,23 +17,22 @@ const DropdownListItemTitle: FC<DropdownListItemTitleProps> = ({
   isSearchable,
   textSize,
 }) => {
+  if (!label) return null;
+
   return (
-    (label && (
-      <li
-        aria-disabled="true"
-        tabIndex={-1}
-        css={DropdownListItemTitleStyles({ level, isSearchable })}
-      >
-        {typeof label === "string" ? (
-          <Text fontSize={textSize} weight="700" title={label}>
-            {label}
-          </Text>
-        ) : (
-          label
-        )}
-      </li>
-    )) ||
-    null
+    <li
+      aria-disabled="true"
+      tabIndex={-1}
+      css={DropdownListItemTitleStyles({ level, isSearchable })}
+    >
+      {typeof label === "string" ? (
+        <Text fontSize={textSize} weight="700" title={label}>
+          {label}
+        </Text>
+      ) : (
+        label
+      )}
+    </li>
   );
 };
 

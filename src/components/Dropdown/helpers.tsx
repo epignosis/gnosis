@@ -53,7 +53,7 @@ const clearDividers = (items: DropdownItem[]): DropdownItem[] => {
     if (item.items && item.items.length > 0) {
       return { ...item, items: clearDividers(item.items), divider: false };
     }
-    return item;
+    return { ...item, divider: false };
   });
 };
 
@@ -87,9 +87,7 @@ export const buildGroupedDropdownMenu = (list: DropdownItem[]): DropdownItem[] =
     const isGroup = item.items && item.items.length > 0;
     const isStandaloneItem = !isGroup;
 
-    if (isStandaloneItem) {
-      return item;
-    }
+    if (isStandaloneItem) return item;
 
     const groupItems = item.items || [];
     let processedItems = [...groupItems];

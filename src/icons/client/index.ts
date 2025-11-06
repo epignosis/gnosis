@@ -252,6 +252,8 @@ export { default as OpenSesameRegularSVG } from "./open-sesame-regular.svg";
 export { default as MessageHeartSVG } from "./message-heart.svg";
 export { default as ShapesSVG } from "./shapes.svg";
 export { default as RobotFaceSVG } from "./robot-face.svg";
+export { default as InstructorLockSVG } from "./instructor-lock.svg";
+export { default as ContentLockSVG } from "./content-lock.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./teams.svg";

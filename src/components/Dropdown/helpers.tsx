@@ -53,7 +53,7 @@ const clearDividers = (items: DropdownItem[]): DropdownItem[] => {
     if (item.items && item.items.length > 0) {
       return { ...item, items: clearDividers(item.items), divider: false };
     }
-    return { ...item, divider: false };
+    return item;
   });
 };
 

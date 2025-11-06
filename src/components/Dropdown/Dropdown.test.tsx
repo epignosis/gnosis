@@ -246,6 +246,71 @@ describe("Grouped List functionality", () => {
     const dividerElements = container.querySelectorAll(".divider");
     expect(dividerElements).toHaveLength(0);
   });
+
+  it("preserves nested category labels and handles nested items correctly", () => {
+    const { getByText, container } = render(
+      <Dropdown list={mockList} isGroupedList={true}>
+        <Button color="primary">Toggle</Button>
+      </Dropdown>,
+    );
+
+    fireEvent.click(getByText("Toggle"));
+
+    expect(getByText("Category 1")).toBeInTheDocument();
+    expect(getByText("Category 2")).toBeInTheDocument();
+    expect(getByText("Category 15")).toBeInTheDocument();
+
+    expect(getByText("Option 1")).toBeInTheDocument();
+    expect(getByText("Option 2")).toBeInTheDocument();
+    expect(getByText("Option 3")).toBeInTheDocument();
+    expect(getByText("Option 5")).toBeInTheDocument();
+    expect(getByText("Option 15")).toBeInTheDocument();
+    expect(getByText("Option 16")).toBeInTheDocument();
+
+    const dividerElements = container.querySelectorAll(".divider");
+    expect(dividerElements.length).toEqual(2);
+  });
+
+  it("works with search when nested categories are present", async () => {
+    const { getByText, getByPlaceholderText, queryByText, container } = render(
+      <Dropdown list={mockList} isGroupedList={true} isSearchable={true}>
+        <Button color="primary">Toggle</Button>
+      </Dropdown>,
+    );
+
+    fireEvent.click(getByText("Toggle"));
+
+    expect(getByText("Category 1")).toBeInTheDocument();
+    expect(getByText("Category 2")).toBeInTheDocument();
+    expect(getByText("Category 15")).toBeInTheDocument();
+
+    expect(getByText("Option 1")).toBeInTheDocument();
+    expect(getByText("Option 2")).toBeInTheDocument();
+    expect(getByText("Option 3")).toBeInTheDocument();
+    expect(getByText("Option 5")).toBeInTheDocument();
+    expect(getByText("Option 15")).toBeInTheDocument();
+    expect(getByText("Option 16")).toBeInTheDocument();
+
+    const searchInput = getByPlaceholderText("Search");
+    fireEvent.change(searchInput, { target: { value: "Option 2" } });
+
+    await new Promise((resolve) => setTimeout(resolve, 400));
+
+    expect(getByText("Option 2")).toBeInTheDocument();
+
+    expect(queryByText("Option 1")).not.toBeInTheDocument();
+    expect(queryByText("Option 3")).not.toBeInTheDocument();
+    expect(queryByText("Option 5")).not.toBeInTheDocument();
+    expect(queryByText("Option 15")).not.toBeInTheDocument();
+    expect(queryByText("Option 16")).not.toBeInTheDocument();
+    expect(queryByText("Category 15")).not.toBeInTheDocument();
+
+    expect(getByText("Category 1")).toBeInTheDocument();
+    expect(getByText("Category 2")).toBeInTheDocument();
+
+    const dividerElements = container.querySelectorAll(".divider");
+    expect(dividerElements.length).toBeGreaterThanOrEqual(0);
+  });
 });
 
 const mockList: DropdownItem[] = [

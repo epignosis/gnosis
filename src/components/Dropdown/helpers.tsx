@@ -48,23 +48,64 @@ export const getInlinePaddingStart = (level: number, isSearchable: boolean) => {
   return initialPadding + level * 0.75;
 };
 
+const clearDividers = (items: DropdownItem[]): DropdownItem[] => {
+  return items.map((item) => {
+    if (item.items && item.items.length > 0) {
+      return { ...item, items: clearDividers(item.items), divider: false };
+    }
+    return item;
+  });
+};
+
+const addDividerToLastItem = (items: DropdownItem[]): DropdownItem[] => {
+  if (items.length === 0) return items;
+
+  const lastIndex = items.length - 1;
+  const lastItem = items[lastIndex];
+
+  if (lastItem.items && lastItem.items.length > 0) {
+    const updatedItems = addDividerToLastItem(lastItem.items);
+    return [...items.slice(0, lastIndex), { ...lastItem, items: updatedItems }];
+  }
+
+  return [...items.slice(0, lastIndex), { ...lastItem, divider: true }];
+};
+
 export const buildGroupedDropdownMenu = (list: DropdownItem[]): DropdownItem[] => {
   const hasNestedItems = list.some((item) => item.items && item.items.length > 0);
 
   if (!hasNestedItems) return list;
 
-  const filteredGroups = list.filter((groupItem) => groupItem.items && groupItem.items.length > 0);
-
-  return filteredGroups.reduce<DropdownItem[]>((result, groupItem, groupIndex) => {
-    const isLastGroup = groupIndex === filteredGroups.length - 1;
-    const groupItems = groupItem.items || [];
-    const newGroup = [...groupItems];
-
-    // Add divider to the last item of the group (except for the last group)
-    if (!isLastGroup && newGroup.length > 0) {
-      const lastItemIndex = newGroup.length - 1;
-      newGroup[lastItemIndex] = { ...newGroup[lastItemIndex], divider: true };
+  const cleanedList = list.map((item) => {
+    if (item.items && item.items.length > 0) {
+      return { ...item, items: clearDividers(item.items) };
     }
-    return result.concat(newGroup);
-  }, []);
+    return item;
+  });
+
+  return cleanedList.map((item, index) => {
+    const isGroup = item.items && item.items.length > 0;
+    const isStandaloneItem = !isGroup;
+
+    if (isStandaloneItem) {
+      return item;
+    }
+
+    const groupItems = item.items || [];
+    let processedItems = [...groupItems];
+
+    const hasItemAfter = index < cleanedList.length - 1;
+    const nextItem = hasItemAfter ? cleanedList[index + 1] : null;
+    const isNextItemStandalone = nextItem && (!nextItem.items || nextItem.items.length === 0);
+    const isNextItemGroup = nextItem && nextItem.items && nextItem.items.length > 0;
+
+    if (processedItems.length > 0 && (isNextItemStandalone || isNextItemGroup)) {
+      processedItems = addDividerToLastItem(processedItems);
+    }
+
+    return {
+      ...item,
+      items: processedItems,
+    };
+  });
 };

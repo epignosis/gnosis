@@ -18,19 +18,22 @@ const DropdownListItemTitle: FC<DropdownListItemTitleProps> = ({
   textSize,
 }) => {
   return (
-    <li
-      aria-disabled="true"
-      tabIndex={-1}
-      css={DropdownListItemTitleStyles({ level, isSearchable })}
-    >
-      {typeof label === "string" ? (
-        <Text fontSize={textSize} weight="700" title={label}>
-          {label}
-        </Text>
-      ) : (
-        label
-      )}
-    </li>
+    (label && (
+      <li
+        aria-disabled="true"
+        tabIndex={-1}
+        css={DropdownListItemTitleStyles({ level, isSearchable })}
+      >
+        {typeof label === "string" ? (
+          <Text fontSize={textSize} weight="700" title={label}>
+            {label}
+          </Text>
+        ) : (
+          label
+        )}
+      </li>
+    )) ||
+    null
   );
 };
 

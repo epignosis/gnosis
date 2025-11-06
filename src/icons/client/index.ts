@@ -171,7 +171,6 @@ export { default as IntegrationsIconSVG } from "./icon-integrations.svg";
 export { default as SecurityIconSVG } from "./icon-security.svg";
 export { default as ImportExportIconSVG } from "./icon-import-export.svg";
 export { default as BillingSubscriptionIconSVG } from "./icon-billing-subscription.svg";
-export { default as InstructorIconSVG } from "./icon-instructor.svg";
 export { default as LearnerIconSVG } from "./icon-learner.svg";
 export { default as AdminIconSVG } from "./icon-admin-role.svg";
 export { default as TrainingMatrixSVG } from "./training-matrix.svg";

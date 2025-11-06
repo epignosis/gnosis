@@ -1,7 +1,6 @@
 export { default as UsersWidgetSVG } from "./users.svg";
 export { default as AdministratorsWidgetSVG } from "./administrators.svg";
 export { default as LearnersWidgetSVG } from "./learners.svg";
-export { default as InstuctorsWidgetSVG } from "./instructors.svg";
 export { default as ActiveUsersSVG } from "./active-users.svg";
 export { default as AssignedCoursesSVG } from "./assigned-courses.svg";
 export { default as AssignedLearnersSVG } from "./assigned-learners.svg";

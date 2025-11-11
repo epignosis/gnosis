@@ -4,20 +4,20 @@ exports[`<ToggleSwitch /> Snapshot matches snapshot with all props 1`] = `
 <div>
   <div
     aria-label="Test tooltip"
-    class="css-qifdzi-ToggleContainer-ToggleContainer"
+    class="css-1bh62o8-ToggleContainer-ToggleContainer"
     data-checked="true"
     data-testid="snapshot-toggle"
     id="snapshot-toggle"
     tabindex="0"
   >
     <div
-      class="switch-container"
+      class="toggle-switch__container"
     >
       <div
-        class="label-description-container label-before"
+        class="toggle-switch__label-container toggle-switch__label-container--before"
       >
         <div
-          class="label is-before css-fxdiie-textContainer-textContainer"
+          class="toggle-switch__label toggle-switch__label--before css-fxdiie-textContainer-textContainer"
           data-testid="text-component"
         >
           <div
@@ -32,45 +32,45 @@ exports[`<ToggleSwitch /> Snapshot matches snapshot with all props 1`] = `
           Before Label
         </div>
         <div
-          class="description-text css-mzb2zy-textContainer-textContainer"
+          class="toggle-switch__description css-mzb2zy-textContainer-textContainer"
           data-testid="text-component"
         >
           Test description
         </div>
       </div>
       <div
-        class="switch-wrapper"
+        class="toggle-switch__wrapper"
       >
         <div
           aria-checked="true"
-          class="switch md success"
+          class="toggle-switch__switch toggle-switch__switch--md toggle-switch__switch--success"
           data-checked="true"
           data-testid="switch"
           role="switch"
         >
           <span
-            class="inline-text css-mzb2zy-textContainer-textContainer"
+            class="toggle-switch__inline-text css-mzb2zy-textContainer-textContainer"
             data-testid="text-component"
           >
             Enabled
           </span>
           <div
-            class="internal-icon"
+            class="toggle-switch__icon"
           >
             <span>
               ✓
             </span>
           </div>
           <div
-            class="thumb md success"
+            class="toggle-switch__thumb toggle-switch__switch--md toggle-switch__switch--success"
           />
         </div>
       </div>
       <div
-        class="label-description-container label-after"
+        class="toggle-switch__label-container toggle-switch__label-container--after"
       >
         <div
-          class="label required css-fxdiie-textContainer-textContainer"
+          class="toggle-switch__label toggle-switch__label--required css-fxdiie-textContainer-textContainer"
           data-testid="text-component"
         >
           After Label
@@ -85,7 +85,7 @@ exports[`<ToggleSwitch /> Snapshot matches snapshot with all props 1`] = `
           </div>
         </div>
         <div
-          class="description-text css-mzb2zy-textContainer-textContainer"
+          class="toggle-switch__description css-mzb2zy-textContainer-textContainer"
           data-testid="text-component"
         >
           Test description
@@ -93,7 +93,7 @@ exports[`<ToggleSwitch /> Snapshot matches snapshot with all props 1`] = `
       </div>
     </div>
     <div
-      class="subtitle-text"
+      class="toggle-switch__subtitle"
     >
       <span
         class="css-mzb2zy-textContainer-textContainer"

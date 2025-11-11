@@ -91,14 +91,14 @@ export const ToggleContainer = (
     flex-direction: column;
     gap: 5px;
 
-    .switch-container {
+    .toggle-switch__container {
       display: flex;
       justify-content: flex-start;
       align-items: ${hasDescription ? "flex-start" : "center"};
       width: fit-content;
       cursor: ${isDisabled ? "not-allowed" : "pointer"};
 
-      .switch-wrapper {
+      .toggle-switch__wrapper {
         display: flex;
 
         ${showOutlineBorder &&
@@ -107,7 +107,7 @@ export const ToggleContainer = (
           border-radius: 0.625rem;
         `}
 
-        .switch {
+        .toggle-switch__switch {
           position: relative;
           display: flex;
           align-items: center;
@@ -130,7 +130,7 @@ export const ToggleContainer = (
           `}
         }
 
-        .thumb {
+        .toggle-switch__thumb {
           position: absolute;
           top: ${thumbDimensions.top};
           margin-inline-start: ${thumbDimensions.marginInlineStart};
@@ -141,14 +141,14 @@ export const ToggleContainer = (
           transition: 0.3s ease-in-out;
         }
 
-        .inline-text {
+        .toggle-switch__inline-text {
           position: absolute;
           top: 9px;
           margin-inline-start: ${isChecked ? "12px" : "42px"};
           color: ${formElements.toggleSwitch.textColor};
         }
 
-        .internal-icon {
+        .toggle-switch__icon {
           display: flex;
           justify-content: center;
           margin-inline-start: ${isChecked ? "2px" : "38px"};
@@ -156,19 +156,19 @@ export const ToggleContainer = (
         }
       }
 
-      .label-description-container {
+      .toggle-switch__label-container {
         display: flex;
         flex-direction: column;
 
-        &.label-before {
+        &.toggle-switch__label-container--before {
           margin-inline-end: 0.5rem;
         }
 
-        &.label-after {
+        &.toggle-switch__label-container--after {
           margin-inline-start: 0.5rem;
         }
 
-        .label {
+        .toggle-switch__label {
           margin-inline-start: unset;
           cursor: pointer;
           white-space: nowrap;
@@ -176,17 +176,17 @@ export const ToggleContainer = (
           align-items: center;
           gap: 0.5em;
 
-          &.binary-bold {
+          &.toggle-switch__label--binary-bold {
             cursor: default;
 
-            &.is-before {
+            &.toggle-switch__label--before {
               font-weight: ${isChecked ? 400 : 700};
             }
 
             font-weight: ${isChecked ? 700 : 400};
           }
 
-          &.required {
+          &.toggle-switch__label--required {
             &::after {
               content: " *";
               color: ${formElements.toggleSwitch.requiredAsteriskColor};
@@ -204,7 +204,7 @@ export const ToggleContainer = (
       }
     }
 
-    .subtitle-text {
+    .toggle-switch__subtitle {
       color: ${formElements.toggleSwitch.subtitleDescription};
     }
   `;

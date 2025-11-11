@@ -113,7 +113,7 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
       aria-label={tooltip}
       {...rest}
     >
-      <div className="switch-container">
+      <div className="toggle-switch__container">
         {labelBefore && (
           <ToggleLabel
             label={labelBefore}
@@ -152,7 +152,7 @@ const ToggleSwitch: React.ForwardRefRenderFunction<ToggleSwitchHandlers, ToggleP
       </div>
 
       {subtitle && (
-        <div className="subtitle-text">
+        <div className="toggle-switch__subtitle">
           <Text fontSize="sm">{subtitle}</Text>
         </div>
       )}

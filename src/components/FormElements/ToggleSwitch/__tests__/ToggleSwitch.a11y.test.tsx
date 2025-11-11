@@ -214,7 +214,7 @@ describe("ToggleSwitch Accessibility", () => {
       );
 
       const toggle = screen.getByTestId("switch");
-      expect(toggle).toHaveClass("success");
+      expect(toggle).toHaveClass("toggle-switch__switch--success");
     });
 
     it("maintains visual distinction between states", () => {
@@ -333,7 +333,7 @@ describe("ToggleSwitch Accessibility", () => {
       render(<ToggleSwitch {...defaultProps} size="md" labelBefore="Large toggle" />);
 
       const toggle = screen.getByTestId("switch");
-      expect(toggle).toHaveClass("md");
+      expect(toggle).toHaveClass("toggle-switch__switch--md");
       // Medium size provides larger touch target (40px height)
     });
 

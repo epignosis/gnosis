@@ -20,8 +20,8 @@ const labelClassNames = (
   isRequired: boolean,
 ): string =>
   classNames(customClassName, {
-    "binary-bold": notSwitchedOff,
-    required: isRequired,
+    "toggle-switch__label--binary-bold": notSwitchedOff,
+    "toggle-switch__label--required": isRequired,
   });
 
 const ToggleLabel: React.FC<ToggleLabelProps> = ({
@@ -38,11 +38,11 @@ const ToggleLabel: React.FC<ToggleLabelProps> = ({
   const isBeforeLabel = position === "before";
 
   return (
-    <div className={`label-description-container label-${position}`}>
+    <div className={`toggle-switch__label-container toggle-switch__label-container--${position}`}>
       <Text
         fontSize="sm"
         className={labelClassNames(
-          `label ${isBeforeLabel ? "is-before" : ""}`,
+          `toggle-switch__label ${isBeforeLabel ? "toggle-switch__label--before" : ""}`,
           notSwitchedOff,
           required,
         )}
@@ -63,7 +63,7 @@ const ToggleLabel: React.FC<ToggleLabelProps> = ({
         )}
       </Text>
       {description && (
-        <Text fontSize="sm" as="div" className="description-text">
+        <Text fontSize="sm" as="div" className="toggle-switch__description">
           {description}
         </Text>
       )}

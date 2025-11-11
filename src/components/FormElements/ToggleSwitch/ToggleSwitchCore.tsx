@@ -21,8 +21,8 @@ type ToggleSwitchCoreProps = {
 
 const switchClassNames = (customClassName: string, isMedium: boolean, isSuccess: boolean): string =>
   classNames(customClassName, {
-    md: isMedium,
-    success: isSuccess,
+    "toggle-switch__switch--md": isMedium,
+    "toggle-switch__switch--success": isSuccess,
   });
 
 const ToggleSwitchCore: React.FC<ToggleSwitchCoreProps> = ({
@@ -40,24 +40,24 @@ const ToggleSwitchCore: React.FC<ToggleSwitchCoreProps> = ({
   const hasIcon = Boolean(InternalIcon);
 
   return (
-    <div className="switch-wrapper">
+    <div className="toggle-switch__wrapper">
       <div
         data-testid="switch"
         data-checked={isChecked}
-        className={switchClassNames("switch", isMedium, isSuccess)}
+        className={switchClassNames("toggle-switch__switch", isMedium, isSuccess)}
         onClick={onClick}
         role="switch"
         aria-checked={isChecked}
         aria-labelledby={labelledById}
       >
         {hasInlineText && isMedium && (
-          <Text fontSize="sm" className="inline-text">
+          <Text fontSize="sm" className="toggle-switch__inline-text">
             {isChecked ? inlineTextTranslations.enabled : inlineTextTranslations.disabled}
           </Text>
         )}
 
-        {hasIcon && <div className="internal-icon">{InternalIcon}</div>}
-        <div className={switchClassNames("thumb", isMedium, isSuccess)} />
+        {hasIcon && <div className="toggle-switch__icon">{InternalIcon}</div>}
+        <div className={switchClassNames("toggle-switch__thumb", isMedium, isSuccess)} />
       </div>
     </div>
   );

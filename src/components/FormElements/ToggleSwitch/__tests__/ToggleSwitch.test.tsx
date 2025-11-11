@@ -143,21 +143,21 @@ describe("<ToggleSwitch />", () => {
       render(<ToggleSwitch {...defaultProps} variant="success" />);
 
       const toggle = screen.getByTestId("switch");
-      expect(toggle).toHaveClass("success");
+      expect(toggle).toHaveClass("toggle-switch__switch--success");
     });
 
     it("applies small size correctly", () => {
       render(<ToggleSwitch {...defaultProps} size="sm" />);
 
       const toggle = screen.getByTestId("switch");
-      expect(toggle).not.toHaveClass("md");
+      expect(toggle).not.toHaveClass("toggle-switch__switch--md");
     });
 
     it("applies medium size correctly", () => {
       render(<ToggleSwitch {...defaultProps} size="md" />);
 
       const toggle = screen.getByTestId("switch");
-      expect(toggle).toHaveClass("md");
+      expect(toggle).toHaveClass("toggle-switch__switch--md");
     });
 
     it("renders inline text for medium size when enabled", () => {

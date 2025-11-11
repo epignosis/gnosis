@@ -1,3 +1,27 @@
+## [6.2.19](https://github.com/epignosis/gnosis/compare/v6.2.18...v6.2.19) (2025-11-06)
+
+## [6.2.18](https://github.com/epignosis/gnosis/compare/v6.2.17...v6.2.18) (2025-10-10)
+
+## [6.2.17](https://github.com/epignosis/gnosis/compare/v6.2.16...v6.2.17) (2025-10-09)
+
+
+### Bug Fixes
+
+* **tabs:** revert tabs appending active tab to page title ([#587](https://github.com/epignosis/gnosis/issues/587)) ([cc82757](https://github.com/epignosis/gnosis/commit/cc82757632e952faa3b6f3c1e3e1df98eed80336))
+
+## [6.2.16](https://github.com/epignosis/gnosis/compare/v6.2.15...v6.2.16) (2025-10-09)
+
+
+### Bug Fixes
+
+* fix percentage container at progress bar ([#586](https://github.com/epignosis/gnosis/issues/586)) ([c3aee30](https://github.com/epignosis/gnosis/commit/c3aee305681d5ae59f5540d54e82e8488a3bace2))
+
+## [6.2.15](https://github.com/epignosis/gnosis/compare/v6.2.14...v6.2.15) (2025-10-02)
+
+## [6.2.14](https://github.com/epignosis/gnosis/compare/v6.2.13...v6.2.14) (2025-09-24)
+
+## [6.2.13](https://github.com/epignosis/gnosis/compare/v6.2.12...v6.2.13) (2025-09-16)
+
 ## [6.2.12](https://github.com/epignosis/gnosis/compare/v6.2.11...v6.2.12) (2025-09-03)
 
 ## [6.2.11](https://github.com/epignosis/gnosis/compare/v6.2.10...v6.2.11) (2025-09-02)

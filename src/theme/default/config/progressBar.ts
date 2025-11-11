@@ -20,4 +20,10 @@ export default {
     percentColor: colors.black,
     textColor: colors.white,
   },
+  darkgreen: {
+    background: colors.secondary.lighter,
+    progressBackground: colors.green.darker,
+    percentColor: colors.white,
+    textColor: colors.black,
+  },
 };

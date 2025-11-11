@@ -255,7 +255,7 @@ const Dropdown: FC<DropdownProps> = ({
   // List item methods
 
   const handleOnClickListItem = (item: DropdownItem): void => {
-    if (isListOpen && !disabled) {
+    if (isListOpen && !disabled && !item.isDisabled) {
       onListItemSelect && onListItemSelect(item);
       !remainOpenOnSelect && setIsListOpen(false);
     }

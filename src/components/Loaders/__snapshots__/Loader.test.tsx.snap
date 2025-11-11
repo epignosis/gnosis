@@ -12,13 +12,13 @@ exports[`<Loader> matches snapshot 1`] = `
       style="display: inherit;"
     >
       <span
-        style="background-color: rgb(27, 104, 179); width: 0.75rem; height: 0.75rem; margin: 0.625rem; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+        style="background-color: rgb(0, 70, 171); width: 0.75rem; height: 0.75rem; margin: 0.625rem; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
       />
       <span
-        style="background-color: rgb(27, 104, 179); width: 0.75rem; height: 0.75rem; margin: 0.625rem; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+        style="background-color: rgb(0, 70, 171); width: 0.75rem; height: 0.75rem; margin: 0.625rem; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
       />
       <span
-        style="background-color: rgb(27, 104, 179); width: 0.75rem; height: 0.75rem; margin: 0.625rem; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+        style="background-color: rgb(0, 70, 171); width: 0.75rem; height: 0.75rem; margin: 0.625rem; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
       />
     </span>
   </div>
@@ -36,13 +36,13 @@ exports[`<Loader> matches snapshot with fullscreen 1`] = `
       style="display: inherit;"
     >
       <span
-        style="background-color: rgb(27, 104, 179); width: 0.75rem; height: 0.75rem; margin: 0.625rem; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+        style="background-color: rgb(0, 70, 171); width: 0.75rem; height: 0.75rem; margin: 0.625rem; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.12s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
       />
       <span
-        style="background-color: rgb(27, 104, 179); width: 0.75rem; height: 0.75rem; margin: 0.625rem; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+        style="background-color: rgb(0, 70, 171); width: 0.75rem; height: 0.75rem; margin: 0.625rem; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.24s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
       />
       <span
-        style="background-color: rgb(27, 104, 179); width: 0.75rem; height: 0.75rem; margin: 0.625rem; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
+        style="background-color: rgb(0, 70, 171); width: 0.75rem; height: 0.75rem; margin: 0.625rem; border-radius: 100%; display: inline-block; animation: react-spinners-PulseLoader-pulse 0.75s 0.36s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08); animation-fill-mode: both;"
       />
     </span>
   </div>

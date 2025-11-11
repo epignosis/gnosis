@@ -1,14 +1,14 @@
 import Color from "color";
 
 export const THEME_COLOURS = {
-  primary: "#1B68B3",
+  primary: "#0046AB",
   secondary: "#9EA5A9",
   green: "#3CB744",
   orange: "#FF9C28",
   red: "#D12525",
   black: "#232323",
   white: "#FFFFFF",
-  blue: "#1B68B3",
+  blue: "#0046AB",
 };
 
 export type ThemeColors = {

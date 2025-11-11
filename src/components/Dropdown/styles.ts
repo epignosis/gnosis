@@ -94,4 +94,10 @@ export const DropdownList = (
     align-items: center;
     height: 2rem;
   }
+
+  .divider {
+    height: 1px;
+    border-bottom: 1px solid ${dropdown.borderBottomColor};
+    margin-block: 0.25rem;
+  }
 `;

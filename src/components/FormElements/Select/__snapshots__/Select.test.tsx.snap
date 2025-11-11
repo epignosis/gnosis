@@ -3,7 +3,7 @@
 exports[`<Select /> matches snapshot 1`] = `
 <div>
   <div
-    class="css-140v9d5-selectContainer-selectContainer"
+    class="css-1qeon5x-selectContainer-selectContainer"
   >
     <div
       class="label-container"
@@ -54,7 +54,7 @@ exports[`<Select /> matches snapshot 1`] = `
           </span>
         </span>
         <div
-          class="control-md valid css-1hos8av-control"
+          class="control-md valid css-efhzy2-control"
         >
           <div
             class="css-hlgwow"

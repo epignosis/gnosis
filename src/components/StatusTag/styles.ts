@@ -72,11 +72,15 @@ export const statusTagStyles = (
       background-color: ${statusTag.red};
     }
 
+    &.statusTag--transparent {
+      color: ${colors.black};
+      background-color: transparent;
+    }
+
     .statusTag__icon {
       display: inline-flex;
 
       svg {
-        height: 1rem;
         color: inherit;
         fill: inherit;
       }

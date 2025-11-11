@@ -38,7 +38,41 @@ export const Default = Template.bind({});
 
 Default.args = {
   size: "md",
+  percent: 40,
+};
+
+export const CustomRadius = Template.bind({});
+
+CustomRadius.args = {
+  size: "md",
+  percent: 40,
+  borderRadius: {
+    startStartRadius: 0,
+    startEndRadius: 6,
+    endEndRadius: 6,
+    endStartRadius: 0,
+  },
+};
+
+export const CustomSize = Template.bind({});
+
+CustomSize.args = {
+  percent: 40,
+  size: 15,
+};
+
+export const CustomText = Template.bind({});
+
+CustomText.args = {
   percent: 75,
+  customText: "3/4",
+};
+
+export const PercentageAfter = Template.bind({});
+
+PercentageAfter.args = {
+  percent: 75,
+  percentageAfter: true,
 };
 
 export const Large = Template.bind({});
@@ -89,4 +123,28 @@ White.args = {
   percent: 75,
   labelAfter: "Completed 75%",
   color: "white",
+};
+
+export const DarkGreen = Template.bind({});
+
+DarkGreen.args = {
+  size: "md",
+  percent: 75,
+  color: "darkgreen",
+};
+
+export const CourseCardProgress = Template.bind({});
+
+CourseCardProgress.args = {
+  size: 10,
+  percent: 75,
+  color: "darkgreen",
+  fontSize: "xs",
+  borderRadius: {
+    startStartRadius: 0,
+    startEndRadius: 6,
+    endEndRadius: 6,
+    endStartRadius: 0,
+  },
+  percentageAfter: true,
 };

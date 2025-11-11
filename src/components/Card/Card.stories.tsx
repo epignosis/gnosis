@@ -81,7 +81,7 @@ const Template: StoryFn<{ isOverlayShow: boolean; isDrawerOpen: boolean }> = ({
           Introduction to TalentLMS
         </Heading>
       </Card.Body>
-      <ProgressBar percent={55} rounded={false} />
+      <ProgressBar percent={55} borderRadius={0} />
     </Card>
   );
 };

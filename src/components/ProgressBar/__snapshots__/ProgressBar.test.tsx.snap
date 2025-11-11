@@ -3,16 +3,21 @@
 exports[`<ProgressBar /> matches snapshot 1`] = `
 <div>
   <div
-    class="progress css-fwaz2v-container-container"
+    class="progress css-9nmgd8-progressBarStyles-progressBarStyles"
     id="my-progress-1"
   >
     <div
-      class="percentage-container"
+      class="progress-bar-container"
     >
       <div
-        data-testid="percentage"
+        class="percentage-container"
       >
-        75‏%
+        <div
+          class="css-ka8pme-textContainer-textContainer-percentageStyles-percentageStyles"
+          data-testid="percentage"
+        >
+          75‏%
+        </div>
       </div>
     </div>
   </div>
@@ -22,15 +27,43 @@ exports[`<ProgressBar /> matches snapshot 1`] = `
 exports[`<ProgressBar /> matches snapshot with zero percent 1`] = `
 <div>
   <div
-    class="css-b78sl-container-container"
+    class="css-1rbpskr-progressBarStyles-progressBarStyles"
   >
     <div
-      class="percentage-container"
+      class="progress-bar-container"
     >
       <div
-        data-testid="percentage"
+        class="percentage-container"
       >
-        0‏%
+        <div
+          class="css-ka8pme-textContainer-textContainer-percentageStyles-percentageStyles"
+          data-testid="percentage"
+        >
+          0‏%
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<ProgressBar /> renders correctly with custom radius 1`] = `
+<div>
+  <div
+    class="css-7iw75m-progressBarStyles-progressBarStyles"
+  >
+    <div
+      class="progress-bar-container"
+    >
+      <div
+        class="percentage-container"
+      >
+        <div
+          class="css-ka8pme-textContainer-textContainer-percentageStyles-percentageStyles"
+          data-testid="percentage"
+        >
+          75‏%
+        </div>
       </div>
     </div>
   </div>

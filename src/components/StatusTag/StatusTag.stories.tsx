@@ -10,6 +10,7 @@ export default {
     text: "Completed",
     size: "md",
     icon: InfoIconSVG,
+    iconSize: 16,
     color: {
       type: "select",
       options: [
@@ -22,6 +23,7 @@ export default {
         "pale",
         "grey",
         "red",
+        "transparent",
       ],
     },
     fontWeight: {

@@ -14,6 +14,16 @@ type ToggleLabelProps = {
   onClick: (e: React.MouseEvent<HTMLDivElement>) => void;
 };
 
+type TooltipIconProps = {
+  tooltip: string;
+};
+
+const TooltipIcon: React.FC<TooltipIconProps> = ({ tooltip }) => (
+  <Tooltip content={tooltip} parentProps={{ "aria-label": tooltip }}>
+    <InfoIconSVG height={16} />
+  </Tooltip>
+);
+
 const labelClassNames = (
   customClassName: string,
   notSwitchedOff: boolean,
@@ -50,17 +60,9 @@ const ToggleLabel: React.FC<ToggleLabelProps> = ({
         as="div"
         weight={hasDescriptionTextWeight}
       >
-        {tooltip && isBeforeLabel && (
-          <Tooltip content={tooltip} parentProps={{ "aria-label": tooltip }}>
-            <InfoIconSVG height={16} />
-          </Tooltip>
-        )}
+        {tooltip && isBeforeLabel && <TooltipIcon tooltip={tooltip} />}
         {label}
-        {tooltip && !isBeforeLabel && (
-          <Tooltip content={tooltip} parentProps={{ "aria-label": tooltip }}>
-            <InfoIconSVG height={16} />
-          </Tooltip>
-        )}
+        {tooltip && !isBeforeLabel && <TooltipIcon tooltip={tooltip} />}
       </Text>
       {description && (
         <Text fontSize="sm" as="div" className="toggle-switch__description">

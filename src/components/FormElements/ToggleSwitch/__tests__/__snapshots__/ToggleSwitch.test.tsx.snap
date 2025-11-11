@@ -4,7 +4,7 @@ exports[`<ToggleSwitch /> Snapshot matches snapshot with all props 1`] = `
 <div>
   <div
     aria-label="Test tooltip"
-    class="css-b9eny6-ToggleContainer-ToggleContainer"
+    class="css-qifdzi-ToggleContainer-ToggleContainer"
     data-checked="true"
     data-testid="snapshot-toggle"
     id="snapshot-toggle"

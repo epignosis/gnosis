@@ -17,6 +17,7 @@ const Pagination: FC<PaginationProps> = ({
   page,
   translations,
   a11yTranslations,
+  totalResults,
   totalPages,
   rowsPerPageOptions,
   dir = "ltr",
@@ -64,6 +65,7 @@ const Pagination: FC<PaginationProps> = ({
           selected={pageSize}
           listPlacement={listPlacement}
           ariaLabel={a11yTranslations.perPage}
+          totalResults={totalResults}
           onClickItemHandler={handlePageSize}
           disabled={disabled}
         />

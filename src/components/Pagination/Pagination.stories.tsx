@@ -12,7 +12,7 @@ const rowsPerPageOptions: PaginationDropDownOptions[] = [
 ];
 
 const translations = {
-  perPage: "Per page",
+  perPage: "per page",
   nextPage: "Next page",
   previousPage: "Previous page",
   firstPage: "First page",
@@ -68,8 +68,11 @@ const Template: StoryFn<PaginationProps> = (args) => {
 
 export const Default = Template.bind({});
 
+export const WithTotalResults = Template.bind({});
+WithTotalResults.args = { totalResults: 160 };
+
 export const WithTooManyPages = Template.bind({});
-WithTooManyPages.args = { totalPages: 1000 };
+WithTooManyPages.args = { totalPages: 1000, totalResults: 10000 };
 
 export const WithZeroPages = Template.bind({});
-WithZeroPages.args = { totalPages: 0 };
+WithZeroPages.args = { pageSize: 10, totalPages: 0, totalResults: 10 };

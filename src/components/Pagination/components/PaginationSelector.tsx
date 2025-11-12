@@ -24,6 +24,7 @@ type PaginationSelectorProps = {
   selected: number;
   ariaLabel: string;
   listPlacement?: ListPlacement;
+  totalResults?: number;
   disabled?: boolean;
   onClickItemHandler: (item: number) => void;
 };
@@ -32,6 +33,7 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
   items,
   selected,
   ariaLabel,
+  totalResults,
   listPlacement = "top",
   disabled = false,
   onClickItemHandler,
@@ -68,6 +70,10 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
 
   const hasItems = items.length > 1;
 
+  const selectedItemText = totalResults
+    ? `${selectedListItem} of ${totalResults}`
+    : selectedListItem.toString();
+
   return (
     <div
       css={(theme): SerializedStyles => PaginationSelectorStyles(theme, { isOpen: isListOpen })}
@@ -81,7 +87,7 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
         aria-label={ariaLabel}
       >
         <Text fontSize="sm" weight="700">
-          {selectedListItem}
+          {selectedItemText}
         </Text>
         {hasItems && <ChevronArrowDownSVG />}
       </button>

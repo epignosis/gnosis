@@ -24,7 +24,7 @@ type PaginationSelectorProps = {
   selected: number;
   ariaLabel: string;
   listPlacement?: ListPlacement;
-  totalResults?: number;
+  totalResultsText?: string;
   disabled?: boolean;
   onClickItemHandler: (item: number) => void;
 };
@@ -33,7 +33,7 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
   items,
   selected,
   ariaLabel,
-  totalResults,
+  totalResultsText,
   listPlacement = "top",
   disabled = false,
   onClickItemHandler,
@@ -70,8 +70,8 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
 
   const hasItems = items.length > 1;
 
-  const selectedItemText = totalResults
-    ? `${selectedListItem} of ${totalResults}`
+  const selectedItemText = totalResultsText
+    ? `${selectedListItem} ${totalResultsText}`
     : selectedListItem.toString();
 
   return (

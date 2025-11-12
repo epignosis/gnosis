@@ -57,6 +57,8 @@ const Pagination: FC<PaginationProps> = ({
     previousPage: page - paginationDirectionFactor,
   };
 
+  const totalResultsText = totalResults ? `${translations.ofPages} ${totalResults}` : undefined;
+
   return (
     <div css={(theme): SerializedStyles => container(theme)} {...rest} className={rtlClass}>
       <div className="pagination-selector-wrapper" data-testid="pagination-per-page-btn">
@@ -65,7 +67,7 @@ const Pagination: FC<PaginationProps> = ({
           selected={pageSize}
           listPlacement={listPlacement}
           ariaLabel={a11yTranslations.perPage}
-          totalResults={totalResults}
+          totalResultsText={totalResultsText}
           onClickItemHandler={handlePageSize}
           disabled={disabled}
         />

@@ -76,7 +76,9 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
 
   return (
     <div
-      css={(theme): SerializedStyles => PaginationSelectorStyles(theme, { isOpen: isListOpen })}
+      css={(theme): SerializedStyles =>
+        PaginationSelectorStyles(theme, { isOpen: isListOpen, totalResultsText })
+      }
       ref={wrapperRef}
     >
       <button

@@ -2,7 +2,7 @@ import { css, SerializedStyles, Theme } from "@emotion/react";
 
 export const PaginationSelectorStyles = (
   { pagination }: Theme,
-  { isOpen }: { isOpen: boolean },
+  { isOpen, totalResultsText }: { isOpen: boolean; totalResultsText?: string },
 ): SerializedStyles => {
   return css`
     position: relative;
@@ -95,9 +95,9 @@ export const PaginationSelectorStyles = (
     .dropdown-wrapper {
       position: absolute;
       padding: 0;
-      max-width: 50rem;
+      max-width: ${totalResultsText ? "4.5rem" : "50rem"};
       width: 100%;
-      inset-inline-start: 0;
+      ${totalResultsText ? "inset-inline-end: 0;" : "inset-inline-start: 0;"}
       background-color: ${pagination.emptyState};
       border-radius: 5px;
       box-shadow: 0 3px 6px 0 ${pagination.boxShadowColor};

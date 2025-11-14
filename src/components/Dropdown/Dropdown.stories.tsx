@@ -16,12 +16,12 @@ const dropdownList: DropdownItem[] = [
       {
         label: "Category 3",
         items: [
+          { label: "Option 2", value: "2" },
+          { label: "Option 3", value: "3", isDisabled: true },
+          { label: "Option 4", value: "4" },
           { label: "Option 5", value: "5" },
-          { label: "Option 6", value: "6", isDisabled: true, divider: true },
+          { label: "Option 6", value: "6" },
           { label: "Option 7", value: "7" },
-          { label: "Option 8", value: "8", divider: true },
-          { label: "Option 9", value: "9" },
-          { label: "Option 10", value: "10" },
         ],
       },
     ],
@@ -29,11 +29,11 @@ const dropdownList: DropdownItem[] = [
   {
     label: "Category 2",
     items: [
-      { label: "Option 3", value: "3" },
-      { label: "Option 4", value: "4" },
+      { label: "Option 8", value: "8" },
+      { label: "Option 9", value: "9" },
     ],
   },
-  { label: "Option 5", value: "5" },
+  { label: "Option 10", value: "10" },
 ];
 
 export default {
@@ -363,4 +363,88 @@ WithListOptionsElements.args = {
       icon: <WarningSVG height={32} />,
     },
   ],
+};
+
+const groupedList: DropdownItem[] = [
+  {
+    label: "",
+    items: [
+      { label: "File", value: "file" },
+      { label: "Edit", value: "edit" },
+      { label: "View", value: "view" },
+    ],
+  },
+  {
+    label: "",
+    items: [
+      { label: "Save", value: "save" },
+      { label: "Save As", value: "save-as" },
+      { label: "Export", value: "export" },
+    ],
+  },
+  {
+    label: "",
+    items: [{ label: "Exit", value: "exit" }],
+  },
+];
+
+export const WithGroupedList = Template.bind({});
+
+WithGroupedList.args = {
+  list: groupedList,
+  isGroupedList: true,
+};
+
+const complexList: DropdownItem[] = [
+  {
+    label: "Category 1",
+    items: [
+      { label: "Option 1", value: "1" },
+      {
+        label: "Category 3",
+        items: [
+          { label: "Option 2", value: "2" },
+          { label: "Option 3", value: "3", isDisabled: true },
+          { label: "Option 4", value: "4" },
+          { label: "Option 5", value: "5" },
+          { label: "Option 6", value: "6" },
+          { label: "Option 7", value: "7" },
+        ],
+      },
+    ],
+  },
+  { label: "Option 20", value: "20" },
+  {
+    label: "Category 2",
+    items: [
+      { label: "Option 8", value: "8" },
+      { label: "Option 9", value: "9" },
+    ],
+  },
+  { label: "Option 10", value: "10" },
+  {
+    label: "Category 3",
+    items: [
+      { label: "Option 11", value: "11" },
+      {
+        label: "Category 4",
+        items: [
+          { label: "Option 12", value: "12" },
+          { label: "Option 13", value: "13", isDisabled: true },
+          { label: "Option 14", value: "14" },
+          { label: "Option 15", value: "15" },
+          { label: "Option 16", value: "16" },
+          { label: "Option 17", value: "17" },
+        ],
+      },
+    ],
+  },
+  { label: "Option 21", value: "21" },
+];
+
+export const WithComplexGroupedList = Template.bind({});
+
+WithComplexGroupedList.args = {
+  list: complexList,
+  isGroupedList: true,
 };

@@ -17,6 +17,8 @@ const DropdownListItemTitle: FC<DropdownListItemTitleProps> = ({
   isSearchable,
   textSize,
 }) => {
+  if (!label) return null;
+
   return (
     <li
       aria-disabled="true"

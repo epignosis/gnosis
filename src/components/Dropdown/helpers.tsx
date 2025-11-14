@@ -76,12 +76,7 @@ export const buildGroupedDropdownMenu = (list: DropdownItem[]): DropdownItem[] =
 
   if (!hasNestedItems) return list;
 
-  const cleanedList = list.map((item) => {
-    if (item.items && item.items.length > 0) {
-      return { ...item, items: clearDividers(item.items) };
-    }
-    return item;
-  });
+  const cleanedList = clearDividers(list);
 
   return cleanedList.map((item, index) => {
     const isGroup = item.items && item.items.length > 0;

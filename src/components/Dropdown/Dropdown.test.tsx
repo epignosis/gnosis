@@ -149,7 +149,11 @@ describe("Grouped List functionality", () => {
     fireEvent.click(getByText("Toggle"));
     fireEvent.click(getByText("Save"));
 
-    expect(mockOnListItemSelect).toHaveBeenCalledWith({ label: "Save", value: "save" });
+    expect(mockOnListItemSelect).toHaveBeenCalledWith({
+      label: "Save",
+      value: "save",
+      divider: false,
+    });
   });
 
   it("works with search functionality in grouped list", async () => {

@@ -32,6 +32,7 @@ export type DropdownProps = HTMLAttributes<HTMLDivElement> & {
   onListItemSelect?: (item: DropdownItem) => void;
   onToggleList?: (isListOpen: boolean) => void;
   disabled?: boolean;
+  isGroupedList?: boolean;
 };
 
 export type PlacementOptions = "bottom-start" | "bottom-end" | "top-start" | "top-end" | "end-top";

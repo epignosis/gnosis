@@ -7,44 +7,44 @@ module.exports = {
     "@storybook/addon-essentials",
     "storybook-addon-rtl",
     "@storybook/addon-a11y",
-    "@storybook/addon-webpack5-compiler-babel",
     "@chromatic-com/storybook",
   ],
   framework: {
-    name: "@storybook/react-webpack5",
+    name: "@storybook/react-vite",
     options: {},
   },
   docs: {},
   typescript: {
     reactDocgen: "react-docgen-typescript",
   },
-  webpackFinal: (config) => {
-    // Rules
-    const fileLoaderRule = config.module.rules.find((rule) => rule.test && rule.test.test(".svg"));
-    fileLoaderRule.exclude = /\.svg$/;
+  async viteFinal(config) {
+    const { mergeConfig } = await import("vite");
+    const svgr = (await import("vite-plugin-svgr")).default;
 
-    config.module.rules.push({
-      test: /\.svg$/,
-      enforce: "pre",
-      loader: require.resolve("@svgr/webpack"),
+    // Remove any existing SVGR plugin from Storybook's default config
+    config.plugins = config.plugins.filter(
+      (plugin) => plugin && plugin.name !== "vite:svgr"
+    );
+
+    return mergeConfig(config, {
+      resolve: {
+        alias: {
+          "@theme": path.resolve(__dirname, "../src/theme"),
+          "@test-utils": path.resolve(__dirname, "../src/test-utils"),
+          type: path.resolve(__dirname, "../src/type"),
+        },
+      },
+      plugins: [
+        svgr({
+          svgrOptions: {
+            exportType: "default",
+            ref: true,
+            svgo: false,
+            titleProp: true,
+          },
+          include: "**/*.svg",
+        }),
+      ],
     });
-
-    config.module.rules.push({
-      test: /\.mjs$/,
-      include: /node_modules/,
-      type: "javascript/auto",
-    });
-
-    // Path alliases
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      "@theme": path.resolve(__dirname, "../src/theme"),
-      "@test-utils": path.resolve(__dirname, "../src/test-utils"),
-      type: path.resolve(__dirname, "../src/type"),
-    };
-
-    config.resolve.extensions.push(".js", ".jsx", ".ts", ".tsx");
-
-    return config;
   },
 };

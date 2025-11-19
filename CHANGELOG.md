@@ -1,3 +1,10 @@
+## [6.3.3](https://github.com/epignosis/gnosis/compare/v6.3.2...v6.3.3) (2025-11-19)
+
+
+### Bug Fixes
+
+* **commonjs:** commonjs ([#595](https://github.com/epignosis/gnosis/issues/595)) ([84d99f1](https://github.com/epignosis/gnosis/commit/84d99f1c1c3a13fe421a0eaeb71aae579c394da1))
+
 ## [6.3.2](https://github.com/epignosis/gnosis/compare/v6.3.1...v6.3.2) (2025-11-19)
 
 

@@ -7,6 +7,16 @@
   "main": "dist/cjs/index.cjs",
   "module": "dist/esm/src/index.js",
   "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/src/index.js",
+      "require": "./dist/cjs/index.cjs"
+    },
+    "./icons": {
+      "require": "./icons/index.cjs"
+    }
+  },
   "files": [
     "dist",
     "icons"

@@ -1,13 +1,18 @@
-const path = require("path");
+// This file has been automatically migrated to valid ESM format by Storybook.
+import { fileURLToPath } from "node:url";
+import type { StorybookConfig } from "@storybook/react-vite";
+import path, { dirname } from "path";
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const config: StorybookConfig = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "storybook-addon-rtl",
     "@storybook/addon-a11y",
     "@chromatic-com/storybook",
+    "@storybook/addon-docs"
   ],
   framework: {
     name: "@storybook/react-vite",
@@ -22,7 +27,7 @@ module.exports = {
     const svgr = (await import("vite-plugin-svgr")).default;
 
     // Remove any existing SVGR plugin from Storybook's default config
-    config.plugins = config.plugins.filter(
+    config.plugins = config.plugins?.filter(
       (plugin) => plugin && plugin.name !== "vite:svgr"
     );
 
@@ -48,3 +53,5 @@ module.exports = {
     });
   },
 };
+
+export default config;

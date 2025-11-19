@@ -50,5 +50,19 @@
         "ignore": ["css"]
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.stories.tsx"],
+      "rules": {
+        "import/no-unresolved": ["error", { "ignore": ["^@storybook/"] }]
+      }
+    },
+    {
+      "files": ["**/*.test.tsx", "**/*.test.ts"],
+      "rules": {
+        "import/named": "off"
+      }
+    }
+  ]
 }

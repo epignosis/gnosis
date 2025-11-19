@@ -5,8 +5,12 @@ import resolve from "@rollup/plugin-node-resolve";
 import alias from "@rollup/plugin-alias";
 import svgr from "@svgr/rollup";
 import json from "@rollup/plugin-json";
+import { createRequire } from "module";
 import postcss from "rollup-plugin-postcss";
-import pkg from "./package.json";
+
+
+const require = createRequire(import.meta.url);
+const pkg = require("./package.json");
 
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
 const packageName = pkg.name;

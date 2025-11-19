@@ -5,19 +5,15 @@ import { CopySolidSVG } from "../";
 type SVGComponent = React.FC<React.SVGProps<SVGSVGElement>>;
 type SVGIcons = Record<string, SVGComponent>;
 
-// By default webpack will convert the SVGs to React components with the name "SvgIconName".
-// Since we export those SVGs with a different name, we need to adjust this here in order to be searchable by their exported name.
-const renameIconName = (iconName: string) => iconName.substring(3) + "SVG";
-
 const IconsList = ({ svgIcons }: { svgIcons: SVGIcons }): JSX.Element => {
   const [searchQuery, setSearchQuery] = useState("");
   const [copiedIcon, setCopiedIcon] = useState<string | null>(null);
 
-  const icons = Object.values(svgIcons);
+  // Create an array of [name, component] pairs instead of just values
+  const iconEntries = Object.entries(svgIcons);
 
   // Filter icons based on search query
-  const filteredIcons = icons.filter((icon) => {
-    const iconName = renameIconName(icon.name);
+  const filteredIcons = iconEntries.filter(([iconName]) => {
     return iconName.toLowerCase().includes(searchQuery.toLowerCase());
   });
 
@@ -48,10 +44,7 @@ const IconsList = ({ svgIcons }: { svgIcons: SVGIcons }): JSX.Element => {
           rowGap: "2rem",
         }}
       >
-        {filteredIcons.map((Icon, i) => {
-          // Modify icon name to exclude "Svg" at the beginning and place it as uppercase at the end
-          const iconName = renameIconName(Icon.name);
-
+        {filteredIcons.map(([iconName, Icon], i) => {
           return (
             <div key={i} style={{ position: "relative", textAlign: "center" }}>
               <div

@@ -9,6 +9,8 @@ const AllTheProviders: FCWithChildren = ({ children }) => <ThemeProvider>{childr
 const customRender = (ui: ReactElement, options?: RenderOptions): RenderResult =>
   render(ui, { wrapper: AllTheProviders, ...options });
 
+// Re-export all named exports from @testing-library/react
 export * from "@testing-library/react";
 
+// Export the custom render function
 export { customRender as render };

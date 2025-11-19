@@ -109,3 +109,4 @@ export { default as WandIconSVG } from "./wand-icon.svg";
 export { default as PageSVG } from "./page.svg";
 export { default as CourseViewSVG } from "./course-view.svg";
 export { default as RectangleWide } from "./rectangle-wide.svg";
+export { default as DownloadTableSVG } from "./download-table.svg";

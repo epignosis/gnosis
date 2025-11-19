@@ -74,6 +74,13 @@ export default [
     output: [
       {
         dir: "icons",
+        format: "es",
+        banner,
+        entryFileNames: "[name].js",
+        chunkFileNames: "[name]-[hash].js",
+      },
+      {
+        dir: "icons",
         format: "cjs",
         banner,
         entryFileNames: "[name].cjs",

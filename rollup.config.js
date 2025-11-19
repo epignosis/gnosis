@@ -76,6 +76,8 @@ export default [
         dir: "icons",
         format: "cjs",
         banner,
+        entryFileNames: "[name].cjs",
+        chunkFileNames: "[name]-[hash].cjs",
       },
     ],
     external: Object.keys(pkg.devDependencies),

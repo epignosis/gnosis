@@ -1,3 +1,10 @@
+## [6.3.1](https://github.com/epignosis/gnosis/compare/v6.3.0...v6.3.1) (2025-11-19)
+
+
+### Bug Fixes
+
+* **commonjs:** fix commonjs export issue ([#593](https://github.com/epignosis/gnosis/issues/593)) ([1870430](https://github.com/epignosis/gnosis/commit/18704303c38cb15c54ee3096c5ffc33ee93757b3))
+
 # [6.3.0](https://github.com/epignosis/gnosis/compare/v6.2.24...v6.3.0) (2025-11-19)
 
 

@@ -1,3 +1,10 @@
+# [6.3.0](https://github.com/epignosis/gnosis/compare/v6.2.24...v6.3.0) (2025-11-19)
+
+
+### Features
+
+* **vite:** migrate to vite ([#591](https://github.com/epignosis/gnosis/issues/591)) ([8bdc517](https://github.com/epignosis/gnosis/commit/8bdc517ac331f46809587b0b845d65b0d3680d03))
+
 ## [6.2.24](https://github.com/epignosis/gnosis/compare/v6.2.23...v6.2.24) (2025-11-19)
 
 ## [6.2.23](https://github.com/epignosis/gnosis/compare/v6.2.22...v6.2.23) (2025-11-18)

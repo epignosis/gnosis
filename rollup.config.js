@@ -61,6 +61,8 @@ export default [
         format: "cjs",
         sourcemap: true,
         banner,
+        entryFileNames: "[name].cjs",
+        chunkFileNames: "[name]-[hash].cjs",
         globals: { react: "React", "react-dom": "ReactDOM" },
       },
     ],

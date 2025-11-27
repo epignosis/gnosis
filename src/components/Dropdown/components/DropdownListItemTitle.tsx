@@ -1,11 +1,10 @@
 import React, { FC } from "react";
 import Text from "../../Text/Text";
-import { DropdownItem } from "../types";
 import { DropdownListItemTitleStyles } from "./styles";
 import { TypographyLevels } from "@theme/utils/typography";
 
 type DropdownListItemTitleProps = {
-  label?: DropdownItem["label"];
+  label?: string | JSX.Element;
   level: number;
   isSearchable: boolean;
   textSize: TypographyLevels;

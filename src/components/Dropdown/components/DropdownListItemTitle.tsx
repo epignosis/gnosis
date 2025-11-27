@@ -4,7 +4,7 @@ import { DropdownListItemTitleStyles } from "./styles";
 import { TypographyLevels } from "@theme/utils/typography";
 
 type DropdownListItemTitleProps = {
-  label?: string | JSX.Element;
+  label: string | JSX.Element;
   level: number;
   isSearchable: boolean;
   textSize: TypographyLevels;
@@ -16,8 +16,6 @@ const DropdownListItemTitle: FC<DropdownListItemTitleProps> = ({
   isSearchable,
   textSize,
 }) => {
-  if (!label) return null;
-
   return (
     <li
       aria-disabled="true"

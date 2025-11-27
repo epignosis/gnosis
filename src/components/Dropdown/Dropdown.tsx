@@ -288,12 +288,14 @@ const Dropdown: FC<DropdownProps> = ({
 
         return (
           <Fragment key={`${index}-${value}`}>
-            <DropdownListItemTitle
-              label={label}
-              level={level}
-              isSearchable={isSearchable}
-              textSize={textSize}
-            />
+            {label && (
+              <DropdownListItemTitle
+                label={label}
+                level={level}
+                isSearchable={isSearchable}
+                textSize={textSize}
+              />
+            )}
             {renderItemsRecursively(childrenItems, nextLevel)}
           </Fragment>
         );

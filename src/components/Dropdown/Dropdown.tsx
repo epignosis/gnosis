@@ -281,6 +281,11 @@ const Dropdown: FC<DropdownProps> = ({
       const { label, value, items: childrenItems = [] } = item;
 
       if (childrenItems.length > 0) {
+        // For grouped lists, if the label is empty, it's a divider group
+        // and children should render at the same level, not one level deeper
+        const isGroupDivider = isGroupedList && !label;
+        const nextLevel = isGroupDivider ? level : level + 1;
+
         return (
           <Fragment key={`${index}-${value}`}>
             <DropdownListItemTitle
@@ -289,7 +294,7 @@ const Dropdown: FC<DropdownProps> = ({
               isSearchable={isSearchable}
               textSize={textSize}
             />
-            {renderItemsRecursively(childrenItems, level + 1)}
+            {renderItemsRecursively(childrenItems, nextLevel)}
           </Fragment>
         );
       }

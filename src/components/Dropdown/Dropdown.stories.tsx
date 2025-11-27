@@ -367,7 +367,6 @@ WithListOptionsElements.args = {
 
 const groupedList: DropdownItem[] = [
   {
-    label: "",
     items: [
       { label: "File", value: "file" },
       { label: "Edit", value: "edit" },
@@ -375,7 +374,6 @@ const groupedList: DropdownItem[] = [
     ],
   },
   {
-    label: "",
     items: [
       { label: "Save", value: "save" },
       { label: "Save As", value: "save-as" },
@@ -383,7 +381,6 @@ const groupedList: DropdownItem[] = [
     ],
   },
   {
-    label: "",
     items: [{ label: "Exit", value: "exit" }],
   },
 ];

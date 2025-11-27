@@ -5,7 +5,7 @@ import { DropdownListItemTitleStyles } from "./styles";
 import { TypographyLevels } from "@theme/utils/typography";
 
 type DropdownListItemTitleProps = {
-  label: DropdownItem["label"];
+  label?: DropdownItem["label"];
   level: number;
   isSearchable: boolean;
   textSize: TypographyLevels;

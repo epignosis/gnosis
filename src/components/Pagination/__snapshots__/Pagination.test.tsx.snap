@@ -15,7 +15,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
       >
         <button
           aria-label="20 results per page"
-          class="dropdown-button "
+          class="dropdown-button"
           title="20"
         >
           <span
@@ -68,7 +68,7 @@ exports[`<Pagination /> matches snapshot with on page 1`] = `
         >
           <button
             aria-label="Page 1 of 6 pages"
-            class="dropdown-button "
+            class="dropdown-button"
             title="3"
           >
             <span

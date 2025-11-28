@@ -4,7 +4,7 @@ import { SerializedStyles } from "@emotion/react";
 import { ChevronArrowDownSVG } from "../../../icons/";
 import Text from "../../Text/Text";
 import useClickOutside from "../hooks";
-import { ListPlacement, PaginationDropDownOptions } from "../types";
+import { ListPlacement, PaginationDropDownOptions, PaginationTranslations } from "../types";
 import { PaginationSelectorStyles } from "./styles";
 
 const dropdownWrapperClasses = (placement: ListPlacement): string =>
@@ -24,7 +24,8 @@ type PaginationSelectorProps = {
   selected: number;
   ariaLabel: string;
   listPlacement?: ListPlacement;
-  totalResultsText?: string;
+  totalResults?: number;
+  translationOfPage?: PaginationTranslations["ofPages"];
   disabled?: boolean;
   onClickItemHandler: (item: number) => void;
 };
@@ -33,15 +34,30 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
   items,
   selected,
   ariaLabel,
-  totalResultsText,
+  totalResults,
+  translationOfPage,
   listPlacement = "top",
   disabled = false,
   onClickItemHandler,
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const [isListOpen, setIsListOpen] = useState(false);
-  const [selectedListItem, setSelectedListItem] = useState<number>(selected);
+  const [selectedPageSize, setSelectedPageSize] = useState<number>(selected);
   useClickOutside(wrapperRef, () => setIsListOpen(false));
+
+  const hasItems = items.length > 1;
+  const hasTotalResults = !!totalResults;
+  const isBtnDisabled = !hasItems || disabled;
+  const btnClassName = classNames({
+    "dropdown-button": true,
+    disabled: isBtnDisabled,
+  });
+
+  const selectedPageSizeText = totalResults
+    ? `${
+        selectedPageSize > totalResults ? totalResults : selectedPageSize
+      } ${translationOfPage} ${totalResults}`
+    : selectedPageSize.toString();
 
   const toggleList = (): void => {
     if (!disabled) {
@@ -53,13 +69,13 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
   const handleListItemSelect = (item: number): void => {
     if (isListOpen) {
       onClickItemHandler(item);
-      setSelectedListItem(item);
+      setSelectedPageSize(item);
       setIsListOpen(false);
     }
   };
 
   useEffect(() => {
-    setSelectedListItem(selected);
+    setSelectedPageSize(selected);
   }, [selected]);
 
   useEffect(() => {
@@ -68,31 +84,22 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
     }
   }, [disabled]);
 
-  const hasItems = items.length > 1;
-
-  const selectedItemText = totalResultsText
-    ? `${selectedListItem} ${totalResultsText}`
-    : selectedListItem.toString();
-
   return (
     <div
       css={(theme): SerializedStyles =>
-        PaginationSelectorStyles(theme, {
-          isOpen: isListOpen,
-          hasTotalResults: Boolean(totalResultsText),
-        })
+        PaginationSelectorStyles(theme, { isOpen: isListOpen, hasTotalResults })
       }
       ref={wrapperRef}
     >
       <button
-        className={`dropdown-button ${!hasItems ? "disabled" : ""}`}
-        disabled={!hasItems || disabled}
-        onClick={toggleList}
-        title={`${selectedListItem}`}
+        className={btnClassName}
+        disabled={isBtnDisabled}
+        title={`${selectedPageSize}`}
         aria-label={ariaLabel}
+        onClick={toggleList}
       >
         <Text fontSize="sm" weight="700">
-          {selectedItemText}
+          {selectedPageSizeText}
         </Text>
         {hasItems && <ChevronArrowDownSVG />}
       </button>
@@ -101,7 +108,7 @@ const PaginationSelector: FC<PaginationSelectorProps> = ({
         <div className={dropdownWrapperClasses(listPlacement)}>
           <ul role="list" className="dropdown-list">
             {items.map(({ value, label }) => {
-              const isSelected = value === selectedListItem;
+              const isSelected = value === selectedPageSize;
 
               return (
                 <li

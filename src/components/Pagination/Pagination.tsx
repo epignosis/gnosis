@@ -15,10 +15,10 @@ import { PaginationProps } from "./types";
 const Pagination: FC<PaginationProps> = ({
   pageSize,
   page,
+  totalPages,
+  totalResults,
   translations,
   a11yTranslations,
-  totalResults,
-  totalPages,
   rowsPerPageOptions,
   dir = "ltr",
   onPageChange,
@@ -57,8 +57,6 @@ const Pagination: FC<PaginationProps> = ({
     previousPage: page - paginationDirectionFactor,
   };
 
-  const totalResultsText = totalResults ? `${translations.ofPages} ${totalResults}` : undefined;
-
   return (
     <div css={(theme): SerializedStyles => container(theme)} {...rest} className={rtlClass}>
       <div className="pagination-selector-wrapper" data-testid="pagination-per-page-btn">
@@ -67,7 +65,8 @@ const Pagination: FC<PaginationProps> = ({
           selected={pageSize}
           listPlacement={listPlacement}
           ariaLabel={a11yTranslations.perPage}
-          totalResultsText={totalResultsText}
+          totalResults={totalResults}
+          translationOfPage={translations.ofPages}
           onClickItemHandler={handlePageSize}
           disabled={disabled}
         />

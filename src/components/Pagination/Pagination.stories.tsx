@@ -74,6 +74,13 @@ WithTotalResults.args = {
   rowsPerPageOptions: rowsPerPageOptions.filter(({ value }) => value !== 160),
 };
 
+export const WithFewerResultsThanPageSize = Template.bind({});
+WithFewerResultsThanPageSize.args = {
+  totalPages: 1,
+  pageSize: 20,
+  totalResults: 12,
+};
+
 export const WithTooManyPages = Template.bind({});
 WithTooManyPages.args = { totalPages: 1000, totalResults: 20000 };
 

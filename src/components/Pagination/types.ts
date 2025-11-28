@@ -21,10 +21,10 @@ export type PaginationProps = ExtendableProps<
   {
     page: number;
     pageSize: number;
-    translations: PaginationTranslations;
-    a11yTranslations: PaginationTranslations;
     totalPages: number;
     totalResults?: number;
+    translations: PaginationTranslations;
+    a11yTranslations: PaginationTranslations;
     disabled?: boolean;
     rowsPerPageOptions: PaginationDropDownOptions[];
     listPlacement?: ListPlacement;

@@ -1,3 +1,10 @@
+## [6.3.6](https://github.com/epignosis/gnosis/compare/v6.3.5...v6.3.6) (2025-12-02)
+
+
+### Bug Fixes
+
+* total results text when page size is bigger than the total results ([#598](https://github.com/epignosis/gnosis/issues/598)) ([f34c130](https://github.com/epignosis/gnosis/commit/f34c130b9b774bb2f1534c21e22ef3bf3e915fe5))
+
 ## [6.3.5](https://github.com/epignosis/gnosis/compare/v6.3.4...v6.3.5) (2025-11-27)
 
 ## [6.3.4](https://github.com/epignosis/gnosis/compare/v6.3.3...v6.3.4) (2025-11-26)

@@ -6,7 +6,7 @@ import Button from "./Button";
 import { render, screen } from "@test-utils/render";
 
 describe("<Button />", () => {
-  it("renders correctly", () => {
+  it("renders correctly!", () => {
     const btnText = faker.lorem.word();
     render(<Button type="submit">{btnText}</Button>);
     const button = screen.getByRole("button");

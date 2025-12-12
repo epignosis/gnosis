@@ -13,8 +13,11 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
-      contents: read
+      contents: write      # push tags & commits
+      id-token: write      # OIDC for npm
+      issues: write        # comment on issues
+      pull-requests: write # optional, semantic-release PR analysis
+      metadata: read       # read repo info
     
     steps:
       - name: Checkout

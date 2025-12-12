@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ToastNotification> matches snapshot for error type 1`] = `
+<div>
+  <div
+    class="toast-notification css-1hj8vj3-notificationStyles-notificationStyles-notificationStyles-notificationStyles"
+  >
+    <div
+      class="toast-notification__icon-container"
+    >
+      <span
+        class="toast-notification__icon"
+      >
+        <svg-file-stub
+          height="16"
+        />
+      </span>
+      <p
+        class="toast-notification__text css-mzb2zy-textContainer-textContainer"
+        data-testid="text-component"
+      >
+        An error occurred
+      </p>
+    </div>
+    <button
+      aria-label="Close toast notification"
+      class="toast-notification__close-btn linkButton css-mb5s1a-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+    >
+      <span
+        class="btn-text"
+      >
+        <svg-file-stub
+          height="20"
+        />
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<ToastNotification> matches snapshot for info type 1`] = `
+<div>
+  <div
+    class="toast-notification css-tyobwx-notificationStyles-notificationStyles-notificationStyles-notificationStyles"
+  >
+    <div
+      class="toast-notification__icon-container"
+    >
+      <span
+        class="toast-notification__icon"
+      >
+        <svg-file-stub
+          height="16"
+        />
+      </span>
+      <p
+        class="toast-notification__text css-mzb2zy-textContainer-textContainer"
+        data-testid="text-component"
+      >
+        This is an info message
+      </p>
+    </div>
+    <button
+      aria-label="Close toast notification"
+      class="toast-notification__close-btn linkButton css-mb5s1a-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+    >
+      <span
+        class="btn-text"
+      >
+        <svg-file-stub
+          height="20"
+        />
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<ToastNotification> matches snapshot for success type 1`] = `
+<div>
+  <div
+    class="toast-notification css-16nnl87-notificationStyles-notificationStyles-notificationStyles-notificationStyles"
+  >
+    <div
+      class="toast-notification__icon-container"
+    >
+      <span
+        class="toast-notification__icon"
+      >
+        <svg-file-stub
+          height="16"
+        />
+      </span>
+      <p
+        class="toast-notification__text css-mzb2zy-textContainer-textContainer"
+        data-testid="text-component"
+      >
+        Operation completed successfully
+      </p>
+    </div>
+    <button
+      aria-label="Close toast notification"
+      class="toast-notification__close-btn linkButton css-mb5s1a-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+    >
+      <span
+        class="btn-text"
+      >
+        <svg-file-stub
+          height="20"
+        />
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<ToastNotification> matches snapshot for warning type 1`] = `
+<div>
+  <div
+    class="toast-notification css-zrgt4z-notificationStyles-notificationStyles-notificationStyles-notificationStyles"
+  >
+    <div
+      class="toast-notification__icon-container"
+    >
+      <span
+        class="toast-notification__icon"
+      >
+        <svg-file-stub
+          height="16"
+        />
+      </span>
+      <p
+        class="toast-notification__text css-mzb2zy-textContainer-textContainer"
+        data-testid="text-component"
+      >
+        Please be careful with this action
+      </p>
+    </div>
+    <button
+      aria-label="Close toast notification"
+      class="toast-notification__close-btn linkButton css-mb5s1a-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+    >
+      <span
+        class="btn-text"
+      >
+        <svg-file-stub
+          height="20"
+        />
+      </span>
+    </button>
+  </div>
+</div>
+`;

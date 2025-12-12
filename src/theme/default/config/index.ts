@@ -19,3 +19,4 @@ export { default as tooltip } from "./tooltip";
 export { default as pagination } from "./pagination";
 export { default as scrollbar } from "./scrollbar";
 export { default as statusTag } from "./statusTag";
+export { default as toastNotifications } from "./toastNotifications";

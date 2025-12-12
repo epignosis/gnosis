@@ -21,7 +21,7 @@ export { default as Table } from "./components/Table/Table";
 export { default as Dropdown } from "./components/Dropdown/Dropdown";
 export { default as StatusTag } from "./components/StatusTag/StatusTag";
 export { default as Breadcrumbs } from "./components/Breadcrumbs/Breadcrumbs";
-
+export { default as ToastNotification } from "./components/Toast/ToastNotifications";
 //  Typography!
 export { default as Heading } from "./components/Heading/Heading";
 export { default as Text } from "./components/Text/Text";

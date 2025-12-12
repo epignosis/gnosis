@@ -1,3 +1,10 @@
+## [6.3.8](https://github.com/epignosis/gnosis/compare/v6.3.7...v6.3.8) (2025-12-12)
+
+
+### Bug Fixes
+
+* **fix deactivate svg size:** fix hard-coded svg size ([#601](https://github.com/epignosis/gnosis/issues/601)) ([22f12a9](https://github.com/epignosis/gnosis/commit/22f12a96df9df14ca07ec3d65345cc55d52512f9))
+
 ## [6.3.7](https://github.com/epignosis/gnosis/compare/v6.3.6...v6.3.7) (2025-12-03)
 
 ## [6.3.6](https://github.com/epignosis/gnosis/compare/v6.3.5...v6.3.6) (2025-12-02)

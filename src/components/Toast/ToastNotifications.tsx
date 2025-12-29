@@ -32,14 +32,16 @@ const ToastNotification = ({
         </Text>
       </div>
 
-      <Button
-        aria-label="Close toast notification"
-        className="toast-notification__close-btn"
-        variant="link"
-        onClick={onClose}
-      >
-        <CloseSVG height={20} />
-      </Button>
+      {Boolean(onClose) && (
+        <Button
+          aria-label="Close toast notification"
+          className="toast-notification__close-btn"
+          variant="link"
+          onClick={onClose}
+        >
+          <CloseSVG height={20} />
+        </Button>
+      )}
     </div>
   );
 };

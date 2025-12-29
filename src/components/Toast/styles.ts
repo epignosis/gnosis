@@ -36,6 +36,7 @@ export const notificationStyles = (
 
       svg {
         fill: ${toastNotifications[type].color};
+        color: ${toastNotifications[type].color};
       }
 
       &:hover {

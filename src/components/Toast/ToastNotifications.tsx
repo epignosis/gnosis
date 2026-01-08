@@ -14,10 +14,12 @@ const ICONS = {
 const ToastNotification = ({
   content,
   type,
+  closeButtonAriaLabel,
   onClose,
 }: {
   content: ReactNode;
   type: "info" | "success" | "warning" | "error";
+  closeButtonAriaLabel?: string;
   onClose: () => void;
 }): JSX.Element => {
   return (
@@ -34,7 +36,8 @@ const ToastNotification = ({
 
       {Boolean(onClose) && (
         <Button
-          aria-label="Close toast notification"
+          data-testid="close-toast-notification"
+          aria-label={closeButtonAriaLabel || "Close toast notification"}
           className="toast-notification__close-btn"
           variant="link"
           onClick={onClose}

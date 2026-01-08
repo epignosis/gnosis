@@ -3,7 +3,7 @@ import Color from "color";
 export const THEME_COLOURS = {
   primary: "#0046AB",
   secondary: "#9EA5A9",
-  green: "#3CB744",
+  green: "#1B7855",
   orange: "#FF9C28",
   red: "#D12525",
   black: "#232323",

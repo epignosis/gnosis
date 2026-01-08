@@ -16,6 +16,7 @@ import {
   tabs,
   table,
   tag,
+  toastNotifications,
   tooltip,
   pagination,
   dropdown,
@@ -60,6 +61,7 @@ const defaultTheme = {
   scrollbar,
   statusTag,
   breadcrumbs,
+  toastNotifications,
 };
 
 export type GnosisTheme = typeof defaultTheme;

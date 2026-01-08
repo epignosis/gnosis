@@ -1,3 +1,10 @@
+# [6.4.0](https://github.com/epignosis/gnosis/compare/v6.3.9...v6.4.0) (2026-01-08)
+
+
+### Features
+
+* **toast notifications:** introduce toast notifications ([#610](https://github.com/epignosis/gnosis/issues/610)) ([e2a044e](https://github.com/epignosis/gnosis/commit/e2a044efd1dcd0d7eadb693438a9954bd6313052))
+
 ## [6.3.9](https://github.com/epignosis/gnosis/compare/v6.3.8...v6.3.9) (2025-12-12)
 
 ## [6.3.8](https://github.com/epignosis/gnosis/compare/v6.3.7...v6.3.8) (2025-12-12)

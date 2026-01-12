@@ -31,7 +31,7 @@ exports[`<ToastNotification> matches snapshot for error type 1`] = `
         class="btn-text"
       >
         <svg-file-stub
-          height="20"
+          height="32"
         />
       </span>
     </button>
@@ -70,7 +70,7 @@ exports[`<ToastNotification> matches snapshot for info type 1`] = `
         class="btn-text"
       >
         <svg-file-stub
-          height="20"
+          height="32"
         />
       </span>
     </button>
@@ -109,7 +109,7 @@ exports[`<ToastNotification> matches snapshot for success type 1`] = `
         class="btn-text"
       >
         <svg-file-stub
-          height="20"
+          height="32"
         />
       </span>
     </button>
@@ -148,7 +148,7 @@ exports[`<ToastNotification> matches snapshot for warning type 1`] = `
         class="btn-text"
       >
         <svg-file-stub
-          height="20"
+          height="32"
         />
       </span>
     </button>

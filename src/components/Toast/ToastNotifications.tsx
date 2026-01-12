@@ -1,7 +1,13 @@
 import React, { ReactNode } from "react";
 import { SerializedStyles } from "@emotion/react";
 import { Button, Text } from "../../index";
-import { CloseSVG, DeactivateSVG, InfoIconSVG, SuccessIconSVG, WarningIconSVG } from "../../icons";
+import {
+  CloseModalSVG,
+  DeactivateSVG,
+  InfoIconSVG,
+  SuccessIconSVG,
+  WarningIconSVG,
+} from "../../icons";
 import { notificationStyles } from "./styles";
 
 const ICONS = {
@@ -42,7 +48,7 @@ const ToastNotification = ({
           variant="link"
           onClick={onClose}
         >
-          <CloseSVG height={20} />
+          <CloseModalSVG height={32} />
         </Button>
       )}
     </div>

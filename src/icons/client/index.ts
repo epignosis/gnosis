@@ -252,6 +252,7 @@ export { default as MessageHeartSVG } from "./message-heart.svg";
 export { default as ShapesSVG } from "./shapes.svg";
 export { default as RobotFaceSVG } from "./robot-face.svg";
 export { default as InstructorLockSVG } from "./instructor-lock.svg";
+export { default as EndingFlagSVG } from "./ending-flag.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./teams.svg";

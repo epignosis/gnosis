@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StoryFn } from "@storybook/react";
 import { Button, Input } from "../../";
 import DrawerComponent, { DrawerProps } from "./Drawer";
+import { StatusIndicatorType } from "./components/StatusIndicator";
 
 export default {
   title: "components/Drawer",
@@ -131,4 +132,74 @@ MultipleDrawers.args = {
   headerCloseBtn: true,
   placement: "left",
   showMask: true,
+};
+
+type DrawerWithStatusArgs = Pick<DrawerProps, "placement" | "showMask"> & {
+  headerCloseBtn: boolean;
+  statusType: StatusIndicatorType;
+};
+
+export const WithStatusIndicator: StoryFn<DrawerWithStatusArgs> = (args: DrawerWithStatusArgs) => {
+  const { headerCloseBtn, statusType, ...rest } = args;
+  const [isOpen, setIsOpen] = useState(false);
+
+  const statusMessages: Record<StatusIndicatorType, string> = {
+    success: "The operation was completed successfully.",
+    error: "An error occurred while processing your request.",
+    info: "Please review the information before proceeding.",
+  };
+
+  return (
+    <>
+      <Button onClick={(): void => setIsOpen(true)}>Open Drawer with Status</Button>
+      <DrawerComponent
+        isOpen={isOpen}
+        onClose={(): void => setIsOpen(false)}
+        status={{
+          type: statusType,
+          content: statusMessages[statusType],
+        }}
+        {...rest}
+      >
+        <DrawerComponent.Header closable={headerCloseBtn}>
+          Drawer with Status
+        </DrawerComponent.Header>
+        <DrawerComponent.Body>
+          <div style={{ padding: "2rem" }}>
+            <p>This drawer demonstrates the status indicator feature.</p>
+            <p>The status indicator appears in the footer above the action buttons.</p>
+            <ul>
+              <li>Status type: {statusType}</li>
+              <li>The indicator shows a colored circular icon</li>
+              <li>It displays a message based on the status type</li>
+            </ul>
+          </div>
+        </DrawerComponent.Body>
+        <DrawerComponent.Footer>
+          <div style={{ display: "flex", justifyContent: "center", gap: "1rem" }}>
+            <Button onClick={(): void => setIsOpen(false)}>Save</Button>
+            <Button variant="outline" onClick={(): void => setIsOpen(false)}>
+              Cancel
+            </Button>
+          </div>
+        </DrawerComponent.Footer>
+      </DrawerComponent>
+    </>
+  );
+};
+
+WithStatusIndicator.args = {
+  headerCloseBtn: true,
+  placement: "left",
+  showMask: true,
+  statusType: "success",
+};
+
+WithStatusIndicator.argTypes = {
+  statusType: {
+    control: {
+      type: "select",
+    },
+    options: ["success", "error", "info"],
+  },
 };

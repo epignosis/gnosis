@@ -1,5 +1,266 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Drawer/> Status Indicator matches snapshot with status indicator error 1`] = `
+<div
+  class="css-1r9ut7f-drawerContainer-drawerContainer"
+  data-testid="drawer"
+>
+  <div
+    class="css-tigpv4-maskContainer"
+    data-testid="mask"
+    style="opacity: 0;"
+  />
+  <div
+    data-focus-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="0"
+  />
+  <div
+    data-focus-lock-disabled="false"
+  >
+    <dialog
+      aria-expanded="true"
+      aria-hidden="false"
+      aria-modal="true"
+      class="dialog placement-left"
+      id="drawer-dialog"
+      style="opacity: 0; transform: none;"
+    >
+      <header
+        class="css-1uqb0aw-drawerHeader-drawerHeader"
+        data-testid="drawer-header"
+        id="drawer-title"
+      >
+        <h2
+          class="css-1ibrhk6-headingContainer-headingContainer"
+        >
+          Title
+        </h2>
+      </header>
+      <div
+        class="css-1vbxgux-drawerBody"
+      >
+        Content
+      </div>
+      <footer
+        class="css-2uikic-footerContainer-footerContainer"
+        data-testid="drawer-footer"
+      >
+        <div
+          class="drawer-status-indicator drawer-status-indicator--error css-1qzkcuq-statusIndicatorStyles-statusIndicatorStyles"
+          data-testid="drawer-status-indicator"
+        >
+          <div
+            class="drawer-status-indicator__icon-container"
+          >
+            <span
+              class="drawer-status-indicator__icon"
+            >
+              <svg-file-stub
+                height="24"
+              />
+            </span>
+            <p
+              class="drawer-status-indicator__text css-mzb2zy-textContainer-textContainer"
+              data-testid="text-component"
+            >
+              An error occurred
+            </p>
+          </div>
+        </div>
+        <div
+          class="drawer-footer__divider"
+        />
+        <div
+          class="drawer-footer__content"
+        >
+          Footer
+        </div>
+      </footer>
+    </dialog>
+  </div>
+  <div
+    data-focus-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="0"
+  />
+</div>
+`;
+
+exports[`<Drawer/> Status Indicator matches snapshot with status indicator info 1`] = `
+<div
+  class="css-1r9ut7f-drawerContainer-drawerContainer"
+  data-testid="drawer"
+>
+  <div
+    class="css-tigpv4-maskContainer"
+    data-testid="mask"
+    style="opacity: 0;"
+  />
+  <div
+    data-focus-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="0"
+  />
+  <div
+    data-focus-lock-disabled="false"
+  >
+    <dialog
+      aria-expanded="true"
+      aria-hidden="false"
+      aria-modal="true"
+      class="dialog placement-left"
+      id="drawer-dialog"
+      style="opacity: 0; transform: none;"
+    >
+      <header
+        class="css-1uqb0aw-drawerHeader-drawerHeader"
+        data-testid="drawer-header"
+        id="drawer-title"
+      >
+        <h2
+          class="css-1ibrhk6-headingContainer-headingContainer"
+        >
+          Title
+        </h2>
+      </header>
+      <div
+        class="css-1vbxgux-drawerBody"
+      >
+        Content
+      </div>
+      <footer
+        class="css-2uikic-footerContainer-footerContainer"
+        data-testid="drawer-footer"
+      >
+        <div
+          class="drawer-status-indicator drawer-status-indicator--info css-prwc6q-statusIndicatorStyles-statusIndicatorStyles"
+          data-testid="drawer-status-indicator"
+        >
+          <div
+            class="drawer-status-indicator__icon-container"
+          >
+            <span
+              class="drawer-status-indicator__icon"
+            >
+              <svg-file-stub
+                height="16"
+              />
+            </span>
+            <p
+              class="drawer-status-indicator__text css-mzb2zy-textContainer-textContainer"
+              data-testid="text-component"
+            >
+              Please review
+            </p>
+          </div>
+        </div>
+        <div
+          class="drawer-footer__divider"
+        />
+        <div
+          class="drawer-footer__content"
+        >
+          Footer
+        </div>
+      </footer>
+    </dialog>
+  </div>
+  <div
+    data-focus-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="0"
+  />
+</div>
+`;
+
+exports[`<Drawer/> Status Indicator matches snapshot with status indicator success 1`] = `
+<div
+  class="css-1r9ut7f-drawerContainer-drawerContainer"
+  data-testid="drawer"
+>
+  <div
+    class="css-tigpv4-maskContainer"
+    data-testid="mask"
+    style="opacity: 0;"
+  />
+  <div
+    data-focus-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="0"
+  />
+  <div
+    data-focus-lock-disabled="false"
+  >
+    <dialog
+      aria-expanded="true"
+      aria-hidden="false"
+      aria-modal="true"
+      class="dialog placement-left"
+      id="drawer-dialog"
+      style="opacity: 0; transform: none;"
+    >
+      <header
+        class="css-1uqb0aw-drawerHeader-drawerHeader"
+        data-testid="drawer-header"
+        id="drawer-title"
+      >
+        <h2
+          class="css-1ibrhk6-headingContainer-headingContainer"
+        >
+          Title
+        </h2>
+      </header>
+      <div
+        class="css-1vbxgux-drawerBody"
+      >
+        Content
+      </div>
+      <footer
+        class="css-2uikic-footerContainer-footerContainer"
+        data-testid="drawer-footer"
+      >
+        <div
+          class="drawer-status-indicator drawer-status-indicator--success css-18nel8n-statusIndicatorStyles-statusIndicatorStyles"
+          data-testid="drawer-status-indicator"
+        >
+          <div
+            class="drawer-status-indicator__icon-container"
+          >
+            <span
+              class="drawer-status-indicator__icon"
+            >
+              <svg-file-stub
+                height="16"
+              />
+            </span>
+            <p
+              class="drawer-status-indicator__text css-mzb2zy-textContainer-textContainer"
+              data-testid="text-component"
+            >
+              Operation successful
+            </p>
+          </div>
+        </div>
+        <div
+          class="drawer-footer__divider"
+        />
+        <div
+          class="drawer-footer__content"
+        >
+          Footer
+        </div>
+      </footer>
+    </dialog>
+  </div>
+  <div
+    data-focus-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="0"
+  />
+</div>
+`;
+
 exports[`<Drawer/> matches snapshot with close button 1`] = `
 <div
   class="css-1r9ut7f-drawerContainer-drawerContainer"
@@ -27,7 +288,7 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
       style="opacity: 0; transform: none;"
     >
       <header
-        class="css-zc36g1-drawerHeader-drawerHeader"
+        class="css-1uqb0aw-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -88,7 +349,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
       style="opacity: 0; transform: none;"
     >
       <header
-        class="css-zc36g1-drawerHeader-drawerHeader"
+        class="css-1uqb0aw-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -104,10 +365,14 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
         Test body
       </div>
       <footer
-        class="css-123pp4v-footerContainer-footerContainer"
+        class="css-2uikic-footerContainer-footerContainer"
         data-testid="drawer-footer"
       >
-        Test footer
+        <div
+          class="drawer-footer__content"
+        >
+          Test footer
+        </div>
       </footer>
     </dialog>
   </div>
@@ -146,7 +411,7 @@ exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
       style="opacity: 0; transform: none;"
     >
       <header
-        class="css-wmpb2t-drawerHeader-drawerHeader"
+        class="css-1lm7nwy-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -193,7 +458,7 @@ exports[`<Drawer/> matches snapshot with right placement 1`] = `
       style="opacity: 0; transform: translateX(100%) translateZ(0);"
     >
       <header
-        class="css-zc36g1-drawerHeader-drawerHeader"
+        class="css-1uqb0aw-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >

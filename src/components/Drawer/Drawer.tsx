@@ -8,7 +8,7 @@ import { drawerContainer } from "./styles";
 import Header, { HeaderProps } from "./components/Header";
 import Body from "./components/Body";
 import Mask from "./components/Mask";
-import Footer from "./components/Footer";
+import Footer, { FooterProps } from "./components/Footer";
 import { FCWithChildren } from "types/common";
 
 type DialogVariants = {
@@ -47,12 +47,13 @@ export type DrawerProps = React.HTMLAttributes<HTMLDivElement> & {
   dialogClassName?: string;
   disableFocusLock?: boolean;
   onClose: () => void;
+  status?: FooterProps["status"];
 };
 
 type DrawerCompoundProps = {
   Header: FCWithChildren<Omit<HeaderProps, "onClose"> & { closable?: boolean }>;
   Body: FCWithChildren;
-  Footer: FCWithChildren;
+  Footer: FCWithChildren<FooterProps>;
   Root: FCWithChildren;
 };
 
@@ -68,9 +69,19 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
     disableFocusLock = false,
     children,
     onClose,
+    status,
     ...rest
   } = props;
   const clonedChildren = Children.map(children, (child) => {
+    if ((child as ReactElement)?.type === Footer) {
+      return (
+        child &&
+        cloneElement(child as ReactElement, {
+          onClose: (child as ReactElement).props?.closable && onClose,
+          status: status || (child as ReactElement).props?.status,
+        })
+      );
+    }
     return (
       child &&
       cloneElement(child as ReactElement, {

@@ -24,11 +24,11 @@ describe("<Tooltip/>", () => {
     expect(arrow).toBeInTheDocument();
   });
 
-  it("hides arrow when hideArrow is true", async () => {
+  it("hides arrow when showArrow is false", async () => {
     const contentTxt = faker.lorem.word();
 
     render(
-      <Tooltip content={contentTxt} hideArrow>
+      <Tooltip content={contentTxt} showArrow={false}>
         <button>Hover me</button>
       </Tooltip>,
     );

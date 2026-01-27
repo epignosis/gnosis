@@ -51,11 +51,11 @@ WithMaxWidth.args = {
   as: "div",
 };
 
-export const WithHideArrow = Default.bind({});
+export const WithNoArrow = Default.bind({});
 
-WithHideArrow.args = {
+WithNoArrow.args = {
   placement: "top",
   content: "This is a tooltip with no arrow",
   as: "div",
-  hideArrow: true,
+  showArrow: false,
 };

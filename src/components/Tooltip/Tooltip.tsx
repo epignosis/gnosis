@@ -30,7 +30,7 @@ export type TooltipProps = TippyProps & {
   parentProps?: object;
   content: TippyProps["content"];
   maxWidth?: number;
-  hideArrow?: boolean;
+  showArrow?: boolean;
 };
 
 const Tooltip: FC<TooltipProps> = ({
@@ -41,7 +41,7 @@ const Tooltip: FC<TooltipProps> = ({
   placement = "top",
   maxWidth = 350,
   interactive = true,
-  hideArrow = false,
+  showArrow = true,
   ...rest
 }) => {
   const Tag = as;
@@ -63,7 +63,7 @@ const Tooltip: FC<TooltipProps> = ({
           {...attrs}
         >
           {content}
-          {!hideArrow && <div id="arrow" data-testid="tooltip-arrow" data-popper-arrow />}
+          {showArrow && <div id="arrow" data-testid="tooltip-arrow" data-popper-arrow />}
         </div>
       )}
       {...rest}

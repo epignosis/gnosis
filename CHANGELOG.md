@@ -1,3 +1,10 @@
+# [6.5.0](https://github.com/epignosis/gnosis/compare/v6.4.5...v6.5.0) (2026-01-27)
+
+
+### Features
+
+* **tooltip.tsx:** add showArrow prop ([#617](https://github.com/epignosis/gnosis/issues/617)) ([55fd30d](https://github.com/epignosis/gnosis/commit/55fd30d2e77f1d032c5ac352c8a3fbbc3cb5134f))
+
 ## [6.4.5](https://github.com/epignosis/gnosis/compare/v6.4.4...v6.4.5) (2026-01-23)
 
 ## [6.4.4](https://github.com/epignosis/gnosis/compare/v6.4.3...v6.4.4) (2026-01-21)

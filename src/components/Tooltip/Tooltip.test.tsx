@@ -23,4 +23,22 @@ describe("<Tooltip/>", () => {
     expect(content).toHaveTextContent(contentTxt);
     expect(arrow).toBeInTheDocument();
   });
+
+  it("hides arrow when hideArrow is true", async () => {
+    const contentTxt = faker.lorem.word();
+
+    render(
+      <Tooltip content={contentTxt} hideArrow>
+        <button>Hover me</button>
+      </Tooltip>,
+    );
+
+    const button = screen.getByText("Hover me");
+
+    await userEvent.hover(button);
+
+    const arrow = screen.queryByTestId("tooltip-arrow");
+
+    expect(arrow).not.toBeInTheDocument();
+  });
 });

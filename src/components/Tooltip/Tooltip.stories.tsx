@@ -50,3 +50,12 @@ WithMaxWidth.args = {
     "Once upon a midnight dreary, as I pondered, weak and weary, over many a quaint and curious volume of forgotten lore—while I nodded, nearly napping, suddenly there came a tapping, as of someone gently rapping, rapping at my chamber door. 'Tis some visitor,' I muttered, 'tapping at my chamber door—only this and nothing more.' Ah, distinctly I remember it was in the bleak December; and each separate dying ember wrought its ghost upon the floor. From my books surcease of sorrow—sorrow for the lost Lenore—for the rare and radiant maiden whom the angels name Lenore—nameless here for evermore.",
   as: "div",
 };
+
+export const WithHideArrow = Default.bind({});
+
+WithHideArrow.args = {
+  placement: "top",
+  content: "This is a tooltip with no arrow",
+  as: "div",
+  hideArrow: true,
+};

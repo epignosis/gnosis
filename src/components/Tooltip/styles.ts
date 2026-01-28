@@ -45,7 +45,7 @@ export const tooltipContainer = (
     #arrow::before {
       content: "";
       transform: rotate(45deg);
-      background: ${tooltip.border};
+      background: ${borderColor || tooltip.border};
     }
   `;
 };

@@ -59,3 +59,12 @@ WithNoArrow.args = {
   as: "div",
   showArrow: false,
 };
+
+export const WithBorderColor = Default.bind({});
+
+WithBorderColor.args = {
+  placement: "top",
+  content: "This is a tooltip with a border color",
+  as: "div",
+  borderColor: "red",
+};

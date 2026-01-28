@@ -31,6 +31,7 @@ export type TooltipProps = TippyProps & {
   content: TippyProps["content"];
   maxWidth?: number;
   showArrow?: boolean;
+  borderColor?: string;
 };
 
 const Tooltip: FC<TooltipProps> = ({
@@ -42,6 +43,7 @@ const Tooltip: FC<TooltipProps> = ({
   maxWidth = 350,
   interactive = true,
   showArrow = true,
+  borderColor,
   ...rest
 }) => {
   const Tag = as;
@@ -59,7 +61,7 @@ const Tooltip: FC<TooltipProps> = ({
         <div
           className="tooltip"
           role="alert"
-          css={(theme) => tooltipContainer(maxWidth, theme)}
+          css={(theme) => tooltipContainer(maxWidth, theme, borderColor)}
           {...attrs}
         >
           {content}

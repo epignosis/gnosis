@@ -3,11 +3,12 @@ import { css, Theme, SerializedStyles } from "@emotion/react";
 export const tooltipContainer = (
   maxWidth: number,
   { typeScaleSizes, tooltip }: Theme,
+  borderColor?: string,
 ): SerializedStyles => {
   return css`
     max-width: ${maxWidth}px;
     background: ${tooltip.background};
-    border: 1px solid ${tooltip.border};
+    border: 1px solid ${borderColor || tooltip.border};
     border-radius: 5px;
     color: ${tooltip.color};
     padding: 0.5rem;
@@ -44,7 +45,7 @@ export const tooltipContainer = (
     #arrow::before {
       content: "";
       transform: rotate(45deg);
-      background: ${tooltip.border};
+      background: ${borderColor || tooltip.border};
     }
   `;
 };

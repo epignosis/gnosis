@@ -12,7 +12,7 @@ export type HeaderProps = {
 };
 
 const Header: FCWithChildren<HeaderProps> = ({ onClose, noGutters = false, children }) => {
-  const title = typeof children === "string" ? <Heading>{children}</Heading> : children;
+  const title = typeof children === "string" ? <Heading size="md">{children}</Heading> : children;
   const showCloseButton = Boolean(onClose);
 
   return (

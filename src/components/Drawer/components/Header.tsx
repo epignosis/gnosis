@@ -2,7 +2,7 @@ import React from "react";
 import { SerializedStyles } from "@emotion/react";
 import Heading from "../../Heading/Heading";
 import Button from "../../Button/Button";
-import { CloseSVG } from "../../../icons/";
+import { CloseModalSVG } from "../../../icons/";
 import { drawerHeader } from "./styles";
 import { FCWithChildren } from "types/common";
 
@@ -31,7 +31,7 @@ const Header: FCWithChildren<HeaderProps> = ({ onClose, noGutters = false, child
           aria-label="Close drawer"
           onClick={onClose}
         >
-          <CloseSVG height={24} />
+          <CloseModalSVG height={32} />
         </Button>
       )}
     </header>

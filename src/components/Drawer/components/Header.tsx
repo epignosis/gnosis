@@ -13,7 +13,6 @@ export type HeaderProps = {
 
 const Header: FCWithChildren<HeaderProps> = ({ onClose, noGutters = false, children }) => {
   const title = typeof children === "string" ? <Heading size="md">{children}</Heading> : children;
-  const showCloseButton = Boolean(onClose);
 
   return (
     <header
@@ -22,18 +21,16 @@ const Header: FCWithChildren<HeaderProps> = ({ onClose, noGutters = false, child
       css={(): SerializedStyles => drawerHeader({ noGutters })}
     >
       {title}
-      {showCloseButton && (
-        <Button
-          type="button"
-          variant="link"
-          color="secondary"
-          noGutters
-          aria-label="Close drawer"
-          onClick={onClose}
-        >
-          <CloseModalSVG height={32} />
-        </Button>
-      )}
+      <Button
+        type="button"
+        variant="link"
+        color="secondary"
+        noGutters
+        aria-label="Close drawer"
+        onClick={onClose}
+      >
+        <CloseModalSVG height={32} />
+      </Button>
     </header>
   );
 };

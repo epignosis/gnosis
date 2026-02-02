@@ -27,7 +27,7 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
       style="opacity: 0; transform: none;"
     >
       <header
-        class="css-zc36g1-drawerHeader-drawerHeader"
+        class="css-13we4q5-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -38,7 +38,7 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
         </h2>
         <button
           aria-label="Close drawer"
-          class="linkButton css-5ruphf-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+          class="close-button linkButton css-5ruphf-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
           type="button"
         >
           <span
@@ -88,7 +88,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
       style="opacity: 0; transform: none;"
     >
       <header
-        class="css-zc36g1-drawerHeader-drawerHeader"
+        class="css-13we4q5-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -99,7 +99,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
         </h2>
         <button
           aria-label="Close drawer"
-          class="linkButton css-5ruphf-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+          class="close-button linkButton css-5ruphf-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
           type="button"
         >
           <span
@@ -117,7 +117,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
         Test body
       </div>
       <footer
-        class="css-123pp4v-footerContainer-footerContainer"
+        class="css-ss7yvy-footerContainer-footerContainer"
         data-testid="drawer-footer"
       >
         Test footer
@@ -159,7 +159,7 @@ exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
       style="opacity: 0; transform: none;"
     >
       <header
-        class="css-wmpb2t-drawerHeader-drawerHeader"
+        class="css-glijxi-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -170,7 +170,7 @@ exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
         </h2>
         <button
           aria-label="Close drawer"
-          class="linkButton css-5ruphf-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+          class="close-button linkButton css-5ruphf-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
           type="button"
         >
           <span
@@ -219,7 +219,7 @@ exports[`<Drawer/> matches snapshot with right placement 1`] = `
       style="opacity: 0; transform: translateX(100%) translateZ(0);"
     >
       <header
-        class="css-zc36g1-drawerHeader-drawerHeader"
+        class="css-13we4q5-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -230,7 +230,7 @@ exports[`<Drawer/> matches snapshot with right placement 1`] = `
         </h2>
         <button
           aria-label="Close drawer"
-          class="linkButton css-5ruphf-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+          class="close-button linkButton css-5ruphf-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
           type="button"
         >
           <span

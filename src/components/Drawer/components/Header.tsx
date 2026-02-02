@@ -25,6 +25,7 @@ const Header: FCWithChildren<HeaderProps> = ({ onClose, noGutters = false, child
         type="button"
         variant="link"
         color="secondary"
+        className="close-button"
         noGutters
         aria-label="Close drawer"
         onClick={onClose}

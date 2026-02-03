@@ -2,7 +2,7 @@ import React from "react";
 import { SerializedStyles } from "@emotion/react";
 import Heading from "../../Heading/Heading";
 import Button from "../../Button/Button";
-import { CloseSVG } from "../../../icons/";
+import { CloseModalSVG } from "../../../icons/";
 import { drawerHeader } from "./styles";
 import { FCWithChildren } from "types/common";
 
@@ -12,8 +12,7 @@ export type HeaderProps = {
 };
 
 const Header: FCWithChildren<HeaderProps> = ({ onClose, noGutters = false, children }) => {
-  const title = typeof children === "string" ? <Heading>{children}</Heading> : children;
-  const showCloseButton = Boolean(onClose);
+  const title = typeof children === "string" ? <Heading size="md">{children}</Heading> : children;
 
   return (
     <header
@@ -22,18 +21,17 @@ const Header: FCWithChildren<HeaderProps> = ({ onClose, noGutters = false, child
       css={(): SerializedStyles => drawerHeader({ noGutters })}
     >
       {title}
-      {showCloseButton && (
-        <Button
-          type="button"
-          variant="link"
-          color="secondary"
-          noGutters
-          aria-label="Close drawer"
-          onClick={onClose}
-        >
-          <CloseSVG height={24} />
-        </Button>
-      )}
+      <Button
+        type="button"
+        variant="link"
+        color="secondary"
+        className="close-button"
+        noGutters
+        aria-label="Close drawer"
+        onClick={onClose}
+      >
+        <CloseModalSVG height={32} />
+      </Button>
     </header>
   );
 };

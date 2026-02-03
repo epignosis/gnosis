@@ -66,7 +66,6 @@ export const Default: StoryFn<DrawerArgs> = (args) => {
 };
 
 Default.args = {
-  headerCloseBtn: true,
   placement: "left",
   showMask: true,
 };
@@ -128,7 +127,6 @@ export const MultipleDrawers: StoryFn<DrawerArgs> = (args) => {
 };
 
 MultipleDrawers.args = {
-  headerCloseBtn: true,
   placement: "left",
   showMask: true,
 };

@@ -254,6 +254,8 @@ export { default as RobotFaceSVG } from "./robot-face.svg";
 export { default as InstructorLockSVG } from "./instructor-lock.svg";
 export { default as EndingFlagSVG } from "./ending-flag.svg";
 export { default as WaffleSVG } from "./waffle.svg";
+export { default as ClockTrialSVG } from "./clock-trial.svg";
+export { default as CrownSVG } from "./crown.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./teams.svg";

@@ -7,7 +7,7 @@ export const notificationStyles = (
   const { toastNotifications } = theme;
   return css`
     width: 25.625rem;
-    height: 6rem;
+    min-height: 6rem;
     display: flex;
     align-items: center;
     justify-content: space-between;

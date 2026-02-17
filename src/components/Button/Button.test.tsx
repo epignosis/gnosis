@@ -108,6 +108,7 @@ describe("<Button />", () => {
         noGutters
         block
         rounded
+        active
       >
         Test button
       </Button>,

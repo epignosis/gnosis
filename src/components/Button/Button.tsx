@@ -33,6 +33,7 @@ export type Props = {
   children: ReactNode;
   variant?: "solid" | "outline" | "ghost" | "link";
   underlined?: boolean;
+  active?: boolean;
 };
 
 export type ButtonProps<C extends ElementType> = PolymorphicComponentProps<C, Props>;
@@ -53,6 +54,7 @@ const Button = <C extends ElementType = "button">(props: ButtonProps<C>): ReactE
     children,
     disabled,
     underlined,
+    active,
     ...rest
   } = props;
 
@@ -70,6 +72,7 @@ const Button = <C extends ElementType = "button">(props: ButtonProps<C>): ReactE
     "icon-after": SuffixIcon,
     "icon-before": PrefixIcon,
     underlined: underlined,
+    active: active,
   });
 
   return (

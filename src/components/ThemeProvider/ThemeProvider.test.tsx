@@ -5,20 +5,40 @@ import { render, screen } from "@test-utils/render";
 import defaultTheme from "@theme/default/defaultTheme";
 import { DEFAULT_TYPESCALE_CONFIG, generateTypeScaleSizes } from "@theme/utils/typography";
 
-/**
- * Reads a dot-notated path from the Emotion theme and renders it as text.
- * Also implicitly covers: "child components can access the merged theme via useTheme".
- */
-const ThemeReader = ({ path }: { path: string }) => {
-  const theme = useTheme() as Record<string, unknown>;
-  const value = path
-    .split(".")
-    .reduce<unknown>((obj, key) => (obj as Record<string, unknown>)?.[key], theme);
+type Theme = typeof defaultTheme;
 
-  return <span data-testid="value">{String(value)}</span>;
+// Each component below reads exactly one theme value and renders it as text.
+// This covers the acceptance criterion: "child components can access the merged theme via useTheme".
+
+const BodyBackground = () => {
+  const { body } = useTheme() as Theme;
+
+  return <span data-testid="value">{body.background}</span>;
 };
 
-const themeValue = () => screen.getByTestId("value").textContent;
+const BodyFontFamily = () => {
+  const { body } = useTheme() as Theme;
+
+  return <span data-testid="value">{body.fontFamily}</span>;
+};
+
+const BodyLineHeight = () => {
+  const { body } = useTheme() as Theme;
+
+  return <span data-testid="value">{String(body.lineHeight)}</span>;
+};
+
+const TypeScaleMd = () => {
+  const { typeScaleSizes } = useTheme() as Theme;
+
+  return <span data-testid="value">{String(typeScaleSizes.md)}</span>;
+};
+
+const TypeScaleLg = () => {
+  const { typeScaleSizes } = useTheme() as Theme;
+
+  return <span data-testid="value">{String(typeScaleSizes.lg)}</span>;
+};
 
 describe("<ThemeProvider />", () => {
   it("renders children", () => {
@@ -34,21 +54,21 @@ describe("<ThemeProvider />", () => {
   it("merges custom theme over defaults", () => {
     render(
       <ThemeProvider theme={{ body: { background: "red" } }}>
-        <ThemeReader path="body.background" />
+        <BodyBackground />
       </ThemeProvider>,
     );
 
-    expect(themeValue()).toBe("red");
+    expect(screen.getByTestId("value").textContent).toBe("red");
   });
 
   it("preserves unoverridden default theme values", () => {
     render(
       <ThemeProvider theme={{ body: { background: "red" } }}>
-        <ThemeReader path="body.fontFamily" />
+        <BodyFontFamily />
       </ThemeProvider>,
     );
 
-    expect(themeValue()).toBe(defaultTheme.body.fontFamily);
+    expect(screen.getByTestId("value").textContent).toBe(defaultTheme.body.fontFamily);
   });
 
   it("applies typeScaleSizes from default config", () => {
@@ -56,11 +76,11 @@ describe("<ThemeProvider />", () => {
 
     render(
       <ThemeProvider>
-        <ThemeReader path="typeScaleSizes.md" />
+        <TypeScaleMd />
       </ThemeProvider>,
     );
 
-    expect(themeValue()).toBe(String(md));
+    expect(screen.getByTestId("value").textContent).toBe(String(md));
   });
 
   it("merges custom typeScaleConfig and applies generated sizes", () => {
@@ -69,21 +89,21 @@ describe("<ThemeProvider />", () => {
 
     render(
       <ThemeProvider typeScaleConfig={typeScaleConfig}>
-        <ThemeReader path="typeScaleSizes.md" />
+        <TypeScaleMd />
       </ThemeProvider>,
     );
 
-    expect(themeValue()).toBe(String(md));
+    expect(screen.getByTestId("value").textContent).toBe(String(md));
   });
 
   it("sets body.lineHeight from typeScaleConfig", () => {
     render(
       <ThemeProvider typeScaleConfig={{ lineHeight: 2 }}>
-        <ThemeReader path="body.lineHeight" />
+        <BodyLineHeight />
       </ThemeProvider>,
     );
 
-    expect(themeValue()).toBe("2");
+    expect(screen.getByTestId("value").textContent).toBe("2");
   });
 
   // Negative tests
@@ -98,16 +118,15 @@ describe("<ThemeProvider />", () => {
   });
 
   it("does not corrupt unrelated typeScaleSizes when a partial typeScaleConfig is provided", () => {
-    // Only lineHeight is overridden — other sizes should still resolve from defaults
     const { lg } = generateTypeScaleSizes(DEFAULT_TYPESCALE_CONFIG);
 
     render(
       <ThemeProvider typeScaleConfig={{ lineHeight: 2 }}>
-        <ThemeReader path="typeScaleSizes.lg" />
+        <TypeScaleLg />
       </ThemeProvider>,
     );
 
-    expect(themeValue()).toBe(String(lg));
+    expect(screen.getByTestId("value").textContent).toBe(String(lg));
   });
 
   it("matches snapshot", () => {

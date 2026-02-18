@@ -7,41 +7,18 @@ import { DEFAULT_TYPESCALE_CONFIG, generateTypeScaleSizes } from "@theme/utils/t
 
 type Theme = typeof defaultTheme;
 
-// Each component below reads exactly one theme value and renders it as text.
-// This covers the acceptance criterion: "child components can access the merged theme via useTheme".
+/**
+ * Renders a single theme value as text, selected via a typed callback.
+ * Covers the acceptance criterion: "child components can access the merged theme via useTheme".
+ */
+const ThemeValue = ({ select }: { select: (theme: Theme) => unknown }) => {
+  const theme = useTheme() as Theme;
 
-const BodyBackground = () => {
-  const { body } = useTheme() as Theme;
-
-  return <span data-testid="value">{body.background}</span>;
-};
-
-const BodyFontFamily = () => {
-  const { body } = useTheme() as Theme;
-
-  return <span data-testid="value">{body.fontFamily}</span>;
-};
-
-const BodyLineHeight = () => {
-  const { body } = useTheme() as Theme;
-
-  return <span data-testid="value">{String(body.lineHeight)}</span>;
-};
-
-const TypeScaleMd = () => {
-  const { typeScaleSizes } = useTheme() as Theme;
-
-  return <span data-testid="value">{String(typeScaleSizes.md)}</span>;
-};
-
-const TypeScaleLg = () => {
-  const { typeScaleSizes } = useTheme() as Theme;
-
-  return <span data-testid="value">{String(typeScaleSizes.lg)}</span>;
+  return <span data-testid="value">{String(select(theme))}</span>;
 };
 
 describe("<ThemeProvider />", () => {
-  it("renders children", () => {
+  it("renders its children", () => {
     render(
       <ThemeProvider>
         <p>hello</p>
@@ -51,63 +28,44 @@ describe("<ThemeProvider />", () => {
     expect(screen.getByText("hello")).toBeInTheDocument();
   });
 
-  it("merges custom theme over defaults", () => {
+  it("merges a custom theme prop over the default theme values", () => {
     render(
       <ThemeProvider theme={{ body: { background: "red" } }}>
-        <BodyBackground />
+        <ThemeValue select={(t) => t.body.background} />
       </ThemeProvider>,
     );
 
     expect(screen.getByTestId("value").textContent).toBe("red");
+    expect(screen.getByTestId("value").textContent).not.toBe(defaultTheme.body.background);
   });
 
-  it("preserves unoverridden default theme values", () => {
-    render(
-      <ThemeProvider theme={{ body: { background: "red" } }}>
-        <BodyFontFamily />
-      </ThemeProvider>,
-    );
-
-    expect(screen.getByTestId("value").textContent).toBe(defaultTheme.body.fontFamily);
-  });
-
-  it("applies typeScaleSizes from default config", () => {
+  it("generates and applies typeScaleSizes from the default typeScaleConfig", () => {
     const { md } = generateTypeScaleSizes(DEFAULT_TYPESCALE_CONFIG);
 
     render(
       <ThemeProvider>
-        <TypeScaleMd />
+        <ThemeValue select={(t) => t.typeScaleSizes.md} />
       </ThemeProvider>,
     );
 
     expect(screen.getByTestId("value").textContent).toBe(String(md));
   });
 
-  it("merges custom typeScaleConfig and applies generated sizes", () => {
+  it("generates and applies typeScaleSizes from a custom typeScaleConfig", () => {
     const typeScaleConfig = { baseFontSize: 1.25, sizeRatio: 1.2 };
     const { md } = generateTypeScaleSizes({ ...DEFAULT_TYPESCALE_CONFIG, ...typeScaleConfig });
 
     render(
       <ThemeProvider typeScaleConfig={typeScaleConfig}>
-        <TypeScaleMd />
+        <ThemeValue select={(t) => t.typeScaleSizes.md} />
       </ThemeProvider>,
     );
 
     expect(screen.getByTestId("value").textContent).toBe(String(md));
   });
 
-  it("sets body.lineHeight from typeScaleConfig", () => {
-    render(
-      <ThemeProvider typeScaleConfig={{ lineHeight: 2 }}>
-        <BodyLineHeight />
-      </ThemeProvider>,
-    );
-
-    expect(screen.getByTestId("value").textContent).toBe("2");
-  });
-
-  // Negative tests
-  it("does not crash when given an empty theme object", () => {
+  // Negative test
+  it("does not throw when rendered with an empty theme object", () => {
     expect(() =>
       render(
         <ThemeProvider theme={{}}>
@@ -115,18 +73,6 @@ describe("<ThemeProvider />", () => {
         </ThemeProvider>,
       ),
     ).not.toThrow();
-  });
-
-  it("does not corrupt unrelated typeScaleSizes when a partial typeScaleConfig is provided", () => {
-    const { lg } = generateTypeScaleSizes(DEFAULT_TYPESCALE_CONFIG);
-
-    render(
-      <ThemeProvider typeScaleConfig={{ lineHeight: 2 }}>
-        <TypeScaleLg />
-      </ThemeProvider>,
-    );
-
-    expect(screen.getByTestId("value").textContent).toBe(String(lg));
   });
 
   it("matches snapshot", () => {

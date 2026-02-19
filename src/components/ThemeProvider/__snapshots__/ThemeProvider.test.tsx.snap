@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ThemeProvider /> matches snapshot 1`] = `
+<div>
+  <p>
+    content
+  </p>
+</div>
+`;
+
+exports[`<ThemeProvider /> merges a custom theme prop over the default theme values 1`] = `
+<div>
+  <span
+    data-testid="value"
+  >
+    red
+  </span>
+</div>
+`;

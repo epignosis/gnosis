@@ -19,7 +19,6 @@ const ThemeValue = ({ select }: { select: (theme: Theme) => unknown }) => {
 };
 
 describe("<ThemeProvider />", () => {
-
   it("merges a custom theme prop over the default theme values", () => {
     const { container } = render(
       <ThemeProvider theme={{ body: { background: "red" } }}>

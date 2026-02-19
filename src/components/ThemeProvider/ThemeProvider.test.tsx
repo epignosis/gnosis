@@ -11,6 +11,7 @@ type Theme = typeof defaultTheme;
  * Renders a single theme value as text, selected via a typed callback.
  * Covers the acceptance criterion: "child components can access the merged theme via useTheme".
  */
+
 const ThemeValue = ({ select }: { select: (theme: Theme) => unknown }) => {
   const theme = useTheme() as Theme;
 
@@ -18,26 +19,18 @@ const ThemeValue = ({ select }: { select: (theme: Theme) => unknown }) => {
 };
 
 describe("<ThemeProvider />", () => {
-  it("renders its children", () => {
-    render(
-      <ThemeProvider>
-        <p>hello</p>
-      </ThemeProvider>,
-    );
-
-    expect(screen.getByText("hello")).toBeInTheDocument();
-  });
 
   it("merges a custom theme prop over the default theme values", () => {
-    render(
+    const { container } = render(
       <ThemeProvider theme={{ body: { background: "red" } }}>
         <ThemeValue select={(t) => t.body.background} />
       </ThemeProvider>,
     );
 
-    expect(screen.getByTestId("value").textContent).toBe("red");
-    expect(screen.getByTestId("value").textContent).not.toBe(defaultTheme.body.background);
+    expect(container).toMatchSnapshot();
   });
+
+  const getValue = (testId: string) => screen.getByTestId(testId).textContent;
 
   it("generates and applies typeScaleSizes from the default typeScaleConfig", () => {
     const { md } = generateTypeScaleSizes(DEFAULT_TYPESCALE_CONFIG);
@@ -48,7 +41,7 @@ describe("<ThemeProvider />", () => {
       </ThemeProvider>,
     );
 
-    expect(screen.getByTestId("value").textContent).toBe(String(md));
+    expect(getValue("value")).toBe(String(md));
   });
 
   it("generates and applies typeScaleSizes from a custom typeScaleConfig", () => {
@@ -61,7 +54,7 @@ describe("<ThemeProvider />", () => {
       </ThemeProvider>,
     );
 
-    expect(screen.getByTestId("value").textContent).toBe(String(md));
+    expect(getValue("value")).toBe(String(md));
   });
 
   // Negative test

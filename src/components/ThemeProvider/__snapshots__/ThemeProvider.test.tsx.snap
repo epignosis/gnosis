@@ -7,3 +7,13 @@ exports[`<ThemeProvider /> matches snapshot 1`] = `
   </p>
 </div>
 `;
+
+exports[`<ThemeProvider /> merges a custom theme prop over the default theme values 1`] = `
+<div>
+  <span
+    data-testid="value"
+  >
+    red
+  </span>
+</div>
+`;

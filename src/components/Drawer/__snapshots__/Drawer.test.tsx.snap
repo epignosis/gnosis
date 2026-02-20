@@ -27,7 +27,7 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
       style="opacity: 0; transform: none;"
     >
       <header
-        class="css-13we4q5-drawerHeader-drawerHeader"
+        class="css-jqww6s-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -88,7 +88,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
       style="opacity: 0; transform: none;"
     >
       <header
-        class="css-13we4q5-drawerHeader-drawerHeader"
+        class="css-jqww6s-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -117,7 +117,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
         Test body
       </div>
       <footer
-        class="css-ss7yvy-footerContainer-footerContainer"
+        class="css-18ru11e-footerContainer-footerContainer"
         data-testid="drawer-footer"
       >
         Test footer
@@ -159,7 +159,7 @@ exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
       style="opacity: 0; transform: none;"
     >
       <header
-        class="css-glijxi-drawerHeader-drawerHeader"
+        class="css-en9htp-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -219,7 +219,7 @@ exports[`<Drawer/> matches snapshot with right placement 1`] = `
       style="opacity: 0; transform: translateX(100%) translateZ(0);"
     >
       <header
-        class="css-13we4q5-drawerHeader-drawerHeader"
+        class="css-jqww6s-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >

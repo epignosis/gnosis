@@ -1,3 +1,10 @@
+## [6.5.5](https://github.com/epignosis/gnosis/compare/v6.5.4...v6.5.5) (2026-02-24)
+
+
+### Bug Fixes
+
+* adjust drawer header inline padding to ensure consistent spacing. ([#624](https://github.com/epignosis/gnosis/issues/624)) ([d010b3a](https://github.com/epignosis/gnosis/commit/d010b3a20a1f52e445507284325662413ca47aa9))
+
 ## [6.5.4](https://github.com/epignosis/gnosis/compare/v6.5.3...v6.5.4) (2026-02-16)
 
 ## [6.5.3](https://github.com/epignosis/gnosis/compare/v6.5.2...v6.5.3) (2026-02-09)

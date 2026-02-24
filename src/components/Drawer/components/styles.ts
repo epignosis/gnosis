@@ -6,14 +6,10 @@ export const drawerHeader = ({ noGutters }: { noGutters: boolean }): SerializedS
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-inline: ${noGutters ? 0 : "2rem 0"};
+    padding-inline: ${noGutters ? 0 : "2rem"};
     padding-block: ${noGutters ? 0 : "1rem"};
     height: 100%;
     max-height: 4.5rem;
-
-    ${mq["sm"]} {
-      padding: ${noGutters ? 0 : "1rem 2rem"};
-    }
 
     .close-button {
       margin-inline-end: -0.8rem;

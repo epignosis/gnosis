@@ -23,6 +23,7 @@ export default {
     rounded: false,
     as: "button",
     underlined: false,
+    active: false,
   },
 };
 

@@ -24,7 +24,7 @@ exports[`<ToastNotification> matches snapshot for error type 1`] = `
     </div>
     <button
       aria-label="Close toast notification"
-      class="toast-notification__close-btn linkButton css-mb5s1a-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      class="toast-notification__close-btn linkButton css-iz7gwz-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="close-toast-notification"
     >
       <span
@@ -63,7 +63,7 @@ exports[`<ToastNotification> matches snapshot for info type 1`] = `
     </div>
     <button
       aria-label="Close toast notification"
-      class="toast-notification__close-btn linkButton css-mb5s1a-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      class="toast-notification__close-btn linkButton css-iz7gwz-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="close-toast-notification"
     >
       <span
@@ -102,7 +102,7 @@ exports[`<ToastNotification> matches snapshot for success type 1`] = `
     </div>
     <button
       aria-label="Close toast notification"
-      class="toast-notification__close-btn linkButton css-mb5s1a-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      class="toast-notification__close-btn linkButton css-iz7gwz-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="close-toast-notification"
     >
       <span
@@ -141,7 +141,7 @@ exports[`<ToastNotification> matches snapshot for warning type 1`] = `
     </div>
     <button
       aria-label="Close toast notification"
-      class="toast-notification__close-btn linkButton css-mb5s1a-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
+      class="toast-notification__close-btn linkButton css-iz7gwz-baseButton-baseButton-solidButton-solidButton-outlineButton-outlineButton-ghostButton-ghostButton-linkButton-linkButton-iconBeforeButton-iconBeforeButton-iconAfterButton-iconAfterButton-btnContainer-btnContainer"
       data-testid="close-toast-notification"
     >
       <span

@@ -57,7 +57,9 @@ const solidButton = (button: Theme["button"], color: Color): SerializedStyles =>
   background-color: ${button[color].default.background};
   border: 1px solid ${button[color].default.borderColor};
 
-  &:hover {
+  &:hover,
+  &:active,
+  &.active {
     color: ${button[color].hover.color};
     background-color: ${button[color].hover.background};
     border-color: ${button[color].hover.borderColor};
@@ -81,7 +83,8 @@ const solidButton = (button: Theme["button"], color: Color): SerializedStyles =>
     }
   }
 
-  &:active {
+  &:active,
+  &.active {
     color: ${button[color].active.color};
     background-color: ${button[color].active.background};
     border-color: ${button[color].active.borderColor};
@@ -99,7 +102,9 @@ const outlineButton = (button: Theme["button"], color: Color): SerializedStyles 
   background-color: transparent;
   border: 1px solid ${button[color].outline.borderColor};
 
-  &:hover {
+  &:hover,
+  &:active,
+  &.active {
     color: ${button[color].hover.color};
     background-color: ${button[color].hover.background};
     border-color: ${button[color].hover.borderColor};
@@ -123,7 +128,8 @@ const outlineButton = (button: Theme["button"], color: Color): SerializedStyles 
     }
   }
 
-  &:active {
+  &:active,
+  &.active {
     color: ${button[color].active.color};
     background-color: ${button[color].active.background};
     border-color: ${button[color].active.borderColor};
@@ -141,7 +147,9 @@ const ghostButton = (button: Theme["button"], color: Color): SerializedStyles =>
   border: none;
   color: ${button[color].ghost.color};
 
-  &:hover {
+  &:hover,
+  &:active,
+  &.active {
     color: ${button[color].ghost.hoverColor};
     background-color: ${button[color].ghost.background};
   }
@@ -152,7 +160,9 @@ const linkButton = (button: Theme["button"], color: Color): SerializedStyles => 
   background-color: transparent;
   border: none;
 
-  &:hover {
+  &:hover,
+  &:active,
+  &.active {
     color: ${button[color].link.hoverColor};
   }
 `;
@@ -229,7 +239,8 @@ export const btnContainer = (
       &,
       &:hover,
       &:focus,
-      &:active {
+      &:active,
+      &.active {
         color: ${button.disabled.color};
         background-color: ${button.disabled.background};
         border-color: ${button.disabled.borderColor};

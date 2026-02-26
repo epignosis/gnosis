@@ -1,3 +1,10 @@
+# [6.6.0](https://github.com/epignosis/gnosis/compare/v6.5.5...v6.6.0) (2026-02-26)
+
+
+### Features
+
+* **button:** add active state support and styles ([#622](https://github.com/epignosis/gnosis/issues/622)) ([f397d81](https://github.com/epignosis/gnosis/commit/f397d818fa196716758ca390a9e40dd783954c64))
+
 ## [6.5.5](https://github.com/epignosis/gnosis/compare/v6.5.4...v6.5.5) (2026-02-24)
 
 

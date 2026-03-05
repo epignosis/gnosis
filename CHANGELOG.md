@@ -1,3 +1,10 @@
+## [6.6.2](https://github.com/epignosis/gnosis/compare/v6.6.1...v6.6.2) (2026-03-05)
+
+
+### Bug Fixes
+
+* fix brain svg width, height ([#627](https://github.com/epignosis/gnosis/issues/627)) ([54120b3](https://github.com/epignosis/gnosis/commit/54120b3246162bfd921b3db215dc6fb749f25cd1))
+
 ## [6.6.1](https://github.com/epignosis/gnosis/compare/v6.6.0...v6.6.1) (2026-02-27)
 
 # [6.6.0](https://github.com/epignosis/gnosis/compare/v6.5.5...v6.6.0) (2026-02-26)

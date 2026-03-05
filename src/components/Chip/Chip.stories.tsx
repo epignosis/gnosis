@@ -20,6 +20,7 @@ export default {
 
 const Template: StoryFn<ChipProps> = (args) => <Chip {...args} />;
 
+// Story for default chip
 export const Default = Template.bind({});
 
 Default.args = {
@@ -27,6 +28,7 @@ Default.args = {
   children: "This is a default chip",
 };
 
+// Story for custom chip
 export const Custom = Template.bind({});
 
 Custom.args = {
@@ -38,6 +40,7 @@ Custom.args = {
   },
 };
 
+// Story for filters chip
 export const Filters = Template.bind({});
 
 Filters.args = {

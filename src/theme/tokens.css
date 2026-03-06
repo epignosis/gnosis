@@ -1,0 +1,168 @@
+/**
+ * Gnosis Design Tokens — CSS Custom Properties
+ *
+ * All design tokens exported as CSS variables for use in CSS/SCSS.
+ * These mirror the tokens defined in src/theme/tokens.ts
+ */
+
+:root {
+  /* ---------------------------------------------------------------------------
+   * COLORS - Base
+   * ---------------------------------------------------------------------------*/
+  --color-base-primary: #0046ab;
+  --color-base-secondary: #9ea5a9;
+  --color-base-green: #1b7855;
+  --color-base-orange: #ff9c28;
+  --color-base-red: #d12525;
+  --color-base-black: #000000;
+  --color-base-white: #ffffff;
+  --color-base-blue: #0046ab;
+
+  /* ---------------------------------------------------------------------------
+   * COLORS - Primary Palette
+   * ---------------------------------------------------------------------------*/
+  --color-primary-lightest: #247dff;
+  --color-primary-lighter: #0169ff;
+  --color-primary-light: #0054cd;
+  --color-primary-base: #0046ab;
+  --color-primary-dark: #003889;
+  --color-primary-darker: #002a67;
+  --color-primary-darkest: #001c44;
+
+  /* ---------------------------------------------------------------------------
+   * COLORS - Secondary Palette
+   * ---------------------------------------------------------------------------*/
+  --color-secondary-lightest: #ffffff;
+  --color-secondary-lighter: #f5f5f6;
+  --color-secondary-light: #c1c5c8;
+  --color-secondary-base: #9ea5a9;
+  --color-secondary-dark: #7b858a;
+  --color-secondary-darker: #5c6468;
+  --color-secondary-darkest: #3d4245;
+
+  /* ---------------------------------------------------------------------------
+   * COLORS - Green Palette
+   * ---------------------------------------------------------------------------*/
+  --color-green-lightest: #2ecc90;
+  --color-green-lighter: #29b47f;
+  --color-green-light: #209066;
+  --color-green-base: #1b7855;
+  --color-green-dark: #166044;
+  --color-green-darker: #104833;
+  --color-green-darkest: #0b3022;
+
+  /* ---------------------------------------------------------------------------
+   * COLORS - Orange Palette
+   * ---------------------------------------------------------------------------*/
+  --color-orange-lightest: #fffbf6;
+  --color-orange-lighter: #ffe0bb;
+  --color-orange-light: #ffb763;
+  --color-orange-base: #ff9c28;
+  --color-orange-dark: #ec7f00;
+  --color-orange-darker: #b15f00;
+  --color-orange-darkest: #764000;
+
+  /* ---------------------------------------------------------------------------
+   * COLORS - Red Palette
+   * ---------------------------------------------------------------------------*/
+  --color-red-lightest: #f1b1b1;
+  --color-red-lighter: #ea8787;
+  --color-red-light: #df4949;
+  --color-red-base: #d12525;
+  --color-red-dark: #a71e1e;
+  --color-red-darker: #7d1616;
+  --color-red-darkest: #540f0f;
+
+  /* ---------------------------------------------------------------------------
+   * COLORS - Named
+   * ---------------------------------------------------------------------------*/
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-blue: #0046ab;
+
+  /* ---------------------------------------------------------------------------
+   * TYPOGRAPHY - Font Family
+   * ---------------------------------------------------------------------------*/
+  --font-family-body: "Mulish", Arial, sans-serif;
+
+  /* ---------------------------------------------------------------------------
+   * TYPOGRAPHY - Font Size (aligned with Figma)
+   * ---------------------------------------------------------------------------*/
+  --font-size-xxs: 0.5rem; /* 8px */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px - base */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.375rem; /* 22px */
+  --font-size-2xl: 1.75rem; /* 28px */
+  --font-size-3xl: 2.125rem; /* 34px */
+
+  /* ---------------------------------------------------------------------------
+   * TYPOGRAPHY - Line Height
+   * ---------------------------------------------------------------------------*/
+  --line-height-base: 1.5715;
+
+  /* ---------------------------------------------------------------------------
+   * TYPOGRAPHY - Font Weight
+   * ---------------------------------------------------------------------------*/
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* ---------------------------------------------------------------------------
+   * SPACING (aligned with Figma)
+   * ---------------------------------------------------------------------------*/
+  --spacing-none: 0; /* 0px */
+  --spacing-xxs: 0.25rem; /* 4px */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 0.75rem; /* 12px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+
+  /* ---------------------------------------------------------------------------
+   * BORDER RADIUS (aligned with Figma)
+   * ---------------------------------------------------------------------------*/
+  --border-radius-none: 0;
+  --border-radius-sm: 5px;
+  --border-radius-xl: 30px;
+  --border-radius-full: 50%;
+
+  /* ---------------------------------------------------------------------------
+   * SHADOWS
+   * ---------------------------------------------------------------------------*/
+  --shadow-sm: 0 3px 6px #c1c5c8;
+  --shadow-checkbox: 0px 0px 0px 9px rgba(36, 125, 255, 0.25);
+
+  /* ---------------------------------------------------------------------------
+   * BREAKPOINTS (px values)
+   * ---------------------------------------------------------------------------*/
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1600px;
+  --breakpoint-3xl: 1920px;
+
+  /* ---------------------------------------------------------------------------
+   * Z-INDEX
+   * ---------------------------------------------------------------------------*/
+  --z-index-base: 0;
+  --z-index-raised: 1;
+  --z-index-overlay: 2;
+  --z-index-drawer: 3;
+  --z-index-dropdown: 100;
+  --z-index-sidebar: 1001;
+  --z-index-modal: 1001;
+
+  /* ---------------------------------------------------------------------------
+   * TRANSITIONS
+   * ---------------------------------------------------------------------------*/
+  --transition-fast: 0.2s;
+  --transition-base: 0.3s;
+  --transition-ease-in: 0.2s ease-in;
+  --transition-ease-in-out: 0.3s ease-in-out;
+  --transition-ease-out: 0.2s ease;
+}

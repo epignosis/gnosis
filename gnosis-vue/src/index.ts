@@ -47,11 +47,33 @@ import { withVModel, inputLike, checkboxLike, selectLike, toggleLike } from "./u
 // ─── Veaury init ────────────────────────────────────────────────
 setVeauryOptions({ react: { createRoot } });
 
+// Unwrap ESM/CJS interop: @epignosis_llc/gnosis may export components as { default: Component }, which React.createElement rejects (expects function/class)
+function resolveComponent(Comp: unknown): React.ComponentType<any> {
+  if (Comp && typeof Comp === "object" && "default" in (Comp as object)) {
+    const defaultComp = (Comp as { default?: React.ComponentType<any> }).default;
+    return (defaultComp ?? Comp) as React.ComponentType<any>;
+  }
+  return Comp as React.ComponentType<any>;
+}
+
+// Same as applyPureReactInVue but wraps the React component with ThemeProvider so it receives theme (e.g. in Storybook) without a root ThemeProvider
+function withTheme(ReactComponent: React.ComponentType<any>) {
+  const ThemeProvider = resolveComponent(ReactThemeProvider);
+  const WrappedWithTheme = (props: any) =>
+    React.createElement(
+      ThemeProvider,
+      null,
+      React.createElement(resolveComponent(ReactComponent), props),
+    );
+  WrappedWithTheme.displayName = `WithTheme(${
+    ReactComponent.displayName || ReactComponent.name || "Component"
+  })`;
+  return WrappedWithTheme;
+}
+
 // Same as applyPureReactInVue but wraps the React component with ThemeProvider so it receives theme (e.g. in Storybook) without a root ThemeProvider
 function applyPureReactInVueWithTheme(ReactComponent: React.ComponentType<any>) {
-  return applyPureReactInVue((props: any) =>
-    React.createElement(ReactThemeProvider, null, React.createElement(ReactComponent, props)),
-  );
+  return applyPureReactInVue(withTheme(ReactComponent));
 }
 
 // ─── Presentational components ──────────────────────────────────
@@ -85,21 +107,15 @@ export const FormError = applyPureReactInVueWithTheme(ReactFormError);
 export const InputError = applyPureReactInVueWithTheme(ReactInputError);
 
 // ─── Form components (with v-model) ────────────────────────────
-export const Input = withVModel(applyPureReactInVueWithTheme(ReactInput), inputLike);
-export const Textarea = withVModel(applyPureReactInVueWithTheme(ReactTextarea), inputLike);
-export const Select = withVModel(applyPureReactInVueWithTheme(ReactSelect), selectLike);
-export const Checkbox = withVModel(applyPureReactInVueWithTheme(ReactCheckbox), checkboxLike);
-export const CheckboxGroup = withVModel(
-  applyPureReactInVueWithTheme(ReactCheckboxGroup),
-  inputLike,
-);
-export const RadioButtonGroup = withVModel(
-  applyPureReactInVueWithTheme(ReactRadioButtonGroup),
-  inputLike,
-);
-export const RadioGroup = withVModel(applyPureReactInVueWithTheme(ReactRadioGroup), inputLike);
-export const Radio = withVModel(applyPureReactInVueWithTheme(ReactRadio), checkboxLike);
-export const ToggleSwitch = withVModel(applyPureReactInVueWithTheme(ReactToggleSwitch), toggleLike);
+export const Input = withVModel(withTheme(ReactInput), inputLike);
+export const Textarea = withVModel(withTheme(ReactTextarea), inputLike);
+export const Select = withVModel(withTheme(ReactSelect), selectLike);
+export const Checkbox = withVModel(withTheme(ReactCheckbox), checkboxLike);
+export const CheckboxGroup = withVModel(withTheme(ReactCheckboxGroup), inputLike);
+export const RadioButtonGroup = withVModel(withTheme(ReactRadioButtonGroup), inputLike);
+export const RadioGroup = withVModel(withTheme(ReactRadioGroup), inputLike);
+export const Radio = withVModel(withTheme(ReactRadio), checkboxLike);
+export const ToggleSwitch = withVModel(withTheme(ReactToggleSwitch), toggleLike);
 
 // ─── Theme & types ──────────────────────────────────────────────
 export { DefaultTheme, typeScale };

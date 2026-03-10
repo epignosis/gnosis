@@ -42,7 +42,13 @@ import {
   DefaultTheme,
   typeScale,
 } from "@epignosis_llc/gnosis";
-import { withVModel, inputLike, checkboxLike, selectLike, toggleLike } from "./utils/withVModel";
+import {
+  applyPureReactInVueWithVModel,
+  inputLike,
+  checkboxLike,
+  selectLike,
+  toggleLike,
+} from "./utils/applyPureReactInVueWithVModel";
 
 // ─── Veaury init ────────────────────────────────────────────────
 setVeauryOptions({ react: { createRoot } });
@@ -107,19 +113,28 @@ export const FormError = applyPureReactInVueWithTheme(ReactFormError);
 export const InputError = applyPureReactInVueWithTheme(ReactInputError);
 
 // ─── Form components (with v-model) ────────────────────────────
-export const Input = withVModel(withTheme(ReactInput), inputLike);
-export const Textarea = withVModel(withTheme(ReactTextarea), inputLike);
-export const Select = withVModel(withTheme(ReactSelect), selectLike);
-export const Checkbox = withVModel(withTheme(ReactCheckbox), checkboxLike);
-export const CheckboxGroup = withVModel(withTheme(ReactCheckboxGroup), inputLike);
-export const RadioButtonGroup = withVModel(withTheme(ReactRadioButtonGroup), inputLike);
-export const RadioGroup = withVModel(withTheme(ReactRadioGroup), inputLike);
-export const Radio = withVModel(withTheme(ReactRadio), checkboxLike);
-export const ToggleSwitch = withVModel(withTheme(ReactToggleSwitch), toggleLike);
+export const Input = applyPureReactInVueWithVModel(withTheme(ReactInput), inputLike);
+export const Textarea = applyPureReactInVueWithVModel(withTheme(ReactTextarea), inputLike);
+export const Select = applyPureReactInVueWithVModel(withTheme(ReactSelect), selectLike);
+export const Checkbox = applyPureReactInVueWithVModel(withTheme(ReactCheckbox), checkboxLike);
+export const CheckboxGroup = applyPureReactInVueWithVModel(
+  withTheme(ReactCheckboxGroup),
+  inputLike,
+);
+export const RadioButtonGroup = applyPureReactInVueWithVModel(
+  withTheme(ReactRadioButtonGroup),
+  inputLike,
+);
+export const RadioGroup = applyPureReactInVueWithVModel(withTheme(ReactRadioGroup), inputLike);
+export const Radio = applyPureReactInVueWithVModel(withTheme(ReactRadio), checkboxLike);
+export const ToggleSwitch = applyPureReactInVueWithVModel(withTheme(ReactToggleSwitch), toggleLike);
 
 // ─── Theme & types ──────────────────────────────────────────────
 export { DefaultTheme, typeScale };
-export { withVModel, type VModelMapping } from "./utils/withVModel";
+export {
+  applyPureReactInVueWithVModel,
+  type VModelMapping,
+} from "./utils/applyPureReactInVueWithVModel";
 export type {
   GnosisTheme,
   TableProps,

@@ -2,25 +2,9 @@ import React, { useState } from "react";
 import { StoryFn } from "@storybook/react";
 import { Button, Input } from "../../";
 import Modal, { ReactModalProps } from "./Modal";
+import { modalMeta } from "./Modal.meta";
 
-export default {
-  component: Modal,
-  title: "Components/Modal",
-  parameters: {
-    controls: { hideNoControlsWarning: true },
-  },
-  argTypes: {
-    size: {
-      control: {
-        type: "select",
-        options: ["md", "lg", "fullscreen"],
-      },
-    },
-  },
-  args: {
-    size: "md",
-  },
-};
+export default { ...modalMeta, component: Modal };
 
 export const Default: StoryFn<ReactModalProps> = (args) => {
   const [isOpen, setIsOpen] = useState(false);

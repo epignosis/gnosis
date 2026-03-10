@@ -2,30 +2,15 @@ import React, { ReactNode } from "react";
 import { StoryFn } from "@storybook/react";
 import { Button } from "../../";
 import Tooltip, { TooltipProps } from "./Tooltip";
+import {
+  tooltipMeta,
+  defaultArgs,
+  withMaxWidthArgs,
+  withNoArrowArgs,
+  withBorderColorArgs,
+} from "./Tooltip.meta";
 
-export default {
-  component: Tooltip,
-  title: "Components/Tooltip",
-  argTypes: {
-    placement: {
-      control: {
-        type: "select",
-        options: ["top", "right", "left", "bottom"],
-      },
-    },
-    as: {
-      control: {
-        type: "select",
-        options: ["div", "span"],
-      },
-    },
-  },
-  decorators: [
-    (story: () => ReactNode): JSX.Element => (
-      <div style={{ marginTop: 150, display: "flex", justifyContent: "center" }}>{story()}</div>
-    ),
-  ],
-};
+export default { ...tooltipMeta, component: Tooltip };
 
 export const Default: StoryFn<TooltipProps> = (args) => (
   <div>
@@ -35,36 +20,16 @@ export const Default: StoryFn<TooltipProps> = (args) => (
   </div>
 );
 
-Default.args = {
-  placement: "top",
-  content: "This is a tooltip",
-  as: "div",
-};
+Default.args = defaultArgs;
 
 export const WithMaxWidth = Default.bind({});
 
-WithMaxWidth.args = {
-  placement: "top",
-  maxWidth: 650,
-  content:
-    "Once upon a midnight dreary, as I pondered, weak and weary, over many a quaint and curious volume of forgotten lore—while I nodded, nearly napping, suddenly there came a tapping, as of someone gently rapping, rapping at my chamber door. 'Tis some visitor,' I muttered, 'tapping at my chamber door—only this and nothing more.' Ah, distinctly I remember it was in the bleak December; and each separate dying ember wrought its ghost upon the floor. From my books surcease of sorrow—sorrow for the lost Lenore—for the rare and radiant maiden whom the angels name Lenore—nameless here for evermore.",
-  as: "div",
-};
+WithMaxWidth.args = withMaxWidthArgs;
 
 export const WithNoArrow = Default.bind({});
 
-WithNoArrow.args = {
-  placement: "top",
-  content: "This is a tooltip with no arrow",
-  as: "div",
-  showArrow: false,
-};
+WithNoArrow.args = withNoArrowArgs;
 
 export const WithBorderColor = Default.bind({});
 
-WithBorderColor.args = {
-  placement: "top",
-  content: "This is a tooltip with a border color",
-  as: "div",
-  borderColor: "red",
-};
+WithBorderColor.args = withBorderColorArgs;

@@ -1,51 +1,9 @@
 import React from "react";
 import { StoryFn } from "@storybook/react";
 import RadioGroupComponent, { RadioGroupProps } from "./RadioGroup";
+import { radioGroupMeta, defaultArgs, withInitialValueArgs } from "./RadioGroup.meta";
 
-export default {
-  title: "components/Form Elements/Radio Group",
-  component: RadioGroupComponent,
-  args: {
-    size: "md",
-    inline: false,
-    initialValue: "",
-    groupname: "radio-group",
-    id: "radioGroupStory",
-    className: "radioGroupStory",
-    options: [
-      {
-        label: "All",
-        value: "all",
-      },
-      {
-        label: "In progress",
-        value: "progress",
-      },
-      {
-        label: "Completed",
-        value: "completed",
-      },
-      {
-        label: "Failed",
-        value: "failed",
-      },
-    ],
-  },
-  argTypes: {
-    size: {
-      control: {
-        type: "select",
-        options: ["md", "lg"],
-      },
-    },
-    initialValue: {
-      control: {
-        type: "select",
-        options: ["all", "progress", "completed", "failed"],
-      },
-    },
-  },
-};
+export default { ...radioGroupMeta, component: RadioGroupComponent };
 
 const Template: StoryFn<RadioGroupProps> = (args) => <RadioGroupComponent {...args} />;
 
@@ -79,10 +37,7 @@ WithDisabledOptions.args = {
 
 export const WithInitialValue = Template.bind({});
 
-WithInitialValue.args = {
-  groupname: "radio-group-with-value",
-  initialValue: "completed",
-};
+WithInitialValue.args = withInitialValueArgs;
 
 export const RadioWithJsxLabel = Template.bind({});
 

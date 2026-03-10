@@ -2,35 +2,9 @@ import React, { useState } from "react";
 import { StoryFn } from "@storybook/react";
 import { Button, Input } from "../../";
 import DrawerComponent, { DrawerProps } from "./Drawer";
+import { drawerMeta } from "./Drawer.meta";
 
-export default {
-  title: "components/Drawer",
-  component: DrawerComponent,
-  argTypes: {
-    placement: {
-      control: {
-        type: "select",
-        options: ["left", "right"],
-      },
-    },
-  },
-  decorators: [
-    (Story: StoryFn): JSX.Element => (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          justifyContent: "center",
-          marginTop: 200,
-        }}
-      >
-        <DrawerComponent.Root />
-        <Story />
-      </div>
-    ),
-  ],
-};
+export default { ...drawerMeta, component: DrawerComponent };
 
 type DrawerArgs = Pick<DrawerProps, "placement" | "showMask"> & {
   headerCloseBtn: boolean;

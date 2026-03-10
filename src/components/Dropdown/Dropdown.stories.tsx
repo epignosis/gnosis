@@ -7,6 +7,7 @@ import { WarningSVG } from "../../icons/";
 import Dropdown from "./Dropdown";
 import { DropdownItem, DropdownProps } from "./types";
 import { FCWithChildren } from "types/common";
+import { dropdownMeta } from "./Dropdown.meta";
 
 const dropdownList: DropdownItem[] = [
   {
@@ -37,31 +38,8 @@ const dropdownList: DropdownItem[] = [
 ];
 
 export default {
-  title: "components/Dropdown",
+  ...dropdownMeta,
   component: Dropdown,
-  argTypes: {
-    placement: {
-      control: {
-        type: "select",
-        options: ["bottom-start", "bottom-end", "top-start", "top-end", "end-top"],
-      },
-    },
-    isSearchable: {
-      control: "boolean",
-    },
-    fullWidth: {
-      control: "boolean",
-    },
-    textSize: {
-      control: {
-        type: "select",
-        options: ["xs", "sm", "md"],
-      },
-    },
-    fixPlacement: {
-      control: "boolean",
-    },
-  },
   args: {
     placement: "bottom-start",
     isSearchable: true,

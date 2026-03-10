@@ -5,71 +5,9 @@ import { defaultOptions, groupedOptions, menuMinWidthOptions } from "./data";
 import Select from "./Select";
 import { formatOptionLabel } from "./helpers";
 import { selectOptionsWithLevels } from "./constants";
+import { selectMeta } from "./Select.meta";
 
-export default {
-  title: "components/Form Elements/Select",
-  component: Select,
-  args: {
-    size: "md",
-    label: "Choose a programming language",
-    inline: false,
-    id: "programming-language",
-    tooltipContent: "Tooltip placeholder",
-    "aria-label": "Programming Language",
-  },
-  argTypes: {
-    size: {
-      control: {
-        type: "select",
-        options: ["sm", "md", "lg"],
-      },
-    },
-    isRtl: {
-      control: {
-        type: "boolean",
-      },
-    },
-    isDisabled: {
-      control: {
-        type: "boolean",
-      },
-    },
-    isClearable: {
-      control: {
-        type: "boolean",
-      },
-    },
-    menuIsOpen: {
-      control: {
-        type: "boolean",
-      },
-    },
-    isMulti: {
-      control: {
-        type: "boolean",
-      },
-    },
-    allowTextWrap: {
-      control: {
-        type: "boolean",
-      },
-    },
-    status: {
-      control: {
-        type: "select",
-        options: ["valid", "error"],
-      },
-    },
-    onChange: { action: "value changed" },
-  },
-  decorators: [
-    (Story: StoryFn): JSX.Element => (
-      <div>
-        <Story />
-      </div>
-    ),
-  ],
-};
+export default { ...selectMeta, component: Select };
 
 const Template: StoryFn<CustomSelectProps<CustomOption, boolean>> = (args) => {
   return <Select {...args} formatOptionLabel={formatOptionLabel} />;

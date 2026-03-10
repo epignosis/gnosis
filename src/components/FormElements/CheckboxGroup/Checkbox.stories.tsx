@@ -1,24 +1,9 @@
 import React from "react";
 import { StoryFn } from "@storybook/react";
 import CheckboxComponent, { CheckboxProps } from "./Checkbox";
+import { checkboxMeta, withRequiredArgs } from "./Checkbox.meta";
 
-export default {
-  title: "components/Form Elements/Checkbox/Checkbox",
-  component: CheckboxComponent,
-  argTypes: {
-    size: {
-      control: {
-        type: "select",
-        options: ["md", "lg"],
-      },
-    },
-  },
-  args: {
-    size: "md",
-    inline: false,
-    disabled: false,
-  },
-};
+export default { ...checkboxMeta, component: CheckboxComponent };
 
 const options = [
   {
@@ -87,9 +72,7 @@ export const Checkbox: StoryFn<CheckboxStoryProps> = (args) => {
 
 export const WithRequired = Checkbox.bind({});
 
-WithRequired.args = {
-  required: true,
-};
+WithRequired.args = withRequiredArgs;
 
 export const CheckboxWithJSXLabel: StoryFn<CheckboxStoryProps> = (args) => {
   return (

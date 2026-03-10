@@ -3,24 +3,9 @@ import { StoryFn } from "@storybook/react";
 import Button from "../Button/Button";
 import { MessageIconSVG } from "../../icons/";
 import Badge, { BadgeProps } from "./Badge";
+import { badgeMeta, withBadgeContentArgs, withoutBadgeContentArgs, noContentWithPulseArgs } from "./Badge.meta";
 
-export default {
-  title: "Components/Badge",
-  argTypes: {
-    size: {
-      control: {
-        type: "select",
-      },
-      options: ["md", "lg"],
-    },
-    withPulse: {
-      control: "boolean",
-    },
-  },
-  args: {
-    withPulse: false,
-  },
-};
+export default { ...badgeMeta, component: Badge };
 
 const Template: StoryFn<BadgeProps> = (args) => (
   <div style={{ display: "flex", alignItems: "center" }}>
@@ -42,31 +27,12 @@ const Template: StoryFn<BadgeProps> = (args) => (
 
 export const WithBadgeContent = Template.bind({});
 
-WithBadgeContent.args = {
-  offset: {
-    right: "-15px",
-    top: "-7px",
-  },
-  children: "Notifications",
-  size: "md",
-  badgeContent: "5",
-};
+WithBadgeContent.args = withBadgeContentArgs;
 
 export const WithoutBadgeContent = Template.bind({});
 
-WithoutBadgeContent.args = {
-  offset: {
-    right: "-8px",
-    top: "0px",
-  },
-  children: "Notifications",
-  size: "md",
-};
+WithoutBadgeContent.args = withoutBadgeContentArgs;
 
 export const NoContentWithPulse = Template.bind({});
-NoContentWithPulse.args = {
-  children: "Notifications",
-  size: "lg",
-  withPulse: true,
-};
+NoContentWithPulse.args = noContentWithPulseArgs;
 NoContentWithPulse.storyName = "Without Badge Content With Pulse";

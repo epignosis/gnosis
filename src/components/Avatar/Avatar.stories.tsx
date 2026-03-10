@@ -3,32 +3,15 @@ import { StoryFn } from "@storybook/react";
 import { CertificateSVG } from "../../icons/";
 import Avatar, { AvatarBaseProps, AvatarProps } from "./Avatar";
 import { colors } from "@theme/default/colors";
+import { avatarMeta, avatarImageArgs, stringAvatarArgs } from "./Avatar.meta";
 
-export default {
-  component: Avatar,
-  title: "Components/Avatar",
-  argTypes: {
-    size: {
-      control: {
-        type: "select",
-        options: ["xs", "sm", "md", "lg", "xl"],
-      },
-    },
-  },
-  args: {
-    size: "sm",
-    className: "avatarStory",
-  },
-};
+export default { ...avatarMeta, component: Avatar };
 
 const Template: StoryFn<AvatarBaseProps & AvatarProps> = (args) => <Avatar {...args} />;
 
 export const AvatarImage = Template.bind({});
 
-AvatarImage.args = {
-  alt: "John Doe",
-  src: "https://talentlms-prod-frontend-static.s3.amazonaws.com/images/default_user_avatar.png",
-};
+AvatarImage.args = avatarImageArgs;
 
 AvatarImage.argTypes = {
   children: {
@@ -57,9 +40,7 @@ IconAvatar.argTypes = {
 
 export const StringAvatar = Template.bind({});
 
-StringAvatar.args = {
-  children: "JT",
-};
+StringAvatar.args = stringAvatarArgs;
 
 StringAvatar.argTypes = {
   ...IconAvatar.argTypes,

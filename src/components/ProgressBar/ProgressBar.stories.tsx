@@ -1,45 +1,27 @@
 import React, { ReactNode } from "react";
 import { StoryFn } from "@storybook/react";
 import ProgressBar, { ProgressBarProps } from "./ProgressBar";
+import {
+  progressBarMeta,
+  defaultArgs,
+  customSizeArgs,
+  customTextArgs,
+  percentageAfterArgs,
+  largeArgs,
+  smallArgs,
+  extraSmallArgs,
+  withLabelBeforeArgs,
+  withLabelAfterArgs,
+  darkGreenArgs,
+} from "./ProgressBar.meta";
 
-export default {
-  component: ProgressBar,
-  title: "Components/ProgressBar",
-  argTypes: {
-    percent: {
-      control: {
-        type: "range",
-        min: 0,
-        max: 100,
-        step: 1,
-      },
-    },
-    size: {
-      control: {
-        type: "select",
-        options: ["xs", "sm", "md", "lg"],
-      },
-    },
-    color: {
-      control: {
-        type: "select",
-        options: ["success", "primary"],
-      },
-    },
-  },
-  decorators: [
-    (story: () => ReactNode): JSX.Element => <div style={{ maxWidth: 500 }}>{story()}</div>,
-  ],
-};
+export default { ...progressBarMeta, component: ProgressBar };
 
 const Template: StoryFn<ProgressBarProps> = (args) => <ProgressBar {...args} />;
 
 export const Default = Template.bind({});
 
-Default.args = {
-  size: "md",
-  percent: 40,
-};
+Default.args = defaultArgs;
 
 export const CustomRadius = Template.bind({});
 
@@ -56,61 +38,35 @@ CustomRadius.args = {
 
 export const CustomSize = Template.bind({});
 
-CustomSize.args = {
-  percent: 40,
-  size: 15,
-};
+CustomSize.args = customSizeArgs;
 
 export const CustomText = Template.bind({});
 
-CustomText.args = {
-  percent: 75,
-  customText: "3/4",
-};
+CustomText.args = customTextArgs;
 
 export const PercentageAfter = Template.bind({});
 
-PercentageAfter.args = {
-  percent: 75,
-  percentageAfter: true,
-};
+PercentageAfter.args = percentageAfterArgs;
 
 export const Large = Template.bind({});
 
-Large.args = {
-  size: "lg",
-  percent: 75,
-};
+Large.args = largeArgs;
 
 export const Small = Template.bind({});
 
-Small.args = {
-  size: "sm",
-  percent: 75,
-};
+Small.args = smallArgs;
 
 export const ExtraSmall = Template.bind({});
 
-ExtraSmall.args = {
-  size: "xs",
-  percent: 75,
-};
+ExtraSmall.args = extraSmallArgs;
 
 export const WithLabelBefore = Template.bind({});
 
-WithLabelBefore.args = {
-  size: "md",
-  percent: 75,
-  labelBefore: "Completed 75%",
-};
+WithLabelBefore.args = withLabelBeforeArgs;
 
 export const WithLabelAfter = Template.bind({});
 
-WithLabelAfter.args = {
-  size: "sm",
-  percent: 75,
-  labelAfter: "Completed 75%",
-};
+WithLabelAfter.args = withLabelAfterArgs;
 
 export const White: StoryFn<ProgressBarProps> = (args) => (
   <div style={{ background: "#103E6B", padding: "2rem" }}>
@@ -127,11 +83,7 @@ White.args = {
 
 export const DarkGreen = Template.bind({});
 
-DarkGreen.args = {
-  size: "md",
-  percent: 75,
-  color: "darkgreen",
-};
+DarkGreen.args = darkGreenArgs;
 
 export const CourseCardProgress = Template.bind({});
 

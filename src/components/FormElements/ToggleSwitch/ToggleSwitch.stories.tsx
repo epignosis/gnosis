@@ -6,9 +6,16 @@ import Button from "../../Button/Button";
 import Text from "../../Text/Text";
 import Heading from "../../Heading/Heading";
 import ToggleSwitch, { ToggleProps, ToggleSwitchHandlers } from "./ToggleSwitch";
+import {
+  toggleSwitchMeta,
+  defaultArgs,
+  withDescriptionArgs,
+  withLabelAfterArgs,
+  completeExampleArgs,
+} from "./ToggleSwitch.meta";
 
 const meta: Meta<typeof ToggleSwitch> = {
-  title: "components/Form Elements/ToggleSwitch",
+  ...toggleSwitchMeta,
   component: ToggleSwitch,
   parameters: {
     docs: {
@@ -16,49 +23,6 @@ const meta: Meta<typeof ToggleSwitch> = {
         component:
           "A flexible toggle switch component with support for labels, descriptions, tooltips, variants, and sizes.",
       },
-    },
-  },
-  args: {
-    id: "toggle-switch",
-  },
-  argTypes: {
-    variant: {
-      control: { type: "select" },
-      options: ["primary", "success"],
-      description: "Visual style variant of the toggle switch",
-    },
-    size: {
-      control: { type: "select" },
-      options: ["sm", "md"],
-      description: "Size of the toggle switch",
-    },
-    isDisabled: {
-      control: "boolean",
-      description: "Whether the toggle is disabled",
-    },
-    defaultChecked: {
-      control: "boolean",
-      description: "Initial checked state",
-    },
-    required: {
-      control: "boolean",
-      description: "Whether the toggle is required (shows asterisk)",
-    },
-    hasInlineText: {
-      control: "boolean",
-      description: "Show enabled/disabled text inside medium size toggles",
-    },
-    showOutlineBorder: {
-      control: "boolean",
-      description: "Show outline border around the toggle",
-    },
-    preventToggle: {
-      control: "boolean",
-      description: "Prevent automatic state changes (for custom handling)",
-    },
-    notSwitchedOff: {
-      control: "boolean",
-      description: "Special styling for labels that are never switched off",
     },
   },
   decorators: [
@@ -76,21 +40,14 @@ const Template: StoryFn<ToggleProps> = (args) => <ToggleSwitch {...args} />;
 
 // Basic Examples
 export const Default = Template.bind({});
-Default.args = {
-  labelBefore: "Enable feature",
+Default.args = defaultArgs;
 };
 
 export const WithDescription = Template.bind({});
-WithDescription.args = {
-  labelBefore: "Notifications",
-  description: "Receive email notifications for important updates",
-};
+WithDescription.args = withDescriptionArgs;
 
 export const WithLabelAfter = Template.bind({});
-WithLabelAfter.args = {
-  labelAfter: "Dark mode",
-  required: true,
-};
+WithLabelAfter.args = withLabelAfterArgs;
 
 export const WithBothLabels = Template.bind({});
 WithBothLabels.args = {
@@ -194,15 +151,7 @@ DisabledUnchecked.args = {
 // Advanced Examples
 export const CompleteExample = Template.bind({});
 CompleteExample.args = {
-  labelBefore: "Enterprise features",
-  description: "Enable advanced enterprise functionality",
-  subtitle: "Requires administrator approval",
-  tooltip: "Contact your system administrator to enable these features",
-  variant: "success",
-  size: "md",
-  hasInlineText: true,
-  required: true,
-  showOutlineBorder: true,
+  ...completeExampleArgs,
   inlineTextTranslations: { enabled: "ACTIVE", disabled: "INACTIVE" },
 };
 

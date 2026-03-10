@@ -2,10 +2,9 @@ import React from "react";
 import { StoryFn } from "@storybook/react";
 import Heading from "../Heading/Heading";
 import Tabs from "./Tabs";
+import { tabsMeta } from "./Tabs.meta";
 
-export default {
-  title: "Components/Tabs",
-};
+export default { ...tabsMeta, component: Tabs };
 
 const tabs = [
   {

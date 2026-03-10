@@ -2,30 +2,19 @@ import React from "react";
 import { StoryFn } from "@storybook/react";
 import { CalendarSVG } from "../../icons/";
 import Button, { ButtonProps } from "./Button";
-import { colors } from "@theme/default/colors";
+import {
+  buttonMeta,
+  primaryArgs,
+  secondaryArgs,
+  dangerArgs,
+  successArgs,
+  primaryLightArgs,
+  primaryDarkerArgs,
+  orangeArgs,
+  whiteArgs,
+} from "./Button.meta";
 
-export default {
-  title: "Components/Button",
-  argTypes: {
-    onClick: { action: "clicked" },
-    color: {
-      control: {
-        type: "select",
-        options: ["primary", "secondary", "danger", "success", "primaryLight"],
-      },
-    },
-  },
-  args: {
-    disabled: false,
-    isLoading: false,
-    block: false,
-    noGutters: false,
-    rounded: false,
-    as: "button",
-    underlined: false,
-    active: false,
-  },
-};
+export default { ...buttonMeta, component: Button };
 
 const Template: StoryFn<ButtonProps<"button">> = ({ style, ...args }) => (
   <div style={style}>
@@ -61,53 +50,31 @@ const Template: StoryFn<ButtonProps<"button">> = ({ style, ...args }) => (
 
 export const Primary = Template.bind({});
 
-Primary.args = {
-  color: "primary",
-  children: "Primary",
-};
+Primary.args = primaryArgs;
 
 export const Secondary = Template.bind({});
 
-Secondary.args = {
-  color: "secondary",
-  children: "Secondary",
-};
+Secondary.args = secondaryArgs;
 
 export const Danger = Template.bind({});
 
-Danger.args = {
-  color: "danger",
-  children: "Danger",
-};
+Danger.args = dangerArgs;
 
 export const Success = Template.bind({});
 
-Success.args = {
-  color: "success",
-  children: "Success",
-};
+Success.args = successArgs;
 
 export const PrimaryLight = Template.bind({});
 
-PrimaryLight.args = {
-  color: "primaryLight",
-  children: "Primary light",
-  style: { background: colors.primary.darker, padding: "1.25rem 1.25rem 0.25rem" },
-};
+PrimaryLight.args = primaryLightArgs;
 
 export const PrimaryDarker = Template.bind({});
 
-PrimaryDarker.args = {
-  color: "primaryDarker",
-  children: "Primary darker",
-};
+PrimaryDarker.args = primaryDarkerArgs;
 
 export const Orange = Template.bind({});
 
-Orange.args = {
-  color: "orange",
-  children: "Orange",
-};
+Orange.args = orangeArgs;
 
 const WhiteTemplate: StoryFn<ButtonProps<"button">> = ({ style, ...args }) => (
   <>
@@ -149,11 +116,7 @@ const WhiteTemplate: StoryFn<ButtonProps<"button">> = ({ style, ...args }) => (
 
 export const White = WhiteTemplate.bind({});
 
-White.args = {
-  color: "white",
-  children: "White",
-  style: { background: colors.primary.darker, padding: "0.75rem", display: "inline-block" },
-};
+White.args = whiteArgs;
 
 export const WithIconBefore = Template.bind({});
 

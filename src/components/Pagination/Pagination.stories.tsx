@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StoryFn } from "@storybook/react";
 import Pagination from "./Pagination";
 import { PaginationProps, PaginationDropDownOptions } from "./types";
+import { paginationMeta } from "./Pagination.meta";
 
 const rowsPerPageOptions: PaginationDropDownOptions[] = [
   { value: 10, label: "10" },
@@ -30,8 +31,8 @@ const a11yTranslations = {
 };
 
 export default {
+  ...paginationMeta,
   component: Pagination,
-  title: "Components/Pagination",
   argTypes: {
     dir: {
       control: {

@@ -1,27 +1,9 @@
 import { StoryFn } from "@storybook/react";
 import React from "react";
 import Grid, { GridProps } from "./Grid";
+import { gridMeta } from "./Grid.meta";
 
-export default {
-  component: Grid,
-  title: "Components/Grid",
-  argTypes: {
-    as: {
-      control: {
-        type: "select",
-        options: ["div", "article", "section"],
-      },
-    },
-  },
-  args: {
-    templateColumns: [1, 2, 3, 4, 5, 6, 7],
-    gap: 2,
-    as: "div",
-    rowGap: 1,
-    columnGap: 0,
-    className: "gridStory",
-  },
-};
+export default { ...gridMeta, component: Grid };
 
 export const Simple: StoryFn<GridProps> = (args) => (
   <Grid {...args}>

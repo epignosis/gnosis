@@ -3,18 +3,9 @@ import { StoryFn } from "@storybook/react";
 import { Button, Heading, Text, ProgressBar } from "../../";
 import { PlayUnitSVG } from "../../icons/";
 import Card from "./Card";
+import { cardMeta } from "./Card.meta";
 
-export default {
-  title: "components/Card",
-  component: Card,
-  decorators: [
-    (Story: StoryFn): JSX.Element => (
-      <div style={{ maxWidth: 300 }}>
-        <Story />
-      </div>
-    ),
-  ],
-};
+export default { ...cardMeta, component: Card };
 
 const Template: StoryFn<{ isOverlayShow: boolean; isDrawerOpen: boolean }> = ({
   isOverlayShow,

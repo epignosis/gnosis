@@ -1,24 +1,10 @@
 import React, { useState } from "react";
-import { Meta, StoryFn } from "@storybook/react";
+import { StoryFn } from "@storybook/react";
 import { Button } from "../../index";
 import ToastNotification from "./ToastNotifications";
+import { toastMeta, infoArgs, successArgs, warningArgs, errorArgs } from "./Toast.meta";
 
-export default {
-  title: "Components/Toast Notifications",
-  component: ToastNotification,
-  argTypes: {
-    type: {
-      control: {
-        type: "select",
-        options: ["info", "success", "warning", "error"],
-      },
-    },
-    onClose: { action: "closed" },
-  },
-  parameters: {
-    controls: { hideNoControlsWarning: true },
-  },
-} as Meta;
+export default { ...toastMeta, component: ToastNotification };
 
 interface ToastStoryArgs {
   content: string;
@@ -38,25 +24,13 @@ const Template: StoryFn<ToastStoryArgs> = (args: ToastStoryArgs) => {
 };
 
 export const Info = Template.bind({});
-Info.args = {
-  type: "info",
-  content: "This is an informational message",
-};
+Info.args = infoArgs;
 
 export const Success = Template.bind({});
-Success.args = {
-  type: "success",
-  content: "Operation completed successfully!",
-};
+Success.args = successArgs;
 
 export const Warning = Template.bind({});
-Warning.args = {
-  type: "warning",
-  content: "Please be careful with this action",
-};
+Warning.args = warningArgs;
 
 export const Error = Template.bind({});
-Error.args = {
-  type: "error",
-  content: "An error occurred while processing your request",
-};
+Error.args = errorArgs;

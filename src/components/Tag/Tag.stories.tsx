@@ -1,27 +1,16 @@
 import React from "react";
 import { StoryFn } from "@storybook/react";
 import Tag, { TagProps } from "./Tag";
-import { colors } from "@theme/default/colors";
+import { tagMeta, defaultArgs, customArgs } from "./Tag.meta";
 
-export default {
-  component: Tag,
-  title: "Components/Tag",
-};
+export default { ...tagMeta, component: Tag };
 
 const Template: StoryFn<TagProps> = (args) => <Tag {...args} />;
 
 export const Default = Template.bind({});
 
-Default.args = {
-  children: "This is a default tag",
-};
+Default.args = defaultArgs;
 
 export const Custom = Template.bind({});
 
-Custom.args = {
-  children: "This is a custom tag",
-  style: {
-    backgroundColor: colors.red.base,
-    color: colors.black,
-  },
-};
+Custom.args = customArgs;

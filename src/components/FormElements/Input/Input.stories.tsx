@@ -3,50 +3,9 @@ import { StoryFn } from "@storybook/react";
 import { CalendarSVG } from "../../../icons/";
 import InputComponent, { InputProps } from "./Input";
 import SearchInput from "./SearchInput";
+import { inputMeta, withAutoFocusArgs, disabledArgs, withRequiredArgs, withErrorArgs } from "./Input.meta";
 
-export default {
-  title: "components/Form Elements/Input",
-  component: InputComponent,
-  argTypes: {
-    size: {
-      control: {
-        type: "select",
-        options: ["sm", "md", "lg"],
-      },
-    },
-    status: {
-      control: {
-        type: "select",
-        options: ["valid", "error"],
-      },
-    },
-    autoFocus: {
-      control: {
-        type: "boolean",
-      },
-    },
-  },
-  args: {
-    id: "input",
-    size: "md",
-    placeholder: "Your LMS username",
-    label: "Username",
-    inline: false,
-    isClearable: false,
-    status: "valid",
-    className: "inputStory",
-    tooltipContent: "",
-    autoFocus: false,
-    disabled: false,
-  },
-  decorators: [
-    (Story: StoryFn): JSX.Element => (
-      <div style={{ maxWidth: 400 }}>
-        <Story />
-      </div>
-    ),
-  ],
-};
+export default { ...inputMeta, component: InputComponent };
 
 const InputTemplate: StoryFn<InputProps> = (args) => {
   const [state, setState] = useState("");
@@ -77,21 +36,15 @@ export const Default = InputTemplate.bind({});
 
 export const withAutoFocus = InputTemplate.bind({});
 
-withAutoFocus.args = {
-  autoFocus: true,
-};
+withAutoFocus.args = withAutoFocusArgs;
 
 export const Disabled = InputTemplate.bind({});
 
-Disabled.args = {
-  disabled: true,
-};
+Disabled.args = disabledArgs;
 
 export const WithRequired = InputTemplate.bind({});
 
-WithRequired.args = {
-  required: true,
-};
+WithRequired.args = withRequiredArgs;
 
 export const DisabledWithIcon = InputTemplate.bind({});
 
@@ -123,8 +76,6 @@ WithIconAfterNoVerticalLine.args = {
 
 export const WithError = InputTemplate.bind({});
 
-WithError.args = {
-  status: "error",
-};
+WithError.args = withErrorArgs;
 
 export const Search = SearchTemplate.bind({});

@@ -6,6 +6,7 @@ import Text from "../Text/Text";
 import Button from "../Button/Button";
 import Table, { Props } from "./Table";
 import { Row, Sorting, TableHandlers } from "./types";
+import { tableMeta } from "./Table.meta";
 
 const emptyState = {
   title: "No results found with these criteria",
@@ -27,46 +28,7 @@ for (let i = 0; i < 10; i++) {
   });
 }
 
-export default {
-  component: Table,
-  title: "Components/Table",
-  parameters: {
-    controls: { hideNoControlsWarning: true },
-  },
-  args: {
-    columns: [
-      {
-        accessor: "id",
-        cell: "Code",
-        classNames: ["id"],
-        sortOrder: "asc",
-        isDefaultAccessor: true,
-      },
-      {
-        accessor: "description",
-        cell: "Description",
-        classNames: ["description"],
-        sortOrder: "asc",
-        sortableHeader: false,
-      },
-      { accessor: "name", cell: "Name", classNames: ["name"], sortOrder: "asc" },
-      {
-        accessor: "category",
-        cell: "Category",
-        classNames: ["category"],
-        sortOrder: "asc",
-      },
-      { accessor: "date", cell: "Date", classNames: ["date"], sortOrder: "desc" },
-    ],
-    rows,
-    emptyState: {
-      title: "No results found with these criteria",
-      info: "Please try again or",
-      icon: IconEmptyStateSVG,
-    },
-    disabled: false,
-  },
-};
+export default { ...tableMeta, component: Table };
 
 const Template: StoryFn<Props> = (args) => {
   const [, setSelectedRows] = useState<number[]>([]);

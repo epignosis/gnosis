@@ -3,30 +3,15 @@ import { StoryFn } from "@storybook/react";
 import { Button } from "../../";
 import { WarningSVG } from "../../icons/";
 import Result, { ResultProps } from "./Result";
+import { resultMeta, defaultArgs } from "./Result.meta";
 
-export default {
-  title: "Components/Result",
-  component: Result,
-  argTypes: {
-    size: {
-      control: {
-        type: "select",
-        options: ["md", "lg"],
-      },
-    },
-  },
-};
+export default { ...resultMeta, component: Result };
 
 const Template: StoryFn<ResultProps> = (args) => <Result {...args} />;
 
 export const Default = Template.bind({});
 
-Default.args = {
-  icon: WarningSVG,
-  size: "md",
-  title: "This course has no content",
-  info: "This course is still under construction and will be ready soon",
-};
+Default.args = { ...defaultArgs, icon: WarningSVG };
 
 export const WithFooter = Template.bind({});
 

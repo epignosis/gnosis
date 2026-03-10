@@ -1,40 +1,9 @@
 import React from "react";
 import { StoryFn } from "@storybook/react";
 import TextareaComponent, { TextareaProps } from "./Textarea";
+import { textareaMeta, disabledArgs, withRequiredArgs, withRowsArgs } from "./Textarea.meta";
 
-export default {
-  title: "components/Form Elements/Textarea",
-  component: TextareaComponent,
-  args: {
-    label: "Description",
-    id: "textareaInput",
-    inline: false,
-    placeholder: "Type some description",
-    resize: "none",
-    status: "valid",
-  },
-  argTypes: {
-    resize: {
-      control: {
-        type: "select",
-        options: ["none", "vertical", "horizontal", "both"],
-      },
-    },
-    status: {
-      control: {
-        type: "select",
-        options: ["valid", "error"],
-      },
-    },
-  },
-  decorators: [
-    (Story: StoryFn): JSX.Element => (
-      <div style={{ maxWidth: 500 }}>
-        <Story />
-      </div>
-    ),
-  ],
-};
+export default { ...textareaMeta, component: TextareaComponent };
 
 const Template: StoryFn<TextareaProps> = (args) => <TextareaComponent {...args} />;
 
@@ -42,18 +11,12 @@ export const Default = Template.bind({});
 
 export const Disabled = Template.bind({});
 
-Disabled.args = {
-  disabled: true,
-};
+Disabled.args = disabledArgs;
 
 export const WithRequired = Template.bind({});
 
-WithRequired.args = {
-  required: true,
-};
+WithRequired.args = withRequiredArgs;
 
 export const WithRows = Template.bind({});
 
-WithRows.args = {
-  rows: 3,
-};
+WithRows.args = withRowsArgs;

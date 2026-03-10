@@ -11,23 +11,9 @@ import {
   ShowTourSVG,
 } from "../../icons/";
 import SidebarComponent, { SidebarProps } from "./Sidebar";
+import { sidebarMeta } from "./Sidebar.meta";
 
-export default {
-  component: SidebarComponent,
-  title: "Components/Sidebar",
-  decorators: [
-    (story: () => ReactNode): JSX.Element => <div style={{ display: "flex" }}>{story()}</div>,
-  ],
-  argTypes: {
-    onToggle: {
-      action: "Toggle action fired",
-    },
-  },
-  args: {
-    isCollapsed: false,
-    style: { zIndex: 10, overflow: "auto" },
-  },
-};
+export default { ...sidebarMeta, component: SidebarComponent };
 
 export const Sidebar: StoryFn<SidebarProps> = (args) => (
   <SidebarComponent {...args}>

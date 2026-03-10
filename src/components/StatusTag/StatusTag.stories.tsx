@@ -2,36 +2,9 @@ import React from "react";
 import { StoryFn } from "@storybook/react";
 import { InfoIconSVG } from "../../icons";
 import StatusTag, { StatusTagProps } from "./StatusTag";
+import { statusTagMeta } from "./StatusTag.meta";
 
-export default {
-  component: StatusTag,
-  title: "Components/StatusTag",
-  argTypes: {
-    text: "Completed",
-    size: "md",
-    icon: InfoIconSVG,
-    iconSize: 16,
-    color: {
-      type: "select",
-      options: [
-        "neutral",
-        "positive",
-        "negative",
-        "inactive",
-        "warning",
-        "promo",
-        "pale",
-        "grey",
-        "red",
-        "transparent",
-      ],
-    },
-    fontWeight: {
-      type: "select",
-      options: ["400", "700"],
-    },
-  },
-};
+export default { ...statusTagMeta, component: StatusTag };
 
 const Template: StoryFn<StatusTagProps> = (args) => <StatusTag {...args} />;
 

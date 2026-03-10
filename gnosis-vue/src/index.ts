@@ -1,8 +1,6 @@
-import { applyPureReactInVue } from 'veaury'
-import { createRoot } from 'react-dom/client'
-import { setVeauryOptions } from 'veaury'
-import { withVModel, inputLike, checkboxLike, selectLike, toggleLike } from './utils/withVModel'
-
+import { createElement } from "react";
+import { applyPureReactInVue, setVeauryOptions } from "veaury";
+import { createRoot } from "react-dom/client";
 import {
   ThemeProvider as ReactThemeProvider,
   Button as ReactButton,
@@ -43,57 +41,71 @@ import {
   ToggleSwitch as ReactToggleSwitch,
   DefaultTheme,
   typeScale,
-} from '@epignosis_llc/gnosis'
+} from "@epignosis_llc/gnosis";
+import { withVModel, inputLike, checkboxLike, selectLike, toggleLike } from "./utils/withVModel";
 
 // ─── Veaury init ────────────────────────────────────────────────
-setVeauryOptions({ react: { createRoot } })
+setVeauryOptions({ react: { createRoot } });
+
+// Wrap React components with ThemeProvider so they receive theme when used in Vue (e.g. Storybook) without a root ThemeProvider
+function wrapWithTheme(ReactComponent: React.ComponentType<any>) {
+  return applyPureReactInVue((props: any) =>
+    createElement(ReactThemeProvider, null, createElement(ReactComponent, props)),
+  );
+}
 
 // ─── Presentational components ──────────────────────────────────
-export const ThemeProvider = applyPureReactInVue(ReactThemeProvider)
-export const Button = applyPureReactInVue(ReactButton)
-export const Loader = applyPureReactInVue(ReactLoader)
-export const Chip = applyPureReactInVue(ReactChip)
-export const Avatar = applyPureReactInVue(ReactAvatar)
-export const Tag = applyPureReactInVue(ReactTag)
-export const Badge = applyPureReactInVue(ReactBadge)
-export const Alert = applyPureReactInVue(ReactAlert)
-export const ProgressBar = applyPureReactInVue(ReactProgressBar)
-export const Tooltip = applyPureReactInVue(ReactTooltip)
-export const Modal = applyPureReactInVue(ReactModal)
-export const Pagination = applyPureReactInVue(ReactPagination)
-export const Tabs = applyPureReactInVue(ReactTabs)
-export const Result = applyPureReactInVue(ReactResult)
-export const Drawer = applyPureReactInVue(ReactDrawer)
-export const Sidebar = applyPureReactInVue(ReactSidebar)
-export const Card = applyPureReactInVue(ReactCard)
-export const Grid = applyPureReactInVue(ReactGrid)
-export const Table = applyPureReactInVue(ReactTable)
-export const Dropdown = applyPureReactInVue(ReactDropdown)
-export const StatusTag = applyPureReactInVue(ReactStatusTag)
-export const Breadcrumbs = applyPureReactInVue(ReactBreadcrumbs)
-export const ToastNotification = applyPureReactInVue(ReactToastNotification)
-export const Heading = applyPureReactInVue(ReactHeading)
-export const Text = applyPureReactInVue(ReactText)
-export const Label = applyPureReactInVue(ReactLabel)
-export const FormError = applyPureReactInVue(ReactFormError)
-export const InputError = applyPureReactInVue(ReactInputError)
+export const ThemeProvider = applyPureReactInVue(ReactThemeProvider);
+export const Button = wrapWithTheme(ReactButton);
+export const Loader = wrapWithTheme(ReactLoader);
+export const Chip = wrapWithTheme(ReactChip);
+export const Avatar = wrapWithTheme(ReactAvatar);
+export const Tag = wrapWithTheme(ReactTag);
+export const Badge = wrapWithTheme(ReactBadge);
+export const Alert = wrapWithTheme(ReactAlert);
+export const ProgressBar = wrapWithTheme(ReactProgressBar);
+export const Tooltip = wrapWithTheme(ReactTooltip);
+export const Modal = wrapWithTheme(ReactModal);
+export const Pagination = wrapWithTheme(ReactPagination);
+export const Tabs = wrapWithTheme(ReactTabs);
+export const Result = wrapWithTheme(ReactResult);
+export const Drawer = wrapWithTheme(ReactDrawer);
+export const Sidebar = wrapWithTheme(ReactSidebar);
+export const Card = wrapWithTheme(ReactCard);
+export const Grid = wrapWithTheme(ReactGrid);
+export const Table = wrapWithTheme(ReactTable);
+export const Dropdown = wrapWithTheme(ReactDropdown);
+export const StatusTag = wrapWithTheme(ReactStatusTag);
+export const Breadcrumbs = wrapWithTheme(ReactBreadcrumbs);
+export const ToastNotification = wrapWithTheme(ReactToastNotification);
+export const Heading = wrapWithTheme(ReactHeading);
+export const Text = wrapWithTheme(ReactText);
+export const Label = wrapWithTheme(ReactLabel);
+export const FormError = wrapWithTheme(ReactFormError);
+export const InputError = wrapWithTheme(ReactInputError);
 
 // ─── Form components (with v-model) ────────────────────────────
-export const Input = withVModel(ReactInput, inputLike)
-export const Textarea = withVModel(ReactTextarea, inputLike)
-export const Select = withVModel(ReactSelect, selectLike)
-export const Checkbox = withVModel(ReactCheckbox, checkboxLike)
-export const CheckboxGroup = withVModel(ReactCheckboxGroup, inputLike)
-export const RadioButtonGroup = withVModel(ReactRadioButtonGroup, inputLike)
-export const RadioGroup = withVModel(ReactRadioGroup, inputLike)
-export const Radio = withVModel(ReactRadio, checkboxLike)
-export const ToggleSwitch = withVModel(ReactToggleSwitch, toggleLike)
+export const Input = withVModel(wrapWithTheme(ReactInput), inputLike);
+export const Textarea = withVModel(wrapWithTheme(ReactTextarea), inputLike);
+export const Select = withVModel(wrapWithTheme(ReactSelect), selectLike);
+export const Checkbox = withVModel(wrapWithTheme(ReactCheckbox), checkboxLike);
+export const CheckboxGroup = withVModel(wrapWithTheme(ReactCheckboxGroup), inputLike);
+export const RadioButtonGroup = withVModel(wrapWithTheme(ReactRadioButtonGroup), inputLike);
+export const RadioGroup = withVModel(wrapWithTheme(ReactRadioGroup), inputLike);
+export const Radio = withVModel(wrapWithTheme(ReactRadio), checkboxLike);
+export const ToggleSwitch = withVModel(wrapWithTheme(ReactToggleSwitch), toggleLike);
 
 // ─── Theme & types ──────────────────────────────────────────────
-export { DefaultTheme, typeScale }
-export { withVModel, type VModelMapping } from './utils/withVModel'
+export { DefaultTheme, typeScale };
+export { withVModel, type VModelMapping } from "./utils/withVModel";
 export type {
-  GnosisTheme, TableProps, Column, Row,
-  DropdownProps, DropdownItem, TableHandlers,
-  StatusTagColors, Color,
-} from '@epignosis_llc/gnosis'
+  GnosisTheme,
+  TableProps,
+  Column,
+  Row,
+  DropdownProps,
+  DropdownItem,
+  TableHandlers,
+  StatusTagColors,
+  Color,
+} from "@epignosis_llc/gnosis";

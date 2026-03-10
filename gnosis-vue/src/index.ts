@@ -1,4 +1,4 @@
-import { createElement } from "react";
+import * as React from "react";
 import { applyPureReactInVue, setVeauryOptions } from "veaury";
 import { createRoot } from "react-dom/client";
 import {
@@ -47,53 +47,59 @@ import { withVModel, inputLike, checkboxLike, selectLike, toggleLike } from "./u
 // ─── Veaury init ────────────────────────────────────────────────
 setVeauryOptions({ react: { createRoot } });
 
-// Wrap React components with ThemeProvider so they receive theme when used in Vue (e.g. Storybook) without a root ThemeProvider
-function wrapWithTheme(ReactComponent: React.ComponentType<any>) {
+// Same as applyPureReactInVue but wraps the React component with ThemeProvider so it receives theme (e.g. in Storybook) without a root ThemeProvider
+function applyPureReactInVueWithTheme(ReactComponent: React.ComponentType<any>) {
   return applyPureReactInVue((props: any) =>
-    createElement(ReactThemeProvider, null, createElement(ReactComponent, props)),
+    React.createElement(ReactThemeProvider, null, React.createElement(ReactComponent, props)),
   );
 }
 
 // ─── Presentational components ──────────────────────────────────
 export const ThemeProvider = applyPureReactInVue(ReactThemeProvider);
-export const Button = wrapWithTheme(ReactButton);
-export const Loader = wrapWithTheme(ReactLoader);
-export const Chip = wrapWithTheme(ReactChip);
-export const Avatar = wrapWithTheme(ReactAvatar);
-export const Tag = wrapWithTheme(ReactTag);
-export const Badge = wrapWithTheme(ReactBadge);
-export const Alert = wrapWithTheme(ReactAlert);
-export const ProgressBar = wrapWithTheme(ReactProgressBar);
-export const Tooltip = wrapWithTheme(ReactTooltip);
-export const Modal = wrapWithTheme(ReactModal);
-export const Pagination = wrapWithTheme(ReactPagination);
-export const Tabs = wrapWithTheme(ReactTabs);
-export const Result = wrapWithTheme(ReactResult);
-export const Drawer = wrapWithTheme(ReactDrawer);
-export const Sidebar = wrapWithTheme(ReactSidebar);
-export const Card = wrapWithTheme(ReactCard);
-export const Grid = wrapWithTheme(ReactGrid);
-export const Table = wrapWithTheme(ReactTable);
-export const Dropdown = wrapWithTheme(ReactDropdown);
-export const StatusTag = wrapWithTheme(ReactStatusTag);
-export const Breadcrumbs = wrapWithTheme(ReactBreadcrumbs);
-export const ToastNotification = wrapWithTheme(ReactToastNotification);
-export const Heading = wrapWithTheme(ReactHeading);
-export const Text = wrapWithTheme(ReactText);
-export const Label = wrapWithTheme(ReactLabel);
-export const FormError = wrapWithTheme(ReactFormError);
-export const InputError = wrapWithTheme(ReactInputError);
+export const Button = applyPureReactInVueWithTheme(ReactButton);
+export const Loader = applyPureReactInVueWithTheme(ReactLoader);
+export const Chip = applyPureReactInVueWithTheme(ReactChip);
+export const Avatar = applyPureReactInVueWithTheme(ReactAvatar);
+export const Tag = applyPureReactInVueWithTheme(ReactTag);
+export const Badge = applyPureReactInVueWithTheme(ReactBadge);
+export const Alert = applyPureReactInVueWithTheme(ReactAlert);
+export const ProgressBar = applyPureReactInVueWithTheme(ReactProgressBar);
+export const Tooltip = applyPureReactInVueWithTheme(ReactTooltip);
+export const Modal = applyPureReactInVueWithTheme(ReactModal);
+export const Pagination = applyPureReactInVueWithTheme(ReactPagination);
+export const Tabs = applyPureReactInVueWithTheme(ReactTabs);
+export const Result = applyPureReactInVueWithTheme(ReactResult);
+export const Drawer = applyPureReactInVueWithTheme(ReactDrawer);
+export const Sidebar = applyPureReactInVueWithTheme(ReactSidebar);
+export const Card = applyPureReactInVueWithTheme(ReactCard);
+export const Grid = applyPureReactInVueWithTheme(ReactGrid);
+export const Table = applyPureReactInVueWithTheme(ReactTable);
+export const Dropdown = applyPureReactInVueWithTheme(ReactDropdown);
+export const StatusTag = applyPureReactInVueWithTheme(ReactStatusTag);
+export const Breadcrumbs = applyPureReactInVueWithTheme(ReactBreadcrumbs);
+export const ToastNotification = applyPureReactInVueWithTheme(ReactToastNotification);
+export const Heading = applyPureReactInVueWithTheme(ReactHeading);
+export const Text = applyPureReactInVueWithTheme(ReactText);
+export const Label = applyPureReactInVueWithTheme(ReactLabel);
+export const FormError = applyPureReactInVueWithTheme(ReactFormError);
+export const InputError = applyPureReactInVueWithTheme(ReactInputError);
 
 // ─── Form components (with v-model) ────────────────────────────
-export const Input = withVModel(wrapWithTheme(ReactInput), inputLike);
-export const Textarea = withVModel(wrapWithTheme(ReactTextarea), inputLike);
-export const Select = withVModel(wrapWithTheme(ReactSelect), selectLike);
-export const Checkbox = withVModel(wrapWithTheme(ReactCheckbox), checkboxLike);
-export const CheckboxGroup = withVModel(wrapWithTheme(ReactCheckboxGroup), inputLike);
-export const RadioButtonGroup = withVModel(wrapWithTheme(ReactRadioButtonGroup), inputLike);
-export const RadioGroup = withVModel(wrapWithTheme(ReactRadioGroup), inputLike);
-export const Radio = withVModel(wrapWithTheme(ReactRadio), checkboxLike);
-export const ToggleSwitch = withVModel(wrapWithTheme(ReactToggleSwitch), toggleLike);
+export const Input = withVModel(applyPureReactInVueWithTheme(ReactInput), inputLike);
+export const Textarea = withVModel(applyPureReactInVueWithTheme(ReactTextarea), inputLike);
+export const Select = withVModel(applyPureReactInVueWithTheme(ReactSelect), selectLike);
+export const Checkbox = withVModel(applyPureReactInVueWithTheme(ReactCheckbox), checkboxLike);
+export const CheckboxGroup = withVModel(
+  applyPureReactInVueWithTheme(ReactCheckboxGroup),
+  inputLike,
+);
+export const RadioButtonGroup = withVModel(
+  applyPureReactInVueWithTheme(ReactRadioButtonGroup),
+  inputLike,
+);
+export const RadioGroup = withVModel(applyPureReactInVueWithTheme(ReactRadioGroup), inputLike);
+export const Radio = withVModel(applyPureReactInVueWithTheme(ReactRadio), checkboxLike);
+export const ToggleSwitch = withVModel(applyPureReactInVueWithTheme(ReactToggleSwitch), toggleLike);
 
 // ─── Theme & types ──────────────────────────────────────────────
 export { DefaultTheme, typeScale };

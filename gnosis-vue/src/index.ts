@@ -1,8 +1,6 @@
-import { applyPureReactInVue } from 'veaury'
-import { createRoot } from 'react-dom/client'
-import { setVeauryOptions } from 'veaury'
-import { withVModel, inputLike, checkboxLike, selectLike, toggleLike } from './utils/withVModel'
-
+import * as React from "react";
+import { applyPureReactInVue, setVeauryOptions } from "veaury";
+import { createRoot } from "react-dom/client";
 import {
   ThemeProvider as ReactThemeProvider,
   Button as ReactButton,
@@ -43,57 +41,93 @@ import {
   ToggleSwitch as ReactToggleSwitch,
   DefaultTheme,
   typeScale,
-} from '@epignosis_llc/gnosis'
+} from "@epignosis_llc/gnosis";
+import { withVModel, inputLike, checkboxLike, selectLike, toggleLike } from "./utils/withVModel";
 
 // ─── Veaury init ────────────────────────────────────────────────
-setVeauryOptions({ react: { createRoot } })
+setVeauryOptions({ react: { createRoot } });
+
+// Unwrap ESM/CJS interop: @epignosis_llc/gnosis may export components as { default: Component }, which React.createElement rejects (expects function/class)
+function resolveComponent(Comp: unknown): React.ComponentType<any> {
+  if (Comp && typeof Comp === "object" && "default" in (Comp as object)) {
+    const defaultComp = (Comp as { default?: React.ComponentType<any> }).default;
+    return (defaultComp ?? Comp) as React.ComponentType<any>;
+  }
+  return Comp as React.ComponentType<any>;
+}
+
+// Same as applyPureReactInVue but wraps the React component with ThemeProvider so it receives theme (e.g. in Storybook) without a root ThemeProvider
+function withTheme(ReactComponent: React.ComponentType<any>) {
+  const ThemeProvider = resolveComponent(ReactThemeProvider);
+  const WrappedWithTheme = (props: any) =>
+    React.createElement(
+      ThemeProvider,
+      null,
+      React.createElement(resolveComponent(ReactComponent), props),
+    );
+  WrappedWithTheme.displayName = `WithTheme(${
+    ReactComponent.displayName || ReactComponent.name || "Component"
+  })`;
+  return WrappedWithTheme;
+}
+
+// Same as applyPureReactInVue but wraps the React component with ThemeProvider so it receives theme (e.g. in Storybook) without a root ThemeProvider
+function applyPureReactInVueWithTheme(ReactComponent: React.ComponentType<any>) {
+  return applyPureReactInVue(withTheme(ReactComponent));
+}
 
 // ─── Presentational components ──────────────────────────────────
-export const ThemeProvider = applyPureReactInVue(ReactThemeProvider)
-export const Button = applyPureReactInVue(ReactButton)
-export const Loader = applyPureReactInVue(ReactLoader)
-export const Chip = applyPureReactInVue(ReactChip)
-export const Avatar = applyPureReactInVue(ReactAvatar)
-export const Tag = applyPureReactInVue(ReactTag)
-export const Badge = applyPureReactInVue(ReactBadge)
-export const Alert = applyPureReactInVue(ReactAlert)
-export const ProgressBar = applyPureReactInVue(ReactProgressBar)
-export const Tooltip = applyPureReactInVue(ReactTooltip)
-export const Modal = applyPureReactInVue(ReactModal)
-export const Pagination = applyPureReactInVue(ReactPagination)
-export const Tabs = applyPureReactInVue(ReactTabs)
-export const Result = applyPureReactInVue(ReactResult)
-export const Drawer = applyPureReactInVue(ReactDrawer)
-export const Sidebar = applyPureReactInVue(ReactSidebar)
-export const Card = applyPureReactInVue(ReactCard)
-export const Grid = applyPureReactInVue(ReactGrid)
-export const Table = applyPureReactInVue(ReactTable)
-export const Dropdown = applyPureReactInVue(ReactDropdown)
-export const StatusTag = applyPureReactInVue(ReactStatusTag)
-export const Breadcrumbs = applyPureReactInVue(ReactBreadcrumbs)
-export const ToastNotification = applyPureReactInVue(ReactToastNotification)
-export const Heading = applyPureReactInVue(ReactHeading)
-export const Text = applyPureReactInVue(ReactText)
-export const Label = applyPureReactInVue(ReactLabel)
-export const FormError = applyPureReactInVue(ReactFormError)
-export const InputError = applyPureReactInVue(ReactInputError)
+export const ThemeProvider = applyPureReactInVue(ReactThemeProvider);
+export const Button = applyPureReactInVueWithTheme(ReactButton);
+export const Loader = applyPureReactInVueWithTheme(ReactLoader);
+export const Chip = applyPureReactInVueWithTheme(ReactChip);
+export const Avatar = applyPureReactInVueWithTheme(ReactAvatar);
+export const Tag = applyPureReactInVueWithTheme(ReactTag);
+export const Badge = applyPureReactInVueWithTheme(ReactBadge);
+export const Alert = applyPureReactInVueWithTheme(ReactAlert);
+export const ProgressBar = applyPureReactInVueWithTheme(ReactProgressBar);
+export const Tooltip = applyPureReactInVueWithTheme(ReactTooltip);
+export const Modal = applyPureReactInVueWithTheme(ReactModal);
+export const Pagination = applyPureReactInVueWithTheme(ReactPagination);
+export const Tabs = applyPureReactInVueWithTheme(ReactTabs);
+export const Result = applyPureReactInVueWithTheme(ReactResult);
+export const Drawer = applyPureReactInVueWithTheme(ReactDrawer);
+export const Sidebar = applyPureReactInVueWithTheme(ReactSidebar);
+export const Card = applyPureReactInVueWithTheme(ReactCard);
+export const Grid = applyPureReactInVueWithTheme(ReactGrid);
+export const Table = applyPureReactInVueWithTheme(ReactTable);
+export const Dropdown = applyPureReactInVueWithTheme(ReactDropdown);
+export const StatusTag = applyPureReactInVueWithTheme(ReactStatusTag);
+export const Breadcrumbs = applyPureReactInVueWithTheme(ReactBreadcrumbs);
+export const ToastNotification = applyPureReactInVueWithTheme(ReactToastNotification);
+export const Heading = applyPureReactInVueWithTheme(ReactHeading);
+export const Text = applyPureReactInVueWithTheme(ReactText);
+export const Label = applyPureReactInVueWithTheme(ReactLabel);
+export const FormError = applyPureReactInVueWithTheme(ReactFormError);
+export const InputError = applyPureReactInVueWithTheme(ReactInputError);
 
 // ─── Form components (with v-model) ────────────────────────────
-export const Input = withVModel(ReactInput, inputLike)
-export const Textarea = withVModel(ReactTextarea, inputLike)
-export const Select = withVModel(ReactSelect, selectLike)
-export const Checkbox = withVModel(ReactCheckbox, checkboxLike)
-export const CheckboxGroup = withVModel(ReactCheckboxGroup, inputLike)
-export const RadioButtonGroup = withVModel(ReactRadioButtonGroup, inputLike)
-export const RadioGroup = withVModel(ReactRadioGroup, inputLike)
-export const Radio = withVModel(ReactRadio, checkboxLike)
-export const ToggleSwitch = withVModel(ReactToggleSwitch, toggleLike)
+export const Input = withVModel(withTheme(ReactInput), inputLike);
+export const Textarea = withVModel(withTheme(ReactTextarea), inputLike);
+export const Select = withVModel(withTheme(ReactSelect), selectLike);
+export const Checkbox = withVModel(withTheme(ReactCheckbox), checkboxLike);
+export const CheckboxGroup = withVModel(withTheme(ReactCheckboxGroup), inputLike);
+export const RadioButtonGroup = withVModel(withTheme(ReactRadioButtonGroup), inputLike);
+export const RadioGroup = withVModel(withTheme(ReactRadioGroup), inputLike);
+export const Radio = withVModel(withTheme(ReactRadio), checkboxLike);
+export const ToggleSwitch = withVModel(withTheme(ReactToggleSwitch), toggleLike);
 
 // ─── Theme & types ──────────────────────────────────────────────
-export { DefaultTheme, typeScale }
-export { withVModel, type VModelMapping } from './utils/withVModel'
+export { DefaultTheme, typeScale };
+export { withVModel, type VModelMapping } from "./utils/withVModel";
 export type {
-  GnosisTheme, TableProps, Column, Row,
-  DropdownProps, DropdownItem, TableHandlers,
-  StatusTagColors, Color,
-} from '@epignosis_llc/gnosis'
+  GnosisTheme,
+  TableProps,
+  Column,
+  Row,
+  DropdownProps,
+  DropdownItem,
+  TableHandlers,
+  StatusTagColors,
+  Color,
+} from "@epignosis_llc/gnosis";

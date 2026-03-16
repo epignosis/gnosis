@@ -13,15 +13,17 @@ import { FlatCompat } from "@eslint/eslintrc";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all,
 });
 
-export default defineConfig([globalIgnores(["**/dist", "**/jest.config.js"]), {
+export default defineConfig([
+  globalIgnores(["**/dist", "**/jest.config.js"]),
+  {
     files: ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
-
-    extends: fixupConfigRules(compat.extends(
+    extends: fixupConfigRules(
+      compat.extends(
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:import/typescript",
@@ -29,85 +31,87 @@ export default defineConfig([globalIgnores(["**/dist", "**/jest.config.js"]), {
         "plugin:import/warnings",
         "plugin:@typescript-eslint/recommended",
         "prettier",
-    )),
-
+      ),
+    ),
     plugins: {
-        react: fixupPluginRules(react),
-        "@typescript-eslint": fixupPluginRules(typescriptEslint),
-        prettier,
+      react: fixupPluginRules(react),
+      "@typescript-eslint": fixupPluginRules(typescriptEslint),
+      prettier,
     },
-
     languageOptions: {
-        globals: {
-            ...globals.browser,
-            ...globals.node,
-            ...globals.jest,
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...globals.jest,
+      },
+      parser: tsParser,
+      ecmaVersion: 2018,
+      sourceType: "module",
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
         },
-
-        parser: tsParser,
-        ecmaVersion: 2018,
-        sourceType: "module",
-
-        parserOptions: {
-            ecmaFeatures: {
-                jsx: true,
-            },
-        },
+      },
     },
-
     settings: {
-        "import/resolver": {
-            typescript: {},
-
-            node: {
-                extensions: [".js", ".jsx", ".ts", ".tsx"],
-            },
+      "import/resolver": {
+        typescript: {},
+        node: {
+          extensions: [".js", ".jsx", ".ts", ".tsx"],
         },
-
-        react: {
-            version: "detect",
-        },
+      },
+      react: {
+        version: "detect",
+      },
     },
-
     rules: {
-        "prettier/prettier": "error",
-        "no-console": "error",
-        "react/prop-types": 0,
-
-        "import/order": ["error", {
-            "newlines-between": "never",
-        }],
-
-        "react/no-unknown-property": ["error", {
-            ignore: ["css"],
-        }],
-
-        "@typescript-eslint/no-unused-expressions": ["error", {
-            allowShortCircuit: true,
-            allowTernary: true,
-        }],
-
-        "import/named": "off",
+      "prettier/prettier": "error",
+      "no-console": "error",
+      "react/prop-types": 0,
+      "import/order": [
+        "error",
+        {
+          "newlines-between": "never",
+        },
+      ],
+      "react/no-unknown-property": [
+        "error",
+        {
+          ignore: ["css"],
+        },
+      ],
+      "@typescript-eslint/no-unused-expressions": [
+        "error",
+        {
+          allowShortCircuit: true,
+          allowTernary: true,
+        },
+      ],
+      "import/named": "off",
     },
-}, {
+  },
+  {
     files: ["**/*.stories.tsx"],
-
     rules: {
-        "import/no-unresolved": ["error", {
-            ignore: ["^@storybook/"],
-        }],
+      "import/no-unresolved": [
+        "error",
+        {
+          ignore: ["^@storybook/"],
+        },
+      ],
     },
-}, {
+  },
+  {
     files: ["**/*.test.tsx", "**/*.test.ts"],
-
     rules: {
-        "import/named": "off",
+      "import/named": "off",
     },
-}, {
+  },
+  {
     files: ["**/*.d.ts"],
-
     rules: {
-        "@typescript-eslint/no-empty-object-type": "off",
-        "@typescript-eslint/no-require-imports": "off",
+      "@typescript-eslint/no-empty-object-type": "off",
+      "@typescript-eslint/no-require-imports": "off",
     },
-}]);
+  },
+]);

@@ -30,12 +30,11 @@ const Chip: FC<ChipProps> = ({
   const isFilterOn = Boolean(Icon);
   const componentRef = useRef<HTMLDivElement | null>(null);
   const isOverflow = useIsOverflowX(componentRef);
+  const maxWidthValue = maxWidth ? `${maxWidth}px` : "auto";
 
   return (
     <div
-      css={(theme): SerializedStyles =>
-        chip(theme, { size, isFilterOn, maxWidth: `${maxWidth}px` ?? "auto" })
-      }
+      css={(theme): SerializedStyles => chip(theme, { size, isFilterOn, maxWidth: maxWidthValue })}
       style={style}
       {...rest}
     >

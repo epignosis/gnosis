@@ -1,14 +1,12 @@
 import path from "path";
+import { createRequire } from "module";
 import { babel } from "@rollup/plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import alias from "@rollup/plugin-alias";
-import svgr from "@svgr/rollup";
 import json from "@rollup/plugin-json";
-import { createRequire } from "module";
+import svgr from "@svgr/rollup";
 import postcss from "rollup-plugin-postcss";
-
-
 const require = createRequire(import.meta.url);
 const pkg = require("./package.json");
 
@@ -68,6 +66,41 @@ export default [
     ],
     external: Object.keys(pkg.devDependencies),
     plugins,
+  },
+  // Standalone design tokens bundle (framework-agnostic, no React dependency)
+  {
+    input: "src/theme/tokens.ts",
+    output: [
+      {
+        file: "dist/tokens/index.js",
+        format: "es",
+        sourcemap: true,
+        banner,
+      },
+      {
+        file: "dist/tokens/index.cjs",
+        format: "cjs",
+        sourcemap: true,
+        banner,
+      },
+    ],
+    plugins: [
+      resolve({ extensions, browser: true }),
+      babel({
+        extensions,
+        babelHelpers: "bundled",
+        exclude: ["node_modules/**"],
+        configFile: path.resolve(__dirname, "babel.config.json"),
+      }),
+    ],
+  },
+  // Copy tokens.css into dist
+  {
+    input: "src/theme/tokens.css",
+    output: {
+      file: "dist/tokens/tokens.css",
+    },
+    plugins: [postcss({ extract: true, minimize: false })],
   },
   {
     input: "src/icons/index.ts",

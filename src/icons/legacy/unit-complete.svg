@@ -1,5 +1,8 @@
-<svg id="Unit-Completion_Element" data-name="Unit-Completion Element" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <g transform="translate(6 6)">
-    <path d="M10 20C12.6522 20 15.1957 18.9464 17.0711 17.0711C18.9464 15.1957 20 12.6522 20 10C20 7.34784 18.9464 4.8043 17.0711 2.92893C15.1957 1.05357 12.6522 0 10 0C7.34784 0 4.8043 1.05357 2.92893 2.92893C1.05357 4.8043 0 7.34784 0 10C0 12.6522 1.05357 15.1957 2.92893 17.0711C4.8043 18.9464 7.34784 20 10 20ZM14.4141 8.16406L9.41406 13.1641C9.04688 13.5312 8.45312 13.5312 8.08984 13.1641L5.58984 10.6641C5.22266 10.2969 5.22266 9.70312 5.58984 9.33984C5.95703 8.97656 6.55078 8.97266 6.91406 9.33984L8.75 11.1758L13.0859 6.83594C13.4531 6.46875 14.0469 6.46875 14.4102 6.83594C14.7734 7.20312 14.7773 7.79687 14.4102 8.16016L14.4141 8.16406Z" fill="#1B7855"/>
+<svg id="Unit-Completion_Element" data-name="Unit-Completion Element" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect id="Rectangle_8255" data-name="Rectangle 8255" width="32" height="32" fill="none"/>
+  <circle id="Ellipse_302" data-name="Ellipse 302" cx="10" cy="10" r="10" transform="translate(6 6)" fill="#3cb744"/>
+  <g id="Icon-Check" transform="translate(9 9)">
+    <rect id="Rectangle_8083" data-name="Rectangle 8083" width="14" height="14" fill="none"/>
+    <path id="check-regular" d="M13.761,96.214a.679.679,0,0,1,0,1.035L5.506,105.5a.679.679,0,0,1-1.035,0L.22,101.251a.719.719,0,0,1,0-1.035.755.755,0,0,1,1.061,0L5,103.94l7.723-7.726a.721.721,0,0,1,1.035,0Z" transform="translate(0 -93.995)" fill="#fff"/>
   </g>
 </svg>

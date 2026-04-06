@@ -22,7 +22,7 @@ const banner = `
 `;
 
 const plugins = [
-  resolve({ extensions, browser: true }), // Allows node_modules resolution
+  resolve({ extensions, browser: true }), // Allows node_modules resolution!
   babel({
     extensions,
     babelHelpers: "bundled",

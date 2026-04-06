@@ -138,6 +138,10 @@
     "react-spinners": "^0.13.6",
     "tslib": "^2.7.0"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/epignosis/gnosis.git"

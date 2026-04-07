@@ -3,7 +3,12 @@ import classNames from "classnames";
 import { ChevronArrowRightSVG } from "../../../icons";
 import { Column, Row } from "../types";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
-import { getColumnLabel, getDefaultAccessor, getVisibleColumns } from "../helpers";
+import {
+  getColumnLabel,
+  getDefaultAccessor,
+  getVisibleColumns,
+  renderRowValue,
+} from "../helpers";
 import Cell from "./Cell";
 
 const rowClassnames = (isSelected: boolean, callback: boolean): string =>
@@ -25,7 +30,7 @@ export type MobileTableRowProps = {
   onRowSelection: () => void;
   onExpandToggle: () => void;
   onHoveredRowChange: (row: Row | null) => void;
-  renderMobileActionsSlot?: (row: Row) => ReactNode;
+  renderMobileRightActions?: (row: Row) => ReactNode;
 };
 
 const MobileTableRow: FC<MobileTableRowProps> = ({
@@ -39,13 +44,15 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
   onRowSelection,
   onExpandToggle,
   onHoveredRowChange,
-  renderMobileActionsSlot,
+  renderMobileRightActions,
 }) => {
   const visibleColumns = getVisibleColumns(columns);
   const defaultAccessor = getDefaultAccessor(columns);
 
   const primaryCellId = `entry-${row.id}-${defaultAccessor}`;
   const detailsRowId = `entry-${row.id}-details`;
+  const mobileColSpan = visibleColumns.length + (selectable ? 1 : 0);
+  const cellContext = { isExpanded };
 
   const secondaryColumns = useMemo(
     () => visibleColumns.filter((column) => column.accessor !== defaultAccessor),
@@ -84,7 +91,7 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
           !disabled && onHoveredRowChange(null);
         }}
       >
-        <Cell colSpan={visibleColumns.length + (selectable ? 1 : 0)} className="mobile-row-cell">
+        <Cell colSpan={mobileColSpan} className="mobile-row-cell">
           <div className="mobile-row-content">
             <div className="mobile-row-main">
               {selectable && (
@@ -114,14 +121,12 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
               </button>
               <div id={primaryCellId} className="mobile-primary">
                 <div className={classNames("mobile-primary-value", { expanded: isExpanded })}>
-                  {typeof primaryValue === "function"
-                    ? primaryValue(row, { isExpanded })
-                    : primaryValue}
+                  {renderRowValue(primaryValue, row, cellContext)}
                 </div>
               </div>
 
-              {renderMobileActionsSlot && (
-                <div className="mobile-actions">{renderMobileActionsSlot(row)}</div>
+              {renderMobileRightActions && (
+                <div className="mobile-actions">{renderMobileRightActions(row)}</div>
               )}
             </div>
           </div>
@@ -139,7 +144,7 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
           }}
         >
           <Cell
-            colSpan={visibleColumns.length + (selectable ? 1 : 0)}
+            colSpan={mobileColSpan}
             className="mobile-row-cell mobile-details-cell"
           >
             <div className="mobile-expanded-content">
@@ -150,7 +155,7 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
                   <section key={`${row.id}-${column.accessor}`} className="mobile-expanded-section">
                     <div className="mobile-expanded-label">{getColumnLabel(column)}</div>
                     <div className="mobile-expanded-value">
-                      {typeof value === "function" ? value(row, { isExpanded }) : value}
+                      {renderRowValue(value, row, cellContext)}
                     </div>
                   </section>
                 );

@@ -52,8 +52,8 @@ export type TableProps = {
   onHoveredRowChange?: (hoveredRow: Row | null) => void;
   onRowSelect?: (ids: number[]) => void;
   onRowExpand?: (rowId: string | number, isExpanded: boolean) => void;
-  /** Slot rendered in the mobile primary row (e.g. an actions dropdown). */
-  renderMobileActionsSlot?: (row: Row) => ReactNode;
+  /** Slot rendered on the right side of the mobile primary row. */
+  renderMobileRightActions?: (row: Row) => ReactNode;
 };
 
 export type TableState = {

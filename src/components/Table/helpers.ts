@@ -1,4 +1,5 @@
-import { Column } from "./types";
+import { ReactNode } from "react";
+import { CellContext, Column, Row } from "./types";
 
 export const getVisibleAccessors = (columns: Column[]): string[] => {
   return columns.filter((column) => !column.hidden).map((column) => column.accessor);
@@ -15,4 +16,12 @@ export const getDefaultAccessor = (columns: Column[]): string | undefined => {
 
 export const getColumnLabel = (column: Column): string => {
   return typeof column.cell === "string" ? column.cell : column.accessor;
+};
+
+export const renderRowValue = (
+  value: Row[string],
+  row: Row,
+  ctx: CellContext,
+): ReactNode => {
+  return typeof value === "function" ? value(row, ctx) : value;
 };

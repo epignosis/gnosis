@@ -16,7 +16,7 @@ const Body: FC<ChildrenProps> = ({
   onRowSelect,
   onRowExpand,
   onHoveredRowChange,
-  renderMobileActionsSlot,
+  renderMobileRightActions,
   disabled = false,
 }) => {
   const { columns, selected, expandedRows, emptyState } = state;
@@ -82,7 +82,7 @@ const Body: FC<ChildrenProps> = ({
               onRowSelect={onRowSelect}
               onHoveredRowChange={handleRowHover}
               onExpandToggle={handleExpandToggle}
-              renderMobileActionsSlot={renderMobileActionsSlot}
+              renderMobileRightActions={renderMobileRightActions}
               disabled={disabled}
             />
           </tbody>

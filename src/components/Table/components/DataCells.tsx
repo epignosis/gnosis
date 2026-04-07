@@ -1,5 +1,6 @@
 import React, { FC, memo } from "react";
 import { Column, Row } from "../types";
+import { renderRowValue } from "../helpers";
 import Cell from "./Cell";
 
 export type DataCellsProps = {
@@ -36,7 +37,7 @@ const DataCells: FC<DataCellsProps> = ({
             windowHeight={windowHeight}
             onClick={handleRowClick}
           >
-            {typeof rowObj === "function" ? rowObj(row, { isExpanded: false }) : rowObj}
+            {renderRowValue(rowObj, row, { isExpanded: false })}
           </Cell>
         );
       })}

@@ -1,3 +1,10 @@
+## [6.6.10](https://github.com/epignosis/gnosis/compare/v6.6.9...v6.6.10) (2026-04-07)
+
+
+### Bug Fixes
+
+* green cohesion ([#643](https://github.com/epignosis/gnosis/issues/643)) ([2d29f9e](https://github.com/epignosis/gnosis/commit/2d29f9e18cf9881ca61b8845331835f3fe32b4dd)), closes [#3cb744](https://github.com/epignosis/gnosis/issues/3cb744) [#1B7855](https://github.com/epignosis/gnosis/issues/1B7855)
+
 ## [6.6.9](https://github.com/epignosis/gnosis/compare/v6.6.8...v6.6.9) (2026-04-06)
 
 ## [6.6.8](https://github.com/epignosis/gnosis/compare/v6.6.7...v6.6.8) (2026-04-06)

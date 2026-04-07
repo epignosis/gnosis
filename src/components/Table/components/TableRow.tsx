@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback } from "react";
+import React, { FC, memo, ReactNode, useCallback } from "react";
 import classNames from "classnames";
 import { Column, Row } from "../types";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
@@ -7,6 +7,8 @@ import { Actions } from "../constants";
 import { getDefaultAccessor, getVisibleAccessors } from "../helpers";
 import Cell from "./Cell";
 import DataCells from "./DataCells";
+import MobileTableRow from "./MobileTableRow";
+import { breakpoints } from "@theme/utils/breakpoints";
 
 const rowClassnames = (isSelected: boolean, callback: boolean): string =>
   classNames({
@@ -26,6 +28,7 @@ export type TableRowProps = {
   windowWidth: number;
   windowHeight: number;
   isSelected: boolean;
+  isExpanded: boolean;
   selectable: boolean;
   autohide?: boolean;
   disabled?: boolean;
@@ -33,6 +36,8 @@ export type TableRowProps = {
   onRowSelect?: (rowIds: number[]) => void;
   onRowClick?: (row: Row) => void;
   onHoveredRowChange: (row: Row | null) => void;
+  onExpandToggle: () => void;
+  renderMobileActionsSlot?: (row: Row) => ReactNode;
 };
 
 const TableRow: FC<TableRowProps> = ({
@@ -42,6 +47,7 @@ const TableRow: FC<TableRowProps> = ({
   windowWidth,
   windowHeight,
   isSelected,
+  isExpanded,
   selectable,
   autohide,
   disabled = false,
@@ -49,21 +55,41 @@ const TableRow: FC<TableRowProps> = ({
   onRowSelect,
   onRowClick,
   onHoveredRowChange,
+  onExpandToggle,
+  renderMobileActionsSlot,
 }) => {
   const accessors = getVisibleAccessors(columns);
   const defaultAccessor = getDefaultAccessor(columns);
+  const isMobile = windowWidth < breakpoints.md;
 
   const handleRowClick = useCallback((): void => {
     if (disabled) return;
     onRowClick?.(row);
-  }, [row.id, disabled]);
+  }, [disabled, onRowClick, row]);
 
   const handleRowSelection = (): void => {
     if (disabled) return;
     dispatch({ type: Actions.toggle, payload: row });
-
     onRowSelect?.([Number(row.id)]);
   };
+
+  if (isMobile) {
+    return (
+      <MobileTableRow
+        rowId={rowId}
+        row={row}
+        columns={columns}
+        isSelected={isSelected}
+        isExpanded={isExpanded}
+        selectable={selectable}
+        disabled={disabled}
+        renderMobileActionsSlot={renderMobileActionsSlot}
+        onRowSelection={handleRowSelection}
+        onExpandToggle={onExpandToggle}
+        onHoveredRowChange={onHoveredRowChange}
+      />
+    );
+  }
 
   return (
     <tr

@@ -47,6 +47,15 @@ export const reducer = (state: TableState, action: ActionType): TableState => {
     case Actions.setDisabled: {
       return { ...state, disabled: action.payload };
     }
+    case Actions.toggleRowExpanded: {
+      const rowId = action.payload;
+      const isExpanded = state.expandedRows.includes(rowId);
+      const expandedRows = isExpanded
+        ? state.expandedRows.filter((id) => id !== rowId)
+        : [...state.expandedRows, rowId];
+
+      return { ...state, expandedRows };
+    }
     default: {
       return state;
     }

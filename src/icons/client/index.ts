@@ -130,6 +130,7 @@ export { default as LearningPathPrerequisiteSVG } from "./learning-path-prerequi
 export { default as LearningPathSVG } from "./learning-path.svg";
 export { default as UpdateSVG } from "./update.svg";
 export { default as InstructorSVG } from "./icon-instructors.svg";
+export { default as InstructorNoViewboxSVG } from "./icon-instructors-no-viewbox.svg";
 export { default as SmartTagSVG } from "./icon-smart-tag.svg";
 export { default as ScreenExpandSVG } from "./icon-screen-expand.svg";
 export { default as ScreenCollapseSVG } from "./icon-screen-collapse.svg";

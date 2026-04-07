@@ -1,7 +1,8 @@
 import React from "react";
 import { faker } from "@faker-js/faker";
+import userEvent from "@testing-library/user-event";
 import Table from "../Table";
-import { render } from "@test-utils/render";
+import { render, screen } from "@test-utils/render";
 
 const COLUMNS = [
   {
@@ -66,12 +67,49 @@ const ROWS = [
   },
 ];
 
+const MOBILE_COLUMNS = [
+  {
+    accessor: "name",
+    cell: "Name",
+    isDefaultAccessor: true,
+  },
+  {
+    accessor: "status",
+    cell: "Status",
+  },
+  {
+    accessor: "owner",
+    cell: "Owner",
+  },
+];
+
+const MOBILE_ROWS = [
+  {
+    id: 1,
+    name: "Mobile row primary value",
+    status: "Pending",
+    owner: "Ada",
+  },
+];
+
 const EMPTY_STATE = {
   title: faker.helpers.unique(faker.lorem.word),
   info: faker.helpers.unique(faker.lorem.word),
 };
 
+const setWindowWidth = (width: number): void => {
+  Object.defineProperty(window, "innerWidth", {
+    configurable: true,
+    writable: true,
+    value: width,
+  });
+};
+
 describe("<Table>", () => {
+  beforeEach(() => {
+    setWindowWidth(1280);
+  });
+
   it("renders correctly", () => {
     const { getByTestId } = render(
       <Table rows={ROWS} columns={COLUMNS} emptyState={EMPTY_STATE} />,
@@ -88,5 +126,84 @@ describe("<Table>", () => {
     );
 
     expect(container).toMatchSnapshot();
+  });
+
+  it("renders expandable mobile rows using the primary accessor", async () => {
+    setWindowWidth(480);
+
+    render(<Table rows={MOBILE_ROWS} columns={MOBILE_COLUMNS} emptyState={EMPTY_STATE} />);
+
+    expect(screen.getByText("Mobile row primary value")).toBeInTheDocument();
+    expect(screen.queryByText("Pending")).not.toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole("button", { name: "Expand row details" }));
+
+    expect(screen.getAllByText("Status")).toHaveLength(2);
+    expect(screen.getByText("Pending")).toBeInTheDocument();
+    expect(screen.getAllByText("Owner")).toHaveLength(2);
+    expect(screen.getByText("Ada")).toBeInTheDocument();
+  });
+
+  it("fires onRowExpand when a mobile row is expanded and collapsed by clicking the row", async () => {
+    setWindowWidth(480);
+
+    const onRowExpand = jest.fn();
+
+    render(
+      <Table
+        rows={MOBILE_ROWS}
+        columns={MOBILE_COLUMNS}
+        emptyState={EMPTY_STATE}
+        onRowExpand={onRowExpand}
+      />,
+    );
+
+    await userEvent.click(screen.getByText("Mobile row primary value"));
+    expect(onRowExpand).toHaveBeenNthCalledWith(1, 1, true);
+
+    await userEvent.click(screen.getByText("Mobile row primary value"));
+    expect(onRowExpand).toHaveBeenNthCalledWith(2, 1, false);
+  });
+
+  it("fires onRowExpand when the mobile expand button is clicked", async () => {
+    setWindowWidth(480);
+
+    const onRowExpand = jest.fn();
+
+    render(
+      <Table
+        rows={MOBILE_ROWS}
+        columns={MOBILE_COLUMNS}
+        emptyState={EMPTY_STATE}
+        onRowExpand={onRowExpand}
+      />,
+    );
+
+    await userEvent.click(screen.getByRole("button", { name: "Expand row details" }));
+
+    expect(onRowExpand).toHaveBeenCalledWith(1, true);
+  });
+
+  it("does not fire onRowExpand when selecting a row checkbox", async () => {
+    setWindowWidth(480);
+
+    const onRowExpand = jest.fn();
+    const onRowSelect = jest.fn();
+
+    render(
+      <Table
+        selectable
+        rows={MOBILE_ROWS}
+        columns={MOBILE_COLUMNS}
+        emptyState={EMPTY_STATE}
+        onRowExpand={onRowExpand}
+        onRowSelect={onRowSelect}
+      />,
+    );
+
+    await userEvent.click(screen.getByTestId("checkbox-label-table-entry-1-select"));
+
+    expect(onRowSelect).toHaveBeenCalled();
+    expect(onRowExpand).not.toHaveBeenCalled();
   });
 });

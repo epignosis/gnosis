@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React, { MouseEvent, useRef, useState } from "react";
 import { StoryFn } from "@storybook/react";
+import { DropdownItem } from "../Dropdown/types";
 import { IconEmptyStateSVG } from "../../icons/";
 import Text from "../Text/Text";
 import Button from "../Button/Button";
@@ -26,6 +27,27 @@ for (let i = 0; i < 10; i++) {
     date: "27/05/1997",
   });
 }
+
+const longTextRows = [
+  {
+    id: 501,
+    description:
+      "A very long description that is useful for validating wrapping, truncation, and expanded mobile rendering across multiple breakpoints without changing the desktop table structure.An intentionally long primary field value that should truncate on mobile until the row is expanded by the user.An intentionally long primary field value that should truncate on mobile until the row is expanded by the user",
+    name: "An intentionally long primary field value that should truncate on mobile until the row is expanded by the user.An intentionally long primary field value that should truncate on mobile until the row is expanded by the user",
+    category:
+      "A category label with enough text to test stacked mobile detail sections and confirm long labels remain readable",
+    date: "Friday, September 27, 2026 at 14:30 UTC",
+  },
+  {
+    id: 502,
+    description:
+      "Another long descriptive value with more context so we can inspect spacing, divider rhythm, and how the details panel behaves when several fields contain verbose content.",
+    name: "A second row with a long title that helps us check zebra striping and expanded state behavior in the mobile presentation",
+    category:
+      "A second category value that is intentionally verbose and slightly awkward so edge cases become visible in Storybook",
+    date: "Wednesday, October 1, 2026 at 09:15 UTC",
+  },
+];
 
 export default {
   component: Table,

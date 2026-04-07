@@ -35,6 +35,7 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
     emptyState,
     sorting,
     selected: [],
+    expandedRows: [],
   });
 
   useEffect(() => {
@@ -67,10 +68,16 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
     });
   }, [sorting]);
 
-  useImperativeHandle(ref, () => ({
-    selectRowsById: (rowIds: number[]) => dispatch({ type: Actions.selectMany, payload: rowIds }),
-    resetSelected: () => dispatch({ type: Actions.resetSelectedRows, payload: null }),
-  }));
+  useImperativeHandle(
+    ref,
+    () => ({
+      selectRowsById: (rowIds: number[]) => dispatch({ type: Actions.selectMany, payload: rowIds }),
+      resetSelected: () => dispatch({ type: Actions.resetSelectedRows, payload: null }),
+      getExpandedRows: () => state.expandedRows,
+      isRowExpanded: (rowId: string | number) => state.expandedRows.includes(rowId),
+    }),
+    [state.expandedRows],
+  );
 
   const containerClassNames = classNames({
     [className]: Boolean(className),

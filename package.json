@@ -14,6 +14,7 @@
       "require": "./dist/cjs/index.cjs"
     },
     "./icons": {
+      "types": "./dist/types/icons/index.d.ts",
       "import": "./icons/index.js",
       "require": "./icons/index.cjs"
     }

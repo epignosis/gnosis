@@ -3,12 +3,7 @@ import classNames from "classnames";
 import { ChevronArrowRightSVG } from "../../../icons";
 import { Column, Row } from "../types";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
-import {
-  getColumnLabel,
-  getDefaultAccessor,
-  getVisibleColumns,
-  renderRowValue,
-} from "../helpers";
+import { getColumnLabel, getDefaultAccessor, getVisibleColumns, renderRowValue } from "../helpers";
 import Cell from "./Cell";
 
 const rowClassnames = (isSelected: boolean, callback: boolean): string =>
@@ -143,10 +138,7 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
             !disabled && onHoveredRowChange(null);
           }}
         >
-          <Cell
-            colSpan={mobileColSpan}
-            className="mobile-row-cell mobile-details-cell"
-          >
+          <Cell colSpan={mobileColSpan} className="mobile-row-cell mobile-details-cell">
             <div className="mobile-expanded-content">
               {secondaryColumns.map((column) => {
                 const value = row[column.accessor];

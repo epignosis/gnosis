@@ -18,10 +18,6 @@ export const getColumnLabel = (column: Column): string => {
   return typeof column.cell === "string" ? column.cell : column.accessor;
 };
 
-export const renderRowValue = (
-  value: Row[string],
-  row: Row,
-  ctx: CellContext,
-): ReactNode => {
-  return typeof value === "function" ? value(row, ctx) : value;
+export const renderRowValue = (value: Row[string], row: Row, ctx: CellContext): ReactNode => {
+  return typeof value === "function" ? value(row, ctx) : (value as ReactNode);
 };

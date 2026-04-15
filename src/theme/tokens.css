@@ -21,11 +21,14 @@
   /* ---------------------------------------------------------------------------
    * COLORS - Primary Palette
    * ---------------------------------------------------------------------------*/
+  --color-primary-lightest25: rgba(36, 125, 255, 0.25);
+  --color-primary-lightest50: rgba(36, 125, 255, 0.5);
   --color-primary-lightest: #247dff;
   --color-primary-lighter: #0169ff;
   --color-primary-light: #0054cd;
   --color-primary-base: #0046ab;
   --color-primary-dark: #003889;
+  --color-primary-darker50: rgba(0, 42, 103, 0.5);
   --color-primary-darker: #002a67;
   --color-primary-darkest: #001c44;
 
@@ -45,6 +48,7 @@
    * ---------------------------------------------------------------------------*/
   --color-green-lightest: #2ecc90;
   --color-green-lighter: #29b47f;
+  --color-green-light50: rgba(32, 144, 102, 0.5);
   --color-green-light: #209066;
   --color-green-base: #1b7855;
   --color-green-dark: #166044;
@@ -57,6 +61,7 @@
   --color-orange-lightest: #fffbf6;
   --color-orange-lighter: #ffe0bb;
   --color-orange-light: #ffb763;
+  --color-orange-base50: rgba(255, 156, 40, 0.5);
   --color-orange-base: #ff9c28;
   --color-orange-dark: #ec7f00;
   --color-orange-darker: #b15f00;
@@ -67,6 +72,7 @@
    * ---------------------------------------------------------------------------*/
   --color-red-lightest: #f1b1b1;
   --color-red-lighter: #ea8787;
+  --color-red-light50: rgba(223, 73, 73, 0.5);
   --color-red-light: #df4949;
   --color-red-base: #d12525;
   --color-red-dark: #a71e1e;

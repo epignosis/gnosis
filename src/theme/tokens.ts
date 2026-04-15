@@ -23,11 +23,14 @@ export const colorBase = {
 // Full palette — each color generated with palletGenerator (color lib lighten/darken)
 export const colors = {
   primary: {
+    lightest25: "rgba(36, 125, 255, 0.25)",
+    lightest50: "rgba(36, 125, 255, 0.5)",
     lightest: "#247DFF",
     lighter: "#0169FF",
     light: "#0054CD",
     base: "#0046AB",
     dark: "#003889",
+    darker50: "rgba(0, 42, 103, 0.5)",
     darker: "#002A67",
     darkest: "#001C44",
   },
@@ -43,6 +46,7 @@ export const colors = {
   green: {
     lightest: "#2ECC90",
     lighter: "#29B47F",
+    light50: "rgba(32, 144, 102, 0.5)",
     light: "#209066",
     base: "#1B7855",
     dark: "#166044",
@@ -53,6 +57,7 @@ export const colors = {
     lightest: "#FFFBF6",
     lighter: "#FFE0BB",
     light: "#FFB763",
+    base50: "rgba(255, 156, 40, 0.5)",
     base: "#FF9C28",
     dark: "#EC7F00",
     darker: "#B15F00",
@@ -61,6 +66,7 @@ export const colors = {
   red: {
     lightest: "#F1B1B1",
     lighter: "#EA8787",
+    light50: "rgba(223, 73, 73, 0.5)",
     light: "#DF4949",
     base: "#D12525",
     dark: "#A71E1E",

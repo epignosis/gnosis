@@ -240,6 +240,10 @@ export const tableContainer = ({ table }: Theme) => css`
             background-color: inherit;
             box-sizing: border-box;
             padding: 0.5rem;
+
+            &.has-padding {
+              padding-left: 1.5rem;
+            }
           }
 
           .mobile-row-main {

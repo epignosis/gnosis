@@ -9,7 +9,6 @@ export type CellContext = {
 export type Column = {
   accessor: string;
   isDefaultSort?: boolean;
-  isDefaultAccessor?: boolean;
   cell: string | ((arg?: unknown, ctx?: CellContext) => JSX.Element | null);
   hidden?: boolean;
   classNames?: string[];

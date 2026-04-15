@@ -11,7 +11,7 @@ export const getVisibleColumns = (columns: Column[]): Column[] => {
 
 export const getDefaultAccessor = (columns: Column[]): string | undefined => {
   const visibleAccessors = getVisibleAccessors(columns);
-  return columns.find((column) => column.isDefaultAccessor)?.accessor ?? visibleAccessors[0];
+  return visibleAccessors[0];
 };
 
 export const getColumnLabel = (column: Column): string => {

@@ -71,7 +71,6 @@ const MOBILE_COLUMNS = [
   {
     accessor: "name",
     cell: "Name",
-    isDefaultAccessor: true,
   },
   {
     accessor: "status",
@@ -89,6 +88,20 @@ const MOBILE_ROWS = [
     name: "Mobile row primary value",
     status: "Pending",
     owner: "Ada",
+  },
+];
+
+const MOBILE_COLUMNS_WITHOUT_SECONDARY = [
+  {
+    accessor: "name",
+    cell: "Name",
+  },
+];
+
+const MOBILE_ROWS_WITHOUT_SECONDARY = [
+  {
+    id: 2,
+    name: "Standalone mobile value",
   },
 ];
 
@@ -204,6 +217,27 @@ describe("<Table>", () => {
     await userEvent.click(screen.getByTestId("checkbox-label-table-entry-1-select"));
 
     expect(onRowSelect).toHaveBeenCalled();
+    expect(onRowExpand).not.toHaveBeenCalled();
+  });
+
+  it("hides the expand button and does not expand mobile rows without secondary columns", async () => {
+    setWindowWidth(480);
+
+    const onRowExpand = jest.fn();
+
+    render(
+      <Table
+        rows={MOBILE_ROWS_WITHOUT_SECONDARY}
+        columns={MOBILE_COLUMNS_WITHOUT_SECONDARY}
+        emptyState={EMPTY_STATE}
+        onRowExpand={onRowExpand}
+      />,
+    );
+
+    expect(screen.queryByRole("button", { name: "Expand row details" })).not.toBeInTheDocument();
+
+    await userEvent.click(screen.getByText("Standalone mobile value"));
+
     expect(onRowExpand).not.toHaveBeenCalled();
   });
 });

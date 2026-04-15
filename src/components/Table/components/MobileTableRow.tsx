@@ -53,17 +53,19 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
     () => visibleColumns.filter((column) => column.accessor !== defaultAccessor),
     [defaultAccessor, visibleColumns],
   );
+  const hasSecondaryColumns = secondaryColumns.length > 0;
 
   const primaryValue = defaultAccessor ? row[defaultAccessor] : null;
+  const isRowClickable = hasSecondaryColumns && !disabled;
 
   const handleMobileRowClick = (): void => {
-    if (disabled) return;
+    if (!isRowClickable) return;
     onExpandToggle();
   };
 
   const handleExpandToggle = (e: MouseEvent<HTMLButtonElement>): void => {
     e.stopPropagation();
-    if (disabled) return;
+    if (!isRowClickable) return;
     onExpandToggle();
   };
 
@@ -75,7 +77,7 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
     <>
       <tr
         key={`entry-${row.id}-summary`}
-        className={classNames("mobile-row", rowClassnames(isSelected, true), {
+        className={classNames("mobile-row", rowClassnames(isSelected, isRowClickable), {
           expanded: isExpanded,
         })}
         onClick={handleMobileRowClick}
@@ -87,7 +89,9 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
         }}
       >
         <Cell colSpan={mobileColSpan} className="mobile-row-cell">
-          <div className="mobile-row-content">
+          <div
+            className={classNames("mobile-row-content", { "has-padding": !hasSecondaryColumns })}
+          >
             <div className="mobile-row-main">
               {selectable && (
                 <div className={checkboxWrapperClassnames()} onClick={handleControlClick}>
@@ -103,17 +107,19 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
                   />
                 </div>
               )}
-              <button
-                type="button"
-                className="mobile-expand-toggle"
-                onClick={handleExpandToggle}
-                aria-expanded={isExpanded}
-                aria-controls={detailsRowId}
-                aria-label={isExpanded ? "Collapse row details" : "Expand row details"}
-                disabled={disabled}
-              >
-                <ChevronArrowRightSVG width={32} className="mobile-expand-icon" />
-              </button>
+              {hasSecondaryColumns && (
+                <button
+                  type="button"
+                  className={"mobile-expand-toggle"}
+                  onClick={handleExpandToggle}
+                  aria-expanded={isExpanded}
+                  aria-controls={detailsRowId}
+                  aria-label={isExpanded ? "Collapse row details" : "Expand row details"}
+                  disabled={disabled}
+                >
+                  <ChevronArrowRightSVG width={32} className="mobile-expand-icon" />
+                </button>
+              )}
               <div id={primaryCellId} className="mobile-primary">
                 <div className={classNames("mobile-primary-value", { expanded: isExpanded })}>
                   {renderRowValue(primaryValue, row, cellContext)}
@@ -127,7 +133,7 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
           </div>
         </Cell>
       </tr>
-      {isExpanded && secondaryColumns.length > 0 && (
+      {isExpanded && hasSecondaryColumns && (
         <tr
           id={detailsRowId}
           className={classNames("mobile-row-expanded", rowClassnames(isSelected, false))}

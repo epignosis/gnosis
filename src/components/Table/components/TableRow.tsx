@@ -1,5 +1,6 @@
 import React, { FC, memo, ReactNode, useCallback } from "react";
 import classNames from "classnames";
+import { useResponsive } from "ahooks";
 import { Column, Row } from "../types";
 import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
 import { Dispatch } from "../reducer";
@@ -8,7 +9,6 @@ import { getDefaultAccessor, getVisibleAccessors } from "../helpers";
 import Cell from "./Cell";
 import DataCells from "./DataCells";
 import MobileTableRow from "./MobileTableRow";
-import { breakpoints } from "@theme/utils/breakpoints";
 
 const rowClassnames = (isSelected: boolean, callback: boolean): string =>
   classNames({
@@ -60,7 +60,8 @@ const TableRow: FC<TableRowProps> = ({
 }) => {
   const accessors = getVisibleAccessors(columns);
   const defaultAccessor = getDefaultAccessor(columns);
-  const isMobile = windowWidth < breakpoints.md;
+  const { md } = useResponsive();
+  const isMobile = !md;
 
   const handleRowClick = useCallback((): void => {
     if (disabled) return;

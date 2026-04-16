@@ -1,7 +1,7 @@
 import { css, Theme } from "@emotion/react";
 import { mq } from "@theme/utils/breakpoints";
 
-export const tableContainer = ({ table }: Theme) => css`
+export const tableContainer = ({ table, typeScaleSizes }: Theme) => css`
   border-radius: 5px;
   display: block;
   width: 100%;
@@ -342,12 +342,12 @@ export const tableContainer = ({ table }: Theme) => css`
             }
 
             & + .mobile-expanded-section {
-              border-top: 1px solid var(--Grey-Lighter, #f5f5f6);
+              border-top: 1px solid ${table.rowBackgroundColor};
             }
           }
 
           .mobile-expanded-label {
-            font-size: 0.875rem;
+            font-size: ${typeScaleSizes.sm};
             font-weight: 700;
           }
 

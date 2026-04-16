@@ -141,13 +141,27 @@ describe("<Table>", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("renders expandable mobile rows using the primary accessor", async () => {
+  it("renders the mobile primary value", () => {
     setWindowWidth(480);
 
     render(<Table rows={MOBILE_ROWS} columns={MOBILE_COLUMNS} emptyState={EMPTY_STATE} />);
 
     expect(screen.getByText("Mobile row primary value")).toBeInTheDocument();
+  });
+
+  it("hides secondary mobile values before expansion", () => {
+    setWindowWidth(480);
+
+    render(<Table rows={MOBILE_ROWS} columns={MOBILE_COLUMNS} emptyState={EMPTY_STATE} />);
+
     expect(screen.queryByText("Pending")).not.toBeInTheDocument();
+    expect(screen.queryByText("Ada")).not.toBeInTheDocument();
+  });
+
+  it("renders secondary mobile values after expansion", async () => {
+    setWindowWidth(480);
+
+    render(<Table rows={MOBILE_ROWS} columns={MOBILE_COLUMNS} emptyState={EMPTY_STATE} />);
 
     await userEvent.click(screen.getByRole("button", { name: "Expand row details" }));
 
@@ -157,7 +171,7 @@ describe("<Table>", () => {
     expect(screen.getByText("Ada")).toBeInTheDocument();
   });
 
-  it("fires onRowExpand when a mobile row is expanded and collapsed by clicking the row", async () => {
+  it("fires onRowExpand when a mobile row is expanded by clicking the row", async () => {
     setWindowWidth(480);
 
     const onRowExpand = jest.fn();
@@ -172,9 +186,26 @@ describe("<Table>", () => {
     );
 
     await userEvent.click(screen.getByText("Mobile row primary value"));
-    expect(onRowExpand).toHaveBeenNthCalledWith(1, 1, true);
+    expect(onRowExpand).toHaveBeenCalledWith(1, true);
+  });
+
+  it("fires onRowExpand when a mobile row is collapsed by clicking the row", async () => {
+    setWindowWidth(480);
+
+    const onRowExpand = jest.fn();
+
+    render(
+      <Table
+        rows={MOBILE_ROWS}
+        columns={MOBILE_COLUMNS}
+        emptyState={EMPTY_STATE}
+        onRowExpand={onRowExpand}
+      />,
+    );
 
     await userEvent.click(screen.getByText("Mobile row primary value"));
+    await userEvent.click(screen.getByText("Mobile row primary value"));
+
     expect(onRowExpand).toHaveBeenNthCalledWith(2, 1, false);
   });
 

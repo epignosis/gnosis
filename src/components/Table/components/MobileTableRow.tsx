@@ -1,18 +1,8 @@
 import React, { FC, memo, MouseEvent, ReactNode, useMemo } from "react";
-import classNames from "classnames";
-import { ChevronArrowRightSVG } from "../../../icons";
 import { Column, Row } from "../types";
-import Checkbox from "../../FormElements/CheckboxGroup/Checkbox";
-import { getColumnLabel, getDefaultAccessor, getVisibleColumns, renderRowValue } from "../helpers";
-import Cell from "./Cell";
-
-const rowClassnames = (isSelected: boolean, callback: boolean): string =>
-  classNames({
-    selected: isSelected,
-    link: callback,
-  });
-
-const checkboxWrapperClassnames = (): string => classNames("selectable-cell");
+import { getDefaultAccessor, getVisibleColumns } from "../helpers";
+import MobileTableRowDetails from "./MobileTableRowDetails";
+import MobileTablePrimaryRow from "./MobileTablePrimaryRow";
 
 export type MobileTableRowProps = {
   rowId: string;
@@ -73,94 +63,48 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
     e.stopPropagation();
   };
 
+  const handleMouseEnter = (): void => {
+    if (!disabled) onHoveredRowChange(row);
+  };
+
+  const handleMouseLeave = (): void => {
+    if (!disabled) onHoveredRowChange(null);
+  };
+
   return (
     <>
-      <tr
-        key={`entry-${row.id}-summary`}
-        className={classNames("mobile-row", rowClassnames(isSelected, isRowClickable), {
-          expanded: isExpanded,
-        })}
-        onClick={handleMobileRowClick}
-        onMouseEnter={(): void => {
-          !disabled && onHoveredRowChange(row);
-        }}
-        onMouseLeave={(): void => {
-          !disabled && onHoveredRowChange(null);
-        }}
-      >
-        <Cell colSpan={mobileColSpan} className="mobile-row-cell">
-          <div
-            className={classNames("mobile-row-content", { "has-padding": !hasSecondaryColumns })}
-          >
-            <div className="mobile-row-main">
-              {selectable && (
-                <div className={checkboxWrapperClassnames()} onClick={handleControlClick}>
-                  <Checkbox
-                    id={rowId}
-                    key={rowId}
-                    name={rowId}
-                    value={rowId}
-                    checked={isSelected}
-                    onChange={onRowSelection}
-                    disabled={disabled}
-                    aria-labelledby={primaryCellId}
-                  />
-                </div>
-              )}
-              {hasSecondaryColumns && (
-                <button
-                  type="button"
-                  className={"mobile-expand-toggle"}
-                  onClick={handleExpandToggle}
-                  aria-expanded={isExpanded}
-                  aria-controls={detailsRowId}
-                  aria-label={isExpanded ? "Collapse row details" : "Expand row details"}
-                  disabled={disabled}
-                >
-                  <ChevronArrowRightSVG width={32} className="mobile-expand-icon" />
-                </button>
-              )}
-              <div id={primaryCellId} className="mobile-primary">
-                <div className={classNames("mobile-primary-value", { expanded: isExpanded })}>
-                  {renderRowValue(primaryValue, row, cellContext)}
-                </div>
-              </div>
-
-              {renderMobileRightActions && (
-                <div className="mobile-actions">{renderMobileRightActions(row)}</div>
-              )}
-            </div>
-          </div>
-        </Cell>
-      </tr>
+      <MobileTablePrimaryRow
+        rowId={rowId}
+        row={row}
+        isSelected={isSelected}
+        isExpanded={isExpanded}
+        selectable={selectable}
+        disabled={disabled}
+        mobileColSpan={mobileColSpan}
+        isRowClickable={isRowClickable}
+        primaryCellId={primaryCellId}
+        detailsRowId={detailsRowId}
+        hasSecondaryColumns={hasSecondaryColumns}
+        primaryValue={primaryValue}
+        onRowSelection={onRowSelection}
+        onRowClick={handleMobileRowClick}
+        onExpandToggle={handleExpandToggle}
+        onControlClick={handleControlClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        renderMobileRightActions={renderMobileRightActions}
+      />
       {isExpanded && hasSecondaryColumns && (
-        <tr
-          id={detailsRowId}
-          className={classNames("mobile-row-expanded", rowClassnames(isSelected, false))}
-          onMouseEnter={(): void => {
-            !disabled && onHoveredRowChange(row);
-          }}
-          onMouseLeave={(): void => {
-            !disabled && onHoveredRowChange(null);
-          }}
-        >
-          <Cell colSpan={mobileColSpan} className="mobile-row-cell mobile-details-cell">
-            <div className="mobile-expanded-content">
-              {secondaryColumns.map((column) => {
-                const value = row[column.accessor];
-
-                return (
-                  <section key={`${row.id}-${column.accessor}`} className="mobile-expanded-section">
-                    <div className="mobile-expanded-label">{getColumnLabel(column)}</div>
-                    <div className="mobile-expanded-value">
-                      {renderRowValue(value, row, cellContext)}
-                    </div>
-                  </section>
-                );
-              })}
-            </div>
-          </Cell>
-        </tr>
+        <MobileTableRowDetails
+          row={row}
+          isSelected={isSelected}
+          detailsRowId={detailsRowId}
+          mobileColSpan={mobileColSpan}
+          secondaryColumns={secondaryColumns}
+          cellContext={cellContext}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        />
       )}
     </>
   );

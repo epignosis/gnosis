@@ -59,16 +59,20 @@ const MobileTablePrimaryRow: FC<MobileTablePrimaryRowProps> = ({
 }) => (
   <tr
     key={`entry-${row.id}-summary`}
-    className={classNames("mobile-row", rowClassnames(isSelected, isRowClickable), {
-      expanded: isExpanded,
+    className={classNames("table-mobile-row", rowClassnames(isSelected, isRowClickable), {
+      "table-mobile-row--expanded": isExpanded,
     })}
     onClick={onRowClick}
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
   >
-    <Cell colSpan={mobileColSpan} className="mobile-row-cell">
-      <div className={classNames("mobile-row-content", { "has-padding": !hasSecondaryColumns })}>
-        <div className="mobile-row-main">
+    <Cell colSpan={mobileColSpan} className="table-mobile-row__cell">
+      <div
+        className={classNames("table-mobile-row__content", {
+          "table-mobile-row__content--padded": !hasSecondaryColumns,
+        })}
+      >
+        <div className="table-mobile-row__main">
           {selectable && (
             <div className={checkboxWrapperClassnames()} onClick={onControlClick}>
               <Checkbox
@@ -86,24 +90,28 @@ const MobileTablePrimaryRow: FC<MobileTablePrimaryRowProps> = ({
           {hasSecondaryColumns && (
             <button
               type="button"
-              className="mobile-expand-toggle"
+              className="table-mobile-row__toggle"
               onClick={onExpandToggle}
               aria-expanded={isExpanded}
               aria-controls={detailsRowId}
               aria-label={isExpanded ? "Collapse row details" : "Expand row details"}
               disabled={disabled}
             >
-              <ChevronArrowRightSVG width={32} className="mobile-expand-icon" />
+              <ChevronArrowRightSVG width={32} className="table-mobile-row__toggle-icon" />
             </button>
           )}
-          <div id={primaryCellId} className="mobile-primary">
-            <div className={classNames("mobile-primary-value", { expanded: isExpanded })}>
+          <div id={primaryCellId} className="table-mobile-row__primary">
+            <div
+              className={classNames("table-mobile-row__primary-value", {
+                "table-mobile-row__primary-value--expanded": isExpanded,
+              })}
+            >
               {renderRowValue(primaryValue, row, { isExpanded })}
             </div>
           </div>
 
           {renderMobileRightActions && (
-            <div className="mobile-actions">{renderMobileRightActions(row)}</div>
+            <div className="table-mobile-row__actions">{renderMobileRightActions(row)}</div>
           )}
         </div>
       </div>

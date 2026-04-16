@@ -33,19 +33,24 @@ const MobileTableRowDetails: FC<MobileTableRowDetailsProps> = ({
 }) => (
   <tr
     id={detailsRowId}
-    className={classNames("mobile-row-expanded", rowClassnames(isSelected, false))}
+    className={classNames("table-mobile-row-details", rowClassnames(isSelected, false))}
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
   >
-    <Cell colSpan={mobileColSpan} className="mobile-row-cell mobile-details-cell">
-      <div className="mobile-expanded-content">
+    <Cell colSpan={mobileColSpan} className="table-mobile-row__cell table-mobile-row-details__cell">
+      <div className="table-mobile-row-details__content">
         {secondaryColumns.map((column) => {
           const value = row[column.accessor];
 
           return (
-            <section key={`${row.id}-${column.accessor}`} className="mobile-expanded-section">
-              <div className="mobile-expanded-label">{getColumnLabel(column)}</div>
-              <div className="mobile-expanded-value">{renderRowValue(value, row, cellContext)}</div>
+            <section
+              key={`${row.id}-${column.accessor}`}
+              className="table-mobile-row-details__section"
+            >
+              <div className="table-mobile-row-details__label">{getColumnLabel(column)}</div>
+              <div className="table-mobile-row-details__value">
+                {renderRowValue(value, row, cellContext)}
+              </div>
             </section>
           );
         })}

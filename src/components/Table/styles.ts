@@ -13,7 +13,8 @@ export const tableContainer = ({ table, typeScaleSizes }: Theme) => css`
   }
 
   table {
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     width: 100%;
     max-width: 100%;
 
@@ -27,6 +28,7 @@ export const tableContainer = ({ table, typeScaleSizes }: Theme) => css`
 
         th,
         td {
+          display: none;
           font-weight: 700;
           padding: 0 1.5rem;
           text-align: start;
@@ -71,12 +73,18 @@ export const tableContainer = ({ table, typeScaleSizes }: Theme) => css`
             }
           }
         }
+
+        .header-cell.primary-header {
+          display: table-cell;
+          padding: 0 1.5rem;
+        }
       }
     }
 
     tbody {
       tr {
-        height: 54px;
+        min-height: 54px;
+        height: auto;
         position: relative;
 
         &:last-of-type {
@@ -84,28 +92,7 @@ export const tableContainer = ({ table, typeScaleSizes }: Theme) => css`
         }
 
         &:hover {
-          background-color: ${table.rowHoverColor};
-        }
-
-        &:hover,
-        &.selected {
-          .autohide-cell {
-            > div {
-              opacity: 1;
-            }
-          }
-        }
-
-        .autohide-cell:focus-within {
-          > div {
-            opacity: 1;
-          }
-        }
-
-        .autohide-cell {
-          > div {
-            opacity: 0;
-          }
+          background-color: transparent;
         }
 
         td {
@@ -171,6 +158,12 @@ export const tableContainer = ({ table, typeScaleSizes }: Theme) => css`
       }
     }
 
+    .autohide-cell {
+      > div {
+        opacity: 1;
+      }
+    }
+
     .selectable-cell {
       padding-inline-end: 0;
       width: 1.5rem;
@@ -188,173 +181,182 @@ export const tableContainer = ({ table, typeScaleSizes }: Theme) => css`
       cursor: pointer;
     }
 
-    @media screen and (max-width: 767px) {
-      table {
-        border-collapse: separate;
-        border-spacing: 0;
-      }
+    tbody {
+      tr.table-mobile-row {
+        td {
+          background-color: ${table.rowBackgroundColor};
+          padding: 0;
+          vertical-align: middle;
+        }
 
-      .autohide-cell {
-        > div {
-          opacity: 1;
+        .table-mobile-row__content {
+          display: flex;
+          align-items: center;
+          flex-wrap: nowrap;
+          min-height: 54px;
+          width: 100%;
+          background-color: inherit;
+          box-sizing: border-box;
+          padding: 0.5rem;
+
+          &.table-mobile-row__content--padded {
+            padding-left: 1.5rem;
+          }
+        }
+
+        .table-mobile-row__main {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          min-width: 0;
+          flex: 1;
+        }
+
+        .selectable-cell {
+          width: auto;
+          padding-inline-end: 0;
+
+          div {
+            padding-block: 0;
+          }
+        }
+
+        .table-mobile-row__toggle {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          border: none;
+          background: transparent;
+          color: inherit;
+          cursor: pointer;
+        }
+
+        .table-mobile-row__toggle-icon {
+          width: 32px;
+          flex-shrink: 0;
+        }
+
+        .table-mobile-row__primary {
+          flex: 1;
+          min-width: 0;
+        }
+
+        .table-mobile-row__primary-value {
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        &.table-mobile-row--expanded {
+          position: relative;
+          z-index: 1;
+          box-shadow: 0 8px 12px -8px rgba(0, 0, 0, 0.2);
+
+          td {
+            border-bottom: none;
+          }
+
+          .table-mobile-row__primary-value {
+            overflow: visible;
+            text-overflow: unset;
+            white-space: normal;
+          }
+
+          .table-mobile-row__toggle {
+            transform: rotate(90deg);
+          }
         }
       }
+
+      &.table-row-group:nth-of-type(odd) {
+        tr.table-mobile-row td {
+          background-color: transparent;
+        }
+      }
+
+      &.table-row-group:nth-of-type(even) {
+        tr.table-mobile-row td {
+          background-color: ${table.rowBackgroundColor};
+        }
+      }
+
+      tr.table-mobile-row-details {
+        td {
+          padding: 0.5rem 1.5rem;
+          background-color: white;
+        }
+
+        .table-mobile-row-details__content {
+          display: grid;
+          gap: 0.5rem;
+          background-color: white;
+        }
+
+        .table-mobile-row-details__section {
+          padding-top: 0.5rem;
+
+          &:first-of-type {
+            padding-top: 0;
+          }
+
+          & + .table-mobile-row-details__section {
+            border-top: 1px solid ${table.rowBackgroundColor};
+          }
+        }
+
+        .table-mobile-row-details__label {
+          font-size: ${typeScaleSizes.sm};
+          font-weight: 700;
+        }
+
+        .table-mobile-row-details__value {
+          white-space: normal;
+          word-break: break-word;
+        }
+      }
+    }
+
+    ${mq["md"]} {
+      border-collapse: collapse;
 
       thead {
-        th {
-          display: none;
-        }
-
-        .header-cell.primary-header {
-          display: table-cell;
-          padding: 0 1.5rem;
+        tr {
+          th,
+          td {
+            display: table-cell;
+          }
         }
       }
 
       tbody {
         tr {
-          min-height: 54px;
-          height: auto;
+          min-height: 0;
+          height: 54px;
 
           &:hover {
-            background-color: transparent;
-          }
-        }
-
-        tr.mobile-row {
-          td {
-            background-color: ${table.rowBackgroundColor};
+            background-color: ${table.rowHoverColor};
           }
 
-          td {
-            padding: 0;
-            vertical-align: middle;
-          }
-
-          .mobile-row-content {
-            display: flex;
-            align-items: center;
-            flex-wrap: nowrap;
-            min-height: 54px;
-            width: 100%;
-            background-color: inherit;
-            box-sizing: border-box;
-            padding: 0.5rem;
-
-            &.has-padding {
-              padding-left: 1.5rem;
+          &:hover,
+          &.selected {
+            .autohide-cell {
+              > div {
+                opacity: 1;
+              }
             }
           }
 
-          .mobile-row-main {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            min-width: 0;
-            flex: 1;
-          }
-
-          .selectable-cell {
-            width: auto;
-            padding-inline-end: 0;
-
-            div {
-              padding-block: 0;
-            }
-          }
-
-          .mobile-expand-toggle {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-            border: none;
-            background: transparent;
-            color: inherit;
-            cursor: pointer;
-          }
-
-          .mobile-expand-icon {
-            width: 32px;
-            flex-shrink: 0;
-          }
-
-          .mobile-primary {
-            flex: 1;
-            min-width: 0;
-          }
-
-          .mobile-primary-value {
-            overflow: hidden;
-            text-overflow: ellipsis;
-          }
-
-          &.expanded {
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 8px 12px -8px rgba(0, 0, 0, 0.2);
-
-            td {
-              border-bottom: none;
-            }
-
-            .mobile-primary-value {
-              overflow: visible;
-              text-overflow: unset;
-              white-space: normal;
-            }
-
-            .mobile-expand-toggle {
-              transform: rotate(90deg);
+          .autohide-cell:focus-within {
+            > div {
+              opacity: 1;
             }
           }
         }
+      }
 
-        &.table-row-group:nth-of-type(odd) {
-          tr.mobile-row td {
-            background-color: transparent;
-          }
-        }
-
-        &.table-row-group:nth-of-type(even) {
-          tr.mobile-row td {
-            background-color: ${table.rowBackgroundColor};
-          }
-        }
-
-        tr.mobile-row-expanded {
-          td {
-            padding: 0.5rem 1.5rem;
-            background-color: white;
-          }
-
-          .mobile-expanded-content {
-            display: grid;
-            gap: 0.5rem;
-            background-color: white;
-          }
-
-          .mobile-expanded-section {
-            padding-top: 0.5rem;
-
-            &:first-of-type {
-              padding-top: 0;
-            }
-
-            & + .mobile-expanded-section {
-              border-top: 1px solid ${table.rowBackgroundColor};
-            }
-          }
-
-          .mobile-expanded-label {
-            font-size: ${typeScaleSizes.sm};
-            font-weight: 700;
-          }
-
-          .mobile-expanded-value {
-            white-space: normal;
-            word-break: break-word;
-          }
+      .autohide-cell {
+        > div {
+          opacity: 0;
         }
       }
     }

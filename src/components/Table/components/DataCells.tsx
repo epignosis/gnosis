@@ -37,7 +37,7 @@ const DataCells: FC<DataCellsProps> = ({
             windowHeight={windowHeight}
             onClick={handleRowClick}
           >
-            {renderRowValue(rowObj, row, { isExpanded: false })}
+            {renderRowValue(rowObj, row)}
           </Cell>
         );
       })}

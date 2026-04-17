@@ -37,7 +37,6 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
   const primaryCellId = `entry-${row.id}-${defaultAccessor}`;
   const detailsRowId = `entry-${row.id}-details`;
   const mobileColSpan = visibleColumns.length + (selectable ? 1 : 0);
-  const cellContext = { isExpanded };
 
   const secondaryColumns = useMemo(
     () => visibleColumns.filter((column) => column.accessor !== defaultAccessor),
@@ -101,7 +100,6 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
           detailsRowId={detailsRowId}
           mobileColSpan={mobileColSpan}
           secondaryColumns={secondaryColumns}
-          cellContext={cellContext}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         />

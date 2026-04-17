@@ -106,7 +106,7 @@ const MobileTablePrimaryRow: FC<MobileTablePrimaryRowProps> = ({
                 "table-mobile-row__primary-value--expanded": isExpanded,
               })}
             >
-              {renderRowValue(primaryValue, row, { isExpanded })}
+              {renderRowValue(primaryValue, row)}
             </div>
           </div>
 

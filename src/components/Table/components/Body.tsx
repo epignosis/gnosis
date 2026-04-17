@@ -8,13 +8,12 @@ import TableRow from "./TableRow";
 
 const Body: FC<ChildrenProps> = ({
   id: tableId = "table",
-  selectable,
+  selectable = false,
   autohide = false,
   state,
   dispatch,
   onRowClick,
   onRowSelect,
-  onRowExpand,
   onHoveredRowChange,
   renderMobileRightActions,
   disabled = false,
@@ -61,7 +60,6 @@ const Body: FC<ChildrenProps> = ({
         const isExpanded = expandedRows.includes(row.id);
         const handleExpandToggle = (): void => {
           dispatch({ type: Actions.toggleRowExpanded, payload: row.id });
-          onRowExpand?.(row.id, !isExpanded);
         };
 
         return (
@@ -75,7 +73,7 @@ const Body: FC<ChildrenProps> = ({
               windowHeight={windowHeight}
               isSelected={isSelected}
               isExpanded={isExpanded}
-              selectable={Boolean(selectable)}
+              selectable={selectable}
               autohide={autohide}
               dispatch={dispatch}
               onRowClick={onRowClick}

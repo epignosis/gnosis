@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import classNames from "classnames";
-import { CellContext, Column, Row } from "../types";
+import { Column, Row } from "../types";
 import { getColumnLabel, renderRowValue } from "../helpers";
 import Cell from "./Cell";
 
@@ -16,7 +16,6 @@ export type MobileTableRowDetailsProps = {
   detailsRowId: string;
   mobileColSpan: number;
   secondaryColumns: Column[];
-  cellContext: CellContext;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
 };
@@ -27,7 +26,6 @@ const MobileTableRowDetails: FC<MobileTableRowDetailsProps> = ({
   detailsRowId,
   mobileColSpan,
   secondaryColumns,
-  cellContext,
   onMouseEnter,
   onMouseLeave,
 }) => (
@@ -48,9 +46,7 @@ const MobileTableRowDetails: FC<MobileTableRowDetailsProps> = ({
               className="table-mobile-row-details__section"
             >
               <div className="table-mobile-row-details__label">{getColumnLabel(column)}</div>
-              <div className="table-mobile-row-details__value">
-                {renderRowValue(value, row, cellContext)}
-              </div>
+              <div className="table-mobile-row-details__value">{renderRowValue(value, row)}</div>
             </section>
           );
         })}

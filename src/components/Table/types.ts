@@ -2,14 +2,10 @@ import { ReactNode } from "react";
 import { Actions } from "./constants";
 import { IconType } from "types/common";
 
-export type CellContext = {
-  isExpanded: boolean;
-};
-
 export type Column = {
   accessor: string;
   isDefaultSort?: boolean;
-  cell: string | ((arg?: unknown, ctx?: CellContext) => JSX.Element | null);
+  cell: string | ((arg?: unknown) => JSX.Element | null);
   hidden?: boolean;
   classNames?: string[];
   sortableHeader?: boolean;
@@ -21,7 +17,7 @@ export type Column = {
 
 export type Row = {
   id: string | number;
-  [key: string]: unknown | ((arg?: unknown, ctx?: CellContext) => JSX.Element | string | null);
+  [key: string]: unknown | ((arg?: unknown) => JSX.Element | string | null);
 };
 
 export type EmptyState = {
@@ -50,7 +46,6 @@ export type TableProps = {
   onRowClick?: (row: Row) => void;
   onHoveredRowChange?: (hoveredRow: Row | null) => void;
   onRowSelect?: (ids: number[]) => void;
-  onRowExpand?: (rowId: string | number, isExpanded: boolean) => void;
   /** Slot rendered on the right side of the mobile primary row. */
   renderMobileRightActions?: (row: Row) => ReactNode;
 };
@@ -79,6 +74,4 @@ export type ActionType =
 export type TableHandlers = {
   selectRowsById: (rowIds: number[]) => void;
   resetSelected: () => void;
-  getExpandedRows: () => (string | number)[];
-  isRowExpanded: (rowId: string | number) => boolean;
 };

@@ -155,6 +155,10 @@ export const tableContainer = ({ table, typeScaleSizes }: Theme) => css`
         tr {
           background-color: ${table.rowBackgroundColor};
         }
+
+        tr:hover {
+          background-color: ${table.rowHoverColor};
+        }
       }
     }
 
@@ -332,6 +336,10 @@ export const tableContainer = ({ table, typeScaleSizes }: Theme) => css`
         tr {
           min-height: 0;
           height: 54px;
+
+          &:nth-of-type(even) {
+            background-color: ${table.rowBackgroundColor};
+          }
 
           &:hover {
             background-color: ${table.rowHoverColor};

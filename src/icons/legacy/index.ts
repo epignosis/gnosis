@@ -2,7 +2,6 @@ export { default as MyCoursesSVG } from "./my-courses.svg";
 export { default as CatalogSVG } from "./catalog.svg";
 export { default as CalendarSVG } from "./calendar.svg";
 export { default as CommunicationSVG } from "./communication.svg";
-export { default as HelpSVG } from "./help.svg";
 export { default as CloseCircledSVG } from "./close-circled.svg";
 export { default as InfoCircledSVG } from "./info-circled.svg";
 export { default as EllipsisSVG } from "./ellipsis.svg";

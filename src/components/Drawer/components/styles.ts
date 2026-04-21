@@ -14,6 +14,7 @@ export const drawerHeader = ({ noGutters }: { noGutters: boolean }): SerializedS
     ${mq["md"]} {
       padding-inline: ${noGutters ? 0 : "2rem"};
     }
+
     .close-button {
       margin-inline-end: -0.8rem;
     }

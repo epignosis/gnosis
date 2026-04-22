@@ -260,6 +260,7 @@ export { default as TableAddAboveSVG } from "./table-add-above.svg";
 export { default as TableRemoveBelowSVG } from "./table-remove-below.svg";
 export { default as CircleQuestionSVG } from "./circle-question.svg";
 export { default as BriefcaseSVG } from "./briefcase.svg";
+export { default as DiamondsSVG } from "./diamonds.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./teams.svg";

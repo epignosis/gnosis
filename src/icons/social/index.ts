@@ -5,3 +5,4 @@ export { default as TwitterSVG } from "./twitter.svg";
 export { default as FacebookLogoSVG } from "./facebook-logo.svg";
 export { default as TwitterLogoSVG } from "./twitter-logo.svg";
 export { default as LinkedinLogoSVG } from "./linkedin-logo.svg";
+export { default as XLogoSVG } from "./x-logo.svg";

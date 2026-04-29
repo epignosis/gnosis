@@ -3,7 +3,7 @@
 exports[`<Table> matches snapshot 1`] = `
 <div>
   <div
-    class="css-1o0cw22-tableContainer-tableContainer"
+    class="css-c9yxfh-tableContainer-tableContainer"
     data-testid="table-1"
   >
     <table
@@ -14,7 +14,7 @@ exports[`<Table> matches snapshot 1`] = `
           class=""
         >
           <th
-            class="header-cell header1 "
+            class="header-cell header1 primary-header"
             data-testid="header1-column"
             style="width: auto;"
           >
@@ -23,7 +23,7 @@ exports[`<Table> matches snapshot 1`] = `
             </span>
           </th>
           <th
-            class="header-cell header2 "
+            class="header-cell header2"
             data-testid="header2-column"
             style="width: auto;"
           >
@@ -32,7 +32,7 @@ exports[`<Table> matches snapshot 1`] = `
             </span>
           </th>
           <th
-            class="header-cell header3 "
+            class="header-cell header3"
             data-testid="header3-column"
             style="width: auto;"
           >
@@ -41,7 +41,7 @@ exports[`<Table> matches snapshot 1`] = `
             </span>
           </th>
           <th
-            class="header-cell header4 "
+            class="header-cell header4"
             data-testid="header4-column"
             style="width: auto;"
           >
@@ -50,7 +50,7 @@ exports[`<Table> matches snapshot 1`] = `
             </span>
           </th>
           <th
-            class="header-cell header5 "
+            class="header-cell header5"
             data-testid="header5-column"
             style="width: auto;"
           >
@@ -60,7 +60,9 @@ exports[`<Table> matches snapshot 1`] = `
           </th>
         </tr>
       </thead>
-      <tbody>
+      <tbody
+        class="table-row-group"
+      >
         <tr
           class=""
         >
@@ -90,6 +92,10 @@ exports[`<Table> matches snapshot 1`] = `
             style="max-width: auto;"
           />
         </tr>
+      </tbody>
+      <tbody
+        class="table-row-group"
+      >
         <tr
           class=""
         >
@@ -119,6 +125,10 @@ exports[`<Table> matches snapshot 1`] = `
             style="max-width: auto;"
           />
         </tr>
+      </tbody>
+      <tbody
+        class="table-row-group"
+      >
         <tr
           class=""
         >
@@ -148,6 +158,10 @@ exports[`<Table> matches snapshot 1`] = `
             style="max-width: auto;"
           />
         </tr>
+      </tbody>
+      <tbody
+        class="table-row-group"
+      >
         <tr
           class=""
         >

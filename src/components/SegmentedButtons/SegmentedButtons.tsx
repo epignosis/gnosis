@@ -49,7 +49,7 @@ const SegmentedButtons: FC<SegmentedButtonsProps> = ({
             key={option.value}
             type="button"
             id={`segmented-button-${index}`}
-            data-testid={`segmented-button-${index}`}
+            data-testid={`segmented-buttons__button-${index}`}
             css={(theme): SerializedStyles =>
               segmentedButton(theme, {
                 isSelected,
@@ -59,17 +59,17 @@ const SegmentedButtons: FC<SegmentedButtonsProps> = ({
                 hasIcon,
               })
             }
-            className={classNames("segmented-button", {
-              "is-selected": isSelected,
-              "is-icon-only": showOnlyIcon,
+            className={classNames("segmented-buttons__button", {
+              "segmented-buttons__button--selected": isSelected,
+              "segmented-buttons__button--icon-only": showOnlyIcon,
             })}
             disabled={option.disabled}
             aria-pressed={isSelected}
             aria-label={showOnlyIcon && typeof option.value === "string" ? option.value : undefined}
             onClick={(): void => onChange(option.value)}
           >
-            {Icon && <Icon className="segmented-button-icon" aria-hidden="true" height={16} />}
-            {hasLabel && <span className="segmented-button-label">{option.label}</span>}
+            {Icon && <Icon className="segmented-buttons__icon" aria-hidden="true" height={16} />}
+            {hasLabel && <span className="segmented-buttons__label">{option.label}</span>}
           </button>
         );
       })}

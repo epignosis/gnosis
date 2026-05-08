@@ -28,7 +28,7 @@ describe("<SegmentedButtons />", () => {
 
     expect(first).toHaveAttribute("aria-pressed", "false");
     expect(second).toHaveAttribute("aria-pressed", "true");
-    expect(second).toHaveClass("is-selected");
+    expect(second).toHaveClass("segmented-buttons__button--selected");
   });
 
   it("calls onChange with the option value when clicked", async () => {
@@ -73,7 +73,7 @@ describe("<SegmentedButtons />", () => {
     );
 
     const buttons = screen.getAllByRole("button");
-    expect(buttons[0]).toHaveClass("is-icon-only");
+    expect(buttons[0]).toHaveClass("segmented-buttons__button--icon-only");
     expect(buttons[0].querySelector("svg")).toBeInTheDocument();
   });
 

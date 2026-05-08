@@ -43,12 +43,12 @@ export const segmentedButton = (
     cursor: pointer;
     transition: background-color 0.2s ease-in, color 0.2s ease-in, border-color 0.2s ease-in;
 
-    .segmented-button-icon {
+    .segmented-buttons__icon {
       color: currentColor;
       flex-shrink: 0;
     }
 
-    &:hover:not(:disabled):not(.is-selected) {
+    &:hover:not(:disabled):not(.segmented-buttons__button--selected) {
       background: ${segmentedButtons.hover.background};
       border-color: ${segmentedButtons.hover.borderColor};
       color: ${segmentedButtons.hover.color};

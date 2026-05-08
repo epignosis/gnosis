@@ -21,6 +21,7 @@ import {
   pagination,
   dropdown,
   scrollbar,
+  segmentedButtons,
   statusTag,
   breadcrumbs,
 } from "./config";
@@ -59,6 +60,7 @@ const defaultTheme = {
   pagination,
   dropdown,
   scrollbar,
+  segmentedButtons,
   statusTag,
   breadcrumbs,
   toastNotifications,

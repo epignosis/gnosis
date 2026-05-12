@@ -21,6 +21,12 @@ export type SegmentedButtonsProps = Omit<
   ariaLabel?: string;
 };
 
+const getButtonClassName = (isSelected: boolean, showOnlyIcon: boolean): string =>
+  classNames("segmented-buttons__button", {
+    "segmented-buttons__button--selected": isSelected,
+    "segmented-buttons__button--icon-only": showOnlyIcon,
+  });
+
 const SegmentedButtons: FC<SegmentedButtonsProps> = ({
   options,
   value,
@@ -59,10 +65,7 @@ const SegmentedButtons: FC<SegmentedButtonsProps> = ({
                 hasIcon,
               })
             }
-            className={classNames("segmented-buttons__button", {
-              "segmented-buttons__button--selected": isSelected,
-              "segmented-buttons__button--icon-only": showOnlyIcon,
-            })}
+            className={getButtonClassName(isSelected, showOnlyIcon)}
             disabled={option.disabled}
             aria-pressed={isSelected}
             aria-label={showOnlyIcon && typeof option.value === "string" ? option.value : undefined}

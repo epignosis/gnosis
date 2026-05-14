@@ -9,7 +9,7 @@ const InputError: FC<InputErrorProps> = ({ as = "div", children, ...rest }) => {
   const InputErrorTag = as;
 
   return (
-    <InputErrorTag css={inputError} {...rest}>
+    <InputErrorTag css={inputError} className="input-error" {...rest}>
       {children}
     </InputErrorTag>
   );

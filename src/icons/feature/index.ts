@@ -1,4 +1,5 @@
 export * from "./ai";
+export * from "./playground";
 export * from "./questions";
 export * from "./rating";
 export * from "./training-matrix";

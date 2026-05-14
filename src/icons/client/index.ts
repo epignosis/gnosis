@@ -270,7 +270,6 @@ export { default as TeamsSVG } from "./teams.svg";
 export * from "./assignments";
 export * from "./custom-homepage";
 export * from "./editor";
-export * from "./playground";
 export * from "./product-fruits";
 export * from "./quick-actions";
 export * from "./referral";

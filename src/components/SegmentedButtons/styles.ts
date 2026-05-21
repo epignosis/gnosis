@@ -19,6 +19,9 @@ export const segmentedButton = (
 ): SerializedStyles => {
   const state = isSelected ? segmentedButtons.active : segmentedButtons.default;
   const iconOnly = hasIcon && !hasLabel;
+  const iconAndLabel = hasIcon && hasLabel;
+
+  const horizontalPadding = iconOnly ? "0.5rem" : iconAndLabel ? "0.75rem" : "1.5rem";
 
   return css`
     display: inline-flex;
@@ -27,7 +30,7 @@ export const segmentedButton = (
     gap: 0.5rem;
     height: 2.5rem;
     min-width: 2.5rem;
-    padding: 0 ${iconOnly ? "0.5rem" : "1.5rem"};
+    padding: 0 ${horizontalPadding};
     background: ${state.background};
     border: 1px solid ${state.borderColor};
     border-inline-start-width: ${isFirst ? "1px" : "0"};
@@ -55,7 +58,7 @@ export const segmentedButton = (
     }
 
     &:focus-visible {
-      outline: 2px solid ${segmentedButtons.hover.borderColor};
+      outline: 1px solid ${segmentedButtons.hover.borderColor};
       outline-offset: 2px;
     }
 

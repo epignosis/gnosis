@@ -46,7 +46,7 @@ const SegmentedButtons: FC<SegmentedButtonsProps> = ({
       {options.map((option, index) => {
         const Icon = option.icon;
         const isSelected = option.value === value;
-        const hasLabel = option.label !== undefined && option.label !== null;
+        const hasLabel = Boolean(option.label);
         const hasIcon = Boolean(Icon);
         const showOnlyIcon = hasIcon && !hasLabel;
 

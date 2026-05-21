@@ -8,7 +8,7 @@ exports[`<SegmentedButtons /> matches snapshot 1`] = `
   >
     <button
       aria-pressed="true"
-      class="segmented-buttons__button segmented-buttons__button--selected css-1qawtbr-segmentedButton-segmentedButton"
+      class="segmented-buttons__button segmented-buttons__button--selected css-9db8z6-segmentedButton-segmentedButton"
       data-testid="segmented-buttons__button-0"
       id="segmented-button-0"
       type="button"
@@ -21,7 +21,7 @@ exports[`<SegmentedButtons /> matches snapshot 1`] = `
     </button>
     <button
       aria-pressed="false"
-      class="segmented-buttons__button css-z97zql-segmentedButton-segmentedButton"
+      class="segmented-buttons__button css-d94rlb-segmentedButton-segmentedButton"
       data-testid="segmented-buttons__button-1"
       id="segmented-button-1"
       type="button"

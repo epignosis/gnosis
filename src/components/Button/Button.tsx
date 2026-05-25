@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, ElementType } from "react";
+import React, { ReactElement, ReactNode, ElementType, SVGProps } from "react";
 import { SerializedStyles } from "@emotion/react";
 import { LazyMotion, domAnimation, m, AnimatePresence } from "framer-motion";
 import classNames from "classnames";
@@ -26,7 +26,9 @@ export type Props = {
   block?: boolean;
   isLoading?: boolean;
   iconBefore?: IconType;
+  iconBeforeProps?: SVGProps<SVGSVGElement>;
   iconAfter?: IconType;
+  iconAfterProps?: SVGProps<SVGSVGElement>;
   className?: string;
   disabled?: boolean;
   rounded?: boolean;
@@ -50,7 +52,9 @@ const Button = <C extends ElementType = "button">(props: ButtonProps<C>): ReactE
     className = "",
     rounded = false,
     iconBefore,
+    iconBeforeProps,
     iconAfter,
+    iconAfterProps,
     children,
     disabled,
     underlined,
@@ -75,6 +79,20 @@ const Button = <C extends ElementType = "button">(props: ButtonProps<C>): ReactE
     active: active,
   });
 
+  const iconBeforePropsWithDefaults = {
+    ...iconBeforeProps,
+    height: iconBeforeProps?.height ?? iconSizes[size],
+    className: classNames("icon", iconBeforeProps?.className),
+    "data-testid": "prefix-icon",
+  };
+
+  const iconAfterPropsWithDefaults = {
+    ...iconAfterProps,
+    height: iconAfterProps?.height ?? iconSizes[size],
+    className: classNames("icon", iconAfterProps?.className),
+    "data-testid": "suffix-icon",
+  };
+
   return (
     <LazyMotion features={domAnimation}>
       <Component
@@ -98,13 +116,9 @@ const Button = <C extends ElementType = "button">(props: ButtonProps<C>): ReactE
             </m.div>
           )}
         </AnimatePresence>
-        {PrefixIcon && (
-          <PrefixIcon height={iconSizes[size]} className="icon" data-testid="prefix-icon" />
-        )}
+        {PrefixIcon && <PrefixIcon {...iconBeforePropsWithDefaults} />}
         <span className="btn-text">{children}</span>
-        {SuffixIcon && (
-          <SuffixIcon height={iconSizes[size]} className="icon" data-testid="suffix-icon" />
-        )}
+        {SuffixIcon && <SuffixIcon {...iconAfterPropsWithDefaults} />}
       </Component>
     </LazyMotion>
   );

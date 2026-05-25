@@ -21,6 +21,7 @@ export { default as Table } from "./components/Table/Table";
 export { default as Dropdown } from "./components/Dropdown/Dropdown";
 export { default as StatusTag } from "./components/StatusTag/StatusTag";
 export { default as Breadcrumbs } from "./components/Breadcrumbs/Breadcrumbs";
+export { default as SegmentedButtons } from "./components/SegmentedButtons/SegmentedButtons";
 export { default as ToastNotification } from "./components/Toast/ToastNotifications";
 //  Typography!
 export { default as Heading } from "./components/Heading/Heading";
@@ -67,4 +68,8 @@ export type { Column, Row } from "./components/Table/types";
 export type { DropdownProps, DropdownItem } from "./components/Dropdown/types";
 export type { TableHandlers } from "./components/Table/types";
 export type { StatusTagColors } from "./components/StatusTag/StatusTag";
+export type {
+  SegmentedButtonsProps,
+  SegmentedButtonOption,
+} from "./components/SegmentedButtons/SegmentedButtons";
 export type { Color } from "./components/Button/Button";

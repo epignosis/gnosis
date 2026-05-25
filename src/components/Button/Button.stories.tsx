@@ -163,10 +163,38 @@ WithIconBefore.args = {
   children: "Icon prefix",
 };
 
+export const WithIconBeforeWithProps = Template.bind({});
+
+WithIconBeforeWithProps.args = {
+  color: "primary",
+  iconBefore: CalendarSVG,
+  iconBeforeProps: {
+    "aria-hidden": "true",
+    focusable: "false",
+    className: "custom-icon",
+    height: 20,
+  },
+  children: "Icon prefix",
+};
+
 export const WithIconAfter = Template.bind({});
 
 WithIconAfter.args = {
   color: "primary",
   iconAfter: CalendarSVG,
+  children: "Icon prefix",
+};
+
+export const WithIconAfterWithProps = Template.bind({});
+
+WithIconAfterWithProps.args = {
+  color: "primary",
+  iconAfter: CalendarSVG,
+  iconAfterProps: {
+    "aria-hidden": "true",
+    focusable: "false",
+    className: "custom-icon",
+    height: 20,
+  },
   children: "Icon prefix",
 };

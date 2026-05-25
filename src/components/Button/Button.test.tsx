@@ -1,9 +1,12 @@
-import React from "react";
+import React, { SVGProps } from "react";
 import userEvent from "@testing-library/user-event";
 import { faker } from "@faker-js/faker";
 import { CalendarSVG } from "../../icons/";
 import Button from "./Button";
 import { render, screen } from "@test-utils/render";
+
+/** Jest replaces `.svg` with a string stub; use a real SVG component to assert `className` merging. */
+const MockSvgIcon = (props: SVGProps<SVGSVGElement>): JSX.Element => <svg {...props} />;
 
 describe("<Button />", () => {
   it("renders correctly!", () => {
@@ -88,7 +91,39 @@ describe("<Button />", () => {
     render(<Button iconAfter={CalendarSVG}>With suffix icon</Button>);
 
     const icon = screen.getByTestId("suffix-icon");
+
     expect(icon).toBeInTheDocument();
+  });
+
+  it("with prefix icon with props", () => {
+    render(
+      <Button
+        iconBefore={MockSvgIcon}
+        iconBeforeProps={{ "aria-hidden": true, className: "custom-icon" }}
+      >
+        Save
+      </Button>,
+    );
+    const icon = screen.getByTestId("prefix-icon");
+
+    expect(icon).toHaveAttribute("aria-hidden", "true");
+    expect(icon).toHaveClass("icon", "custom-icon");
+  });
+
+  it("with suffix icon with props", () => {
+    render(
+      <Button
+        iconAfter={MockSvgIcon}
+        iconAfterProps={{ "aria-hidden": true, className: "custom-icon" }}
+      >
+        Save
+      </Button>,
+    );
+
+    const icon = screen.getByTestId("suffix-icon");
+
+    expect(icon).toHaveClass("icon", "custom-icon");
+    expect(icon).toHaveAttribute("aria-hidden", "true");
   });
 
   it("matches snapshot", () => {

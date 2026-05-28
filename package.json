@@ -124,7 +124,6 @@
     "@emotion/react": "^11.13.3",
     "@tippyjs/react": "^4.2.6",
     "ahooks": "^3.8.1",
-    "canvas": "^2.11.2",
     "classnames": "^2.5.1",
     "color": "^4.2.3",
     "core-js": "^3.38.1",
@@ -135,6 +134,9 @@
     "react-select": "^5.8.1",
     "react-spinners": "^0.13.6",
     "tslib": "^2.7.0"
+  },
+  "optionalDependencies": {
+    "canvas": "^3.0.0"
   },
   "repository": {
     "type": "git",

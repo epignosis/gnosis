@@ -3,9 +3,9 @@ import { footerContainer } from "./styles";
 import { FCWithChildren } from "types/common";
 
 const Footer: FCWithChildren = ({ children }) => (
-  <footer data-testid="drawer-footer" css={footerContainer}>
+  <div data-testid="drawer-footer" css={footerContainer} className="drawer-footer">
     {children}
-  </footer>
+  </div>
 );
 
 export default Footer;

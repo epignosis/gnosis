@@ -1,4 +1,11 @@
-import React, { Children, cloneElement, ReactElement, useEffect, useRef } from "react";
+import React, {
+  Children,
+  cloneElement,
+  isValidElement,
+  ReactElement,
+  useEffect,
+  useRef,
+} from "react";
 import { createPortal } from "react-dom";
 import ReactFocusLock from "react-focus-lock";
 import { SerializedStyles } from "@emotion/react";
@@ -70,6 +77,9 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
     onClose,
     ...rest
   } = props;
+  const hasHeader = Children.toArray(children).some(
+    (child) => isValidElement(child) && child.type === Header,
+  );
   const clonedChildren = Children.map(children, (child) => {
     return (
       child &&
@@ -154,6 +164,7 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
                 aria-expanded={isOpen}
                 aria-hidden={!isOpen}
                 aria-modal="true"
+                aria-labelledby={hasHeader ? "drawer-title" : undefined}
                 initial="initial"
                 animate="expanded"
                 exit="initial"

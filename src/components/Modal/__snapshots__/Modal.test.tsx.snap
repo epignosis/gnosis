@@ -8,7 +8,7 @@ exports[`<Modal> matches snapshot 1`] = `
   role="dialog"
   tabindex="-1"
 >
-  <header
+  <div
     class="css-1qvmmn3-modalHeader-modalHeader"
     data-testid="modal-header"
   >
@@ -19,18 +19,18 @@ exports[`<Modal> matches snapshot 1`] = `
         Test header
       </h2>
     </div>
-  </header>
+  </div>
   <article
     class="css-1v47goe-modalContent"
   >
     Test body
   </article>
-  <footer
+  <div
     class="css-xu94ia-modalFooter-modalFooter"
     data-testid="modal-footer"
   >
     Test footer
-  </footer>
+  </div>
 </div>
 `;
 
@@ -43,7 +43,7 @@ exports[`<Modal> matches snapshot with all props 1`] = `
   style="border: 3px solid red;"
   tabindex="-1"
 >
-  <header
+  <div
     class="css-1qvmmn3-modalHeader-modalHeader"
     data-testid="modal-header"
   >
@@ -54,7 +54,7 @@ exports[`<Modal> matches snapshot with all props 1`] = `
         Test header
       </h2>
     </div>
-  </header>
+  </div>
   <article
     class="css-1v47goe-modalContent"
     style="border: 2px solid green;"
@@ -80,7 +80,7 @@ exports[`<Modal> matches snapshot with all props 1`] = `
       type="password"
     />
   </article>
-  <footer
+  <div
     class="css-xu94ia-modalFooter-modalFooter"
     data-testid="modal-footer"
     style="border: 2px solid purple; text-align: right;"
@@ -93,7 +93,7 @@ exports[`<Modal> matches snapshot with all props 1`] = `
     <button>
       Change password
     </button>
-  </footer>
+  </div>
 </div>
 `;
 
@@ -105,7 +105,7 @@ exports[`<Modal> matches snapshot with custom HTML classes 1`] = `
   role="dialog"
   tabindex="-1"
 >
-  <header
+  <div
     class="css-1qvmmn3-modalHeader-modalHeader"
     data-testid="modal-header"
   >
@@ -116,17 +116,17 @@ exports[`<Modal> matches snapshot with custom HTML classes 1`] = `
         Test header
       </h2>
     </div>
-  </header>
+  </div>
   <article
     class="css-1v47goe-modalContent"
   >
     Test body
   </article>
-  <footer
+  <div
     class="css-xu94ia-modalFooter-modalFooter"
     data-testid="modal-footer"
   >
     Test footer
-  </footer>
+  </div>
 </div>
 `;

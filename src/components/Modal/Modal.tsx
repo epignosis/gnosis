@@ -13,7 +13,7 @@ export type HeaderProps = React.HTMLAttributes<HTMLElement> & {
 const Header: FC<HeaderProps> = ({ children, onClose, ...rest }) => {
   const title = typeof children === "string" ? <Heading size="md">{children}</Heading> : children;
   return (
-    <header css={modalHeader} data-testid="modal-header" {...rest}>
+    <div css={modalHeader} data-testid="modal-header" {...rest}>
       <div>{title}</div>
       {onClose && (
         <button
@@ -26,7 +26,7 @@ const Header: FC<HeaderProps> = ({ children, onClose, ...rest }) => {
           <CloseModalSVG height={32} />
         </button>
       )}
-    </header>
+    </div>
   );
 };
 
@@ -44,9 +44,9 @@ type FooterProps = React.HTMLAttributes<HTMLElement>;
 
 const Footer: FC<FooterProps> = ({ children, ...rest }) => {
   return (
-    <footer css={modalFooter} data-testid="modal-footer" {...rest}>
+    <div css={modalFooter} data-testid="modal-footer" {...rest}>
       {children}
-    </footer>
+    </div>
   );
 };
 

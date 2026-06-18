@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SegmentedButtons /> matches snapshot 1`] = `
+<div>
+  <div
+    class="segmented-buttons css-y2i3w0-container"
+    role="group"
+  >
+    <button
+      aria-pressed="true"
+      class="segmented-buttons__button segmented-buttons__button--selected css-9db8z6-segmentedButton-segmentedButton"
+      data-testid="segmented-buttons__button-0"
+      id="segmented-button-0"
+      type="button"
+    >
+      <span
+        class="segmented-buttons__label"
+      >
+        Item first
+      </span>
+    </button>
+    <button
+      aria-pressed="false"
+      class="segmented-buttons__button css-d94rlb-segmentedButton-segmentedButton"
+      data-testid="segmented-buttons__button-1"
+      id="segmented-button-1"
+      type="button"
+    >
+      <span
+        class="segmented-buttons__label"
+      >
+        Item second
+      </span>
+    </button>
+  </div>
+</div>
+`;

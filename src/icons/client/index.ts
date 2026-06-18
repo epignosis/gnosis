@@ -6,6 +6,8 @@ export { default as FlipSVG } from "./flip.svg";
 export { default as StarSVG } from "./star.svg";
 export { default as HalfStarSVG } from "./half-star.svg";
 export { default as StarNoViewboxSVG } from "./star-no-viewbox.svg";
+export { default as StarNoViewboxOutlinedSVG } from "./star-no-viewbox-outlined.svg";
+export { default as StarHalfNoViewboxSVG } from "./star-half-no-viewbox.svg";
 export { default as CameraSVG } from "./camera.svg";
 export { default as CameraRegularSVG } from "./camera-regular.svg";
 export { default as UnitAnsweredSVG } from "./radio-selected.svg";
@@ -259,6 +261,9 @@ export { default as ClockTrialSVG } from "./clock-trial.svg";
 export { default as CrownSVG } from "./crown.svg";
 export { default as TableAddAboveSVG } from "./table-add-above.svg";
 export { default as TableRemoveBelowSVG } from "./table-remove-below.svg";
+export { default as CircleQuestionSVG } from "./circle-question.svg";
+export { default as BriefcaseSVG } from "./briefcase.svg";
+export { default as DiamondsSVG } from "./diamonds.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./teams.svg";

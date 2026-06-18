@@ -15,7 +15,8 @@ const Header: FCWithChildren<HeaderProps> = ({ onClose, noGutters = false, child
   const title = typeof children === "string" ? <Heading size="md">{children}</Heading> : children;
 
   return (
-    <header
+    <div
+      className="drawer-header"
       id="drawer-title"
       data-testid="drawer-header"
       css={(): SerializedStyles => drawerHeader({ noGutters })}
@@ -32,7 +33,7 @@ const Header: FCWithChildren<HeaderProps> = ({ onClose, noGutters = false, child
       >
         <CloseModalSVG height={32} />
       </Button>
-    </header>
+    </div>
   );
 };
 

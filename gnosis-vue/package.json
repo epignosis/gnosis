@@ -1,0 +1,52 @@
+{
+  "name": "@epignosis_llc/gnosis-vue",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Vue 3 wrapper for the Epignosis Gnosis design system",
+  "main": "dist/gnosis-vue.umd.cjs",
+  "module": "dist/gnosis-vue.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/gnosis-vue.js",
+      "require": "./dist/gnosis-vue.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "vue": "^3.3.0"
+  },
+  "dependencies": {
+    "@epignosis_llc/gnosis": "^6.6.3",
+    "veaury": "^2.6.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "10.2.17",
+    "@storybook/addon-docs": "10.2.17",
+    "@storybook/addon-links": "10.2.17",
+    "@storybook/vue3-vite": "10.2.17",
+    "@vitejs/plugin-react": "^4.0.0",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vitejs/plugin-vue-jsx": "^5.1.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "storybook": "10.2.17",
+    "typescript": "^5.0.0",
+    "vite": "^6.0.0",
+    "vite-plugin-dts": "^3.0.0",
+    "vue": "^3.4.0",
+    "vue-tsc": "^2.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6007",
+    "build:storybook": "storybook build -o storybook-static"
+  }
+}

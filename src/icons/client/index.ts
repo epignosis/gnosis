@@ -197,6 +197,8 @@ export { default as PencilBrushSVG } from "./pencil-brush.svg";
 export { default as SparklesSVG } from "./sparkles.svg";
 export { default as CreditsSVG } from "./credits.svg";
 export { default as SquareAddSVG } from "./square-add.svg";
+export { default as SquareMinusSVG } from "./square-minus.svg";
+export { default as LearningPathNoViewboxSVG } from "./learning-path-no-viewbox.svg";
 export { default as ScrollIndicatorSVG } from "./scroll-indicator-icon.svg";
 export { default as BranchesDropdownSVG } from "./BranchesDropdown.svg";
 export { default as CircleLockSVG } from "./circle-lock.svg";

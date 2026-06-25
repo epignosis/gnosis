@@ -4,12 +4,11 @@ Single source of truth for project conventions, operational notes, and AI-assist
 
 ## Project overview
 
-Gnosis is an internal, opinionated **React component library + design-token package** — not an application. It ships reusable, themeable, accessible UI components (Button, Modal, Table, Drawer, form elements, etc.), a theming system built on Emotion, framework-agnostic design tokens, and an SVG icon set. It is consumed by Epignosis products (TalentLMS+, eFront, etc.) via npm.
+Gnosis is an internal, opinionated **React component library** — not an application. It ships reusable, themeable, accessible UI components (Button, Modal, Table, Drawer, form elements, etc.), a theming system built on Emotion, and an SVG icon set. It is consumed by Epignosis products (TalentLMS+, eFront, etc.) via npm.
 
-The library has **three published entry points** (see `package.json#exports`):
+The library has **two published entry points** (see `package.json#exports`):
 
 - `@epignosis_llc/gnosis` — React components + theme.
-- `@epignosis_llc/gnosis/tokens` and `/tokens.css` — framework-agnostic design tokens (zero React dependency; usable from Vue/Svelte/Angular/vanilla — see `DESIGN_TOKENS.md`).
 - `@epignosis_llc/gnosis/icons` — SVG icon components.
 
 Development happens in **Storybook** — there is no app shell. `npm start` boots Storybook on `localhost:6006` and every component documents its props there.
@@ -42,7 +41,7 @@ When you edit project conventions, edit `AGENTS.md`. There is no sync script —
 
 ```bash
 npm start                    # Storybook dev server on localhost:6006
-npm run build                # Production build: tsc declarations + rollup (cjs/esm/types/tokens)
+npm run build                # Production build: tsc declarations + rollup (cjs/esm/types/icons)
 npm run build:design-system  # Build static Storybook into ./design-system
 ```
 
@@ -87,7 +86,7 @@ npm run semantic-release      # Run by CI on merge — do not run manually
 - **Animations:** **Framer Motion** (`LazyMotion` + `m` for code-splitting — see `Button.tsx`).
 - **Icons:** SVG files transformed to React components by **`@svgr/rollup`** / `vite-plugin-svgr`.
 - **Notable deps:** `@tippyjs/react` (tooltips), `react-select`, `react-modal`, `react-focus-lock`, `react-spinners`, `ahooks`, `classnames`, `color`.
-- **Build:** **Rollup 2** emits `dist/cjs`, `dist/esm`, `dist/types`, `dist/tokens`; `tsc` emits declarations.
+- **Build:** **Rollup 2** emits `dist/cjs`, `dist/esm`, and `icons`; `tsc` emits declarations to `dist/types`.
 - **Dev/docs:** **Storybook 10** (`@storybook/react-vite`, a11y + docs addons, Chromatic).
 - **Testing:** **Jest 27** + React Testing Library + `@testing-library/jest-dom` + `@faker-js/faker` (transpiled by `babel-jest`).
 - **Releases:** **semantic-release** driven by conventional commits.
@@ -98,7 +97,7 @@ npm run semantic-release      # Run by CI on merge — do not run manually
 
 ```
 src/
-├── index.ts            // The single public barrel — every exported component/token lives here
+├── index.ts            // The single public barrel — every exported component lives here
 ├── components/         // One folder per component (PascalCase)
 │   └── Button/
 │       ├── Button.tsx              // Component (PascalCase, default export)
@@ -112,9 +111,7 @@ src/
 │   │   ├── colors.ts               // Color palettes
 │   │   ├── defaultTheme.ts         // Assembled GnosisTheme
 │   │   └── config/<component>.ts   // Per-component theme config (button.ts, modal.ts, …)
-│   ├── utils/                      // typography, global styles, helpers
-│   ├── tokens.ts                   // Framework-agnostic design tokens
-│   └── tokens.css                  // Tokens as CSS custom properties on :root
+│   └── utils/                      // typography, global styles, helpers
 ├── icons/              // SVG assets grouped by category, barrelled in index.ts
 ├── types/              // common.ts, utils.ts, emotion.d.ts (Theme augmentation), *.d.ts
 └── test-utils/         // render (ThemeProvider wrapper), mocks, helpers
@@ -128,35 +125,36 @@ src/
 
 ### Path aliases (use these — never deep relative imports for these roots)
 
-| Alias | Maps to |
-|---|---|
-| `@theme/*` | `src/theme/*` |
-| `@test-utils/*` | `src/test-utils/*` |
-| `types/*` | `src/types/*` (note: no leading `@`) |
+| Alias           | Maps to                              |
+| --------------- | ------------------------------------ |
+| `@theme/*`      | `src/theme/*`                        |
+| `@test-utils/*` | `src/test-utils/*`                   |
+| `types/*`       | `src/types/*` (note: no leading `@`) |
 
 Aliases are declared in `tsconfig.json#paths` and mirrored in `jest.config.cjs#moduleNameMapper` and the Rollup config. If you add an alias, update all three.
 
 ### Key patterns
 
 **Component authoring**
+
 - Function components only. Default-export the component; co-locate `styles.ts` and `constants.ts`.
 - Accept a `className` prop and compose classes with **`classnames`** (see `Button.tsx`). Style state via class hooks (`&.disabled`, `&.active`) rather than prop-driven branching where the existing components do so.
 - Polymorphic components use the `as` prop with `PolymorphicComponentProps<C, Props>` from `types/common` (see `Button`).
 - Expose a stable `data-testid` for sub-elements that tests/consumers target (e.g. `prefix-icon`).
 
 **Theming**
+
 - Read theme values inside style functions: `css={(theme) => myStyles(theme, attrs)}`. Style functions take `Theme` (or a slice like `theme.button`) and return `SerializedStyles`.
 - Component-tunable values live in `src/theme/default/config/<component>.ts` and are surfaced on the typed `Theme`. Add new theming knobs there — not as hardcoded literals in `styles.ts`.
 - The `Theme` type is augmented in `src/types/emotion.d.ts` (`interface Theme extends GnosisTheme`). Extend `GnosisTheme` (via `defaultTheme.ts` / config files) when adding themeable surface.
 - Consumers override the theme by passing a partial `theme` to `ThemeProvider`, which `deepmerge`s it over the default — so every new theme value must have a sensible default.
 
-**Design tokens**
-- Raw, framework-agnostic tokens live in `src/theme/tokens.ts` / `tokens.css` and ship under the `/tokens` and `/tokens.css` entry points. These must stay React-free. Document any token additions in `DESIGN_TOKENS.md` (it is published-facing).
-
 **Icons**
+
 - Add the `.svg` under the right `src/icons/<category>/` folder, then export it as `NameSVG` from that category's `index.ts`. SVGR turns it into a React component accepting `SVGProps<SVGSVGElement>` (size via `height`).
 
 **RTL / logical properties**
+
 - Use CSS **logical properties** (`margin-inline-start`, `inset-inline-start`, `padding-inline`, etc.) so components work in RTL out of the box — match existing components.
 
 ## Code conventions
@@ -178,7 +176,7 @@ Aliases are declared in `tsconfig.json#paths` and mirrored in `jest.config.cjs#m
 ### Styling
 
 - Emotion `css` prop only. Keep complex styles in `styles.ts` as functions that receive `Theme`.
-- Pull values from the theme/tokens — do not hardcode colors, spacing, radii, or z-index that already exist as tokens.
+- Pull values from the theme — do not hardcode colors, spacing, radii, or z-index that already exist as theme values.
 - Use logical properties for RTL safety (see above).
 - Storybook is the visual contract: components ship with stories covering their variants/states.
 
@@ -228,7 +226,7 @@ Keep imports in a single block with **no blank lines between groups** — React/
 
 1. Branch from `main`.
 2. Build the component/feature with co-located `styles.ts`, `constants.ts`, a story, and tests.
-3. Add new public surface to `src/index.ts` (and `DESIGN_TOKENS.md` if you touched tokens).
+3. Add new public surface to `src/index.ts`.
 4. Keep theming in `src/theme/default/config/` with sensible defaults.
 5. Run `npm run validate` (mirrors CI) until green.
 6. Commit with `npm run commit`; open a PR with a conventional-commit title and screenshots.
@@ -236,22 +234,21 @@ Keep imports in a single block with **no blank lines between groups** — React/
 ## Anti-patterns to avoid
 
 - ❌ Class components — functional components only.
-- ❌ Hardcoded colors/spacing/radii/z-index that already exist as theme tokens.
+- ❌ Hardcoded colors/spacing/radii/z-index that already exist as theme values.
 - ❌ `console.*` statements (ESLint error).
 - ❌ `any` types — use `unknown` or precise types.
 - ❌ `interface` outside `.d.ts` augmentation.
 - ❌ Importing Jest globals (`describe`/`it`/`expect`/`jest`).
 - ❌ Rendering test components without the `@test-utils/render` wrapper.
 - ❌ Physical CSS properties (`margin-left`/`right`) where a logical property keeps RTL working.
-- ❌ Adding React dependencies to the `/tokens` entry point — it must stay framework-agnostic.
 - ❌ Shipping a component without a Storybook story.
 - ❌ Vague PR titles — they become the squashed release commit.
 - ❌ Ignoring ESLint/Prettier warnings.
+- ❌ 'as' usage, except 'as const'
 
 ## Documentation map
 
 - `README.md` — install, `ThemeProvider` usage, theme customization, icons.
-- `DESIGN_TOKENS.md` — published-facing token reference and multi-framework usage.
 - `CONTRIBUTING.md` — branch/PR/commit workflow.
 - `CHANGELOG.md` — generated by semantic-release.
 - `src/index.ts` — the authoritative list of public exports.

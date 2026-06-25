@@ -5,6 +5,7 @@ import { IconChevronDownSVG, IconChevronUpSVG } from "../../../icons/index";
 import { Column } from "../types";
 import { ChildrenProps } from "../Table";
 import { Actions } from "../constants";
+import { getDefaultAccessor } from "../helpers";
 import Cell from "./Cell";
 
 const rowClassnames = (
@@ -33,6 +34,7 @@ const Header: FC<ChildrenProps> = ({
   onRowSelect,
 }) => {
   const { rows, columns, selected, sorting } = state;
+  const defaultAccessor = getDefaultAccessor(columns);
   const [columnsSorting, setColumnsSorting] = useState<
     Record<string, { column: string; isDescending: boolean }>
   >({});
@@ -117,7 +119,7 @@ const Header: FC<ChildrenProps> = ({
             cell,
             hidden,
             sortableHeader = true,
-            classNames = [],
+            classNames: cellClassNames = [],
             sortOrder,
             headerWidth,
           }) =>
@@ -127,9 +129,10 @@ const Header: FC<ChildrenProps> = ({
                 key={accessor}
                 data-testid={`${accessor}-column`}
                 maxWidth={headerWidth}
-                className={`header-cell ${classNames.length > 0 && classNames.join(" ")} ${
-                  !sortableHeader ? "hidden" : ""
-                }`}
+                className={classNames("header-cell", cellClassNames, {
+                  hidden: !sortableHeader,
+                  "primary-header": accessor === defaultAccessor,
+                })}
                 onClick={(): void => {
                   if (!disabled && sortableHeader) {
                     handleSortingChange(accessor, sortOrder);

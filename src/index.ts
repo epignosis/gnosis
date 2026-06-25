@@ -30,20 +30,6 @@ export { default as Text } from "./components/Text/Text";
 // Typography configurations
 export { typeScale } from "./theme/utils/typography";
 
-// Design Tokens
-export {
-  colorBase,
-  colors,
-  typography,
-  spacing,
-  borderRadius,
-  shadows,
-  breakpoints,
-  mediaQueries,
-  zIndex,
-  transitions,
-} from "./theme/tokens";
-
 //  Form elements
 export { default as Label } from "./components/FormElements/Label/Label";
 export { default as Input } from "./components/FormElements/Input/Input";

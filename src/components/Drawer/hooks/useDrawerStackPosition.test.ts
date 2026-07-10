@@ -1,5 +1,5 @@
-import { act, renderHook } from "@test-utils/render";
 import { useDrawerStackPosition } from "./useDrawerStackPosition";
+import { act, renderHook } from "@test-utils/render";
 
 const mountDrawerStack = (initialProps: { isOpen: boolean }) => {
   return renderHook(({ isOpen }) => useDrawerStackPosition(isOpen), { initialProps });

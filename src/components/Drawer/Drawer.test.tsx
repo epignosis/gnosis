@@ -101,7 +101,9 @@ describe("<Drawer/>", () => {
     );
 
     expect(
-      screen.getAllByTestId("mask").filter((mask) => mask.getAttribute("data-mask-visible") === "true"),
+      screen
+        .getAllByTestId("mask")
+        .filter((mask) => mask.getAttribute("data-mask-visible") === "true"),
     ).toHaveLength(1);
 
     rerender(
@@ -117,7 +119,9 @@ describe("<Drawer/>", () => {
 
     await waitFor(() => {
       expect(
-        screen.getAllByTestId("mask").filter((mask) => mask.getAttribute("data-mask-visible") === "true"),
+        screen
+          .getAllByTestId("mask")
+          .filter((mask) => mask.getAttribute("data-mask-visible") === "true"),
       ).toHaveLength(1);
     });
   });

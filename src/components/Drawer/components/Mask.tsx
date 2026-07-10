@@ -12,18 +12,20 @@ const maskVariants: Variants = {
 };
 
 export type MaskProps = {
-  onClose: (e: MouseEvent) => void;
+  visible?: boolean;
+  onClick?: (e: MouseEvent) => void;
 };
 
-const Mask: FC<MaskProps> = ({ onClose }) => (
+const Mask: FC<MaskProps> = ({ visible = true, onClick }) => (
   <m.div
-    css={maskContainer}
-    onClick={onClose}
+    css={maskContainer(visible)}
+    onClick={onClick}
     initial="hidden"
     animate="expanded"
     exit="hidden"
     variants={maskVariants}
     data-testid="mask"
+    data-mask-visible={visible}
   />
 );
 

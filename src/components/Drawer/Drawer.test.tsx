@@ -42,6 +42,86 @@ describe("<Drawer/>", () => {
     expect(mockFn).toHaveBeenCalledTimes(1);
   });
 
+  it("renders the visible mask when closeOnOutsideClick is false", () => {
+    render(
+      <Drawer isOpen closeOnOutsideClick={false} onClose={jest.fn()}>
+        <Drawer.Body>Drawer content</Drawer.Body>
+      </Drawer>,
+    );
+
+    expect(screen.getByTestId("mask")).toHaveAttribute("data-mask-visible", "true");
+  });
+
+  it("does not close on outside click when closeOnOutsideClick is false", async () => {
+    const mockFn = jest.fn();
+
+    render(
+      <Drawer isOpen closeOnOutsideClick={false} onClose={mockFn}>
+        <Drawer.Body>Drawer content</Drawer.Body>
+      </Drawer>,
+    );
+
+    await userEvent.click(screen.getByTestId("mask"));
+
+    expect(mockFn).not.toHaveBeenCalled();
+  });
+
+  it("renders only one visible mask when multiple drawers are open", () => {
+    render(
+      <>
+        <Drawer isOpen onClose={jest.fn()}>
+          <Drawer.Body>First drawer</Drawer.Body>
+        </Drawer>
+        <Drawer isOpen onClose={jest.fn()}>
+          <Drawer.Body>Second drawer</Drawer.Body>
+        </Drawer>
+      </>,
+    );
+
+    const masks = screen.getAllByTestId("mask");
+
+    expect(masks).toHaveLength(2);
+    expect(masks.filter((mask) => mask.getAttribute("data-mask-visible") === "true")).toHaveLength(
+      1,
+    );
+  });
+
+  it("promotes the visible mask when the top drawer closes", async () => {
+    const onCloseTop = jest.fn();
+
+    const { rerender } = render(
+      <>
+        <Drawer isOpen onClose={jest.fn()}>
+          <Drawer.Body>First drawer</Drawer.Body>
+        </Drawer>
+        <Drawer isOpen onClose={onCloseTop}>
+          <Drawer.Body>Second drawer</Drawer.Body>
+        </Drawer>
+      </>,
+    );
+
+    expect(
+      screen.getAllByTestId("mask").filter((mask) => mask.getAttribute("data-mask-visible") === "true"),
+    ).toHaveLength(1);
+
+    rerender(
+      <>
+        <Drawer isOpen onClose={jest.fn()}>
+          <Drawer.Body>First drawer</Drawer.Body>
+        </Drawer>
+        <Drawer isOpen={false} onClose={onCloseTop}>
+          <Drawer.Body>Second drawer</Drawer.Body>
+        </Drawer>
+      </>,
+    );
+
+    await waitFor(() => {
+      expect(
+        screen.getAllByTestId("mask").filter((mask) => mask.getAttribute("data-mask-visible") === "true"),
+      ).toHaveLength(1);
+    });
+  });
+
   it("renders correctly without Header and Footer", () => {
     const bodyTxt = faker.lorem.word();
     const mockFn = jest.fn();

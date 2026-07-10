@@ -16,6 +16,8 @@ import Header, { HeaderProps } from "./components/Header";
 import Body from "./components/Body";
 import Mask from "./components/Mask";
 import Footer from "./components/Footer";
+import { useDrawerStackPosition } from "./hooks/useDrawerStackPosition";
+import { DRAWER_ROOT_ID } from "./constants";
 import { FCWithChildren } from "types/common";
 
 type DialogVariants = {
@@ -40,14 +42,11 @@ const dialogVariants: Variants = {
   }),
 };
 
-const DRAWER_ROOT = "drawerRoot";
-
-const DrawerRoot: FCWithChildren = () => <div id={DRAWER_ROOT} />;
+const DrawerRoot: FCWithChildren = () => <div id={DRAWER_ROOT_ID} />;
 
 export type DrawerProps = React.HTMLAttributes<HTMLDivElement> & {
   isOpen: boolean;
   closeOnOutsideClick?: boolean;
-  showMask?: boolean;
   placement?: "left" | "right";
   width?: string;
   dialogStyles?: MotionStyle;
@@ -68,7 +67,6 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
     isOpen,
     placement = "left",
     closeOnOutsideClick = true,
-    showMask = true,
     width = "31.5rem",
     dialogStyles,
     dialogClassName,
@@ -88,7 +86,7 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
       })
     );
   });
-  const drawerEl = document.getElementById(DRAWER_ROOT);
+  const drawerEl = document.getElementById(DRAWER_ROOT_ID);
   const dialogClassNames = classNames({
     dialog: true,
     "placement-left": placement === "left",
@@ -96,12 +94,15 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
     [dialogClassName ?? ""]: dialogClassName,
   });
   const drawerRef = useRef<HTMLDivElement>(null);
+  const { isBottomMostOpenDrawer } = useDrawerStackPosition(isOpen);
 
-  const handleClose = () => {
-    if (!isOpen || !closeOnOutsideClick) return;
+  const handleOutsideClick = () => {
+    if (!isOpen) return;
 
     onClose();
   };
+  const shouldRenderMask = closeOnOutsideClick || isBottomMostOpenDrawer;
+  const shouldShowVisibleMask = isBottomMostOpenDrawer;
 
   useEffect(() => {
     if (!isOpen) return;
@@ -155,7 +156,12 @@ const Drawer: FCWithChildren<DrawerProps> & DrawerCompoundProps = (props) => {
             ref={drawerRef}
             {...rest}
           >
-            {showMask && <Mask onClose={handleClose} />}
+            {shouldRenderMask && (
+              <Mask
+                visible={shouldShowVisibleMask}
+                onClick={closeOnOutsideClick ? handleOutsideClick : undefined}
+              />
+            )}
             <ReactFocusLock returnFocus disabled={!isOpen || disableFocusLock}>
               <m.dialog
                 id="drawer-dialog"

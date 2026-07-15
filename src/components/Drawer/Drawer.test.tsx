@@ -49,7 +49,7 @@ describe("<Drawer/>", () => {
       </Drawer>,
     );
 
-    expect(screen.getByTestId("mask")).toHaveAttribute("data-mask-visible", "true");
+    expect(screen.getByTestId("mask")).toHaveAttribute("data-overlay", "true");
   });
 
   it("does not close on outside click when closeOnOutsideClick is false", async () => {
@@ -81,9 +81,7 @@ describe("<Drawer/>", () => {
     const masks = screen.getAllByTestId("mask");
 
     expect(masks).toHaveLength(2);
-    expect(masks.filter((mask) => mask.getAttribute("data-mask-visible") === "true")).toHaveLength(
-      1,
-    );
+    expect(masks.filter((mask) => mask.getAttribute("data-overlay") === "true")).toHaveLength(1);
   });
 
   it("promotes the visible mask when the top drawer closes", async () => {
@@ -101,9 +99,7 @@ describe("<Drawer/>", () => {
     );
 
     expect(
-      screen
-        .getAllByTestId("mask")
-        .filter((mask) => mask.getAttribute("data-mask-visible") === "true"),
+      screen.getAllByTestId("mask").filter((mask) => mask.getAttribute("data-overlay") === "true"),
     ).toHaveLength(1);
 
     rerender(
@@ -121,7 +117,7 @@ describe("<Drawer/>", () => {
       expect(
         screen
           .getAllByTestId("mask")
-          .filter((mask) => mask.getAttribute("data-mask-visible") === "true"),
+          .filter((mask) => mask.getAttribute("data-overlay") === "true"),
       ).toHaveLength(1);
     });
   });

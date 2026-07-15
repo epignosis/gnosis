@@ -25,7 +25,7 @@ const Mask: FC<MaskProps> = ({ visible = true, onClick }) => (
     exit="hidden"
     variants={maskVariants}
     data-testid="mask"
-    data-mask-visible={visible}
+    data-overlay={visible}
   />
 );
 

@@ -32,11 +32,11 @@ export default {
   ],
 };
 
-type DrawerArgs = Pick<DrawerProps, "placement" | "showMask"> & {
+type DrawerArgs = Pick<DrawerProps, "placement"> & {
   headerCloseBtn: boolean;
 };
 
-export const Default: StoryFn<DrawerArgs> = (args) => {
+export const Default: StoryFn<DrawerArgs> = (args: DrawerArgs) => {
   const { headerCloseBtn, ...rest } = args;
   const [isOpen, setIsOpen] = useState(false);
 
@@ -67,10 +67,9 @@ export const Default: StoryFn<DrawerArgs> = (args) => {
 
 Default.args = {
   placement: "left",
-  showMask: true,
 };
 
-export const MultipleDrawers: StoryFn<DrawerArgs> = (args) => {
+export const MultipleDrawers: StoryFn<DrawerArgs> = (args: DrawerArgs) => {
   const { headerCloseBtn, ...rest } = args;
   const [isFirstOpen, setIsFirstOpen] = useState(false);
   const [isSecondOpen, setIsSecondOpen] = useState(false);
@@ -128,5 +127,4 @@ export const MultipleDrawers: StoryFn<DrawerArgs> = (args) => {
 
 MultipleDrawers.args = {
   placement: "left",
-  showMask: true,
 };

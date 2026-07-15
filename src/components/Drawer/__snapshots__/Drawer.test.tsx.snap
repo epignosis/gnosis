@@ -6,7 +6,8 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
   data-testid="drawer"
 >
   <div
-    class="css-tigpv4-maskContainer"
+    class="css-1h50gx7-maskContainer-maskContainer"
+    data-overlay="true"
     data-testid="mask"
     style="opacity: 0;"
   />
@@ -28,7 +29,7 @@ exports[`<Drawer/> matches snapshot with close button 1`] = `
       style="opacity: 0; transform: none;"
     >
       <div
-        class="drawer-header css-1ki9nyc-drawerHeader-drawerHeader"
+        class="drawer-header css-1bphbgo-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -68,7 +69,8 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
   id="main-drawer"
 >
   <div
-    class="css-tigpv4-maskContainer"
+    class="css-1h50gx7-maskContainer-maskContainer"
+    data-overlay="true"
     data-testid="mask"
     style="opacity: 0;"
   />
@@ -90,7 +92,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
       style="opacity: 0; transform: none;"
     >
       <div
-        class="drawer-header css-1ki9nyc-drawerHeader-drawerHeader"
+        class="drawer-header css-1bphbgo-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -119,7 +121,7 @@ exports[`<Drawer/> matches snapshot with header, body and footer 1`] = `
         Test body
       </div>
       <div
-        class="drawer-footer css-i1ukdc-footerContainer-footerContainer"
+        class="drawer-footer css-1pvwwi7-footerContainer-footerContainer"
         data-testid="drawer-footer"
       >
         Test footer
@@ -140,7 +142,8 @@ exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
   data-testid="drawer"
 >
   <div
-    class="css-tigpv4-maskContainer"
+    class="css-1h50gx7-maskContainer-maskContainer"
+    data-overlay="true"
     data-testid="mask"
     style="opacity: 0;"
   />
@@ -162,7 +165,7 @@ exports[`<Drawer/> matches snapshot with noGutters Header 1`] = `
       style="opacity: 0; transform: none;"
     >
       <div
-        class="drawer-header css-qa9tzz-drawerHeader-drawerHeader"
+        class="drawer-header css-1ni8vhz-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -201,7 +204,8 @@ exports[`<Drawer/> matches snapshot with right placement 1`] = `
   data-testid="drawer"
 >
   <div
-    class="css-tigpv4-maskContainer"
+    class="css-1h50gx7-maskContainer-maskContainer"
+    data-overlay="true"
     data-testid="mask"
     style="opacity: 0;"
   />
@@ -223,7 +227,7 @@ exports[`<Drawer/> matches snapshot with right placement 1`] = `
       style="opacity: 0; transform: translateX(100%) translateZ(0);"
     >
       <div
-        class="drawer-header css-1ki9nyc-drawerHeader-drawerHeader"
+        class="drawer-header css-1bphbgo-drawerHeader-drawerHeader"
         data-testid="drawer-header"
         id="drawer-title"
       >
@@ -262,7 +266,8 @@ exports[`<Drawer/> matches snapshot without header and footer 1`] = `
   data-testid="drawer"
 >
   <div
-    class="css-tigpv4-maskContainer"
+    class="css-1h50gx7-maskContainer-maskContainer"
+    data-overlay="true"
     data-testid="mask"
     style="opacity: 0;"
   />

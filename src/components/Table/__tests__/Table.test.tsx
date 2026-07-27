@@ -219,6 +219,15 @@ describe("<Table>", () => {
     expect(screen.queryByText("Ada")).not.toBeInTheDocument();
   });
 
+  it("marks the first mobile-visible column as the primary header", () => {
+    const columns = [{ ...MOBILE_COLUMNS[0], hideOnMobile: true }, ...MOBILE_COLUMNS.slice(1)];
+
+    setupMobileTable({ columns });
+
+    expect(screen.getByTestId("name-column")).not.toHaveClass("primary-header");
+    expect(screen.getByTestId("status-column")).toHaveClass("primary-header");
+  });
+
   it("keeps the mobile cell span based on all non-hidden columns", () => {
     const columns = [
       { ...MOBILE_COLUMNS[0], hideOnMobile: true },

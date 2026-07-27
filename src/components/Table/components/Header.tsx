@@ -34,7 +34,7 @@ const Header: FC<ChildrenProps> = ({
   onRowSelect,
 }) => {
   const { rows, columns, selected, sorting } = state;
-  const defaultAccessor = getDefaultAccessor(columns);
+  const defaultAccessor = getDefaultAccessor(columns.filter((column) => !column.hideOnMobile));
   const [columnsSorting, setColumnsSorting] = useState<
     Record<string, { column: string; isDescending: boolean }>
   >({});

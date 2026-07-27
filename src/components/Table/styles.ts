@@ -204,7 +204,7 @@ export const tableContainer = ({ table, typeScaleSizes }: Theme) => css`
           padding: 0.5rem;
 
           &.table-mobile-row__content--padded {
-            padding-left: 1.5rem;
+            padding-inline-start: 1.5rem;
           }
         }
 

@@ -101,11 +101,7 @@ const MobileTablePrimaryRow: FC<MobileTablePrimaryRowProps> = ({
             </button>
           )}
           <div id={primaryCellId} className="table-mobile-row__primary">
-            <div
-              className={classNames("table-mobile-row__primary-value", {
-                "table-mobile-row__primary-value--expanded": isExpanded,
-              })}
-            >
+            <div className="table-mobile-row__primary-value">
               {renderRowValue(primaryValue, row)}
             </div>
           </div>

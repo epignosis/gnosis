@@ -287,13 +287,13 @@ export const tableContainer = ({ table, typeScaleSizes }: Theme) => css`
       tr.table-mobile-row-details {
         td {
           padding: 0.5rem 1.5rem;
-          background-color: white;
+          background-color: ${table.detailsBackgroundColor};
         }
 
         .table-mobile-row-details__content {
           display: grid;
           gap: 0.5rem;
-          background-color: white;
+          background-color: ${table.detailsBackgroundColor};
         }
 
         .table-mobile-row-details__section {

@@ -31,16 +31,20 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
   onHoveredRowChange,
   renderMobileRightActions,
 }) => {
-  const visibleColumns = getVisibleColumns(columns);
-  const defaultAccessor = getDefaultAccessor(columns);
+  const visibleColumns = useMemo(() => getVisibleColumns(columns), [columns]);
+  const mobileColumns = useMemo(
+    () => visibleColumns.filter((column) => !column.hideOnMobile),
+    [visibleColumns],
+  );
+  const defaultAccessor = getDefaultAccessor(mobileColumns);
 
   const primaryCellId = `entry-${row.id}-${defaultAccessor}`;
   const detailsRowId = `entry-${row.id}-details`;
   const mobileColSpan = visibleColumns.length + (selectable ? 1 : 0);
 
   const secondaryColumns = useMemo(
-    () => visibleColumns.filter((column) => column.accessor !== defaultAccessor),
-    [defaultAccessor, visibleColumns],
+    () => mobileColumns.filter((column) => column.accessor !== defaultAccessor),
+    [defaultAccessor, mobileColumns],
   );
   const hasSecondaryColumns = secondaryColumns.length > 0;
 

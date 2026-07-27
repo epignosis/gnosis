@@ -26,14 +26,15 @@ export const drawerBody = css`
   overflow-y: auto;
 `;
 
-export const maskContainer = css`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.45);
-`;
+export const maskContainer = (visible: boolean): SerializedStyles =>
+  css`
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: ${visible ? "rgba(0, 0, 0, 0.45)" : "transparent"};
+  `;
 
 export const footerContainer = css`
   padding: 1rem;

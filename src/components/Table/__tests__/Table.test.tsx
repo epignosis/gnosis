@@ -301,4 +301,56 @@ describe("<Table>", () => {
 
     expect(screen.queryByRole("button", { name: "Collapse row details" })).not.toBeInTheDocument();
   });
+
+  it("renders custom header cell output as the mobile detail label", async () => {
+    const columns = [
+      MOBILE_COLUMNS[0],
+      { accessor: "status", cell: (): JSX.Element => <span>Custom Status</span> },
+      MOBILE_COLUMNS[2],
+    ];
+
+    await setupExpandedMobileRow({ columns });
+
+    const detailLabel = screen
+      .getAllByText("Custom Status")
+      .find((element) => element.closest(".table-mobile-row-details__label"));
+
+    expect(detailLabel).toBeInTheDocument();
+  });
+
+  it("does not expand mobile row when clicking right actions", async () => {
+    setupMobileTable({
+      renderMobileRightActions: () => (
+        <button type="button" aria-label="Row action">
+          Action
+        </button>
+      ),
+    });
+
+    await userEvent.click(screen.getByRole("button", { name: "Row action" }));
+
+    expect(screen.queryByText("Pending")).not.toBeInTheDocument();
+  });
+
+  it("collapses expanded mobile rows when rows are replaced", async () => {
+    setWindowWidth(480);
+
+    const { rerender } = render(
+      <Table rows={MOBILE_ROWS} columns={MOBILE_COLUMNS} emptyState={EMPTY_STATE} />,
+    );
+
+    await userEvent.click(screen.getByRole("button", { name: "Expand row details" }));
+    expect(screen.getByText("Pending")).toBeInTheDocument();
+
+    rerender(
+      <Table
+        rows={[{ id: 99, name: "New row", status: "Done", owner: "Bob" }]}
+        columns={MOBILE_COLUMNS}
+        emptyState={EMPTY_STATE}
+      />,
+    );
+
+    expect(screen.queryByText("Pending")).not.toBeInTheDocument();
+    expect(screen.queryByText("Done")).not.toBeInTheDocument();
+  });
 });

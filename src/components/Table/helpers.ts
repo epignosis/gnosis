@@ -14,8 +14,10 @@ export const getDefaultAccessor = (columns: Column[]): string | undefined => {
   return visibleAccessors[0];
 };
 
-export const getColumnLabel = (column: Column): string => {
-  return typeof column.cell === "string" ? column.cell : column.accessor;
+export const getColumnLabel = (column: Column): ReactNode => {
+  if (typeof column.cell === "string") return column.cell;
+
+  return column.cell({ accessor: column.accessor, cell: column.cell });
 };
 
 export const renderRowValue = (value: Row[string], row: Row): ReactNode => {

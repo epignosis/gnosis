@@ -107,7 +107,9 @@ const MobileTablePrimaryRow: FC<MobileTablePrimaryRowProps> = ({
           </div>
 
           {renderMobileRightActions && (
-            <div className="table-mobile-row__actions">{renderMobileRightActions(row)}</div>
+            <div className="table-mobile-row__actions" onClick={onControlClick}>
+              {renderMobileRightActions(row)}
+            </div>
           )}
         </div>
       </div>

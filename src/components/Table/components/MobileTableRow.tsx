@@ -38,8 +38,8 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
   );
   const defaultAccessor = getDefaultAccessor(mobileColumns);
 
-  const primaryCellId = `entry-${rowId}-${defaultAccessor}`;
-  const detailsRowId = `entry-${rowId}-details`;
+  const primaryCellId = `${rowId}-${defaultAccessor}`;
+  const detailsRowId = `${rowId}-details`;
   const mobileColSpan = visibleColumns.length + (selectable ? 1 : 0);
 
   const secondaryColumns = useMemo(

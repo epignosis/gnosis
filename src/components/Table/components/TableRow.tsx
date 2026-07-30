@@ -37,7 +37,7 @@ export type TableRowProps = {
   onRowClick?: (row: Row) => void;
   onHoveredRowChange: (row: Row | null) => void;
   onExpandToggle: () => void;
-  renderMobileRightActions?: (row: Row) => ReactNode;
+  renderMobileActions?: (row: Row) => ReactNode;
 };
 
 const TableRow: FC<TableRowProps> = ({
@@ -56,7 +56,7 @@ const TableRow: FC<TableRowProps> = ({
   onRowClick,
   onHoveredRowChange,
   onExpandToggle,
-  renderMobileRightActions,
+  renderMobileActions,
 }) => {
   const accessors = getVisibleAccessors(columns);
   const defaultAccessor = getDefaultAccessor(columns);
@@ -84,7 +84,7 @@ const TableRow: FC<TableRowProps> = ({
         isExpanded={isExpanded}
         selectable={selectable}
         disabled={disabled}
-        renderMobileRightActions={renderMobileRightActions}
+        renderMobileActions={renderMobileActions}
         onRowSelection={handleRowSelection}
         onExpandToggle={onExpandToggle}
         onHoveredRowChange={onHoveredRowChange}

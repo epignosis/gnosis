@@ -15,7 +15,7 @@ export type MobileTableRowProps = {
   onRowSelection: () => void;
   onExpandToggle: () => void;
   onHoveredRowChange: (row: Row | null) => void;
-  renderMobileRightActions?: (row: Row) => ReactNode;
+  renderMobileActions?: (row: Row) => ReactNode;
 };
 
 const MobileTableRow: FC<MobileTableRowProps> = ({
@@ -29,7 +29,7 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
   onRowSelection,
   onExpandToggle,
   onHoveredRowChange,
-  renderMobileRightActions,
+  renderMobileActions,
 }) => {
   const visibleColumns = useMemo(() => getVisibleColumns(columns), [columns]);
   const mobileColumns = useMemo(
@@ -95,7 +95,7 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
         onControlClick={handleControlClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        renderMobileRightActions={renderMobileRightActions}
+        renderMobileActions={renderMobileActions}
       />
       {isExpanded && hasSecondaryColumns && (
         <MobileTableRowDetails

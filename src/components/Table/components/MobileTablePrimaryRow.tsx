@@ -33,7 +33,7 @@ export type MobileTablePrimaryRowProps = {
   onControlClick: (e: MouseEvent<HTMLElement>) => void;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
-  renderMobileRightActions?: (row: Row) => ReactNode;
+  renderMobileActions?: (row: Row) => ReactNode;
 };
 
 const MobileTablePrimaryRow: FC<MobileTablePrimaryRowProps> = ({
@@ -55,7 +55,7 @@ const MobileTablePrimaryRow: FC<MobileTablePrimaryRowProps> = ({
   onControlClick,
   onMouseEnter,
   onMouseLeave,
-  renderMobileRightActions,
+  renderMobileActions,
 }) => (
   <tr
     key={`entry-${row.id}-summary`}
@@ -106,9 +106,9 @@ const MobileTablePrimaryRow: FC<MobileTablePrimaryRowProps> = ({
             </div>
           </div>
 
-          {renderMobileRightActions && (
+          {renderMobileActions && (
             <div className="table-mobile-row__actions" onClick={onControlClick}>
-              {renderMobileRightActions(row)}
+              {renderMobileActions(row)}
             </div>
           )}
         </div>

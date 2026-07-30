@@ -46,8 +46,8 @@ export type TableProps = {
   onRowClick?: (row: Row) => void;
   onHoveredRowChange?: (hoveredRow: Row | null) => void;
   onRowSelect?: (ids: number[]) => void;
-  /** Slot rendered on the right side of the mobile primary row. */
-  renderMobileRightActions?: (row: Row) => ReactNode;
+  /** Slot rendered on the mobile primary row for row actions. */
+  renderMobileActions?: (row: Row) => ReactNode;
 };
 
 export type TableState = {

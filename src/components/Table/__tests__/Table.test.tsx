@@ -140,6 +140,12 @@ describe("<Table>", () => {
     setWindowWidth(1280);
   });
 
+  it("renders empty state cell with colspan for visible columns", () => {
+    renderTable({ rows: [], selectable: true });
+
+    expect(screen.getByText(EMPTY_STATE.title).closest("td")).toHaveAttribute("colspan", "6");
+  });
+
   it("renders table in document", () => {
     const { getByTestId } = renderTable();
     const table = getByTestId("table");
@@ -320,7 +326,7 @@ describe("<Table>", () => {
 
   it("does not expand mobile row when clicking right actions", async () => {
     setupMobileTable({
-      renderMobileRightActions: () => (
+      renderMobileActions: () => (
         <button type="button" aria-label="Row action">
           Action
         </button>

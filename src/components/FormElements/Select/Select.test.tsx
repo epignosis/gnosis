@@ -4,6 +4,8 @@ import userEvent from "@testing-library/user-event";
 import Select from "./Select";
 import { render, fireEvent, screen } from "@test-utils/render";
 
+const CLEAR_INDICATOR_TESTID = "my-select-clear";
+
 const OPTIONS = [
   {
     label: faker.random.words(),
@@ -95,6 +97,26 @@ describe("<Select />", () => {
     expect(onChange).toHaveBeenCalledWith(null, expect.objectContaining({ action: "clear" }));
   });
 
+  it("keeps focus on the select's input after clearing with the keyboard", async () => {
+    const user = userEvent.setup();
+    const { container } = render(
+      <Select
+        id="my-select"
+        label="Test select input"
+        options={OPTIONS}
+        isClearable
+        value={OPTIONS[0]}
+      />,
+    );
+
+    const clearIndicator = screen.getByTestId(CLEAR_INDICATOR_TESTID);
+    clearIndicator.focus();
+    await user.keyboard("{Enter}");
+
+    const selectInput = container.querySelector("input");
+    expect(selectInput).toHaveFocus();
+  });
+
   it("clears all selected values with the keyboard for a multi select", async () => {
     const user = userEvent.setup();
     const onChange = jest.fn();
@@ -110,7 +132,7 @@ describe("<Select />", () => {
       />,
     );
 
-    const clearIndicator = screen.getByRole("button", { name: /clear selection/i });
+    const clearIndicator = screen.getByTestId(CLEAR_INDICATOR_TESTID);
 
     clearIndicator.focus();
     await user.keyboard(" ");
@@ -130,11 +152,52 @@ describe("<Select />", () => {
       />,
     );
 
-    const clearIndicator = screen.getByRole("button", { name: /clear selection/i });
+    const clearIndicator = screen.getByTestId(CLEAR_INDICATOR_TESTID);
     clearIndicator.focus();
     await user.keyboard(" ");
 
     expect(screen.queryByRole("listbox")).not.toBeInTheDocument();
+  });
+
+  it("does not reopen the menu when clearing a multi select with the keyboard", async () => {
+    const user = userEvent.setup();
+    render(
+      <Select
+        id="my-select"
+        label="Test select input"
+        options={OPTIONS}
+        isClearable
+        isMulti
+        value={[OPTIONS[0], OPTIONS[1]]}
+      />,
+    );
+
+    const clearIndicator = screen.getByTestId(CLEAR_INDICATOR_TESTID);
+    clearIndicator.focus();
+    await user.keyboard(" ");
+
+    expect(screen.queryByRole("listbox")).not.toBeInTheDocument();
+  });
+
+  it("keeps focus on the select's input after clearing a multi select with the keyboard", async () => {
+    const user = userEvent.setup();
+    const { container } = render(
+      <Select
+        id="my-select"
+        label="Test select input"
+        options={OPTIONS}
+        isClearable
+        isMulti
+        value={[OPTIONS[0], OPTIONS[1]]}
+      />,
+    );
+
+    const clearIndicator = screen.getByTestId(CLEAR_INDICATOR_TESTID);
+    clearIndicator.focus();
+    await user.keyboard(" ");
+
+    const selectInput = container.querySelector("input");
+    expect(selectInput).toHaveFocus();
   });
 
   it("still clears the selected value on click", () => {
@@ -150,7 +213,7 @@ describe("<Select />", () => {
       />,
     );
 
-    const clearIndicator = screen.getByRole("button", { name: /clear selection/i });
+    const clearIndicator = screen.getByTestId(CLEAR_INDICATOR_TESTID);
     fireEvent.mouseDown(clearIndicator, { button: 0 });
 
     expect(onChange).toHaveBeenCalledWith(null, expect.objectContaining({ action: "clear" }));

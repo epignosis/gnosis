@@ -1,6 +1,19 @@
-import React, { ForwardRefRenderFunction, forwardRef, isValidElement, useRef } from "react";
+import React, {
+  ForwardRefRenderFunction,
+  forwardRef,
+  isValidElement,
+  useCallback,
+  useImperativeHandle,
+  useRef,
+} from "react";
 import classNames from "classnames";
-import { ActionMeta, MultiValue, SelectInstance, SingleValue } from "react-select";
+import {
+  ActionMeta,
+  ClearIndicatorProps,
+  MultiValue,
+  SelectInstance,
+  SingleValue,
+} from "react-select";
 import { SerializedStyles } from "@emotion/react";
 import { AddOperatorSVG, InfoCircledSVG } from "../../../icons";
 import Label from "../Label/Label";
@@ -47,9 +60,23 @@ const Select: ForwardRefRenderFunction<
 
   const hasLabel = Boolean(label);
   const containerRef = useRef<HTMLInputElement>(null);
+  const selectRef = useRef<SelectInstance<CustomOption> | null>(null);
   const labelClassname = classNames({
     required,
   });
+
+  useImperativeHandle<SelectInstance<CustomOption> | null, SelectInstance<CustomOption> | null>(
+    forwardedRef,
+    () => selectRef.current,
+    [],
+  );
+
+  const ClearIndicatorWithRef = useCallback(
+    (indicatorProps: ClearIndicatorProps<CustomOption>) => (
+      <CustomClearIndicator {...indicatorProps} selectRef={selectRef} />
+    ),
+    [],
+  );
 
   const countOptions = () => {
     // Count the number of options, including nested options if exists
@@ -89,7 +116,7 @@ const Select: ForwardRefRenderFunction<
     ...rest,
     id: id,
     "aria-label": rest["aria-label"],
-    ref: forwardedRef,
+    ref: selectRef,
     styles,
     isMulti,
     classNames: {
@@ -102,7 +129,7 @@ const Select: ForwardRefRenderFunction<
       Option: CustomOptionComponent,
       SingleValue: CustomSingleValue,
       MultiValueLabel: CustomMultiValueLabel,
-      ClearIndicator: CustomClearIndicator,
+      ClearIndicator: ClearIndicatorWithRef,
     },
     formatCreateLabel,
     isSearchable: isSelectSearchable(),

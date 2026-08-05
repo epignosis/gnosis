@@ -13,6 +13,7 @@ const CustomClearIndicator: FC<ClearIndicatorProps<CustomOption>> = (props) => {
 
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
+      event.stopPropagation();
       clearValue();
     }
   };

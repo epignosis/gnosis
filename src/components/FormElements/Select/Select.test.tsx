@@ -118,6 +118,25 @@ describe("<Select />", () => {
     expect(onChange).toHaveBeenCalledWith([], expect.objectContaining({ action: "clear" }));
   });
 
+  it("does not reopen the menu when clearing with the keyboard", async () => {
+    const user = userEvent.setup();
+    render(
+      <Select
+        id="my-select"
+        label="Test select input"
+        options={OPTIONS}
+        isClearable
+        value={OPTIONS[0]}
+      />,
+    );
+
+    const clearIndicator = screen.getByRole("button", { name: /clear selection/i });
+    clearIndicator.focus();
+    await user.keyboard(" ");
+
+    expect(screen.queryByRole("listbox")).not.toBeInTheDocument();
+  });
+
   it("still clears the selected value on click", () => {
     const onChange = jest.fn();
     render(

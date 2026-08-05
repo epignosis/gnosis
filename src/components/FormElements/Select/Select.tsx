@@ -12,6 +12,7 @@ import { containerClassNames, renderSelect } from "./helpers";
 import CustomMultiValueLabel from "./components/CustomMultiValueLabel";
 import CustomSingleValue from "./components/CustomSingleValue";
 import CustomOptionComponent from "./components/CustomOptionComponent";
+import CustomClearIndicator from "./components/CustomClearIndicator";
 
 const Select: ForwardRefRenderFunction<
   SelectInstance<CustomOption>,
@@ -101,6 +102,7 @@ const Select: ForwardRefRenderFunction<
       Option: CustomOptionComponent,
       SingleValue: CustomSingleValue,
       MultiValueLabel: CustomMultiValueLabel,
+      ClearIndicator: CustomClearIndicator,
     },
     formatCreateLabel,
     isSearchable: isSelectSearchable(),

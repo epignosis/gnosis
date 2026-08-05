@@ -1,7 +1,8 @@
 import React from "react";
 import { faker } from "@faker-js/faker";
+import userEvent from "@testing-library/user-event";
 import Select from "./Select";
-import { render, fireEvent } from "@test-utils/render";
+import { render, fireEvent, screen } from "@test-utils/render";
 
 const OPTIONS = [
   {
@@ -69,5 +70,70 @@ describe("<Select />", () => {
     fireEvent.keyDown(selectInput as HTMLElement, { key: "ArrowDown", code: 40 });
 
     expect(container).toMatchSnapshot();
+  });
+
+  it("clears the selected value with the keyboard via the clear indicator", async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+    render(
+      <Select
+        id="my-select"
+        label="Test select input"
+        options={OPTIONS}
+        isClearable
+        onChange={onChange}
+        value={OPTIONS[0]}
+      />,
+    );
+
+    const clearIndicator = screen.getByRole("button", { name: /clear selection/i });
+    expect(clearIndicator).toHaveAttribute("tabIndex", "0");
+
+    clearIndicator.focus();
+    await user.keyboard("{Enter}");
+
+    expect(onChange).toHaveBeenCalledWith(null, expect.objectContaining({ action: "clear" }));
+  });
+
+  it("clears all selected values with the keyboard for a multi select", async () => {
+    const user = userEvent.setup();
+    const onChange = jest.fn();
+    render(
+      <Select
+        id="my-select"
+        label="Test select input"
+        options={OPTIONS}
+        isClearable
+        isMulti
+        onChange={onChange}
+        value={[OPTIONS[0], OPTIONS[1]]}
+      />,
+    );
+
+    const clearIndicator = screen.getByRole("button", { name: /clear selection/i });
+
+    clearIndicator.focus();
+    await user.keyboard(" ");
+
+    expect(onChange).toHaveBeenCalledWith([], expect.objectContaining({ action: "clear" }));
+  });
+
+  it("still clears the selected value on click", () => {
+    const onChange = jest.fn();
+    render(
+      <Select
+        id="my-select"
+        label="Test select input"
+        options={OPTIONS}
+        isClearable
+        onChange={onChange}
+        value={OPTIONS[0]}
+      />,
+    );
+
+    const clearIndicator = screen.getByRole("button", { name: /clear selection/i });
+    fireEvent.mouseDown(clearIndicator, { button: 0 });
+
+    expect(onChange).toHaveBeenCalledWith(null, expect.objectContaining({ action: "clear" }));
   });
 });

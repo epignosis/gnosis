@@ -2,7 +2,7 @@ import React from "react";
 import userEvent from "@testing-library/user-event";
 import { faker } from "@faker-js/faker";
 import Tabs, { TabObject } from "./Tabs";
-import { screen, render } from "@test-utils/render";
+import { screen, render, fireEvent } from "@test-utils/render";
 
 const getTabsProps = () => ({
   tab1Txt: faker.helpers.unique(faker.lorem.paragraph),
@@ -228,6 +228,118 @@ describe("<Tabs/>", () => {
     rerender(<Tabs controlled selectedTab={1} onChangeTab={mockFn} tabs={tabs} />);
 
     expect(screen.getByText(tab2Txt)).toBeInTheDocument();
+  });
+
+  it("moves to the next rendered tab with ArrowRight, skipping tabs without content", () => {
+    const { tab1Txt, tab2Txt, tab1TitleTxt, tab2TitleTxt, tab1Id, tab2Id, tab3TitleTxt, tab3Id } =
+      getTabsProps();
+    // The middle tab has no content, so only tabs 1 and 3 are rendered (indices 0 and 1).
+    const tabs: TabObject[] = [
+      {
+        title: tab1TitleTxt,
+        content: tab1Txt,
+        id: tab1Id,
+      },
+      {
+        title: tab3TitleTxt,
+        content: undefined,
+        id: tab3Id,
+      },
+      {
+        title: tab2TitleTxt,
+        content: tab2Txt,
+        id: tab2Id,
+      },
+    ];
+
+    render(<Tabs tabs={tabs} />);
+
+    fireEvent.keyDown(screen.getByText(tab1TitleTxt), { key: "ArrowRight" });
+
+    expect(screen.getByText(tab2Txt)).toBeInTheDocument();
+  });
+
+  describe("overflow arrows", () => {
+    // Make the tab list overflow in jsdom so the arrows render.
+    const originalOffsetWidth = Object.getOwnPropertyDescriptor(
+      HTMLElement.prototype,
+      "offsetWidth",
+    );
+    const originalScrollWidth = Object.getOwnPropertyDescriptor(
+      HTMLElement.prototype,
+      "scrollWidth",
+    );
+
+    beforeAll(() => {
+      Object.defineProperty(HTMLElement.prototype, "offsetWidth", {
+        configurable: true,
+        value: 100,
+      });
+      Object.defineProperty(HTMLElement.prototype, "scrollWidth", {
+        configurable: true,
+        value: 200,
+      });
+    });
+
+    afterAll(() => {
+      if (originalOffsetWidth) {
+        Object.defineProperty(HTMLElement.prototype, "offsetWidth", originalOffsetWidth);
+      } else {
+        delete (HTMLElement.prototype as { offsetWidth?: number }).offsetWidth;
+      }
+      if (originalScrollWidth) {
+        Object.defineProperty(HTMLElement.prototype, "scrollWidth", originalScrollWidth);
+      } else {
+        delete (HTMLElement.prototype as { scrollWidth?: number }).scrollWidth;
+      }
+    });
+
+    const getOverflowTabs = () => {
+      const { tab1Txt, tab2Txt, tab1TitleTxt, tab2TitleTxt, tab1Id, tab2Id, tab3TitleTxt, tab3Id } =
+        getTabsProps();
+      // A trailing tab without content is not rendered, so tab 2 (index 1) is the last visible.
+      const tabs: TabObject[] = [
+        {
+          title: tab1TitleTxt,
+          content: tab1Txt,
+          id: tab1Id,
+        },
+        {
+          title: tab2TitleTxt,
+          content: tab2Txt,
+          id: tab2Id,
+        },
+        {
+          title: tab3TitleTxt,
+          content: undefined,
+          id: tab3Id,
+        },
+      ];
+
+      return { tabs, tab1Txt, tab2Txt, tab1TitleTxt, tab2TitleTxt };
+    };
+
+    it("selects the next tab with content on right arrow click", async () => {
+      const { tabs, tab2Txt } = getOverflowTabs();
+
+      render(<Tabs tabs={tabs} />);
+
+      await userEvent.click(screen.getByTestId("right-arrow"));
+
+      expect(screen.getByText(tab2Txt)).toBeInTheDocument();
+    });
+
+    it("does not show the right arrow on the last tab with content", async () => {
+      const { tabs, tab2TitleTxt } = getOverflowTabs();
+
+      render(<Tabs tabs={tabs} />);
+
+      await userEvent.click(screen.getByText(tab2TitleTxt));
+
+      // Regression: bounds counted the content-less tab, so the arrow rendered here and clicking
+      // it emitted an index that no rendered tab or panel has.
+      expect(screen.queryByTestId("right-arrow")).not.toBeInTheDocument();
+    });
   });
 
   it("matches snapshot", () => {

@@ -91,6 +91,16 @@ OnChangeTab.args = {
   },
 };
 
+const ControlledTemplate: StoryFn = (args) => {
+  const [selectedTab, setSelectedTab] = React.useState(0);
+
+  return (
+    <Tabs {...args} tabs={tabs} controlled selectedTab={selectedTab} onChangeTab={setSelectedTab} />
+  );
+};
+
+export const Controlled = ControlledTemplate.bind({});
+
 const ResponsiveTemplate: StoryFn = (args) => (
   <div style={{ maxWidth: "500px", border: "1px solid red" }}>
     <Tabs {...args} tabs={tabs} />

@@ -16,6 +16,22 @@ const getTabsProps = () => ({
   tab3Id: faker.helpers.unique(faker.lorem.word),
 });
 
+type TestTab = TabObject & { title: string; content: string };
+
+// Factory for the tests below: builds a rendered-content tab list from getTabsProps() so each
+// test only spells out what differs (e.g. a content-less tab).
+const createTabs = (): [TestTab, TestTab, TestTab] => {
+  const props = getTabsProps();
+
+  return [
+    { title: props.tab1TitleTxt, content: props.tab1Txt, id: props.tab1Id },
+    { title: props.tab2TitleTxt, content: props.tab2Txt, id: props.tab2Id },
+    { title: props.tab3TitleTxt, content: props.tab3Txt, id: props.tab3Id },
+  ];
+};
+
+const withoutContent = (tab: TestTab): TabObject => ({ ...tab, content: undefined });
+
 // mock scrollIntoView function in jsdom
 window.HTMLElement.prototype.scrollIntoView = jest.fn();
 
@@ -176,87 +192,53 @@ describe("<Tabs/>", () => {
   it("still switches tabs on click when onChangeTab is provided but does not update selectedTab", async () => {
     // Regression: consumers (e.g. the stories) pass selectedTab + onChangeTab without wiring the
     // callback back into selectedTab; without the controlled prop they must stay uncontrolled.
-    const { tab1Txt, tab2Txt, tab1TitleTxt, tab2TitleTxt, tab1Id, tab2Id } = getTabsProps();
-    const tabs: TabObject[] = [
-      {
-        title: tab1TitleTxt,
-        content: tab1Txt,
-        id: tab1Id,
-      },
-      {
-        title: tab2TitleTxt,
-        content: tab2Txt,
-        id: tab2Id,
-      },
-    ];
+    const [tab1, tab2] = createTabs();
 
-    render(<Tabs selectedTab={0} onChangeTab={jest.fn()} tabs={tabs} />);
+    render(<Tabs selectedTab={0} onChangeTab={jest.fn()} tabs={[tab1, tab2]} />);
 
-    await userEvent.click(screen.getByText(tab2TitleTxt));
+    await userEvent.click(screen.getByText(tab2.title));
 
-    expect(screen.getByText(tab2Txt)).toBeInTheDocument();
+    expect(screen.getByText(tab2.content)).toBeInTheDocument();
   });
 
-  it("acts as controlled when the controlled prop is set", async () => {
-    const mockFn = jest.fn();
-    const { tab1Txt, tab2Txt, tab1TitleTxt, tab2TitleTxt, tab1Id, tab2Id } = getTabsProps();
-    const tabs: TabObject[] = [
-      {
-        title: tab1TitleTxt,
-        content: tab1Txt,
-        id: tab1Id,
-      },
-      {
-        title: tab2TitleTxt,
-        content: tab2Txt,
-        id: tab2Id,
-      },
-    ];
+  describe("controlled", () => {
+    it("only notifies the parent on click without changing the selected tab", async () => {
+      const mockFn = jest.fn();
+      const [tab1, tab2] = createTabs();
 
-    const { rerender } = render(
-      <Tabs controlled selectedTab={0} onChangeTab={mockFn} tabs={tabs} />,
-    );
+      render(<Tabs controlled selectedTab={0} onChangeTab={mockFn} tabs={[tab1, tab2]} />);
 
-    await userEvent.click(screen.getByText(tab2TitleTxt));
+      await userEvent.click(screen.getByText(tab2.title));
 
-    // The parent owns the selection: the click only notifies it, content stays on tab 1
-    // until the parent updates selectedTab.
-    expect(mockFn).toHaveBeenCalledWith(1);
-    expect(screen.getByText(tab1Txt)).toBeInTheDocument();
-    expect(screen.queryByText(tab2Txt)).not.toBeInTheDocument();
+      expect(mockFn).toHaveBeenCalledWith(1);
+      expect(screen.getByText(tab1.content)).toBeInTheDocument();
+      expect(screen.queryByText(tab2.content)).not.toBeInTheDocument();
+    });
 
-    rerender(<Tabs controlled selectedTab={1} onChangeTab={mockFn} tabs={tabs} />);
+    it("follows the selectedTab prop when the parent updates it", () => {
+      const [tab1, tab2] = createTabs();
 
-    expect(screen.getByText(tab2Txt)).toBeInTheDocument();
+      const { rerender } = render(
+        <Tabs controlled selectedTab={0} onChangeTab={jest.fn()} tabs={[tab1, tab2]} />,
+      );
+
+      rerender(<Tabs controlled selectedTab={1} onChangeTab={jest.fn()} tabs={[tab1, tab2]} />);
+
+      expect(screen.getByText(tab2.content)).toBeInTheDocument();
+      expect(screen.queryByText(tab1.content)).not.toBeInTheDocument();
+    });
   });
 
   it("moves to the next rendered tab with ArrowRight, skipping tabs without content", () => {
-    const { tab1Txt, tab2Txt, tab1TitleTxt, tab2TitleTxt, tab1Id, tab2Id, tab3TitleTxt, tab3Id } =
-      getTabsProps();
+    const [tab1, tab2, tab3] = createTabs();
     // The middle tab has no content, so only tabs 1 and 3 are rendered (indices 0 and 1).
-    const tabs: TabObject[] = [
-      {
-        title: tab1TitleTxt,
-        content: tab1Txt,
-        id: tab1Id,
-      },
-      {
-        title: tab3TitleTxt,
-        content: undefined,
-        id: tab3Id,
-      },
-      {
-        title: tab2TitleTxt,
-        content: tab2Txt,
-        id: tab2Id,
-      },
-    ];
+    const tabs = [tab1, withoutContent(tab2), tab3];
 
     render(<Tabs tabs={tabs} />);
 
-    fireEvent.keyDown(screen.getByText(tab1TitleTxt), { key: "ArrowRight" });
+    fireEvent.keyDown(screen.getByText(tab1.title), { key: "ArrowRight" });
 
-    expect(screen.getByText(tab2Txt)).toBeInTheDocument();
+    expect(screen.getByText(tab3.content)).toBeInTheDocument();
   });
 
   describe("overflow arrows", () => {
@@ -294,47 +276,29 @@ describe("<Tabs/>", () => {
       }
     });
 
-    const getOverflowTabs = () => {
-      const { tab1Txt, tab2Txt, tab1TitleTxt, tab2TitleTxt, tab1Id, tab2Id, tab3TitleTxt, tab3Id } =
-        getTabsProps();
-      // A trailing tab without content is not rendered, so tab 2 (index 1) is the last visible.
-      const tabs: TabObject[] = [
-        {
-          title: tab1TitleTxt,
-          content: tab1Txt,
-          id: tab1Id,
-        },
-        {
-          title: tab2TitleTxt,
-          content: tab2Txt,
-          id: tab2Id,
-        },
-        {
-          title: tab3TitleTxt,
-          content: undefined,
-          id: tab3Id,
-        },
-      ];
+    // A trailing tab without content is not rendered, so tab 2 (index 1) is the last visible.
+    const createOverflowTabs = () => {
+      const [tab1, tab2, tab3] = createTabs();
 
-      return { tabs, tab1Txt, tab2Txt, tab1TitleTxt, tab2TitleTxt };
+      return { tabs: [tab1, tab2, withoutContent(tab3)], tab1, tab2 };
     };
 
     it("selects the next tab with content on right arrow click", async () => {
-      const { tabs, tab2Txt } = getOverflowTabs();
+      const { tabs, tab2 } = createOverflowTabs();
 
       render(<Tabs tabs={tabs} />);
 
       await userEvent.click(screen.getByTestId("right-arrow"));
 
-      expect(screen.getByText(tab2Txt)).toBeInTheDocument();
+      expect(screen.getByText(tab2.content)).toBeInTheDocument();
     });
 
     it("does not show the right arrow on the last tab with content", async () => {
-      const { tabs, tab2TitleTxt } = getOverflowTabs();
+      const { tabs, tab2 } = createOverflowTabs();
 
       render(<Tabs tabs={tabs} />);
 
-      await userEvent.click(screen.getByText(tab2TitleTxt));
+      await userEvent.click(screen.getByText(tab2.title));
 
       // Regression: bounds counted the content-less tab, so the arrow rendered here and clicking
       // it emitted an index that no rendered tab or panel has.

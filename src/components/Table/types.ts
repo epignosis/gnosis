@@ -5,7 +5,6 @@ import { IconType } from "types/common";
 export type Column = {
   accessor: string;
   isDefaultSort?: boolean;
-  isDefaultAccessor?: boolean;
   cell: string | ((arg?: unknown) => JSX.Element | null);
   hidden?: boolean;
   classNames?: string[];
@@ -46,6 +45,8 @@ export type TableProps = {
   onRowClick?: (row: Row) => void;
   onHoveredRowChange?: (hoveredRow: Row | null) => void;
   onRowSelect?: (ids: number[]) => void;
+  /** Slot rendered on the mobile primary row for row actions. */
+  renderMobileActions?: (row: Row) => ReactNode;
 };
 
 export type TableState = {
@@ -53,6 +54,7 @@ export type TableState = {
   rows: Row[];
   emptyState: EmptyState;
   selected: Row[];
+  expandedRows: (string | number)[];
   sorting?: Sorting;
   disabled?: boolean;
 };
@@ -65,7 +67,8 @@ export type ActionType =
   | { type: Actions.columnsChanged; payload: Column[] }
   | { type: Actions.rowsChanged; payload: Row[] }
   | { type: Actions.resetSelectedRows; payload: null }
-  | { type: Actions.setDisabled; payload: boolean };
+  | { type: Actions.setDisabled; payload: boolean }
+  | { type: Actions.toggleRowExpanded; payload: string | number };
 
 export type TableHandlers = {
   selectRowsById: (rowIds: number[]) => void;

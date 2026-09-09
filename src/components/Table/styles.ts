@@ -1,7 +1,7 @@
-import { css, Theme } from "@emotion/react";
-import { mq } from "@theme/utils/breakpoints";
+import { css, SerializedStyles, Theme } from "@emotion/react";
+import { breakpoints, mq } from "@theme/utils/breakpoints";
 
-export const tableContainer = ({ table }: Theme) => css`
+const tableDesktopStyles = ({ table }: Theme): SerializedStyles => css`
   border-radius: 5px;
   display: block;
   width: 100%;
@@ -14,6 +14,7 @@ export const tableContainer = ({ table }: Theme) => css`
 
   table {
     border-collapse: collapse;
+    border-spacing: 0;
     width: 100%;
     max-width: 100%;
 
@@ -27,6 +28,7 @@ export const tableContainer = ({ table }: Theme) => css`
 
         th,
         td {
+          display: table-cell;
           font-weight: 700;
           padding: 0 1.5rem;
           text-align: start;
@@ -42,14 +44,12 @@ export const tableContainer = ({ table }: Theme) => css`
             }
 
             .sorting-icon {
+              visibility: hidden;
+              margin-inline-start: 0.5rem;
+
               &.is-default-sort {
                 visibility: visible;
               }
-            }
-
-            .sorting-icon {
-              visibility: hidden;
-              margin-inline-start: 0.5rem;
             }
 
             &.hidden {
@@ -76,15 +76,12 @@ export const tableContainer = ({ table }: Theme) => css`
 
     tbody {
       tr {
+        min-height: 0;
         height: 54px;
         position: relative;
 
         &:last-of-type {
           border-bottom: none;
-        }
-
-        &:nth-of-type(even) {
-          background-color: ${table.rowBackgroundColor};
         }
 
         &:hover {
@@ -103,12 +100,6 @@ export const tableContainer = ({ table }: Theme) => css`
         .autohide-cell:focus-within {
           > div {
             opacity: 1;
-          }
-        }
-
-        .autohide-cell {
-          > div {
-            opacity: 0;
           }
         }
 
@@ -167,6 +158,22 @@ export const tableContainer = ({ table }: Theme) => css`
           }
         }
       }
+
+      &.table-row-group:nth-of-type(even) {
+        tr {
+          background-color: ${table.rowBackgroundColor};
+        }
+
+        tr:hover {
+          background-color: ${table.rowHoverColor};
+        }
+      }
+    }
+
+    .autohide-cell {
+      > div {
+        opacity: 0;
+      }
     }
 
     .selectable-cell {
@@ -186,4 +193,167 @@ export const tableContainer = ({ table }: Theme) => css`
       cursor: pointer;
     }
   }
+`;
+
+const tableMobileStyles = ({ table, typeScaleSizes }: Theme): SerializedStyles => css`
+  @media screen and (max-width: ${breakpoints.md - 1}px) {
+    table {
+      border-collapse: separate;
+
+      thead {
+        tr {
+          th,
+          td {
+            display: none;
+          }
+
+          .header-cell.primary-header {
+            display: table-cell;
+          }
+
+          .selectable-cell {
+            display: table-cell;
+            padding-inline-start: 0.5rem;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          min-height: 54px;
+          height: auto;
+
+          &:hover {
+            background-color: transparent;
+          }
+        }
+
+        tr.table-mobile-row {
+          td {
+            padding: 0;
+            vertical-align: middle;
+          }
+
+          .table-mobile-row__content {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            min-height: 54px;
+            width: 100%;
+            background-color: inherit;
+            box-sizing: border-box;
+            padding: 0.5rem;
+
+            &.table-mobile-row__content--padded {
+              padding-inline-start: 1.5rem;
+            }
+          }
+
+          .table-mobile-row__main {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 0;
+            flex: 1;
+          }
+
+          .selectable-cell {
+            width: auto;
+          }
+
+          .table-mobile-row__toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            border: none;
+            background: transparent;
+            color: inherit;
+            cursor: pointer;
+          }
+
+          .table-mobile-row__toggle-icon {
+            width: 32px;
+            flex-shrink: 0;
+          }
+
+          .table-mobile-row__primary {
+            flex: 1;
+            min-width: 0;
+          }
+
+          .table-mobile-row__primary-value {
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          &.table-mobile-row--expanded {
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 8px 12px -8px rgba(0, 0, 0, 0.2);
+
+            td {
+              border-bottom: none;
+            }
+
+            .table-mobile-row__primary-value {
+              overflow: visible;
+              text-overflow: unset;
+              white-space: normal;
+            }
+
+            .table-mobile-row__toggle {
+              transform: rotate(90deg);
+            }
+          }
+        }
+
+        &.table-row-group:nth-of-type(even) {
+          tr.table-mobile-row td {
+            background-color: ${table.rowBackgroundColor};
+          }
+        }
+
+        tr.table-mobile-row-details {
+          td {
+            padding: 0.5rem 1.5rem;
+            background-color: ${table.detailsBackgroundColor};
+          }
+
+          .table-mobile-row-details__content {
+            display: grid;
+            gap: 0.5rem;
+            background-color: ${table.detailsBackgroundColor};
+          }
+
+          .table-mobile-row-details__section {
+            padding-top: 0.5rem;
+
+            &:first-of-type {
+              padding-top: 0;
+            }
+
+            & + .table-mobile-row-details__section {
+              border-top: 1px solid ${table.rowBackgroundColor};
+            }
+          }
+
+          .table-mobile-row-details__label {
+            font-size: ${typeScaleSizes.sm};
+            font-weight: 700;
+          }
+
+          .table-mobile-row-details__value {
+            white-space: normal;
+            word-break: break-word;
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const tableContainer = (theme: Theme): SerializedStyles => css`
+  ${tableDesktopStyles(theme)};
+  ${tableMobileStyles(theme)};
 `;

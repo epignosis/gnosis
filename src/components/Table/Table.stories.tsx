@@ -27,6 +27,17 @@ for (let i = 0; i < 10; i++) {
   });
 }
 
+const mobilePrimaryOnlyRows = [
+  {
+    id: 1,
+    name: "Primary value only",
+  },
+  {
+    id: 2,
+    name: "Second primary value",
+  },
+];
+
 export default {
   component: Table,
   title: "Components/Table",
@@ -40,7 +51,6 @@ export default {
         cell: "Code",
         classNames: ["id"],
         sortOrder: "asc",
-        isDefaultAccessor: true,
       },
       {
         accessor: "description",
@@ -171,6 +181,13 @@ WithOverflowColumns.args = {
     },
     { id: 274, description: "Test", name: "Test", category: "Test", code: "Test" },
   ],
+};
+
+export const WithNoSecondaryColumns = Template.bind({});
+
+WithNoSecondaryColumns.args = {
+  columns: [{ accessor: "name", cell: "Name", classNames: ["name"] }],
+  rows: mobilePrimaryOnlyRows,
 };
 
 export const WithoutData = Template.bind({});

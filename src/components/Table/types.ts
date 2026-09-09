@@ -12,7 +12,6 @@ export type Column = {
   maxWidth?: number;
   headerWidth?: number;
   sortOrder?: "asc" | "desc";
-  hideOnMobile?: boolean;
 };
 
 export type Row = {

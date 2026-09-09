@@ -208,44 +208,6 @@ describe("<Table>", () => {
     expect(screen.getByText("Ada")).toBeInTheDocument();
   });
 
-  it("excludes hideOnMobile columns from the mobile primary and details", async () => {
-    const columns = [
-      { ...MOBILE_COLUMNS[0], hideOnMobile: true },
-      MOBILE_COLUMNS[1],
-      { ...MOBILE_COLUMNS[2], hideOnMobile: true },
-      { accessor: "priority", cell: "Priority" },
-    ];
-    const rows = [{ ...MOBILE_ROWS[0], priority: "High" }];
-
-    await setupExpandedMobileRow({ columns, rows });
-
-    expect(screen.getByText("Pending")).toBeInTheDocument();
-    expect(screen.getByText("High")).toBeInTheDocument();
-    expect(screen.queryByText("Mobile row primary value")).not.toBeInTheDocument();
-    expect(screen.queryByText("Ada")).not.toBeInTheDocument();
-  });
-
-  it("marks the first mobile-visible column as the primary header", () => {
-    const columns = [{ ...MOBILE_COLUMNS[0], hideOnMobile: true }, ...MOBILE_COLUMNS.slice(1)];
-
-    setupMobileTable({ columns });
-
-    expect(screen.getByTestId("name-column")).not.toHaveClass("primary-header");
-    expect(screen.getByTestId("status-column")).toHaveClass("primary-header");
-  });
-
-  it("keeps the mobile cell span based on all non-hidden columns", () => {
-    const columns = [
-      { ...MOBILE_COLUMNS[0], hideOnMobile: true },
-      MOBILE_COLUMNS[1],
-      { ...MOBILE_COLUMNS[2], hideOnMobile: true },
-    ];
-
-    setupMobileTable({ columns });
-
-    expect(screen.getByText("Pending").closest("td")).toHaveAttribute("colspan", "3");
-  });
-
   it("expands a mobile row when the row is clicked", async () => {
     setupMobileTable();
 

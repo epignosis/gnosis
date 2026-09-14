@@ -218,4 +218,35 @@ describe("<Select />", () => {
 
     expect(onChange).toHaveBeenCalledWith(null, expect.objectContaining({ action: "clear" }));
   });
+
+  it("exposes an accessible name on multi-value remove using the option label", () => {
+    render(
+      <Select
+        id="my-select"
+        label="Test select input"
+        options={OPTIONS}
+        isMulti
+        value={[OPTIONS[0]]}
+      />,
+    );
+
+    expect(screen.getByLabelText(`Remove ${OPTIONS[0].label}`)).toBeInTheDocument();
+    expect(screen.queryByLabelText("Remove [object Object]")).not.toBeInTheDocument();
+  });
+
+  it("keeps multi-value remove accessible when formatOptionLabel returns JSX", () => {
+    render(
+      <Select
+        id="my-select"
+        label="Test select input"
+        options={OPTIONS}
+        isMulti
+        value={[OPTIONS[0]]}
+        formatOptionLabel={({ label }) => <span>{label}</span>}
+      />,
+    );
+
+    expect(screen.getByLabelText(`Remove ${OPTIONS[0].label}`)).toBeInTheDocument();
+    expect(screen.queryByLabelText("Remove [object Object]")).not.toBeInTheDocument();
+  });
 });

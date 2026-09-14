@@ -23,6 +23,7 @@ import { CustomOption, CustomSelectProps } from "./types";
 import { MAX_MENU_HEIGHT, MIN_WIDTH, MAX_WIDTH, PLACEHOLDER } from "./constants";
 import { containerClassNames, renderSelect } from "./helpers";
 import CustomMultiValueLabel from "./components/CustomMultiValueLabel";
+import CustomMultiValueRemove from "./components/CustomMultiValueRemove";
 import CustomSingleValue from "./components/CustomSingleValue";
 import CustomOptionComponent from "./components/CustomOptionComponent";
 import CustomClearIndicator from "./components/CustomClearIndicator";
@@ -129,6 +130,7 @@ const Select: ForwardRefRenderFunction<
       Option: CustomOptionComponent,
       SingleValue: CustomSingleValue,
       MultiValueLabel: CustomMultiValueLabel,
+      MultiValueRemove: CustomMultiValueRemove,
       ClearIndicator: ClearIndicatorWithRef,
     },
     formatCreateLabel,

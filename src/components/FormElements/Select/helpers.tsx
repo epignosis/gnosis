@@ -18,10 +18,8 @@ export const containerClassNames = (status: string, size: string) =>
 export const formatOptionLabel = (
   { label = "", level = 0 },
   { context }: { context: FormatOptionLabelContext },
-): React.ReactNode => {
-  // Return a string for value context so react-select's MultiValueRemove
-  // aria-label (`Remove ${children}`) stays readable to screen readers.
-  if (!level || context === "value") return label;
+): JSX.Element => {
+  if (!level || context === "value") return <>{label}</>;
 
   const isRtl = document.dir === "rtl";
   const rotation = isRtl ? 180 : 0;

@@ -4,16 +4,12 @@ import { CustomOption } from "../types";
 
 const CustomMultiValueRemove: FC<MultiValueRemoveProps<CustomOption>> = (props) => {
   const { data, innerProps, selectProps } = props;
-  const optionLabel =
-    typeof data.label === "string" ? data.label : selectProps.getOptionLabel?.(data) ?? "option";
+  const ariaLabel = `Remove ${selectProps.getOptionLabel(data)}`;
 
   return (
     <components.MultiValueRemove
       {...props}
-      innerProps={{
-        ...innerProps,
-        "aria-label": `Remove ${optionLabel}`,
-      }}
+      innerProps={{ ...innerProps, "aria-label": ariaLabel }}
     />
   );
 };

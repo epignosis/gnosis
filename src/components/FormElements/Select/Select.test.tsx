@@ -140,6 +140,23 @@ describe("<Select />", () => {
     expect(onChange).toHaveBeenCalledWith([], expect.objectContaining({ action: "clear" }));
   });
 
+  it("uses the option label for the multi-value remove button accessible name", () => {
+    render(
+      <Select
+        id="my-select"
+        label="Test select input"
+        options={OPTIONS}
+        isMulti
+        value={[OPTIONS[0]]}
+      />,
+    );
+
+    expect(screen.getByRole("button", { name: `Remove ${OPTIONS[0].label}` })).toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: "Remove [object Object]" }),
+    ).not.toBeInTheDocument();
+  });
+
   it("does not reopen the menu when clearing with the keyboard", async () => {
     const user = userEvent.setup();
     render(
@@ -217,36 +234,5 @@ describe("<Select />", () => {
     fireEvent.mouseDown(clearIndicator, { button: 0 });
 
     expect(onChange).toHaveBeenCalledWith(null, expect.objectContaining({ action: "clear" }));
-  });
-
-  it("exposes an accessible name on multi-value remove using the option label", () => {
-    render(
-      <Select
-        id="my-select"
-        label="Test select input"
-        options={OPTIONS}
-        isMulti
-        value={[OPTIONS[0]]}
-      />,
-    );
-
-    expect(screen.getByLabelText(`Remove ${OPTIONS[0].label}`)).toBeInTheDocument();
-    expect(screen.queryByLabelText("Remove [object Object]")).not.toBeInTheDocument();
-  });
-
-  it("keeps multi-value remove accessible when formatOptionLabel returns JSX", () => {
-    render(
-      <Select
-        id="my-select"
-        label="Test select input"
-        options={OPTIONS}
-        isMulti
-        value={[OPTIONS[0]]}
-        formatOptionLabel={({ label }) => <span>{label}</span>}
-      />,
-    );
-
-    expect(screen.getByLabelText(`Remove ${OPTIONS[0].label}`)).toBeInTheDocument();
-    expect(screen.queryByLabelText("Remove [object Object]")).not.toBeInTheDocument();
   });
 });

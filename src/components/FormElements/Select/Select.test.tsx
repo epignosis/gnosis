@@ -140,6 +140,23 @@ describe("<Select />", () => {
     expect(onChange).toHaveBeenCalledWith([], expect.objectContaining({ action: "clear" }));
   });
 
+  it("uses the option label for the multi-value remove button accessible name", () => {
+    render(
+      <Select
+        id="my-select"
+        label="Test select input"
+        options={OPTIONS}
+        isMulti
+        value={[OPTIONS[0]]}
+      />,
+    );
+
+    expect(screen.getByRole("button", { name: `Remove ${OPTIONS[0].label}` })).toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: "Remove [object Object]" }),
+    ).not.toBeInTheDocument();
+  });
+
   it("does not reopen the menu when clearing with the keyboard", async () => {
     const user = userEvent.setup();
     render(

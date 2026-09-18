@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../Button/Button";
 import Dropdown from "./Dropdown";
 import { DropdownItem } from "./types";
-import { fireEvent, render, screen } from "@test-utils/render";
+import { fireEvent, render, screen, waitFor } from "@test-utils/render";
 
 describe("<Dropdown />", () => {
   window.HTMLElement.prototype.scrollIntoView = jest.fn();
@@ -176,17 +176,14 @@ describe("Grouped List functionality", () => {
     const searchInput = getByPlaceholderText("Search");
     fireEvent.change(searchInput, { target: { value: "Save" } });
 
-    // Wait for the debounced search to complete (300ms + buffer)
-    await new Promise((resolve) => setTimeout(resolve, 400));
-
-    // After searching for "Save", only Save-related items should be visible
-    expect(getByText("Save")).toBeInTheDocument();
-    expect(getByText("Save As")).toBeInTheDocument();
-    // Other items should not be visible
-    expect(queryByText("File")).not.toBeInTheDocument();
-    expect(queryByText("Edit")).not.toBeInTheDocument();
-    expect(queryByText("View")).not.toBeInTheDocument();
-    expect(queryByText("Exit")).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(getByText("Save")).toBeInTheDocument();
+      expect(getByText("Save As")).toBeInTheDocument();
+      expect(queryByText("File")).not.toBeInTheDocument();
+      expect(queryByText("Edit")).not.toBeInTheDocument();
+      expect(queryByText("View")).not.toBeInTheDocument();
+      expect(queryByText("Exit")).not.toBeInTheDocument();
+    });
   });
 
   it("handles empty groups in grouped list", () => {
@@ -298,16 +295,15 @@ describe("Grouped List functionality", () => {
     const searchInput = getByPlaceholderText("Search");
     fireEvent.change(searchInput, { target: { value: "Option 2" } });
 
-    await new Promise((resolve) => setTimeout(resolve, 400));
-
-    expect(getByText("Option 2")).toBeInTheDocument();
-
-    expect(queryByText("Option 1")).not.toBeInTheDocument();
-    expect(queryByText("Option 3")).not.toBeInTheDocument();
-    expect(queryByText("Option 5")).not.toBeInTheDocument();
-    expect(queryByText("Option 15")).not.toBeInTheDocument();
-    expect(queryByText("Option 16")).not.toBeInTheDocument();
-    expect(queryByText("Category 15")).not.toBeInTheDocument();
+    await waitFor(() => {
+      expect(getByText("Option 2")).toBeInTheDocument();
+      expect(queryByText("Option 1")).not.toBeInTheDocument();
+      expect(queryByText("Option 3")).not.toBeInTheDocument();
+      expect(queryByText("Option 5")).not.toBeInTheDocument();
+      expect(queryByText("Option 15")).not.toBeInTheDocument();
+      expect(queryByText("Option 16")).not.toBeInTheDocument();
+      expect(queryByText("Category 15")).not.toBeInTheDocument();
+    });
 
     expect(getByText("Category 1")).toBeInTheDocument();
     expect(getByText("Category 2")).toBeInTheDocument();

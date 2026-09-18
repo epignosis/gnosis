@@ -190,6 +190,21 @@ WithNoSecondaryColumns.args = {
   rows: mobilePrimaryOnlyRows,
 };
 
+export const WithMobileActions = Template.bind({});
+
+WithMobileActions.args = {
+  renderMobileActions: (): JSX.Element => (
+    <Button size="sm" variant="ghost">
+      Action
+    </Button>
+  ),
+};
+
+WithMobileActions.parameters = {
+  viewport: { defaultViewport: "xs" },
+  chromatic: { viewports: [320] },
+};
+
 export const WithoutData = Template.bind({});
 
 WithoutData.args = {

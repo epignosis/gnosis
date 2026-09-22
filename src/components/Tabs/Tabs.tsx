@@ -15,6 +15,12 @@ export type TabObject = {
 type TabsProps = React.HTMLAttributes<HTMLElement> & {
   stickyHeader?: boolean;
   selectedTab?: number;
+  /**
+   * When true, the parent owns the active tab: selecting a tab only calls onChangeTab and the
+   * component follows selectedTab. Keeps the selection from running ahead of parent state that
+   * updates asynchronously (e.g. a URL transition).
+   */
+  controlled?: boolean;
   onChangeTab?: (index: number) => void;
   tabs: TabObject[];
   inlineEndComponent?: JSX.Element;
@@ -28,20 +34,34 @@ const Tabs: FC<TabsProps> = ({
   tabs = [],
   stickyHeader = false,
   selectedTab = 0,
+  controlled = false,
   onChangeTab,
   inlineEndComponent,
   testIds,
   ...rest
 }) => {
-  const [activeTab, setActiveTab] = useState(selectedTab);
-  const tabsLength = tabs.length - 1;
+  const [internalActiveTab, setInternalActiveTab] = useState(selectedTab);
+  // Tabs without content are not rendered, so every index (selection, bounds, keyboard,
+  // arrows) refers to this filtered collection — matching what onChangeTab emits.
+  const tabsWithContent = tabs.filter((tab) => tab.content);
+  const tabsLength = tabsWithContent.length - 1;
   const tabsNavEl = useRef<HTMLDivElement>(null);
   const [isOverflowActive, setIsOverflowActive] = useState(false);
   const dir = document.dir;
 
+  const clampTabIndex = (index: number): number => {
+    if (index < 0) return 0;
+    if (index > tabsLength) return tabsLength;
+    return index;
+  };
+
+  const activeTab = controlled ? clampTabIndex(selectedTab) : internalActiveTab;
+
   const onSelectTab = (index: number): void => {
     scrollToTab(index);
-    setActiveTab(index);
+    if (!controlled) {
+      setInternalActiveTab(index);
+    }
     onChangeTab && onChangeTab(index);
   };
 
@@ -52,35 +72,24 @@ const Tabs: FC<TabsProps> = ({
 
   const handLeftArrowClick = () => {
     if (activeTab > 0) {
-      scrollToTab(activeTab - 1);
-      setActiveTab((currentTab) => currentTab - 1);
+      // Route through onSelectTab so controlled parents are notified of the new selection.
+      onSelectTab(activeTab - 1);
     }
   };
 
   const showRightArrow = () => {
-    if (!isOverflowActive || !tabs.length) return false;
+    if (!isOverflowActive || !tabsWithContent.length) return false;
     return activeTab < tabsLength;
   };
 
   const handRightArrowClick = () => {
-    if (tabs.length && activeTab < tabsLength) {
-      scrollToTab(activeTab + 1);
-      setActiveTab((currentTab) => currentTab + 1);
+    if (tabsWithContent.length && activeTab < tabsLength) {
+      onSelectTab(activeTab + 1);
     }
   };
 
   useEffect(() => {
-    let newSelectedTab = selectedTab;
-
-    if (selectedTab < 0) {
-      newSelectedTab = 0;
-    }
-
-    if (selectedTab > tabsLength) {
-      newSelectedTab = tabsLength;
-    }
-
-    setActiveTab(newSelectedTab);
+    setInternalActiveTab(clampTabIndex(selectedTab));
   }, [selectedTab]);
 
   useEffect(() => {
@@ -113,15 +122,9 @@ const Tabs: FC<TabsProps> = ({
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>, index: number) => {
     if (e.key === "ArrowRight" && index < tabsLength) {
-      // If next tab is undefined, do nothing
-      if (tabs[index + 1].content) {
-        onSelectTab(index + 1);
-      }
+      onSelectTab(index + 1);
     } else if (e.key === "ArrowLeft" && index > 0) {
-      // If prev tab is undefined, do nothing
-      if (tabs[index - 1].content) {
-        onSelectTab(index - 1);
-      }
+      onSelectTab(index - 1);
     }
   };
 
@@ -146,19 +149,17 @@ const Tabs: FC<TabsProps> = ({
           ref={tabsNavEl}
           {...(testIds?.nav && { "data-testid": testIds.nav })}
         >
-          {tabs
-            .filter((tab) => tab.content)
-            .map(({ title, id }, index) => (
-              <TabsNavItem
-                id={id}
-                key={index}
-                index={index}
-                title={title}
-                isActive={activeTab === index}
-                onSelectTab={onSelectTab}
-                onKeyDown={(e) => handleKeyDown(e, index)}
-              />
-            ))}
+          {tabsWithContent.map(({ title, id }, index) => (
+            <TabsNavItem
+              id={id}
+              key={index}
+              index={index}
+              title={title}
+              isActive={activeTab === index}
+              onSelectTab={onSelectTab}
+              onKeyDown={(e) => handleKeyDown(e, index)}
+            />
+          ))}
           {inlineEndComponent && <div className="inline-end-component">{inlineEndComponent}</div>}
         </nav>
 
@@ -181,16 +182,14 @@ const Tabs: FC<TabsProps> = ({
         role="region"
         {...(testIds?.content && { "data-testid": testIds.content })}
       >
-        {tabs
-          .filter((tab) => tab.content)
-          .map(({ content }, index) => (
-            <TabsContent
-              key={index}
-              index={index}
-              content={content}
-              isVisible={activeTab === index}
-            />
-          ))}
+        {tabsWithContent.map(({ content }, index) => (
+          <TabsContent
+            key={index}
+            index={index}
+            content={content}
+            isVisible={activeTab === index}
+          />
+        ))}
       </div>
     </section>
   );

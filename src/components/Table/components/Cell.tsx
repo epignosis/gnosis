@@ -3,6 +3,7 @@ import Tooltip from "../../Tooltip/Tooltip";
 
 export type CellProps = HTMLAttributes<HTMLTableCellElement> & {
   as?: "td" | "th";
+  colSpan?: number;
   maxWidth?: number;
   windowWidth?: number;
   windowHeight?: number;

@@ -35,6 +35,7 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
     emptyState,
     sorting,
     selected: [],
+    expandedRows: [],
   });
 
   useEffect(() => {

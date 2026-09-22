@@ -39,13 +39,26 @@ export const reducer = (state: TableState, action: ActionType): TableState => {
       return { ...state, columns: action.payload };
     }
     case Actions.rowsChanged: {
-      return { ...state, rows: action.payload };
+      const nextRows = action.payload;
+      const nextRowIds = new Set(nextRows.map((row) => row.id));
+      const expandedRows = state.expandedRows.filter((id) => nextRowIds.has(id));
+
+      return { ...state, rows: nextRows, expandedRows };
     }
     case Actions.resetSelectedRows: {
       return { ...state, selected: [] };
     }
     case Actions.setDisabled: {
       return { ...state, disabled: action.payload };
+    }
+    case Actions.toggleRowExpanded: {
+      const rowId = action.payload;
+      const isExpanded = state.expandedRows.includes(rowId);
+      const expandedRows = isExpanded
+        ? state.expandedRows.filter((id) => id !== rowId)
+        : [...state.expandedRows, rowId];
+
+      return { ...state, expandedRows };
     }
     default: {
       return state;

@@ -266,6 +266,7 @@ export { default as TableRemoveBelowSVG } from "./table-remove-below.svg";
 export { default as CircleQuestionSVG } from "./circle-question.svg";
 export { default as BriefcaseSVG } from "./briefcase.svg";
 export { default as DiamondsSVG } from "./diamonds.svg";
+export { default as MobileScreenButtonSVG } from "./mobile-screen-button.svg";
 
 // Main Menu Icons
 export { default as TeamsSVG } from "./teams.svg";

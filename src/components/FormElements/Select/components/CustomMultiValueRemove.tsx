@@ -5,7 +5,7 @@ import { CustomOption } from "../types";
 const CustomMultiValueRemove: FC<MultiValueRemoveProps<CustomOption>> = (props) => {
   const { data, innerProps, selectProps } = props;
 
-  // Render the X only where removal works (not in disabled selects)
+  // Render the X only where removal works (not in disabled or read-only selects)
   if (selectProps.isDisabled) return null;
 
   const ariaLabel = `Remove ${selectProps.getOptionLabel(data)}`;

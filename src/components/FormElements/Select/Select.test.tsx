@@ -1,7 +1,7 @@
 import React from "react";
 import { faker } from "@faker-js/faker";
 import userEvent from "@testing-library/user-event";
-import { GroupBase, MultiValueProps } from "react-select";
+import { GroupBase, MultiValueProps, SingleValueProps } from "react-select";
 import Select from "./Select";
 import { resolveStyles } from "./styles";
 import { CustomOption } from "./types";
@@ -256,17 +256,108 @@ describe("<Select />", () => {
     expect(screen.queryByRole("button", { name: /^Remove / })).not.toBeInTheDocument();
     expect(screen.queryByTestId(CLEAR_INDICATOR_TESTID)).not.toBeInTheDocument();
   });
+
+  it("shows the values without remove buttons or clear indicator when read-only", () => {
+    render(
+      <Select
+        id="my-select"
+        label="Test select input"
+        options={OPTIONS}
+        isMulti
+        isClearable
+        isReadOnly
+        value={[OPTIONS[0], OPTIONS[1]]}
+      />,
+    );
+
+    expect(screen.getByText(OPTIONS[0].label)).toBeInTheDocument();
+    expect(screen.getByText(OPTIONS[1].label)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /^Remove / })).not.toBeInTheDocument();
+    expect(screen.queryByTestId(CLEAR_INDICATOR_TESTID)).not.toBeInTheDocument();
+  });
+
+  it("shows the values without remove buttons or clear indicator when read-only and creatable", () => {
+    render(
+      <Select
+        id="my-select"
+        label="Test select input"
+        type="creatable"
+        options={OPTIONS}
+        isMulti
+        isClearable
+        isReadOnly
+        value={[OPTIONS[0], OPTIONS[1]]}
+      />,
+    );
+
+    expect(screen.getByText(OPTIONS[0].label)).toBeInTheDocument();
+    expect(screen.getByText(OPTIONS[1].label)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /^Remove / })).not.toBeInTheDocument();
+    expect(screen.queryByTestId(CLEAR_INDICATOR_TESTID)).not.toBeInTheDocument();
+    expect(screen.getByRole("combobox")).toBeDisabled();
+  });
+
+  it("keeps a read-only select out of the tab order", async () => {
+    const user = userEvent.setup();
+    render(
+      <Select
+        id="my-select"
+        label="Test select input"
+        options={OPTIONS}
+        isMulti
+        isReadOnly
+        value={[OPTIONS[0]]}
+      />,
+    );
+
+    await user.tab();
+
+    expect(document.body).toHaveFocus();
+  });
+
+  it("hides the dropdown indicator when read-only", () => {
+    const indicatorSelector = '[class*="-indicatorContainer"]';
+    const { container, rerender } = render(
+      <Select id="my-select" label="Test select input" options={OPTIONS} isMulti />,
+    );
+    expect(container.querySelectorAll(indicatorSelector)).toHaveLength(1);
+
+    rerender(
+      <Select id="my-select" label="Test select input" options={OPTIONS} isMulti isReadOnly />,
+    );
+    expect(container.querySelectorAll(indicatorSelector)).toHaveLength(0);
+  });
 });
 
 describe("resolveStyles", () => {
+  const base = { label: "base", color: "faded" };
+  const state = {
+    isDisabled: true,
+    theme: { colors: { neutral80: "full-contrast" } },
+  } as unknown as SingleValueProps<CustomOption, boolean, GroupBase<CustomOption>>;
+
+  it("keeps a read-only single value at full contrast", () => {
+    const styles = resolveStyles({ size: "md", isReadOnly: true });
+
+    expect(styles.singleValue?.(base, state)).toEqual(
+      expect.objectContaining({ color: "full-contrast" }),
+    );
+  });
+
+  it("keeps the faded single value when disabled", () => {
+    const styles = resolveStyles({ size: "md" });
+
+    expect(styles.singleValue?.(base, state)).toEqual(expect.objectContaining({ color: "faded" }));
+  });
+
   it("rounds all chip label corners when there is no remove button", () => {
-    const state = { isDisabled: true } as unknown as MultiValueProps<
+    const multiValueState = state as unknown as MultiValueProps<
       CustomOption,
       boolean,
       GroupBase<CustomOption>
     >;
 
-    expect(resolveStyles({ size: "md" }).multiValueLabel?.({ label: "base" }, state)).toEqual(
+    expect(resolveStyles({ size: "md" }).multiValueLabel?.(base, multiValueState)).toEqual(
       expect.objectContaining({ borderRadius: "2px" }),
     );
   });

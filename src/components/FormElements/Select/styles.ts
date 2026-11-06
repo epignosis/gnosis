@@ -8,6 +8,7 @@ import {
   MultiValueProps,
   OptionProps,
   PlaceholderProps,
+  SingleValueProps,
   StylesConfig,
 } from "react-select";
 import { InputSize } from "../Input/Input";
@@ -121,10 +122,12 @@ export const resolveStyles = ({
   size,
   menuMinWidth,
   allowTextWrap = false,
+  isReadOnly = false,
 }: {
   size: InputSize;
   menuMinWidth?: number;
   allowTextWrap?: boolean;
+  isReadOnly?: boolean;
 }): StylesConfig<CustomOption> => ({
   menu: (base: CSSObjectWithLabel) => {
     return {
@@ -194,8 +197,8 @@ export const resolveStyles = ({
       backgroundColor,
       boxShadow: "none",
       borderRadius: "5px",
-      color: !isDisabled ? base.color : formElements.input.disabledColor,
-      cursor: !isDisabled ? "pointer" : "not-allowed",
+      color: !isDisabled || isReadOnly ? base.color : formElements.input.disabledColor,
+      cursor: isReadOnly ? "default" : !isDisabled ? "pointer" : "not-allowed",
       pointerEvents: "auto",
       "&:hover": {
         borderColor: isDisabled
@@ -213,10 +216,10 @@ export const resolveStyles = ({
     { isDisabled }: MultiValueProps<CustomOption, boolean, GroupBase<CustomOption>>,
   ) => ({
     ...base,
-    color: !isDisabled ? base.color : formElements.input.disabledColor,
+    color: !isDisabled || isReadOnly ? base.color : formElements.input.disabledColor,
     background: formElements.multiSelect.background,
     order: "1",
-    // Disabled chips have no remove button on their left
+    // Disabled and read-only chips have no remove button on their left
     borderRadius: isDisabled ? "2px" : "0 2px 2px 0",
     paddingRight: "6px",
     paddingLeft: "6px",
@@ -317,8 +320,13 @@ export const resolveStyles = ({
     // it is important to set the indicator size to the same height as the input to avoid centering issues
     height: `calc(${inputHeight[size]} - 2px)`,
   }),
-  singleValue: (base) => ({
+  singleValue: (
+    base: CSSObjectWithLabel,
+    { theme }: SingleValueProps<CustomOption, boolean, GroupBase<CustomOption>>,
+  ) => ({
     ...base,
+    // react-select fades the value when disabled; read-only keeps it at full contrast
+    color: isReadOnly ? theme.colors.neutral80 : base.color,
     ".custom-value": {
       wordBreak: "break-word",
       overflow: "hidden",

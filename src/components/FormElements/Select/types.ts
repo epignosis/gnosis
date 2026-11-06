@@ -41,4 +41,5 @@ export type CustomSelectProps<
   defaultOptions?: boolean;
   cacheOptions?: boolean;
   allowTextWrap?: boolean;
+  isReadOnly?: boolean;
 };

@@ -34,6 +34,11 @@ export default {
         type: "boolean",
       },
     },
+    isReadOnly: {
+      control: {
+        type: "boolean",
+      },
+    },
     isClearable: {
       control: {
         type: "boolean",

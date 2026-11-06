@@ -55,6 +55,8 @@ const Select: ForwardRefRenderFunction<
     loadOptions,
     isSearchable,
     allowTextWrap,
+    isDisabled = false,
+    isReadOnly = false,
     onChange,
     ...rest
   } = props;
@@ -100,7 +102,7 @@ const Select: ForwardRefRenderFunction<
     (tooltipContent && typeof tooltipContent === "string" && tooltipContent !== "") ||
     isValidElement(tooltipContent);
 
-  const styles = resolveStyles({ size, menuMinWidth, allowTextWrap });
+  const styles = resolveStyles({ size, menuMinWidth, allowTextWrap, isReadOnly });
 
   const formatCreateLabel = (inputValue: string) => (
     <Tooltip content={creatableTooltip} parentProps={{ "aria-label": inputValue }}>
@@ -120,6 +122,9 @@ const Select: ForwardRefRenderFunction<
     ref: selectRef,
     styles,
     isMulti,
+    // react-select has no read-only mode, so read-only builds on disabled
+    isDisabled: isDisabled || isReadOnly,
+    isReadOnly,
     classNames: {
       control: ({ isDisabled }: { isDisabled: boolean }) =>
         containerClassNames(status, size, isDisabled),
@@ -133,6 +138,7 @@ const Select: ForwardRefRenderFunction<
       MultiValueLabel: CustomMultiValueLabel,
       MultiValueRemove: CustomMultiValueRemove,
       ClearIndicator: ClearIndicatorWithRef,
+      ...(isReadOnly && { DropdownIndicator: () => null }),
     },
     formatCreateLabel,
     isSearchable: isSelectSearchable(),

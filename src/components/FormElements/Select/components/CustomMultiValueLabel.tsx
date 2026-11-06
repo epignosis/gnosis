@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useRef, useState, memo } from "react";
 import { components, MultiValueGenericProps } from "react-select";
-import { CustomOption } from "../types";
+import { CustomOption, CustomSelectProps } from "../types";
 import Tooltip from "../../../Tooltip/Tooltip";
 
 const CustomMultiValueLabel: FC<MultiValueGenericProps<CustomOption>> = (props) => {
@@ -9,8 +9,9 @@ const CustomMultiValueLabel: FC<MultiValueGenericProps<CustomOption>> = (props) 
 
   const { data, selectProps } = props;
   const { label } = data;
-  const { isDisabled } = selectProps;
-  const isTooltipDisabled = isDisabled || !isOverflowActive;
+  const { isDisabled, isReadOnly } = selectProps as CustomSelectProps<CustomOption, boolean>;
+  // Read-only values must stay readable, so truncated labels keep their tooltip
+  const isTooltipDisabled = (isDisabled && !isReadOnly) || !isOverflowActive;
 
   useEffect(() => {
     if (labelRef.current) {

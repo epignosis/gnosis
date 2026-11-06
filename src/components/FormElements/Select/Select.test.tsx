@@ -1,7 +1,10 @@
 import React from "react";
 import { faker } from "@faker-js/faker";
 import userEvent from "@testing-library/user-event";
+import { GroupBase, MultiValueProps } from "react-select";
 import Select from "./Select";
+import { resolveStyles } from "./styles";
+import { CustomOption } from "./types";
 import { render, fireEvent, screen } from "@test-utils/render";
 
 const CLEAR_INDICATOR_TESTID = "my-select-clear";
@@ -234,5 +237,37 @@ describe("<Select />", () => {
     fireEvent.mouseDown(clearIndicator, { button: 0 });
 
     expect(onChange).toHaveBeenCalledWith(null, expect.objectContaining({ action: "clear" }));
+  });
+
+  it("does not render the multi-value remove buttons or clear indicator when disabled", () => {
+    render(
+      <Select
+        id="my-select"
+        label="Test select input"
+        options={OPTIONS}
+        isMulti
+        isClearable
+        isDisabled
+        value={[OPTIONS[0], OPTIONS[1]]}
+      />,
+    );
+
+    expect(screen.getByText(OPTIONS[0].label)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /^Remove / })).not.toBeInTheDocument();
+    expect(screen.queryByTestId(CLEAR_INDICATOR_TESTID)).not.toBeInTheDocument();
+  });
+});
+
+describe("resolveStyles", () => {
+  it("rounds all chip label corners when there is no remove button", () => {
+    const state = { isDisabled: true } as unknown as MultiValueProps<
+      CustomOption,
+      boolean,
+      GroupBase<CustomOption>
+    >;
+
+    expect(resolveStyles({ size: "md" }).multiValueLabel?.({ label: "base" }, state)).toEqual(
+      expect.objectContaining({ borderRadius: "2px" }),
+    );
   });
 });

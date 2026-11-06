@@ -216,7 +216,8 @@ export const resolveStyles = ({
     color: !isDisabled ? base.color : formElements.input.disabledColor,
     background: formElements.multiSelect.background,
     order: "1",
-    borderRadius: "0 2px 2px 0",
+    // Disabled chips have no remove button on their left
+    borderRadius: isDisabled ? "2px" : "0 2px 2px 0",
     paddingRight: "6px",
     paddingLeft: "6px",
     ".custom-multi-value": {

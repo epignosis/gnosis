@@ -8,11 +8,12 @@ import { CarretArrowRight } from "../../../icons/";
 import { SelectType, CustomSelectProps, CustomOption } from "./types";
 import { customLabelStyles } from "./styles";
 
-export const containerClassNames = (status: string, size: string) =>
+export const containerClassNames = (status: string, size: string, isDisabled = false) =>
   classNames({
     [`control-${size}`]: true,
     valid: status === "valid",
     error: status === "error",
+    disabled: isDisabled,
   });
 
 export const formatOptionLabel = (

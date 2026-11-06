@@ -121,7 +121,8 @@ const Select: ForwardRefRenderFunction<
     styles,
     isMulti,
     classNames: {
-      control: () => containerClassNames(status, size),
+      control: ({ isDisabled }: { isDisabled: boolean }) =>
+        containerClassNames(status, size, isDisabled),
       option: ({ isSelected }: { isSelected: boolean }) =>
         `${isSelected ? "selected" : ""} option-${size}`,
     },

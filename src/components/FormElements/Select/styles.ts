@@ -93,7 +93,7 @@ export const selectContainer = (
 
     .control-${size} {
       /* minus border */
-      &:hover,
+      &:hover:not(.disabled),
       &.focused {
         border: 1px solid ${formElements.input.borderFocus};
       }

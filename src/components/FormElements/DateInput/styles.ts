@@ -30,5 +30,12 @@ export const dateInputContainer = (
   input {
     ${inputBaseStyles(formElements, { block: true, size })};
     color: ${formElements.input.textColor};
+
+    /* WebKit top-aligns the date text inside fields taller than the text. */
+    &::-webkit-datetime-edit {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
   }
 `;

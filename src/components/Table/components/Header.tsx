@@ -39,10 +39,15 @@ const Header: FC<ChildrenProps> = ({
   const [columnsSorting, setColumnsSorting] = useState<
     Record<string, { column: string; isDescending: boolean }>
   >({});
-  const selectedIds = selected.map((entry) => entry.id);
-  const enabledRows = isRowDisabled ? rows.filter((row) => !isRowDisabled(row)) : rows;
+  const disabledIds = new Set(
+    isRowDisabled ? rows.filter((row) => isRowDisabled(row)).map((row) => row.id) : [],
+  );
+  const enabledRows = rows.filter((row) => !disabledIds.has(row.id));
+  // A row disabled after being selected stays in state, so ignore it everywhere here.
+  const enabledSelected = selected.filter((row) => !disabledIds.has(row.id));
+  const selectedIds = enabledSelected.map((entry) => entry.id);
   const rowIds = enabledRows.map((row) => row.id);
-  const isSelectAllChecked = selected.length > 0;
+  const isSelectAllChecked = enabledSelected.length > 0;
   const allRowsSelected = rowIds.every((rowId) => selectedIds.includes(rowId));
   const hasSorting = Object.keys(sorting || {}).length > 0;
 
@@ -64,9 +69,9 @@ const Header: FC<ChildrenProps> = ({
 
   const handleToggleSelectAll = (): void => {
     if (disabled) return;
-    dispatch({ type: Actions.toggleAll, payload: enabledRows });
+    const newSelected = isSelectAllChecked ? enabledSelected : enabledRows;
+    dispatch({ type: Actions.toggleAll, payload: isSelectAllChecked ? [] : enabledRows });
 
-    const newSelected = state.selected.length > 0 ? state.selected : enabledRows;
     const uniqueRowIds = [...new Set(newSelected.map((row) => row.id))];
 
     onRowSelect?.(uniqueRowIds.map(Number));

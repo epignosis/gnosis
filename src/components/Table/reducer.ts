@@ -6,10 +6,7 @@ export type Dispatch = (action: ActionType) => void;
 export const reducer = (state: TableState, action: ActionType): TableState => {
   switch (action.type) {
     case Actions.toggleAll: {
-      const hasSelected = state.selected.length > 0;
-      const newSelected = hasSelected ? [] : [...action.payload];
-
-      return { ...state, selected: newSelected };
+      return { ...state, selected: [...action.payload] };
     }
     case Actions.toggle: {
       const selectedRowId = action.payload.id;

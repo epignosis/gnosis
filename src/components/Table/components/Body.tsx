@@ -62,7 +62,8 @@ const Body: FC<ChildrenProps> = ({
   return (
     <>
       {state.rows.map((row) => {
-        const isSelected = selectedRowsIds.includes(row.id);
+        const rowDisabled = Boolean(isRowDisabled?.(row));
+        const isSelected = selectedRowsIds.includes(row.id) && !rowDisabled;
         const isExpanded = expandedRows.includes(row.id);
         const rowSelectId = `${tableId}-entry-${row.id}-select`;
         const rowGroupId = `${tableId}-entry-${row.id}-group`;
@@ -90,7 +91,7 @@ const Body: FC<ChildrenProps> = ({
               onExpandToggle={handleExpandToggle}
               renderMobileActions={renderMobileActions}
               disabled={disabled}
-              rowDisabled={Boolean(isRowDisabled?.(row))}
+              rowDisabled={rowDisabled}
             />
           </tbody>
         );

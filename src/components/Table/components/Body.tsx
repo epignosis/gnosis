@@ -17,6 +17,7 @@ const Body: FC<ChildrenProps> = ({
   onRowSelect,
   onHoveredRowChange,
   renderMobileActions,
+  isRowDisabled,
   disabled = false,
 }) => {
   const { columns, selected, expandedRows, emptyState } = state;
@@ -89,6 +90,7 @@ const Body: FC<ChildrenProps> = ({
               onExpandToggle={handleExpandToggle}
               renderMobileActions={renderMobileActions}
               disabled={disabled}
+              rowDisabled={Boolean(isRowDisabled?.(row))}
             />
           </tbody>
         );

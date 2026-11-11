@@ -27,6 +27,7 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
     id = "table",
     disabled = false,
     className = "",
+    isRowDisabled,
   } = props;
 
   const [state, dispatch] = useReducer(reducer, {
@@ -69,7 +70,12 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
   }, [sorting]);
 
   useImperativeHandle(ref, () => ({
-    selectRowsById: (rowIds: number[]) => dispatch({ type: Actions.selectMany, payload: rowIds }),
+    selectRowsById: (rowIds: number[]): void => {
+      const disabledIds = new Set(
+        rows.filter((row) => isRowDisabled?.(row)).map((row) => Number(row.id)),
+      );
+      dispatch({ type: Actions.selectMany, payload: rowIds.filter((id) => !disabledIds.has(id)) });
+    },
     resetSelected: () => dispatch({ type: Actions.resetSelectedRows, payload: null }),
   }));
 

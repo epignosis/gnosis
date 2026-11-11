@@ -10,10 +10,11 @@ import DataCells from "./DataCells";
 import MobileTableRow from "./MobileTableRow";
 import { breakpoints } from "@theme/utils/breakpoints";
 
-const rowClassnames = (isSelected: boolean, callback: boolean): string =>
+const rowClassnames = (isSelected: boolean, callback: boolean, rowDisabled: boolean): string =>
   classNames({
     selected: isSelected,
     link: callback,
+    "disabled-row": rowDisabled,
   });
 
 const checkboxWrapperClassnames = (autohide: boolean): string =>
@@ -32,6 +33,8 @@ export type TableRowProps = {
   selectable: boolean;
   autohide?: boolean;
   disabled?: boolean;
+  /** Only this row is disabled (unlike `disabled`, which is table-wide). */
+  rowDisabled?: boolean;
   dispatch: Dispatch;
   onRowSelect?: (rowIds: number[]) => void;
   onRowClick?: (row: Row) => void;
@@ -50,7 +53,8 @@ const TableRow: FC<TableRowProps> = ({
   isExpanded,
   selectable,
   autohide,
-  disabled = false,
+  disabled: tableDisabled = false,
+  rowDisabled = false,
   dispatch,
   onRowSelect,
   onRowClick,
@@ -61,6 +65,7 @@ const TableRow: FC<TableRowProps> = ({
   const accessors = getVisibleAccessors(columns);
   const defaultAccessor = getDefaultAccessor(columns);
   const isMobile = windowWidth < breakpoints.md;
+  const disabled = tableDisabled || rowDisabled;
 
   const handleRowClick = useCallback((): void => {
     if (disabled) return;
@@ -82,7 +87,8 @@ const TableRow: FC<TableRowProps> = ({
         isSelected={isSelected}
         isExpanded={isExpanded}
         selectable={selectable}
-        disabled={disabled}
+        disabled={tableDisabled}
+        rowDisabled={rowDisabled}
         renderMobileActions={renderMobileActions}
         onRowSelection={handleRowSelection}
         onExpandToggle={onExpandToggle}
@@ -94,7 +100,7 @@ const TableRow: FC<TableRowProps> = ({
   return (
     <tr
       key={`entry-${row.id}-select`}
-      className={rowClassnames(isSelected, Boolean(onRowClick))}
+      className={rowClassnames(isSelected, Boolean(onRowClick), rowDisabled)}
       onMouseEnter={(): void => {
         !disabled && onHoveredRowChange(row);
       }}

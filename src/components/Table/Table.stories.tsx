@@ -133,6 +133,15 @@ WithAutoHideRowSelection.args = {
   onRowClick: (row: Row) => console.log(row),
 };
 
+export const WithDisabledRows = Template.bind({});
+
+WithDisabledRows.args = {
+  selectable: true,
+  isRowDisabled: (row: Row) => [2, 5].includes(Number(row.id)),
+  onRowClick: (row: Row) => console.log(row),
+  onHoveredRowChange: (row: Row | null) => console.log(row),
+};
+
 export const WithOverflowColumns = Template.bind({});
 
 WithOverflowColumns.args = {

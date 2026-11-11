@@ -12,6 +12,7 @@ export type MobileTableRowProps = {
   isExpanded: boolean;
   selectable: boolean;
   disabled?: boolean;
+  rowDisabled?: boolean;
   onRowSelection: () => void;
   onExpandToggle: () => void;
   onHoveredRowChange: (row: Row | null) => void;
@@ -25,7 +26,8 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
   isSelected,
   isExpanded,
   selectable,
-  disabled = false,
+  disabled: tableDisabled = false,
+  rowDisabled = false,
   onRowSelection,
   onExpandToggle,
   onHoveredRowChange,
@@ -45,7 +47,9 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
   const hasSecondaryColumns = secondaryColumns.length > 0;
 
   const primaryValue = defaultAccessor ? row[defaultAccessor] : null;
-  const isRowClickable = hasSecondaryColumns && !disabled;
+  const disabled = tableDisabled || rowDisabled;
+  // A disabled row can still be expanded; only a disabled table blocks expansion.
+  const isRowClickable = hasSecondaryColumns && !tableDisabled;
 
   const handleMobileRowClick = (): void => {
     if (!isRowClickable) return;
@@ -79,6 +83,7 @@ const MobileTableRow: FC<MobileTableRowProps> = ({
         isExpanded={isExpanded}
         selectable={selectable}
         disabled={disabled}
+        rowDisabled={rowDisabled}
         mobileColSpan={mobileColSpan}
         isRowClickable={isRowClickable}
         primaryCellId={primaryCellId}

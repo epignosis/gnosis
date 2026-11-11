@@ -45,6 +45,8 @@ export type TableProps = {
   onRowClick?: (row: Row) => void;
   onHoveredRowChange?: (hoveredRow: Row | null) => void;
   onRowSelect?: (ids: number[]) => void;
+  /** Disables individual rows: no click, hover or selection, and select-all skips them. */
+  isRowDisabled?: (row: Row) => boolean;
   /** Slot rendered on the mobile primary row for row actions. */
   renderMobileActions?: (row: Row) => ReactNode;
 };
@@ -60,7 +62,7 @@ export type TableState = {
 };
 
 export type ActionType =
-  | { type: Actions.toggleAll; payload: null }
+  | { type: Actions.toggleAll; payload: Row[] }
   | { type: Actions.toggle; payload: Row }
   | { type: Actions.selectMany; payload: number[] }
   | { type: Actions.sortingChanged; payload: Sorting }

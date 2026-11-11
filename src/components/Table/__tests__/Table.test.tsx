@@ -2,7 +2,8 @@ import React from "react";
 import { faker } from "@faker-js/faker";
 import userEvent from "@testing-library/user-event";
 import Table from "../Table";
-import { render, screen } from "@test-utils/render";
+import { TableHandlers } from "../types";
+import { act, render, screen } from "@test-utils/render";
 
 const COLUMNS = [
   {
@@ -320,5 +321,123 @@ describe("<Table>", () => {
 
     expect(screen.queryByText("Pending")).not.toBeInTheDocument();
     expect(screen.queryByText("Done")).not.toBeInTheDocument();
+  });
+
+  describe("with disabled rows", () => {
+    const DISABLED_ROWS = [
+      { id: 1, name: "Enabled one", status: "Done", owner: "Ada" },
+      { id: 2, name: "Disabled", status: "Cloning", owner: "Bob" },
+      { id: 3, name: "Enabled two", status: "Done", owner: "Eve" },
+    ];
+    const isRowDisabled = (row: { id: unknown }): boolean => row.id === 2;
+    const renderDisabledRows = (props: Partial<React.ComponentProps<typeof Table>> = {}) =>
+      renderTable({
+        rows: DISABLED_ROWS,
+        columns: MOBILE_COLUMNS,
+        selectable: true,
+        isRowDisabled,
+        ...props,
+      });
+    const getRowCheckbox = (id: number): HTMLElement =>
+      screen.getByRole("checkbox", { name: DISABLED_ROWS[id - 1].name });
+
+    it("does not call onRowClick or onHoveredRowChange for a disabled row", async () => {
+      const onRowClick = jest.fn();
+      const onHoveredRowChange = jest.fn();
+      renderDisabledRows({ onRowClick, onHoveredRowChange });
+
+      await userEvent.click(screen.getByText("Disabled"));
+      expect(onRowClick).not.toHaveBeenCalled();
+      expect(onHoveredRowChange).not.toHaveBeenCalledWith(DISABLED_ROWS[1]);
+
+      await userEvent.click(screen.getByText("Enabled one"));
+      expect(onRowClick).toHaveBeenCalledWith(DISABLED_ROWS[0]);
+    });
+
+    it("renders a disabled, labelled checkbox and the disabled-row class", () => {
+      renderDisabledRows();
+
+      expect(getRowCheckbox(2)).toBeDisabled();
+      expect(getRowCheckbox(1)).toBeEnabled();
+      expect(screen.getByText("Disabled").closest("tr")).toHaveClass("disabled-row");
+    });
+
+    it("select-all only selects enabled rows", async () => {
+      const onRowSelect = jest.fn();
+      renderDisabledRows({ onRowSelect });
+
+      await userEvent.click(screen.getByRole("checkbox", { name: "Select all rows" }));
+
+      expect(onRowSelect).toHaveBeenCalledWith([1, 3]);
+      expect(getRowCheckbox(1)).toBeChecked();
+      expect(getRowCheckbox(3)).toBeChecked();
+      expect(getRowCheckbox(2)).not.toBeChecked();
+      expect(screen.getByText("Name").closest("tr")).toHaveClass("selected");
+    });
+
+    it("marks the header fully selected once every enabled row is selected", async () => {
+      renderDisabledRows();
+
+      await userEvent.click(getRowCheckbox(1));
+      await userEvent.click(getRowCheckbox(3));
+
+      const selectAll = screen.getByRole("checkbox", { name: "Select all rows" });
+      expect(selectAll).toBeChecked();
+      expect(screen.queryByTestId("is-partially-selected")).not.toBeInTheDocument();
+    });
+
+    it("selectRowsById ignores disabled ids", () => {
+      const ref = React.createRef<TableHandlers>();
+      render(
+        <Table
+          ref={ref}
+          rows={DISABLED_ROWS}
+          columns={MOBILE_COLUMNS}
+          emptyState={EMPTY_STATE}
+          selectable
+          isRowDisabled={isRowDisabled}
+        />,
+      );
+
+      act(() => ref.current?.selectRowsById([1, 2]));
+
+      expect(getRowCheckbox(1)).toBeChecked();
+      expect(getRowCheckbox(2)).not.toBeChecked();
+    });
+
+    describe("on mobile", () => {
+      beforeEach(() => setWindowWidth(480));
+
+      it("disables the checkbox and blocks hover but still expands the row", async () => {
+        const onHoveredRowChange = jest.fn();
+        const onRowSelect = jest.fn();
+        renderDisabledRows({ onHoveredRowChange, onRowSelect });
+
+        const checkbox = getRowCheckbox(2);
+        expect(checkbox).toBeDisabled();
+        expect(checkbox.closest("tr")).toHaveClass("disabled-row");
+
+        await userEvent.click(checkbox);
+        expect(onRowSelect).not.toHaveBeenCalled();
+
+        await userEvent.hover(screen.getByText("Disabled"));
+        expect(onHoveredRowChange).not.toHaveBeenCalledWith(DISABLED_ROWS[1]);
+
+        const [, disabledToggle] = screen.getAllByRole("button", { name: "Expand row details" });
+        expect(disabledToggle).toBeEnabled();
+        await userEvent.click(disabledToggle);
+        expect(screen.getByText("Cloning")).toBeInTheDocument();
+      });
+
+      it("select-all only selects enabled rows", async () => {
+        const onRowSelect = jest.fn();
+        renderDisabledRows({ onRowSelect });
+
+        await userEvent.click(screen.getByRole("checkbox", { name: "Select all rows" }));
+
+        expect(onRowSelect).toHaveBeenCalledWith([1, 3]);
+        expect(getRowCheckbox(2)).not.toBeChecked();
+      });
+    });
   });
 });

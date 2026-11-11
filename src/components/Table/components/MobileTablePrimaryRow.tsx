@@ -21,6 +21,7 @@ export type MobileTablePrimaryRowProps = {
   isExpanded: boolean;
   selectable: boolean;
   disabled?: boolean;
+  rowDisabled?: boolean;
   mobileColSpan: number;
   isRowClickable: boolean;
   primaryCellId: string;
@@ -43,6 +44,7 @@ const MobileTablePrimaryRow: FC<MobileTablePrimaryRowProps> = ({
   isExpanded,
   selectable,
   disabled,
+  rowDisabled,
   mobileColSpan,
   isRowClickable,
   primaryCellId,
@@ -61,6 +63,7 @@ const MobileTablePrimaryRow: FC<MobileTablePrimaryRowProps> = ({
     key={`entry-${row.id}-summary`}
     className={classNames("table-mobile-row", rowClassnames(isSelected, isRowClickable), {
       "table-mobile-row--expanded": isExpanded,
+      "disabled-row": rowDisabled,
     })}
     onClick={onRowClick}
     onMouseEnter={onMouseEnter}
@@ -95,7 +98,7 @@ const MobileTablePrimaryRow: FC<MobileTablePrimaryRowProps> = ({
               aria-expanded={isExpanded}
               aria-controls={detailsRowId}
               aria-label={isExpanded ? "Collapse row details" : "Expand row details"}
-              disabled={disabled}
+              disabled={!isRowClickable}
             >
               <ChevronArrowRightSVG width={32} className="table-mobile-row__toggle-icon" />
             </button>

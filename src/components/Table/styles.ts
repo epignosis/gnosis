@@ -312,6 +312,10 @@ const tableMobileStyles = ({ table, typeScaleSizes }: Theme): SerializedStyles =
             .table-mobile-row__actions {
               opacity: 0.5;
             }
+
+            + tr.table-mobile-row-details .table-mobile-row-details__content {
+              opacity: 0.5;
+            }
           }
 
           &.table-mobile-row--expanded {

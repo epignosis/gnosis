@@ -1,5 +1,5 @@
 export enum Actions {
-  toggleAll = "TOGGLE_ALL",
+  setSelected = "SET_SELECTED",
   toggle = "TOGGLE",
   sortingChanged = "SORTING_CHANGED",
   columnsChanged = "COLUMNS_CHANGED",

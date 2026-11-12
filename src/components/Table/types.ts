@@ -62,7 +62,7 @@ export type TableState = {
 };
 
 export type ActionType =
-  | { type: Actions.toggleAll; payload: Row[] }
+  | { type: Actions.setSelected; payload: Row[] }
   | { type: Actions.toggle; payload: Row }
   | { type: Actions.selectMany; payload: number[] }
   | { type: Actions.sortingChanged; payload: Sorting }

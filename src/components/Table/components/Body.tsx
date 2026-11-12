@@ -63,7 +63,7 @@ const Body: FC<ChildrenProps> = ({
     <>
       {state.rows.map((row) => {
         const rowDisabled = Boolean(isRowDisabled?.(row));
-        const isSelected = selectedRowsIds.includes(row.id) && !rowDisabled;
+        const isSelected = selectedRowsIds.includes(row.id);
         const isExpanded = expandedRows.includes(row.id);
         const rowSelectId = `${tableId}-entry-${row.id}-select`;
         const rowGroupId = `${tableId}-entry-${row.id}-group`;

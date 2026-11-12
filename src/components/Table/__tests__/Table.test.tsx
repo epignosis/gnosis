@@ -386,7 +386,7 @@ describe("<Table>", () => {
       expect(screen.queryByTestId("is-partially-selected")).not.toBeInTheDocument();
     });
 
-    it("ignores a selected row that later becomes disabled", async () => {
+    it("unselects a selected row that becomes disabled and reports it", async () => {
       const onRowSelect = jest.fn();
       const props = {
         rows: DISABLED_ROWS,
@@ -398,7 +398,11 @@ describe("<Table>", () => {
       const { rerender } = render(<Table {...props} />);
 
       await userEvent.click(getRowCheckbox(2));
+      onRowSelect.mockClear();
       rerender(<Table {...props} isRowDisabled={isRowDisabled} />);
+
+      expect(onRowSelect).toHaveBeenCalledTimes(1);
+      expect(onRowSelect).toHaveBeenCalledWith([2]);
 
       const selectAll = screen.getByRole("checkbox", { name: "Select all rows" });
       expect(selectAll).not.toBeChecked();
@@ -410,6 +414,9 @@ describe("<Table>", () => {
       expect(onRowSelect).toHaveBeenCalledWith([1, 3]);
       expect(getRowCheckbox(1)).toBeChecked();
       expect(getRowCheckbox(3)).toBeChecked();
+
+      rerender(<Table {...props} />);
+      expect(getRowCheckbox(2)).not.toBeChecked();
     });
 
     it("selectRowsById ignores disabled ids", () => {

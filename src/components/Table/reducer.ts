@@ -5,7 +5,7 @@ export type Dispatch = (action: ActionType) => void;
 
 export const reducer = (state: TableState, action: ActionType): TableState => {
   switch (action.type) {
-    case Actions.toggleAll: {
+    case Actions.setSelected: {
       return { ...state, selected: [...action.payload] };
     }
     case Actions.toggle: {

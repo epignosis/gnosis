@@ -4,6 +4,7 @@ import React, {
   forwardRef,
   useEffect,
   useImperativeHandle,
+  useLayoutEffect,
   useReducer,
 } from "react";
 import classNames from "classnames";
@@ -28,6 +29,7 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
     disabled = false,
     className = "",
     isRowDisabled,
+    onRowSelect,
   } = props;
 
   const [state, dispatch] = useReducer(reducer, {
@@ -59,6 +61,25 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
       dispatch({ type: Actions.resetSelectedRows, payload: null });
     }
   }, [rows, state.rows]);
+
+  // A selected row that becomes disabled is unselected, and reported to the parent as toggled.
+  // Layout effect, so the row never paints as checked and disabled.
+  useLayoutEffect(() => {
+    if (!isRowDisabled) return;
+
+    const disabledIds = new Set(
+      state.rows.filter((row) => isRowDisabled(row)).map((row) => row.id),
+    );
+    const droppedIds = state.selected.filter((row) => disabledIds.has(row.id)).map((row) => row.id);
+
+    if (droppedIds.length === 0) return;
+
+    dispatch({
+      type: Actions.setSelected,
+      payload: state.selected.filter((row) => !disabledIds.has(row.id)),
+    });
+    onRowSelect?.(droppedIds.map(Number));
+  }, [state.rows, state.selected, isRowDisabled, onRowSelect]);
 
   useEffect(() => {
     if (!sorting) return;

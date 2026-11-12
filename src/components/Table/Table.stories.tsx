@@ -133,6 +133,50 @@ WithAutoHideRowSelection.args = {
   onRowClick: (row: Row) => console.log(row),
 };
 
+export const WithDisabledRows = Template.bind({});
+
+WithDisabledRows.args = {
+  selectable: true,
+  isRowDisabled: (row: Row) => [2, 5].includes(Number(row.id)),
+  onRowClick: (row: Row) => console.log(row),
+  onHoveredRowChange: (row: Row | null) => console.log(row),
+};
+
+// Select some rows, then disable rows 1 and 3: they get unselected and the parent is told.
+export const WithRowsDisabledAfterSelection: StoryFn<Props> = (args) => {
+  const [isDisabling, setIsDisabling] = useState(false);
+  // Mirrors how consumers keep their own selection: onRowSelect reports toggled ids.
+  const [selectedIds, setSelectedIds] = useState<number[]>([]);
+
+  const handleRowSelect = (rowIds: number[]): void => {
+    console.log("onRowSelect", rowIds);
+    setSelectedIds((current) => {
+      const next = new Set(current);
+      rowIds.forEach((id) => (next.has(id) ? next.delete(id) : next.add(id)));
+      return [...next].sort((a, b) => a - b);
+    });
+  };
+
+  return (
+    <>
+      <div style={{ display: "flex", gap: "1rem", alignItems: "center", marginBottom: "1rem" }}>
+        <Button onClick={(): void => setIsDisabling((value) => !value)}>
+          {isDisabling ? "Enable rows 1 and 3" : "Disable rows 1 and 3"}
+        </Button>
+        <Text fontSize="sm">Parent selection: {selectedIds.join(", ") || "none"}</Text>
+      </div>
+      <Table
+        {...args}
+        selectable
+        isRowDisabled={
+          isDisabling ? (row: Row): boolean => [1, 3].includes(Number(row.id)) : undefined
+        }
+        onRowSelect={handleRowSelect}
+      />
+    </>
+  );
+};
+
 export const WithOverflowColumns = Template.bind({});
 
 WithOverflowColumns.args = {

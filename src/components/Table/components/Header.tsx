@@ -32,6 +32,7 @@ const Header: FC<ChildrenProps> = ({
   disabled = false,
   id,
   onRowSelect,
+  isRowDisabled,
 }) => {
   const { rows, columns, selected, sorting } = state;
   const defaultAccessor = getDefaultAccessor(columns);
@@ -39,7 +40,8 @@ const Header: FC<ChildrenProps> = ({
     Record<string, { column: string; isDescending: boolean }>
   >({});
   const selectedIds = selected.map((entry) => entry.id);
-  const rowIds = rows.map((row) => row.id);
+  const enabledRows = isRowDisabled ? rows.filter((row) => !isRowDisabled(row)) : rows;
+  const rowIds = enabledRows.map((row) => row.id);
   const isSelectAllChecked = selected.length > 0;
   const allRowsSelected = rowIds.every((rowId) => selectedIds.includes(rowId));
   const hasSorting = Object.keys(sorting || {}).length > 0;
@@ -62,9 +64,9 @@ const Header: FC<ChildrenProps> = ({
 
   const handleToggleSelectAll = (): void => {
     if (disabled) return;
-    dispatch({ type: Actions.toggleAll, payload: null });
+    const newSelected = isSelectAllChecked ? selected : enabledRows;
+    dispatch({ type: Actions.setSelected, payload: isSelectAllChecked ? [] : enabledRows });
 
-    const newSelected = state.selected.length > 0 ? state.selected : [...state.rows];
     const uniqueRowIds = [...new Set(newSelected.map((row) => row.id))];
 
     onRowSelect?.(uniqueRowIds.map(Number));

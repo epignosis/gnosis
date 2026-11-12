@@ -17,6 +17,7 @@ const Body: FC<ChildrenProps> = ({
   onRowSelect,
   onHoveredRowChange,
   renderMobileActions,
+  isRowDisabled,
   disabled = false,
 }) => {
   const { columns, selected, expandedRows, emptyState } = state;
@@ -61,6 +62,7 @@ const Body: FC<ChildrenProps> = ({
   return (
     <>
       {state.rows.map((row) => {
+        const rowDisabled = Boolean(isRowDisabled?.(row));
         const isSelected = selectedRowsIds.includes(row.id);
         const isExpanded = expandedRows.includes(row.id);
         const rowSelectId = `${tableId}-entry-${row.id}-select`;
@@ -89,6 +91,7 @@ const Body: FC<ChildrenProps> = ({
               onExpandToggle={handleExpandToggle}
               renderMobileActions={renderMobileActions}
               disabled={disabled}
+              rowDisabled={rowDisabled}
             />
           </tbody>
         );

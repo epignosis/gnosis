@@ -167,6 +167,22 @@ const tableDesktopStyles = ({ table }: Theme): SerializedStyles => css`
         tr:hover {
           background-color: ${table.rowHoverColor};
         }
+
+        tr.disabled-row:hover {
+          background-color: ${table.rowBackgroundColor};
+        }
+      }
+
+      tr.disabled-row {
+        cursor: default;
+
+        &:hover {
+          background-color: transparent;
+        }
+
+        > td:not(.selectable-cell) {
+          opacity: 0.5;
+        }
       }
     }
 
@@ -285,6 +301,21 @@ const tableMobileStyles = ({ table, typeScaleSizes }: Theme): SerializedStyles =
           .table-mobile-row__primary-value {
             overflow: hidden;
             text-overflow: ellipsis;
+          }
+
+          &.disabled-row {
+            > td {
+              opacity: 1;
+            }
+
+            .table-mobile-row__primary,
+            .table-mobile-row__actions {
+              opacity: 0.5;
+            }
+
+            + tr.table-mobile-row-details .table-mobile-row-details__content {
+              opacity: 0.5;
+            }
           }
 
           &.table-mobile-row--expanded {

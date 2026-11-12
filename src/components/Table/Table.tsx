@@ -4,6 +4,7 @@ import React, {
   forwardRef,
   useEffect,
   useImperativeHandle,
+  useLayoutEffect,
   useReducer,
 } from "react";
 import classNames from "classnames";
@@ -27,6 +28,8 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
     id = "table",
     disabled = false,
     className = "",
+    isRowDisabled,
+    onRowSelect,
   } = props;
 
   const [state, dispatch] = useReducer(reducer, {
@@ -59,6 +62,25 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
     }
   }, [rows, state.rows]);
 
+  // A selected row that becomes disabled is unselected, and reported to the parent as toggled.
+  // Layout effect, so the row never paints as checked and disabled.
+  useLayoutEffect(() => {
+    if (!isRowDisabled) return;
+
+    const disabledIds = new Set(
+      state.rows.filter((row) => isRowDisabled(row)).map((row) => row.id),
+    );
+    const droppedIds = state.selected.filter((row) => disabledIds.has(row.id)).map((row) => row.id);
+
+    if (droppedIds.length === 0) return;
+
+    dispatch({
+      type: Actions.setSelected,
+      payload: state.selected.filter((row) => !disabledIds.has(row.id)),
+    });
+    onRowSelect?.(droppedIds.map(Number));
+  }, [state.rows, state.selected, isRowDisabled, onRowSelect]);
+
   useEffect(() => {
     if (!sorting) return;
 
@@ -69,7 +91,12 @@ const Table: ForwardRefRenderFunction<TableHandlers, Props> = (props, ref) => {
   }, [sorting]);
 
   useImperativeHandle(ref, () => ({
-    selectRowsById: (rowIds: number[]) => dispatch({ type: Actions.selectMany, payload: rowIds }),
+    selectRowsById: (rowIds: number[]): void => {
+      const disabledIds = new Set(
+        rows.filter((row) => isRowDisabled?.(row)).map((row) => Number(row.id)),
+      );
+      dispatch({ type: Actions.selectMany, payload: rowIds.filter((id) => !disabledIds.has(id)) });
+    },
     resetSelected: () => dispatch({ type: Actions.resetSelectedRows, payload: null }),
   }));
 

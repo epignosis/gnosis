@@ -112,5 +112,4 @@ You can view all the available icon names at `gnosis/src/icons/index.ts` or by c
 
 - [ ] MultiSelect
 - [ ] Table
-- [ ] DateInput
 - [ ] FileInput

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DateInput /> matches snapshot 1`] = `
+<div>
+  <div
+    class="valid date-input-container-class css-nnsb0-inputContainerBaseStyles-inputContainerBaseStyles-inputBaseStyles-inputBaseStyles-dateInputContainer-dateInputContainer"
+    id="date-input-container-id"
+  >
+    <label
+      class="css-rg614s-label-label"
+      data-testid="date-input-label-my-date-input-id"
+      for="my-date-input-id"
+    >
+      Test date input
+    </label>
+    <input
+      class="date-input-class"
+      id="my-date-input-id"
+      name="test"
+      type="date"
+    />
+  </div>
+</div>
+`;

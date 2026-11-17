@@ -29,3 +29,4 @@ export { default as LinkedInIntegrationSVG } from "./linked-in-integration.svg";
 export { default as WorkdaySVG } from "./workday.svg";
 export { default as RipplingSVG } from "./rippling.svg";
 export { default as UdemyLogoSVG } from "./udemy.svg";
+export { default as McpSVG } from "./mcp.svg";
